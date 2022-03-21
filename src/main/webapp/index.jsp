@@ -62,6 +62,7 @@
 <hr>
 <button type='button' id="modal_btn">모달창 키기</button>
 <button type='button' id="modal_btn">유나 테스트 버튼</button>
+<button type='button' id="modal_btn">한수 테스트 버튼</button>
 <div class="modal_background"></div>
 <div class="modal_wrap">
     <div class="modal_close">X</div>
