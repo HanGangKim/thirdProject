@@ -58,17 +58,16 @@
 
 </head>
 <body>
-<a href="MyCalendar.jsp">달력보기</a>
-<hr>
-<button type='button' id="modal_btn">모달창 키기</button>
-<div class="modal_background"></div>
-<div class="modal_wrap">
-    <div class="modal_close">X</div>
-    <div class="text">
-        스틱코드에서 개발에 필요한 모든 코드를 쉽게 사용하세요.
-        https://stickode.com/mainlogin.html
-    </div>
-</div>
+	<a href="MyCalendar.jsp">달력보기</a>
+	<hr>
+	<button type='button' id="modal_btn">모달창 키기</button>
+	<button type="button">유나 테스트 버튼</button>
+	<div class="modal_background"></div>
+	<div class="modal_wrap">
+		<div class="modal_close">X</div>
+		<div class="text">스틱코드에서 개발에 필요한 모든 코드를 쉽게 사용하세요.
+			https://stickode.com/mainlogin.html</div>
+	</div>
 </body>
 
 <script type="text/javascript">
