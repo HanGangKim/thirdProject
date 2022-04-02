@@ -1,0 +1,77 @@
+변수 사전
+
+	일반회원
+
+회원정보 테이블명 : CUSTOMER_INFO
+일반회원 아이디 : CUSTOMER_ID
+일반회원 비밀번호 : CUSTOMER_PASSWORD
+일반회원 이름 : CUSTOMER_NAME
+일반회원 성별 : CUSTOMER_GENDER
+일반회원 전화번호 : CUSTOMER_PH
+일반회원 이메일 : CUSTOMER_EMAIL
+일반회원 나이 : CUSTOMER_AGE
+일반회원 속성 : CUSTOMER_FLAG
+	- M : 관리자, C : 일반회원
+PK_COMPANY_INFO : 회원정보 테이블 제약조건(기본키)
+
+	
+	업체회원
+
+업체정보 테이블명 : COMPANY_INFO
+업체회원 아이디 : COMPANY_ID
+업체회원 비밀번호 : COMPANY_PASSWORD
+업체회원 이름 : COMPANY_NAME
+업체회원 전화번호 : COMPANY_PH
+업체회원 이메일 : COMPANY_EMAIL
+업체회원사업자 등록 번호 : COMPANY_REGNUM
+업체회원 속성 : COMPANY_FLAG
+	- M : 관리자, C : 일반회원
+업체정보 테이블 제약조건(기본키) : PK_COMPANY_INFO
+
+
+	전시회 정보
+
+전시회 테이블명 : EXHIBITION_INFO
+전시회 아이디에 쓸 시퀀스명 : SEQ_EXHIBITION
+전시회아이디 : EXHIBITION_ID
+전시회 제목 : EXHIBITION_TITLE
+전시회 시작일 : EXHIBITION_START_DATE
+전시회 종료일 : EXHIBITION_END_DATE
+전시회 기간 : EXHIBITION_TOTAL_DATE (시작일 ~ 종료일)
+전시회 소개 : EXHIBITION_CONTENTS
+전시회 이미지 : EXHIBITION_IMAGE
+전시회 장소 : EXHIBITION_LOCATION
+전시회 가격 : EXHIBITION_PRICE
+전시회장소 위도 : EXHIBITION_LATITUDE 가로선
+전시회장소 경도 : EXHIBITION_LONGITUDE 세로선
+전시회 테이블 제약조건(기본키) : PK_EXHIBITION_INFO
+
+
+	일반회원예매
+	
+예매테이블명 : TICKETING
+예매테이블에 쓸 시퀀스명 : SEQ_TICKETING
+애매정보아이디 : TICKETING_ID
+예매일(관람일) : TICKETING_DATE
+구매자번호 : CONSUMER_PH
+예매 테이블 제약조건(기본키) : PK_TICKETING
+
+	일반회원 찜목록
+	
+찜목록 테이블명 : WISH_LIST
+찜목록에 쓸 시퀀스 명 : SEQ_WISH_LIST
+찜목록 아이디 : WISH_LIST_ID
+찜목록 속성 : WISH_LIST_FLAG (예매완료 : Y / 예매 전 : N)
+찜목록 테이블 제약조건(기본키) : PK_WISH_LIST
+
+	일반회원 후기
+	
+후기 테이블명 : REVIEW
+후기에 쓸 시퀀스 명 : SEQ_REVIEW
+후기글 아이디 : REVIEW_ID
+후기제목 : REVIEW_TITLE
+후기 내용 : REVIEW_CONTENTS
+후기 작성 날짜 : REVIEW_DATE
+후기 별점 : REVIEW_STAR_SCORE
+후기 첨부이미지 : REVIEW_IMAGE
+후기 테이블 제약조건(기본키) : PK_REVIEW

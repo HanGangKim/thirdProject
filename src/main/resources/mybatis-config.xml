@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+  <configuration>
+ 	 <!-- Alias 설정 -->
+  		<typeAliases>
+  	  		<typeAlias alias="customer" type="com.human.java.domain.CustomerVO" />
+  	  		<typeAlias alias="company" type="com.human.java.domain.CompanyVO" />
+  	  		<typeAlias alias="exhibition" type="com.human.java.domain.ExhibitionVO" />
+  	  		<typeAlias alias="review" type="com.human.java.domain.ReviewVO" />
+  		</typeAliases>
+  </configuration>
+  
+  

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="exhibitionReviewMapper">
+
+	<!-- 조회 + 검색 -->
+	<select id="getReviewList" parameterType="hashmap"
+		resultType="review"> <!-- mybatis에서 설정한 별칭 -->
+		SELECT *
+		FROM REVIEW
+		<!-- 쿼리문의 where절 -->
+		<where>
+			<!-- 자바의 if 조건문 -->
+			<if test="searchKeyword != null">
+				${searchCondition} LIKE '%${searchKeyword}%'
+				<!-- 특정조건을 찾는 Like문과 와일드 카드 -->
+				<!-- $ : 해당 컬럼의 자료형에 맞춰 파라미터 자료형이 변경 파라메터가 자동 출력 -->
+				<!-- 해당 설명링크 : https://logical-code.tistory.com/25 -->
+			</if>
+			<!-- if문 종료 -->
+		</where>
+		<!-- where절 종료 -->
+		ORDER BY REVIEW_ID DESC
+	</select>
+
+	<select id="getReview" parameterType="review"
+		resultType="review">
+		<!-- parameterType="board"(데이터받고) resultType="board"(데이터 나가고) -->
+		SELECT *
+		FROM REVIEW
+		WHERE REVIEW_ID = #{seq}
+	</select>
+
+
+	<insert id="insertReview" parameterType="review">
+		INSERT INTO
+		REVIEW(REVIEW_ID, REVIEW_TITLE, REVIEW_CONTENTS,
+		REVIEW_DATE,REVIEW_STAR_SCORE)
+		VALUES(SEQ_REVIEW.nextval,
+		#{review_title}, #{review_contents} ,sysdate, #{review_star_score})
+	</insert>
+	<!-- Merge 쿼리문으로 Update 대체 -->
+	<!-- <update id="updateReview"> UPDATE REVIEW SET REVIEW_TITLE = #{title}, 
+		REVIEW_CONTENTS = #{content}, WHERE REVIEW_ID = #{seq} </update> -->
+		
+	<!-- 	MERGE INTO COST
+		USING DUAL
+		ON ( ID = #{id} AND SUBMIT_DATE = #{date} )
+		WHEN MATCHED THEN
+		UPDATE SET A_FEED = A_FEED + #{a_Feed} , A_SNACK = A_SNACK +#{a_Snack} ,
+		B_DIAGNOSIS = B_DIAGNOSIS + #{b_Diagnosis} , B_VACCIN = B_VACCIN +
+		#{b_Vaccin} , C_GROOMING = C_GROOMING + #{c_Grooming} , C_CLOTHES =
+		C_CLOTHES + #{c_Clothes} , D_NUTRIENTS = D_NUTRIENTS + #{d_Nutrients} ,
+		D_POO = D_POO + #{d_Poo} , E_TRAINNING = E_TRAINNING + #{e_Trainning} ,
+		E_HOTEL = E_HOTEL + #{e_Hotel} , E_KINDERGARTEN = E_KINDERGARTEN +
+		#{e_Kindergarten} 
+		WHEN NOT MATCHED THEN
+		INSERT(ID , A_FEED , A_SNACK , B_DIAGNOSIS , B_VACCIN , C_GROOMING ,C_CLOTHES ,
+		D_NUTRIENTS , D_POO , E_TRAINNING , E_HOTEL , E_KINDERGARTEN ,
+		SUBMIT_DATE , DIARY_DAY , DIARY_MONTH , DIARY_YEAR )
+		VALUES(#{id}, #{a_Feed} , #{a_Snack} , #{b_Diagnosis} , #{b_Vaccin} , #{c_Grooming}
+		, #{c_Clothes} , #{d_Nutrients} , #{d_Poo} , #{e_Trainning} ,
+		#{e_Hotel} , #{e_Kindergarten} , #{date} , #{diary_day} ,
+		#{diary_month} , #{diary_year} )
+	-->
+
+	<delete id="deleteReview">
+		DELETE
+		FROM REVIEW
+		WHERE REVIEW_ID = #{seq}
+	</delete>
+
+
+
+</mapper>
