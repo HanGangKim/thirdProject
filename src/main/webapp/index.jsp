@@ -74,6 +74,7 @@
 	<a href="Payment.do">이미지 업로드</a>
 	깃 테스트
 	깃 테스트
+	깃 테스트
 
 </body>
 </html> 
