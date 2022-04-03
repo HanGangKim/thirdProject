@@ -22,7 +22,7 @@
 	<hr>
 	<a href="ErrorPage.do">에러페이지</a>
 	<hr>
-	<a href="">결제 모달 페이지</a>
+	<a href="">결제 모달 테스트 페이지</a>
 	<hr>
 	
 	<h1>전시회</h1>
