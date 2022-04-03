@@ -21,6 +21,9 @@
 	<a href="customer/CustomerSignUpSucess.do">회원가입 성공페이지</a>
 	<hr>
 	<a href="ErrorPage.do">에러페이지</a>
+	<hr>
+	<a href="">결제 모달 페이지</a>
+	<hr>
 	
 	<h1>전시회</h1>
 	<!-- 실행흐름 : [1]날짜선택 -> [2]목록 리스트 -> [3]전시회 상세  -->
@@ -44,7 +47,7 @@
 	<hr>
 	<a href="CustomerMain.do">회원 메인</a>
 	<hr>
-	<a href="CompanyMain.do">업체 메인</a>
+	<a href="">업체 등록 페이지</a>
 	<hr>
 	
 	<h1>마스터 페이지</h1>
@@ -69,12 +72,10 @@
 	<hr>
 	<a href="exhibition/ExhibitionAllTest.do">전시회 전체</a>
 	<hr>
-	<a href="Payment.do">결제창</a>
+	<a href="PaymentForm.do">결제 시스템 테스트(결제 -> 성공 or 실패)</a>
 	<hr>
-	<a href="Payment.do">이미지 업로드</a>
-	깃 테스트
-	깃 테스트
-	깃 테스트
+	<a href="">이미지 업로드 테스트</a>
+	
 
 </body>
 </html> 

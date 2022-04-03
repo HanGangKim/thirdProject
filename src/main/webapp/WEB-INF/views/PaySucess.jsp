@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	비회원 메인페이지 예정
-	리다이렉트로 컨트롤러 갔다가 인덱스로 바로 진입
+	결제 성공
 </body>
 </html>
