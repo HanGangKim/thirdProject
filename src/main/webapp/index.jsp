@@ -71,6 +71,7 @@
 	<hr>
 	<a href="Payment.do">결제창</a>
 	<hr>
+	<a href="Payment.do">이미지 업로드</a>
 
 </body>
 </html> 
