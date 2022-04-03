@@ -41,41 +41,43 @@
 	<hr>
 	<a href="company/CompanySignUp.do">업체전용 회원가입</a>
 	<hr>
+	<a href="">업체등록 게시판</a>
+	<hr>
 	
 	<h1>메인페이지</h1>
 	<a href="NoneMemberMain.do">비회원 메인</a>
 	<hr>
 	<a href="CustomerMain.do">회원 메인</a>
 	<hr>
-	<a href="">업체 등록 페이지</a>
+	<a href="">업체 메인페이지</a>
 	<hr>
 	
 	<h1>마스터 페이지</h1>
 	<a href="master/MasterPage.do">관리자 페이지</a>
 	
 	<h1>컨트롤러 테스트 전용</h1>
-	<a href="MappingTest.do">맵핑 테스트</a>
-	<hr>
 	<a href="index.do">컨트롤러 테스트 전용 경로</a>
 	<hr>
-	
+	<a href="MappingTest.do">맵핑 테스트</a>
+	<hr>
 	<form action="/exhibition/ExhibitionTest.do">
 	<button type="submit">전시회 1줄 조회</button>
 	</form>
-	
 	<hr>
 	<a href="exhibition/ExhibitionReviewWrite.do">전시회 후기 입력</a>
 	<hr>
-	<a href="exhibition/ExhibitionReviewWriteTest.do">나의 후기 페이지</a>
+	<a href="exhibition/ExhibitionReviewWrite.do">전시회 후기 입력 테스트 페이지</a>
 	<hr>
-	<a href="exhibition/ExhibitionReviewWriteTest.do">전체 후기 페이지</a>
+	<a href="exhibition/ExhibitionMyReviewList.do">나의 후기 페이지</a>
 	<hr>
-	<a href="exhibition/ExhibitionAllTest.do">전시회 전체</a>
+	<a href="exhibition/ExhibitionReviewList.do">전시회 전체 후기 페이지</a>
 	<hr>
 	<a href="PaymentForm.do">결제 시스템 테스트(결제 -> 성공 or 실패)</a>
 	<hr>
 	<a href="">이미지 업로드 테스트</a>
-	
+	<hr>
+	<a href="">QR 코드 테스트</a>
+	<hr>
 
 </body>
 </html> 
