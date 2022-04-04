@@ -7,11 +7,9 @@
 <title>테스트 메인 페이지</title>
 </head>
 <body>
-sssss	
-sssss
-ssss
+
 	<h1>일반회원</h1>
-	유나테스트
+	성유나 테스트 
 	<a href="customer/CustomerLogin.do">일반회원 로그인 페이지 -- 컨트롤러 연결완료</a>
 	<hr>
 	<a href="customer/CustomerSignUp.do">일반회원 회원가입 페이지 -- 테이블에 맞게 인풋태그 수정필요</a>
