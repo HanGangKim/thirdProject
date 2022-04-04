@@ -7,9 +7,7 @@
 <title>테스트 메인 페이지</title>
 </head>
 <body>
-sssss	
-sssss
-ssss
+
 	<h1>일반회원</h1>
 	<a href="customer/CustomerLogin.do">일반회원 로그인 페이지 -- 컨트롤러 연결완료</a>
 	<hr>
