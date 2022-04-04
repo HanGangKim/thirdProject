@@ -1,0 +1,13 @@
+깃 데스크탑 커밋 코멘트 양식 
+( 밑에 글에서 "*"을 기준으로 내용을 수정해서 붙여넣기 하시면 됩니다. )
+
+Summary ( required ) / 영어로만 작성할 것
+* 성을 제외한 이름 commit 
+ex ) hansoo commit / yuna commit / minsung commit / junmin commit / eunsung commit 
+
+Description / 한글 가능 , 시간은 24시간을 기준으로 , 내용은 '어떤파일'의 '어떤 기능' , 검토내용은 필요시에만 작성
+* 1. 작성일자 및 시간 : 04-04 / 12:00 
+
+* 2. 변경 내용 : 메인페이지 상단 메뉴바 css 수정 or CustomerMapper의 insert 쿼리문 수정 ...
+
+* 3. 검토내용 (필요시에만 작성) :  수정한 파일의 css 드롭다운이 작동하지 않습니다.
