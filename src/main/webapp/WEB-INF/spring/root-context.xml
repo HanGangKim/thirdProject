@@ -10,7 +10,7 @@
 		<property name="driverClassName"
 			value="oracle.jdbc.driver.OracleDriver" />
 		<property name="url"
-			value="jdbc:oracle:thin:@15.164.230.6:1521:xe" />
+			value="jdbc:oracle:thin:@193.122.124.229:1521:xe" />
 		<property name="username" value="han" />
 		<property name="password" value="1234" />
 	</bean>
