@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	맵핑 테스트 페이지 접속
+<%response.sendRedirect("NoneMemberMain.do");%>
 </body>
 </html>

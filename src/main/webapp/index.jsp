@@ -8,6 +8,11 @@
 </head>
 <body>
 	<h1>일반회원</h1>
+
+	오정민 커밋 테스트
+
+	유나 테스트 커밋 
+
 	<a href="customer/CustomerLogin.do">일반회원 로그인 페이지 -- 컨트롤러 연결완료</a>
 	<hr>
 	<a href="customer/CustomerSignUp.do">일반회원 회원가입 페이지 -- 테이블에 맞게 인풋태그 수정필요</a>
@@ -54,12 +59,9 @@
 	
 	<h1>마스터 페이지</h1>
 	<a href="master/MasterPage.do">관리자 페이지</a>
+	<hr>
 	
 	<h1>컨트롤러 테스트 전용</h1>
-	<a href="index.do">컨트롤러 테스트 전용 경로</a>
-	<hr>
-	<a href="MappingTest.do">맵핑 테스트</a>
-	<hr>
 	<form action="/exhibition/ExhibitionTest.do">
 	<button type="submit">전시회 1줄 조회</button>
 	</form>
@@ -78,7 +80,6 @@
 	<hr>
 	<a href="">QR 코드 테스트</a>
 	<hr>
-
 </body>
 </html> 
 
