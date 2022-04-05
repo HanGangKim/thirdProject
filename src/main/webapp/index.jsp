@@ -8,7 +8,9 @@
 </head>
 <body>
 	<h1>일반회원</h1>
-	
+
+	오정민 커밋 테스트
+
 	유나 테스트 커밋 
 
 	<a href="customer/CustomerLogin.do">일반회원 로그인 페이지 -- 컨트롤러 연결완료</a>
