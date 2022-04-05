@@ -54,12 +54,9 @@
 	
 	<h1>마스터 페이지</h1>
 	<a href="master/MasterPage.do">관리자 페이지</a>
+	<hr>
 	
 	<h1>컨트롤러 테스트 전용</h1>
-	<a href="index.do">컨트롤러 테스트 전용 경로</a>
-	<hr>
-	<a href="MappingTest.do">맵핑 테스트</a>
-	<hr>
 	<form action="/exhibition/ExhibitionTest.do">
 	<button type="submit">전시회 1줄 조회</button>
 	</form>
@@ -78,7 +75,6 @@
 	<hr>
 	<a href="">QR 코드 테스트</a>
 	<hr>
-
 </body>
 </html> 
 
