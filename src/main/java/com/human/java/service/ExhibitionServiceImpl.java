@@ -43,6 +43,16 @@ public class ExhibitionServiceImpl implements ExhibitionService{
 		System.out.println("===============");
 		return exhibitionDAO.exhibitionAll(vo);
 	}
+	
+	@Override
+	public List<ExhibitionVO> comingExhibition(ExhibitionVO vo) {
+		// TODO Auto-generated method stub
+		System.out.println("도착했습니다");
+		System.out.println("===============");
+		System.out.println("exhibition 올 서비스 호출");
+		System.out.println("===============");
+		return exhibitionDAO.comingExhibition(vo);
+	}
 
 	
 }

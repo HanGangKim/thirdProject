@@ -13,4 +13,6 @@ public interface ExhibitionDAO {
 	public ExhibitionVO exhibitionList(ExhibitionVO vo);
 	
 	public List<ExhibitionVO> exhibitionAll(ExhibitionVO vo);
+	
+	public List<ExhibitionVO> comingExhibition(ExhibitionVO vo);
 }

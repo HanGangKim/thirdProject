@@ -14,4 +14,18 @@
 		SELECT *
 		FROM EXHIBITION_INFO
 	</select>
+	
+	<select id="comingExhibition" parameterType="exhibition" resultType="exhibition">
+		
+		SELECT *
+		
+		FROM (
+			SELECT *
+			FROM EXHIBITION_INFO
+			WHERE EXHIBITION_START_DATE > SYSDATE
+			ORDER BY EXHIBITION_START_DATE
+			)
+		WHERE <![CDATA[ ROWNUM <= 8]]>
+		ORDER BY EXHIBITION_START_DATE
+	</select>
 </mapper>
