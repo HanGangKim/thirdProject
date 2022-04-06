@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>관리자 - 업체 승인 페이지</title>
 </head>
 <body>
-	맵핑 테스트 페이지 접속
+
 </body>
 </html>

@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>관리자 - 전시회 승인 페이지</title>
 </head>
 <body>
-	비회원 메인페이지 예정
-	리다이렉트로 컨트롤러 갔다가 인덱스로 바로 진입
+
 </body>
 </html>
