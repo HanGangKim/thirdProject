@@ -30,7 +30,14 @@
 <!--Choices css-->
 <link rel="stylesheet"
 	href="/resources/vendor/node_modules/css/choices.min.css">
+<!-- <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css'
+	rel='stylesheet' type='text/css'>
 
+<style>
+* {
+	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+</style> -->
 <title>Writing A Review</title>
 
 <style>

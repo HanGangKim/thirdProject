@@ -14,13 +14,20 @@ Object id = session.getAttribute("userId");
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!-- <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css'
+	rel='stylesheet' type='text/css'>
+
+<style>
+* {
+	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+</style> -->
 </head>
 <body>
 
 	로그인 성공
 	<hr>
-	${sessionScope.userId}
-	${sessionScope.userName}
+	${sessionScope.userId} ${sessionScope.userName}
 	<br>
 
 </body>

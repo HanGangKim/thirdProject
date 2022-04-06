@@ -27,6 +27,15 @@
 <!-- Main CSS -->
 <link href="/resources/css/theme.min.css" rel="stylesheet">
 
+<!-- <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css'
+	rel='stylesheet' type='text/css'>
+
+<style>
+* {
+	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+</style>
+ -->
 <title>Assan 4</title>
 </head>
 
@@ -110,34 +119,33 @@
 							details...</p>
 						<div class="position-relative">
 							<div>
-								
 
-									<!--input-with-icon-->
-									<div class="input-icon-group mb-3">
-										<span class="input-icon"> <i class="bx bx-user"></i>
-										</span> <input type="text" class="form-control" required
-											id="signUpName" autofocus placeholder="Your full name">
-									</div>
-									
 
-									<div class="input-icon-group mb-3">
-										<span class="input-icon"> <i class="bx bx-envelope"></i>
-										</span>
-										 <select autocomplete="false" id="profile_gender"
-											class="form-control" data-choices='{"searchEnabled":false}'>
-											<Option>Male</Option>
-											<Option selected>Female</Option>
-											<Option>Preffer not to say</Option>
-										</select>
-									</div>
-									<!--  <label for="gender">gender
+								<!--input-with-icon-->
+								<div class="input-icon-group mb-3">
+									<span class="input-icon"> <i class="bx bx-user"></i>
+									</span> <input type="text" class="form-control" required
+										id="signUpName" autofocus placeholder="Your full name">
+								</div>
+
+
+								<div class="input-icon-group mb-3">
+									<span class="input-icon"> <i class="bx bx-envelope"></i>
+									</span> <select autocomplete="false" id="profile_gender"
+										class="form-control" data-choices='{"searchEnabled":false}'>
+										<Option>Male</Option>
+										<Option selected>Female</Option>
+										<Option>Preffer not to say</Option>
+									</select>
+								</div>
+								<!--  <label for="gender">gender
                                             </label> -->
 
-									<!--  <select class="gendernum">
+								<!--  <select class="gendernum">
                                             <option value="man">man</option>
                                             <option value="women">women</option>
                                             </select> -->
-									<!-- <input type="radio" name="gender" required id="signUpgender" 
+								<!-- <input type="radio" name="gender" required id="signUpgender" 
                                                 value="man">man
                                         	<input type="radio" name="gender" required id="signUpgender"
                                         		value="women">women  -->
@@ -173,15 +181,14 @@
 									autofocus placeholder="Your age">
 							</div>
 							<div class="input-icon-group mb-3">
-										<span class="input-icon"> <i class="bx bx-envelope"></i>
-										</span>
-										 <select autocomplete="false" id="flag"
-											class="form-control" data-choices='{"searchEnabled":false}'>
-											<Option>C</Option>
-											<Option selected>M</Option>
-											
-										</select>
-									</div>
+								<span class="input-icon"> <i class="bx bx-envelope"></i>
+								</span> <select autocomplete="false" id="flag" class="form-control"
+									data-choices='{"searchEnabled":false}'>
+									<Option>C</Option>
+									<Option selected>M</Option>
+
+								</select>
+							</div>
 							<!--input-with-icon-->
 							<div class="input-icon-group mb-3">
 								<span class="input-icon"> <i class="bx bx-lock-open"></i>
@@ -209,7 +216,7 @@
 							<div class="d-grid">
 								<button class="btn btn-dark" type="submit">Sign Up</button>
 							</div>
-							
+
 
 							<!---->
 							<p class="pt-3 small text-muted">
@@ -225,13 +232,13 @@
 							</div>
 
 
-							
+
 						</div>
 					</div>
 				</div>
 			</div>
-			
-			
+
+
 		</section>
 	</main>
 

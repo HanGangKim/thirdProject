@@ -9,7 +9,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="/resources/img/favicon.ico" type="image/ico">
 <!--Box Icons-->
-<link rel="stylesheet" href="/resources/fonts/boxicons/css/boxicons.min.css">
+<link rel="stylesheet"
+	href="/resources/fonts/boxicons/css/boxicons.min.css">
 
 <!--AOS Animations-->
 <link rel="stylesheet" href="/resources/vendor/node_modules/css/aos.css">
@@ -30,7 +31,14 @@
 <link rel="stylesheet"
 	href="/resources/vendor/node_modules/css/flatpickr.min.css">
 
+<!-- <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css'
+	rel='stylesheet' type='text/css'>
 
+<style>
+* {
+	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+</style> -->
 <title>Assan 4</title>
 </head>
 
@@ -64,7 +72,8 @@
                 </svg>
 
 				<!--Image-->
-				<img src="/resources/img/backgrounds/bg3.jpg" alt="" class="bg-image">
+				<img src="/resources/img/backgrounds/bg3.jpg" alt=""
+					class="bg-image">
 			</div>
 			<div class="container z-index-2 position-relative">
 				<div class="row align-items-center vh-100">
@@ -72,8 +81,9 @@
 						class="col-lg-4 pt-3 pb-4 pb-lg-5 pt-lg-5 me-auto col-md-6 z-index-2">
 						<div>
 							<!--로고-->
-							<a href="demo-shop.html"> <img src="/resources/img/logo/logo.svg"
-								alt="" class="width-8x d-block mb-5">
+							<a href="demo-shop.html"> <img
+								src="/resources/img/logo/logo.svg" alt=""
+								class="width-8x d-block mb-5">
 							</a>
 							<!--제목-->
 							<h2 class="mb-1 display-6">
@@ -121,7 +131,7 @@
 	<!-- scripts -->
 	<script src="/resources/js/theme.bundle.js"></script>
 	<script src="/resources/vendor/node_modules/js/flatpickr.min.js"></script>
-	
+
 </body>
 
 </html>

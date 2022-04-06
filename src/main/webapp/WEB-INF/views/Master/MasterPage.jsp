@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
-
+	
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -23,7 +23,14 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Source+Serif+Pro:ital@0;1&display=swap" rel="stylesheet">
         <!-- Main CSS -->
         <link href="/resources/css/theme.min.css" rel="stylesheet">
-
+        
+        <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+		
+		<style>
+			* { font-family: 'Spoqa Han Sans Neo', 'sans-serif'; }
+	
+		</style>
+		
         <title>Assan 4</title>
     </head>
 
@@ -68,6 +75,7 @@
                             <a href="#!" class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2">
                                 <img src="/resources/img/projects/1.jpg" alt="" class="w-100 img-zoom">
                                 <div class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
+                                <!-- <a href = "master/MasterPageList1.do"> -->
                                     <div class="card-hover-2-header w-100">
                                         <div class="card-hover-2-title">
                                             <h5 class="fs-4 mb-2">업체승인</h5>
@@ -82,8 +90,9 @@
                                             <span>Next step</span>
                                         </span>
                                     </div>
-                                </div>
-                            </a>
+                                     <!-- </a>  -->
+                                </div> 
+						</a>
                         </div>
                         <div class="col-md-6 mb-4 motion grid-item">
                             <a href="#!" class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2">
