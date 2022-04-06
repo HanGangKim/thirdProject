@@ -23,6 +23,15 @@
 	rel="stylesheet">
 <!-- Main CSS -->
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
+<!-- <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css'
+	rel='stylesheet' type='text/css'>
+
+<style>
+* {
+	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+</style> -->
+
 <title>My Ticket</title>
 </head>
 

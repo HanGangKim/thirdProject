@@ -3,39 +3,50 @@
 <!doctype html>
 <html lang="en">
 
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="/resources/img/favicon.ico" type="image/ico">
-        <!--Box Icons-->
-        <link rel="stylesheet" href="/resources/fonts/boxicons/css/boxicons.min.css">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/resources/img/favicon.ico" type="image/ico">
+<!--Box Icons-->
+<link rel="stylesheet"
+	href="/resources/fonts/boxicons/css/boxicons.min.css">
 
-        <!--AOS Animations-->
-        <link rel="stylesheet" href="/resources/vendor/node_modules/css/aos.css">
+<!--AOS Animations-->
+<link rel="stylesheet" href="/resources/vendor/node_modules/css/aos.css">
 
-        <!--Iconsmind Icons-->
-        <link rel="stylesheet" href="/resources/fonts/iconsmind/iconsmind.css">
+<!--Iconsmind Icons-->
+<link rel="stylesheet" href="/resources/fonts/iconsmind/iconsmind.css">
 
-        <!--Google fonts-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Source+Serif+Pro:ital@0;1&display=swap" rel="stylesheet">
-        <!-- Main CSS -->
-        <link href="/resources/css/theme.min.css" rel="stylesheet">
+<!--Google fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Source+Serif+Pro:ital@0;1&display=swap"
+	rel="stylesheet">
+<!-- Main CSS -->
+<link href="/resources/css/theme.min.css" rel="stylesheet">
 
-        <title>Assan 4</title>
-    </head>
+<!-- <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css'
+	rel='stylesheet' type='text/css'>
 
-    <body>
-         <!--Preloader Spinner-->
-         <div class="spinner-loader bg-tint-primary">
-            <div class="spinner-border text-primary" role="status">
-            </div>
-            <span class="small d-block ms-2">Loading...</span>
-        </div>
-        <!--Header Start-->
- <header class="z-index-fixed">
+<style>
+* {
+	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+</style> -->
+
+<title>Assan 4</title>
+</head>
+
+<body>
+	<!--Preloader Spinner-->
+	<div class="spinner-loader bg-tint-primary">
+		<div class="spinner-border text-primary" role="status"></div>
+		<span class="small d-block ms-2">Loading...</span>
+	</div>
+	<!--Header Start-->
+	<header class="z-index-fixed">
 		<!--네비 시작-->
 		<nav class="navbar navbar-expand-lg navbar-light bg-white">
 			<div class="container position-relative">
@@ -80,10 +91,9 @@
 						</li>
 						<!--마이페이지-->
 						<li class="nav-item dropdown me-lg-3"><a
-							class="nav-link active"
-							data-bs-auto-close="outside" href="#" role="button"
-							 aria-haspopup="true"
-							aria-expanded="false">Sign Up </a> 					
+							class="nav-link active" data-bs-auto-close="outside" href="#"
+							role="button" aria-haspopup="true" aria-expanded="false">Sign
+								Up </a>
 						<li class="nav-item"><a class="nav-link"
 							href="demo-shop.html"> Sign In </a></li>
 					</ul>
@@ -91,143 +101,123 @@
 			</div>
 		</nav>
 	</header>
-        <!--Main content-->
-        <main>
-            <!--page-hero-->
-            <section class="bg-white position-relative">
-                <div class="bg-pattern text-light w-100 h-100 start-0 top-0 position-absolute"></div>
-                <div class="bg-gradientwhite flip-y w-50 h-100 start-50 top-0 translate-middle-x position-absolute"></div>
-                <div class="container pt-11 pt-lg-14 pb-9 pb-lg-11 position-relative z-index-1">
-                    <div class="row align-items-center justify-content-center">
-                        <div class=" col-xl-4 col-lg-5 col-md-6 col-sm-8 z-index-2">
+	<!--Main content-->
+	<main>
+		<!--page-hero-->
+		<section class="bg-white position-relative">
+			<div
+				class="bg-pattern text-light w-100 h-100 start-0 top-0 position-absolute"></div>
+			<div
+				class="bg-gradientwhite flip-y w-50 h-100 start-50 top-0 translate-middle-x position-absolute"></div>
+			<div
+				class="container pt-11 pt-lg-14 pb-9 pb-lg-11 position-relative z-index-1">
+				<div class="row align-items-center justify-content-center">
+					<div class=" col-xl-4 col-lg-5 col-md-6 col-sm-8 z-index-2">
 
-                            <h2 class="mb-1 display-6">
-                                Hello!
-                            </h2>
-                            <p class="mb-4 text-muted">
-                                To get started, Please signup with details...
-                            </p>
-                            <div class="position-relative">
-                                <div>
-                                    <form class="needs-validation" novalidate>
+						<h2 class="mb-1 display-6">Hello!</h2>
+						<p class="mb-4 text-muted">To get started, Please signup with
+							details...</p>
+						<div class="position-relative">
+							<div>
+								<form class="needs-validation" novalidate>
 
-                                        <!--input-with-icon-->
-                                        <div class="input-icon-group mb-3">
-                                            <span class="input-icon">
-                                              <i class="bx bx-user"></i>
-                                            </span>
-                                            <input type="text" class="form-control" required id="signUpName" autofocus
-                                                placeholder="Your company name">
-                                        </div>
+									<!--input-with-icon-->
+									<div class="input-icon-group mb-3">
+										<span class="input-icon"> <i class="bx bx-user"></i>
+										</span> <input type="text" class="form-control" required
+											id="signUpName" autofocus placeholder="Your company name">
+									</div>
 
-                                        <div class="input-icon-group mb-3">
-                                          <span class="input-icon">
-                                              <i class="bx bx-envelope"></i>
-                                          </span>
-                                          
-                                            <input type="password" class="form-control" required id="signUpid"
-                                                placeholder="Enter id">
-                                        </div>
-                                          </span>
-                                          <div class="input-icon-group mb-3">
-                                            <span class="input-icon">
-                                              <i class="bx bx-envelope"></i>
-                                          </span>
-                                          <input type="email" class="form-control" required id="signUpPH"
-                                              placeholder="Your company phone number">
-                                            </div>
+									<div class="input-icon-group mb-3">
+										<span class="input-icon"> <i class="bx bx-envelope"></i>
+										</span> <input type="password" class="form-control" required
+											id="signUpid" placeholder="Enter id">
+									</div>
+									</span>
+									<div class="input-icon-group mb-3">
+										<span class="input-icon"> <i class="bx bx-envelope"></i>
+										</span> <input type="email" class="form-control" required
+											id="signUpPH" placeholder="Your company phone number">
+									</div>
 
-                                            <div class="input-icon-group mb-3">
-                                              <span class="input-icon">
-                                                  <i class="bx bx-envelope"></i>
-                                              </span>
-                                              </span>
-                                              <input type="email" class="form-control" required id="signUpCRN"
-                                                  placeholder="Your corporate registration number">
-                                         </div>
-                                        
-                                        <!--input-with-icon-->
-                                        <div class="input-icon-group mb-3">
-                                            <span class="input-icon">
-                                                <i class="bx bx-envelope"></i>
-                                            </span>
-                                            </span>
-                                            <input type="email" class="form-control" required id="signUpMail"
-                                                placeholder="Your email address">
-                                        </div>
-                                        <div class="input-icon-group mb-3">
-                                          <span class="input-icon"> <i class="bx bx-envelope"></i>
-                                          </span>
-                                           <select autocomplete="false" id="flag"
-                                            class="form-control" data-choices='{"searchEnabled":false}'>
-                                            <Option>C</Option>
-                                            <Option selected>M</Option>
-                                            
-                                          </select>
-                                        </div>
-                                        <!--input-with-icon-->
-                                        <div class="input-icon-group mb-3">
-                                            <span class="input-icon">
-                                                <i class="bx bx-lock-open"></i>
-                                            </span>
-                                            </span>
-                                            <input type="password" class="form-control" required id="signUpPassword"
-                                                placeholder="Enter password">
-                                        </div>
-                                        <!--input-with-icon-->
-                                        <div class="input-icon-group mb-3">
-                                            <span class="input-icon">
-                                                <i class="bx bx-lock-open"></i>
-                                            </span>
-                                            </span>
-                                            <input type="password" class="form-control" required id="signUpConfirmPassword"
-                                                placeholder="Confirm password">
-                                        </div>
-                                        <!--Checkbox-->
-                                        <div class="mb-3 d-flex justify-content-between">
-                                            <div class="form-check">
-                                                <input class="form-check-input" required type="checkbox" value=""
-                                                    id="flexCheckDefault">
-                                                <label class="form-check-label small text-muted" for="flexCheckDefault">
-                                                    i agree to <a href="#!" class="fw-semibold link-decoration">Terms & conditions</a>
-                                                </label>
-                                            </div>
-                                        </div>
+									<div class="input-icon-group mb-3">
+										<span class="input-icon"> <i class="bx bx-envelope"></i>
+										</span> </span> <input type="email" class="form-control" required
+											id="signUpCRN"
+											placeholder="Your corporate registration number">
+									</div>
 
-                                        <div class="d-grid">
-                                            <button class="btn btn-dark" type="submit">
-                                                Sign Up
-                                            </button>
-                                        </div>
-                                    </form>
+									<!--input-with-icon-->
+									<div class="input-icon-group mb-3">
+										<span class="input-icon"> <i class="bx bx-envelope"></i>
+										</span> </span> <input type="email" class="form-control" required
+											id="signUpMail" placeholder="Your email address">
+									</div>
+									<div class="input-icon-group mb-3">
+										<span class="input-icon"> <i class="bx bx-envelope"></i>
+										</span> <select autocomplete="false" id="flag" class="form-control"
+											data-choices='{"searchEnabled":false}'>
+											<Option>C</Option>
+											<Option selected>M</Option>
 
-                                    <!---->
-                                    <p class="pt-3 small text-muted">
-                                        Already have an account? <a href="page-account-signin.html"
-                                            class="ms-2 text-dark fw-semibold link-decoration">Sign in</a>
-                                    </p>
-                                    <!--Divider-->
-                                    <div class="d-flex align-items-center py-3">
-                                        <span class="flex-grow-1 border-bottom pt-1"></span>
-                                        <!-- <span
+										</select>
+									</div>
+									<!--input-with-icon-->
+									<div class="input-icon-group mb-3">
+										<span class="input-icon"> <i class="bx bx-lock-open"></i>
+										</span> </span> <input type="password" class="form-control" required
+											id="signUpPassword" placeholder="Enter password">
+									</div>
+									<!--input-with-icon-->
+									<div class="input-icon-group mb-3">
+										<span class="input-icon"> <i class="bx bx-lock-open"></i>
+										</span> </span> <input type="password" class="form-control" required
+											id="signUpConfirmPassword" placeholder="Confirm password">
+									</div>
+									<!--Checkbox-->
+									<div class="mb-3 d-flex justify-content-between">
+										<div class="form-check">
+											<input class="form-check-input" required type="checkbox"
+												value="" id="flexCheckDefault"> <label
+												class="form-check-label small text-muted"
+												for="flexCheckDefault"> i agree to <a href="#!"
+												class="fw-semibold link-decoration">Terms & conditions</a>
+											</label>
+										</div>
+									</div>
+
+									<div class="d-grid">
+										<button class="btn btn-dark" type="submit">Sign Up</button>
+									</div>
+								</form>
+
+								<!---->
+								<p class="pt-3 small text-muted">
+									Already have an account? <a href="page-account-signin.html"
+										class="ms-2 text-dark fw-semibold link-decoration">Sign in</a>
+								</p>
+								<!--Divider-->
+								<div class="d-flex align-items-center py-3">
+									<span class="flex-grow-1 border-bottom pt-1"></span>
+									<!-- <span
                                             class="d-inline-flex flex-center lh-1 width-2x height-2x rounded-circle bg-white text-mono">or</span> -->
-                                        <span class="flex-grow-1 border-bottom pt-1"></span>
-                                    </div>
-                                    
-                                            
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
+									<span class="flex-grow-1 border-bottom pt-1"></span>
+								</div>
 
-        
-        <!--Footer start-->
-        <footer id="footer"
+
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</section>
+	</main>
+
+
+	<!--Footer start-->
+	<footer id="footer"
 		class="overflow-hidden position-relative bg-dark text-white">
 		<!--Divider-->
 		<svg class="position-absolute start-0 bottom-0 text-gray-800 h-40"
@@ -281,18 +271,16 @@
 	</footer>
 
 
-        <!-- begin Back to Top button -->
-        <a href="#" class="toTop">
-            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 9' class="align-middle flip-y" width="13"
-                height="9">
+	<!-- begin Back to Top button -->
+	<a href="#" class="toTop"> <svg xmlns='http://www.w3.org/2000/svg'
+			viewBox='0 0 13 9' class="align-middle flip-y" width="13" height="9">
                 <path fill='currentColor'
-                    d="M12.25 2.30062L10.8988 0.949371L6.5 5.33854L2.10125 0.949371L0.75 2.30062L6.5 8.05062L12.25 2.30062Z">
+				d="M12.25 2.30062L10.8988 0.949371L6.5 5.33854L2.10125 0.949371L0.75 2.30062L6.5 8.05062L12.25 2.30062Z">
                 </path>
             </svg>
-        </a>
-        <!-- scripts -->
-        <script src="/resources/js/theme.bundle.js"></script>
-    </body>
+	</a>
+	<!-- scripts -->
+	<script src="/resources/js/theme.bundle.js"></script>
+</body>
 
 </html>
-	

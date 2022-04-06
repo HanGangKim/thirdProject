@@ -28,6 +28,15 @@
 <!-- Main CSS -->
 <link href="/resources/css/theme.min.css" rel="stylesheet">
 
+<!-- <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css'
+	rel='stylesheet' type='text/css'>
+
+<style>
+* {
+	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+</style> -->
+
 <title>Assan 4</title>
 </head>
 
@@ -38,8 +47,8 @@
 		<span class="small d-block ms-2">Loading...</span>
 	</div>
 	<!--Header Start-->
-<!--Header Start-->
-<header class="z-index-fixed">
+	<!--Header Start-->
+	<header class="z-index-fixed">
 		<!--네비 시작-->
 		<nav class="navbar navbar-expand-lg navbar-light bg-white">
 			<div class="container position-relative">
@@ -84,10 +93,9 @@
 						</li>
 						<!--마이페이지-->
 						<li class="nav-item dropdown me-lg-3"><a
-							class="nav-link active"
-							data-bs-auto-close="outside" href="#" role="button"
-							 aria-haspopup="true"
-							aria-expanded="false">Sign Up </a> 					
+							class="nav-link active" data-bs-auto-close="outside" href="#"
+							role="button" aria-haspopup="true" aria-expanded="false">Sign
+								Up </a>
 						<li class="nav-item"><a class="nav-link"
 							href="demo-shop.html"> Sign In </a></li>
 					</ul>

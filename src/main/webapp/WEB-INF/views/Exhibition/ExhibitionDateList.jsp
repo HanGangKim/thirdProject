@@ -15,7 +15,8 @@
 <link rel="stylesheet"
 	href="/resources/vendor/node_modules/css/nouislider.min.css">
 <!--Icons-->
-<link href="/resources/fonts/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="/resources/fonts/boxicons/css/boxicons.min.css"
+	rel="stylesheet">
 <!--Google fonts-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,6 +45,15 @@
 	justify-content: space-between;
 }
 </style>
+
+<!-- <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css'
+	rel='stylesheet' type='text/css'>
+
+<style>
+* {
+	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+</style> -->
 <title>Exhibition</title>
 </head>
 
@@ -472,7 +482,8 @@
 		<div class="container pt-9 pt-lg-11 pb-7 position-relative z-index-1">
 			<div class="row mb-7">
 				<div class="col-md-4 mb-5 mb-md-0 text-md-center order-md-2">
-					<a href="index.html"><img src="/resources/img/logo/logo-white.svg"
+					<a href="index.html"><img
+						src="/resources/img/logo/logo-white.svg"
 						class="width-10x d-block h-auto mx-md-auto" alt=""></a>
 				</div>
 				<div class="col-md-4 order-md-1 mb-3 mb-md-0">
@@ -499,9 +510,8 @@
 				</div>
 				<div class="col-md-4 order-md-1 small">
 					<span class="d-block my-2 lh-sm text-muted">© Copyright <script>
-              document.write(new Date().getFullYear())
-
-            </script>. Assan
+						document.write(new Date().getFullYear())
+					</script>. Assan
 					</span>
 				</div>
 			</div>
@@ -525,22 +535,22 @@
 	<!-- scripts -->
 	<script src="/resources/js/theme.bundle.js"></script>
 	<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
-	
+
 
 	<!--Select scripts-->
 	<script src="/resources/vendor/node_modules/js/choices.min.js"></script>
-	
+
 
 	<!--Custom scrollbar-->
 	<script src="/resources/vendor/node_modules/js/simplebar.min.js"></script>
 	<!--Pricing range-->
 	<script src="/resources/vendor/node_modules/js/nouislider.min.js"></script>
-	
+
 
 	<!--App calendar Plugin-->
 	<script
 		src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.js"></script>
-	
+
 </body>
 
 </html>

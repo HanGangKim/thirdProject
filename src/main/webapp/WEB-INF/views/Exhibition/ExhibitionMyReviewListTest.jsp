@@ -5,6 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!-- <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css'
+	rel='stylesheet' type='text/css'>
+
+<style>
+* {
+	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+</style> -->
 </head>
 <body>
 	<h1>글 상세</h1>

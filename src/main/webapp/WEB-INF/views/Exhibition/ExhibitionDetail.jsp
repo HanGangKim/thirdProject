@@ -39,6 +39,15 @@
 	color: gray;
 }
 </style>
+
+<!-- <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css'
+	rel='stylesheet' type='text/css'>
+
+<style>
+* {
+	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+</style> -->
 <title>Assan Shop</title>
 </head>
 
@@ -255,9 +264,9 @@
 			<div class="container py-9 position-relative">
 				<div class="row justify-content-between">
 					<div class="col-lg-6 col-sm-7 mx-auto mx-lg-0 mb-5 mb-lg-0">
-						<img src="/resources/img/mainposter/14. 기안84 제1회 개인전.PNG" alt="" style="width:1500px"
-							class="img-fluid mb-3"> 
-							<img src="/resources/img/exam/22.jpg" alt="" class="img-fluid mb-3">
+						<img src="/resources/img/mainposter/14. 기안84 제1회 개인전.PNG" alt=""
+							style="width: 1500px" class="img-fluid mb-3"> <img
+							src="/resources/img/exam/22.jpg" alt="" class="img-fluid mb-3">
 						<!-- <img src="/resources/img/shop/single3.jpg" alt="" class="img-fluid"> -->
 					</div>
 					<!--/.col-->
@@ -415,8 +424,8 @@
 				</div>
 			</div>
 		</section>
-		
-		
+
+
 	</main>
 
 	<!-- <footer class="position-relative bg-dark text-white overflow-hidden">
@@ -548,8 +557,8 @@
 		</div>
 	</footer> -->
 	<!--./footer-->
-	
-    <footer id="footer"
+
+	<footer id="footer"
 		class="overflow-hidden position-relative bg-dark text-white">
 		<!--Divider-->
 		<svg class="position-absolute start-0 bottom-0 text-gray-800 h-40"
@@ -566,7 +575,8 @@
 			class="container pt-9 pt-lg-11 pb-5 pb-lg-7 position-relative z-index-1">
 			<div class="row mb-5 mb-lg-7">
 				<div class="col-md-4 mb-5 mb-md-0 text-md-center order-md-2">
-					<a href="index.html"><img src="/resources/img/logo/logo-white.svg"
+					<a href="index.html"><img
+						src="/resources/img/logo/logo-white.svg"
 						class="width-10x d-block h-auto mx-md-auto" alt=""></a>
 				</div>
 				<div class="col-md-4 order-md-1 mb-3 mb-md-0">
@@ -594,9 +604,8 @@
 				<div class="col-md-4 order-md-1 small">
 					<span class="d-block my-2 lh-sm text-muted">&copy; Copyright
 						<script>
-                            document.write(new Date().getFullYear())
-
-                        </script>. Assan
+							document.write(new Date().getFullYear())
+						</script>. Assan
 					</span>
 				</div>
 			</div>
@@ -606,7 +615,7 @@
 
 
 
-	
+
 
 	<!-- :Back to top -->
 	<a href="#top"
