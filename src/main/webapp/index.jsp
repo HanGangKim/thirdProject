@@ -64,6 +64,8 @@
 	<hr>
 	
 	<h1>컨트롤러 테스트 전용</h1>
+	<a href="exhibition/ExhibitionAllTest.do">전시회 조회</a>
+	<hr>
 	<form action="/exhibition/ExhibitionTest.do">
 	<button type="submit">전시회 1줄 조회</button>
 	</form>

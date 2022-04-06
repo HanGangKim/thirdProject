@@ -44,5 +44,15 @@ public class ExhibitionDAOImpl implements ExhibitionDAO{
 		System.out.println("===============");
 		return  mybatis.selectList("exhibitionMapper.exhibitionAll",vo);
 	}
+	
+	@Override
+	public List<ExhibitionVO> comingExhibition(ExhibitionVO vo) {
+		// TODO Auto-generated method stub
+		System.out.println("===============");
+		System.out.println("exhibition 올 다오 호출");
+		
+		System.out.println("===============");
+		return  mybatis.selectList("exhibitionMapper.comingExhibition",vo);
+	}
 
 }

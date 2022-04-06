@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!doctype html>
 <html lang="en">
 
@@ -7,13 +9,13 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="assets/img/favicon.ico" type="image/ico">
+<link rel="icon" href="/resources/img/favicon.ico" type="image/ico">
 
 <!--swiper-->
 <link rel="stylesheet"
-	href="assets/vendor/node_modules/css/swiper-bundle.min.css">
+	href="/resources/vendor/node_modules/css/swiper-bundle.min.css">
 <!--Icons-->
-<link href="assets/fonts/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="/resources/fonts/boxicons/css/boxicons.min.css" rel="stylesheet">
 <!--Google fonts-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,9 +23,9 @@
 	href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap"
 	rel="stylesheet">
 <!-- Main CSS -->
-<link href="assets/css/theme-shop.min.css" rel="stylesheet">
+<link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
-<title>Assan 4</title>
+<title>Fiennale</title>
 </head>
 
 <body>
@@ -254,7 +256,7 @@
 			<ul class="list-unstyled no-animation mb-0">
 				<li class="d-flex py-3 border-bottom">
 					<div class="me-1">
-						<a href="#!"><img src="assets/img/shop/backpack2.jpg"
+						<a href="#!"><img src="/resources/img/shop/backpack2.jpg"
 							class="height-10x hover-lift hover-shadow w-auto" alt=""></a>
 					</div>
 					<div class="flex-grow-1 px-4 mb-3">
@@ -271,7 +273,7 @@
 				</li>
 				<li class="d-flex py-3">
 					<div class="me-1">
-						<a href="#!"><img src="assets/img/shop/jacket1.jpg"
+						<a href="#!"><img src="/resources/img/shop/jacket1.jpg"
 							class="height-10x hover-lift hover-shadow w-auto" alt=""></a>
 					</div>
 					<div class="flex-grow-1 px-4 mb-3">
@@ -314,7 +316,7 @@
 				<div class="swiper-wrapper">
 					<!--:Slide-->
 					<div class="swiper-slide"
-						style="background-image: url('assets/img/shop/banners/03.jpg')">
+						style="background-image: url('/resources/img/shop/banners/03.jpg')">
 						<div
 							class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
 						<!--:container-->
@@ -342,7 +344,7 @@
 					</div>
 					<!--:Slide-->
 					<div class="swiper-slide"
-						style="background-image: url('assets/img/shop/banners/06.jpg')">
+						style="background-image: url('/resources/img/shop/banners/06.jpg')">
 						<div
 							class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
 						<!--:container-->
@@ -370,7 +372,7 @@
 					</div>
 					<!--:Slide-->
 					<div class="swiper-slide"
-						style="background-image: url('assets/img/shop/banners/07.jpg')">
+						style="background-image: url('/resources/img/shop/banners/07.jpg')">
 						<div
 							class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
 						<!--:container-->
@@ -443,7 +445,7 @@
 						<div class="card border-0 card-hover overflow-hidden">
 							<div class="overflow-hidden position-relative">
 
-								<!-- <img src="assets/img/shop/banners/women.jpg" class="img-fluid img-zoom" alt=""> -->
+								<!-- <img src="/resources/img/shop/banners/women.jpg" class="img-fluid img-zoom" alt=""> -->
 								<div
 									style="border: 10px solid gray; height: 300px; background-color: gray;"></div>
 
@@ -466,7 +468,7 @@
 						<div class="card border-0 card-hover overflow-hidden">
 							<div class="overflow-hidden position-relative">
 
-								<!-- <img src="assets/img/shop/banners/men.jpg" class="img-fluid img-zoom" alt=""> -->
+								<!-- <img src="/resources/img/shop/banners/men.jpg" class="img-fluid img-zoom" alt=""> -->
 								<div
 									style="border: 10px solid gray; height: 300px; background-color: gray;"></div>
 
@@ -494,26 +496,26 @@
 			<div class="container py-9 py-lg-11">
 				<div class="row align-items-end">
 					<div class="col-md-8 mx-auto text-center">
-						<h2 class="mb-5 display-4">Menu01</h2>
+						<h2 class="mb-5 display-4">다가오는 전시회 top8</h2>
 					</div>
 				</div>
 				<div class="row">
+					<c:forEach items="${vo}" var="vo">
 					<div class="col-md-6 col-lg-3 mb-4">
 						<!--Card-product-->
 						<div
 							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0">
 							<div class="card-product-header px-5 p-4 d-block overflow-hidden">
 								<!--Product image-->
-								<a href="#!"> <img src="assets/img/shop/products/01.jpg"
+								<a href="#!"> <img src="${vo.exhibition_image}"
 									class="img-fluid" alt="Product">
 								</a>
 							</div>
 							<div class="card-product-body px-4 pb-4 text-center">
-								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회
-									이름</a>
+								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">${vo.exhibition_title}</a>
 								<div class="card-product-body-ovelray">
 									<!--Price-->
-									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span>
+									<span class="card-product-price"> <span>${vo.exhibition_start_date}</span> ~ <span>${vo.exhibition_end_date}</span>
 									</span>
 									<!--Action-->
 									<span class="card-product-view-btn"> <a href="#!"
@@ -522,178 +524,180 @@
 								</div>
 							</div>
 						</div>
-						<!--/Card product end-->
-					</div>
-					<div class="col-md-6 col-lg-3 mb-4">
-						<!--Card-product-->
-						<div
-							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0">
-							<div class="card-product-header px-5 p-4 d-block overflow-hidden">
-								<a href="#!"> <img src="assets/img/shop/products/02.jpg"
-									class="img-fluid" alt="Product">
-								</a>
-							</div>
-							<div class="card-product-body px-4 pb-4 text-center">
-								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회
-									이름</a>
-								<div class="card-product-body-ovelray">
-									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span>
-									</span> <span class="card-product-view-btn"> <a href="#!"
-										class="link-underline mb-1 fw-semibold text-dark">상세보기</a>
-									</span>
-								</div>
-							</div>
-						</div>
-						<!--/Card product end-->
-					</div>
-					<div class="col-md-6 col-lg-3 mb-4">
-						<!--Card-product-->
-						<div
-							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0">
-							<div
-								class="card-product-header px-5 p-4 d-block overflow-hidden  position-relative">
-								<a href="#!"> <img src="assets/img/shop/products/03.jpg"
-									class="img-fluid" alt="Product">
-								</a>
+						
+<!-- 						/Card product end -->
+<!-- 					</div> -->
+<!-- 					<div class="col-md-6 col-lg-3 mb-4"> -->
+<!-- 						Card-product -->
+<!-- 						<div -->
+<!-- 							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0"> -->
+<!-- 							<div class="card-product-header px-5 p-4 d-block overflow-hidden"> -->
+<!-- 								<a href="#!"> <img src="/resources/img/shop/products/02.jpg" -->
+<!-- 									class="img-fluid" alt="Product"> -->
+<!-- 								</a> -->
+<!-- 							</div> -->
+<!-- 							<div class="card-product-body px-4 pb-4 text-center"> -->
+<!-- 								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회 -->
+<!-- 									이름</a> -->
+<!-- 								<div class="card-product-body-ovelray"> -->
+<!-- 									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span> -->
+<!-- 									</span> <span class="card-product-view-btn"> <a href="#!" -->
+<!-- 										class="link-underline mb-1 fw-semibold text-dark">상세보기</a> -->
+<!-- 									</span> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						/Card product end -->
+<!-- 					</div> -->
+<!-- 					<div class="col-md-6 col-lg-3 mb-4"> -->
+<!-- 						Card-product -->
+<!-- 						<div -->
+<!-- 							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0"> -->
+<!-- 							<div -->
+<!-- 								class="card-product-header px-5 p-4 d-block overflow-hidden  position-relative"> -->
+<!-- 								<a href="#!"> <img src="/resources/img/shop/products/03.jpg" -->
+<!-- 									class="img-fluid" alt="Product"> -->
+<!-- 								</a> -->
 
-								<!--Product Label-->
-								<span
-									class="badge rounded-pill bg-primary position-absolute start-0 top-0 mt-4 ms-4">Bestseller</span>
-							</div>
-							<div class="card-product-body px-4 pb-4 text-center">
-								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회
-									이름</a>
-								<div class="card-product-body-ovelray">
-									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span>
-									</span> <span class="card-product-view-btn"> <a href="#!"
-										class="link-underline mb-1 fw-semibold text-dark">상세보기</a>
-									</span>
-								</div>
-							</div>
-						</div>
-						<!--:/card product end-->
-					</div>
-					<div class="col-md-6 col-lg-3 mb-4">
-						<!--Card-product-->
-						<div
-							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0">
-							<div class="card-product-header px-5 p-4 d-block overflow-hidden">
-								<a href="#!"> <img src="assets/img/shop/products/04.jpg"
-									class="img-fluid" alt="Product">
-								</a>
-							</div>
-							<div class="card-product-body px-4 pb-4 text-center">
-								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회
-									이름</a>
-								<div class="card-product-body-ovelray">
-									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span>
-									</span> <span class="card-product-view-btn"> <a href="#!"
-										class="link-underline mb-1 fw-semibold text-dark">상세보기</a>
-									</span>
-								</div>
-							</div>
-						</div>
+<!-- 								Product Label -->
+<!-- 								<span -->
+<!-- 									class="badge rounded-pill bg-primary position-absolute start-0 top-0 mt-4 ms-4">Bestseller</span> -->
+<!-- 							</div> -->
+<!-- 							<div class="card-product-body px-4 pb-4 text-center"> -->
+<!-- 								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회 -->
+<!-- 									이름</a> -->
+<!-- 								<div class="card-product-body-ovelray"> -->
+<!-- 									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span> -->
+<!-- 									</span> <span class="card-product-view-btn"> <a href="#!" -->
+<!-- 										class="link-underline mb-1 fw-semibold text-dark">상세보기</a> -->
+<!-- 									</span> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						:/card product end -->
+<!-- 					</div> -->
+<!-- 					<div class="col-md-6 col-lg-3 mb-4"> -->
+<!-- 						Card-product -->
+<!-- 						<div -->
+<!-- 							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0"> -->
+<!-- 							<div class="card-product-header px-5 p-4 d-block overflow-hidden"> -->
+<!-- 								<a href="#!"> <img src="/resources/img/shop/products/04.jpg" -->
+<!-- 									class="img-fluid" alt="Product"> -->
+<!-- 								</a> -->
+<!-- 							</div> -->
+<!-- 							<div class="card-product-body px-4 pb-4 text-center"> -->
+<!-- 								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회 -->
+<!-- 									이름</a> -->
+<!-- 								<div class="card-product-body-ovelray"> -->
+<!-- 									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span> -->
+<!-- 									</span> <span class="card-product-view-btn"> <a href="#!" -->
+<!-- 										class="link-underline mb-1 fw-semibold text-dark">상세보기</a> -->
+<!-- 									</span> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						/Card product end -->
+<!-- 					</div> -->
+<!-- 					<div class="col-md-6 col-lg-3 mb-4"> -->
+<!-- 						Card-product -->
+<!-- 						<div -->
+<!-- 							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0"> -->
+<!-- 							<div class="card-product-header px-5 p-4 d-block overflow-hidden"> -->
+<!-- 								<a href="#!"> <img src="/resources/img/shop/products/05.jpg" -->
+<!-- 									class="img-fluid" alt="Product"> -->
+<!-- 								</a> -->
+<!-- 							</div> -->
+<!-- 							<div class="card-product-body px-4 pb-4 text-center"> -->
+<!-- 								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회 -->
+<!-- 									이름</a> -->
+<!-- 								<div class="card-product-body-ovelray"> -->
+<!-- 									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span> -->
+<!-- 									</span> <span class="card-product-view-btn"> <a href="#!" -->
+<!-- 										class="link-underline mb-1 fw-semibold text-dark">상세보기</a> -->
+<!-- 									</span> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						/Card product end -->
+<!-- 					</div> -->
+<!-- 					<div class="col-md-6 col-lg-3 mb-4"> -->
+<!-- 						Card-product -->
+<!-- 						<div -->
+<!-- 							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0"> -->
+<!-- 							<div class="card-product-header px-5 p-4 d-block overflow-hidden"> -->
+<!-- 								<a href="#!"> <img src="/resources/img/shop/products/06.jpg" -->
+<!-- 									class="img-fluid" alt="Product"> -->
+<!-- 								</a> -->
+<!-- 								Product Label -->
+<!-- 								<span -->
+<!-- 									class="badge rounded-pill bg-danger position-absolute start-0 top-0 mt-4 ms-4">-30%</span> -->
+<!-- 							</div> -->
+<!-- 							<div class="card-product-body px-4 pb-4 text-center"> -->
+<!-- 								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회 -->
+<!-- 									이름</a> -->
+<!-- 								<div class="card-product-body-ovelray"> -->
+<!-- 									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span> -->
+<!-- 									</span> <span class="card-product-view-btn"> <a href="#!" -->
+<!-- 										class="link-underline mb-1 fw-semibold text-dark">상세보기</a> -->
+<!-- 									</span> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						/Card product end -->
+<!-- 					</div> -->
+<!-- 					<div class="col-md-6 col-lg-3 mb-4"> -->
+<!-- 						Card-product -->
+<!-- 						<div -->
+<!-- 							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0"> -->
+<!-- 							<div class="card-product-header px-5 p-4 d-block overflow-hidden"> -->
+<!-- 								<a href="#!"> <img src="/resources/img/shop/products/07.jpg" -->
+<!-- 									class="img-fluid" alt="Product"> -->
+<!-- 								</a> -->
+<!-- 							</div> -->
+<!-- 							<div class="card-product-body px-4 pb-4 text-center"> -->
+<!-- 								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회 -->
+<!-- 									이름</a> -->
+<!-- 								<div class="card-product-body-ovelray"> -->
+<!-- 									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span> -->
+<!-- 									</span> <span class="card-product-view-btn"> <a href="#!" -->
+<!-- 										class="link-underline mb-1 fw-semibold text-dark">상세보기</a> -->
+<!-- 									</span> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						/Card product end -->
+<!-- 					</div> -->
+<!-- 					<div class="col-md-6 col-lg-3 mb-4"> -->
+<!-- 						Card-product -->
+<!-- 						<div -->
+<!-- 							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0"> -->
+<!-- 							<div class="card-product-header px-5 p-4 d-block overflow-hidden"> -->
+<!-- 								<a href="#!"> <img src="/resources/img/shop/products/08.jpg" -->
+<!-- 									class="img-fluid" alt="Product"> -->
+<!-- 								</a> -->
+<!-- 								Product Label -->
+<!-- 								<span -->
+<!-- 									class="badge rounded-pill bg-success position-absolute start-0 top-0 mt-4 ms-4">New</span> -->
+<!-- 							</div> -->
+<!-- 							<div class="card-product-body px-4 pb-4 text-center"> -->
+<!-- 								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회 -->
+<!-- 									이름</a> -->
+<!-- 								<div class="card-product-body-ovelray"> -->
+<!-- 									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span> -->
+<!-- 									</span> <span class="card-product-view-btn"> <a href="#!" -->
+<!-- 										class="link-underline mb-1 fw-semibold text-dark">상세보기</a> -->
+<!-- 									</span> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
 						<!--/Card product end-->
 					</div>
-					<div class="col-md-6 col-lg-3 mb-4">
-						<!--Card-product-->
-						<div
-							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0">
-							<div class="card-product-header px-5 p-4 d-block overflow-hidden">
-								<a href="#!"> <img src="assets/img/shop/products/05.jpg"
-									class="img-fluid" alt="Product">
-								</a>
-							</div>
-							<div class="card-product-body px-4 pb-4 text-center">
-								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회
-									이름</a>
-								<div class="card-product-body-ovelray">
-									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span>
-									</span> <span class="card-product-view-btn"> <a href="#!"
-										class="link-underline mb-1 fw-semibold text-dark">상세보기</a>
-									</span>
-								</div>
-							</div>
-						</div>
-						<!--/Card product end-->
-					</div>
-					<div class="col-md-6 col-lg-3 mb-4">
-						<!--Card-product-->
-						<div
-							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0">
-							<div class="card-product-header px-5 p-4 d-block overflow-hidden">
-								<a href="#!"> <img src="assets/img/shop/products/06.jpg"
-									class="img-fluid" alt="Product">
-								</a>
-								<!--Product Label-->
-								<span
-									class="badge rounded-pill bg-danger position-absolute start-0 top-0 mt-4 ms-4">-30%</span>
-							</div>
-							<div class="card-product-body px-4 pb-4 text-center">
-								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회
-									이름</a>
-								<div class="card-product-body-ovelray">
-									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span>
-									</span> <span class="card-product-view-btn"> <a href="#!"
-										class="link-underline mb-1 fw-semibold text-dark">상세보기</a>
-									</span>
-								</div>
-							</div>
-						</div>
-						<!--/Card product end-->
-					</div>
-					<div class="col-md-6 col-lg-3 mb-4">
-						<!--Card-product-->
-						<div
-							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0">
-							<div class="card-product-header px-5 p-4 d-block overflow-hidden">
-								<a href="#!"> <img src="assets/img/shop/products/07.jpg"
-									class="img-fluid" alt="Product">
-								</a>
-							</div>
-							<div class="card-product-body px-4 pb-4 text-center">
-								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회
-									이름</a>
-								<div class="card-product-body-ovelray">
-									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span>
-									</span> <span class="card-product-view-btn"> <a href="#!"
-										class="link-underline mb-1 fw-semibold text-dark">상세보기</a>
-									</span>
-								</div>
-							</div>
-						</div>
-						<!--/Card product end-->
-					</div>
-					<div class="col-md-6 col-lg-3 mb-4">
-						<!--Card-product-->
-						<div
-							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0">
-							<div class="card-product-header px-5 p-4 d-block overflow-hidden">
-								<a href="#!"> <img src="assets/img/shop/products/08.jpg"
-									class="img-fluid" alt="Product">
-								</a>
-								<!--Product Label-->
-								<span
-									class="badge rounded-pill bg-success position-absolute start-0 top-0 mt-4 ms-4">New</span>
-							</div>
-							<div class="card-product-body px-4 pb-4 text-center">
-								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회
-									이름</a>
-								<div class="card-product-body-ovelray">
-									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span>
-									</span> <span class="card-product-view-btn"> <a href="#!"
-										class="link-underline mb-1 fw-semibold text-dark">상세보기</a>
-									</span>
-								</div>
-							</div>
-						</div>
-						<!--/Card product end-->
-					</div>
+				</c:forEach>
 				</div>
 				<div class="text-center pt-2">
 					<a href="#" class="btn btn-dark btn-lg btn-hover-text mb-2 me-2">
-						<span class="btn-hover-label label-default">Button01</span> <span
-						class="btn-hover-label label-hover">>Button02</span>
+						<span class="btn-hover-label label-default">>>더보기&lt;&lt;</span> <span
+						class="btn-hover-label label-hover">>다가오는 전시회 목록</span>
 					</a>
 				</div>
 			</div>
@@ -721,9 +725,9 @@
 					</div>
 					<div class="col-md-6 ms-auto mb-5 mb-md-0 order-1 order-md-last">
 						<div class="position-relative pe-12 pb-12">
-							<img src="assets/img/shop/banners/women3.jpg"
+							<img src="/resources/img/shop/banners/women3.jpg"
 								class="img-fluid position-absolute w-50 end-0 bottom-0 rounded-4"
-								alt=""> <img src="assets/img/shop/banners/lg1.jpg"
+								alt=""> <img src="/resources/img/shop/banners/lg1.jpg"
 								class="img-fluid rounded-4" alt="">
 
 						</div>
@@ -820,16 +824,16 @@
 					<div class="d-flex justify-content-start">
 
 						<div class="d-block me-2 my-1">
-							<img src="assets/img/payment/american_express.svg" alt="">
+							<img src="/resources/img/payment/american_express.svg" alt="">
 						</div>
 						<div class="d-block me-2 my-1">
-							<img src="assets/img/payment/paypal.svg" alt="paypal">
+							<img src="/resources/img/payment/paypal.svg" alt="paypal">
 						</div>
 						<div class="d-block me-2 my-1">
-							<img src="assets/img/payment/rupay.svg" alt="rupay">
+							<img src="/resources/img/payment/rupay.svg" alt="rupay">
 						</div>
 						<div class="d-block my-1">
-							<img src="assets/img/payment/visa.svg" alt="visa">
+							<img src="/resources/img/payment/visa.svg" alt="visa">
 						</div>
 					</div>
 					<!--:/payment options-->
@@ -888,90 +892,15 @@
 </body>
 
 
-<script src="assets/js/theme.bundle.js"></script>
-<script src="assets/vendor/node_modules/js/gsap.min.js"></script>
-<script>
-       //cursor
-               //cursor
-               var element = document.querySelector('.cursor');
-
-               // Track the mouse position
-               let mouse = { x: 0, y: 0 };
-               window.addEventListener('mousemove', ev => mouse = getMousePos(ev));
-
-               // Linear interpolation
-               const lerp = (a, b, n) => (1 - n) * a + n * b;
-
-               // Gets the mouse position
-               const getMousePos = e => {
-                   return {
-                       x: e.clientX,
-                       y: e.clientY
-                   };
-               };
-
-               class Cursor {
-                   constructor(el) {
-                       this.DOM = { el: el };
-                       this.DOM.el.style.opacity = 0;
-
-                       this.bounds = this.DOM.el.getBoundingClientRect();
-
-                       this.renderedStyles = {
-                           tx: { previous: 0, current: 0, amt: 0.2 },
-                           ty: { previous: 0, current: 0, amt: 0.2 },
-                           scale: { previous: 1, current: 1, amt: 0.2 },
-                           opacity: { previous: 1, current: 1, amt: 0.2 }
-                       };
-
-                       this.onMouseMoveEv = () => {
-                           this.renderedStyles.tx.previous = this.renderedStyles.tx.current = mouse.x - this.bounds.width / 2;
-                           this.renderedStyles.ty.previous = this.renderedStyles.ty.previous = mouse.y - this.bounds.height / 2;
-                           gsap.to(this.DOM.el, { duration: 0.9, ease: 'Power3.easeOut', opacity: 1 });
-                           requestAnimationFrame(() => this.render());
-                           window.removeEventListener('mousemove', this.onMouseMoveEv);
-                       };
-                       window.addEventListener('mousemove', this.onMouseMoveEv);
-                   }
-                   enter() {
-                       //this.renderedStyles['scale'].current = 4;
-                       element.classList.add('cHover');
-                       //this.renderedStyles['opacity'].current = 0.5;
-                   }
-                   leave() {
-                       this.renderedStyles['scale'].current = 1;
-                       this.renderedStyles['opacity'].current = 1;
-                       element.classList.remove('cHover');
-                   }
-                   render() {
-                       this.renderedStyles['tx'].current = mouse.x - this.bounds.width / 2;
-                       this.renderedStyles['ty'].current = mouse.y - this.bounds.height / 2;
-
-                       for (const key in this.renderedStyles) {
-                           this.renderedStyles[key].previous = lerp(this.renderedStyles[key].previous, this.renderedStyles[key].current, this.renderedStyles[key].amt);
-                       }
-
-                       this.DOM.el.style.transform = `translateX(${(this.renderedStyles['tx'].previous)}px) translateY(${this.renderedStyles['ty'].previous}px) scale(${this.renderedStyles['scale'].previous})`;
-                       this.DOM.el.style.opacity = this.renderedStyles['opacity'].previous;
-
-                       requestAnimationFrame(() => this.render());
-                   }
-               }
-
-
-               const cursor = new Cursor(document.querySelector('.cursor'));
-
-               [...document.querySelectorAll('a,.btn,.swiper-button-prev,.swiper-button-next,button,.form-control')].forEach(link => {
-                   link.addEventListener('mouseenter', () => cursor.enter());
-                   link.addEventListener('mouseleave', () => cursor.leave());
-               });
-    </script>
+<script src="/resources/js/theme.bundle.js"></script>
+<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
+<script src="/resources/vendor/node_modules/js/cursor.js"></script>
 
 
 <!--Page Countdown script-->
-<script src="assets/vendor/node_modules/js/jquery.min.js"></script>
-<script src="assets/vendor/node_modules/js/jquery.countdown.min.js"></script>
-<script src="assets/vendor/node_modules/js/swiper-bundle.min.js"></script>
+<script src="/resources/vendor/node_modules/js/jquery.min.js"></script>
+<script src="/resources/vendor/node_modules/js/jquery.countdown.min.js"></script>
+<script src="/resources/vendor/node_modules/js/swiper-bundle.min.js"></script>
 
 
 
@@ -979,7 +908,7 @@
 <script>
         //swiper
         //Classic
-        var swiperClassic = new Swiper(".swiper-classic", {
+         var swiperClassic = new Swiper(".swiper-classic", {
             slidesPerView: 1,
             spaceBetween: 0,
             effect: 'fade',
@@ -1009,7 +938,6 @@
                 '<div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4">%H</h2><span class="small text-muted">Hours</span></div><div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4">%M</h2><span class="small text-muted">Minutes</span></div><div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4">%S</h2><span class="small text-muted">Seconds</span></div>'
                 ));
         });
-
     </script>
 
 </html>
