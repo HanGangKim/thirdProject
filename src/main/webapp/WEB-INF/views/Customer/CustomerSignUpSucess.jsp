@@ -206,11 +206,17 @@
 	<!-- begin Back to Top button -->
 	<a href="#" class="toTop"> <i class="bx bxs-up-arrow"></i>
 	</a>
+	
+	<!--cursor-->
+	<div class="cursor">
+		<div class="cursor__inner"></div>
+	</div>
 
 </body>
 
 <!-- scripts -->
 <script src="/resources/js/theme.bundle.js"></script>
+<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
 <script src="/resources/vendor/node_modules/js/cursor.js"></script>
 
 </html>
