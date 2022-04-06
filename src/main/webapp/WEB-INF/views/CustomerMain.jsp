@@ -53,7 +53,7 @@
 						</button>
 						<div class="nav-item me-4">
 							<a href="demo-shop-wishlist.html"
-								class="nav-link lh-1 position-relative"> 회원정보[Session] </a>
+								class="nav-link lh-1 position-relative"> ${userName}님 , 반갑습니다. </a>
 						</div>
 						<div class="nav-item me-4 me-lg-0">
 							<a href="#" data-bs-target="#modal-search-bar-2"

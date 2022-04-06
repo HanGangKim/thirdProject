@@ -6,7 +6,7 @@ public class CustomerVO {
 	private String customer_password;
 	private String customer_name;
 	private String customer_ph;
-	private String customer_age;
+	private int customer_age;
 	private String customer_email;
 	private String customer_gender;
 	private String customer_flag;
@@ -56,11 +56,11 @@ public class CustomerVO {
 		this.customer_ph = customer_ph;
 	}
 
-	public String getCustomer_age() {
+	public int getCustomer_age() {
 		return customer_age;
 	}
 
-	public void setCustomer_age(String customer_age) {
+	public void setCustomer_age(int customer_age) {
 		this.customer_age = customer_age;
 	}
 

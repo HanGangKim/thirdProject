@@ -20,7 +20,7 @@ textarea {
 <body>
 	<h2>kakao</h2>
 
-	<form action="Payment.do">
+	<form action="CustomerPayment.do">
 
 		<p>
 			<span>name:</span> <input name="name">

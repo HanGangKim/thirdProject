@@ -10,7 +10,7 @@
 		CUSTOMER_INFO
 		(CUSTOMER_ID, CUSTOMER_PASSWORD , CUSTOMER_NAME , CUSTOMER_PH, CUSTOMER_EMAIL , CUSTOMER_AGE ,CUSTOMER_GENDER ,CUSTOMER_FLAG)
 		VALUES
-		(#{customer_id} , #{customer_password} , #{customer_name} ,  #{customer_ph}, #{customer_email},#{customer_gender} ,#{customer_age}, #{customer_flag})
+		(#{customer_id} , #{customer_password} , #{customer_name} ,  #{customer_ph} , #{customer_email} , #{customer_age} , #{customer_gender} , #{customer_flag})
 	</insert>
 
 	 <select id="customerLogin" parameterType="customer" resultType="customer">

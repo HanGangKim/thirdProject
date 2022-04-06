@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
- 	깃 테스트 진행
- 	깃 테스트 진행
+
 </body>
 </html>

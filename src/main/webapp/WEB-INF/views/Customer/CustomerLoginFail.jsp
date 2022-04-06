@@ -1,5 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%-- 
+	*** 주석 지우지 말아주세요 ! ***
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>성공</title>
+</head>
+<body>
+	${message }<br>
+	${result }<br>
+	
+	<%
+		if((int)request.getAttribute("result") == 0){
+	%>
+		<a href="../SignUp.do">회원가입하기</a>
+	<%
+		}else{
+	%>
+		<a href="../LoginForm.do">로그인하기</a>
+	<%
+		}
+	%> 
+</body>
+</html> --%>
 <!doctype html>
 <html lang="en">
 
@@ -31,29 +56,7 @@
 <link href="/resources/css/theme.min.css" rel="stylesheet">
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
-<!--Flatpickr-->
-<link rel="stylesheet"
-	href="/resources/vendor/node_modules/css/flatpickr.min.css">
-
-<!--Choices css-->
-<link rel="stylesheet"
-	href="/resources/vendor/node_modules/css/choices.min.css">
-
-<title>Sign Up</title>
-
-<style>
-.choices__list--single {
-	padding: 0px;
-}
-
-.choices {
-	position: unset;
-	overflow: hidden;
-	margin-bottom: 24px;
-	font-size: 16px;
-	margin-bottom: 24px;
-}
-</style>
+<title>Welcome!</title>
 
 </head>
 
@@ -122,124 +125,23 @@
 	</header>
 
 	<!--Main content-->
-	<main>
-		<!--page-hero-->
-		<section class="bg-white position-relative">
-			<div
-				class="bg-pattern text-light w-100 h-100 start-0 top-0 position-absolute"></div>
-			<div
-				class="bg-gradientwhite flip-y w-50 h-100 start-50 top-0 translate-middle-x position-absolute"></div>
-			<div
-				class="container pt-11 pt-lg-14 pb-9 pb-lg-11 position-relative z-index-1">
-				<div class="row align-items-center justify-content-center">
-					<div class=" col-xl-4 col-lg-5 col-md-6 col-sm-8 z-index-2">
-
-						<h2 class="mb-1 display-6">일반회원 가입</h2>
-						<p class="mb-4 text-muted">To get started, Please signup with
-							details...</p>
-
-						<div class="position-relative">
-							<form action="/customer/customerInsert.do" method="get">
-								<!-- 아이디 -->
-								<div class="input-icon-group mb-3">
-									<span class="input-icon"> <i class="bx bx-id-card"></i>
-									</span> <input type="text" class="form-control" required id="signUpid"
-										name="customer_id" autofocus placeholder="Your id">
-								</div>
-
-								<!-- 비밀번호 입력 -->
-								<div class="input-icon-group mb-3">
-									<span class="input-icon"> <i class="bx bx-lock-open"></i>
-									</span> <input type="password" class="form-control" required
-										name="customer_password" id="signUpPassword"
-										placeholder="Enter password">
-								</div>
-
-								 <!-- 비밀번호 확인 -->
-								 <div class="input-icon-group mb-3">
-									<span class="input-icon"> <i class="bx bx-lock-open"></i>
-									</span><input type="password" class="form-control" required
-										id="signUpConfirmPassword" placeholder="Confirm password">
-								</div>
-
-								<!-- 이름 -->
-								<div class="input-icon-group mb-3">
-									<span class="input-icon"> <i class="bx bx-user"></i>
-									</span> <input type="text" class="form-control" required
-										name="customer_name" id="signUpName" autofocus
-										placeholder="Your full name">
-								</div>
-
-								<!-- 전화번호 -->
-								<div class="input-icon-group mb-3">
-									<span class="input-icon"> <i class="bx bx-mobile"></i>
-									</span> <input type="text" class="form-control" required
-										id="signUpph" name="customer_ph" autofocus
-										placeholder="Your PhoneNumber">
-								</div>
-
-
-								<!-- 이메일 -->
-								<div class="input-icon-group mb-3">
-									<span class="input-icon"> <i class="bx bx-envelope"></i>
-									</span> <input type="email" class="form-control" required
-										name="customer_email" id="signUpMail"
-										placeholder="Your email address">
-								</div>
-								
-								<!-- 성별 -->
-								<div class="input-icon-group mb-3">
-									<span class="input-icon"> <i class="bx bx-male-female"></i>
-									</span> <select autocomplete="false" id="profile_gender"
-										name="customer_gender" class="form-control"
-										data-choices='{"searchEnabled":false}'>
-										<option selected disabled>Gender</option>
-										<option>M</Option>
-										<option>F</Option>
-									</select>
-								</div>
-								
-							
-								<!-- 나이 -->
-								 <div class="input-icon-group mb-3">
-									<span class="input-icon"> <i class="bx bx-calendar"></i>
-									</span> <input type="number" class="form-control" required
-										id="signUpage" name="customer_age" autofocus
-										placeholder="Your age">
-								</div> 
-
-								<!-- 회원속성  -->
-								<div class="input-icon-group mb-3">
-									<span class="input-icon"> <i class="bx bx-envelope"></i>
-									</span> <select autocomplete="false" id="flag" class="form-control"
-										name="customer_flag" data-choices='{"searchEnabled":false}'>
-										<Option>C</Option>
-										<Option selected>M</Option>
-									</select>
-								</div>
-
-								<!-- 회원가입 마치기 -->
-								<div class="d-grid">
-									<button class="btn btn-dark" type="submit">Next</button>
-								</div>
-							</form>
-
-							<!-- 로그인 버튼 -->
-							<p class="pt-3 small text-muted">
-								Already have an account? <a href="CustomerLogin.do"
-									class="ms-2 text-dark fw-semibold link-decoration">Sign in</a>
-							</p>
-
-							<!--Divider-->
-							<div class="d-flex align-items-center py-3">
-								<span class="flex-grow-1 border-bottom pt-1"></span>
-							</div>
+	<main class="main-content" id="main-content">
+		<section class="position-relative">
+			<div class="container pt-14 pb-9 pb-lg-11">
+				<div class="row pt-lg-7 justify-content-center text-center">
+					<div class="col-xl-8">
+						<div
+							class="width-10x height-10x rounded-circle position-relative bg-success text-white flex-center mb-4">
+							<i class="bx bx-check lh-1 display-4 fw-normal"></i>
 						</div>
+						<h1 class="display-2 mb-3">Login Fail</h1>
+						<p class="mb-5 lead mx-auto">아이디를 찾을 수 없어요 ...</p>
+						<a href="index.html" class="btn btn-outline-primary btn-lg">
+							Sign In</a>
+
 					</div>
 				</div>
 			</div>
-
-
 		</section>
 	</main>
 
@@ -300,14 +202,9 @@
 
 
 	<!-- begin Back to Top button -->
-	<a href="#" class="toTop"> <svg xmlns='http://www.w3.org/2000/svg'
-			viewBox='0 0 13 9' class="align-middle flip-y" width="13" height="9">
-                <path fill='currentColor'
-				d="M12.25 2.30062L10.8988 0.949371L6.5 5.33854L2.10125 0.949371L0.75 2.30062L6.5 8.05062L12.25 2.30062Z">
-                </path>
-            </svg>
+	<a href="#" class="toTop"> <i class="bx bxs-up-arrow"></i>
 	</a>
-
+	
 	<!--cursor-->
 	<div class="cursor">
 		<div class="cursor__inner"></div>
@@ -319,28 +216,5 @@
 <script src="/resources/js/theme.bundle.js"></script>
 <script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
 <script src="/resources/vendor/node_modules/js/cursor.js"></script>
-
-<!--Select scripts-->
-<script src="/resources/vendor/node_modules/js/choices.min.js?ver=2"></script>
-<script>
-    var cSelect = document.querySelectorAll("[data-choices]");
-    cSelect.forEach(el => {
-      const t = {
-        ...el.dataset.choices ? JSON.parse(el.dataset.choices) : {}, ...{
-          classNames: {
-            containerInner: el.className,
-            input: "form-control",
-            inputCloned: "form-control-sm",
-            listDropdown: "dropdown-menu",
-            itemChoice: "dropdown-item",
-            activeState: "show",
-            selectedState: "active"
-          }
-        }
-      }
-      new Choices(el, t)
-    }
-    );
-  </script>
 
 </html>

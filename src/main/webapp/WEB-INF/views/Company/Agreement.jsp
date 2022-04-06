@@ -171,7 +171,7 @@
 
 
 
-							<form action="CustomerSignUp.do" method="POST" id="form__wrap">
+							<form action="CompanySignUp.do" method="POST" id="form__wrap">
 
 								<!--accordion item-->
 								<div class="accordion-item mb-3">
@@ -249,9 +249,6 @@
 									</li>
 								</ul>
 								<button type="submit" class="next-button" disabled>확인</button>
-								
-								<!-- 이 부분은 임시로 만든것 , 약관동의 작업끝나면 삭제  -->
-								<a href="CustomerSignUp.do">회원가입이동(약관동의 작업이 끝나면 삭제)</a>
 							</form>
 
 							<!--Divider-->

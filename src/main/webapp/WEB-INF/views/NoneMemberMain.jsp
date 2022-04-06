@@ -53,7 +53,7 @@
 						</button>
 						<div class="nav-item me-4">
 							<a href="demo-shop-wishlist.html"
-								class="nav-link lh-1 position-relative"> 회원정보[Session] </a>
+								class="nav-link lh-1 position-relative"> 피엔날레의 회원이 되어주세요! </a>
 						</div>
 						<div class="nav-item me-4 me-lg-0">
 							<a href="#" data-bs-target="#modal-search-bar-2"
@@ -167,17 +167,15 @@
 									<!--/.row-->
 								</div>
 							</li>
-							<li class="nav-item dropdown me-lg-3"><a
-								class="nav-link dropdown-toggle" data-bs-auto-close="outside"
-								href="#" role="button" data-bs-toggle="dropdown"
-								aria-haspopup="true" aria-expanded="false">마이페이지 </a>
+						<li class="nav-item"><a class="nav-link" href="LandingSignUp.do"> 회원가입
+							</a></li>
 								<div class="dropdown-menu p-lg-3">
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="demo-shop-wishlist.html">Wish_list</a>
 									<a class="dropdown-item" href="demo-shop-cart.html">MyTicket</a>
 									<a class="dropdown-item" href="demo-shop-checkout.html">Setting</a>
 								</div></li>
-							<li class="nav-item"><a class="nav-link" href="#!"> 로그아웃
+							<li class="nav-item"><a class="nav-link" href="LandingLogin.do"> 로그인
 							</a></li>
 						</ul>
 					</div>
@@ -500,22 +498,22 @@
 					</div>
 				</div>
 				<div class="row">
+					<c:forEach items="${vo}" var="vo">
 					<div class="col-md-6 col-lg-3 mb-4">
 						<!--Card-product-->
 						<div
 							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0">
 							<div class="card-product-header px-5 p-4 d-block overflow-hidden">
 								<!--Product image-->
-								<a href="#!"> <img src="/resources/img/shop/products/01.jpg"
+								<a href="#!"> <img src="${vo.exhibition_image}"
 									class="img-fluid" alt="Product">
 								</a>
 							</div>
 							<div class="card-product-body px-4 pb-4 text-center">
-								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회
-									이름</a>
+								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">${vo.exhibition_title}</a>
 								<div class="card-product-body-ovelray">
 									<!--Price-->
-									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span>
+									<span class="card-product-price"> <span>${vo.exhibition_start_date}</span> ~ <span>${vo.exhibition_end_date}</span>
 									</span>
 									<!--Action-->
 									<span class="card-product-view-btn"> <a href="#!"
@@ -524,177 +522,179 @@
 								</div>
 							</div>
 						</div>
-						<!--/Card product end-->
-					</div>
-					<div class="col-md-6 col-lg-3 mb-4">
-						<!--Card-product-->
-						<div
-							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0">
-							<div class="card-product-header px-5 p-4 d-block overflow-hidden">
-								<a href="#!"> <img src="/resources/img/shop/products/02.jpg"
-									class="img-fluid" alt="Product">
-								</a>
-							</div>
-							<div class="card-product-body px-4 pb-4 text-center">
-								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회
-									이름</a>
-								<div class="card-product-body-ovelray">
-									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span>
-									</span> <span class="card-product-view-btn"> <a href="#!"
-										class="link-underline mb-1 fw-semibold text-dark">상세보기</a>
-									</span>
-								</div>
-							</div>
-						</div>
-						<!--/Card product end-->
-					</div>
-					<div class="col-md-6 col-lg-3 mb-4">
-						<!--Card-product-->
-						<div
-							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0">
-							<div
-								class="card-product-header px-5 p-4 d-block overflow-hidden  position-relative">
-								<a href="#!"> <img src="/resources/img/shop/products/03.jpg"
-									class="img-fluid" alt="Product">
-								</a>
+						
+<!-- 						/Card product end -->
+<!-- 					</div> -->
+<!-- 					<div class="col-md-6 col-lg-3 mb-4"> -->
+<!-- 						Card-product -->
+<!-- 						<div -->
+<!-- 							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0"> -->
+<!-- 							<div class="card-product-header px-5 p-4 d-block overflow-hidden"> -->
+<!-- 								<a href="#!"> <img src="/resources/img/shop/products/02.jpg" -->
+<!-- 									class="img-fluid" alt="Product"> -->
+<!-- 								</a> -->
+<!-- 							</div> -->
+<!-- 							<div class="card-product-body px-4 pb-4 text-center"> -->
+<!-- 								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회 -->
+<!-- 									이름</a> -->
+<!-- 								<div class="card-product-body-ovelray"> -->
+<!-- 									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span> -->
+<!-- 									</span> <span class="card-product-view-btn"> <a href="#!" -->
+<!-- 										class="link-underline mb-1 fw-semibold text-dark">상세보기</a> -->
+<!-- 									</span> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						/Card product end -->
+<!-- 					</div> -->
+<!-- 					<div class="col-md-6 col-lg-3 mb-4"> -->
+<!-- 						Card-product -->
+<!-- 						<div -->
+<!-- 							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0"> -->
+<!-- 							<div -->
+<!-- 								class="card-product-header px-5 p-4 d-block overflow-hidden  position-relative"> -->
+<!-- 								<a href="#!"> <img src="/resources/img/shop/products/03.jpg" -->
+<!-- 									class="img-fluid" alt="Product"> -->
+<!-- 								</a> -->
 
-								<!--Product Label-->
-								<span
-									class="badge rounded-pill bg-primary position-absolute start-0 top-0 mt-4 ms-4">Bestseller</span>
-							</div>
-							<div class="card-product-body px-4 pb-4 text-center">
-								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회
-									이름</a>
-								<div class="card-product-body-ovelray">
-									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span>
-									</span> <span class="card-product-view-btn"> <a href="#!"
-										class="link-underline mb-1 fw-semibold text-dark">상세보기</a>
-									</span>
-								</div>
-							</div>
-						</div>
-						<!--:/card product end-->
-					</div>
-					<div class="col-md-6 col-lg-3 mb-4">
-						<!--Card-product-->
-						<div
-							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0">
-							<div class="card-product-header px-5 p-4 d-block overflow-hidden">
-								<a href="#!"> <img src="/resources/img/shop/products/04.jpg"
-									class="img-fluid" alt="Product">
-								</a>
-							</div>
-							<div class="card-product-body px-4 pb-4 text-center">
-								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회
-									이름</a>
-								<div class="card-product-body-ovelray">
-									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span>
-									</span> <span class="card-product-view-btn"> <a href="#!"
-										class="link-underline mb-1 fw-semibold text-dark">상세보기</a>
-									</span>
-								</div>
-							</div>
-						</div>
+<!-- 								Product Label -->
+<!-- 								<span -->
+<!-- 									class="badge rounded-pill bg-primary position-absolute start-0 top-0 mt-4 ms-4">Bestseller</span> -->
+<!-- 							</div> -->
+<!-- 							<div class="card-product-body px-4 pb-4 text-center"> -->
+<!-- 								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회 -->
+<!-- 									이름</a> -->
+<!-- 								<div class="card-product-body-ovelray"> -->
+<!-- 									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span> -->
+<!-- 									</span> <span class="card-product-view-btn"> <a href="#!" -->
+<!-- 										class="link-underline mb-1 fw-semibold text-dark">상세보기</a> -->
+<!-- 									</span> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						:/card product end -->
+<!-- 					</div> -->
+<!-- 					<div class="col-md-6 col-lg-3 mb-4"> -->
+<!-- 						Card-product -->
+<!-- 						<div -->
+<!-- 							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0"> -->
+<!-- 							<div class="card-product-header px-5 p-4 d-block overflow-hidden"> -->
+<!-- 								<a href="#!"> <img src="/resources/img/shop/products/04.jpg" -->
+<!-- 									class="img-fluid" alt="Product"> -->
+<!-- 								</a> -->
+<!-- 							</div> -->
+<!-- 							<div class="card-product-body px-4 pb-4 text-center"> -->
+<!-- 								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회 -->
+<!-- 									이름</a> -->
+<!-- 								<div class="card-product-body-ovelray"> -->
+<!-- 									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span> -->
+<!-- 									</span> <span class="card-product-view-btn"> <a href="#!" -->
+<!-- 										class="link-underline mb-1 fw-semibold text-dark">상세보기</a> -->
+<!-- 									</span> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						/Card product end -->
+<!-- 					</div> -->
+<!-- 					<div class="col-md-6 col-lg-3 mb-4"> -->
+<!-- 						Card-product -->
+<!-- 						<div -->
+<!-- 							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0"> -->
+<!-- 							<div class="card-product-header px-5 p-4 d-block overflow-hidden"> -->
+<!-- 								<a href="#!"> <img src="/resources/img/shop/products/05.jpg" -->
+<!-- 									class="img-fluid" alt="Product"> -->
+<!-- 								</a> -->
+<!-- 							</div> -->
+<!-- 							<div class="card-product-body px-4 pb-4 text-center"> -->
+<!-- 								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회 -->
+<!-- 									이름</a> -->
+<!-- 								<div class="card-product-body-ovelray"> -->
+<!-- 									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span> -->
+<!-- 									</span> <span class="card-product-view-btn"> <a href="#!" -->
+<!-- 										class="link-underline mb-1 fw-semibold text-dark">상세보기</a> -->
+<!-- 									</span> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						/Card product end -->
+<!-- 					</div> -->
+<!-- 					<div class="col-md-6 col-lg-3 mb-4"> -->
+<!-- 						Card-product -->
+<!-- 						<div -->
+<!-- 							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0"> -->
+<!-- 							<div class="card-product-header px-5 p-4 d-block overflow-hidden"> -->
+<!-- 								<a href="#!"> <img src="/resources/img/shop/products/06.jpg" -->
+<!-- 									class="img-fluid" alt="Product"> -->
+<!-- 								</a> -->
+<!-- 								Product Label -->
+<!-- 								<span -->
+<!-- 									class="badge rounded-pill bg-danger position-absolute start-0 top-0 mt-4 ms-4">-30%</span> -->
+<!-- 							</div> -->
+<!-- 							<div class="card-product-body px-4 pb-4 text-center"> -->
+<!-- 								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회 -->
+<!-- 									이름</a> -->
+<!-- 								<div class="card-product-body-ovelray"> -->
+<!-- 									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span> -->
+<!-- 									</span> <span class="card-product-view-btn"> <a href="#!" -->
+<!-- 										class="link-underline mb-1 fw-semibold text-dark">상세보기</a> -->
+<!-- 									</span> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						/Card product end -->
+<!-- 					</div> -->
+<!-- 					<div class="col-md-6 col-lg-3 mb-4"> -->
+<!-- 						Card-product -->
+<!-- 						<div -->
+<!-- 							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0"> -->
+<!-- 							<div class="card-product-header px-5 p-4 d-block overflow-hidden"> -->
+<!-- 								<a href="#!"> <img src="/resources/img/shop/products/07.jpg" -->
+<!-- 									class="img-fluid" alt="Product"> -->
+<!-- 								</a> -->
+<!-- 							</div> -->
+<!-- 							<div class="card-product-body px-4 pb-4 text-center"> -->
+<!-- 								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회 -->
+<!-- 									이름</a> -->
+<!-- 								<div class="card-product-body-ovelray"> -->
+<!-- 									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span> -->
+<!-- 									</span> <span class="card-product-view-btn"> <a href="#!" -->
+<!-- 										class="link-underline mb-1 fw-semibold text-dark">상세보기</a> -->
+<!-- 									</span> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						/Card product end -->
+<!-- 					</div> -->
+<!-- 					<div class="col-md-6 col-lg-3 mb-4"> -->
+<!-- 						Card-product -->
+<!-- 						<div -->
+<!-- 							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0"> -->
+<!-- 							<div class="card-product-header px-5 p-4 d-block overflow-hidden"> -->
+<!-- 								<a href="#!"> <img src="/resources/img/shop/products/08.jpg" -->
+<!-- 									class="img-fluid" alt="Product"> -->
+<!-- 								</a> -->
+<!-- 								Product Label -->
+<!-- 								<span -->
+<!-- 									class="badge rounded-pill bg-success position-absolute start-0 top-0 mt-4 ms-4">New</span> -->
+<!-- 							</div> -->
+<!-- 							<div class="card-product-body px-4 pb-4 text-center"> -->
+<!-- 								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회 -->
+<!-- 									이름</a> -->
+<!-- 								<div class="card-product-body-ovelray"> -->
+<!-- 									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span> -->
+<!-- 									</span> <span class="card-product-view-btn"> <a href="#!" -->
+<!-- 										class="link-underline mb-1 fw-semibold text-dark">상세보기</a> -->
+<!-- 									</span> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
 						<!--/Card product end-->
 					</div>
-					<div class="col-md-6 col-lg-3 mb-4">
-						<!--Card-product-->
-						<div
-							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0">
-							<div class="card-product-header px-5 p-4 d-block overflow-hidden">
-								<a href="#!"> <img src="/resources/img/shop/products/05.jpg"
-									class="img-fluid" alt="Product">
-								</a>
-							</div>
-							<div class="card-product-body px-4 pb-4 text-center">
-								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회
-									이름</a>
-								<div class="card-product-body-ovelray">
-									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span>
-									</span> <span class="card-product-view-btn"> <a href="#!"
-										class="link-underline mb-1 fw-semibold text-dark">상세보기</a>
-									</span>
-								</div>
-							</div>
-						</div>
-						<!--/Card product end-->
-					</div>
-					<div class="col-md-6 col-lg-3 mb-4">
-						<!--Card-product-->
-						<div
-							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0">
-							<div class="card-product-header px-5 p-4 d-block overflow-hidden">
-								<a href="#!"> <img src="/resources/img/shop/products/06.jpg"
-									class="img-fluid" alt="Product">
-								</a>
-								<!--Product Label-->
-								<span
-									class="badge rounded-pill bg-danger position-absolute start-0 top-0 mt-4 ms-4">-30%</span>
-							</div>
-							<div class="card-product-body px-4 pb-4 text-center">
-								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회
-									이름</a>
-								<div class="card-product-body-ovelray">
-									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span>
-									</span> <span class="card-product-view-btn"> <a href="#!"
-										class="link-underline mb-1 fw-semibold text-dark">상세보기</a>
-									</span>
-								</div>
-							</div>
-						</div>
-						<!--/Card product end-->
-					</div>
-					<div class="col-md-6 col-lg-3 mb-4">
-						<!--Card-product-->
-						<div
-							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0">
-							<div class="card-product-header px-5 p-4 d-block overflow-hidden">
-								<a href="#!"> <img src="/resources/img/shop/products/07.jpg"
-									class="img-fluid" alt="Product">
-								</a>
-							</div>
-							<div class="card-product-body px-4 pb-4 text-center">
-								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회
-									이름</a>
-								<div class="card-product-body-ovelray">
-									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span>
-									</span> <span class="card-product-view-btn"> <a href="#!"
-										class="link-underline mb-1 fw-semibold text-dark">상세보기</a>
-									</span>
-								</div>
-							</div>
-						</div>
-						<!--/Card product end-->
-					</div>
-					<div class="col-md-6 col-lg-3 mb-4">
-						<!--Card-product-->
-						<div
-							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0">
-							<div class="card-product-header px-5 p-4 d-block overflow-hidden">
-								<a href="#!"> <img src="/resources/img/shop/products/08.jpg"
-									class="img-fluid" alt="Product">
-								</a>
-								<!--Product Label-->
-								<span
-									class="badge rounded-pill bg-success position-absolute start-0 top-0 mt-4 ms-4">New</span>
-							</div>
-							<div class="card-product-body px-4 pb-4 text-center">
-								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">전시회
-									이름</a>
-								<div class="card-product-body-ovelray">
-									<span class="card-product-price"> <span>시작일</span> ~ <span>종료일</span>
-									</span> <span class="card-product-view-btn"> <a href="#!"
-										class="link-underline mb-1 fw-semibold text-dark">상세보기</a>
-									</span>
-								</div>
-							</div>
-						</div>
-						<!--/Card product end-->
-					</div>
+				</c:forEach>
 				</div>
 				<div class="text-center pt-2">
 					<a href="#" class="btn btn-dark btn-lg btn-hover-text mb-2 me-2">
-						<span class="btn-hover-label label-default">더보기</span> <span
+						<span class="btn-hover-label label-default">>>더보기&lt;&lt;</span> <span
 						class="btn-hover-label label-hover">>다가오는 전시회 목록</span>
 					</a>
 				</div>
@@ -906,7 +906,7 @@
 <script>
         //swiper
         //Classic
-        var swiperClassic = new Swiper(".swiper-classic", {
+         var swiperClassic = new Swiper(".swiper-classic", {
             slidesPerView: 1,
             spaceBetween: 0,
             effect: 'fade',
@@ -936,7 +936,6 @@
                 '<div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4">%H</h2><span class="small text-muted">Hours</span></div><div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4">%M</h2><span class="small text-muted">Minutes</span></div><div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4">%S</h2><span class="small text-muted">Seconds</span></div>'
                 ));
         });
-
     </script>
 
 </html>

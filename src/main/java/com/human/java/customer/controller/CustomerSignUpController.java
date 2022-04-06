@@ -33,7 +33,7 @@ public class CustomerSignUpController {
 		if (result > 0)
 			message = vo.getCustomer_name() + "님 , 가입을 축하드립니다.";
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("Customer_Sucess/SignUpSucess");
+		mv.setViewName("Customer/CustomerSignUpSucess");
 		mv.addObject("message", message);
 		mv.addObject("result", result);
 		return mv;
