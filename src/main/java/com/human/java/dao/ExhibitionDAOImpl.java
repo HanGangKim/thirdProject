@@ -1,6 +1,8 @@
 package com.human.java.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -49,10 +51,25 @@ public class ExhibitionDAOImpl implements ExhibitionDAO{
 	public List<ExhibitionVO> comingExhibition(ExhibitionVO vo) {
 		// TODO Auto-generated method stub
 		System.out.println("===============");
-		System.out.println("exhibition 올 다오 호출");
+		System.out.println("exhibition 커밍 다오 호출");
 		
 		System.out.println("===============");
 		return  mybatis.selectList("exhibitionMapper.comingExhibition",vo);
+	}
+
+	@Override
+	public List<ExhibitionVO> exhibitionSearch(ExhibitionVO vo, String st, String ed) {
+		System.out.println("===============");
+		System.out.println("exhibition 서치 다오 호출");
+		
+		System.out.println("===============");
+		
+		Map<String, Object> parms = new HashMap<String, Object>();
+		parms.put("vo", vo);
+		parms.put("st", st);
+		parms.put("ed", ed);
+		
+		return  mybatis.selectList("exhibitionMapper.exhibitionSearch", parms);
 	}
 
 }
