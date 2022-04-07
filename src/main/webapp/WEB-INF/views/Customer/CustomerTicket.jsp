@@ -205,8 +205,10 @@
 								</div>
 								<!--QR 확인버튼-->
 								<div class="d-grid pb-4 pb-md-0">
-									<a href="#" class="btn btn-primary">Move to qr</a>
+									<a href="#" class="btn btn-primary" style="margin-bottom:10px;">Move to qr</a>
+									<a href="#" class="btn btn-dark">후기작성</a>
 								</div>
+								
 							</div>
 						</div>
 					</div>
