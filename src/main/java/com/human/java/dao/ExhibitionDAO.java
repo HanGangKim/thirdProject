@@ -17,4 +17,6 @@ public interface ExhibitionDAO {
 	public List<ExhibitionVO> comingExhibition(ExhibitionVO vo);
 	
 	public List<ExhibitionVO> exhibitionSearch(ExhibitionVO vo, String st, String ed);
+	
+	public ExhibitionVO exhibitionDetail(ExhibitionVO vo, String id);
 }

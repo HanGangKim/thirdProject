@@ -35,4 +35,11 @@
 		FROM EXHIBITION_INFO
 		WHERE EXHIBITION_START_DATE <![CDATA[< TO_DATE(']]>${st}<![CDATA[')]]> AND EXHIBITION_END_DATE <![CDATA[> TO_DATE(']]>${ed}<![CDATA[')]]>
 	</select>
+	
+	<select id="exhibitionDetail" parameterType="map" resultType="exhibition">
+		SELECT *
+		FROM EXHIBITION_INFO
+		WHERE EXHIBITION_ID = ${id}
+	</select>
+	
 </mapper>

@@ -73,7 +73,15 @@ public class ExhibitionServiceImpl implements ExhibitionService{
 		return exhibitionDAO.exhibitionSearch(vo,st,ed);
 	}
 	
-	
+	@Override
+	public ExhibitionVO exhibitionDetail(ExhibitionVO vo, String id) {
+		// TODO Auto-generated method stub
+		System.out.println("===============");
+		System.out.println("exhibitionInsert 서비스 호출");
+		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+		return exhibitionDAO.exhibitionDetail(vo, id);
+	}
 
 	
 }
