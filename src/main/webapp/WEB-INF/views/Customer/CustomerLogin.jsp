@@ -152,7 +152,7 @@
 
 								<!---->
 								<p class="pt-4 small text-muted">
-									Don’t have an account yet? <a href="page-account-signup.html"
+									Don’t have an account yet? <a href="CustomerSignUp.do"
 										class="ms-2 text-dark fw-semibold link-underline">Sign Up</a>
 								</p>
 								<!--Divider-->

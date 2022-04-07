@@ -118,7 +118,8 @@
 						<p class="mb-4 text-muted">Please Sign In with details...</p>
 						<div class="position-relative">
 							<div>
-								<form class="needs-validation" novalidate>
+								<form action="/company/CompanySignUp.do"
+									class="needs-validation" novalidate>
 									<div class="input-icon-group mb-3">
 										<span class="input-icon"> <i class="bx bx-envelope"></i>
 										</span> <input type="email" class="form-control" required autofocus
@@ -151,7 +152,7 @@
 
 								<!---->
 								<p class="pt-4 small text-muted">
-									Don’t have an account yet? <a href="page-account-signup.html"
+									Don’t have an account yet? <a href="CompanySignUp.do"
 										class="ms-2 text-dark fw-semibold link-underline">Sign Up</a>
 								</p>
 								<!--Divider-->
