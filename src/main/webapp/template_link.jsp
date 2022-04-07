@@ -31,6 +31,10 @@ a{font-size: large;}
 	<a href="customer/CustomerErrorPage.do">회원 에러페이지</a>
 	<br><br>
 	<a href="">결제 모달 테스트 페이지</a>
+	<br><br>
+	<a href="customer/CustomerExhibitionMyReviewList.do">나의 후기 페이지</a>
+	<br><br>
+	<a href="customer/CustomerExhibitionReviewWrite.do">전시회 후기 입력</a>
 	<hr>
 	
 	<h1>전시회</h1>
@@ -77,15 +81,13 @@ a{font-size: large;}
 	<h1>컨트롤러 테스트 전용</h1>
 	<a href="exhibition/ExhibitionAllTest.do">전시회 조회</a>
 	<br><br>
-	<form action="/ExhibitionTest.do">
+	<form action="/exhibition/ExhibitionTest.do">
 	<button type="submit">전시회 1줄 조회</button>
 	</form>
 	<br><br>
-	<a href="exhibition/ExhibitionReviewWrite.do">전시회 후기 입력</a>
+	<a href="customer/CustomerExhibitionReviewWriteTest.do">전시회 후기 입력 테스트 페이지</a>
 	<br><br>
-	<a href="exhibition/ExhibitionReviewWrite.do">전시회 후기 입력 테스트 페이지</a>
-	<br><br>
-	<a href="exhibition/ExhibitionMyReviewList.do">나의 후기 페이지</a>
+	<a href="customer/CustomerExhibitionMyReviewListTest.do">나의 후기 리스트 상세 테스트 페이지(입력+수정)</a>
 	<br><br>
 	<a href="exhibition/ExhibitionReviewList.do">전시회 전체 후기 페이지</a>
 	<br><br>
