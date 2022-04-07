@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.human.java.domain.ExhibitionVO;
@@ -34,6 +35,20 @@ public class ExhibitionDateController {
 		mv.setViewName("/Exhibition/ExhibitionAllTest");
 		System.out.println(vo + "전달합니다");
 		mv.addObject("vo", exhibitionService.exhibitionAll(vo));
+		
+		
+		return mv;
+	}
+	
+	@RequestMapping("ExSearchTest.do")
+	public ModelAndView exhibitionSearch(ExhibitionVO vo, @RequestParam("totalDate") String totalDate) {
+		System.out.println("컨트롤올진입3");
+		ModelAndView mv = new ModelAndView();
+		System.out.println(totalDate);
+		
+		mv.setViewName("/Exhibition/ExSearchTest");
+		System.out.println(vo + "전달합니다");
+		mv.addObject("vo", exhibitionService.exhibitionSearch(vo,totalDate));
 		
 		
 		return mv;

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!doctype html>
 <html lang="en">
 
@@ -95,13 +97,13 @@
 							<div>
 								<!--기간 넘기는 form 태그-->
 								<form class="needs-validation" novalidate
-									action="demo-shop-products-full-width.html">
+									action="<c:url value="ExSearchTest.do"/>">
 									<div class="row mb-7">
 										<!--기간으로 날짜 검색 (우리가 쓸 태그)-->
 										<div class="mb-5 mb-md-0 mb-3">
 											<!-- <h5 class="mb-4">Range</h5> -->
 											<input type="text" value="2022-01-08 to 2022-01-23"
-												data-flatpickr='{"mode":"range"}' class="form-control">
+												data-flatpickr='{"mode":"range"}' class="form-control", name="totalDate">
 										</div>
 									</div>
 
