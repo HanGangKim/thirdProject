@@ -54,5 +54,19 @@ public class ExhibitionDateController {
 		return mv;
 	}
 	
+	@RequestMapping("ExhibitionDetail.do")
+	public ModelAndView exhibitionDetail(ExhibitionVO vo, @RequestParam("id") String id) {
+		System.out.println("컨트롤올진입3");
+		ModelAndView mv = new ModelAndView();
+		System.out.println(id);
+		
+		mv.setViewName("/Exhibition/ExhibitionDetail");
+		System.out.println(vo + "전달합니다");
+		mv.addObject("vo", exhibitionService.exhibitionDetail(vo,id));
+		
+		
+		return mv;
+	}
+	
 
 }

@@ -12,7 +12,6 @@
 	<table border=1>
 
 		<tr>
-			<th>인덱스</th>
 			<th>제목</th>
 			<th>시작날짜</th>
 			<th>종료날짜</th>
@@ -26,13 +25,13 @@
 		<c:forEach items="${vo}" var="vo">
 			<tr>
 
-				<td>${vo.exhibition_title}</td>
+				<td><a href="./ExhibitionDetail.do?id=${vo.exhibition_id}">${vo.exhibition_title}</td>
 				<td>${vo.exhibition_start_date}</td>
 				<td>${vo.exhibition_end_date}</td>
 				<td>${vo.exhibition_total_date}</td>
 				<td>${vo.exhibition_image}</td>
 				<td>${vo.exhibition_location}</td>
-				<td>${vo.exhibition_price}</td>
+				<td>${vo.exhibition_price}</a></td>
 
 			</tr>
 		</c:forEach>

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!doctype html>
 <html lang="en">
 
@@ -264,7 +266,7 @@
 			<div class="container py-9 position-relative">
 				<div class="row justify-content-between">
 					<div class="col-lg-6 col-sm-7 mx-auto mx-lg-0 mb-5 mb-lg-0">
-						<img src="/resources/img/mainposter/14. 기안84 제1회 개인전.PNG" alt=""
+						<img src="${vo.exhibition_image}" alt=""
 							style="width: 1500px" class="img-fluid mb-3"> <img
 							src="/resources/img/exam/22.jpg" alt="" class="img-fluid mb-3">
 						<!-- <img src="/resources/img/shop/single3.jpg" alt="" class="img-fluid"> -->
@@ -276,7 +278,7 @@
 							<!--Breadcrumbs-->
 							<nav class="d-md-flex" aria-label="breadcrumb">
 								<ol class="breadcrumb mb-3">
-									<p class="date">2022.04.01 ~ 2022.09.25</p>
+									<p class="date">${vo.exhibition_total_date}</p>
 									<!-- <li class="breadcrumb-item">
                                             <a href="#!">Home</a>
                                         </li>
@@ -295,12 +297,12 @@
 							<div class="mb-4 pb-4 border-bottom">
 								<div class="mb-3">
 									<!-- <h2 class="mb-4 display-5">Michelangelo in Metaverse</h2> -->
-									<h3 class>미켈란젤로 인 메타버스</h3>
+									<h3 class>${vo.exhibition_title}</h3>
 									<div class="d-flex justify-content-between align-items-center">
 										<div>
 											<p class="fs-4 mb-0">
-												9,000won
-												<del class="text-muted">15,000won</del>
+												${vo.exhibition_price} won
+<!-- 												<del class="text-muted">15,000won</del> -->
 											</p>
 										</div>
 										<div>
@@ -314,12 +316,12 @@
 								<div class="mb-0">
 									<div
 										class="d-flex align-items-center mb-3 justify-content-between">
-										<h6 class="mb-0" style="color: #f15b66;">Galley</h6>
+										<h6 class="mb-0" style="color: #f15b66;">Location</h6>
 										<!-- <a href="#!" class="fw-normal small">Size Guide</a> -->
 									</div>
 									<div
 										class="d-md-flex align-items-center justify-content-between">
-										<h6>제주 탠저린맨션</h6>
+										<h6>${vo.exhibition_location}</h6>
 										<div class="d-flex" role="group"
 											aria-label="Basic checkbox toggle button group">
 											<input type="radio" name="sizeRadio" class="btn-check"
