@@ -173,9 +173,9 @@
 								aria-haspopup="true" aria-expanded="false">마이페이지 </a>
 								<div class="dropdown-menu p-lg-3">
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="demo-shop-wishlist.html">Wish_list</a>
-									<a class="dropdown-item" href="demo-shop-cart.html">MyTicket</a>
-									<a class="dropdown-item" href="demo-shop-checkout.html">Setting</a>
+									<a class="dropdown-item" href="/customer/CustomerWishList.do">Wish_list</a>
+									<a class="dropdown-item" href="/customer/CustomerTicket.do">MyTicket</a>
+									<a class="dropdown-item" href="/customer/CustomerChangeInfo.do">Setting</a>
 								</div></li>
 							<li class="nav-item"><a class="nav-link" href="#!"> 로그아웃
 							</a></li>
