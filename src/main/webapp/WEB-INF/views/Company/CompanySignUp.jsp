@@ -40,6 +40,7 @@
 </head>
 
 <body>
+<form action="/company/companySignup.do" method="get">
 	<!--Preloader Spinner-->
 	<div class="spinner-loader bg-tint-primary">
 		<div class="spinner-border text-primary" role="status"></div>
@@ -281,6 +282,7 @@
 	</a>
 	<!-- scripts -->
 	<script src="/resources/js/theme.bundle.js"></script>
+</form>
 </body>
 
 </html>
