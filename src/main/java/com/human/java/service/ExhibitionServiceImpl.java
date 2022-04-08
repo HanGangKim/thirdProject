@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.human.java.dao.ExhibitionDAOImpl;
 import com.human.java.domain.ExhibitionVO;
+import com.human.java.domain.TicketingVO;
 
 @Service("exhibitionService")
 public class ExhibitionServiceImpl implements ExhibitionService{
@@ -81,6 +82,16 @@ public class ExhibitionServiceImpl implements ExhibitionService{
 		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
 		System.out.println("===============");
 		return exhibitionDAO.exhibitionDetail(vo, id);
+	}
+
+	@Override
+	public int ticketInsert(TicketingVO vo) {
+		System.out.println("===============");
+		System.out.println("ticketInsert 서비스 호출");
+		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+		
+		return exhibitionDAO.ticketInsert(vo);
 	}
 
 	

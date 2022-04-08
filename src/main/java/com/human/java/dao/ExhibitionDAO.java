@@ -3,6 +3,7 @@ package com.human.java.dao;
 import java.util.List;
 
 import com.human.java.domain.ExhibitionVO;
+import com.human.java.domain.TicketingVO;
 
 public interface ExhibitionDAO {
 
@@ -19,4 +20,7 @@ public interface ExhibitionDAO {
 	public List<ExhibitionVO> exhibitionSearch(ExhibitionVO vo, String st, String ed);
 	
 	public ExhibitionVO exhibitionDetail(ExhibitionVO vo, String id);
+	
+	// 티켓팅 
+	public int ticketInsert(TicketingVO vo);
 }
