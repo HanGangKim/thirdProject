@@ -120,39 +120,39 @@
 							details...</p>
 						<div class="position-relative">
 							<div>
-								<form class="needs-validation" novalidate>
+								<form class="needs-validation" novalidate method="post">
 
 									<!--input-with-icon-->
 									<div class="input-icon-group mb-3">
 										<span class="input-icon"> <i class="bx bx-user"></i>
 										</span> <input type="text" class="form-control" required
-											id="signUpName" autofocus placeholder="Your company name">
+											id="signUpName" autofocus placeholder="Your company name" name="company_name">
 									</div>
 
 									<div class="input-icon-group mb-3">
 										<span class="input-icon"> <i class="bx bx-envelope"></i>
-										</span> <input type="password" class="form-control" required
-											id="signUpid" placeholder="Enter id">
+										</span> <input type="text" class="form-control" required
+											id="signUpid" placeholder="Enter id" name="company_id">
 									</div>
 									</span>
 									<div class="input-icon-group mb-3">
 										<span class="input-icon"> <i class="bx bx-envelope"></i>
-										</span> <input type="email" class="form-control" required
-											id="signUpPH" placeholder="Your company phone number">
+										</span> <input type="text" class="form-control" required
+											id="signUpPH" placeholder="Your company phone number" name="company_ph">
 									</div>
 
 									<div class="input-icon-group mb-3">
 										<span class="input-icon"> <i class="bx bx-envelope"></i>
-										</span> </span> <input type="email" class="form-control" required
+										</span> </span> <input type="text" class="form-control" required
 											id="signUpCRN"
-											placeholder="Your corporate registration number">
+											placeholder="Your corporate registration number" name="company_regnum">
 									</div>
 
 									<!--input-with-icon-->
 									<div class="input-icon-group mb-3">
 										<span class="input-icon"> <i class="bx bx-envelope"></i>
 										</span> </span> <input type="email" class="form-control" required
-											id="signUpMail" placeholder="Your email address">
+											id="signUpMail" placeholder="Your email address" name="company_email">
 									</div>
 									<div class="input-icon-group mb-3">
 										<span class="input-icon"> <i class="bx bx-envelope"></i>
@@ -167,7 +167,7 @@
 									<div class="input-icon-group mb-3">
 										<span class="input-icon"> <i class="bx bx-lock-open"></i>
 										</span> </span> <input type="password" class="form-control" required
-											id="signUpPassword" placeholder="Enter password">
+											id="signUpPassword" placeholder="Enter password" name="company_password">
 									</div>
 									<!--input-with-icon-->
 									<div class="input-icon-group mb-3">
