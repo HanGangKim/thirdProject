@@ -64,7 +64,7 @@
 							aria-haspopup="false" aria-expanded="false"> Home </a></li>
 						<!--전시회-->
 						<li class="nav-item position-lg-static me-lg-3"><a
-							class="nav-link" href="#" role="button" aria-haspopup="true"
+							class="nav-link" href="exhibition/ExhibitionDate.do" role="button" aria-haspopup="true"
 							aria-expanded="false"> Exhibition </a></li>
 						<!--리뷰-->
 						<li class="nav-item position-static me-lg-3"><a
@@ -83,11 +83,11 @@
 							<c:when test="${sessionScope.userId == null}">
 								<!-- 회원가입 -->
 								<li class="nav-item position-lg-static me-lg-3"><a
-									class="nav-link" href="#" role="button" aria-haspopup="true"
+									class="nav-link" href="/LandingSignUp.do" role="button" aria-haspopup="true"
 									aria-expanded="false">Sign Up </a></li>
 								<!-- 로그인 -->
 								<li class="nav-item position-lg-static me-lg-3"><a
-									class="nav-link" href="LandingLogin.do" role="button"
+									class="nav-link" href="/LandingLogin.do" role="button"
 									aria-haspopup="true" aria-expanded="false"> Sign In </a></li>
 							</c:when>
 							<c:when test="${sessionScope.userId != null}">
