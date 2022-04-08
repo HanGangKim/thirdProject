@@ -58,73 +58,7 @@
 		<span class="small d-block ms-2">Loading...</span>
 	</div>
 
-	<!--Header Start-->
-	<header class="z-index-fixed">
-		<!--네비 시작-->
-		<nav class="navbar navbar-expand-lg navbar-light bg-white">
-			<div class="container position-relative">
-				<a class="navbar-brand" href="demo-shop.html"> <img
-					src="/resources/img/logo/logo-shop.svg" alt="" class="img-fluid">
-				</a>
-				<div
-					class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
-					<button class="navbar-toggler order-last" type="button"
-						data-bs-toggle="collapse" data-bs-target="#mainNavbarTheme"
-						aria-controls="mainNavbarTheme" aria-expanded="false"
-						aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"> <i></i>
-						</span>
-					</button>
-					<div class="nav-item me-4 me-lg-0">
-						<a href="#" data-bs-target="#modal-search-bar-2"
-							data-bs-toggle="modal" class="nav-link lh-1"> <i
-							class="bx bx-search fs-4"></i>
-						</a>
-					</div>
-				</div>
-				<div class="collapse navbar-collapse" id="mainNavbarTheme">
-					<ul class="navbar-nav mx-auto">
-						<!--홈-->
-						<li class="nav-item dropdown me-lg-3"><a class="nav-link"
-							href="demo-shop.html" role="button" aria-haspopup="false"
-							aria-expanded="false"> Home </a></li>
-						<!--전시회-->
-						<li class="nav-item nav-item dropdown position-lg-static me-lg-3">
-							<a class="nav-link" href="demo-shop-products-full-width.html"
-							role="button" aria-haspopup="true" aria-expanded="false">
-								Exhibition </a>
-						</li>
-						<!--리뷰-->
-						<li class="nav-item nav-item dropdown position-static me-lg-3">
-							<a class="nav-link active" href="#" role="button"
-							data-bs-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"> Review </a>
-						</li>
-						<!--마이페이지-->
-						<li class="nav-item dropdown me-lg-3"><a
-							class="nav-link dropdown-toggle" data-bs-auto-close="outside"
-							href="#" role="button" data-bs-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false">Mypage </a> <!--마이페이지 드롭다운-->
-							<div class="dropdown-menu p-lg-3">
-								<div class="dropend">
-									<a class="dropdown-item dropdown-toggle" aria-expanded="false"
-										href="demo-shop-cart2.html">Wishlist</a>
-								</div>
-								<div class="dropend">
-									<a class="dropdown-item dropdown-toggle"
-										href="demo-shop-wishlist.html" aria-expanded="false">Ticket</a>
-								</div>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="demo-shop-cart.html">Setting</a>
-							</div></li>
-						<!--로그아웃-->
-						<li class="nav-item"><a class="nav-link"
-							href="demo-shop.html"> Logout </a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</header>
+	<jsp:include page="/header.jsp" />
 
 	<!--:Search bar modal-->
 	<div id="modal-search-bar-2" class="modal fade" tabindex="-1"

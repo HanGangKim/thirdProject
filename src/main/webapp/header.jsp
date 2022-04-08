@@ -42,11 +42,18 @@
 				<!-- 검색버튼 -->
 				<div
 					class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
-					<!-- style="width: 88px; justify-content: flex-end;" -->
 					<div class="nav-item me-3">
-						<a href="demo-shop-wishlist.html"
-							class="nav-link lh-1 position-relative">Hello :)</a>
-						<!-- <a href="demo-shop-wishlist.html" class="nav-link lh-1 position-relative">Welcome !</a> -->
+						<c:choose>
+							<c:when test="${sessionScope.userId == null}">
+								<a href="demo-shop-wishlist.html"
+									class="nav-link lh-1 position-relative">Hello :)</a>
+							</c:when>
+							<c:when test="${sessionScope.userId != null}">
+								<a href="demo-shop-wishlist.html"
+									class="nav-link lh-1 position-relative">Welcome
+									${sessionScope.userId}!</a>
+							</c:when>
+						</c:choose>
 					</div>
 					<div class="nav-item me-4 me-lg-0">
 						<a href="#" data-bs-target="#modal-search-bar-2"
@@ -60,31 +67,23 @@
 					<ul class="navbar-nav mx-auto">
 						<!--홈-->
 						<li class="nav-item position-lg-static me-lg-3"><a
-							class="nav-link active" href="#" role="button"
+							class="nav-link active" href="index.jsp" role="button"
 							aria-haspopup="false" aria-expanded="false"> Home </a></li>
 						<!--전시회-->
 						<li class="nav-item position-lg-static me-lg-3"><a
-							class="nav-link" href="exhibition/ExhibitionDate.do" role="button" aria-haspopup="true"
-							aria-expanded="false"> Exhibition </a></li>
+							class="nav-link" href="/exhibition/ExhibitionDate.do"
+							role="button" aria-haspopup="true" aria-expanded="false">
+								Exhibition </a></li>
 						<!--리뷰-->
 						<li class="nav-item position-static me-lg-3"><a
 							class="nav-link" href="#" role="button" aria-haspopup="true"
 							aria-expanded="false"> Review </a></li>
-						<!-- 						회원가입 -->
-						<!-- 						<li class="nav-item position-lg-static me-lg-3"><a -->
-						<!-- 							class="nav-link" href="#" role="button" aria-haspopup="true" -->
-						<!-- 							aria-expanded="false">Sign Up </a></li> -->
-						<!-- 						로그인 -->
-						<!-- 						<li class="nav-item position-lg-static me-lg-3"><a -->
-						<!-- 							class="nav-link" href="#" role="button" aria-haspopup="true" -->
-						<!-- 							aria-expanded="false"> Sign In </a></li> -->
-
 						<c:choose>
 							<c:when test="${sessionScope.userId == null}">
 								<!-- 회원가입 -->
 								<li class="nav-item position-lg-static me-lg-3"><a
-									class="nav-link" href="/LandingSignUp.do" role="button" aria-haspopup="true"
-									aria-expanded="false">Sign Up </a></li>
+									class="nav-link" href="/LandingSignUp.do" role="button"
+									aria-haspopup="true" aria-expanded="false">Sign Up </a></li>
 								<!-- 로그인 -->
 								<li class="nav-item position-lg-static me-lg-3"><a
 									class="nav-link" href="/LandingLogin.do" role="button"
@@ -99,18 +98,18 @@
 									<div class="dropdown-menu p-lg-3">
 										<div class="dropend">
 											<a class="dropdown-item" aria-expanded="false"
-												href="CustomerWishList.do">My Wishlist</a>
+												href="/customer/CustomerWishList.do">My Wishlist</a>
 										</div>
 										<div class="dropend">
-											<a class="dropdown-item" href="CustomerTicket.do"
+											<a class="dropdown-item" href="/customer/CustomerTicket.do"
 												aria-expanded="false">My Ticket</a>
 										</div>
 										<div class="dropend">
-											<a class="dropdown-item" href="CustomerTicket.do"
+											<a class="dropdown-item" href="/customer/CustomerTicket.do"
 												aria-expanded="false">My Review</a>
 										</div>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="CustomerChangeInfo.do">Setting</a>
+										<a class="dropdown-item" href="/customer/CustomerChangeInfo.do">Setting</a>
 									</div></li>
 								<!--로그아웃-->
 								<li class="nav-item"><a class="nav-link" href="#"> Sign
