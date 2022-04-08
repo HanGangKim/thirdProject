@@ -1,20 +1,46 @@
 package com.human.java.company.controller;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.human.java.domain.CompanyVO;
+import com.human.java.service.CompanyService;
 
 @Controller
 @RequestMapping("/company/")
 public class CompanySignUpController {
 	
-@RequestMapping("companySignup.do")	
- public String companySignUp(CompanyVO vo) {
-	System.out.println("companySignUp.do 호출");
+	@Autowired
+	private CompanyService companyService;
+	@RequestMapping("companySignup.do")	
+	public ModelAndView companySignUp(CompanyVO vo) {
 	
-	return "/Company/CompanySignUp";
+	
+	
+		System.out.println("companySignUp 컨트롤러 호출");
+	
+		System.out.println("===============");
+		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+
+		// 가입실패
+		int result = companyService.companyInsert(vo);
+		String message = "가입되지 않았습니다.";
+
+		if (result > 0)
+		message = vo.getCompany_name() + "님 , 가입을 축하드립니다.";
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("Company/CompanyLogin");
+		mv.addObject("message", message);
+		mv.addObject("result", result);
+		return mv;
+	
 	 
  }
+
+
 
 }

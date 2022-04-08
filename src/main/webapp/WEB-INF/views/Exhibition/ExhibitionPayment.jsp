@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
@@ -9,19 +10,20 @@
  //  String address = (String)request.getAttribute("address");
   //  int totalPrice = (int)request.getAttribute("totalPrice");
      String name = (String)request.getParameter("name");
-     String email = (String)request.getParameter("email");
+     String title = (String)request.getParameter("title");
      String phone = (String)request.getParameter("phone");
-     String address = (String)request.getParameter("address");
+     String date = (String)request.getParameter("date");
+     String totalCustomer = (String)request.getParameter("totalCustomer");
      String stotalPrice = (String)request.getParameter("totalPrice");
      int totalPrice = Integer.parseInt(stotalPrice);
     
      System.out.println("name: "+name);
-    System.out.println("email: "+email);
+     System.out.println("title: "+title);
      System.out.println("phone: "+phone);
-     System.out.println("address: "+address);
+     System.out.println("date: "+date);
+     System.out.println("totalCustomer"+totalCustomer);
      System.out.println("stotalPrice: "+stotalPrice);
      System.out.println("totalPrice: "+totalPrice);
- 
 %>
 
 
@@ -34,6 +36,13 @@
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 </head>
 <body>
+<form name="hiddenForm" action="ExhibitionPaySucess.do" method="get">
+<input type="text" value='<%=name%>'>
+<input type="text" value='<%=title%>'>
+<input type="text" value='<%=phone%>'>
+<input type="text" value='<%=date%>'>
+<input type="text" value='<%=totalPrice%>'>
+</form>
     <script>
     $(function(){
         var IMP = window.IMP; // 생략가능
@@ -41,17 +50,16 @@
         var msg;
         
         IMP.request_pay({
-            pg : 'kakaopay',
-            pay_method : 'card',
-            merchant_uid : 'merchant_' + new Date().getTime(),
-            name : 'KH Books 도서 결제',
-            amount : <%=totalPrice%>,
-            <%-- buyer_email : '<%=email%>', --%>
-            buyer_name : '<%=name%>',
-            buyer_tel : '<%=phone%>',
-            <%-- buyer_addr : '<%=address%>', --%>
-            buyer_postcode : '123-456',
-            //m_redirect_url : 'http://www.naver.com'
+        	 pg : 'kakaopay',
+             pay_method : 'card',
+             merchant_uid : 'merchant_' + new Date().getTime(),
+             name : '<%=title%>',
+             amount : <%=totalPrice%>,
+             buyer_date : '<%=date%>', 
+             buyer_name : '<%=name%>',
+             buyer_tel : '<%=phone%>',
+             <%-- buyer_addr : '<%=address%>', --%>
+             buyer_postcode : '123-456'
         }, function(rsp) {
             if ( rsp.success ) {
                 //[1] 서버단에서 결제정보 조회를 위해 jQuery ajax로 imp_uid 전달하기
@@ -71,17 +79,16 @@
                         msg += '\n상점 거래ID : ' + rsp.merchant_uid;
                         msg += '\결제 금액 : ' + rsp.paid_amount;
                         msg += '카드 승인번호 : ' + rsp.apply_num;
-                        
                         alert(msg);
                     } else {
                         //[3] 아직 제대로 결제가 되지 않았습니다.
                         //[4] 결제된 금액이 요청한 금액과 달라 결제를 자동취소처리하였습니다.
                     }
                 });
-                //성공시 이동할 페이지
+                //성공시 컨트롤러 이동
               <%--  location.href='<%=request.getContextPath()%>/order/paySuccess?msg='+msg;  --%>
-              location.href="CustomerPaySucess.do";
-               
+             /*  location.href="ExhibitionPaySucess.do"; */
+               document.hiddenForm.submit();
               
             } else {
                 msg = '결제에 실패하였습니다.';

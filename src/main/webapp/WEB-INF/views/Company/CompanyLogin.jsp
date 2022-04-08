@@ -118,17 +118,17 @@
 						<p class="mb-4 text-muted">Please Sign In with details...</p>
 						<div class="position-relative">
 							<div>
-								<form action="/company/CompanySignUp.do"
+								<form action="/company/companyLogin.do"
 									class="needs-validation" novalidate>
 									<div class="input-icon-group mb-3">
 										<span class="input-icon"> <i class="bx bx-envelope"></i>
-										</span> <input type="email" class="form-control" required autofocus
-											placeholder="Username">
+										</span> <input type="text" class="form-control" required autofocus
+											placeholder="Username" name="company_id">
 									</div>
 									<div class="input-icon-group mb-3">
 										<span class="input-icon"> <i class="bx bx-lock-open"></i>
 										</span> <input type="password" class="form-control" required
-											placeholder="Password">
+											placeholder="Password" name="company_password">
 									</div>
 									<div class="mb-3 d-flex justify-content-between">
 										<div class="form-check">

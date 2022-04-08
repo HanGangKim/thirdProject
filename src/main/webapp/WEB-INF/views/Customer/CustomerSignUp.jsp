@@ -79,7 +79,7 @@
 				<div class="row align-items-center justify-content-center">
 					<div class=" col-xl-4 col-lg-5 col-md-6 col-sm-8 z-index-2">
 
-						<h2 class="mb-1 display-6">일반회원 가입</h2>
+						<h2 class="mb-1 display-6">Member Sign Up</h2>
 						<p class="mb-4 text-muted">To get started, Please signup with
 							details...</p>
 

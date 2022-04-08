@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="companyMapper">
+
+	<insert id="companyInsert" parameterType="company">
+		INSERT INTO
+		COMPANY_INFO
+		(COMPANY_ID, COMPANY_PASSWORD, COMPANY_NAME, COMPANY_PH, COMPANY_EMAIL, COMPANY_REGNUM, COMPANY_FLAG)
+		VALUES
+		(#{company_id} , #{company_password} , #{company_name} ,  #{company_ph} , #{company_email} , #{company_regnum} , 'N')
+	</insert>
+
+	 <select id="companyLogin" parameterType="company" resultType="company">
+		SELECT *
+		FROM COMPANY_INFO
+		WHERE COMPANY_ID = #{company_id} AND COMPANY_PASSWORD = #{company_password}
+	</select> 
+	
+
+	
+
+</mapper>

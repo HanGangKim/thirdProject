@@ -36,8 +36,9 @@
 		<nav class="navbar navbar-expand-lg navbar-light bg-white">
 			<div class="container position-relative">
 				<!-- 로고 -->
-				<a class="navbar-brand" href="demo-shop.html"> <img
-					src="/resources/img/logo/logo-shop.svg" alt="" class="img-fluid">
+				<a class="navbar-brand" href="/NoneMemberMain.do"> 
+<!-- 					<img src="/resources/img/logo/logo-shop.svg" alt="" class="img-fluid"> -->
+					Fiennale
 				</a>
 				<!-- 검색버튼 -->
 				<div
@@ -50,8 +51,7 @@
 							</c:when>
 							<c:when test="${sessionScope.userId != null}">
 								<a href="demo-shop-wishlist.html"
-									class="nav-link lh-1 position-relative">Welcome
-									${sessionScope.userId}!</a>
+									class="nav-link lh-1 position-relative">Welcome !</a>
 							</c:when>
 						</c:choose>
 					</div>
@@ -76,7 +76,7 @@
 								Exhibition </a></li>
 						<!--리뷰-->
 						<li class="nav-item position-static me-lg-3"><a
-							class="nav-link" href="#" role="button" aria-haspopup="true"
+							class="nav-link" href="/exhibition/ExhibitionReviewList.do" role="button" aria-haspopup="true"
 							aria-expanded="false"> Review </a></li>
 						<c:choose>
 							<c:when test="${sessionScope.userId == null}">
