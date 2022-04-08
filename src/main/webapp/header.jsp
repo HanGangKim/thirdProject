@@ -93,8 +93,8 @@
 								<!--마이페이지-->
 								<li class="nav-item dropdown me-lg-3"><a
 									class="nav-link dropdown-toggle" data-bs-auto-close="outside"
-									href="#" role="button" data-bs-toggle="dropdown"
-									aria-haspopup="true" aria-expanded="false">Mypage </a> <!--마이페이지 드롭다운-->
+									role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+									aria-expanded="false">Mypage </a> <!--마이페이지 드롭다운-->
 									<div class="dropdown-menu p-lg-3">
 										<div class="dropend">
 											<a class="dropdown-item" aria-expanded="false"
@@ -105,11 +105,12 @@
 												aria-expanded="false">My Ticket</a>
 										</div>
 										<div class="dropend">
-											<a class="dropdown-item" href="/customer/CustomerTicket.do"
+											<a class="dropdown-item" href="/customer/CustomerExhibitionMyReviewList.do"
 												aria-expanded="false">My Review</a>
 										</div>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="/customer/CustomerChangeInfo.do">Setting</a>
+										<a class="dropdown-item"
+											href="/customer/CustomerChangeInfo.do">Setting</a>
 									</div></li>
 								<!--로그아웃-->
 								<li class="nav-item"><a class="nav-link" href="#"> Sign
