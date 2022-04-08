@@ -81,7 +81,7 @@
 
 
 						<c:choose>
-							<c:when test="${customer_id == null}">
+							<c:when test="${sessionScope.userId == null}">
 								<!-- 회원가입 -->
 								<li class="nav-item position-lg-static me-lg-3"><a
 									class="nav-link" href="#" role="button" aria-haspopup="true"
@@ -91,7 +91,7 @@
 									class="nav-link" href="LandingLogin.do" role="button" aria-haspopup="true"
 									aria-expanded="false"> Sign In </a></li>
 							</c:when>
-							<c:when test="${customer_id != null}">
+							<c:when test="${sessionScope.userId != null}">
 								<!--마이페이지-->
 								<li class="nav-item dropdown me-lg-3"><a
 									class="nav-link dropdown-toggle" data-bs-auto-close="outside"
