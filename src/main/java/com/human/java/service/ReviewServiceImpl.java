@@ -22,6 +22,9 @@ public class ReviewServiceImpl implements ReviewService{
 		System.out.println("insertReview 서비스 호출");
 		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
 		System.out.println("===============");
+		
+		
+		
 		reviewDAO.insertReview(vo);
 		
 	}
