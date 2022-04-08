@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!doctype html>
 <html lang="en">
 
@@ -15,7 +15,8 @@
 <link rel="stylesheet"
 	href="/resources/vendor/node_modules/css/swiper-bundle.min.css">
 <!--Icons-->
-<link href="/resources/fonts/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="/resources/fonts/boxicons/css/boxicons.min.css"
+	rel="stylesheet">
 <!--Google fonts-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,65 +35,12 @@
 		<div class="spinner-border text-primary" role="status"></div>
 		<span class="small d-block ms-2">Loading...</span>
 	</div>
-	
-	<jsp:include page="/header.jsp" />
-	
 
-	<!--:Search bar modal-->
-	<div id="modal-search-bar-2" class="modal fade" tabindex="-1"
-		aria-labelledby="modal-search-bar-2" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-top modal-md">
-			<div class="modal-content position-relative border-0">
-				<div class="position-relative px-4">
-					<div
-						class="position-absolute end-0 width-7x top-0 d-flex me-4 align-items-center h-100 justify-content-center">
-						<button type="button" class="btn-close w-auto small"
-							data-bs-dismiss="modal" aria-label="Close">Cancel</button>
-					</div>
-					<form class="mb-0">
-						<div class="d-flex align-items-center">
-							<div class="d-flex flex-grow-1 align-items-center">
-								<i class="bx bx-search fs-4"></i> <input type="text"
-									placeholder="Search...."
-									class="form-control shadow-none border-0 flex-grow-1 form-control-lg">
-							</div>
-						</div>
-					</form>
-				</div>
-
-				<div class="p-4 border-top">
-					<div class="d-flex align-items-center mb-3">
-						<i class="bx bx-trending-up fs-4"></i>
-						<h6 class="mb-0 ms-2">Top searches</h6>
-					</div>
-					<div class="d-flex flex-wrap align-items-center">
-						<span><a href="#!"
-							class="badge badge-pill border text-muted me-1 mb-1 px-3 py-1">Jeans</a></span>
-						<span><a href="#!"
-							class="badge badge-pill border text-muted me-1 mb-1 px-3 py-1">Shoes</a></span>
-						<span><a href="#!"
-							class="badge badge-pill border text-muted me-1 mb-1 px-3 py-1">Watches</a></span>
-						<span><a href="#!"
-							class="badge badge-pill border text-muted me-1 mb-1 px-3 py-1">Men's</a></span>
-						<span><a href="#!"
-							class="badge badge-pill border text-muted me-1 mb-1 px-3 py-1">Sneakers</a></span>
-						<span><a href="#!"
-							class="badge badge-pill border text-muted me-1 mb-1 px-3 py-1">Casual</a></span>
-						<span><a href="#!"
-							class="badge badge-pill border text-muted me-1 mb-1 px-3 py-1">Shirts</a></span>
-						<span><a href="#!"
-							class="badge badge-pill border text-muted me-1 mb-1 px-3 py-1">T-shirts</a></span>
-						<span><a href="#!"
-							class="badge badge-pill border text-muted me-1 mb-1 px-3 py-1">Lowers</a></span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
+	<jsp:include page="/main-header.jsp" />
 
 	<main>
-
+	
+		<!-- 슬라이더 시작 -->
 		<section class="position-relative overflow-hidden">
 			<!--:Swiper classic -->
 			<div
@@ -196,6 +144,10 @@
 				</div>
 			</div>
 		</section>
+		<!-- 슬라이더 끝 -->
+		
+		
+		<!-- 카테고리 시작 -->
 		<section class="bg-white position-relative overflow-hidden">
 			<div class="container pt-7 pt-lg-12 position-relative">
 				<div class="row align-items-center">
@@ -222,6 +174,10 @@
 				</div>
 			</div>
 		</section>
+		<!-- 카테고리 끝 -->
+		
+		
+		<!-- 메뉴선택 두개 시작 -->
 		<section class="position-relative bg-white">
 			<div class="container-fluid px-lg-4 position-relative pt-7 pt-lg-12">
 				<div class="row justify-content-between">
@@ -274,7 +230,7 @@
 				</div>
 			</div>
 		</section>
-		<!--End section-->
+		<!-- 메뉴선택 두개 끝 -->
 
 		<section class="overflow-hidden bg-white">
 			<div class="container py-9 py-lg-11">
@@ -285,36 +241,39 @@
 				</div>
 				<div class="row">
 					<c:forEach items="${vo}" var="vo">
-					<div class="col-md-6 col-lg-3 mb-4">
-						<!--Card-product-->
-						<div
-							class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0">
-							<div class="card-product-header px-5 p-4 d-block overflow-hidden">
-								<!--Product image-->
-								<a href="#!"> <img src="${vo.exhibition_image}"
-									class="img-fluid" alt="Product">
-								</a>
-							</div>
-							<div class="card-product-body px-4 pb-4 text-center">
-								<a href="#!" class="h6 d-block position-relative mb-2 text-dark">${vo.exhibition_title}</a>
-								<div class="card-product-body-ovelray">
-									<!--Price-->
-									<span class="card-product-price"> <span>${vo.exhibition_start_date}</span> ~ <span>${vo.exhibition_end_date}</span>
-									</span>
-									<!--Action-->
-									<span class="card-product-view-btn"> <a href="#!"
-										class="link-underline mb-1 fw-semibold text-dark">상세보기</a>
-									</span>
+						<div class="col-md-6 col-lg-3 mb-4">
+							<!--Card-product-->
+							<div
+								class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0">
+								<div
+									class="card-product-header px-5 p-4 d-block overflow-hidden">
+									<!--Product image-->
+									<a href="#!"> <img src="${vo.exhibition_image}"
+										class="img-fluid" alt="Product">
+									</a>
+								</div>
+								<div class="card-product-body px-4 pb-4 text-center">
+									<a href="#!"
+										class="h6 d-block position-relative mb-2 text-dark">${vo.exhibition_title}</a>
+									<div class="card-product-body-ovelray">
+										<!--Price-->
+										<span class="card-product-price"> <span>${vo.exhibition_start_date}</span>
+											~ <span>${vo.exhibition_end_date}</span>
+										</span>
+										<!--Action-->
+										<span class="card-product-view-btn"> <a href="#!"
+											class="link-underline mb-1 fw-semibold text-dark">상세보기</a>
+										</span>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				</c:forEach>
+					</c:forEach>
 				</div>
 				<div class="text-center pt-2">
 					<a href="#" class="btn btn-dark btn-lg btn-hover-text mb-2 me-2">
-						<span class="btn-hover-label label-default">>>더보기&lt;&lt;</span> <span
-						class="btn-hover-label label-hover">>다가오는 전시회 목록</span>
+						<span class="btn-hover-label label-default">More View</span> <span
+						class="btn-hover-label label-hover">Date Search</span>
 					</a>
 				</div>
 			</div>
@@ -392,41 +351,43 @@
 <script src="/resources/vendor/node_modules/js/swiper-bundle.min.js"></script>
 
 
-
-
 <script>
-        //swiper
-        //Classic
-         var swiperClassic = new Swiper(".swiper-classic", {
-            slidesPerView: 1,
-            spaceBetween: 0,
-            effect: 'fade',
-            speed: 800,
-            loop: true,
-            autoplay: {
-                delay: 2500
-            },
-            pagination: {
-                el: ".swiperClassic-pagination",
-                type: "fraction"
-            },
-            navigation: {
-                nextEl: ".swiperClassic-button-next",
-                prevEl: ".swiperClassic-button-prev"
-            }
-        });
+	//swiper
+	//Classic
+	var swiperClassic = new Swiper(".swiper-classic", {
+		slidesPerView : 1,
+		spaceBetween : 0,
+		effect : 'fade',
+		speed : 800,
+		loop : true,
+		autoplay : {
+			delay : 2500
+		},
+		pagination : {
+			el : ".swiperClassic-pagination",
+			type : "fraction"
+		},
+		navigation : {
+			nextEl : ".swiperClassic-button-next",
+			prevEl : ".swiperClassic-button-prev"
+		}
+	});
 
-        function get1dayFromNow() {
-            return new Date(new Date().valueOf() + 1 * 24 * 60 * 60 * 1000);
-        }
+	function get1dayFromNow() {
+		return new Date(new Date().valueOf() + 1 * 24 * 60 * 60 * 1000);
+	}
 
-        var $clock = $('.countdown-timer');
+	var $clock = $('.countdown-timer');
 
-        $clock.countdown(get1dayFromNow(), function (event) {
-            $(this).html(event.strftime(
-                '<div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4">%H</h2><span class="small text-muted">Hours</span></div><div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4">%M</h2><span class="small text-muted">Minutes</span></div><div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4">%S</h2><span class="small text-muted">Seconds</span></div>'
-                ));
-        });
-    </script>
+	$clock
+			.countdown(
+					get1dayFromNow(),
+					function(event) {
+						$(this)
+								.html(
+										event
+												.strftime('<div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4">%H</h2><span class="small text-muted">Hours</span></div><div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4">%M</h2><span class="small text-muted">Minutes</span></div><div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4">%S</h2><span class="small text-muted">Seconds</span></div>'));
+					});
+</script>
 
 </html>
