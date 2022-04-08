@@ -25,7 +25,7 @@
 <!-- Main CSS -->
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
-<title>HEADER</title>
+<title>HEADER TEST</title>
 
 </head>
 
@@ -67,29 +67,32 @@
 						<div class="collapse navbar-collapse" id="mainNavbarTheme">
 							<ul class="navbar-nav mx-auto">
 								<!--홈-->
-								<li class="nav-item position-lg-static me-lg-3"><a
-									class="nav-link active" href="/NoneMemberMain.do" role="button"
-									aria-haspopup="false" aria-expanded="false"> Home </a></li>
+								<li class="nav-item position-lg-static me-lg-3"
+									><a class="nav-link active" href="#"
+									role="button" aria-haspopup="false" aria-expanded="false">
+										Home </a></li>
 								<!--전시회-->
-								<li class="nav-item position-lg-static me-lg-3"><a
-									class="nav-link" href="/exhibition/ExhibitionDate.do"
+								<li class="nav-item position-lg-static me-lg-3"
+									><a class="nav-link" href="#"
 									role="button" aria-haspopup="true" aria-expanded="false">
 										Exhibition </a></li>
 								<!--리뷰-->
-								<li class="nav-item position-static me-lg-3"><a
-									class="nav-link" href="/exhibition/ExhibitionReviewList.do"
+								<li class="nav-item position-static me-lg-3"
+									><a class="nav-link" href="#"
 									role="button" aria-haspopup="true" aria-expanded="false">
 										Review </a></li>
 								<c:choose>
 									<c:when test="${sessionScope.userId == null}">
 										<!-- 회원가입 -->
-										<li class="nav-item position-lg-static me-lg-3"><a
-											class="nav-link" href="/LandingSignUp.do" role="button"
-											aria-haspopup="true" aria-expanded="false">Sign Up </a></li>
+										<li class="nav-item position-lg-static me-lg-3"
+											><a class="nav-link" href="#"
+											role="button" aria-haspopup="true" aria-expanded="false">Sign
+												Up </a></li>
 										<!-- 로그인 -->
-										<li class="nav-item position-lg-static me-lg-3"><a
-											class="nav-link" href="/LandingLogin.do" role="button"
-											aria-haspopup="true" aria-expanded="false"> Sign In </a></li>
+										<li class="nav-item position-lg-static me-lg-3"
+											><a class="nav-link" href="#"
+											role="button" aria-haspopup="true" aria-expanded="false">
+												Sign In </a></li>
 									</c:when>
 									<c:when test="${sessionScope.userId != null}">
 										<!--마이페이지-->
@@ -99,24 +102,22 @@
 											aria-expanded="false">Mypage </a> <!--마이페이지 드롭다운-->
 											<div class="dropdown-menu p-lg-3">
 												<div class="dropend">
-													<a class="dropdown-item" aria-expanded="false"
-														href="/customer/CustomerWishList.do">My Wishlist</a>
+													<a class="dropdown-item" aria-expanded="false" href="#">My
+														Wishlist</a>
 												</div>
 												<div class="dropend">
-													<a class="dropdown-item" href="/customer/CustomerTicket.do"
-														aria-expanded="false">My Ticket</a>
+													<a class="dropdown-item" href="#" aria-expanded="false">My
+														Ticket</a>
 												</div>
 												<div class="dropend">
-													<a class="dropdown-item"
-														href="/customer/CustomerExhibitionMyReviewList.do"
-														aria-expanded="false">My Review</a>
+													<a class="dropdown-item" href="#" aria-expanded="false">My
+														Review</a>
 												</div>
 												<div class="dropdown-divider"></div>
-												<a class="dropdown-item"
-													href="/customer/CustomerChangeInfo.do">Setting</a>
+												<a class="dropdown-item" href="#">Setting</a>
 											</div></li>
 										<!--로그아웃-->
-										<li class="nav-item"><a class="nav-link" href="#">
+										<li class="nav-item position-static me-lg-3"><a class="nav-link" href="#">
 												Sign Out </a></li>
 									</c:when>
 								</c:choose>
@@ -182,7 +183,5 @@
 		})
 	}
 </script>
-
-
 
 </html>

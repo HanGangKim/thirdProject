@@ -19,6 +19,20 @@
 		WHERE CUSTOMER_ID = #{customer_id} AND CUSTOMER_PASSWORD = #{customer_password}
 	</select> 
 	
+	<update id="customerUpdate" parameterType="customer">
+	
+	
+<!-- 	UPDATE CUSTOMER_INFO -->
+<!-- 	SET -->
+<!-- 	customer_name = #{CUSTOMER_NAME}, -->
+<!-- 	customer_id = #{CUSTOMER_ID}, -->
+<!-- 	customer_ph = #{CUSTOMER_PH}, -->
+<!-- 	customer_email = #{CUSTOMER_EMAIL} -->
+<!-- 	WHERE CUSTOMER_ID = '3'; -->
+	
+	
+	</update>
+	
 
 	
 

@@ -32,5 +32,12 @@ public class CustomerDAOImpl implements  CustomerDAO{
 		return mybatis.selectOne("customerMapper.customerLogin",vo);
 	}
 	
+	@Override
+	public void customerupdate(CustomerVO vo) {
+		System.out.println("===============");
+		System.out.println("customerLogin 다오 호출");
+		mybatis.update("customerMapper.customerchangeInfo",vo);
+	}
+	
 	
 }
