@@ -4,24 +4,21 @@
     
     
 <%
- //   String name = (String)request.getAttribute("name");
- //   String email = (String)request.getAttribute("email");
- //  String phone = (String)request.getAttribute("phone");
- //  String address = (String)request.getAttribute("address");
-  //  int totalPrice = (int)request.getAttribute("totalPrice");
-     String name = (String)request.getParameter("name");
+	 String exhibition_id = (String)request.getParameter("exhibition_id");
+     String customer_id = (String)request.getParameter("customer_id");
+	 String consumer_name = (String)request.getParameter("consumer_name");
      String title = (String)request.getParameter("title");
-     String phone = (String)request.getParameter("phone");
-     String date = (String)request.getParameter("date");
-     String totalCustomer = (String)request.getParameter("totalCustomer");
+     String consumer_ph = (String)request.getParameter("consumer_ph");
+     String ticketing_date = (String)request.getParameter("ticketing_date");
      String stotalPrice = (String)request.getParameter("totalPrice");
      int totalPrice = Integer.parseInt(stotalPrice);
     
-     System.out.println("name: "+name);
+     System.out.println("customer_id: "+customer_id);
+     System.out.println("consumer_name: "+consumer_name);
      System.out.println("title: "+title);
-     System.out.println("phone: "+phone);
-     System.out.println("date: "+date);
-     System.out.println("totalCustomer"+totalCustomer);
+     System.out.println("consumer_ph: "+consumer_ph);
+     System.out.println("ticketing_date: "+ticketing_date);
+     System.out.println("exhibition_id: "+exhibition_id);
      System.out.println("stotalPrice: "+stotalPrice);
      System.out.println("totalPrice: "+totalPrice);
 %>
@@ -35,14 +32,17 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 </head>
+
 <body>
-<form name="hiddenForm" action="ExhibitionPaySucess.do" method="get">
-<input type="text" value='<%=name%>'>
-<input type="text" value='<%=title%>'>
-<input type="text" value='<%=phone%>'>
-<input type="text" value='<%=date%>'>
-<input type="text" value='<%=totalPrice%>'>
+
+<form name="hiddenForm" action="/exhibition/ExhibitionTicketing.do" method="get">
+<input type="text" value="<%=customer_id%>" name="customer_id">
+<input type="text" value="<%=consumer_name%>" name="consumer_name">
+<input type="text" value="<%=ticketing_date%>" name="ticketing_date">
+<input type="text" value="<%=consumer_ph%>" name="consumer_ph">
+<input type="text" value="<%=exhibition_id%>" name="exhibition_id">
 </form>
+
     <script>
     $(function(){
         var IMP = window.IMP; // 생략가능
@@ -55,10 +55,9 @@
              merchant_uid : 'merchant_' + new Date().getTime(),
              name : '<%=title%>',
              amount : <%=totalPrice%>,
-             buyer_date : '<%=date%>', 
-             buyer_name : '<%=name%>',
-             buyer_tel : '<%=phone%>',
-             <%-- buyer_addr : '<%=address%>', --%>
+             buyer_date : '<%=ticketing_date%>', 
+             buyer_name : '<%=customer_id%>',
+             buyer_tel : '<%=consumer_ph%>',
              buyer_postcode : '123-456'
         }, function(rsp) {
             if ( rsp.success ) {
@@ -87,9 +86,7 @@
                 });
                 //성공시 컨트롤러 이동
               <%--  location.href='<%=request.getContextPath()%>/order/paySuccess?msg='+msg;  --%>
-             /*  location.href="ExhibitionPaySucess.do"; */
-               document.hiddenForm.submit();
-              
+             document.hiddenForm.submit();
             } else {
                 msg = '결제에 실패하였습니다.';
                 msg += '에러내용 : ' + rsp.error_msg;

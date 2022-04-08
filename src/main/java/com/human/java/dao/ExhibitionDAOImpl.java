@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.human.java.domain.ExhibitionVO;
+import com.human.java.domain.TicketingVO;
 
 @Repository("exhibitionDAO")
 public class ExhibitionDAOImpl implements ExhibitionDAO{
@@ -84,6 +85,16 @@ public class ExhibitionDAOImpl implements ExhibitionDAO{
 		parms.put("vo", vo);
 		parms.put("id", id);
 		return  mybatis.selectOne("exhibitionMapper.exhibitionDetail", parms);
+	}
+
+	@Override
+	public int ticketInsert(TicketingVO vo) {
+		System.out.println("===============");
+		System.out.println("ticketInsert 서비스 호출");
+		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+		return mybatis.insert("ticketingMapper.ticketInsert",vo);
+		
 	}
 
 }

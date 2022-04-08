@@ -436,15 +436,17 @@
 	<br>
 	<h1>결제모달 예정</h1>
 	<hr>
-	<input type="text" placeholder="세션아이디" value="default" readonly="readonly">
+	<input type="text" name="customer_id" placeholder="세션아이디" value="default" readonly="readonly">
 	<br>
-	<input type="text" placeholder="구매자" name="name">
+	<input type="text" placeholder="구매자" name="consumer_name" value="김한수">
+	<br>
+	<input type="text" placeholder="전시아이디" name="exhibition_id" value="${vo.exhibition_id}" readonly="readonly">
 	<br>
 	<input type="text" value="${vo.exhibition_title}" placeholder="전시회명" readonly="readonly" name="title">
 	<br>
-	<input type="text" placeholder="핸드폰번호" name="phone">
+	<input type="text" value="0" placeholder="핸드폰번호" name="consumer_ph">
 	<br>
-	<input type="text" placeholder="날짜" value="2022.01.01" name="date" readonly="readonly"><!-- 달력 들어갈 예정-->
+	<input type="text" placeholder="날짜" value="2022.01.01" name="ticketing_date" readonly="readonly"><!-- 달력 들어갈 예정-->
 	<br>
 	<br>
 	금액 :<input type="number" value="${vo.exhibition_price}" id="money" readonly="readonly" name="totalPrice"> 

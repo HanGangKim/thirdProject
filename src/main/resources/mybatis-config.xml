@@ -10,6 +10,7 @@
   	  		<typeAlias alias="company" type="com.human.java.domain.CompanyVO" />
   	  		<typeAlias alias="exhibition" type="com.human.java.domain.ExhibitionVO" />
   	  		<typeAlias alias="review" type="com.human.java.domain.ReviewVO" />
+  	  		<typeAlias alias="ticket" type="com.human.java.domain.TicketingVO" />
   		</typeAliases>
   </configuration>
   
