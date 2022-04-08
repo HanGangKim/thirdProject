@@ -67,7 +67,8 @@
 
 						<div class="position-relative">
 							<div class="contents">
-								<form action="/" method="POST" id="form__wrap">
+								<!-- 								<form action="CustomerSignUp.do" method="POST" id="form__wrap"> -->
+								<div id="form__wrap">
 									<div class="terms__check__all">
 										<input type="checkbox" name="checkAll" id="checkAll" /> <label
 											for="checkAll">JUN 이용약관, 개인정보 수집 및 이용, 프로모션 정보
@@ -115,8 +116,9 @@
 										</li>
 									</ul>
 									<button type="submit" class="next-button btn btn-primary"
-										disabled>확인</button>
-								</form>
+										onclick="location.href='CustomerSignUp.do'" disabled>확인</button>
+									<!-- 								</form> -->
+								</div>
 								<!--Divider-->
 								<div class="d-flex align-items-center py-3">
 									<span class="flex-grow-1 border-bottom pt-1"></span>
