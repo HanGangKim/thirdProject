@@ -266,8 +266,8 @@
 			<div class="container py-9 position-relative">
 				<div class="row justify-content-between">
 					<div class="col-lg-6 col-sm-7 mx-auto mx-lg-0 mb-5 mb-lg-0">
-						<img src="${vo.exhibition_image}" alt=""
-							style="width: 1500px" class="img-fluid mb-3"> <img
+						<img src="${vo.exhibition_image}" alt="" style="width: 1500px"
+							class="img-fluid mb-3"> <img
 							src="/resources/img/exam/22.jpg" alt="" class="img-fluid mb-3">
 						<!-- <img src="/resources/img/shop/single3.jpg" alt="" class="img-fluid"> -->
 					</div>
@@ -302,7 +302,7 @@
 										<div>
 											<p class="fs-4 mb-0">
 												${vo.exhibition_price} won
-<!-- 												<del class="text-muted">15,000won</del> -->
+												<!-- 												<del class="text-muted">15,000won</del> -->
 											</p>
 										</div>
 										<div>
@@ -426,9 +426,72 @@
 				</div>
 			</div>
 		</section>
-
-
 	</main>
+
+	<hr>
+	<!-- 추후 결제모달로 바뀔 예정 (시작) -->
+	<form action="ExhibitionPayment.do">
+	<br>
+	<br>
+	<br>
+	<h1>결제모달 예정</h1>
+	<hr>
+	<input type="text" placeholder="세션아이디" value="default" readonly="readonly">
+	<br>
+	<input type="text" placeholder="구매자" name="name">
+	<br>
+	<input type="text" value="${vo.exhibition_title}" placeholder="전시회명" readonly="readonly" name="title">
+	<br>
+	<input type="text" placeholder="핸드폰번호" name="phone">
+	<br>
+	<input type="text" placeholder="날짜" value="2022.01.01" name="date" readonly="readonly"><!-- 달력 들어갈 예정-->
+	<br>
+	<br>
+	금액 :<input type="number" value="${vo.exhibition_price}" id="money" readonly="readonly" name="totalPrice"> 
+	인원 : <input type="number" id='result' value="1" name = "totalCustomer"> 
+	기본값 : <input type="number" value="${vo.exhibition_price}" id="d_money" readonly="readonly">
+	<input type='button' onclick='count("plus")' value='+' /> 
+	<input type='button' onclick='count("minus")' value='-' />
+	<br>
+	<input type="submit" value="결제하기"> <input type="reset" value="취소하기">
+</form>
+	<script type="text/javascript">
+		function count(type) {
+			alert("함수호출")
+			var totalMoney = document.getElementById("money");
+			var totalResult = document.getElementById("result");
+			var deafultMoney = document.getElementById("d_money");
+
+			
+			var money = totalMoney.value;
+			var d_money = deafultMoney.value;
+			var result = totalResult.value;
+			
+			alert(money)
+	
+			// 더하기/빼기
+			if (type === 'plus') {
+				alert("+")
+				result = parseInt(result) + 1;
+				money = parseInt(money) + parseInt(d_money);
+				alert(money)
+			} else if (type === 'minus') {
+				alert("-")
+				result = parseInt(result) - 1;
+				money = parseInt(money) - parseInt(d_money);
+			
+			}
+			// 결과 출력
+			totalResult.value = result;
+			totalMoney.value = money;
+		}
+	</script>
+	<hr>
+	<br>
+	<br>
+	<br>
+	<hr>
+	<!-- 추후 결제모달로 바뀔 예정 (끝)  -->
 
 	<!-- <footer class="position-relative bg-dark text-white overflow-hidden">
 		<div class="container pt-9 pt-lg-11 pb-6 position-relative">

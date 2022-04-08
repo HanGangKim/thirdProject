@@ -5,6 +5,7 @@ public class TicketingVO {
 	private int ticketing_id;
 	private String ticketing_date;
 	private String customer_name;
+	private String consumer_name;
 	private String consumer_ph;
 	
 	
@@ -16,6 +17,12 @@ public class TicketingVO {
 	}
 	public String getTicketing_date() {
 		return ticketing_date;
+	}
+	public String getConsumer_name() {
+		return consumer_name;
+	}
+	public void setConsumer_name(String consumer_name) {
+		this.consumer_name = consumer_name;
 	}
 	public void setTicketing_date(String ticketing_date) {
 		this.ticketing_date = ticketing_date;
