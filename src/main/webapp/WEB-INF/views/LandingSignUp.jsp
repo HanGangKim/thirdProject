@@ -59,7 +59,7 @@
                 <div class="container pt-12 pb-9">
                     <div class="row pt-lg-7">
                         <div class="col-lg-7">
-                            <h1 class="mb-0 display-3">일반회원 | 업체회원 (회원가입)</h1>
+                            <h1 class="mb-0 display-3">Landing SignUp</h1>
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                                             <h5 class="fs-4 mb-2">일반회원</h5>
                                         </div>
                                         <p class="mb-0">
-                                          approval from a company
+                                          General member
                                         </p>
                                     </div>
                                     <div class="card-hover-2-footer w-100 mt-auto">
@@ -103,7 +103,7 @@
                                             <h5 class="fs-4 mb-2">업체회원</h5>
                                         </div>
                                         <p class="mb-0">
-                                          approval of exhibition registration
+                                          Company member
                                         </p>
                                     </div>
                                     <div class="card-hover-2-footer w-100 mt-auto">
