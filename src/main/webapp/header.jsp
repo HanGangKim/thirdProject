@@ -70,15 +70,14 @@
 						<li class="nav-item position-static me-lg-3"><a
 							class="nav-link" href="#" role="button" aria-haspopup="true"
 							aria-expanded="false"> Review </a></li>
-<!-- 						회원가입 -->
-<!-- 						<li class="nav-item position-lg-static me-lg-3"><a -->
-<!-- 							class="nav-link" href="#" role="button" aria-haspopup="true" -->
-<!-- 							aria-expanded="false">Sign Up </a></li> -->
-<!-- 						로그인 -->
-<!-- 						<li class="nav-item position-lg-static me-lg-3"><a -->
-<!-- 							class="nav-link" href="#" role="button" aria-haspopup="true" -->
-<!-- 							aria-expanded="false"> Sign In </a></li> -->
-
+						<!-- 						회원가입 -->
+						<!-- 						<li class="nav-item position-lg-static me-lg-3"><a -->
+						<!-- 							class="nav-link" href="#" role="button" aria-haspopup="true" -->
+						<!-- 							aria-expanded="false">Sign Up </a></li> -->
+						<!-- 						로그인 -->
+						<!-- 						<li class="nav-item position-lg-static me-lg-3"><a -->
+						<!-- 							class="nav-link" href="#" role="button" aria-haspopup="true" -->
+						<!-- 							aria-expanded="false"> Sign In </a></li> -->
 
 						<c:choose>
 							<c:when test="${sessionScope.userId == null}">
@@ -88,8 +87,8 @@
 									aria-expanded="false">Sign Up </a></li>
 								<!-- 로그인 -->
 								<li class="nav-item position-lg-static me-lg-3"><a
-									class="nav-link" href="LandingLogin.do" role="button" aria-haspopup="true"
-									aria-expanded="false"> Sign In </a></li>
+									class="nav-link" href="LandingLogin.do" role="button"
+									aria-haspopup="true" aria-expanded="false"> Sign In </a></li>
 							</c:when>
 							<c:when test="${sessionScope.userId != null}">
 								<!--마이페이지-->
@@ -118,7 +117,8 @@
 										Out </a></li>
 							</c:when>
 						</c:choose>
-						
+
+
 					</ul>
 				</div>
 			</div>
