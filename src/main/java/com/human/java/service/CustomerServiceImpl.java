@@ -32,5 +32,10 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		return customerDAO.customerLogin(vo);
 	}
+	@Override
+	public void customerupdate(CustomerVO vo) {
+		customerDAO.customerupdate(vo);
+		
+	}
 
 }
