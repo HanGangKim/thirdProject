@@ -43,9 +43,11 @@ public class CustomerLoginController {
 		} else {
 			System.out.println("[" + result.getCustomer_id() + "]" + "로그인 성공");
 			session.setAttribute("userName", result.getCustomer_name());
-			session.setAttribute("userId", result.getCustomer_name());
+			session.setAttribute("userId", result.getCustomer_id());
 			session.setAttribute("sessionTime", new Date().toLocaleString());
 
+			System.out.println(result.getCustomer_id());
+			
 			mv.setViewName("CustomerMain");
 			mv.addObject("vo", exhibitionService.comingExhibition(exvo));
 
