@@ -83,7 +83,7 @@
 						<p class="mb-5 lead mx-auto">We’ve just received your message
 							and will be contacting you as soon as possible. In the meantime
 							you can explore our recent projects.</p>
-						<a href="index.html" class="btn btn-outline-primary btn-lg">
+						<a href="/LandingLogin.do" class="btn btn-outline-primary btn-lg">
 							Sign In</a>
 
 					</div>

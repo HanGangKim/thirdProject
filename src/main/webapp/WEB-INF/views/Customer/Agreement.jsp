@@ -26,13 +26,14 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap"
 	rel="stylesheet">
+	
+<!--Agreement css-->
+<link rel="stylesheet" href="/resources/css/agreement.css">
 
 <!-- Main CSS -->
 <link href="/resources/css/theme.min.css" rel="stylesheet">
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
-<!--Agreement css-->
-<link rel="stylesheet" href="/resources/css/agreement.css">
 
 <title>Sign Up</title>
 
@@ -71,16 +72,16 @@
 								<div id="form__wrap">
 									<div class="terms__check__all">
 										<input type="checkbox" name="checkAll" id="checkAll" /> <label
-											for="checkAll">JUN 이용약관, 개인정보 수집 및 이용, 프로모션 정보
+											for="checkAll">Fiennale 이용약관, 개인정보 수집 및 이용, 프로모션 정보
 											수신(선택)에<br />모두 동의합니다.
 										</label>
 									</div>
-									<ul class="terms__list">
+									<ul class="terms__list" style="padding: 0;">
 										<li class="terms__box">
 											<div class="input__check">
 												<input type="checkbox" name="agreement" id="termsOfService"
 													value="termsOfService" required /> <label
-													for="termsOfService" class="required">JUN 이용약관 동의</label>
+													for="termsOfService" class="required">Fiennale 이용약관 동의</label>
 											</div>
 											<div class="terms__content">여러분을 환영합니다. JUN 서비스 및 제품(이하
 												‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 JUN 서비스의 이용과 관련하여 JUN 서비스를
