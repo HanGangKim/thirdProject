@@ -12,7 +12,6 @@ public interface CustomerService {
 	public CustomerVO customerLogin(CustomerVO vo);
 	
 	//정보수정
-	
 	public void customerupdate(CustomerVO vo);
 
 }

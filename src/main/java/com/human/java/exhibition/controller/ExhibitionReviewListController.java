@@ -2,6 +2,7 @@ package com.human.java.exhibition.controller;
 
 import java.util.HashMap;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,7 +33,7 @@ public class ExhibitionReviewListController {
 		map.put("searchCondition", searchCondition);
 		map.put("searchKeyword", searchKeyword);
 		ReviewVO vo = new ReviewVO();
-		// DB 접속해서 데이터 가져와야해
+		// DB 접속해서 데이터 가져오기
 		model.addAttribute("ReviewList", reviewService.getReviewList(map));
 		return "/Exhibition/ExhibitionReviewListTest";
 	}
@@ -40,7 +41,11 @@ public class ExhibitionReviewListController {
 	// 글 상세조회
 	@RequestMapping("getReview.do")
 	public void getReview(ReviewVO vo, Model model) {
-
+		
+		System.out.println("===============");
+		System.out.println("getReview.do 호출");
+		System.out.println("===============");
+		
 		model.addAttribute("review", reviewService.getReview(vo));
 	}
 

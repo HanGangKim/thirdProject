@@ -35,14 +35,23 @@
 
 <body>
 
+<!-- 차후 히든타입으로 바뀔 예정 -->
 <form name="hiddenForm" action="/exhibition/ExhibitionTicketing.do" method="get">
 <input type="text" value="<%=customer_id%>" name="customer_id">
+<br><br>
 <input type="text" value="<%=consumer_name%>" name="consumer_name">
+<br><br>
 <input type="text" value="<%=ticketing_date%>" name="ticketing_date">
+<br><br>
 <input type="text" value="<%=consumer_ph%>" name="consumer_ph">
+<br><br>
 <input type="text" value="<%=exhibition_id%>" name="exhibition_id">
+<br><br>
 </form>
 
+<h1>여기 예쁜거로 배경 꾸며줘요 !</h1>
+
+</body>
     <script>
     $(function(){
         var IMP = window.IMP; // 생략가능
@@ -91,13 +100,11 @@
                 msg = '결제에 실패하였습니다.';
                 msg += '에러내용 : ' + rsp.error_msg;
                 //실패시 이동할 페이지
-                location.href="CustomerPayFail.do";
+                location.href="ExhibitionPayFail.do";
                 alert(msg);
             }
         });
         
     });
     </script> 
- 
-</body>
 </html>

@@ -14,7 +14,7 @@ public class CompanyController {
 	// company 폴더 내 모든 페이지 이동가능
 	@RequestMapping("/{step}.do")
 	public String userJoin(@PathVariable String step) {
-		System.out.println(step);
+		System.out.println("company 폴더 전용 step 컨트롤러 호출=>"+step);
 		return "/Company/" + step;
 	}
 

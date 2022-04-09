@@ -15,6 +15,7 @@ public class CustomerServiceImpl implements CustomerService{
 	
 	@Override
 	public int customerInsert(CustomerVO vo) {
+		
 		System.out.println("===============");
 		System.out.println("customerInsert 서비스 호출");
 		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
@@ -25,15 +26,22 @@ public class CustomerServiceImpl implements CustomerService{
 
 	@Override
 	public CustomerVO customerLogin(CustomerVO vo) {
+		
 		System.out.println("===============");
 		System.out.println("customerLogin 서비스 호출");
-		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("CustomeVO : " + ToStringBuilder.reflectionToString(vo));
 		System.out.println("===============");
 		
 		return customerDAO.customerLogin(vo);
 	}
 	@Override
 	public void customerupdate(CustomerVO vo) {
+		
+		System.out.println("===============");
+		System.out.println("customerupdate 서비스 호출");
+		System.out.println("CustomeVO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+		
 		customerDAO.customerupdate(vo);
 		
 	}

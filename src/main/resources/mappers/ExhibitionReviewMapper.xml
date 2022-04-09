@@ -41,6 +41,7 @@
 		VALUES(SEQ_REVIEW.nextval,
 		#{review_title}, #{review_contents} ,sysdate, #{review_star_score})
 	</insert>
+	
 	<!-- Merge 쿼리문으로 Update 대체 -->
 	<!-- <update id="updateReview"> UPDATE REVIEW SET REVIEW_TITLE = #{title}, 
 		REVIEW_CONTENTS = #{content}, WHERE REVIEW_ID = #{seq} </update> -->
