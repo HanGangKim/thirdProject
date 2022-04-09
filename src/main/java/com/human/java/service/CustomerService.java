@@ -10,5 +10,8 @@ public interface CustomerService {
 	
 	// 로그인
 	public CustomerVO customerLogin(CustomerVO vo);
+	
+	//정보수정
+	public void customerupdate(CustomerVO vo);
 
 }

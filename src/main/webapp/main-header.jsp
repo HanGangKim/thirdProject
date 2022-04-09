@@ -34,7 +34,7 @@
 
 	<!--:Header Start-->
 	<header
-		class="z-index-fixed pt-3 header-absolute-top header-transparent header-boxed header-sticky">
+		class="z-index-fixed header-absolute-top header-transparent header-boxed header-sticky">
 
 		<div class="navbar-boxed">
 			<div class="container">
@@ -52,11 +52,11 @@
 								<c:choose>
 									<c:when test="${sessionScope.userId == null}">
 										<a href="demo-shop-wishlist.html"
-											class="nav-link lh-1 position-relative">Hello :)</a>
+											class="lh-1 position-relative">Hello :)</a>
 									</c:when>
 									<c:when test="${sessionScope.userId != null}">
 										<a href="demo-shop-wishlist.html"
-											class="nav-link lh-1 position-relative">Welcome !</a>
+											class="lh-1 position-relative">Welcome !</a>
 									</c:when>
 								</c:choose>
 							</div>
@@ -165,5 +165,25 @@
 <!-- 검색버튼 모달 스크립트 -->
 <script src="/resources/js/theme.bundle.js"></script>
 <script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
+
+<script type="text/javascript">
+	function navClick() {
+		var navElement = document.getElementsByClassName("nav-link");
+		Array.from(navElement).forEach(v =>{
+			v.classList.remove('active');
+		})
+	}
+	
+	window.onload = function(){	
+		var ul = document.querySelector('#mainNavbarTheme > ul')
+		
+		ul.addEventListener("click",function(e){
+			navClick()
+			console.log(e.target)
+			e.target.classList.add('active')
+			
+		})
+	}
+</script>
 
 </html>

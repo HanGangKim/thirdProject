@@ -41,6 +41,11 @@ public class CustomerLoginController {
 			return mv;
 
 		} else {
+			// CompanyVO 확인
+			System.out.println("===============");
+			System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
+			System.out.println("===============");
+
 			System.out.println("[" + result.getCustomer_id() + "]" + "로그인 성공");
 			session.setAttribute("userName", result.getCustomer_name());
 			session.setAttribute("userId", result.getCustomer_name());
@@ -53,21 +58,5 @@ public class CustomerLoginController {
 		}
 
 	}
-
-//   // 메인 Top 8 조회 컨트롤러
-//   @RequestMapping({ "NoneMemberMain.do", "CustomerMain.do" })
-//   public ModelAndView comingExhibition(HttpServletRequest request, ExhibitionVO vo) {
-//      System.out.println("컨트롤커밍익스진입");
-//      ModelAndView mv = new ModelAndView();
-//      if (request.getServletPath().equals("NoneMemberMain.do")) {
-//         mv.setViewName("NoneMemberMain");
-//      } else if (request.getServletPath().equals("CustomerMain.do")) {
-//         mv.setViewName("CustomerMain");
-//      }
-//      System.out.println(vo + "전달합니다");
-//      mv.addObject("vo", exhibitionService.comingExhibition(vo));
-//
-//      return mv;
-//   }
 
 }

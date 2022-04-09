@@ -14,11 +14,11 @@ a{font-size: large;}
 </head>
 <body>
 	<h1>일반회원</h1>
-	<a href="customer/CustomerLogin.do">일반회원 로그인 페이지 -- 컨트롤러 연결완료</a>
+	<a href="customer/CustomerLogin.do">일반회원 로그인 페이지</a>
 	<br><br>
-	<a href="customer/CustomerSignUp.do">일반회원 회원가입 페이지 -- 테이블에 맞게 인풋태그 수정필요</a>
+	<a href="customer/CustomerSignUp.do">일반회원 회원가입 페이지</a>
 	<br><br>
-	<a href="customer/CustomerChangeInfo.do">일반회원 정보수정 페이지 -- 테이블에 맞게 인풋태그 수정필요</a>
+	<a href="customer/CustomerChangeInfo.do">일반회원 정보수정 페이지</a>
 	<br><br>
 	<a href="customer/CustomerWishList.do">일반회원 찜목록</a>
 	<br><br>
@@ -30,16 +30,18 @@ a{font-size: large;}
 	<br><br>
 	<a href="customer/CustomerErrorPage.do">회원 에러페이지</a>
 	<br><br>
-	<a href="">결제 모달 테스트 페이지</a>
+	<a href="">결제 모달 페이지</a>
 	<br><br>
 	<a href="customer/CustomerExhibitionMyReviewList.do">나의 후기 페이지</a>
 	<br><br>
 	<a href="customer/CustomerExhibitionReviewWrite.do">전시회 후기 입력</a>
+	<br><br>
+	<a href="/exhibition/ExhibitionTicketingSelect.do?id=default" >나의 예매내역</a>
 	<hr>
 	
 	<h1>전시회</h1>
-	<!-- 실행흐름 : [1]날짜선택 -> [2]목록 리스트 -> [3]전시회 상세  -->
-	<a href="exhibition/ExhibitionDate.do">전시회 날짜선택 페이지 (전시회 일정 검색)</a>
+	<!-- 실행흐름 : [1]날짜선택 -> [2]목록 리스트 -> [3]전시회 상세 ->  [4]예매 -> [5] 결제 -> [6] 결제성공 -> [7] 예매내역  --> 
+	<a href="exhibition/ExhibitionDate.do">전시회 날짜선택 페이지 (전시회 일정 검색 / 검색 - 결제 - 예매내역 연동완료)</a>
 	<br><br>
 	<a href="exhibition/ExhibitionDateList.do">전시회 목록 리스트 페이지(전시 일정목록)</a>
 	<br><br>
@@ -91,11 +93,13 @@ a{font-size: large;}
 	<br><br>
 	<a href="exhibition/ExhibitionReviewList.do">전시회 전체 후기 페이지</a>
 	<br><br>
-	<a href="customer/CustomerPaymentForm.do">결제 시스템 테스트(결제 -> 성공 or 실패)</a>
+	<a href="customer/CustomerPaymentFormTest.do">결제 시스템 테스트(결제 -> 성공 or 실패)</a>
 	<br><br>
 	<a href="">이미지 업로드 테스트</a>
 	<br><br>
-	<a href="">QR 코드 테스트</a>
+	<a href="customer/CustomerQR">QR 코드 테스트</a>
+	<br><br>
+	<a href="/exhibition/ExhibitionTicketingSelect.do?id=default" >구매내역 테스트</a>
 	<hr>
 </body>
 </html> 

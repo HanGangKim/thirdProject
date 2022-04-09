@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!doctype html>
 <html lang="en">
 <!--예매내역-->
@@ -81,49 +83,73 @@
 			</div>
 		</section>
 
-		<!--예매내역카드 섹션 시작-->
-		<section class="position-relative">
-			<div class="container pb-7 pb-lg-12 pt-7">
-				<div class="row">
-					<div class="col-lg-10 offset-lg-1">
-						<!--:Wishlist card-->
-						<div
-							class="card hover-lift shadow flex-sm-row mb-4 align-items-center">
-							<div class="col-sm-5 col-lg-4 mb-4 mb-md-0">
-								<a href="#" class="d-block"> <img
-									src="/resources/img/shop/products/05.jpg"
-									class="img-fluid card-img-top" alt="">
-								</a>
-							</div>
-							<div class="col-sm-7 py-sm-5 col-12 col-lg-5 offset-lg-1 px-3">
-								<a href="#" class="mb-3 d-block text-dark">
-									<h5>[ 얼리버드 ] 호안 미로 : 여인, 새, 별</h5>
-								</a>
-								<p class="lead">2022.03.30</p>
-								<div class="d-flex mb-3 align-items-center">
-									<span class="text-muted me-3">Place</span> <strong>마이아트뮤지엄</strong>
-								</div>
-								<div class="d-flex mb-3 align-items-center">
-									<span class="me-3 text-muted">Date</span> <strong>2022.01.30
-										~ 2022.04.30</strong>
-								</div>
-								<div class="d-flex mb-3 align-items-center">
-									<span class="text-muted me-3">Price</span> <strong
-										class="text-success">7,200</strong>
-								</div>
-								<!--QR 확인버튼-->
-								<div class="d-grid pb-4 pb-md-0">
-									<a href="#" class="btn btn-primary"
-										style="margin-bottom: 10px;">Move to qr</a> <a href="#"
-										class="btn btn-dark">후기작성</a>
-								</div>
 
+		<!-- 지우지 말기 !  -->
+		<%-- <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+		<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+		<c:forEach items="${selectList}" var="vo">	
+				<td>${vo.exhibition_id}</td>
+				<td>${vo.exhibition_title}</td>
+				<td>${vo.exhibition_start_date}</td>
+				<td>${vo.exhibition_end_date}</td>
+				<td>${vo.exhibition_image}</td>
+				<td>${vo.exhibition_location}</td>
+				<td>${vo.ticketing_date}</td>
+				<td>${vo.customer_id}</td>
+				<td>${vo.consumer_name}</td>
+				<td>${vo.consumer_ph}</td>
+		</c:forEach> --%>
+
+
+		<c:forEach items="${selectList}" var="vo">
+			<!--예매내역카드 섹션 시작-->
+			<section class="position-relative">
+				<div class="container pb-7 pb-lg-12 pt-7">
+					<div class="row">
+						<div class="col-lg-10 offset-lg-1">
+							<!--:Wishlist card-->
+							<div
+								class="card hover-lift shadow flex-sm-row mb-4 align-items-center">
+								<div class="col-sm-5 col-lg-4 mb-4 mb-md-0">
+									<a href="./ExhibitionDetail.do?id=${vo.exhibition_id}"
+										class="d-block"> <img src="${vo.exhibition_image}"
+										class="img-fluid card-img-top" alt="">
+									</a>
+								</div>
+								<div class="col-sm-7 py-sm-5 col-12 col-lg-5 offset-lg-1 px-3">
+									<a href="./ExhibitionDetail.do?id=${vo.exhibition_id}"
+										class="mb-3 d-block text-dark">
+										<h5>${vo.exhibition_title}</h5>
+									</a>
+									<p class="lead">${vo.ticketing_date}</p>
+									<div class="d-flex mb-3 align-items-center">
+										<span class="text-muted me-3">Place</span> <strong>${vo.exhibition_location}</strong>
+									</div>
+									<div class="d-flex mb-3 align-items-center">
+										<span class="me-3 text-muted">Date</span> <strong>${vo.exhibition_start_date}
+											~ ${vo.exhibition_end_date}</strong>
+									</div>
+									<div class="d-flex mb-3 align-items-center">
+										<span class="text-muted me-3">consumer name</span> <strong>${vo.consumer_name}</strong>
+
+									</div>
+									<div class="d-flex mb-3 align-items-center">
+										<span class="me-3 text-muted">consumer number</span> <strong>${vo.consumer_ph}</strong>
+									</div>
+									<!--QR 확인버튼-->
+									<div class="d-grid pb-4 pb-md-0">
+										<a href="#" class="btn btn-primary"
+											style="margin-bottom: 10px;">Move to qr</a> <a href="#"
+											class="btn btn-dark">후기작성</a>
+									</div>
+
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+		</c:forEach>
 		<!--예매내역카드 섹션 끝-->
 	</main>
 

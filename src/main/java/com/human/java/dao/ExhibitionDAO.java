@@ -1,8 +1,10 @@
 package com.human.java.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.human.java.domain.ExhibitionVO;
+import com.human.java.domain.TicketingSelectVO;
 import com.human.java.domain.TicketingVO;
 
 public interface ExhibitionDAO {
@@ -23,4 +25,7 @@ public interface ExhibitionDAO {
 	
 	// 티켓팅 
 	public int ticketInsert(TicketingVO vo);
+	
+	// 티켓팅 내역 조회
+	public List<TicketingSelectVO> ticketSelect(HashMap map, String id);
 }
