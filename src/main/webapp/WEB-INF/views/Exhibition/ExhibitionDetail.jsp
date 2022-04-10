@@ -40,6 +40,7 @@
 	margin: 0px;
 	color: gray;
 }
+
 </style>
 
 <!-- <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css'
@@ -59,206 +60,10 @@
 		<div class="spinner-border text-primary" role="status"></div>
 		<span class="small d-block ms-3">Loading...</span>
 	</div>
-	<!--Header Start-->
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-white">
-		<div class="container position-relative">
-			<a class="navbar-brand" href="index.html"> <img
-				src="/resources/img/logo/logo-shop.svg" alt="" class="img-fluid">
-			</a>
-			<div
-				class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
-				<button class="navbar-toggler order-last" type="button"
-					data-bs-toggle="collapse" data-bs-target="#mainNavbarTheme"
-					aria-controls="mainNavbarTheme" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"> <i></i>
-					</span>
-				</button>
-				<!-- <div class="nav-item me-4">
-					<a href="demo-shop-wishlist.html"
-						class="nav-link lh-1 position-relative"> <i
-						class="bx bx-heart fs-4"></i>
-					</a>
-				</div> -->
-				<!-- <div class="nav-item me-4">
-					<a href="#offcanvasCart" data-bs-toggle="offcanvas"
-						class="nav-link lh-1 position-relative"> <i
-						class="bx bx-shopping-bag fs-4"></i> <span
-						class="badge p-0 position-absolute end-0 top-0 me-n3 mt-n2 lh-1 fw-semibold width-2x height-2x bg-white shadow-sm rounded-circle flex-center text-dark">3</span>
-					</a>
-				</div> -->
-				<div class="nav-item me-4 me-lg-0">
-					<a href="#" data-bs-target="#modal-search-bar-2"
-						data-bs-toggle="modal" class="nav-link lh-1"> <i
-						class="bx bx-search fs-4"></i>
-					</a>
-				</div>
-			</div>
-			<div class="collapse navbar-collapse" id="mainNavbarTheme">
-				<ul class="navbar-nav mx-auto">
-					<li class="nav-item dropdown me-lg-3"><a href="demo-shop.html"
-						class="nav-link" href="#" role="button" aria-haspopup="false"
-						aria-expanded="false"> Home </a></li>
 
-					<li class="nav-item nav-item dropdown position-lg-static me-lg-3">
-						<a href="demo-shop-products-full-width.html" class="nav-link"
-						href="#" role="button" aria-haspopup="true" aria-expanded="false">
-							Exhibition </a>
-					</li>
-					<li class="nav-item nav-item dropdown position-static me-lg-3">
-						<a href="demo-real-estate-listing-grid.html" class="nav-link"
-						href="#" role="button" aria-haspopup="true" aria-expanded="false">
-							Reviews </a>
-					<li class="nav-item dropdown me-lg-3"><a
-						href="page-account-signin.html" class="nav-link"
-						data-bs-auto-close="outside" href="#" role="button"
-						aria-haspopup="true" aria-expanded="false">SignIn </a></li>
-					<li class="nav-item"><a href="page-account-signup.html"
-						class="nav-link" href="#!"> SignUp </a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	</header>
-	<!--:Search bar modal-->
-	<div id="modal-search-bar-2" class="modal fade" tabindex="-1"
-		aria-labelledby="modal-search-bar-2" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-top modal-md">
-			<div class="modal-content position-relative border-0">
-				<div class="position-relative px-4">
-					<div
-						class="position-absolute end-0 width-7x top-0 d-flex me-4 align-items-center h-100 justify-content-center">
-						<button type="button" class="btn-close w-auto small"
-							data-bs-dismiss="modal" aria-label="Close">Cancel</button>
-					</div>
-					<form class="mb-0">
-						<div class="d-flex align-items-center">
-							<div class="d-flex flex-grow-1 align-items-center">
-								<svg viewBox="0 0 24 24" width="20" height="20"
-									fill="currentColor" class="opacity-25">
-                                        <path
-										d="M2.293 10a6.99 6.99 0 0 0 11.187 5.6l6.106 6.107L21 20.293l-6.106-6.106A6.997 6.997 0 1 0 2.293 10zm2 0a5 5 0 1 1 5 5 5 5 0 0 1-5-5z">
-                                        </path>
-                                    </svg>
+	<jsp:include page="/header.jsp" />
 
-								<input type="text" placeholder="Search...."
-									class="form-control shadow-none border-0 flex-grow-1 form-control-lg">
-							</div>
-						</div>
-					</form>
-				</div>
-
-				<div class="p-4 border-top">
-					<div class="d-flex align-items-center mb-3">
-						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-							fill="currentColor" class="bx bx-lightning-charge-fill"
-							viewBox="0 0 16 16">
-                                <path
-								d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z" />
-                            </svg>
-						<h6 class="mb-0 ms-2">Top searches</h6>
-					</div>
-					<div class="d-flex flex-wrap align-items-center">
-						<span><a href="#!"
-							class="badge badge-pill border text-muted me-1 mb-1 px-3 py-1">Jeans</a></span>
-						<span><a href="#!"
-							class="badge badge-pill border text-muted me-1 mb-1 px-3 py-1">Shoes</a></span>
-						<span><a href="#!"
-							class="badge badge-pill border text-muted me-1 mb-1 px-3 py-1">Watches</a></span>
-						<span><a href="#!"
-							class="badge badge-pill border text-muted me-1 mb-1 px-3 py-1">Men's</a></span>
-						<span><a href="#!"
-							class="badge badge-pill border text-muted me-1 mb-1 px-3 py-1">Sneakers</a></span>
-						<span><a href="#!"
-							class="badge badge-pill border text-muted me-1 mb-1 px-3 py-1">Casual</a></span>
-						<span><a href="#!"
-							class="badge badge-pill border text-muted me-1 mb-1 px-3 py-1">Shirts</a></span>
-						<span><a href="#!"
-							class="badge badge-pill border text-muted me-1 mb-1 px-3 py-1">T-shirts</a></span>
-						<span><a href="#!"
-							class="badge badge-pill border text-muted me-1 mb-1 px-3 py-1">Lowers</a></span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--:Offcanvas end-->
-	<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart"
-		aria-labelledby="offcanvasCart">
-		<div
-			class="border-bottom offcanvas-header align-items-center justify-content-between">
-			<h5 class="mb-0">Your Cart (3)</h5>
-			<button type="button"
-				class="btn-close text-reset p-0 m-0 width-3x height-3x flex-center ms-auto"
-				data-bs-dismiss="offcanvas" aria-label="Close">
-				<svg xmlns="http://www.w3.org/2000/svg"
-					preserveAspectRatio="xMidYMid meet" width="16" height="16"
-					viewBox="0 0 128 128">
-                        <g>
-                            <path stroke="currentColor" stroke-width="8"
-						stroke-linecap="square" fill="none"
-						d="M7 7l114 114m0-114l-114 114"></path>
-                        </g>
-                    </svg>
-			</button>
-		</div>
-		<div class="offcanvas-body p-4">
-			<ul class="list-unstyled no-animation mb-0">
-				<li class="d-flex py-3 border-bottom">
-					<div class="me-1">
-						<a href="#!"><img src="/resources/img/shop/backpack2.jpg"
-							class="height-10x hover-lift hover-shadow w-auto rounded-1"
-							alt=""></a>
-					</div>
-					<div class="flex-grow-1 px-4 mb-3">
-						<a href="#!" class="text-dark d-block lh-sm fw-semibold mb-2">Laptop
-							backpack water proof</a>
-						<p class="mb-0 small">
-							<strong>$36.00</strong> x <strong>1</strong>
-						</p>
-					</div>
-					<div class="d-block text-end">
-						<a href="#!" class="text-muted small text-decoration-underline">
-							Remove </a>
-					</div>
-				</li>
-				<li class="d-flex py-3">
-					<div class="me-1">
-						<a href="#!"><img src="/resources/img/shop/jacket1.jpg"
-							class="height-10x hover-lift hover-shadow w-auto rounded-1"
-							alt=""></a>
-					</div>
-					<div class="flex-grow-1 px-4 mb-3">
-						<a href="#!" class="text-dark d-block lh-sm fw-semibold mb-2">Brown
-							denim jacket for mens</a>
-						<p class="mb-0 small">
-							<strong>$59.00</strong> x <strong>2</strong>
-						</p>
-					</div>
-					<div class="d-block text-end">
-						<a href="#!" class="text-muted small text-decoration-underline">
-							Remove </a>
-					</div>
-				</li>
-				<li
-					class="d-flex p-3 mb-3 border-top justify-content-between align-items-center">
-					<span class="fw-normal">Subtotal</span> <span
-					class="text-dark fw-bold">$154.00</span>
-				</li>
-			</ul>
-		</div>
-		<div class="offcanvas-footer p-4 border-top">
-			<ul class="list-unstyled mb-0">
-
-				<li class="pb-2 d-grid"><a href="#"
-					class="btn btn-secondary btn-hover-arrow"><span>View
-							shopping cart</span></a></li>
-				<li class="d-grid"><a href="#"
-					class="btn btn-primary btn-hover-arrow"><span>Checkout</span></a></li>
-			</ul>
-		</div>
-	</div>
 
 	<!--Main content-->
 	<main>
@@ -407,15 +212,14 @@
 								</div>
 							</div>
 							<!--/.colors-->
-							<div class="d-grid">
+							<div class="d-grid mb-2">
 								<a href="#" class="btn btn-primary hover-lift"> <i
-									class="bx bx-cart-alt fs-4 me-2"></i> Add to Wishlist
+									class="bx bx-heart fs-4 me-2"></i> Add to Wishlist
 								</a>
 							</div>
-							<br>
 							<div class="d-grid">
-								<a href="#" class="btn btn-primary hover-lift"> <i
-									class="bx bx-cart-alt fs-4 me-2"></i> Book a Ticket
+								<a href="#" class="btn btn-primary hover-lift" data-bs-target="#modal-pay-bar-2" data-bs-toggle="modal"> 
+									<i class="bx bx-credit-card fs-4 me-2"></i> Book a Ticket
 								</a>
 							</div>
 							<!--/.cart-action-->
@@ -427,6 +231,120 @@
 			</div>
 		</section>
 	</main>
+	
+	
+	<!-- 검색버튼 모달 시작 -->
+	<div id="modal-pay-bar-2" class="modal fade" tabindex="-1"
+		aria-labelledby="modal-pay-bar-2" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-top modal-md">
+			<div class="modal-content position-relative border-0">
+				<div class="position-relative px-4">
+					<div
+						class="position-absolute end-0 width-7x top-0 d-flex align-items-center justify-content-center" style="margin-top:5px;">
+						<button type="button" class="btn-close w-auto small"
+							data-bs-dismiss="modal" aria-label="Close"><i class="bx bx-x fs-4 me-2"></i></button>
+					</div>
+					<form class="mb-0" action="ExhibitionPayment.do">
+						<div class="align-items-center">
+							<h6 class="d-flex" style="justify-content: center; margin-top:15px;">예매하기</h6>
+							
+							<!-- 구분선 -->
+							<div class="d-flex align-items-center py-3">
+								<span class="flex-grow-1 border-bottom pt-1"></span>
+							</div>
+							<!-- 이름 -->
+							<div class="mb-3">
+								<label class="form-label" for="profile_name">Name</label>
+								<input type="text" name="customer_id" placeholder="세션아이디"
+									value="default" readonly="readonly" class="form-control">
+							</div>
+							<!-- 예매자 이름 -->
+							<div class="mb-3">
+								<label class="form-label" for="profile_name">예매자 이름</label>
+								<input type="text" name="consumer_name" placeholder="구매자"
+									value="김한수" class="form-control">
+							</div>
+							<!-- 전시회 아이디 -->
+							<div class="mb-3">
+								<label class="form-label" for="profile_name">전시회 아이디</label>
+								<input type="text" name="exhibition_id" placeholder="전시아이디"
+									value="${vo.exhibition_id}" readonly="readonly" class="form-control">
+							</div>
+							<!-- 전시회 이름 -->
+							<div class="mb-3">
+								<label class="form-label" for="profile_name">전시회 이름</label>
+								<input type="text" name="title" placeholder="전시회명"
+									value="${vo.exhibition_title}" readonly="readonly" class="form-control">
+							</div>
+							<!-- 예매자 연락처 -->
+							<div class="mb-3">
+								<label class="form-label" for="profile_name">예매자 연락처</label>
+								<input type="text" name="consumer_ph" placeholder="핸드폰번호"
+									value="0" readonly="readonly" class="form-control">
+							</div>
+							<!-- 방문 날짜 -->
+							<div class="mb-3">
+								<label class="form-label" for="profile_name">방문 날짜</label>
+								<input type="text" name="ticketing_date" placeholder="날짜"
+									value="2022.01.01" readonly="readonly" class="form-control"><!-- 달력 들어갈 예정-->
+							</div>
+							<!-- 구분선 -->
+							<div class="d-flex align-items-center py-3">
+								<span class="flex-grow-1 border-bottom pt-1"></span>
+							</div>
+							<!-- 결제하기 버튼 -->
+							<div class="mb-3 text-end">
+								<button type="button" class="btn btn-primary form-control">다음</button>
+							</div>
+							
+							<!-- 결제하기 섹션 -->
+							<!-- 기본값 -->
+							<div class="mb-3">
+								<label class="form-label" for="profile_name">금액</label>
+								<input type="number" name="totalCustomer" id="d_money"
+									value="${vo.exhibition_price}" readonly="readonly" class="form-control">
+							</div>
+							<!-- 인원 -->
+							<div class="mb-2">
+								<label class="form-label" for="profile_name">인원 선택</label>
+								<input type="number" name="totalCustomer" id="result"
+									value="1" readonly="readonly" class="form-control">
+							</div>
+							<div class="mb-3 d-flex" style="justify-content: space-between;">
+								<button class="btn btn-dark" type="button" onclick='count("plus")' style="width: 49%;" >
+									<i class="bx bx-caret-up fs-4 me-2"></i>
+								</button>
+								<button class="btn btn-dark" type="button" onclick='count("minus")' style="width: 49%;" >
+									<i class="bx bx-caret-down fs-4 me-2"></i>
+								</button>
+							</div>
+							<!-- 금액 -->
+							<div class="mb-3">
+								<label class="form-label" for="profile_name">총 금액</label>
+								<input type="number" name="totalPrice" id="money"
+									value="${vo.exhibition_price}" readonly="readonly" class="form-control">
+							</div>
+
+
+							<!-- 구분선 -->
+							<div class="d-flex align-items-center py-3">
+								<span class="flex-grow-1 border-bottom pt-1"></span>
+							</div>
+							<!-- 결제하기 버튼 -->
+							<div class="mb-2 text-end">
+								<button type="submit" class="btn btn-primary form-control">결제하기</button>
+							</div>
+							<div class="mb-3 text-end">
+								<button type="reset" class="btn btn-dark form-control">취소하기</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 검색버튼 모달 끝 -->
+	
 
 	<hr>
 	<!-- 추후 결제모달로 바뀔 예정 (시작) -->
@@ -495,193 +413,8 @@
 	<hr>
 	<!-- 추후 결제모달로 바뀔 예정 (끝)  -->
 
-	<!-- <footer class="position-relative bg-dark text-white overflow-hidden">
-		<div class="container pt-9 pt-lg-11 pb-6 position-relative">
-			<div class="row">
-				<div class="col-6 col-lg-3 col-xl-2 order-lg-2 ms-lg-auto mb-6">
-					<h6 class="mb-4">Account</h6>
-					nav
-					<ul class="nav flex-column mb-0">
-						<li class="nav-item"><a class="nav-link" href="#!">Placing
-								an order</a></li>
-						<li class="nav-item"><a class="nav-link" href="#!">Shipping</a></li>
-						<li class="nav-item"><a class="nav-link" href="#!">Track
-								order</a></li>
-						<li class="nav-item"><a class="nav-link" href="#!">Orders</a></li>
-						<li class="nav-item"><a class="nav-link" href="#!">Assan
-								Pay</a></li>
-					</ul>
-					/.nav
-				</div>
 
-				<div class="col-6 col-lg-3 col-xl-2 order-lg-3 ms-lg-auto mb-6">
-					<h6 class="mb-4">Company</h6>
-
-					<ul class="nav flex-column mb-0">
-						<li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-						<li class="nav-item"><a class="nav-link" href="#!">Become
-								a seller</a></li>
-						<li class="nav-item"><a class="nav-link" href="#!">News
-								&amp; Media</a></li>
-						<li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
-						<li
-							class="nav-item d-flex justify-content-between align-items-center">
-							<a class="nav-link" href="#!">Help center </a>
-						</li>
-					</ul>
-					/.nav
-				</div>
-
-				<div class="col-md-6 col-lg-3 col-xl-2 ms-lg-auto order-lg-4 mb-6">
-					<h6 class="mb-4">Top Brands</h6>
-					<ul class="nav flex-column mb-0">
-						<li class="nav-item"><a class="nav-link" href="#!">Wrangler</a></li>
-						<li class="nav-item"><a class="nav-link" href="#!">Us
-								polo Assn.</a></li>
-						<li class="nav-item"><a class="nav-link" href="#!">Puma</a></li>
-						<li class="nav-item"><a class="nav-link" href="#!">Levis</a></li>
-						<li
-							class="nav-item d-flex justify-content-between align-items-center">
-							<a class="nav-link" href="#!">Flying Machine </a>
-						</li>
-					</ul>
-				</div>
-
-				<div class="col-lg-3 col-md-6 order-lg-1 mb-6">
-					<div class="d-flex align-items-md-stretch flex-column h-100">
-						<div class="flex-grow-1 d-flex flex-column">
-							<small class="d-block mb-3"> 745K Followers </small>
-							<div class="mb-4">
-								<a href="#!" class="btn btn-outline-white btn-rise">
-									<div class="btn-rise-bg bg-white"></div>
-									<div class="btn-rise-text">
-										<i class="bx bxl-instagram me-2 align-middle"></i> Follow us
-										on Instagram
-									</div>
-								</a>
-							</div>
-						</div>
-
-						Copyright
-						<p class="small text-muted mb-0">© Assan. by Creative DM</p>
-						End Copyright
-					</div>
-				</div>
-			</div>
-			<hr
-				class="bg-transparent border-top border-white opacity-25 mb-6 mt-0">
-			<div class="row align-items-md-center">
-				<div class="col-md-4 mb-3 mb-md-0">
-					:payment options
-					<div class="d-flex justify-content-start">
-
-						<div class="d-block me-2 my-1">
-							<img src="/resources/img/payment/american_express.svg" alt="">
-						</div>
-						<div class="d-block me-2 my-1">
-							<img src="/resources/img/payment/paypal.svg" alt="paypal">
-						</div>
-						<div class="d-block me-2 my-1">
-							<img src="/resources/img/payment/rupay.svg" alt="rupay">
-						</div>
-						<div class="d-block my-1">
-							<img src="/resources/img/payment/visa.svg" alt="visa">
-						</div>
-					</div>
-					:/payment options
-				</div>
-
-				<div class="col-md-2 col-xl-4 mb-3 mb-md-0">
-					Links
-					<ul class="list-inline small mb-0">
-						<li class="list-inline-item me-3"><a class="d-block"
-							href="#!"> <i class="bx bxl-facebook fs-4"></i>
-						</a></li>
-						<li class="list-inline-item me-3"><a class="d-block"
-							href="#!"> <i class="bx bxl-twitter fs-4"></i>
-						</a></li>
-						<li class="list-inline-item"><a class="d-block" href="#!">
-								<i class="bx bxl-linkedin fs-4"></i>
-						</a></li>
-					</ul>
-					End Links
-				</div>
-
-
-				<div class="col-md-6 col-xl-4 text-md-end">
-					Links
-					<ul class="list-inline small mb-0">
-						<li class="list-inline-item me-3"><a class="d-block"
-							href="#!">Privacy &amp; Policy</a></li>
-						<li class="list-inline-item me-3"><a class="d-block"
-							href="#!">Terms &amp; Conditions</a></li>
-						<li class="list-inline-item"><a class="d-block" href="#!">Careers</a>
-						</li>
-					</ul>
-					End Links
-				</div>
-			</div>
-		</div>
-	</footer> -->
-	<!--./footer-->
-
-	<footer id="footer"
-		class="overflow-hidden position-relative bg-dark text-white">
-		<!--Divider-->
-		<svg class="position-absolute start-0 bottom-0 text-gray-800 h-40"
-			preserveAspectRatio="none" width="100%" height="250"
-			viewBox="0 0 1200 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path opacity="0.1" fill-rule="evenodd" clip-rule="evenodd"
-				d="M0 62.5L22 46.875C44 31.25 89 0 133 0C178 0 222 31.25 267 72.9167C311 114.583 356 166.667 400 187.5C444 208.333 489 197.917 533 182.292C578 166.667 622 145.833 667 114.583C711 83.3333 756 41.6667 800 26.0417C844 10.4167 889 20.8333 933 62.5C978 104.167 1022 177.083 1067 208.333C1111 239.583 1156 229.167 1178 223.958L1200 218.75V250H1178C1156 250 1111 250 1067 250C1022 250 978 250 933 250C889 250 844 250 800 250C756 250 711 250 667 250C622 250 578 250 533 250C489 250 444 250 400 250C356 250 311 250 267 250C222 250 178 250 133 250C89 250 44 250 22 250H0V62.5Z"
-				fill="currentColor" />
-            <path opacity="0.1" fill-rule="evenodd" clip-rule="evenodd"
-				d="M0 93.667L24.8889 87.4756C49.7778 82.8321 99.5556 71.9971 149.333 93.667C200.889 113.789 250.667 166.416 300.444 186.538C350.222 208.208 400 197.373 449.778 171.06C499.556 144.746 549.333 102.954 600.889 76.6407C650.667 50.3272 700.444 41.0401 750.222 61.1622C800 82.8321 849.778 135.459 899.556 129.268C949.333 124.624 1000.89 61.1622 1050.67 50.3272C1100.44 41.0401 1150.22 82.8321 1175.11 102.954L1200 124.624V250H1175.11C1150.22 250 1100.44 250 1050.67 250C1000.89 250 949.333 250 899.556 250C849.778 250 800 250 750.222 250C700.444 250 650.667 250 600.889 250C549.333 250 499.556 250 449.778 250C400 250 350.222 250 300.444 250C250.667 250 200.889 250 149.333 250C99.5556 250 49.7778 250 24.8889 250H0V93.667Z"
-				fill="currentColor" />
-        </svg>
-		<div
-			class="container pt-9 pt-lg-11 pb-5 pb-lg-7 position-relative z-index-1">
-			<div class="row mb-5 mb-lg-7">
-				<div class="col-md-4 mb-5 mb-md-0 text-md-center order-md-2">
-					<a href="index.html"><img
-						src="/resources/img/logo/logo-white.svg"
-						class="width-10x d-block h-auto mx-md-auto" alt=""></a>
-				</div>
-				<div class="col-md-4 order-md-1 mb-3 mb-md-0">
-					<a href="mailto:mail@domain.com" class="fs-4 link-hover-underline">mail@domain.com</a>
-				</div>
-				<div class="col-md-4 text-md-end order-md-3">
-					<a href="mailto:mail@domain.com" class="fs-4 link-hover-underline">+01
-						123-4567-890</a>
-				</div>
-			</div>
-			<div class="row align-items-center">
-				<div class="col-md-8 order-md-last mb-3 mb-md-0">
-					<div class="d-flex flex-wrap justify-content-md-end me-n4">
-						<a href="#!"
-							class="small text-muted me-4 link-hover-underline my-2 block">Properties</a>
-						<a href="#!"
-							class="small text-muted me-4 link-hover-underline my-2 block">Careers</a>
-						<a href="#!"
-							class="small text-muted me-4 link-hover-underline my-2 block">Company</a>
-						<a href="#!"
-							class="small text-muted me-4 link-hover-underline my-2 block">Privacy
-							policy</a>
-					</div>
-				</div>
-				<div class="col-md-4 order-md-1 small">
-					<span class="d-block my-2 lh-sm text-muted">&copy; Copyright
-						<script>
-							document.write(new Date().getFullYear())
-						</script>. Assan
-					</span>
-				</div>
-			</div>
-		</div>
-
-	</footer>
-
-
-
+	<jsp:include page="/footer.jsp" />
 
 
 	<!-- :Back to top -->
@@ -691,19 +424,10 @@
 	</a>
 
 
-	<!--cursor-->
-	<div class="cursor">
-		<div class="cursor__inner"></div>
-	</div>
-
 	<!-- scripts -->
 	<script src="/resources/js/theme.bundle.js"></script>
 	<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
-	<script>
-		//cursor
-		//cursor
-	</script>
-
+	
 	<!--Select scripts-->
 	<script src="/resources/vendor/node_modules/js/choices.min.js"></script>
 	<script>
