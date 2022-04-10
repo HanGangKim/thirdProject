@@ -15,10 +15,10 @@ public class CompanyServiceImpl implements CompanyService{
 
 	@Override
 	public int companyInsert(CompanyVO vo) {
-		// TODO Auto-generated method stub
+		
 		System.out.println("===============");
 		System.out.println("companyInsert 서비스 호출");
-		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
 		System.out.println("===============");
 		
 		return companyDAO.companyInsert(vo);
@@ -26,7 +26,12 @@ public class CompanyServiceImpl implements CompanyService{
 
 	@Override
 	public CompanyVO companyLogin(CompanyVO vo) {
-		// TODO Auto-generated method stub
+		
+		System.out.println("===============");
+		System.out.println("companyLogin 서비스 호출");
+		System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+	
 		return companyDAO.companyLogin(vo);
 	}
 

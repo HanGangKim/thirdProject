@@ -26,10 +26,20 @@ public class CustomerDAOImpl implements  CustomerDAO{
 	public CustomerVO customerLogin(CustomerVO vo) {
 		System.out.println("===============");
 		System.out.println("customerLogin 다오 호출");
-		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("CustomerVO : " + ToStringBuilder.reflectionToString(vo));
 		System.out.println("===============");
 		
 		return mybatis.selectOne("customerMapper.customerLogin",vo);
+	}
+	
+	@Override
+	public void customerupdate(CustomerVO vo) {
+		System.out.println("===============");
+		System.out.println("customerupdate 다오 호출");
+		System.out.println("CustomerVO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+		
+		mybatis.update("customerMapper.customerchangeInfo",vo);
 	}
 	
 	

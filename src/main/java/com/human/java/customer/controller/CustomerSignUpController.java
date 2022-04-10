@@ -20,10 +20,10 @@ public class CustomerSignUpController {
 	// 회원가입
 	@RequestMapping("customerInsert.do")
 	public ModelAndView customerInsert(CustomerVO vo) {
-
+		
 		System.out.println("===============");
 		System.out.println("customerInsert 컨트롤러 호출");
-		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("CustomerVO : " + ToStringBuilder.reflectionToString(vo));
 		System.out.println("===============");
 
 		// 가입실패

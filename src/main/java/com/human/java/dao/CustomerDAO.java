@@ -8,4 +8,6 @@ public interface CustomerDAO {
 	
 	public CustomerVO customerLogin(CustomerVO vo);
 	
+	public void customerupdate(CustomerVO vo);
+	
 }

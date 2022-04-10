@@ -1,5 +1,6 @@
 package com.human.java.exhibition.controller;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,57 +17,72 @@ public class ExhibitionDateController {
 
 	@Autowired
 	private ExhibitionService exhibitionService;
-	
+
 	@RequestMapping("ExhibitionTest.do")
 	public ModelAndView exhibitionInfo(ExhibitionVO vo) {
-		System.out.println("컨트롤진입여기?");
+
+		System.out.println("===============");
+		System.out.println("ExhibitionTest.do 호출");
+		System.out.println("===============");
+
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/Exhibition/ExhibitionTest");
 		mv.addObject("vo", exhibitionService.exhibitionList(vo));
-		
-		
+
 		return mv;
 	}
-	
+
 	@RequestMapping("ExhibitionAllTest.do")
 	public ModelAndView exhibitionInfoAll(ExhibitionVO vo) {
-		System.out.println("컨트롤올진입2");
+
+		System.out.println("===============");
+		System.out.println("ExhibitionAllTest.do 호출");
+		System.out.println("===============");
+
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/Exhibition/ExhibitionAllTest");
-		System.out.println(vo + "전달합니다");
+
+		System.out.println(ToStringBuilder.reflectionToString(vo) + "전달");
+
 		mv.addObject("vo", exhibitionService.exhibitionAll(vo));
-		
-		
+
 		return mv;
 	}
-	
+
 	@RequestMapping("ExSearchTest.do")
 	public ModelAndView exhibitionSearch(ExhibitionVO vo, @RequestParam("totalDate") String totalDate) {
-		System.out.println("컨트롤올진입3");
+
+		System.out.println("===============");
+		System.out.println("ExSearchTest.do 호출");
+		System.out.println("===============");
+
 		ModelAndView mv = new ModelAndView();
 		System.out.println(totalDate);
-		
+
 		mv.setViewName("/Exhibition/ExSearchTest");
-		System.out.println(vo + "전달합니다");
-		mv.addObject("vo", exhibitionService.exhibitionSearch(vo,totalDate));
-		
-		
+		System.out.println(ToStringBuilder.reflectionToString(vo) + "전달");
+		mv.addObject("vo", exhibitionService.exhibitionSearch(vo, totalDate));
+
 		return mv;
 	}
-	
+
 	@RequestMapping("ExhibitionDetail.do")
 	public ModelAndView exhibitionDetail(ExhibitionVO vo, @RequestParam("id") String id) {
-		System.out.println("컨트롤올진입3");
+
+		System.out.println("===============");
+		System.out.println("ExhibitionDetail.do 호출");
+		System.out.println("===============");
+
 		ModelAndView mv = new ModelAndView();
 		System.out.println(id);
-		
+
 		mv.setViewName("/Exhibition/ExhibitionDetail");
-		System.out.println(vo + "전달합니다");
-		mv.addObject("vo", exhibitionService.exhibitionDetail(vo,id));
-		
-		
+
+		System.out.println(ToStringBuilder.reflectionToString(vo) + "전달합니다");
+
+		mv.addObject("vo", exhibitionService.exhibitionDetail(vo, id));
+
 		return mv;
 	}
-	
 
 }

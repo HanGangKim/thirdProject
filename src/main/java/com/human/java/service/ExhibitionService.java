@@ -1,9 +1,13 @@
 package com.human.java.service;
 
+import java.util.HashMap;
 import java.util.List;
+
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.human.java.domain.CompanyVO;
 import com.human.java.domain.ExhibitionVO;
+import com.human.java.domain.TicketingSelectVO;
 import com.human.java.domain.TicketingVO;
 
 public interface ExhibitionService {
@@ -25,4 +29,7 @@ public interface ExhibitionService {
 	
 	// 티켓팅 
 	public int ticketInsert(TicketingVO vo);
+	
+	// 티켓팅 내역 조회
+	public List<TicketingSelectVO> ticketSelect(HashMap map, String id);
 }
