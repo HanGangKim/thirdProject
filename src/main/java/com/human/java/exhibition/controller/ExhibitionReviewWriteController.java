@@ -32,7 +32,7 @@ public class ExhibitionReviewWriteController {
 		
 		reviewService.insertReview(vo);
 
-		return "/Exhibition/ExhibitionReviewListTest";
+		return "CustomerExhibitionMyReviewList.do";
 	}
 
 	// 나의 글 삭제

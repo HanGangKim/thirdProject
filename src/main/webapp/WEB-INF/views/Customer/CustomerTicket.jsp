@@ -139,8 +139,8 @@
 									<!--QR 확인버튼-->
 									<div class="d-grid pb-4 pb-md-0">
 										<a href="#" class="btn btn-primary"
-											style="margin-bottom: 10px;">Move to qr</a> <a href="#"
-											class="btn btn-dark">후기작성</a>
+											style="margin-bottom: 10px;">Move to qr</a> 
+											<a href="../customer/CustomerExhibitionReviewWrite.do?exhibition_id=${vo.exhibition_id}&customer_id=${vo.customer_id}" class="btn btn-dark">후기작성</a>
 									</div>
 
 								</div>

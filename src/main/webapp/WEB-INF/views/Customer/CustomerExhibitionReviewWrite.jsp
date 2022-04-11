@@ -101,46 +101,69 @@
 								<div class="pt-5 d-flex flex-column h-100">
 									<div class="card shadow p-3 mb-3">
 										<h5 class="mb-4">Writing A Review</h5>
-										<form autocomplete="false">
+
+										<!-- form 태그시작  -->
+										<form autocomplete="false" action="/exhibition/saveReview.do"
+											method="get">
 											<div class="row align-items-center">
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_com">Id</label> <input
-														type="text" class="form-control" id="profile_com"
-														placeholder="User Id" readonly>
+														name="customer_id" value="${param.customer_id}"
+														type="text" class="form-control" id="profile_com" readonly>
 												</div>
+
+												<!-- 넘겨줄 전시회 hidden 아이디  -->
+												<input type="number" name="exhibition_id"
+													value="${param.exhibition_id}" hidden>
+
+												<!--전시회 제목-->
+												<div class="col-md-6 mb-3">
+													<label class="form-label" for="profile_com">review
+														title</label> <input name="review_title" type="text"
+														class="form-control" id="profile_com"
+														placeholder="제목을 입력해주세요.">
+												</div>
+
+
+
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_gender">Grade</label>
-													<select autocomplete="false" id="profile_gender"
+													<select name="review_star_score"  autocomplete="false" id="profile_gender"
 														class="form-control"
 														data-choices='{"searchEnabled":false}'>
-														<option selected>5.0</option>
-														<option>4.0</option>
-														<option>3.0</option>
-														<option>2.0</option>
-														<option>1.0</option>
+														<option selected value="5.0">5.0</option>
+														<option value="4.0">4.0</option>
+														<option value="3.0">3.0</option>
+														<option value="2.0">2.0</option>
+														<option value="1.0">1.0</option>
 													</select>
 												</div>
 												<!--내용-->
 												<div class="col-12 mb-3">
 													<label for="profile_address" class="form-label">Content</label>
-													<input type="text" id="youna-box-size" class="form-control"
+													<input name="review_contents" type="text"
+														id="youna-box-size" class="form-control"
 														placeholder="Please enter the contents.">
 												</div>
 												<!--첨부파일-->
 												<div class="col-12">
 													<label for="profile_address" class="form-label">File</label>
-													<input type="file" id="profile_address"
-														class="form-control">
+
+													<!-- 이미지 업로드전까지 DEFAULT_IMG 벨류 부여 -->
+													<!-- 이미지 업로드 전까지 file->text 변경  -->
+													<input name="review_img" value="DEFAULT_IMG" type="text"
+														id="profile_address" class="form-control">
 												</div>
 											</div>
 											<hr class="mt-5 mb-3">
 											<!--저장 버튼-->
 											<div class="text-end">
-												<button type="button" class="btn btn-primary">Upadte
+												<button type="submit" class="btn btn-primary">Upadte
 													Review</button>
 											</div>
 										</form>
+										<!-- form 태그 종료 -->
 									</div>
 								</div>
 							</div>
