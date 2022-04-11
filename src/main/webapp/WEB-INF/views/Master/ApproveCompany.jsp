@@ -178,6 +178,7 @@
         </a>
         <!-- scripts -->
         <script src="/resources/js/theme.bundle.js"></script>
+        
     </body>
 
 </html>
