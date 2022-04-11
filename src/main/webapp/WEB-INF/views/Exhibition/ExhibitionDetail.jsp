@@ -216,7 +216,7 @@
 							</div>
 							<!--/.colors-->
 							<div class="d-grid mb-2">
-								<a href="#" class="btn btn-primary hover-lift"> <i
+								<a href="../customer/CustomerWishList.do?id=${vo.exhibition_id}" class="btn btn-primary hover-lift"> <i
 									class="bx bx-heart fs-4 me-2"></i> Add to Wishlist
 								</a>
 							</div>

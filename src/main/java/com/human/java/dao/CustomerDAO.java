@@ -1,6 +1,12 @@
 package com.human.java.dao;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
 import com.human.java.domain.CustomerVO;
+import com.human.java.domain.ExhibitionVO;
+import com.human.java.domain.WishListVO;
 
 public interface CustomerDAO {
 
@@ -9,5 +15,9 @@ public interface CustomerDAO {
 	public CustomerVO customerLogin(CustomerVO vo);
 	
 	public void customerupdate(CustomerVO vo);
+	
+	public void wishListInsert(ExhibitionVO vo, String id, HttpServletRequest request);
+	
+	public List<WishListVO> wishListSearch(WishListVO wl, HttpServletRequest request);
 	
 }

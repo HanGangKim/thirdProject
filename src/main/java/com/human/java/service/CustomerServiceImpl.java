@@ -1,11 +1,17 @@
 package com.human.java.service;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.human.java.dao.CustomerDAOImpl;
 import com.human.java.domain.CustomerVO;
+import com.human.java.domain.ExhibitionVO;
+import com.human.java.domain.WishListVO;
 
 @Service("customerService")
 public class CustomerServiceImpl implements CustomerService{
@@ -44,6 +50,18 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		customerDAO.customerupdate(vo);
 		
+	}
+
+	@Override
+	public List<WishListVO> WishListService(ExhibitionVO vo, String id, WishListVO wl, HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		System.out.println("-_+_+_+_+_+_+_+_+_+_+_");
+		System.out.println("WishListService.do 호출");
+		System.out.println("_+_+_+_+_+_+_+_+_+_+_+");
+		
+		customerDAO.wishListInsert(vo, id, request);
+		
+		return customerDAO.wishListSearch(wl, request);
 	}
 
 }
