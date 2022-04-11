@@ -11,6 +11,7 @@
   	  		<typeAlias alias="exhibition" type="com.human.java.domain.ExhibitionVO" />
   	  		<typeAlias alias="review" type="com.human.java.domain.ReviewVO" />
   	  		<typeAlias alias="ticket" type="com.human.java.domain.TicketingVO" />
+  	  		<typeAlias alias="ticketSelect" type="com.human.java.domain.TicketingSelectVO" /> 		
   		</typeAliases>
   </configuration>
   

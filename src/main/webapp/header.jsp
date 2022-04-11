@@ -32,7 +32,7 @@
 <body>
 
 	<!-- 헤더 시작 -->
-	<header class="z-index-fixed header-absolute-top header-transparent header-boxed header-sticky">
+	<header class="z-index-fixed header-transparent header-boxed header-sticky">
 		<div class="navbar-boxed">
 			<div class="container">
 				<nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -156,12 +156,20 @@
 		</div>
 	</div>
 	<!-- 검색버튼 모달 끝 -->
+	
+	<!--cursor-->
+	<div class="cursor">
+		<div class="cursor__inner"></div>
+	</div>
 
 </body>
 
 <!-- 검색버튼 모달 스크립트 -->
 <script src="/resources/js/theme.bundle.js"></script>
 <script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
+
+<!-- 커서 스크립트 -->
+<script src="/resources/vendor/node_modules/js/cursor.js"></script>
 
 <script type="text/javascript">
 	function navClick() {
