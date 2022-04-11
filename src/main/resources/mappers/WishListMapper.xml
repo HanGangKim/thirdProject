@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="wishlistMapper">
+
+	<insert id="wishlistInsert" parameterType="map">
+		INSERT INTO
+		WISH_LIST
+		(WISH_LIST_ID, EXHIBITION_ID , CUSTOMER_ID , WISH_LIST_FLAG)
+		VALUES
+		(seq_wish_list.nextval , ${id} , #{request} ,  'N')
+	</insert>
+
+	 <select id="wishlistsearch" parameterType="customer" resultType="customer">
+		SELECT *
+		FROM WISH_LIST
+		WHERE CUSTOMER_ID = #{request} AND CUSTOMER_PASSWORD = #{customer_password}
+	</select> 
+	
+	<update id="flagChange" parameterType="map">
+		UPDATE WISH_LIST
+		SET WISH_LIST_FLAG = 'Y'
+		WHERE EXHIBITION_ID= ${exhibition_id} AND CUSTOMER_ID = ${customer_id}
+	</update>
+
+	
+
+</mapper>
