@@ -2,6 +2,25 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%request.setCharacterEncoding("UTF-8");%>
+<%
+Object userId = session.getAttribute("userId");
+Object userName = session.getAttribute("userName");
+// 세션 연결
+if (session.getAttribute("userId") == null) {
+// 세션 연결에 실패하면 null	
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+System.out.println("세션연결 실패:"+userId);
+System.out.println("세션연결 실패:"+userName);
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+
+}else{
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+System.out.println("세션연결 성공:"+userId);
+System.out.println("세션연결 성공:"+userName);
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+}
+%>
 <!doctype html>
 <html lang="en">
 
@@ -264,7 +283,7 @@
 							<div class="mb-3">
 								<label class="form-label" for="profile_name">Name</label> <input
 									type="text" name="customer_id" placeholder="세션아이디"
-									value="default" readonly="readonly" class="form-control">
+									value="<%=userId%>" readonly="readonly" class="form-control">
 							</div>
 							<!-- 예매자 이름 -->
 							<div class="mb-3">
@@ -337,15 +356,31 @@
 									class="form-control">
 							</div>
 
-
-							<!-- 구분선 -->
 							<div class="d-flex align-items-center py-3">
 								<span class="flex-grow-1 border-bottom pt-1"></span>
 							</div>
+							
+							<%
+							// 세션 연결
+							if (session.getAttribute("userId") == null) {
+							// 세션 연결에 실패하면 null	
+							%>							
+							<!-- 결제하기 버튼 -->
+							<div class="mb-2 text-end">
+								<button type="submit" class="btn btn-primary form-control" disabled="disabled">로그인 후에 이용할 수 있어요!</button>
+							</div>
+							<% 
+							}else{
+							%>
 							<!-- 결제하기 버튼 -->
 							<div class="mb-2 text-end">
 								<button type="submit" class="btn btn-primary form-control">결제하기</button>
 							</div>
+							<% 
+							}
+							%>
+														
+							
 							<div class="mb-3 text-end">
 								<button type="reset" class="btn btn-outline-dark form-control">취소하기</button>
 							</div>
@@ -426,18 +461,10 @@
 	<jsp:include page="/footer.jsp" />
 
 
-	<!-- :Back to top -->
-	<a href="#top"
-		class="position-fixed toTop d-none d-sm-flex btn btn-light rounded-circle p-0 flex-center width-4x height-4x z-index-fixed end-0 bottom-0 mb-3 me-3">
-		<i class="bx bxs-up-arrow align-middle lh-1"></i>
-	</a>
-
-
 </body>
 
 <!-- scripts -->
 <script src="/resources/js/theme.bundle.js"></script>
-<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
 
 <!--Select scripts-->
 <script src="/resources/vendor/node_modules/js/choices.min.js"></script>

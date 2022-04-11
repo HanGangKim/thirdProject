@@ -29,10 +29,15 @@ public class ExhibitionReviewWriteController {
 		System.out.println("ReviewVO : " + ToStringBuilder.reflectionToString(vo));
 		System.out.println("===============");
 		
-		
+		// [1] insert
 		reviewService.insertReview(vo);
+		
+		// [2] update 
+		
+		
+		// [3] 셀렉트  
 
-		return "CustomerExhibitionMyReviewList.do";
+		return "/Customer/CustomerExhibitionMyReviewList";
 	}
 
 	// 나의 글 삭제

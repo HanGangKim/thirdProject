@@ -1,4 +1,3 @@
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
@@ -13,16 +12,18 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 System.out.println("세션연결 실패:"+userId);
 System.out.println("세션연결 실패:"+userName);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-//LogOut.jsp로 이동	
-response.sendRedirect("../LogOut.do");	
+	
 }else{
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 System.out.println("세션연결 성공:"+userId);
 System.out.println("세션연결 성공:"+userName);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+// LogOut.jsp로 이동
+// 회원가입 성공은 세션이 있으면 못들어가게 Redirect 
+response.sendRedirect("../LogOut.do");
+
 }
 %>
-
 <!doctype html>
 <html lang="en">
 
@@ -77,9 +78,11 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							class="width-10x height-10x rounded-circle position-relative bg-success text-white flex-center mb-4">
 							<i class="bx bx-check lh-1 display-4 fw-normal"></i>
 						</div>
-						<h1 class="display-2 mb-3"><%=userName%>님 , 예매가 완료되었습니다.</h1>
-						<p class="mb-5 lead mx-auto">상세 예매내역을 확인하기 위해서는 아래 버튼을 눌러주세요.</p>
-						<a href="/exhibition/ExhibitionTicketingSelect.do?id=<%=userId%>" class="btn btn-outline-primary btn-lg">
+						<h1 class="display-2 mb-3">Thanks for your message!</h1>
+						<p class="mb-5 lead mx-auto">We’ve just received your message
+							and will be contacting you as soon as possible. In the meantime
+							you can explore our recent projects.</p>
+						<a href="/LandingLogin.do" class="btn btn-outline-primary btn-lg">
 							Sign In</a>
 
 					</div>
