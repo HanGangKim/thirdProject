@@ -26,6 +26,10 @@
 <!-- Main CSS -->
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
+<!--Flatpickr-->
+<link rel="stylesheet"
+	href="/resources/vendor/node_modules/css/flatpickr.min.css">
+
 <!--:Simplebar css ()-->
 <style type="text/css">
 .simplebar-track.simplebar-vertical {
@@ -40,7 +44,6 @@
 	margin: 0px;
 	color: gray;
 }
-
 </style>
 
 <!-- <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css'
@@ -218,8 +221,9 @@
 								</a>
 							</div>
 							<div class="d-grid">
-								<a href="#" class="btn btn-primary hover-lift" data-bs-target="#modal-pay-bar-2" data-bs-toggle="modal"> 
-									<i class="bx bx-credit-card fs-4 me-2"></i> Book a Ticket
+								<a href="#" class="btn btn-primary hover-lift"
+									data-bs-target="#modal-pay-bar-2" data-bs-toggle="modal"> <i
+									class="bx bx-credit-card fs-4 me-2"></i> Book a Ticket
 								</a>
 							</div>
 							<!--/.cart-action-->
@@ -231,98 +235,106 @@
 			</div>
 		</section>
 	</main>
-	
-	
-	<!-- 검색버튼 모달 시작 -->
+
+
+	<!-- 예매 모달 시작 -->
 	<div id="modal-pay-bar-2" class="modal fade" tabindex="-1"
 		aria-labelledby="modal-pay-bar-2" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-top modal-md">
 			<div class="modal-content position-relative border-0">
 				<div class="position-relative px-4">
 					<div
-						class="position-absolute end-0 width-7x top-0 d-flex align-items-center justify-content-center" style="margin-top:5px;">
+						class="position-absolute end-0 width-7x top-0 d-flex align-items-center justify-content-center"
+						style="margin-top: 5px;">
 						<button type="button" class="btn-close w-auto small"
-							data-bs-dismiss="modal" aria-label="Close"><i class="bx bx-x fs-4 me-2"></i></button>
+							data-bs-dismiss="modal" aria-label="Close">
+							<i class="bx bx-x fs-4 me-2"></i>
+						</button>
 					</div>
 					<form class="mb-0" action="ExhibitionPayment.do">
 						<div class="align-items-center">
-							<h6 class="d-flex" style="justify-content: center; margin-top:15px;">예매하기</h6>
-							
+							<h6 class="d-flex"
+								style="justify-content: center; margin-top: 15px;">예매하기</h6>
+
 							<!-- 구분선 -->
 							<div class="d-flex align-items-center py-3">
 								<span class="flex-grow-1 border-bottom pt-1"></span>
 							</div>
 							<!-- 이름 -->
 							<div class="mb-3">
-								<label class="form-label" for="profile_name">Name</label>
-								<input type="text" name="customer_id" placeholder="세션아이디"
+								<label class="form-label" for="profile_name">Name</label> <input
+									type="text" name="customer_id" placeholder="세션아이디"
 									value="default" readonly="readonly" class="form-control">
 							</div>
 							<!-- 예매자 이름 -->
 							<div class="mb-3">
-								<label class="form-label" for="profile_name">예매자 이름</label>
-								<input type="text" name="consumer_name" placeholder="구매자"
-									value="김한수" class="form-control">
+								<label class="form-label" for="profile_name">예매자  *전시회 입장 시 말씀해주세요.</label> <input
+									type="text" name="consumer_name" placeholder="구매자" value="김한수"
+									class="form-control">
 							</div>
 							<!-- 전시회 아이디 -->
 							<div class="mb-3">
-								<label class="form-label" for="profile_name">전시회 아이디</label>
-								<input type="text" name="exhibition_id" placeholder="전시아이디"
-									value="${vo.exhibition_id}" readonly="readonly" class="form-control">
+								<label class="form-label" for="profile_name">전시회 아이디</label> <input
+									type="text" name="exhibition_id" placeholder="전시아이디"
+									value="${vo.exhibition_id}" readonly="readonly"
+									class="form-control">
 							</div>
 							<!-- 전시회 이름 -->
 							<div class="mb-3">
-								<label class="form-label" for="profile_name">전시회 이름</label>
-								<input type="text" name="title" placeholder="전시회명"
-									value="${vo.exhibition_title}" readonly="readonly" class="form-control">
+								<label class="form-label" for="profile_name">전시회 이름</label> <input
+									type="text" name="title" placeholder="전시회명"
+									value="${vo.exhibition_title}" readonly="readonly"
+									class="form-control">
 							</div>
 							<!-- 예매자 연락처 -->
 							<div class="mb-3">
-								<label class="form-label" for="profile_name">예매자 연락처</label>
-								<input type="text" name="consumer_ph" placeholder="핸드폰번호"
-									value="0" readonly="readonly" class="form-control">
+								<label class="form-label" for="profile_name">예매자 연락처</label> <input
+									type="text" name="consumer_ph" placeholder="핸드폰번호" value="0"
+									readonly="readonly" class="form-control">
 							</div>
 							<!-- 방문 날짜 -->
 							<div class="mb-3">
-								<label class="form-label" for="profile_name">방문 날짜</label>
-								<input type="text" name="ticketing_date" placeholder="날짜"
-									value="2022.01.01" readonly="readonly" class="form-control"><!-- 달력 들어갈 예정-->
+								<label class="form-label" for="profile_name">방문 날짜</label> <input
+									type="text" name="ticketing_date" placeholder="날짜"
+									data-flatpickr value="2022.01.01" class="form-control">
+								<!-- 달력 들어갈 예정-->
+								<!-- 								<input type="text" value="2022-01-14" data-flatpickr class="form-control"> -->
 							</div>
 							<!-- 구분선 -->
 							<div class="d-flex align-items-center py-3">
 								<span class="flex-grow-1 border-bottom pt-1"></span>
 							</div>
-							<!-- 결제하기 버튼 -->
-							<div class="mb-3 text-end">
-								<button type="button" class="btn btn-primary form-control">다음</button>
-							</div>
-							
+
 							<!-- 결제하기 섹션 -->
 							<!-- 기본값 -->
 							<div class="mb-3">
-								<label class="form-label" for="profile_name">금액</label>
-								<input type="number" name="totalCustomer" id="d_money"
-									value="${vo.exhibition_price}" readonly="readonly" class="form-control">
+								<label class="form-label" for="profile_name">금액</label> <input
+									type="number" name="totalCustomer" id="d_money"
+									value="${vo.exhibition_price}" readonly="readonly"
+									class="form-control">
 							</div>
 							<!-- 인원 -->
 							<div class="mb-2">
-								<label class="form-label" for="profile_name">인원 선택</label>
-								<input type="number" name="totalCustomer" id="result"
-									value="1" readonly="readonly" class="form-control">
+								<label class="form-label" for="profile_name">인원 선택</label> <input
+									type="number" name="totalCustomer" id="result" value="1"
+									readonly="readonly" class="form-control">
 							</div>
 							<div class="mb-3 d-flex" style="justify-content: space-between;">
-								<button class="btn btn-dark" type="button" onclick='count("plus")' style="width: 49%;" >
+								<button class="btn btn-light" type="button"
+									onclick='count("plus")' style="width: 49%;">
 									<i class="bx bx-caret-up fs-4 me-2"></i>
 								</button>
-								<button class="btn btn-dark" type="button" onclick='count("minus")' style="width: 49%;" >
+								<button class="btn btn-light" type="button"
+									onclick='count("minus")' style="width: 49%;">
 									<i class="bx bx-caret-down fs-4 me-2"></i>
 								</button>
 							</div>
 							<!-- 금액 -->
 							<div class="mb-3">
-								<label class="form-label" for="profile_name">총 금액</label>
-								<input type="number" name="totalPrice" id="money"
-									value="${vo.exhibition_price}" readonly="readonly" class="form-control">
+								<label class="form-label" for="profile_name">총 금액</label> <input
+									type="number" name="totalPrice" id="money"
+									value="${vo.exhibition_price}" readonly="readonly"
+									class="form-control">
 							</div>
 
 
@@ -335,7 +347,7 @@
 								<button type="submit" class="btn btn-primary form-control">결제하기</button>
 							</div>
 							<div class="mb-3 text-end">
-								<button type="reset" class="btn btn-dark form-control">취소하기</button>
+								<button type="reset" class="btn btn-outline-dark form-control">취소하기</button>
 							</div>
 						</div>
 					</form>
@@ -343,38 +355,35 @@
 			</div>
 		</div>
 	</div>
-	<!-- 검색버튼 모달 끝 -->
-	
+	<!-- 예매 모달 끝 -->
+
 
 	<hr>
 	<!-- 추후 결제모달로 바뀔 예정 (시작) -->
 	<form action="ExhibitionPayment.do">
-	<br>
-	<br>
-	<br>
-	<h1>결제모달 예정</h1>
-	<hr>
-	<input type="text" name="customer_id" placeholder="세션아이디" value="default" readonly="readonly">
-	<br>
-	<input type="text" placeholder="구매자" name="consumer_name" value="김한수">
-	<br>
-	<input type="text" placeholder="전시아이디" name="exhibition_id" value="${vo.exhibition_id}" readonly="readonly">
-	<br>
-	<input type="text" value="${vo.exhibition_title}" placeholder="전시회명" readonly="readonly" name="title">
-	<br>
-	<input type="text" value="0" placeholder="핸드폰번호" name="consumer_ph">
-	<br>
-	<input type="text" placeholder="날짜" value="2022.01.01" name="ticketing_date" readonly="readonly"><!-- 달력 들어갈 예정-->
-	<br>
-	<br>
-	금액 :<input type="number" value="${vo.exhibition_price}" id="money" readonly="readonly" name="totalPrice"> 
-	인원 : <input type="number" id='result' value="1" name = "totalCustomer"> 
-	기본값 : <input type="number" value="${vo.exhibition_price}" id="d_money" readonly="readonly">
-	<input type='button' onclick='count("plus")' value='+' /> 
-	<input type='button' onclick='count("minus")' value='-' />
-	<br>
-	<input type="submit" value="결제하기"> <input type="reset" value="취소하기">
-</form>
+		<br> <br> <br>
+		<h1>결제모달 예정</h1>
+		<hr>
+		<input type="text" name="customer_id" placeholder="세션아이디"
+			value="default" readonly="readonly"> <br> <input
+			type="text" placeholder="구매자" name="consumer_name" value="김한수">
+		<br> <input type="text" placeholder="전시아이디" name="exhibition_id"
+			value="${vo.exhibition_id}" readonly="readonly"> <br> <input
+			type="text" value="${vo.exhibition_title}" placeholder="전시회명"
+			readonly="readonly" name="title"> <br> <input
+			type="text" value="0" placeholder="핸드폰번호" name="consumer_ph">
+		<br> <input type="text" placeholder="날짜" value="2022.01.01"
+			name="ticketing_date" readonly="readonly">
+		<!-- 달력 들어갈 예정-->
+		<br> <br> 금액 :<input type="number"
+			value="${vo.exhibition_price}" id="money" readonly="readonly"
+			name="totalPrice"> 인원 : <input type="number" id='result'
+			value="1" name="totalCustomer"> 기본값 : <input type="number"
+			value="${vo.exhibition_price}" id="d_money" readonly="readonly">
+		<input type='button' onclick='count("plus")' value='+' /> <input
+			type='button' onclick='count("minus")' value='-' /> <br> <input
+			type="submit" value="결제하기"> <input type="reset" value="취소하기">
+	</form>
 	<script type="text/javascript">
 		function count(type) {
 			alert("함수호출")
@@ -424,16 +433,27 @@
 	</a>
 
 
-	<!-- scripts -->
-	<script src="/resources/js/theme.bundle.js"></script>
-	<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
-	
-	<!--Select scripts-->
-	<script src="/resources/vendor/node_modules/js/choices.min.js"></script>
-	<script>
-		
-	</script>
-	<script src="/resources/vendor/node_modules/js/simplebar.min.js"></script>
 </body>
+
+<!-- scripts -->
+<script src="/resources/js/theme.bundle.js"></script>
+<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
+
+<!--Select scripts-->
+<script src="/resources/vendor/node_modules/js/choices.min.js"></script>
+<script src="/resources/vendor/node_modules/js/simplebar.min.js"></script>
+
+<!-- 달력 선택 스크립트 -->
+<script src="/resources/vendor/node_modules/js/flatpickr.min.js"></script>
+<script>
+        let pickr = document.querySelectorAll("[data-flatpickr]");
+        pickr.forEach(el => {
+            const t = {
+                ...el.dataset.flatpickr ? JSON.parse(el.dataset.flatpickr) : {},
+            }
+            new flatpickr(el, t)
+        }
+        );
+	</script>
 
 </html>
