@@ -2,6 +2,26 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%request.setCharacterEncoding("UTF-8");%>
+<%
+Object userId = session.getAttribute("userId");
+Object userName = session.getAttribute("userName");
+// 세션 연결
+if (session.getAttribute("userId") == null) {
+// 세션 연결에 실패하면 null	
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+System.out.println("세션연결 실패:"+userId);
+System.out.println("세션연결 실패:"+userName);
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+//LogOut.jsp로 이동	
+response.sendRedirect("../LogOut.do");	
+}else{
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+System.out.println("세션연결 성공:"+userId);
+System.out.println("세션연결 성공:"+userName);
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+}
+%>
 <!doctype html>
 <html lang="en">
 <!--예매내역-->
