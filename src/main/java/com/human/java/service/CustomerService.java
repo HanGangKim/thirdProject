@@ -18,7 +18,7 @@ public interface CustomerService {
 	public CustomerVO customerLogin(CustomerVO vo);
 	
 	//정보수정
-	public void customerupdate(CustomerVO vo);
+	public void customerUpdate(CustomerVO vo);
 	
 	//찜목록
 	public List<WishListVO> WishListService(ExhibitionVO vo, String id, WishListVO wl,  HttpServletRequest request);
