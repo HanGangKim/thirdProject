@@ -7,6 +7,7 @@ public class ReviewVO {
 	private String review_contents;
 	private String review_date;
 	private double review_star_score;
+	private String review_image;
 	
 	
 	public int getReview_id() {
@@ -38,6 +39,12 @@ public class ReviewVO {
 	}
 	public void setReview_star_score(double review_star_score) {
 		this.review_star_score = review_star_score;
+	}
+	public String getReview_image() {
+		return review_image;
+	}
+	public void setReview_image(String review_image) {
+		this.review_image = review_image;
 	}
 	
 	

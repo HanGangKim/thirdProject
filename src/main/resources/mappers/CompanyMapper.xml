@@ -10,7 +10,7 @@
 		COMPANY_INFO
 		(COMPANY_ID, COMPANY_PASSWORD, COMPANY_NAME, COMPANY_PH, COMPANY_EMAIL, COMPANY_REGNUM, COMPANY_FLAG)
 		VALUES
-		(#{company_id} , #{company_password} , #{company_name} ,  #{company_ph} , #{company_email} , #{company_regnum} , 'N')
+		(#{company_id} , #{company_password} , #{company_name} ,  #{company_ph} , #{company_email} , #{company_regnum} , 'W')
 	</insert>
 
 	 <select id="companyLogin" parameterType="company" resultType="company">

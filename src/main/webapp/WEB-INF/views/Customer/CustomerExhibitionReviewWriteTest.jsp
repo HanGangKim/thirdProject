@@ -38,6 +38,10 @@
 				<td align="left"><input type="number" name="review_star_score" /></td>
 			</tr>
 			<tr>
+				<td width="70">이미지</td>
+				<td align="left"><input type="file" name="review_image" /></td>
+			</tr>
+			<tr>
 				<td colspan="2" align="center"><input type="submit"
 					value=" 새글 등록 " /></td>
 			</tr>
