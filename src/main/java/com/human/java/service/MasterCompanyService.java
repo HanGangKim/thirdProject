@@ -1,4 +1,4 @@
-package com.human.java.master.service;
+package com.human.java.service;
 
 import com.human.java.domain.MasterCompanyVO;
 

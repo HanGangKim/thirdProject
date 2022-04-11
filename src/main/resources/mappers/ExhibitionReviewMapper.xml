@@ -35,11 +35,8 @@
 
 
 	<insert id="insertReview" parameterType="review">
-		INSERT INTO
-		REVIEW(REVIEW_ID, REVIEW_TITLE, REVIEW_CONTENTS,
-		REVIEW_DATE,REVIEW_STAR_SCORE, REVIEW_IMAGE)
-		VALUES(SEQ_REVIEW.nextval,
-		#{review_title}, #{review_contents} ,sysdate, #{review_star_score}, #{review_image})
+		INSERT INTO REVIEW(REVIEW_ID , REVIEW_TITLE, REVIEW_CONTENTS, REVIEW_DATE, REVIEW_STAR_SCORE , REVIEW_IMAGE , EXHIBITION_ID , CUSTOMER_ID)
+		VALUES(SEQ_REVIEW.nextval, #{review_title}, #{review_contents} , sysdate , #{review_star_score} , #{review_img} , #{exhibition_id}, #{customer_id})
 	</insert>
 	
 	<!-- Merge 쿼리문으로 Update 대체 -->
@@ -47,7 +44,7 @@
 		REVIEW_CONTENTS = #{content}, WHERE REVIEW_ID = #{seq} </update> -->
 		
 	<!-- 	MERGE INTO COST
-		USING DUAL
+		USING DUAL	
 		ON ( ID = #{id} AND SUBMIT_DATE = #{date} )
 		WHEN MATCHED THEN
 		UPDATE SET A_FEED = A_FEED + #{a_Feed} , A_SNACK = A_SNACK +#{a_Snack} ,

@@ -1,4 +1,4 @@
-package com.human.java.master.dao;
+package com.human.java.dao;
 
 import com.human.java.domain.MasterCompanyVO;
 
