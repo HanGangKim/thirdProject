@@ -16,9 +16,5 @@ public class MasterCompanyUpdateController {
 			return "/Master/" + step; // 불러들일 페이지 //.jsp 파일명 
 		}
 		
-		@RequestMapping("ApproveCompany.do")
-		public String UpdateCompany() {
-			System.out.println("업체승인목록 업데이트");
-			return "/Master/ApproveCompany";
-		}
+
 }

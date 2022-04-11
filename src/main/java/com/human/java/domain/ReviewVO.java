@@ -7,9 +7,29 @@ public class ReviewVO {
 	private String review_contents;
 	private String review_date;
 	private double review_star_score;
-	private String review_image;
+	private String review_img;
+	private int exhibition_id;
+	private String customer_id;
 	
 	
+	public String getReview_img() {
+		return review_img;
+	}
+	public void setReview_img(String review_img) {
+		this.review_img = review_img;
+	}
+	public int getExhibition_id() {
+		return exhibition_id;
+	}
+	public void setExhibition_id(int exhibition_id) {
+		this.exhibition_id = exhibition_id;
+	}
+	public String getCustomer_id() {
+		return customer_id;
+	}
+	public void setCustomer_id(String customer_id) {
+		this.customer_id = customer_id;
+	}
 	public int getReview_id() {
 		return review_id;
 	}
@@ -39,12 +59,6 @@ public class ReviewVO {
 	}
 	public void setReview_star_score(double review_star_score) {
 		this.review_star_score = review_star_score;
-	}
-	public String getReview_image() {
-		return review_image;
-	}
-	public void setReview_image(String review_image) {
-		this.review_image = review_image;
 	}
 	
 	
