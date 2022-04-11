@@ -41,13 +41,13 @@ public class CustomerDAOImpl implements  CustomerDAO{
 	}
 	
 	@Override
-	public void customerupdate(CustomerVO vo) {
+	public void customerUpdate(CustomerVO vo) {
 		System.out.println("===============");
 		System.out.println("customerupdate 다오 호출");
 		System.out.println("CustomerVO : " + ToStringBuilder.reflectionToString(vo));
 		System.out.println("===============");
 		
-		mybatis.update("customerMapper.customerchangeInfo",vo);
+		mybatis.update("customerMapper.customerChangeInfo",vo);
 	}
 
 	@Override

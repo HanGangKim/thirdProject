@@ -41,14 +41,14 @@ public class CustomerServiceImpl implements CustomerService{
 		return customerDAO.customerLogin(vo);
 	}
 	@Override
-	public void customerupdate(CustomerVO vo) {
+	public void customerUpdate(CustomerVO vo) {
 		
 		System.out.println("===============");
 		System.out.println("customerupdate 서비스 호출");
 		System.out.println("CustomeVO : " + ToStringBuilder.reflectionToString(vo));
 		System.out.println("===============");
 		
-		customerDAO.customerupdate(vo);
+		customerDAO.customerUpdate(vo);
 		
 	}
 
@@ -63,5 +63,6 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		return customerDAO.wishListSearch(wl, request);
 	}
+
 
 }
