@@ -14,6 +14,8 @@ public class CustomerChageInfoController {
 	@Autowired
 	CustomerService customerservice;
 
+	
+	
 	@RequestMapping("CustomerChangeInfo.do")
 	public String customerupdate(CustomerVO vo) {
 		System.out.println("CustomerChangeInfo 호출");
