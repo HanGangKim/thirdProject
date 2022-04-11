@@ -58,8 +58,23 @@ public class ExhibitionDAOImpl implements ExhibitionDAO {
 		return mybatis.selectList("exhibitionMapper.comingExhibition", vo);
 	}
 
+//	@Override
+//	public List<ExhibitionVO> exhibitionSearch(ExhibitionVO vo, String st, String ed) {
+//
+//		System.out.println("===============");
+//		System.out.println("exhibition 서치 다오 호출");
+//		System.out.println("===============");
+//
+//		Map<String, Object> parms = new HashMap<String, Object>();
+//		parms.put("vo", vo);
+//		parms.put("st", st);
+//		parms.put("ed", ed);
+//
+//		return mybatis.selectList("exhibitionMapper.exhibitionSearch", parms);
+//	}
+	
 	@Override
-	public List<ExhibitionVO> exhibitionSearch(ExhibitionVO vo, String st, String ed) {
+	public List<ExhibitionVO> exhibitionSearch(ExhibitionVO vo, String st, String ed, int endRow) {
 
 		System.out.println("===============");
 		System.out.println("exhibition 서치 다오 호출");
@@ -69,6 +84,7 @@ public class ExhibitionDAOImpl implements ExhibitionDAO {
 		parms.put("vo", vo);
 		parms.put("st", st);
 		parms.put("ed", ed);
+		parms.put("endRow", endRow+1);
 
 		return mybatis.selectList("exhibitionMapper.exhibitionSearch", parms);
 	}
