@@ -1,11 +1,13 @@
 package com.human.java.exhibition.controller;
 
+import java.util.List;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.human.java.domain.ExhibitionVO;
@@ -59,12 +61,31 @@ public class ExhibitionDateController {
 		ModelAndView mv = new ModelAndView();
 		System.out.println(totalDate);
 
-		mv.setViewName("/Exhibition/ExSearchTest");
+		mv.setViewName("/Exhibition/ExhibitionDateList");
 		System.out.println(ToStringBuilder.reflectionToString(vo) + "전달");
-		mv.addObject("vo", exhibitionService.exhibitionSearch(vo, totalDate));
+		mv.addObject("vo", exhibitionService.exhibitionSearch(vo, totalDate, 8));
 
 		return mv;
 	}
+	
+	@ResponseBody
+	@RequestMapping("ExSearchTestAjax.do")
+	public Object exSearchTestAjax(@RequestParam("endRow") String endRow, @RequestParam("totalDate") String totalDate) {
+		
+		
+		System.out.println(endRow);
+		System.out.println("ajax Test....");
+		ExhibitionVO vo = null;
+		
+	    List<ExhibitionVO> list = exhibitionService.exhibitionSearch(vo, totalDate, Integer.parseInt(endRow) );
+	    
+	    System.out.println(list.size());
+	    System.out.println("ajax Test....2");
+	    
+	    return list;
+		
+	}
+	
 
 	@RequestMapping("ExhibitionDetail.do")
 	public ModelAndView exhibitionDetail(ExhibitionVO vo, @RequestParam("id") String id) {

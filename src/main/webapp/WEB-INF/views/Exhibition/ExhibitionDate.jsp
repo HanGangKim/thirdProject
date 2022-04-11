@@ -26,6 +26,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Source+Serif+Pro:ital@0;1&display=swap"
 	rel="stylesheet">
+	
 <!-- Main CSS -->
 <link href="/resources/css/theme.min.css" rel="stylesheet">
 
@@ -96,14 +97,13 @@
 							<p class="mb-4 text-muted">원하는 전시회 기간을 선택해주세요.</p>
 							<div>
 								<!--기간 넘기는 form 태그-->
-								<form class="needs-validation" novalidate
-									action="<c:url value="ExSearchTest.do"/>">
+								<form class="needs-validation" novalidate action=" <c:url value="ExSearchTest.do"/>">
 									<div class="row mb-7">
 										<!--기간으로 날짜 검색 (우리가 쓸 태그)-->
 										<div class="mb-5 mb-md-0 mb-3">
 											<!-- <h5 class="mb-4">Range</h5> -->
 											<input type="text" value="2022-01-08 to 2022-01-23"
-												data-flatpickr='{"mode":"range"}' class="form-control", name="totalDate">
+												data-flatpickr='{"mode":"range"}' class="form-control" name="totalDate">
 										</div>
 									</div>
 
@@ -113,12 +113,6 @@
 										</button>
 									</div>
 								</form>
-
-								<!--로그인하기 버튼-->
-								<!-- <p class="pt-4 mb-0 small text-muted">
-                                        Don’t have an account yet? <a href="page-account-signup-alt.html"
-                                            class="ms-2 text-dark fw-semibold link-underline">Sign Up</a>
-                                    </p> -->
 							</div>
 						</div>
 					</div>
