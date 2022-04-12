@@ -17,6 +17,27 @@ public class CustomerChageInfoController {
 	@Autowired
 	CustomerService customerservice;
 
+	
+	  
+	  @RequestMapping("Customermypage.do")
+	  public String mypage(CustomerVO vo, HttpSession session) {
+		  System.out.println("CustomerChangeInfo 호출");
+		  
+	  
+		  System.out.println(" 컨트롤러 진입");
+	  
+		 
+		  System.out.println(vo.getCustomer_id());
+		  
+		  System.out.println(vo.getCustomer_ph());
+		  System.out.println(vo.getCustomer_name());
+		  System.out.println(vo.getCustomer_gender());
+		  
+		  return "Customer/CustomerChangeInfo";
+	  
+	  }
+	  
+	 
 	@RequestMapping("CustomerUpdateInfo.do")
 	public String customerupdate(CustomerVO vo, HttpSession session) {
 		System.out.println("CustomerChangeInfo 호출");
@@ -29,17 +50,16 @@ public class CustomerChageInfoController {
 		System.out.println("===============");
 
 		session.setAttribute("customer_id", result.getCustomer_id());
-		
+
 		session.setAttribute("customer_password", result.getCustomer_password());
-		 
+
 		session.setAttribute("customer_name", result.getCustomer_name());
 		session.setAttribute("customer_ph", result.getCustomer_ph());
 		session.setAttribute("customer_age", result.getCustomer_age());
 		session.setAttribute("customer_gender", result.getCustomer_gender());
 		session.setAttribute("customer_flag", result.getCustomer_flag());
-		 
 
-		customerservice.customerUpdate(vo);
+//		customerservice.customerUpdate(vo);
 
 		return "redirect:/Customer/CustomerChangeInfo.do?";
 	}
