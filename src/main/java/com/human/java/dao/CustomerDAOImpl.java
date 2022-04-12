@@ -41,13 +41,13 @@ public class CustomerDAOImpl implements  CustomerDAO{
 	}
 	
 	@Override
-	public void customerUpdate(CustomerVO vo) {
+	public void customerupdate(CustomerVO vo) {
 		System.out.println("===============");
 		System.out.println("customerupdate 다오 호출");
 		System.out.println("CustomerVO : " + ToStringBuilder.reflectionToString(vo));
 		System.out.println("===============");
 		
-		mybatis.update("customerMapper.customerChangeInfo",vo);
+		mybatis.update("customerMapper.customerchangeInfo",vo);
 	}
 
 	@Override
@@ -63,9 +63,15 @@ public class CustomerDAOImpl implements  CustomerDAO{
 	}
 
 	@Override
-	public List<WishListVO> wishListSearch(WishListVO wl, HttpServletRequest request) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<WishListVO> wishListSearch(WishListVO wl, String id, HttpServletRequest request) {
+		System.out.println("search");
+		Map<String, Object> parms = new HashMap<String, Object>();
+		parms.put("wl", wl);
+		parms.put("id", id);
+		String userId = (String)request.getSession().getAttribute("userId");
+		parms.put("request", userId);
+		System.out.println(userId);
+		return mybatis.selectList("wishlistMapper.wishlistsearch", parms);
 	}
 
 	

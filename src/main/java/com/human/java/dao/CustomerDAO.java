@@ -14,10 +14,10 @@ public interface CustomerDAO {
 	
 	public CustomerVO customerLogin(CustomerVO vo);
 	
-	public void customerUpdate(CustomerVO vo);
+	public void customerupdate(CustomerVO vo);
 	
 	public void wishListInsert(ExhibitionVO vo, String id, HttpServletRequest request);
 	
-	public List<WishListVO> wishListSearch(WishListVO wl, HttpServletRequest request);
+	public List<WishListVO> wishListSearch(WishListVO wl, String id, HttpServletRequest request);
 	
 }

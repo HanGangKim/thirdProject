@@ -48,7 +48,7 @@ public class CustomerServiceImpl implements CustomerService{
 		System.out.println("CustomeVO : " + ToStringBuilder.reflectionToString(vo));
 		System.out.println("===============");
 		
-		customerDAO.customerUpdate(vo);
+		customerDAO.customerupdate(vo);
 		
 	}
 
@@ -61,8 +61,7 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		customerDAO.wishListInsert(vo, id, request);
 		
-		return customerDAO.wishListSearch(wl, request);
+		return customerDAO.wishListSearch(wl, id, request);
 	}
-
 
 }

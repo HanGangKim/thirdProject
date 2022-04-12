@@ -47,8 +47,16 @@ public class CustomerLoginController {
 			System.out.println("===============");
 
 			System.out.println("[" + result.getCustomer_id() + "]" + "로그인 성공");
+			
 			session.setAttribute("userName", result.getCustomer_name());
 			session.setAttribute("userId", result.getCustomer_id());
+			session.setAttribute("userPh" , result.getCustomer_ph());
+			session.setAttribute("userEmail", result.getCustomer_email());
+			session.setAttribute("userGender", result.getCustomer_gender());
+			session.setAttribute("userAge", result.getCustomer_age());
+			session.setAttribute("userPass" , result.getCustomer_password());
+			
+			// 세션시간			
 			session.setAttribute("sessionTime", new Date().toLocaleString());
 
 			mv.addObject("vo", exhibitionService.comingExhibition(exvo));
