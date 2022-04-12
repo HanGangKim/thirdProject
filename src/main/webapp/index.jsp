@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<!-- 실행 즉시 컨트롤러 ->(리턴)-> 웹페이지  -->
+<!-- com.human.java.start.controller에 위치 -->
 <%response.sendRedirect("NoneMemberMain.do");%>
 </body>
 </html>

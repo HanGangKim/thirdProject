@@ -64,8 +64,8 @@ public class ReviewDAOImpl implements ReviewDAO{
 		
 		System.out.println("===============");
 		System.out.println("getReviewList DAO 호출");
-		System.out.println("DAO : "+map.get("searchCondition"));
-		System.out.println("DAO : "+map.get("searchKeyword"));
+//		System.out.println("DAO : "+map.get("searchCondition"));
+//		System.out.println("DAO : "+map.get("searchKeyword"));
 		System.out.println("===============");
 		
 		return mybatis.selectList("exhibitionReviewMapper.getReviewList" , map);

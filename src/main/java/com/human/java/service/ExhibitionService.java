@@ -23,7 +23,9 @@ public interface ExhibitionService {
 	
 	public List<ExhibitionVO> comingExhibition(ExhibitionVO vo);
 	
-	public List<ExhibitionVO> exhibitionSearch(ExhibitionVO vo, String totalDate);
+//	public List<ExhibitionVO> exhibitionSearch(ExhibitionVO vo, String totalDate);
+	
+	public List<ExhibitionVO> exhibitionSearch(ExhibitionVO vo, String totalDate, int endRow);
 	
 	public ExhibitionVO exhibitionDetail(ExhibitionVO vo, String id);
 	
