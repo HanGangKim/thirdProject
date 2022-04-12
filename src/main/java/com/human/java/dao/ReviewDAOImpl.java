@@ -17,14 +17,18 @@ public class ReviewDAOImpl implements ReviewDAO{
 	private SqlSessionTemplate mybatis;
 	
 	@Override
-	public void insertReview(ReviewVO vo) {
+	public int insertReview(ReviewVO vo) {
 		
 		System.out.println("===============");
 		System.out.println("insertReview DAO 호출");
 		System.out.println("ReviewVO : " + ToStringBuilder.reflectionToString(vo));
 		System.out.println("===============");
 		
-		mybatis.insert("exhibitionReviewMapper.insertReview", vo);
+//		// 리뷰작성시 티켓팅 플래그 업데이트
+		// 미적용으로 인한 차선책 보류
+//		mybatis.update("ticketingMapper.flagChange" , vo);
+		
+		return mybatis.insert("exhibitionReviewMapper.insertReview", vo);
 	}
 
 	@Override
@@ -49,26 +53,45 @@ public class ReviewDAOImpl implements ReviewDAO{
 		mybatis.delete("exhibitionReviewMapper.deleteReview", vo);
 	}
 
-	@Override
-	public ReviewVO getReview(ReviewVO vo) {
-		
-		System.out.println("===============");
-		System.out.println("getReview DAO 호출");
-		System.out.println("===============");
-		mybatis.selectOne("exhibitionReviewMapper.getReview", vo);
-		return null;
-	}
+	// 모든 리뷰 리스트
+		@Override
+		public List<ReviewVO> getReviewList(HashMap map) {
+			
+			System.out.println("===============");
+			System.out.println("getReviewList DAO 호출");
+//			System.out.println("DAO : "+map.get("searchCondition"));
+//			System.out.println("DAO : "+map.get("searchKeyword"));
+			System.out.println("===============");
+			
+			return mybatis.selectList("exhibitionReviewMapper.getReviewList" , map);
+		}
 
+	
+	// 나의 리뷰 리스트
 	@Override
-	public List<ReviewVO> getReviewList(HashMap map) {
+	public List<ReviewVO> getMyReviewList(HashMap map , String id) {
+		
 		
 		System.out.println("===============");
-		System.out.println("getReviewList DAO 호출");
-//		System.out.println("DAO : "+map.get("searchCondition"));
-//		System.out.println("DAO : "+map.get("searchKeyword"));
+		System.out.println("getMyReviewList 서비스 호출");
+		System.out.println("DAO : " + map.get("id"));
+		System.out.println("id:"+id );
 		System.out.println("===============");
 		
-		return mybatis.selectList("exhibitionReviewMapper.getReviewList" , map);
+		return mybatis.selectList("exhibitionReviewMapper.getMyReviewList" , map);
 	}
+	
+	// 나의 상세 리뷰
+		@Override
+		public ReviewVO getMyReview(ReviewVO vo) {
+			
+			
+			System.out.println("===============");
+			System.out.println("getMyReview 다오 호출");
+			System.out.println("===============");
+			
+			return mybatis.selectOne("exhibitionReviewMapper.getMyReview" , vo);
+		}
 
+	
 }

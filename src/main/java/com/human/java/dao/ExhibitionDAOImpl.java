@@ -109,6 +109,10 @@ public class ExhibitionDAOImpl implements ExhibitionDAO {
 		System.out.println("ticketInsert 서비스 호출");
 		System.out.println("TicketingVO : " + ToStringBuilder.reflectionToString(vo));
 		System.out.println("===============");
+				
+				// 결제시 위시리스트 플래그 업데이트
+				mybatis.update("wishlistMapper.flagChange" , vo);
+		
 		return mybatis.insert("ticketingMapper.ticketInsert", vo);
 
 	}

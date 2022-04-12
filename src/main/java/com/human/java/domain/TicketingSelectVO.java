@@ -11,7 +11,14 @@ public class TicketingSelectVO {
 	private String customer_id;
 	private String consumer_name;
 	private String consumer_ph;
+	private String ticketing_flag;
 	
+	public String getTicketing_flag() {
+		return ticketing_flag;
+	}
+	public void setTicketing_flag(String ticketing_flag) {
+		this.ticketing_flag = ticketing_flag;
+	}
 	public int getExhibition_id() {
 		return exhibition_id;
 	}

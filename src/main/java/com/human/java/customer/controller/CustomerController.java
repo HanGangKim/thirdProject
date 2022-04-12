@@ -1,6 +1,7 @@
 package com.human.java.customer.controller;
 
-import javax.servlet.ServletRequest;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,12 +39,15 @@ public class CustomerController {
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("Customer/CustomerWishList");
-		mv.addObject("vo", customerService.WishListService(vo, id, wl, request));
-		System.out.println(vo.getExhibition_title());
-		System.out.println(vo.getExhibition_id());
-		System.out.println(vo.getExhibition_image());
-		System.out.println(vo.getExhibition_total_date());
-		System.out.println(vo.getExhibition_price());
+
+		List<WishListVO> li = customerService.WishListService(vo, id, wl, request);
+		
+		System.out.println(li.size());
+		System.out.println(li.get(0));
+		
+		
+		mv.addObject("vo", li);
+		
 		return mv;
 	}
 }

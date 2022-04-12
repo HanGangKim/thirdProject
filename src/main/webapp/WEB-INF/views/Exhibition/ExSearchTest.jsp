@@ -55,4 +55,5 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		</c:forEach>
 	</table>
 </body>
+<script>history.replaceState({}, null, location.pathname);</script>
 </html>

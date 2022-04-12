@@ -39,6 +39,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <link href="/resources/fonts/boxicons/css/boxicons.min.css"
 	rel="stylesheet">
 	
+<!-- Aos Animations CSS -->
+<link href="/resources/vendor/node_modules/css/aos.css" rel="stylesheet">
+	
 <!--Google fonts-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,35 +52,11 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <!-- Main CSS -->
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
-	
 <!--Flatpickr-->
 <link rel="stylesheet"
 	href="/resources/vendor/node_modules/css/flatpickr.min.css">
 
-<!--:Simplebar css ()-->
-<style type="text/css">
-.simplebar-track.simplebar-vertical {
-	width: 7px;
-}
 
-.simplebar-scrollbar:before {
-	background: currentColor;
-}
-
-#youna_flex_between {
-	display: flex;
-	justify-content: space-between;
-}
-</style>
-
-<!-- <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css'
-	rel='stylesheet' type='text/css'>
-
-<style>
-* {
-	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
-}
-</style> -->
 <title>Exhibition</title>
 </head>
 
@@ -130,33 +109,35 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 				<!--/.row-->
 			</div>
 		</section>
+		
+		<section class="sticky-lg-top top-0">
+			<div class="container">
 
+				<form class="position-relative z-index-1 mt-n7 px-3 pb-3 pt-3 bg-white border rounded-3 needs-validation"
+					novalidate action="<c:url value="ExSearchTest.do"/>"
+					style="margin-bottom: 0px;">
+					<div class="row mx-0 g-2 align-items-center">
+						<div class="col-md-9 col-lg-10">
+							<div class="position-relative">
+								<input type="text" value="${param.totalDate }"
+									data-flatpickr='{"mode":"range"}'
+									class="form-control border-0 shadow-none form-control-lg ps-4"
+									name="totalDate">
+							</div>
+						</div>
+						<div class="col-md-3 col-lg-2">
+							<button type="submit" class="btn btn-primary btn-lg w-100">Search</button>
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</section>
+		
+		<!-- 전시 리스트 -->
 		<section class="position-relative bg-white">
 			<div class="container py-9 py-lg-11 position-relative">
 
-				<div class="row justify-content-between">
-					<!--Products column-->
-					<div class="col-md-12">
-						<!--Products top bar-->
-						<div class="row mb-3 align-items-center" id="youna_flex_between">
-							<div class="col-5 col-md-3 mb-4 mb-md-0" >
-<!-- 								<h2 class="fc-toolbar-title">Search</h2> -->
-								<form class="needs-validation d-flex" novalidate
-									action="<c:url value="ExSearchTest.do"/>">
-									<!--기간으로 날짜 검색 (우리가 쓸 태그)-->
-									<input type="text" value="${param.totalDate }"
-										data-flatpickr='{"mode":"range"}' class="me-2 form-control"
-										name="totalDate">
-										
-									<!--검색버튼-->
-									<button class="btn btn-primary" type="submit">
-										<i class="bx bx-search fs-4"></i>
-									</button>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
 
 				<div class="row mb-5"  id="more_list">
 					<c:forEach items="${vo}" var="vo">
@@ -232,10 +213,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
         }
         );</script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 
 <!-- 더보기 버튼 구현 ajax -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
 
 	function loadMoreAjax(){

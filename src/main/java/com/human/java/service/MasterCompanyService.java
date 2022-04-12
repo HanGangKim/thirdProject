@@ -1,8 +1,10 @@
 package com.human.java.service;
 
+import java.util.List;
+
 import com.human.java.domain.MasterCompanyVO;
 
 public interface MasterCompanyService {
 
-	public String masterCompany (MasterCompanyVO vo);
+	public List<MasterCompanyVO>  masterCompany ();
 }

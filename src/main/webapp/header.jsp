@@ -33,9 +33,10 @@
 
 	<!-- 헤더 시작 -->
 	<header class="z-index-fixed header-transparent header-boxed header-sticky">
+
 		<div class="navbar-boxed">
 			<div class="container">
-				<nav class="navbar navbar-expand-lg navbar-light bg-white">
+				<nav class="navbar navbar-expand-lg navbar-light rounded-lg-4">
 					<div class="container position-relative">
 						<!-- 로고 -->
 						<a class="navbar-brand" href="/NoneMemberMain.do"> <!-- 					<img src="/resources/img/logo/logo-shop.svg" alt="" class="img-fluid"> -->
@@ -47,12 +48,10 @@
 							<div class="nav-item me-3">
 								<c:choose>
 									<c:when test="${sessionScope.userId == null}">
-										<a href="demo-shop-wishlist.html"
-											class="lh-1 position-relative">Hello :)</a>
+										<a class="lh-1 position-relative">Hello :)</a>
 									</c:when>
 									<c:when test="${sessionScope.userId != null}">
-										<a href="demo-shop-wishlist.html"
-											class="lh-1 position-relative">Welcome !</a>
+										<a class="lh-1 position-relative">Welcome !</a>
 									</c:when>
 								</c:choose>
 							</div>
