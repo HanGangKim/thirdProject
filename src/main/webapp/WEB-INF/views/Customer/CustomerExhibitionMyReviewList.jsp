@@ -209,5 +209,5 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	<script src="/resources/vendor/node_modules/js/choices.min.js"></script>
 
 </body>
-
+<script>history.replaceState({}, null, location.pathname);</script>
 </html>
