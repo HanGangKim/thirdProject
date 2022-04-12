@@ -71,7 +71,10 @@ a{font-size: large;}
 	<hr>
 	
 	<h1>컨트롤러 테스트 전용</h1>
-</body>
+	<a href="/exhibition/getReviewList.do">리뷰 전체 조회</a>
+	
+	<a href="/exhibition/getReviewList.do?Id=default">나의 리뷰 리스트 조회</a>
+	</body>
 </html> 
 
 

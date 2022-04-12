@@ -1,6 +1,9 @@
 package com.human.java.domain;
 
 public class ReviewVO {
+	
+	// CUSTOMER_INFO 테이블 
+	private String customer_name;
 
 	// REVIEW 테이블
 	private int review_id;
@@ -18,6 +21,13 @@ public class ReviewVO {
 	private String exhibition_end_date;
 	private String exhibition_image;
 	private String exhibition_location;
+	
+	public String getCustomer_name() {
+		return customer_name;
+	}
+	public void setCustomer_name(String customer_name) {
+		this.customer_name = customer_name;
+	}
 	
 	public String getExhibition_title() {
 		return exhibition_title;
