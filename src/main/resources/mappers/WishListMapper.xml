@@ -17,7 +17,7 @@
 		
 		<![CDATA[SELECT distinct ei.*
 		FROM WISH_LIST wl , EXHIBITION_INFO ei  , CUSTOMER_INFO ci
-		WHERE wl.CUSTOMER_ID = ci.CUSTOMER_ID AND wl.EXHIBITION_ID = ei.EXHIBITION_ID AND ]]>'${request}'<![CDATA[ = ci.CUSTOMER_ID]]>
+		WHERE wl.CUSTOMER_ID = ci.CUSTOMER_ID AND wl.EXHIBITION_ID = ei.EXHIBITION_ID AND ]]>'${request}'<![CDATA[ = ci.CUSTOMER_ID]]>AND wl.WISH_LIST_FLAG = 'N'
 	</select> 
 	
 	<update id="flagChange" parameterType="map">

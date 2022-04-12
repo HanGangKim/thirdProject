@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%request.setCharacterEncoding("UTF-8");%>
 <%
 Object userId = session.getAttribute("userId");
@@ -12,7 +14,8 @@ System.out.println("세션연결 실패:"+userId);
 System.out.println("세션연결 실패:"+userName);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 //LogOut.jsp로 이동
-response.sendRedirect("../LogOut.do");	
+/* 테스트를 위한 sendRedirect 해제 */
+/* response.sendRedirect("../LogOut.do");	 */
 }else{
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 System.out.println("세션연결 성공:"+userId);
@@ -100,6 +103,43 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			</div>
 		</section>
 
+
+
+
+<!-- 정보가져오는 forEach 문  -->
+<%-- <c:forEach items="${myReviewList}" var="vo">
+	<table border=1>
+	<tr>
+				<td>사용자ID</td>
+				<td>전시회 제목</td>
+				<td>전시회 시작날짜</td>
+				<td>전시회 종료날짜</td>
+				<td>전시회 이미지</td>
+				<td>전시회 장소</td>
+				<td>리뷰 아이디</td>
+				<td>리뷰 제목</td>
+				<td>리뷰 내용</td>
+				<td>리뷰 게시일</td>
+				<td>리뷰 별점</td>
+		</tr>
+		<tr>
+				<td>${vo.customer_id}</td>
+				<td>${vo.exhibition_title}</td>
+				<td>${vo.exhibition_start_date}</td>
+				<td>${vo.exhibition_end_date}</td>
+				<td>${vo.exhibition_image}</td>
+				<td>${vo.exhibition_location}</td>
+				<td>${vo.review_id}</td>
+				<td>${vo.review_title}</td>
+				<td>${vo.review_contents}</td>
+				<td>${vo.review_date}</td>
+				<td>${vo.review_star_score}</td>
+		</tr>
+	</table>
+	</c:forEach> --%>
+
+
+<c:forEach items="${myReviewList}" var="vo">
 		<!--예매내역카드 섹션 시작-->
 		<section class="position-relative">
 			<div class="container pb-7 pb-lg-12 pt-7">
@@ -109,31 +149,27 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						<div
 							class="card hover-lift shadow flex-sm-row mb-4 align-items-center">
 							<div class="col-sm-5 col-lg-4 mb-4 mb-md-0">
-								<a href="#" class="d-block"> <img
-									src="/resources/img/shop/products/05.jpg"
+								<a href="#" class="d-block"> 
+								<img src="${vo.exhibition_image}"
 									class="img-fluid card-img-top" alt="">
 								</a>
 							</div>
 							<div class="col-sm-7 py-sm-5 col-12 col-lg-5 offset-lg-1 px-3">
 								<a href="#" class="mb-3 d-block text-dark">
-									<h5>리뷰 제목</h5>
+									<h5>${vo.exhibition_title}</h5>
 								</a>
-								<p class="lead">작성일</p>
+								<p class="lead">Write Date : ${vo.review_date}</p>
 								<div class="d-flex mb-3 align-items-center">
 									<span class="text-muted me-3">Grade</span> <strong
-										class="text-success">5.0</strong>
+										class="text-success">${vo.review_star_score}	</strong>
 								</div>
 								<div class="d-flex mb-3 align-items-center">
-									<p class="text-truncate">Excepteur sint
-									occaecat cupidatat non proident, sunt in culpa qui officia
-									deserunt mollit anim id est laborum. Excepteur sint
-									occaecat cupidatat non proident, sunt in culpa qui officia
-									deserunt mollit anim id est laborum.</p>
+									<p class="text-truncate">Write Title : ${vo.review_title}</p>
 								</div>
 								<!--QR 확인버튼-->
 								<div class="d-grid pb-4 pb-md-0">
-									<a href="#" class="btn btn-primary"
-										style="margin-bottom: 10px;">후기 보기</a>
+									<a href="/exhibition/getMyReview.do?reviewId=${vo.review_id}" class="btn btn-primary" style="margin-bottom: 10px;">후기 보기</a>
+										
 									<!-- 차후 form 태그 변경예정  -->
 									<a href="CustomerExhibitionReviewWriteTest.do"
 										class="btn btn-dark">후기 삭제</a>
@@ -146,6 +182,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			</div>
 		</section>
 		<!--예매내역카드 섹션 끝-->
+		</c:forEach>
 	</main>
 
 	<jsp:include page="/footer.jsp" />

@@ -20,6 +20,7 @@ public class ExhibitionReviewWriteController {
 	private ReviewService reviewService;
 
 	// 나의 글 입력
+	// 모달 앤 뷰로 수정
 	@RequestMapping("saveReview.do")
 	public String saveReview(ReviewVO vo) {
 		// DB에 접속을 해야합니다.

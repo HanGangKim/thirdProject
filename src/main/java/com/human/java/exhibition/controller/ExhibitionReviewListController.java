@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.human.java.domain.ReviewVO;
 import com.human.java.service.ReviewService;
 
@@ -34,14 +36,37 @@ public class ExhibitionReviewListController {
 	}
 
 	// 나의 리뷰 리스트
-	@RequestMapping("getReview.do")
-	public void getReview(ReviewVO vo, Model model) {
+	@RequestMapping("getMyReviewList.do")
+	public String getMyReviewList(Model model , @RequestParam("id") String id) {
 		
 		System.out.println("===============");
 		System.out.println("getReview.do 호출");
 		System.out.println("===============");
 		
-		model.addAttribute("review", reviewService.getReview(vo));
+		HashMap map = new HashMap();
+		map.put("id", id);
+		
+		ReviewVO vo = new ReviewVO();
+		
+		model.addAttribute("myReviewList", reviewService.getMyReviewList(map , id));
+		return "/Customer/CustomerExhibitionMyReviewList";
+	}
+	
+	// 나의 리뷰 상세조회 
+	@RequestMapping("getMyReview.do")
+	public String getMyReview(Model model , @RequestParam("reviewId") String reviewId) {
+		
+		System.out.println("===============");
+		System.out.println("getMyReview.do 호출");
+		System.out.println("===============");
+		
+		HashMap map = new HashMap();
+		map.put("reviewId", reviewId);
+		
+		ReviewVO vo = new ReviewVO();
+		
+		model.addAttribute("myReview", reviewService.getMyReview(map , reviewId));
+		return "/Customer/CustomerExhibitionReviewWriteUpdate";
 	}
 
 }

@@ -6,12 +6,33 @@
 <mapper namespace="exhibitionReviewMapper">
 
 	<!-- 전체 조회 -->
+	<!-- 제목 검색기능 추가 예정 -->
 	<select id="getReviewList" parameterType="hashmap" resultType="review"> 
 		SELECT e.EXHIBITION_ID , e.EXHIBITION_TITLE ,e.EXHIBITION_START_DATE , e.EXHIBITION_END_DATE , e.EXHIBITION_IMAGE , e.EXHIBITION_LOCATION 
-		, r.REVIEW_TITLE , r.REVIEW_CONTENTS , r.REVIEW_DATE , r.REVIEW_STAR_SCORE , r.REVIEW_ID
+		, r.REVIEW_TITLE , r.REVIEW_CONTENTS , r.REVIEW_DATE , r.REVIEW_STAR_SCORE , r.REVIEW_ID , r.CUSTOMER_ID
 		FROM EXHIBITION_INFO e , REVIEW r
 		<where>
 		e.EXHIBITION_ID = r.EXHIBITION_ID 
+		</where>
+	</select>
+	
+	<!-- 나의 리뷰 조회 -->
+	<select id="getMyReviewList" parameterType="hashmap" resultType="review">
+		SELECT e.EXHIBITION_ID , e.EXHIBITION_TITLE ,e.EXHIBITION_START_DATE , e.EXHIBITION_END_DATE , e.EXHIBITION_IMAGE , e.EXHIBITION_LOCATION 
+		, r.REVIEW_TITLE , r.REVIEW_CONTENTS , r.REVIEW_DATE , r.REVIEW_STAR_SCORE , r.REVIEW_ID , r.CUSTOMER_ID
+		FROM EXHIBITION_INFO e , REVIEW r
+		<where>
+		e.EXHIBITION_ID = r.EXHIBITION_ID AND r.CUSTOMER_ID =  <![CDATA[']]>${id}<![CDATA[']]>
+		</where>
+	</select>
+	
+	<!-- 나의 리뷰 상세조회  -->
+	<select id="getMyReview" parameterType="hashmap" resultType="review">
+		SELECT e.EXHIBITION_ID , e.EXHIBITION_TITLE ,e.EXHIBITION_START_DATE , e.EXHIBITION_END_DATE , e.EXHIBITION_IMAGE , e.EXHIBITION_LOCATION 
+		, r.REVIEW_TITLE , r.REVIEW_CONTENTS , r.REVIEW_DATE , r.REVIEW_STAR_SCORE , r.REVIEW_ID , r.CUSTOMER_ID
+		FROM EXHIBITION_INFO e , REVIEW r
+		<where>
+		r.REVIEW_ID  =  <![CDATA[']]>${reviewId}<![CDATA[']]>
 		</where>
 	</select>
 	
@@ -20,14 +41,10 @@
 		INSERT INTO REVIEW(REVIEW_ID , REVIEW_TITLE, REVIEW_CONTENTS, REVIEW_DATE, REVIEW_STAR_SCORE , REVIEW_IMAGE , EXHIBITION_ID , CUSTOMER_ID)
 		VALUES(SEQ_REVIEW.nextval, #{review_title}, #{review_contents} , sysdate , #{review_star_score} , #{review_img} , #{exhibition_id}, #{customer_id})
 	</insert>
-
-	<select id="getReview" parameterType="review"
-		resultType="review">
-		<!-- parameterType="board"(데이터받고) resultType="board"(데이터 나가고) -->
-		SELECT *
-		FROM REVIEW
-		WHERE REVIEW_ID = #{seq}
-	</select>
+	
+	
+	
+	
 
 
 	<delete id="deleteReview">

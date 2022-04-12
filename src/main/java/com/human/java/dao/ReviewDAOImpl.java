@@ -49,26 +49,47 @@ public class ReviewDAOImpl implements ReviewDAO{
 		mybatis.delete("exhibitionReviewMapper.deleteReview", vo);
 	}
 
-	@Override
-	public ReviewVO getReview(ReviewVO vo) {
-		
-		System.out.println("===============");
-		System.out.println("getReview DAO 호출");
-		System.out.println("===============");
-		mybatis.selectOne("exhibitionReviewMapper.getReview", vo);
-		return null;
-	}
+	// 모든 리뷰 리스트
+		@Override
+		public List<ReviewVO> getReviewList(HashMap map) {
+			
+			System.out.println("===============");
+			System.out.println("getReviewList DAO 호출");
+//			System.out.println("DAO : "+map.get("searchCondition"));
+//			System.out.println("DAO : "+map.get("searchKeyword"));
+			System.out.println("===============");
+			
+			return mybatis.selectList("exhibitionReviewMapper.getReviewList" , map);
+		}
 
+	
+	// 나의 리뷰 리스트
 	@Override
-	public List<ReviewVO> getReviewList(HashMap map) {
+	public List<ReviewVO> getMyReviewList(HashMap map , String id) {
+		
 		
 		System.out.println("===============");
-		System.out.println("getReviewList DAO 호출");
-//		System.out.println("DAO : "+map.get("searchCondition"));
-//		System.out.println("DAO : "+map.get("searchKeyword"));
+		System.out.println("getMyReviewList 서비스 호출");
+		System.out.println("DAO : " + map.get("id"));
+		System.out.println("id:"+id );
 		System.out.println("===============");
 		
-		return mybatis.selectList("exhibitionReviewMapper.getReviewList" , map);
+		return mybatis.selectList("exhibitionReviewMapper.getMyReviewList" , map);
 	}
+	
+	// 나의 상세 리뷰
+		@Override
+		public List<ReviewVO> getMyReview(HashMap map , String reviewId) {
+			
+			
+			System.out.println("===============");
+			System.out.println("getMyReviewList 서비스 호출");
+			System.out.println("DAO : " + map.get("reviewId"));
+			System.out.println("reviewId:"+reviewId );
+			System.out.println("===============");
+			
+			return mybatis.selectList("exhibitionReviewMapper.getMyReview" , map);
+		}
 
+	
 }

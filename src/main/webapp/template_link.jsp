@@ -72,8 +72,8 @@ a{font-size: large;}
 	
 	<h1>컨트롤러 테스트 전용</h1>
 	<a href="/exhibition/getReviewList.do">리뷰 전체 조회</a>
-	
-	<a href="/exhibition/getReviewList.do?Id=default">나의 리뷰 리스트 조회</a>
+	<br><br>
+	<a href="/exhibition/getMyReviewList.do?id=default">나의 리뷰 리스트 조회</a>
 	</body>
 </html> 
 
