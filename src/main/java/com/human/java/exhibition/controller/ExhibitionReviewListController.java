@@ -30,10 +30,10 @@ public class ExhibitionReviewListController {
 
 		// DB 접속해서 데이터 가져오기
 		model.addAttribute("reviewList", reviewService.getReviewList(map));
-		return "/Exhibition/ExhibitionReviewListTest";
+		return "/Exhibition/ExhibitionReviewList";
 	}
 
-	// 모든 사용자의 리뷰 상세조회
+	// 나의 리뷰 리스트
 	@RequestMapping("getReview.do")
 	public void getReview(ReviewVO vo, Model model) {
 		
