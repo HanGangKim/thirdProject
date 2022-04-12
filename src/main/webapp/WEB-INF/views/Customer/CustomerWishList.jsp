@@ -150,27 +150,9 @@
                         </svg>
 											</button></td>
 									</tr>
-									
-<!-- 									<tr> -->
-<!-- 										<td><img src="/resources/img/shop/jacket1.jpg" -->
-<!-- 											class="width-7x rounded-3"></td> -->
-<!-- 										<td><a href="#" class="text-dark h5"> 우연히 웨스 앤더슨 </a></td> -->
-<!-- 										<td>2021.11.27 ~ 2022.06.06</td> -->
-<!-- 										<td><input type="number" min="1" value="2" max="5" -->
-<!-- 											name="" -->
-<!-- 											class="form-control border-0 shadow-none rounded-0 bg-transparent"> -->
-<!-- 										</td> -->
-<!-- 										<td>30,000</td> -->
-<!-- 										<tsd><button class="btn-close text-center"> -->
-<!-- 												<svg xmlns="http://www.w3.org/2000/svg" height="16" -->
-<!-- 													viewBox="0 0 24 24" width="20" fill="currentColor"> -->
-<!--                           <path -->
-<!-- 														d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /> -->
-<!--                         </svg> -->
-<!-- 											</button></td> -->
-<!-- 									</tr> -->
+							
+									</c:forEach>
 								</tbody>
-							</c:forEach>
 							</table>
 						</div>
 
