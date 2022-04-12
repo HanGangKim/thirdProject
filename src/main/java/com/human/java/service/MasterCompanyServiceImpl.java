@@ -1,5 +1,7 @@
 package com.human.java.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +15,9 @@ public class MasterCompanyServiceImpl implements MasterCompanyService{
 	private MasterCompanyDAOImpl masterCompanyDAO;
 	
 	@Override
-	public String masterCompany(MasterCompanyVO vo) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<MasterCompanyVO>  masterCompany() {
+		
+		return masterCompanyDAO.masterCompany();
 	}
 
 	
