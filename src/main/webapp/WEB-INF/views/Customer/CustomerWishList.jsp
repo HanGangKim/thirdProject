@@ -219,5 +219,6 @@
 <script src="/resources/js/theme.bundle.js"></script>
 <script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
 <script src="/resources/vendor/node_modules/js/cursor.js"></script>
+<script>history.replaceState({}, null, location.pathname);</script>
 
 </html>
