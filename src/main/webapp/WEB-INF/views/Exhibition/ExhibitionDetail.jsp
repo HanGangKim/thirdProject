@@ -481,6 +481,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
             new flatpickr(el, t)
         }
         );
+        
+        history.replaceState({}, null, location.pathname);
 	</script>
 
 </html>
