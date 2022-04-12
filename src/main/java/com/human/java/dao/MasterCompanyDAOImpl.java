@@ -1,5 +1,7 @@
 package com.human.java.dao;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -13,9 +15,9 @@ public class MasterCompanyDAOImpl implements MasterCompanyDAO {
 	private SqlSessionTemplate mybatis;
 	
 	@Override
-	public String masterCompany(MasterCompanyVO vo) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<MasterCompanyVO> masterCompany() {
+		
+		return mybatis.selectList("masterCompanyMapper.masterConpanySelect");
 	}
 	
 	
