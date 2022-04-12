@@ -42,11 +42,11 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
-	href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Source+Serif+Pro:ital@0;1&display=swap"
+	href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap"
 	rel="stylesheet">
 	
 <!-- Main CSS -->
-<link href="/resources/css/theme.min.css" rel="stylesheet">
+<link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
 <!--Flatpickr-->
 <link rel="stylesheet"
@@ -116,19 +116,19 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<div>
 								<!--기간 넘기는 form 태그-->
 								<form class="needs-validation" novalidate action=" <c:url value="ExSearchTest.do"/>">
-									<div class="row mb-7">
+									<div class="row mb-3">
 										<!--기간으로 날짜 검색 (우리가 쓸 태그)-->
 										<div class="mb-5 mb-md-0 mb-3">
 											<!-- <h5 class="mb-4">Range</h5> -->
-											<input type="text" value="2022-01-08 to 2022-01-23"
+											<input type="date" id="now_date"
 												data-flatpickr='{"mode":"range"}' class="form-control" name="totalDate">
 										</div>
 									</div>
+								
 
 									<!--검색버튼-->
 									<div class="d-grid">
-										<button class="btn btn-primary" type="submit">Search
-										</button>
+										<button class="btn btn-primary" type="submit">Search</button>
 									</div>
 								</form>
 							</div>
@@ -156,6 +156,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <script src="/resources/vendor/node_modules/js/flatpickr.min.js"></script>
 <script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
 <script src="/resources/vendor/node_modules/js/cursor.js"></script>
+
 <script>
         let pickr = document.querySelectorAll("[data-flatpickr]");
         pickr.forEach(el => {
@@ -165,5 +166,20 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
             new flatpickr(el, t)
         }
         );</script>
+
+
+<!-- 오늘날짜 뽑는 스크립트 -->
+<script type="text/javascript">
+
+	window.onload = function(){
+		var date = new Date();
+		var date1 = date.toISOString().substring(0, 10)
+		var date2 = new Date(date.setDate(date.getDate()+14)).toISOString().substring(0, 10);
+											
+		document.getElementById('now_date').value = date1 + ' to ' + date2	
+		
+	}
+	
+</script>
 
 </html>

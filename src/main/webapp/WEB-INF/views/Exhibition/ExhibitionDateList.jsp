@@ -139,32 +139,26 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 					<div class="col-md-12">
 						<!--Products top bar-->
 						<div class="row mb-3 align-items-center" id="youna_flex_between">
-							<div class="col-5 col-md-2 mb-4 mb-md-0" >
-								<h2 class="fc-toolbar-title">Search</h2>
-							</div>
-
-							<div class="col-5 col-md-3 mb-4 mb-md-0">
+							<div class="col-5 col-md-3 mb-4 mb-md-0" >
+<!-- 								<h2 class="fc-toolbar-title">Search</h2> -->
 								<form class="needs-validation d-flex" novalidate
 									action="<c:url value="ExSearchTest.do"/>">
 									<!--기간으로 날짜 검색 (우리가 쓸 태그)-->
-									<input type="text" value="2022-01-08 to 2022-01-23"
-										data-flatpickr='{"mode":"range"}' class="form-control"
+									<input type="text" value="${param.totalDate }"
+										data-flatpickr='{"mode":"range"}' class="me-2 form-control"
 										name="totalDate">
-
-
+										
 									<!--검색버튼-->
 									<button class="btn btn-primary" type="submit">
 										<i class="bx bx-search fs-4"></i>
 									</button>
 								</form>
 							</div>
-
 						</div>
 					</div>
 				</div>
 
 				<div class="row mb-5"  id="more_list">
-
 					<c:forEach items="${vo}" var="vo">
 						<div class="col-md-6 col-xl-4 mb-4">
 							<!--:card-hover-expand-->
@@ -189,8 +183,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<!--:/card product end-->
 						</div>
 					</c:forEach>
-
 				</div>
+				
 				<div class="d-grid d-sm-flex justify-content-sm-center" onclick="loadMoreAjax()">
 					<a class="btn btn-outline-dark rounded-pill btn-lg btn-hover-text" >
 						<span class="btn-hover-label label-default">Load more</span> 
@@ -240,6 +234,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+
+<!-- 더보기 버튼 구현 ajax -->
 <script type="text/javascript">
 
 	function loadMoreAjax(){
@@ -295,7 +291,21 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		
 	}
 
+</script>
 
+
+<!-- 오늘날짜 뽑는 스크립트 -->
+<script type="text/javascript">
+
+	window.onload = function(){
+		var date = new Date();
+		var date1 = date.toISOString().substring(0, 10)
+		var date2 = new Date(date.setDate(date.getDate()+14)).toISOString().substring(0, 10);
+											
+		document.getElementById('now_date').value = date1 + ' to ' + date2	
+	
+	}
+		
 </script>
 
 </html>
