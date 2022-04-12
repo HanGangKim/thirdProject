@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!doctype html>
 <html lang="en">
 <!--찜목록-->
@@ -108,6 +110,7 @@
 					<div class="col-lg-10 mx-auto">
 
 						<!--Cart table start-->
+						
 						<div class="table-responsive">
 							<table class="table table-striped align-middle">
 								<thead>
@@ -117,23 +120,28 @@
 											<div style="min-width: 180px">Product</div>
 										</th>
 										<th class="small text-muted">Date</th>
-										<th class="small text-muted">Count</th>
+										<th class="small text-muted">location</th>
 										<th class="small text-muted">Price</th>
 										<th></th>
 									</tr>
 								</thead>
+						<c:forEach items="${vo}" var="vo">
 								<tbody>
+
 									<tr>
-										<td><img src="/resources/img/shop/backpack2.jpg"
+										<td><img src="${vo.exhibition_image}"
 											class="width-7x rounded-3"></td>
-										<td><a href="#" class="text-dark h5"> [ 얼리버드 ] 호안 미로
-												: 여인, 새, 별 </a></td>
-										<td>2022.03.30 ~ 2022.04.30</td>
-										<td><input type="number" min="1" value="1" max="5"
-											name=""
-											class="form-control border-0 shadow-none rounded-0 bg-transparent">
+										<td><a href="#" class="text-dark h5">${vo.exhibition_title}</a></td>
+										<td>${vo.exhibition_total_date}</td>
+										<td>
+<!-- 										<input type="number" min="1" value="1" max="5" -->
+<!-- 											name="" -->
+<!-- 											class="form-control border-0 shadow-none rounded-0 bg-transparent"> -->
+											<div class="form-control border-0 shadow-none rounded-0 bg-transparent">
+											${vo.exhibition_location}
+											</div>
 										</td>
-										<td>7,200</td>
+										<td>${vo.exhibition_price}원</td>
 										<td><button class="btn-close text-center">
 												<svg xmlns="http://www.w3.org/2000/svg" height="16"
 													viewBox="0 0 24 24" width="20" fill="currentColor">
@@ -142,24 +150,8 @@
                         </svg>
 											</button></td>
 									</tr>
-									<tr>
-										<td><img src="/resources/img/shop/jacket1.jpg"
-											class="width-7x rounded-3"></td>
-										<td><a href="#" class="text-dark h5"> 우연히 웨스 앤더슨 </a></td>
-										<td>2021.11.27 ~ 2022.06.06</td>
-										<td><input type="number" min="1" value="2" max="5"
-											name=""
-											class="form-control border-0 shadow-none rounded-0 bg-transparent">
-										</td>
-										<td>30,000</td>
-										<td><button class="btn-close text-center">
-												<svg xmlns="http://www.w3.org/2000/svg" height="16"
-													viewBox="0 0 24 24" width="20" fill="currentColor">
-                          <path
-														d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
-                        </svg>
-											</button></td>
-									</tr>
+							
+									</c:forEach>
 								</tbody>
 							</table>
 						</div>

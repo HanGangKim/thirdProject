@@ -4,6 +4,12 @@
 <%
 Object userId = session.getAttribute("userId");
 Object userName = session.getAttribute("userName");
+Object userPh = session.getAttribute("userPh");
+Object userEmail = session.getAttribute("userEmail");
+Object userGender = session.getAttribute("userGender");
+Object userAge = session.getAttribute("userAge");
+Object userPass = session.getAttribute("userPass");
+
 // 세션 연결
 if (session.getAttribute("userId") == null) {
 // 세션 연결에 실패하면 null	
@@ -184,40 +190,42 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_com">Id</label> <input
 														type="text" class="form-control" id="profile_com"
-														value="<%=userId%>">
+														value="<%=userId%>" readonly="readonly">
 												</div>
 
 												<!--전화번호-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_phon">Phone</label>
 													<input type="text" id="profile_phon"
-														value="+34 1234 567 890" class="form-control">
+														value="<%=userPh%>" class="form-control">
 												</div>
 												<!--이메일-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_email">Email
 														address</label> <input class="form-control" type="email"
-														id="profile_email" value="info@emilydoe.com">
+														id="profile_email" value="<%=userEmail%>">
 												</div>
 												<!--성별-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_gender">Gender</label>
 													<input class="form-control" type="email" id="profile_email"
-														value="여자">
+														value="<%=userGender%>">
 												</div>
-												<!--생년월일-->
+												<!--나이-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_dob">Date of
-														birth</label> <input type="text" id="profile_dob"
-														class="form-control" data-flatpickr value="1993-08-19">
+														Age</label> <input type="text" id="profile_dob"
+														class="form-control" data-flatpickr value="<%=userAge%>">
 												</div>
+												
 												<!--주소-->
-												<div class="col-12">
+												<!-- <div class="col-12">
 													<label for="profile_address" class="form-label">Address</label>
 													<input type="text" id="profile_address"
 														class="form-control"
 														value="1355 Market St, Suite 900 San Francisco CA 94103">
-												</div>
+												</div>  -->
+												
 											</div>
 											<hr class="mt-5 mb-3">
 											<!--저장 버튼-->
@@ -237,19 +245,19 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<!--현재 비밀번호-->
 												<div class="col-md-4 mb-3">
 													<label for="update_pass_current" class="form-label">Current
-														password</label> <input id="update_pass_current" type="password"
-														class="form-control">
+														password</label> <input id="update_pass_current" type="text"
+														value="<%=userPass%>" class="form-control">
 												</div>
 												<!--새 비밀번호-->
 												<div class="col-md-4 mb-3">
 													<label for="update_pass_new" class="form-label">New
-														password</label> <input type="password" class="form-control"
+														password</label> <input type="text" class="form-control"
 														id="update_pass_new">
 												</div>
 												<!--비밀번호 확인-->
 												<div class="col-md-4 mb-3">
 													<label for="update_pass_new_confirm" class="form-label">Confirm
-														new password</label> <input type="password" class="form-control"
+														new password</label> <input type="text" class="form-control"
 														id="update_pass_new_confirm">
 												</div>
 											</div>
