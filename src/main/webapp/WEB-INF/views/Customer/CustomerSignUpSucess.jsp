@@ -1,30 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%-- 
-	*** 주석 지우지 말아주세요 ! ***
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>성공</title>
-</head>
-<body>
-	${message }<br>
-	${result }<br>
 	
-	<%
-		if((int)request.getAttribute("result") == 0){
-	%>
-		<a href="../SignUp.do">회원가입하기</a>
-	<%
-		}else{
-	%>
-		<a href="../LoginForm.do">로그인하기</a>
-	<%
-		}
-	%> 
-</body>
-</html> --%>
+<%request.setCharacterEncoding("UTF-8");%>
+<%
+Object userId = session.getAttribute("userId");
+Object userName = session.getAttribute("userName");
+// 세션 연결
+if (session.getAttribute("userId") == null) {
+// 세션 연결에 실패하면 null	
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+System.out.println("세션연결 실패:"+userId);
+System.out.println("세션연결 실패:"+userName);
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+	
+}else{
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+System.out.println("세션연결 성공:"+userId);
+System.out.println("세션연결 성공:"+userName);
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+// LogOut.jsp로 이동
+// 회원가입 성공은 세션이 있으면 못들어가게 Redirect 
+response.sendRedirect("../LogOut.do");
+}
+%>
 <!doctype html>
 <html lang="en">
 

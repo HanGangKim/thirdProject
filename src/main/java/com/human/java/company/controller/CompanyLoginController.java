@@ -48,7 +48,7 @@ public class CompanyLoginController {
 			System.out.println("===============");
 
 			session.setAttribute("userName", result.getCompany_name());
-			session.setAttribute("userId", result.getCompany_name());
+			session.setAttribute("userId", result.getCompany_id());
 			session.setAttribute("sessionTime", new Date().toLocaleString());
 
 		

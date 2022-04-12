@@ -1,26 +1,46 @@
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-    
+	pageEncoding="UTF-8"%>
+	
+<%request.setCharacterEncoding("UTF-8");%>
 <%
-	 String exhibition_id = (String)request.getParameter("exhibition_id");
-     String customer_id = (String)request.getParameter("customer_id");
-	 String consumer_name = (String)request.getParameter("consumer_name");
-     String title = (String)request.getParameter("title");
-     String consumer_ph = (String)request.getParameter("consumer_ph");
-     String ticketing_date = (String)request.getParameter("ticketing_date");
-     String stotalPrice = (String)request.getParameter("totalPrice");
-     int totalPrice = Integer.parseInt(stotalPrice);
-    
-     System.out.println("customer_id: "+customer_id);
-     System.out.println("consumer_name: "+consumer_name);
-     System.out.println("title: "+title);
-     System.out.println("consumer_ph: "+consumer_ph);
-     System.out.println("ticketing_date: "+ticketing_date);
-     System.out.println("exhibition_id: "+exhibition_id);
-     System.out.println("stotalPrice: "+stotalPrice);
-     System.out.println("totalPrice: "+totalPrice);
+Object userId = session.getAttribute("userId");
+Object userName = session.getAttribute("userName");
+// 세션 연결
+if (session.getAttribute("userId") == null) {
+// 세션 연결에 실패하면 null	
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+System.out.println("세션연결 실패:"+userId);
+System.out.println("세션연결 실패:"+userName);
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+//LogOut.jsp로 이동	
+response.sendRedirect("../LogOut.do");	
+}else{
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+System.out.println("세션연결 성공:"+userId);
+System.out.println("세션연결 성공:"+userName);
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+}
+%>
+
+<%
+String exhibition_id = (String) request.getParameter("exhibition_id");
+String customer_id = (String) request.getParameter("customer_id");
+String consumer_name = (String) request.getParameter("consumer_name");
+String title = (String) request.getParameter("title");
+String consumer_ph = (String) request.getParameter("consumer_ph");
+String ticketing_date = (String) request.getParameter("ticketing_date");
+String stotalPrice = (String) request.getParameter("totalPrice");
+int totalPrice = Integer.parseInt(stotalPrice);
+
+System.out.println("customer_id: " + customer_id);
+System.out.println("consumer_name: " + consumer_name);
+System.out.println("title: " + title);
+System.out.println("consumer_ph: " + consumer_ph);
+System.out.println("ticketing_date: " + ticketing_date);
+System.out.println("exhibition_id: " + exhibition_id);
+System.out.println("stotalPrice: " + stotalPrice);
+System.out.println("totalPrice: " + totalPrice);
 %>
 
 
@@ -29,30 +49,37 @@
 <head>
 <meta charset="UTF-8">
 <title>kakao</title>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
-<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 </head>
 
 <body>
 
-<!-- 차후 히든타입으로 바뀔 예정 -->
-<form name="hiddenForm" action="/exhibition/ExhibitionTicketing.do" method="get">
-<input type="text" value="<%=customer_id%>" name="customer_id">
-<br><br>
-<input type="text" value="<%=consumer_name%>" name="consumer_name">
-<br><br>
-<input type="text" value="<%=ticketing_date%>" name="ticketing_date">
-<br><br>
-<input type="text" value="<%=consumer_ph%>" name="consumer_ph">
-<br><br>
-<input type="text" value="<%=exhibition_id%>" name="exhibition_id">
-<br><br>
-</form>
+	<!-- 차후 히든타입으로 바뀔 예정 -->
+	<form name="hiddenForm" action="/exhibition/ExhibitionTicketing.do"
+		method="get">
+		회원ID:<input type="text" value="<%=userId%>" name="customer_id">
+		<br><br> 
+		예약자이름:<input type="text" value="<%=consumer_name%>"
+			name="consumer_name"> <br>
+		<br><br> 
+		예약일자:<input type="text" value="<%=ticketing_date%>"
+			name="ticketing_date"> <br>
+		<br><br>  
+		예약자번호:<input type="text" value="<%=consumer_ph%>"
+			name="consumer_ph"> <br>
+		<br><br>  
+		전시회ID:<input type="text" value="<%=exhibition_id%>"
+			name="exhibition_id"> <br>
+		<br><br> 
+	</form>
 
-<h1>여기 예쁜거로 배경 꾸며줘요 !</h1>
+	<h1>여기 예쁜거로 배경 꾸며줘요 !</h1>
 
 </body>
-    <script>
+<script>
     $(function(){
         var IMP = window.IMP; // 생략가능
         IMP.init('imp95654053'); // 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
@@ -65,7 +92,7 @@
              name : '<%=title%>',
              amount : <%=totalPrice%>,
              buyer_date : '<%=ticketing_date%>', 
-             buyer_name : '<%=customer_id%>',
+             buyer_name : '<%=userId%>',
              buyer_tel : '<%=consumer_ph%>',
              buyer_postcode : '123-456'
         }, function(rsp) {
@@ -106,5 +133,5 @@
         });
         
     });
-    </script> 
+    </script>
 </html>
