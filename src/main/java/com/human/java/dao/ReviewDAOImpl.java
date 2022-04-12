@@ -17,14 +17,18 @@ public class ReviewDAOImpl implements ReviewDAO{
 	private SqlSessionTemplate mybatis;
 	
 	@Override
-	public void insertReview(ReviewVO vo) {
+	public int insertReview(ReviewVO vo) {
 		
 		System.out.println("===============");
 		System.out.println("insertReview DAO 호출");
 		System.out.println("ReviewVO : " + ToStringBuilder.reflectionToString(vo));
 		System.out.println("===============");
 		
-		mybatis.insert("exhibitionReviewMapper.insertReview", vo);
+//		// 리뷰작성시 티켓팅 플래그 업데이트
+		// 미적용으로 인한 차선책 보류
+//		mybatis.update("ticketingMapper.flagChange" , vo);
+		
+		return mybatis.insert("exhibitionReviewMapper.insertReview", vo);
 	}
 
 	@Override
@@ -79,16 +83,14 @@ public class ReviewDAOImpl implements ReviewDAO{
 	
 	// 나의 상세 리뷰
 		@Override
-		public List<ReviewVO> getMyReview(HashMap map , String reviewId) {
+		public ReviewVO getMyReview(ReviewVO vo) {
 			
 			
 			System.out.println("===============");
-			System.out.println("getMyReviewList 서비스 호출");
-			System.out.println("DAO : " + map.get("reviewId"));
-			System.out.println("reviewId:"+reviewId );
+			System.out.println("getMyReview 다오 호출");
 			System.out.println("===============");
 			
-			return mybatis.selectList("exhibitionReviewMapper.getMyReview" , map);
+			return mybatis.selectOne("exhibitionReviewMapper.getMyReview" , vo);
 		}
 
 	

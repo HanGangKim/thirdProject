@@ -22,6 +22,15 @@ public class ReviewVO {
 	private String exhibition_image;
 	private String exhibition_location;
 	
+	// ticketing 테이블
+	private int ticketing_id;
+	
+	public int getTicketing_id() {
+		return ticketing_id;
+	}
+	public void setTicketing_id(int ticketing_id) {
+		this.ticketing_id = ticketing_id;
+	}
 	public String getCustomer_name() {
 		return customer_name;
 	}

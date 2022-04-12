@@ -27,13 +27,9 @@
 	</select>
 	
 	<!-- 나의 리뷰 상세조회  -->
-	<select id="getMyReview" parameterType="hashmap" resultType="review">
-		SELECT e.EXHIBITION_ID , e.EXHIBITION_TITLE ,e.EXHIBITION_START_DATE , e.EXHIBITION_END_DATE , e.EXHIBITION_IMAGE , e.EXHIBITION_LOCATION 
-		, r.REVIEW_TITLE , r.REVIEW_CONTENTS , r.REVIEW_DATE , r.REVIEW_STAR_SCORE , r.REVIEW_ID , r.CUSTOMER_ID
-		FROM EXHIBITION_INFO e , REVIEW r
-		<where>
-		r.REVIEW_ID  =  <![CDATA[']]>${reviewId}<![CDATA[']]>
-		</where>
+	<select id="getMyReview" parameterType="review" resultType="review">
+		SELECT * FROM REVIEW
+		WHERE REVIEW_ID  =#{review_id}
 	</select>
 	
 	<!-- 리뷰 입력  -->

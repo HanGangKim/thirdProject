@@ -26,7 +26,7 @@ public interface ReviewService {
 	List<ReviewVO> getMyReviewList(HashMap map , String id);
 
 	// 나의 리뷰 상세 조회
-	List<ReviewVO> getMyReview(HashMap map , String reviewId);
+	ReviewVO getMyReview(ReviewVO vo);
 
 
 }

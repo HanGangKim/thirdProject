@@ -168,7 +168,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								</div>
 								<!--QR 확인버튼-->
 								<div class="d-grid pb-4 pb-md-0">
-									<a href="/exhibition/getMyReview.do?reviewId=${vo.review_id}" class="btn btn-primary" style="margin-bottom: 10px;">후기 보기</a>
+									<a href="/exhibition/getMyReview.do?review_id=${vo.review_id}" class="btn btn-primary" style="margin-bottom: 10px;">후기 보기</a>
 										
 									<!-- 차후 form 태그 변경예정  -->
 									<a href="CustomerExhibitionReviewWriteTest.do"

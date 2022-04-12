@@ -33,11 +33,16 @@ public class ExhibitionTicketingController {
 
 		int result = exhibitionService.ticketInsert(vo);
 		ModelAndView mv = new ModelAndView();
+		
 		if (result > 0) {
-
+			// [1] 예매
 			mv.setViewName("Exhibition/ExhibitionPaySucess");
 			mv.addObject("customer_id", vo.getCustomer_id());
 			System.out.println("예매성공");
+			
+			// [2] 찜목록 플래그 업데이트
+			// Dao에서 처리
+			
 			return mv;
 
 		} else {

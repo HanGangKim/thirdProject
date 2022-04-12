@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%request.setCharacterEncoding("UTF-8");%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%
 Object userId = session.getAttribute("userId");
 Object userName = session.getAttribute("userName");
@@ -111,6 +113,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			</div>
 		</section>
 
+
 		<section class="position-relative">
 			<div class="container position-relative">
 				<div class="overflow-hidden">
@@ -122,6 +125,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									<div class="card shadow p-3 mb-3">
 										<h5 class="mb-4">Writing A Review</h5>
 
+										
 										<!-- form 태그시작  -->
 										<form autocomplete="false" action="/exhibition/saveReview.do"
 											method="get">
@@ -129,18 +133,21 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_com">Id</label> <input
-														name="customer_id" value="${customer_id}"
+														name="customer_id" value="${review.customer_id}"
 														type="text" class="form-control" id="profile_com" readonly>
 												</div>
 
-												<!-- 넘겨줄 전시회 hidden 아이디  -->
-												<input type="number" name="exhibition_id"
-													value="${param.exhibition_id}" hidden>
-
-												<!--전시회 제목-->
+											<!-- 변하지 않는 시퀀스 -->
+											 <input type="number" name="exhibition_id"
+													value="${review.exhibition_id}" readonly="readonly">
+											<input type="number" name="review_id"
+													value="${review.review_id}" readonly="readonly">
+													
+												<!--리뷰 제목-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_com">review
 														title</label> <input name="review_title" type="text"
+														value="${review.review_title}"
 														class="form-control" id="profile_com"
 														placeholder="제목을 입력해주세요.">
 												</div>
@@ -163,6 +170,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<div class="col-12 mb-3">
 													<label for="profile_address" class="form-label">Content</label>
 													<input name="review_contents" type="text"
+													value="${review.review_contents}"
 														id="youna-box-size" class="form-control"
 														placeholder="Please enter the contents.">
 												</div>
@@ -173,7 +181,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 													<!-- 이미지 업로드전까지 DEFAULT_IMG 벨류 부여 -->
 													<!-- 이미지 업로드 전까지 file->text 변경  -->
 													<input name="review_img" value="DEFAULT_IMG" type="text"
-														id="profile_address" class="form-control">
+														id="profile_address" class="form-control" readonly="readonly">
 												</div>
 											</div>
 											<hr class="mt-5 mb-3">
@@ -184,6 +192,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 											</div>
 										</form>
 										<!-- form 태그 종료 -->
+										
 									</div>
 								</div>
 							</div>

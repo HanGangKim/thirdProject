@@ -54,19 +54,15 @@ public class ExhibitionReviewListController {
 	
 	// 나의 리뷰 상세조회 
 	@RequestMapping("getMyReview.do")
-	public String getMyReview(Model model , @RequestParam("reviewId") String reviewId) {
+	public String getMyReview(Model model , ReviewVO vo) {
 		
 		System.out.println("===============");
 		System.out.println("getMyReview.do 호출");
 		System.out.println("===============");
 		
-		HashMap map = new HashMap();
-		map.put("reviewId", reviewId);
+		model.addAttribute("review", reviewService.getMyReview(vo));	
 		
-		ReviewVO vo = new ReviewVO();
-		
-		model.addAttribute("myReview", reviewService.getMyReview(map , reviewId));
-		return "/Customer/CustomerExhibitionReviewWriteUpdate";
+		return "/Customer/CustomerExhibitionReviewWriteUpdate" ; 
 	}
 
 }

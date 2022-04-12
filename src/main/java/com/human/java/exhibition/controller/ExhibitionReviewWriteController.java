@@ -20,9 +20,8 @@ public class ExhibitionReviewWriteController {
 	private ReviewService reviewService;
 
 	// 나의 글 입력
-	// 모달 앤 뷰로 수정
 	@RequestMapping("saveReview.do")
-	public String saveReview(ReviewVO vo) {
+	public String saveReview(ReviewVO vo , Model model) {
 		// DB에 접속을 해야합니다.
 		// 접속을 하면 DB에 insert하는 과정을 추가
 		System.out.println("===============");
@@ -33,15 +32,19 @@ public class ExhibitionReviewWriteController {
 		// [1] insert
 		reviewService.insertReview(vo);
 		
-		// [2] update 
+		// [2] update
+		// insertReview Dao에서 해결
 		
-		
-		// [3] 셀렉트  
-
+		// [3] 셀렉트
+		// getMyReviewList 서비스 호출
+		String id = vo.getCustomer_id();
+		HashMap map = new HashMap();
+		map.put("id", id);
+		model.addAttribute("myReviewList", reviewService.getMyReviewList(map , id));
 		return "/Customer/CustomerExhibitionMyReviewList";
 	}
 
-	// 나의 글 삭제
+	// 나의 글 삭제(플래그 업데이트 or 삭제)
 	@RequestMapping("deleteReview.do")
 	public String deleteReview(ReviewVO vo) {
 		

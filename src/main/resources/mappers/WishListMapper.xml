@@ -5,14 +5,29 @@
 
 <mapper namespace="wishlistMapper">
 
-	<insert id="wishlistInsert" parameterType="map">
-		INSERT INTO
+	<!-- Merge로 교체 -->
+	<!-- 교체이유 : 중복된 데이터 누적을 방지하기 위해서 -->
+	<!-- 마음에 들지 않으면 교체해도 됨 -->
+	<update id="wishlistInsert" parameterType="map">
+	<!-- <insert id="wishlistInsert" parameterType="map"> -->
+		<!-- INSERT INTO
 		WISH_LIST
 		(WISH_LIST_ID, EXHIBITION_ID , CUSTOMER_ID , WISH_LIST_FLAG)
 		VALUES
-		(seq_wish_list.nextval , ${id} , '${request}' ,  'N')
-	</insert>
+		(seq_wish_list.nextval , ${id} , '${request}' ,  'N') -->
+		MERGE INTO WISH_LIST
+		USING DUAL
+		ON (EXHIBITION_ID = ${id} AND CUSTOMER_ID ='${request}')
+		WHEN MATCHED THEN
+		UPDATE SET WISH_LIST_FLAG = 'N'
+		WHEN NOT MATCHED THEN
+		INSERT (WISH_LIST_ID, EXHIBITION_ID , CUSTOMER_ID , WISH_LIST_FLAG)
+		VALUES (seq_wish_list.nextval , ${id} , '${request}' ,  'N')
+		<!-- </insert> -->
+		</update>
 
+	
+	
 	 <select id="wishlistsearch" parameterType="map" resultType="wishlist">
 		
 		<![CDATA[SELECT distinct ei.*
@@ -20,10 +35,10 @@
 		WHERE wl.CUSTOMER_ID = ci.CUSTOMER_ID AND wl.EXHIBITION_ID = ei.EXHIBITION_ID AND ]]>'${request}'<![CDATA[ = ci.CUSTOMER_ID]]>AND wl.WISH_LIST_FLAG = 'N'
 	</select> 
 	
-	<update id="flagChange" parameterType="map">
+	<update id="flagChange" parameterType="wishlist">
 		UPDATE WISH_LIST
 		SET WISH_LIST_FLAG = 'Y'
-		WHERE EXHIBITION_ID= ${exhibition_id} AND CUSTOMER_ID = ${customer_id}
+		WHERE EXHIBITION_ID= #{exhibition_id} AND CUSTOMER_ID = #{customer_id}
 	</update>
 
 	

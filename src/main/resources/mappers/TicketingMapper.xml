@@ -9,12 +9,12 @@
 		TICKETING
 		(TICKETING_ID, TICKETING_DATE , CONSUMER_NAME , CONSUMER_PH,
 		CUSTOMER_ID
-		,EXHIBITION_ID)
+		,EXHIBITION_ID , TICKETING_FLAG)
 		VALUES
 		(seq_ticketing.nextval ,
 		#{ticketing_date} , #{consumer_name} , #{consumer_ph} ,
 		#{customer_id}
-		, #{exhibition_id} )
+		, #{exhibition_id} , 'N')
 	</insert>
 
 
@@ -24,9 +24,18 @@
 		<where>
   		<if test="id != null">
 		e.EXHIBITION_ID = t.EXHIBITION_ID AND CUSTOMER_ID =  <![CDATA[']]>${id}<![CDATA[']]>
+		AND t.TICKETING_FLAG = <![CDATA[']]>N<![CDATA[']]>
 		</if>
 		</where>
 	</select>
+	
+	<!-- TICKETING_FLAG -->
+	<update id="flagChange" parameterType="ticket">
+		UPDATE TICKETING
+		SET TICKETING_FLAG = 'Y'
+		WHERE TICKETING_ID = #{ticketing_id} AND CUSTOMER_ID = #{customer_id}
+	</update>
+	
 </mapper>
 
 

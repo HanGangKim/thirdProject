@@ -52,14 +52,17 @@ public class CustomerDAOImpl implements  CustomerDAO{
 
 	@Override
 	public void wishListInsert(ExhibitionVO vo, String id, HttpServletRequest request) {
-		// TODO Auto-generated method stub
+		
 		System.out.println("in");
 		Map<String, Object> parms = new HashMap<String, Object>();
 		parms.put("vo", vo);
 		parms.put("id", id);
 		String userId = (String)request.getSession().getAttribute("userId");
 		parms.put("request", userId);
-		mybatis.insert("wishlistMapper.wishlistInsert", parms);
+		
+		// merge 교체로 인해 update 수정
+		// mybatis.insert("wishlistMapper.wishlistInsert", parms);
+		mybatis.update("wishlistMapper.wishlistInsert", parms);
 	}
 
 	@Override

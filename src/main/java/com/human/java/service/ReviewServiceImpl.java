@@ -79,14 +79,13 @@ public class ReviewServiceImpl implements ReviewService{
 	
 	// 나의 상세 리뷰
 	@Override
-	public List<ReviewVO> getMyReview(HashMap map , String reviewId) {
+	public ReviewVO getMyReview(ReviewVO vo) {
 		
 		System.out.println("===============");
 		System.out.println("getMyReview 서비스 호출");
-		System.out.println("reviewId:"+reviewId );
 		System.out.println("===============");
 		
-		return reviewDAO.getMyReview(map , reviewId);
+		return reviewDAO.getMyReview(vo);
 	}
 	
 }

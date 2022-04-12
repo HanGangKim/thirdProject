@@ -10,7 +10,7 @@ public interface ReviewDAO {
 	
 	// 리뷰 게시판 CRUD
 	// 글 등록
-	void insertReview(ReviewVO vo);
+	int insertReview(ReviewVO vo);
 
 	// 글 수정
 	void updateReview(ReviewVO vo);
@@ -25,6 +25,6 @@ public interface ReviewDAO {
 	List<ReviewVO> getMyReviewList(HashMap map , String id);
 
 	// 나의 리뷰 상세 조회
-	List<ReviewVO> getMyReview(HashMap map , String reviewId);
+	ReviewVO getMyReview(ReviewVO vo);
 
 }
