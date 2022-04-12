@@ -21,6 +21,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 }
 %>
+
+
+
 <!doctype html>
 <html lang="en">
 <!--정보수정-->
@@ -175,13 +178,13 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_name">Name</label> <input
 														class="form-control" id="profile_name" type="text"
-														value="Emily doe">
+														value="<%=userName%>">
 												</div>
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_com">Id</label> <input
 														type="text" class="form-control" id="profile_com"
-														value="Assan inc.">
+														value="<%=userId%>">
 												</div>
 
 												<!--전화번호-->
