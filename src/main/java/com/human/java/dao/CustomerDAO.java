@@ -20,4 +20,6 @@ public interface CustomerDAO {
 	
 	public List<WishListVO> wishListSearch(WishListVO wl, String id, HttpServletRequest request);
 	
+	public List<WishListVO> wishListSelectSearch(WishListVO wl, String id, HttpServletRequest request);
+	
 }

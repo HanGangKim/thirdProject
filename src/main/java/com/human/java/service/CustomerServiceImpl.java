@@ -63,5 +63,16 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		return customerDAO.wishListSearch(wl, id, request);
 	}
+	
+	@Override
+	public List<WishListVO> WishListSelectService(ExhibitionVO vo, String id, WishListVO wl, HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		System.out.println("-_+_+_+_+_+_+_+_+_+_+_");
+		System.out.println("WishListService.do 호출");
+		System.out.println("_+_+_+_+_+_+_+_+_+_+_+");
+		
+		
+		return customerDAO.wishListSearch(wl, id, request);
+	}
 
 }

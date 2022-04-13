@@ -19,8 +19,11 @@ public interface ReviewService {
 	// 글 삭제
 	void deleteReview(ReviewVO vo);
 	
+//	// 리뷰 전체 조회
+//	List<ReviewVO> getReviewList(HashMap map);
+	
 	// 리뷰 전체 조회
-	List<ReviewVO> getReviewList(HashMap map);
+	List<ReviewVO> getReviewList(HashMap map, int endRow);
 
 	// 나의 리뷰 조회
 	List<ReviewVO> getMyReviewList(HashMap map , String id);

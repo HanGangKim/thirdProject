@@ -160,7 +160,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									<div class="d-grid pb-4 pb-md-0">
 										<a href="#" class="btn btn-primary"
 											style="margin-bottom: 10px;">Move to qr</a> 
-											<a href="../customer/CustomerExhibitionReviewWrite.do?exhibition_id=${vo.exhibition_id}&customer_id=${vo.customer_id}" class="btn btn-dark">후기작성</a>
+											<a href="../customer/CustomerExhibitionReviewWrite.do?exhibition_id=${vo.exhibition_id}&customer_id=${vo.customer_id}&ticketing_id=${vo.ticketing_id}" class="btn btn-dark">후기작성</a>
 									</div>
 
 								</div>

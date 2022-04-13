@@ -58,16 +58,24 @@ public class ExhibitionReviewWriteController {
 	}
 
 	// 나의 글 수정
-	@RequestMapping("updateBoard.do")
-	public String updateReview(ReviewVO vo) {
+	@RequestMapping("updateReview.do")
+	public String updateReview(ReviewVO vo , Model model) {
 		
+		// [1] 수정
 		System.out.println("===============");
 		System.out.println("updateBoard.do 호출");
 		System.out.println("ReviewVO : " + ToStringBuilder.reflectionToString(vo));
 		System.out.println("===============");
 		
 		reviewService.updateReview(vo);
-		return "redirect:/ExhibitionReviewListTest.do?seq=" + vo.getReview_id();
+		
+		// [2] 셀렉트
+		// getMyReviewList 서비스 호출
+		String id = vo.getCustomer_id();
+		HashMap map = new HashMap();
+		map.put("id", id);
+		model.addAttribute("myReviewList", reviewService.getMyReviewList(map , id));
+		return "/Customer/CustomerExhibitionMyReviewList";
 	}
 
 }

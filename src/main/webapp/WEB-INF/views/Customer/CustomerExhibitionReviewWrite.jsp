@@ -133,6 +133,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 														type="text" class="form-control" id="profile_com" readonly>
 												</div>
 
+												<!-- 넘겨줄 예매내역 ticketing_id  -->
+												<input name="ticketing_id" value="${param.ticketing_id}">
+						
 												<!-- 넘겨줄 전시회 hidden 아이디  -->
 												<input type="number" name="exhibition_id"
 													value="${param.exhibition_id}" hidden>

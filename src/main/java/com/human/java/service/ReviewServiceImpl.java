@@ -53,15 +53,26 @@ public class ReviewServiceImpl implements ReviewService{
 		
 	}
 
+//	// 리뷰 전체 조회
+//	@Override
+//	public List<ReviewVO> getReviewList(HashMap map) {
+//		
+//		System.out.println("===============");
+//		System.out.println("getReviewList 서비스 호출");
+//		System.out.println("===============");
+//		
+//		return reviewDAO.getReviewList(map);
+//	}
+	
 	// 리뷰 전체 조회
 	@Override
-	public List<ReviewVO> getReviewList(HashMap map) {
+	public List<ReviewVO> getReviewList(HashMap map, int endRow) {
 		
 		System.out.println("===============");
 		System.out.println("getReviewList 서비스 호출");
 		System.out.println("===============");
 		
-		return reviewDAO.getReviewList(map);
+		return reviewDAO.getReviewList(map, endRow);
 	}
 
 	// 나의 리뷰 상세 리스트
