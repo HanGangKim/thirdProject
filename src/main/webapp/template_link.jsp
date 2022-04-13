@@ -74,6 +74,8 @@ a{font-size: large;}
 	<a href="/exhibition/getReviewList.do">리뷰 전체 조회</a>
 	<br><br>
 	<a href="/exhibition/getMyReviewList.do?id=default">나의 리뷰 리스트 조회</a>
+	<br><br>
+	<img src="https://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=https://www.happykoo.net">
 	</body>
 </html> 
 
