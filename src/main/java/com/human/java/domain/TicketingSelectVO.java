@@ -8,11 +8,20 @@ public class TicketingSelectVO {
 	private String exhibition_image;
 	private String exhibition_location;
 	private String ticketing_date;
+	private int ticketing_id;
 	private String customer_id;
 	private String consumer_name;
 	private String consumer_ph;
 	private String ticketing_flag;
 	
+	
+	
+	public int getTicketing_id() {
+		return ticketing_id;
+	}
+	public void setTicketing_id(int ticketing_id) {
+		this.ticketing_id = ticketing_id;
+	}
 	public String getTicketing_flag() {
 		return ticketing_flag;
 	}
