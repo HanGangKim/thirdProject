@@ -137,16 +137,16 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 					<c:forEach items="${reviewList}" var="vo">
 						<div class="col-md-6 col-lg-4">
 							<!--Property-item-row-->
-							<div class="card rounded-4 mb-5 " data-aos="fade-up">
+							<div class="card rounded-4 mb-5 " data-aos="fade-up" >
 							
-								<div class="mb-0">
-									<a href="#!" class="d-block overflow-hidden rounded-top-4">
+								<div class="mb-0" onclick="allReviewDetail()">
+									<a href="#!" class="d-block overflow-hidden rounded-top-4" data-bs-target="#modal-pay-bar-2" data-bs-toggle="modal">
 										<img src="${vo.exhibition_image}" class="img-fluid" alt="${vo.exhibition_title}" style="width:100%;">
 									</a>
 								</div>
 								
 								<div class="card-body overflow-hidden p-4 px-lg-5 flex-grow-1">
-									<a href="#!" class="text-dark d-block mb-4">
+									<a href="#!" class="text-dark d-block mb-4" data-bs-target="#modal-pay-bar-2" data-bs-toggle="modal">
 										<h4 class="text-truncate">${vo.exhibition_title}</h4>
 									</a>
 									<div class="row mb-lg-3">
@@ -180,6 +180,94 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								
 							</div>
 						</div>
+
+						<!-- 후기 상세 모달 시작 -->
+						<div id="modal-pay-bar-2" class="modal fade" tabindex="-1"
+							aria-labelledby="modal-pay-bar-2" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-top modal-md"
+								style="max-width: 700px;">
+								<div class="modal-content position-relative border-0">
+									<div class="position-relative px-4">
+										<div
+											class="position-absolute end-0 width-7x top-0 d-flex align-items-center justify-content-center"
+											style="margin-top: 5px;">
+											<button type="button" class="btn-close w-auto small"
+												data-bs-dismiss="modal" aria-label="Close">
+												<i class="bx bx-x fs-4 me-2"></i>
+											</button>
+										</div>
+										<!-- 					<form class="mb-0" action="ExhibitionPayment.do"> -->
+
+										<div class="align-items-center row">
+											<h6 class="d-flex"
+												style="justify-content: center; margin-top: 15px;">상세보기</h6>
+
+											<!-- 구분선 -->
+											<div class="d-flex align-items-center py-3">
+												<span class="flex-grow-1 border-bottom pt-1"></span>
+											</div>
+											<!-- 전시회 이미지 -->
+											<div class="mb-3">
+												<a href="#!" class="d-block overflow-hidden rounded-top-4">
+													<img src="${vo.exhibition_image}" class="img-fluid" style="width: 100%;">
+												</a>
+											</div>
+											<!-- 전시회 아이디 -->
+											<div class="mb-3">
+												<label class="form-label" for="profile_name">전시회 아이디</label>
+												<input type="text" placeholder="전시아이디 (히든)"
+													value="${vo.exhibition_id}" readonly="readonly"
+													class="form-control">
+											</div>
+											<!-- 전시회 이름 -->
+											<div class="mb-3 col-md-6">
+												<label class="form-label" for="profile_name">전시회 이름</label>
+												<input type="text" placeholder="전시회명"
+													value="${vo.exhibition_title}" readonly="readonly"
+													class="form-control">
+											</div>
+											<!-- 별점 -->
+											<div class="mb-3 col-md-6">
+												<label class="form-label" for="profile_name">별점</label> <input
+													type="text" placeholder="별점"
+													value="${vo.review_star_score}" readonly="readonly"
+													class="form-control">
+											</div>
+											<!-- 후기 제목 -->
+											<div class="mb-3">
+												<label class="form-label" for="profile_name">후기 제목</label> <input
+													type="text" placeholder="후기제목" value="${vo.review_title}"
+													readonly="readonly" class="form-control">
+											</div>
+											<!-- 작성자 이름 -->
+											<div class="mb-3 col-md-6 ">
+												<label class="form-label" for="profile_name">작성자</label> <input
+													type="text" placeholder="작성자" value="${vo.customer_id}"
+													class="form-control" readonly="readonly">
+											</div>
+											<!-- 작성일 -->
+											<div class="mb-3 col-md-6 ">
+												<label class="form-label" for="profile_name">작성일</label> <input
+													type="text" placeholder="작성일" value="${vo.review_date}"
+													class="form-control" readonly="readonly">
+											</div>
+											<!-- 후기 내용 -->
+											<div class="mb-4">
+												<label class="form-label" for="profile_name">내용</label> <input
+													type="text" placeholder="내용"
+													value="${vo.review_star_score}" readonly="readonly"
+													class="form-control" style="height: 300px;">
+											</div>
+
+										</div>
+
+										<!-- 					</form> -->
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 후기 상세 모달 끝 -->
+
 					</c:forEach>
 
 				</div>
@@ -197,6 +285,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	</main>
 
 
+	
+
+
 	<jsp:include page="/footer.jsp" />
 
 
@@ -211,63 +302,112 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <!--Select scripts-->
 <script src="/resources/vendor/node_modules/js/choices.min.js"></script>
 
+
+
+<!-- 리뷰 상세조회 구현 ajax -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+
+	function allReviewDetail() {
+
+		var endRow = $('#endRow').val();
+		var showCnt = 9;
+		var showEndRow = Number(endRow) + showCnt;
+		var totalDate = $('#totalDate').val();
+
+		$.ajax({
+			type : 'post',
+			url : './ExSearchTestAjax.do',
+			data : {
+				'endRow' : showEndRow,
+				'totalDate' : totalDate
+			},
+			success : function(list) {
+
+				$("#more_list").empty();
+
+				$.each(list, function(index, vo) {
+
+					// alert(index + "  :  " +value.exhibition_title)
+
+					getLoadMore(vo);
+				})
+
+				$('#endRow').val(showEndRow);
+
+			},
+			error : function(request, status, error) {
+				alert("code = " + request.status + "\n error = " + error);
+			}
+		})
+	}
+
+</script>
+
+
+
 <!-- 더보기 버튼 구현 ajax -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
 
-	function loadMoreAjax(){
-		
-		
+	function loadMoreAjax() {
+
 		var endRow = $('#endRow').val();
 		var showCnt = 9;
-		var showEndRow =  Number(endRow) + showCnt;
+		var showEndRow = Number(endRow) + showCnt;
 		var totalDate = $('#totalDate').val();
-		
+
 		$.ajax({
-			type: 'post',
+			type : 'post',
 			url : './ExSearchTestAjax.do',
-			data : { 'endRow': showEndRow, 'totalDate':totalDate},
-			success : function(list){
-				
+			data : {
+				'endRow' : showEndRow,
+				'totalDate' : totalDate
+			},
+			success : function(list) {
+
 				$("#more_list").empty();
-				
-				$.each(list, function(index,vo){
-					
+
+				$.each(list, function(index, vo) {
+
 					// alert(index + "  :  " +value.exhibition_title)
-					
+
 					getLoadMore(vo);
 				})
-				
-				
-				$('#endRow').val( showEndRow );
-				
+
+				$('#endRow').val(showEndRow);
+
 			},
-			error : function(request, status, error){
-				alert("code = "+ request.status+"\n error = " +error);
+			error : function(request, status, error) {
+				alert("code = " + request.status + "\n error = " + error);
 			}
 		})
 	}
-	
-	function getLoadMore(vo){
-	    var str = "";
+
+	function getLoadMore(vo) {
+		var str = "";
 		str += '<div class="col-md-6 col-xl-4 mb-4">';
 		str += '<div class="card hover-shadow overflow-hidden hover-lift card-product border-0">';
 		str += '<div class="card-product-header px-5 p-4 d-block overflow-hidden position-relative text-center">';
 		str += '<a href="./ExhibitionDetail.do?id=' + vo.exhibition_id + '">';
 		str += '<img src="' + vo.exhibition_image + '" class="img-fluid" alt="Product" style="width:300px; height:400px;"></a></div>';
 		str += '<div class="card-product-body px-4 pb-4 text-center">';
-		str += '<a href="./ExhibitionDetail.do?id=' + vo.exhibition_id + '" class="h5 text-dark d-block position-relative mb-2" style="height:50px;">' + vo.exhibition_title + '</a>';
+		str += '<a href="./ExhibitionDetail.do?id='
+				+ vo.exhibition_id
+				+ '" class="h5 text-dark d-block position-relative mb-2" style="height:50px;">'
+				+ vo.exhibition_title + '</a>';
 		str += '<div class="card-product-body-ovelray">';
-		str += '<span class="card-product-price"> <span>' + vo.exhibition_total_date + '</span> </span>'; 
-		str += '<span class="card-product-view-btn">'; 
-		str += '<a href="./ExhibitionDetail.do?id=' + vo.exhibition_id + '" class="link-underline mb-1 fw-semibold text-dark">View Details</a></span></div></div></div></div>';
-		
-		
-		$("#more_list").append(str); 
-// 		alert(str);
-		
-	}
+		str += '<span class="card-product-price"> <span>'
+				+ vo.exhibition_total_date + '</span> </span>';
+		str += '<span class="card-product-view-btn">';
+		str += '<a href="./ExhibitionDetail.do?id='
+				+ vo.exhibition_id
+				+ '" class="link-underline mb-1 fw-semibold text-dark">View Details</a></span></div></div></div></div>';
 
+		$("#more_list").append(str);
+		// 		alert(str);
+
+	}
 </script>
 
 

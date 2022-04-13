@@ -34,6 +34,22 @@ public class ExhibitionReviewListController {
 		model.addAttribute("reviewList", reviewService.getReviewList(map));
 		return "/Exhibition/ExhibitionReviewList";
 	}
+	
+	// 모든 사용자의 리뷰 조회
+	@RequestMapping("getReviewListAjax.do")
+	public String getReviewListAjax(Model model) {
+		
+		System.out.println("===============");
+		System.out.println("getReview.do 호출");
+		System.out.println("===============");
+		
+		HashMap map = new HashMap();
+		ReviewVO vo = new ReviewVO();
+
+		// DB 접속해서 데이터 가져오기
+		model.addAttribute("reviewList", reviewService.getReviewList(map));
+		return "/Exhibition/ExhibitionReviewList";
+	}
 
 	// 나의 리뷰 리스트
 	@RequestMapping("getMyReviewList.do")

@@ -76,7 +76,7 @@
 										Exhibition </a></li>
 								<!--리뷰-->
 								<li class="nav-item position-static me-lg-3"><a
-									class="nav-link" href="/exhibition/ExhibitionReviewList.do"
+									class="nav-link" href="/exhibition/getReviewList.do"
 									role="button" aria-haspopup="true" aria-expanded="false">
 										Review </a></li>
 								<c:choose>

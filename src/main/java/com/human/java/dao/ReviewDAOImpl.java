@@ -24,9 +24,8 @@ public class ReviewDAOImpl implements ReviewDAO{
 		System.out.println("ReviewVO : " + ToStringBuilder.reflectionToString(vo));
 		System.out.println("===============");
 		
-//		// 리뷰작성시 티켓팅 플래그 업데이트
-		// 미적용으로 인한 차선책 보류
-//		mybatis.update("ticketingMapper.flagChange" , vo);
+		// 리뷰작성시 티켓팅 플래그 업데이트
+		mybatis.update("ticketingMapper.flagChange" , vo);
 		
 		return mybatis.insert("exhibitionReviewMapper.insertReview", vo);
 	}
