@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.human.java.dao.MasterCompanyDAOImpl;
 import com.human.java.domain.MasterCompanyVO;
 
-@Service("masterCompanyServie")
+@Service("masterCompanyService")
 public class MasterCompanyServiceImpl implements MasterCompanyService{
 	
 	@Autowired

@@ -5,7 +5,7 @@
 
 <mapper namespace="masterCompanyMapper">
 
-	<select id="masterConpanySelect" resultType="masterCompany">
+	<select id="masterCompanySelect" resultType="masterCompany">
 		SELECT *
 		FROM COMPANY_INFO
 		WHERE COMPANY_FLAG = 'W'
