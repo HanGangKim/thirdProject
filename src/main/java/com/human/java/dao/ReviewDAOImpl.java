@@ -2,6 +2,7 @@ package com.human.java.dao;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -52,18 +53,33 @@ public class ReviewDAOImpl implements ReviewDAO{
 		mybatis.delete("exhibitionReviewMapper.deleteReview", vo);
 	}
 
+//	// 모든 리뷰 리스트
+//	@Override
+//	public List<ReviewVO> getReviewList(HashMap map) {
+//		
+//		System.out.println("===============");
+//		System.out.println("getReviewList DAO 호출");
+////			System.out.println("DAO : "+map.get("searchCondition"));
+////			System.out.println("DAO : "+map.get("searchKeyword"));
+//		System.out.println("===============");
+//		
+//		return mybatis.selectList("exhibitionReviewMapper.getReviewList" , map);
+//	}
+		
 	// 모든 리뷰 리스트
-		@Override
-		public List<ReviewVO> getReviewList(HashMap map) {
-			
-			System.out.println("===============");
-			System.out.println("getReviewList DAO 호출");
-//			System.out.println("DAO : "+map.get("searchCondition"));
-//			System.out.println("DAO : "+map.get("searchKeyword"));
-			System.out.println("===============");
-			
-			return mybatis.selectList("exhibitionReviewMapper.getReviewList" , map);
-		}
+	@Override
+	public List<ReviewVO> getReviewList(HashMap map, int endRow) {
+		
+		System.out.println("===============");
+		System.out.println("getReviewList DAO 호출");
+		System.out.println("===============");
+		
+		Map<String, Object> parms = new HashMap<String, Object>();
+		parms.put("map", map);
+		parms.put("endRow", endRow+1);
+		
+		return mybatis.selectList("exhibitionReviewMapper.getReviewList" , parms);
+	}
 
 	
 	// 나의 리뷰 리스트

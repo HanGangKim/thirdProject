@@ -7,13 +7,22 @@
 
 	<!-- 전체 조회 -->
 	<!-- 제목 검색기능 추가 예정 -->
+<!-- 	<select id="getReviewList" parameterType="hashmap" resultType="review">  -->
+<!-- 		SELECT e.EXHIBITION_ID , e.EXHIBITION_TITLE ,e.EXHIBITION_START_DATE , e.EXHIBITION_END_DATE , e.EXHIBITION_IMAGE , e.EXHIBITION_LOCATION  -->
+<!-- 		, r.REVIEW_TITLE , r.REVIEW_CONTENTS , r.REVIEW_DATE , r.REVIEW_STAR_SCORE , r.REVIEW_ID , r.CUSTOMER_ID -->
+<!-- 		FROM EXHIBITION_INFO e , REVIEW r -->
+<!-- 		<where> -->
+<!-- 		e.EXHIBITION_ID = r.EXHIBITION_ID  -->
+<!-- 		</where> -->
+<!-- 	</select> -->
+
 	<select id="getReviewList" parameterType="hashmap" resultType="review"> 
-		SELECT e.EXHIBITION_ID , e.EXHIBITION_TITLE ,e.EXHIBITION_START_DATE , e.EXHIBITION_END_DATE , e.EXHIBITION_IMAGE , e.EXHIBITION_LOCATION 
-		, r.REVIEW_TITLE , r.REVIEW_CONTENTS , r.REVIEW_DATE , r.REVIEW_STAR_SCORE , r.REVIEW_ID , r.CUSTOMER_ID
-		FROM EXHIBITION_INFO e , REVIEW r
-		<where>
-		e.EXHIBITION_ID = r.EXHIBITION_ID 
-		</where>
+		SELECT *
+		FROM ( SELECT e.EXHIBITION_ID , e.EXHIBITION_TITLE ,e.EXHIBITION_START_DATE , e.EXHIBITION_END_DATE , e.EXHIBITION_IMAGE , e.EXHIBITION_LOCATION 
+			, r.REVIEW_TITLE , r.REVIEW_CONTENTS , r.REVIEW_DATE , r.REVIEW_STAR_SCORE , r.REVIEW_ID , r.CUSTOMER_ID
+			FROM HAN.EXHIBITION_INFO e , HAN.REVIEW r
+		WHERE e.EXHIBITION_ID = r.EXHIBITION_ID )
+		WHERE <![CDATA[ ROWNUM <= ]]> ${endRow}
 	</select>
 	
 	<!-- 나의 리뷰 조회 -->
@@ -38,7 +47,12 @@
 		VALUES(SEQ_REVIEW.nextval, #{review_title}, #{review_contents} , sysdate , #{review_star_score} , #{review_img} , #{exhibition_id}, #{customer_id})
 	</insert>
 	
-	
+	<!-- 리뷰 업데이트 -->
+   <update id="updateReview" parameterType="review">
+      UPDATE REVIEW
+      SET REVIEW_TITLE= #{review_title} , REVIEW_CONTENTS = #{review_contents} , REVIEW_STAR_SCORE =#{review_star_score}
+      WHERE REVIEW_ID  =#{review_id} 
+    </update>
 	
 	
 

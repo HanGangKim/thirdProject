@@ -18,13 +18,17 @@ public interface ReviewDAO {
 	// 글 삭제
 	void deleteReview(ReviewVO vo);
 	
-	// 글 목록 조회
-	List<ReviewVO> getReviewList(HashMap map);
+//	// 글 목록 조회
+//	List<ReviewVO> getReviewList(HashMap map);
 
+	// 글 목록 조회
+	List<ReviewVO> getReviewList(HashMap map, int endRow);
+	
 	// 나의 리뷰 리스트
 	List<ReviewVO> getMyReviewList(HashMap map , String id);
 
 	// 나의 리뷰 상세 조회
 	ReviewVO getMyReview(ReviewVO vo);
+
 
 }
