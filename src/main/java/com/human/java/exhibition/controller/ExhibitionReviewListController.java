@@ -1,14 +1,16 @@
 package com.human.java.exhibition.controller;
 
 import java.util.HashMap;
+import java.util.List;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.human.java.domain.ExhibitionVO;
 import com.human.java.domain.ReviewVO;
 import com.human.java.service.ReviewService;
 
@@ -31,24 +33,25 @@ public class ExhibitionReviewListController {
 		ReviewVO vo = new ReviewVO();
 
 		// DB 접속해서 데이터 가져오기
-		model.addAttribute("reviewList", reviewService.getReviewList(map));
+		List<ReviewVO> list = reviewService.getReviewList(map, 8);
+		System.out.println(list.size());
+		
+		model.addAttribute("reviewList", list);
+		
 		return "/Exhibition/ExhibitionReviewList";
 	}
 	
-	// 모든 사용자의 리뷰 조회
+	// 모든 사용자의 리뷰 조회 ajax
+	@ResponseBody
 	@RequestMapping("getReviewListAjax.do")
-	public String getReviewListAjax(Model model) {
-		
-		System.out.println("===============");
-		System.out.println("getReview.do 호출");
-		System.out.println("===============");
+	public Object getReviewListAjax(Model model, @RequestParam("endRow") String endRow) {
 		
 		HashMap map = new HashMap();
 		ReviewVO vo = new ReviewVO();
-
-		// DB 접속해서 데이터 가져오기
-		model.addAttribute("reviewList", reviewService.getReviewList(map));
-		return "/Exhibition/ExhibitionReviewList";
+		
+		List<ReviewVO> list = reviewService.getReviewList(map, Integer.parseInt(endRow));
+		
+		return list;
 	}
 
 	// 나의 리뷰 리스트

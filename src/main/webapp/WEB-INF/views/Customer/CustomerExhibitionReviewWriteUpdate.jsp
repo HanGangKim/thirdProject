@@ -127,7 +127,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 										
 										<!-- form 태그시작  -->
-										<form autocomplete="false" action="/exhibition/saveReview.do"
+										<form autocomplete="false" action="/exhibition/updateReview.do"
 											method="get">
 											<div class="row align-items-center">
 												<!--아이디-->
@@ -139,9 +139,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 											<!-- 변하지 않는 시퀀스 -->
 											 <input type="number" name="exhibition_id"
-													value="${review.exhibition_id}" readonly="readonly">
+													value="${review.exhibition_id}" hidden>
 											<input type="number" name="review_id"
-													value="${review.review_id}" readonly="readonly">
+													value="${review.review_id}" hidden>
 													
 												<!--리뷰 제목-->
 												<div class="col-md-6 mb-3">

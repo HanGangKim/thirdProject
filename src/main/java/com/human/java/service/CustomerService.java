@@ -23,4 +23,7 @@ public interface CustomerService {
 	//찜목록
 	public List<WishListVO> WishListService(ExhibitionVO vo, String id, WishListVO wl,  HttpServletRequest request);
 
+	
+	//찜목록
+	public List<WishListVO> WishListSelectService(ExhibitionVO vo, String id, WishListVO wl,  HttpServletRequest request);
 }

@@ -61,7 +61,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 				<nav class="navbar navbar-expand-lg navbar-dark rounded-lg-4">
 					<div class="container position-relative">
 						<!-- 로고 -->
-						<a class="navbar-brand" href="demo-shop.html"> 
+						<a class="navbar-brand" href="/CustomerMain.do"> 
 <!-- 						<img src="/resources/img/logo/logo-shop.svg" alt="" class="img-fluid"> -->
 							Fiennale
 						</a>
@@ -92,7 +92,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<ul class="navbar-nav mx-auto">
 								<!--홈-->
 								<li class="nav-item position-lg-static me-lg-3"><a
-									class="nav-link active" href="index.jsp" role="button"
+									class="nav-link active" href="/CustomerMain.do" role="button"
 									aria-haspopup="false" aria-expanded="false"> Home </a></li>
 								<!--전시회-->
 								<li class="nav-item position-lg-static me-lg-3"><a
@@ -123,7 +123,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 											<div class="dropdown-menu p-lg-3">
 												<div class="dropend">
 													<a class="dropdown-item" aria-expanded="false"
-														href="/customer/CustomerWishList.do">My Wishlist</a>
+														href="/customer/CustomerWishSelectList.do?id=<%=userId%>">My Wishlist</a>
 												</div>
 												<div class="dropend">
 													<a class="dropdown-item" href="/exhibition/ExhibitionTicketingSelect.do?id=<%=userId%>"
@@ -131,7 +131,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												</div>
 												<div class="dropend">
 													<a class="dropdown-item"
-														href="/customer/CustomerExhibitionMyReviewList.do"
+														href="/exhibition/getMyReviewList.do?id=<%=userId%>"
 														aria-expanded="false">My Review</a>
 												</div>
 												<div class="dropdown-divider"></div>
@@ -139,7 +139,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 													href="/customer/CustomerChangeInfo.do">Setting</a>
 											</div></li>
 										<!--로그아웃-->
-										<li class="nav-item"><a class="nav-link" href="LogOut.do">
+										<li class="nav-item"><a class="nav-link" href="/LogOut.do">
 												Sign Out </a></li>
 									</c:when>
 								</c:choose>

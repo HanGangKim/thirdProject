@@ -19,7 +19,7 @@ System.out.println("세션연결 성공:"+userId);
 System.out.println("세션연결 성공:"+userName);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 //LogOut.jsp로 이동	
-response.sendRedirect("NoneMemberMain.do");
+response.sendRedirect("LogOut.do");
 	
 }
 %>    

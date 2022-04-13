@@ -76,6 +76,18 @@ public class CustomerDAOImpl implements  CustomerDAO{
 		System.out.println(userId);
 		return mybatis.selectList("wishlistMapper.wishlistsearch", parms);
 	}
+	
+	@Override
+	public List<WishListVO> wishListSelectSearch(WishListVO wl, String id, HttpServletRequest request) {
+		System.out.println("search");
+		Map<String, Object> parms = new HashMap<String, Object>();
+		parms.put("wl", wl);
+		parms.put("id", id);
+		String userId = (String)request.getSession().getAttribute("userId");
+		parms.put("request", userId);
+		System.out.println(userId);
+		return mybatis.selectList("wishlistMapper.wishlistsearch", parms);
+	}
 
 	
 	

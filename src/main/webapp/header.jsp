@@ -1,6 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%request.setCharacterEncoding("UTF-8");%>
+<%
+Object userId = session.getAttribute("userId");
+Object userName = session.getAttribute("userName");
+// 세션 연결
+if (session.getAttribute("userId") == null) {
+// 세션 연결에 실패하면 null	
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+System.out.println("세션연결 실패:"+userId);
+System.out.println("세션연결 실패:"+userName);
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+response.sendRedirect("NoneMemberMain.do");
+
+}else{
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+System.out.println("세션연결 성공:"+userId);
+System.out.println("세션연결 성공:"+userName);
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+}
+%>  
 <!doctype html>
 <html lang="en">
 
@@ -39,7 +59,8 @@
 				<nav class="navbar navbar-expand-lg navbar-light rounded-lg-4">
 					<div class="container position-relative">
 						<!-- 로고 -->
-						<a class="navbar-brand" href="/NoneMemberMain.do"> <!-- 					<img src="/resources/img/logo/logo-shop.svg" alt="" class="img-fluid"> -->
+						<a class="navbar-brand" href="/CustomerMain.do"> 
+						<!-- <img src="/resources/img/logo/logo-shop.svg" alt="" class="img-fluid"> -->
 							Fiennale
 						</a>
 						<!-- 검색버튼 -->
@@ -67,7 +88,7 @@
 							<ul class="navbar-nav mx-auto">
 								<!--홈-->
 								<li class="nav-item position-lg-static me-lg-3"><a
-									class="nav-link active" href="/NoneMemberMain.do" role="button"
+									class="nav-link active" href="/CustomerMain.do" role="button"
 									aria-haspopup="false" aria-expanded="false"> Home </a></li>
 								<!--전시회-->
 								<li class="nav-item position-lg-static me-lg-3"><a
@@ -99,15 +120,15 @@
 											<div class="dropdown-menu p-lg-3">
 												<div class="dropend">
 													<a class="dropdown-item" aria-expanded="false"
-														href="/customer/CustomerWishList.do">My Wishlist</a>
+														href="/customer/CustomerWishSelectList.do?id=<%=userId%>">My Wishlist</a>
 												</div>
 												<div class="dropend">
-													<a class="dropdown-item" href="/customer/CustomerTicket.do"
+													<a class="dropdown-item" href="/exhibition/ExhibitionTicketingSelect.do?id=<%=userId%>"
 														aria-expanded="false">My Ticket</a>
 												</div>
 												<div class="dropend">
 													<a class="dropdown-item"
-														href="/customer/CustomerExhibitionMyReviewList.do"
+														href="/exhibition/getMyReviewList.do?id=<%=userId%>"
 														aria-expanded="false">My Review</a>
 												</div>
 												<div class="dropdown-divider"></div>
@@ -115,7 +136,7 @@
 													href="/customer/CustomerChangeInfo.do">Setting</a>
 											</div></li>
 										<!--로그아웃-->
-										<li class="nav-item"><a class="nav-link" href="#">
+										<li class="nav-item"><a class="nav-link" href="/LogOut.do">
 												Sign Out </a></li>
 									</c:when>
 								</c:choose>
