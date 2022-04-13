@@ -47,7 +47,12 @@
 		VALUES(SEQ_REVIEW.nextval, #{review_title}, #{review_contents} , sysdate , #{review_star_score} , #{review_img} , #{exhibition_id}, #{customer_id})
 	</insert>
 	
-	
+	<!-- 리뷰 업데이트 -->
+   <update id="updateReview" parameterType="review">
+      UPDATE REVIEW
+      SET REVIEW_TITLE= #{review_title} , REVIEW_CONTENTS = #{review_contents} , REVIEW_STAR_SCORE =#{review_star_score}
+      WHERE REVIEW_ID  =#{review_id} 
+    </update>
 	
 	
 

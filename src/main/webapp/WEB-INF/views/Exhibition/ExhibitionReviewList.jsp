@@ -146,7 +146,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								</div>
 								
 								<div class="card-body overflow-hidden p-4 px-lg-5 flex-grow-1">
-									<a href="#!" class="text-dark d-block mb-4" data-bs-target="#modal-pay-bar-2" data-bs-toggle="modal">
+									<a href="#!" class="text-dark d-block mb-4" data-bs-target="#modal-pay-bar-${vo.exhibition_id}" data-bs-toggle="modal">
 										<h4 class="text-truncate">${vo.exhibition_title}</h4>
 									</a>
 									<div class="row mb-lg-3">
@@ -252,7 +252,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 											<div class="mb-4">
 												<label class="form-label" for="profile_name">내용</label> <input
 													type="text" placeholder="내용"
-													value="${vo.review_star_score}" readonly="readonly"
+													value="${vo.review_contents}" readonly="readonly"
 													class="form-control" style="height: 300px;">
 											</div>
 										</div>
@@ -334,25 +334,45 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 	function getLoadMore(vo) {
 		
-		
-		
-		
 	
 		var str = "";
 		
+		/* 리스트 */
 		str += '<div class="col-md-6 col-lg-4">';
 		str += '<div class="card rounded-4 mb-5 " data-aos="fade-up" >';
 		str += '<div class="mb-0" onclick="allReviewDetail()">';
 		str += '<a href="#!" class="d-block overflow-hidden rounded-top-4" data-bs-target="#modal-pay-bar-' + vo.exhibition_id + '" data-bs-toggle="modal">';
 		str += '<img src="' + vo.exhibition_image + '" class="img-fluid" alt="' + vo.exhibition_title + '" style="width:100%;"></a></div>';
 		str += '<div class="card-body overflow-hidden p-4 px-lg-5 flex-grow-1">';
-		str += '<a href="#!" class="text-dark d-block mb-4" data-bs-target="#modal-pay-bar-2" data-bs-toggle="modal"><h4 class="text-truncate">' + vo.exhibition_title + '</h4></a>';
+		str += '<a href="#!" class="text-dark d-block mb-4" data-bs-target="#modal-pay-bar-' + vo.exhibition_id + '" data-bs-toggle="modal"><h4 class="text-truncate">' + vo.exhibition_title + '</h4></a>';
 		str += '<div class="row mb-lg-3"><div class="col-3" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Bedrooms">';
 		str += '<div class="d-flex align-items-center"><strong class="small">' + vo.review_date + '</strong></div></div></div>';
 		str += '<p class="mb-4 mb-lg-5 text-truncate">' + vo.review_contents + '</p><div class="row justify-content-between justify-content-lg-start">';
 		str += '<div class="col-6"><h4 class="mb-0"><i class="bx bx-star me-2"></i>' + vo.review_star_score + '</h4></div><div class="col-6">';
 		str += '<div class="d-flex align-items-center justify-content-end flex-shrink-0"><img src="/resources/img/avatar/2.jpg" alt="" class="flex-shrink-0 flex-shrink-0 avatar sm rounded-circle me-2 img-fluid">';
 		str += '<span class="small"> {vo.customoer_id} </span></div></div></div></div></div></div>';
+		/* 모달 */
+		str += '<div id="modal-pay-bar-' + vo.exhibition_id + '" class="modal fade" tabindex="-1" aria-labelledby="modal-pay-bar-' + vo.exhibition_id + '" aria-hidden="true">';
+		str += '<div class="modal-dialog modal-dialog-top modal-md" style="max-width: 700px;">';
+		str += '<div class="modal-content position-relative border-0"> <div class="position-relative px-4">';
+		str += '<div class="position-absolute mt-2 end-0 width-7x top-0 d-flex align-items-center justify-content-center">';
+		str += '<button type="button" class="btn-close w-auto small" data-bs-dismiss="modal" aria-label="Close">';
+		str += '<i class="bx bx-x fs-4 me-2"></i></button></div>';
+		str += '<div class="align-items-center row" style="flex-wrap: nowrap;">';
+		str += '<div class="mt-4 col-md-6"><a href="#!" class="d-block overflow-hidden"><img src="' + vo.exhibition_image + '" class="img-fluid"></a></div>';
+		str += '<div class="mt-5 align-items-center col-md-6 row" style="flex-direction: column;">';
+		str += '<div class="mb-3"><label class="form-label" for="profile_name">전시회 이름</label>';
+		str += '<input type="text" placeholder="전시회명" value="' + vo.exhibition_title + '" readonly="readonly" class="form-control"></div>';
+		str += '<div class="mb-3"><label class="form-label" for="profile_name">별점</label>';
+		str += '<input type="text" placeholder="별점" value="' + vo.review_star_score + '" readonly="readonly" class="form-control"></div>';
+		str += '<div class="mb-3"><label class="form-label" for="profile_name">후기 제목</label>';
+		str += '<input type="text" placeholder="후기제목" value="' + vo.review_title + '" readonly="readonly" class="form-control"></div>';
+		str += '<div class="mb-3 "><label class="form-label" for="profile_name">작성자</label>';
+		str += '<input type="text" placeholder="작성자" value="' + vo.customer_id + '" class="form-control" readonly="readonly"></div>';
+		str += '<div class="mb-3"><label class="form-label" for="profile_name">작성일</label>';
+		str += '<input type="text" placeholder="작성일" value="' + vo.review_date + '" class="form-control" readonly="readonly"></div></div></div>';
+		str += '<div class="align-items-center row"><div class="mb-4"><label class="form-label" for="profile_name">내용</label>';
+		str += '<input type="text" placeholder="내용" value="' + vo.review_contents + '" readonly="readonly" class="form-control" style="height: 300px;"></div></div></div></div></div></div>';
 
 		$("#more_list").append(str);
 // 				alert(str);
