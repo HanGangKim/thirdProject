@@ -13,7 +13,9 @@
   	  		<typeAlias alias="wishlist" type="com.human.java.domain.WishListVO" />
   	  		<typeAlias alias="ticket" type="com.human.java.domain.TicketingVO" />
   	  		<typeAlias alias="ticketSelect" type="com.human.java.domain.TicketingSelectVO" /> 	
-  	  		<typeAlias alias="masterCompany" type="com.human.java.domain.MasterCompanyVO"/>	
+  	  		<typeAlias alias="masterCompany" type="com.human.java.domain.MasterCompanyVO"/>
+  	  		<typeAlias alias="masterExhibition" type="com.human.java.domain.MasterExhibitionVO"/>		
+  	  		
   		</typeAliases>
   </configuration>
   

@@ -17,7 +17,7 @@ public class MasterCompanyDAOImpl implements MasterCompanyDAO {
 	@Override
 	public List<MasterCompanyVO> masterCompany() {
 		
-		return mybatis.selectList("masterCompanyMapper.masterConpanySelect");
+		return mybatis.selectList("masterCompanyMapper.masterCompanySelect");
 	}
 	
 	
