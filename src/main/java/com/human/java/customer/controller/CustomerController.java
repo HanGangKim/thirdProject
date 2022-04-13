@@ -19,9 +19,6 @@ import com.human.java.service.CustomerService;
 @RequestMapping("/customer/")
 public class CustomerController {
 
-	@Autowired
-	private CustomerService customerService;
-
 	// customer 폴더 단순이동 컨트롤러
 	// customer 폴더 내 모든 페이지 이동가능
 	@RequestMapping("/{step}.do")
@@ -30,24 +27,5 @@ public class CustomerController {
 		return "/Customer/" + step;
 	}
 	
-	@RequestMapping("CustomerWishList.do")
-	public ModelAndView addSearchWish(ExhibitionVO vo, @RequestParam("id") String id, WishListVO wl, HttpServletRequest request) {
-		
-		System.out.println("-_+_+_+_+_+_+_+_+_+_+_");
-		System.out.println("CustomerWishList.do 호출");
-		System.out.println("_+_+_+_+_+_+_+_+_+_+_+");
-		
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("Customer/CustomerWishList");
-
-		List<WishListVO> li = customerService.WishListService(vo, id, wl, request);
-		
-		System.out.println(li.size());
-		System.out.println(li.get(0));
-		
-		
-		mv.addObject("vo", li);
-		
-		return mv;
-	}
+	
 }

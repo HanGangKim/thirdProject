@@ -161,7 +161,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										<a href="#" class="btn btn-primary"
 											style="margin-bottom: 10px;">Move to qr</a> 
 											<a href="../customer/CustomerExhibitionReviewWrite.do?exhibition_id=${vo.exhibition_id}&customer_id=${vo.customer_id}&ticketing_id=${vo.ticketing_id}" class="btn btn-dark">후기작성</a>
-											티켓팅ID:<input type="text" value="${vo.ticketing_id}">
 									</div>
 
 								</div>
