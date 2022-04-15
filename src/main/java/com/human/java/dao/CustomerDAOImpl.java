@@ -47,7 +47,7 @@ public class CustomerDAOImpl implements  CustomerDAO{
 		System.out.println("CustomerVO : " + ToStringBuilder.reflectionToString(vo));
 		System.out.println("===============");
 		
-		mybatis.update("customerMapper.customerchangeInfo",vo);
+		mybatis.update("customerMapper.customerUpdate",vo);
 	}
 
 	@Override
