@@ -5,6 +5,12 @@ import java.util.List;
 import com.human.java.domain.MasterCompanyVO;
 
 public interface MasterCompanyService {
-
+	
+	// company select 
 	public List<MasterCompanyVO>  masterCompany ();
+	
+	// company update
+	void updateMasterCompany(MasterCompanyVO vo);
+	
+	
 }
