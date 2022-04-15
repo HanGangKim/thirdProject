@@ -13,14 +13,16 @@ public class MasterCompanyDAOImpl implements MasterCompanyDAO {
 
 	@Autowired
 	private SqlSessionTemplate mybatis;
-	
+
 	@Override
 	public List<MasterCompanyVO> masterCompany() {
-		
+
 		return mybatis.selectList("masterCompanyMapper.masterCompanySelect");
 	}
-	
-	
-	
+
+	public void updateMasterCompany(MasterCompanyVO vo) {
+
+		mybatis.update("masterCompanyMapper.masterComapny",vo);
+	}
 
 }

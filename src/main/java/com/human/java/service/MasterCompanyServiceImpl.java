@@ -14,10 +14,20 @@ public class MasterCompanyServiceImpl implements MasterCompanyService{
 	@Autowired
 	private MasterCompanyDAOImpl masterCompanyDAO;
 	
+	// select company
 	@Override
 	public List<MasterCompanyVO>  masterCompany() {
 		
 		return masterCompanyDAO.masterCompany();
+	}
+	
+	// update company
+	@Override
+	public void updateMasterCompany(MasterCompanyVO vo) {
+		// TODO Auto-generated method stub
+		
+		masterCompanyDAO.updateMasterCompany(vo);
+		
 	}
 
 	
