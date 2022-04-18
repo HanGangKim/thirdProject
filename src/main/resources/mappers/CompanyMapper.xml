@@ -19,6 +19,12 @@
 		WHERE COMPANY_ID = #{company_id} AND COMPANY_PASSWORD = #{company_password}
 	</select> 
 	
+	<select id="idCheck" parameterType="map" resultType="Int">
+		SELECT count(*)
+		FROM COMPANY_INFO
+		WHERE COMPANY_ID = #{id}
+	</select>
+	
 
 	
 

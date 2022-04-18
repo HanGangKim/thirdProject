@@ -9,4 +9,7 @@ public interface CompanyService {
 		
 	// 로그인
 	public CompanyVO companyLogin(CompanyVO vo);
+	
+	// 아이디 중복체크
+	public int idCheck(CompanyVO vo, String id);
 }

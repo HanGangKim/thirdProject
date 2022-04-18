@@ -1,5 +1,8 @@
 package com.human.java.dao;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +33,12 @@ public class CompanyDAOImpl implements CompanyDAO {
 		System.out.println("===============");
 
 		return mybatis.selectOne("companyMapper.companyLogin", vo);
+	}
+
+	@Override
+	public int idCheck(String id) {
+		Map<String, Object> parms = new HashMap<String, Object>();
+		parms.put("id",id);
+		return mybatis.selectOne("companyMapper.idCheck",id);
 	}
 }
