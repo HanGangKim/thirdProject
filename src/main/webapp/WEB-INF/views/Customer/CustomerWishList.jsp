@@ -146,7 +146,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							</table>
 						</div>
 
-						<!--Cart checkout-->
+						<!-- 버튼 -->
 						<div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-center">
 							<!--전시회 목록보기-->
 							<div class="mb-3 mb-sm-0">

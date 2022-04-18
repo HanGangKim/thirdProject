@@ -54,11 +54,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 </head>
 
 <body>
-	<!--Preloader Spinner-->
-	<div class="spinner-loader bg-gradient-secondary text-white">
-		<div class="spinner-border text-primary" role="status"></div>
-		<span class="small d-block ms-2">Loading...</span>
-	</div>
+	
 
 	<jsp:include page="/header.jsp" />
 
@@ -68,21 +64,20 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 		<!--Page header start-->
 		<section class="position-relative bg-dark text-white overflow-hidden">
-			<svg
-				class="position-absolute end-0 top-0 text-primary width-14x h-auto w-lg-20"
+			<svg class="position-absolute end-0 top-0 text-primary width-14x h-auto w-lg-20"
 				width="450" height="426" viewBox="0 0 450 426" fill="none"
 				xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clipPageHeader)">
-          <path fill-rule="evenodd" clip-rule="evenodd"
-					d="M298.999 -192.241C355.489 -184.29 381.574 -118.483 421.706 -77.9221C452.436 -46.8634 475.477 -12.1582 507.054 18.0386C563.019 71.558 665.455 91.3474 678.539 167.687C690.554 237.781 626.362 310.281 562.498 341.514C500.548 371.812 427.798 307.451 360.652 323.154C299.843 337.375 269.726 418.21 207.597 424.514C139.082 431.466 55.4816 414.802 16.3827 358.087C-23.1945 300.678 21.5018 222.882 20.5205 153.15C19.6978 94.6861 -14.5698 34.0886 11.0842 -18.4478C36.6541 -70.8118 102.021 -85.7884 151.898 -115.896C200.173 -145.036 243.168 -200.099 298.999 -192.241Z"
-					fill="currentColor" />
-        </g>
-        <defs>
-          <clipPath id="clipPageHeader">
-            <rect width="450" height="426" fill="white" />
-          </clipPath>
-        </defs>
-      </svg>
+		        <g clip-path="url(#clipPageHeader)">
+					<path fill-rule="evenodd" clip-rule="evenodd"
+							d="M298.999 -192.241C355.489 -184.29 381.574 -118.483 421.706 -77.9221C452.436 -46.8634 475.477 -12.1582 507.054 18.0386C563.019 71.558 665.455 91.3474 678.539 167.687C690.554 237.781 626.362 310.281 562.498 341.514C500.548 371.812 427.798 307.451 360.652 323.154C299.843 337.375 269.726 418.21 207.597 424.514C139.082 431.466 55.4816 414.802 16.3827 358.087C-23.1945 300.678 21.5018 222.882 20.5205 153.15C19.6978 94.6861 -14.5698 34.0886 11.0842 -18.4478C36.6541 -70.8118 102.021 -85.7884 151.898 -115.896C200.173 -145.036 243.168 -200.099 298.999 -192.241Z"
+							fill="currentColor" />
+		        </g>
+		        <defs>
+		          <clipPath id="clipPageHeader">
+		            <rect width="450" height="426" fill="white" />
+		          </clipPath>
+		        </defs>
+      		</svg>
 			<img src="/resources/img/vectors/dec-brush1.svg"
 				class="position-absolute end-0 top-0 me-2 mt-2 me-lg-5 mt-lg-5 fill-warning width-8x h-auto"
 				data-inject-svg alt="">
@@ -121,57 +116,55 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		</c:forEach> --%>
 
 
-		<c:forEach items="${selectList}" var="vo">
-			<!--예매내역카드 섹션 시작-->
-			<section class="position-relative">
-				<div class="container pb-7 pb-lg-12 pt-7">
-					<div class="row">
-						<div class="col-lg-10 offset-lg-1">
-							<!--:Wishlist card-->
-							<div
-								class="card hover-lift shadow flex-sm-row mb-4 align-items-center">
-								<div class="col-sm-5 col-lg-4 mb-4 mb-md-0">
-									<a href="./ExhibitionDetail.do?id=${vo.exhibition_id}"
-										class="d-block"> <img src="${vo.exhibition_image}"
-										class="img-fluid card-img-top" alt="">
-									</a>
+		<!--예매내역카드 섹션 시작-->
+		<section class="position-relative">
+			<div class="container pb-7 pb-lg-12 pt-7">
+				<c:forEach items="${selectList}" var="vo">
+					<div class="col-lg-10 offset-lg-1">
+						<!--:Wishlist card-->
+						<div class="card hover-lift shadow flex-sm-row mb-6 align-items-center">
+							<div class="col-sm-5 col-lg-4 mb-4 mb-md-0">
+								<a href="./ExhibitionDetail.do?id=${vo.exhibition_id}" class="d-block"> 
+									<img src="${vo.exhibition_image}" class="img-fluid card-img">
+								</a>
+							</div>
+							<div class="col-sm-7 py-sm-5 col-12 col-lg-6 offset-lg-1 px-5">
+								<a href="./ExhibitionDetail.do?id=${vo.exhibition_id}"
+									class="mb-3 d-block text-dark">
+									<h4 class="text-truncate">${vo.exhibition_title}</h4>
+								</a>
+								<p class="lead mb-5">${vo.ticketing_date}</p>
+								<div class="d-flex mb-3 align-items-center">
+									<span class="text-muted me-3">Place</span> <strong>${vo.exhibition_location}</strong>
 								</div>
-								<div class="col-sm-7 py-sm-5 col-12 col-lg-5 offset-lg-1 px-3">
-									<a href="./ExhibitionDetail.do?id=${vo.exhibition_id}"
-										class="mb-3 d-block text-dark">
-										<h5>${vo.exhibition_title}</h5>
-									</a>
-									<p class="lead">${vo.ticketing_date}</p>
-									<div class="d-flex mb-3 align-items-center">
-										<span class="text-muted me-3">Place</span> <strong>${vo.exhibition_location}</strong>
-									</div>
-									<div class="d-flex mb-3 align-items-center">
-										<span class="me-3 text-muted">Date</span> <strong>${vo.exhibition_start_date}
-											~ ${vo.exhibition_end_date}</strong>
-									</div>
-									<div class="d-flex mb-3 align-items-center">
-										<span class="text-muted me-3">consumer name</span> <strong>${vo.consumer_name}</strong>
-
-									</div>
-									<div class="d-flex mb-3 align-items-center">
-										<span class="me-3 text-muted">consumer number</span> <strong>${vo.consumer_ph}</strong>
-									</div>
-									<!--QR 확인버튼-->
-									<div class="d-grid pb-4 pb-md-0">
-										<a href="#" class="btn btn-primary"
-											style="margin-bottom: 10px;">Move to qr</a> 
-											<a href="../customer/CustomerExhibitionReviewWrite.do?exhibition_id=${vo.exhibition_id}&customer_id=${vo.customer_id}&ticketing_id=${vo.ticketing_id}" class="btn btn-dark">후기작성</a>
-									</div>
+								<div class="d-flex mb-3 align-items-center">
+									<span class="me-3 text-muted">Date</span> <strong>${vo.exhibition_start_date}
+										~ ${vo.exhibition_end_date}</strong>
+								</div>
+								<div class="d-flex mb-3 align-items-center">
+									<span class="text-muted me-3">consumer name</span> <strong>${vo.consumer_name}</strong>
 
 								</div>
+								<div class="d-flex mb-5 align-items-center">
+									<span class="me-3 text-muted">consumer number</span> <strong>${vo.consumer_ph}</strong>
+								</div>
+								
+								<!--QR 확인버튼-->
+								<div class="d-grid pb-4 pb-md-0">
+									<a href="#" class="btn btn-primary" style="margin-bottom: 10px;">Move to qr</a> 
+									<a href="../customer/CustomerExhibitionReviewWrite.do?exhibition_id=${vo.exhibition_id}&customer_id=${vo.customer_id}&ticketing_id=${vo.ticketing_id}" class="btn btn-dark">후기작성</a>
+								</div>
+
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
-		</c:forEach>
+				</c:forEach>
+			</div>
+		</section>
 		<!--예매내역카드 섹션 끝-->
+		
 	</main>
+	<!-- /Main content -->
 
 
 	<jsp:include page="/footer.jsp" />
