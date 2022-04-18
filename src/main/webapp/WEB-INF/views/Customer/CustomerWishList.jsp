@@ -14,7 +14,7 @@ System.out.println("세션연결 실패:"+userId);
 System.out.println("세션연결 실패:"+userName);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 //LogOut.jsp로 이동	
-response.sendRedirect("../LogOut.do");	
+// response.sendRedirect("../LogOut.do");	
 }else{
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 System.out.println("세션연결 성공:"+userId);
@@ -59,30 +59,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 	<jsp:include page="/header.jsp" />
 
-	<!--:Search bar modal-->
-	<div id="modal-search-bar-2" class="modal fade" tabindex="-1"
-		aria-labelledby="modal-search-bar-2" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-top modal-md">
-			<div class="modal-content position-relative border-0">
-				<div class="position-relative px-4">
-					<div
-						class="position-absolute end-0 width-7x top-0 d-flex me-4 align-items-center h-100 justify-content-center">
-						<button type="button" class="btn-close w-auto small"
-							data-bs-dismiss="modal" aria-label="Close">Cancel</button>
-					</div>
-					<form class="mb-0">
-						<div class="d-flex align-items-center">
-							<div class="d-flex flex-grow-1 align-items-center">
-								<i class="bx bx-search fs-4"></i> <input type="text"
-									placeholder="Search...."
-									class="form-control shadow-none border-0 flex-grow-1 form-control-lg">
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<!--Main content-->
 	<main>
@@ -145,69 +121,41 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										<th></th>
 									</tr>
 								</thead>
-						<c:forEach items="${vo}" var="vo">
 								<tbody>
+									<c:forEach items="${vo}" var="vo">
 
-									<tr>
-										<td><img src="${vo.exhibition_image}"
-											class="width-7x rounded-3"></td>
-										<td><a href="#" class="text-dark h5">${vo.exhibition_title}</a></td>
-										<td>${vo.exhibition_total_date}</td>
-										<td>
-<!-- 										<input type="number" min="1" value="1" max="5" -->
-<!-- 											name="" -->
-<!-- 											class="form-control border-0 shadow-none rounded-0 bg-transparent"> -->
-											<div class="form-control border-0 shadow-none rounded-0 bg-transparent">
-											${vo.exhibition_location}
-											</div>
-										</td>
-										<td>${vo.exhibition_price}원</td>
-										<td><button class="btn-close text-center">
-												<svg xmlns="http://www.w3.org/2000/svg" height="16"
-													viewBox="0 0 24 24" width="20" fill="currentColor">
-                          <path
-														d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
-                        </svg>
-											</button></td>
-									</tr>
-							
+										<tr>
+											<td><img src="${vo.exhibition_image}" class="width-7x rounded-3"></td>
+											<td style="width: 36%">
+												<a href="/exhibition/ExhibitionDetail.do?id=${vo.exhibition_id}" class="text-dark h5">${vo.exhibition_title}</a>
+											</td>
+											<td>${vo.exhibition_total_date}</td>
+											<td>${vo.exhibition_location}</td>
+											<td class="text-truncate">${vo.exhibition_price} won</td>
+											<td>
+												<button class="btn-close text-center">
+													<svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24" width="20" fill="currentColor">
+                          								<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
+                        							</svg>
+												</button>
+											</td>
+										</tr>
+
 									</c:forEach>
 								</tbody>
 							</table>
 						</div>
 
-						<!--Update cart button-->
-						<div
-							class="text-center d-md-flex align-items-center border-bottom pb-4 mb-4">
-							<div class="col-md-7 mb-4 mb-md-0">
-								<!-- <div class="d-grid d-sm-flex flex-grow-1 align-items-center">
-                  <input type="text" class="form-control mb-2 mb-sm-0 me-sm-2" placeholder="Coupon code" name="">
-                  <button type="button" class="btn btn-secondary flex-shrink-0">
-                    <i class="bx bx-tag align-middle"></i> Apply Coupon </button>
-                </div> -->
-							</div>
-							<div class="col-md-5 text-end">
-								<div class="d-flex flex-column h-100 justify-content-end">
-									<strong class="text-muted d-block mb-2 fs-6">Cart
-										total</strong>
-									<h5 class="mb-0 ms-3 h2">37,200</h5>
-								</div>
-							</div>
-						</div>
 						<!--Cart checkout-->
-						<div
-							class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-center">
+						<div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-center">
 							<!--전시회 목록보기-->
 							<div class="mb-3 mb-sm-0">
-								<a href="demo-shop-products.html"
-									class="link-hover-underline text-body"><i
-									class="bx bx-arrow-left fs-6 align-middle me-1"></i>Continue
-									exhibition </a>
+								
 							</div>
 							<!--예매하기 버튼-->
 							<div>
-								<a href="/exhibition/ExhibitionTicketingSelect.do?id=<%=userId%>" class="btn btn-primary">Move
-									to ticketing </a>
+								<a href="/exhibition/ExhibitionDate.do" class="btn btn-primary">Continue
+									exhibition</a>
 							</div>
 						</div>
 					</div>
@@ -220,18 +168,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 	<jsp:include page="/footer.jsp" />
 
-	<!-- :Back to top -->
-	<a href="#top"
-		class="position-fixed toTop d-none d-sm-flex btn btn-light rounded-circle p-0 flex-center width-4x height-4x z-index-fixed end-0 bottom-0 mb-3 me-3">
-		<i class="bx bxs-up-arrow align-middle lh-1"></i>
-	</a>
-
-
-	<!--cursor-->
-	<div class="cursor">
-		<div class="cursor__inner"></div>
-	</div>
-
 
 </body>
 
@@ -239,6 +175,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <script src="/resources/js/theme.bundle.js"></script>
 <script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
 <script src="/resources/vendor/node_modules/js/cursor.js"></script>
-<script>history.replaceState({}, null, location.pathname);</script>
+<!-- <script>history.replaceState({}, null, location.pathname);</script> -->
 
 </html>
