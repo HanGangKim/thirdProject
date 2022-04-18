@@ -17,7 +17,7 @@ public interface ReviewService {
 	void updateReview(ReviewVO vo);
 
 	// 글 삭제
-	void deleteReview(ReviewVO vo);
+	void deleteReview(HashMap map);
 	
 //	// 리뷰 전체 조회
 //	List<ReviewVO> getReviewList(HashMap map);

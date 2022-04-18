@@ -170,9 +170,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								<div class="d-grid pb-4 pb-md-0">
 									<a href="/exhibition/getMyReview.do?review_id=${vo.review_id}" class="btn btn-primary" style="margin-bottom: 10px;">후기 보기</a>
 										
-									<!-- 차후 form 태그 변경예정  -->
-									<a href="CustomerExhibitionReviewWriteTest.do"
-										class="btn btn-dark">후기 삭제</a>
+									<!-- 후기 삭제 -->
+									<a href="/exhibition/deleteReview.do?customer_id=<%=userId%>&review_id=${vo.review_id}" class="btn btn-dark">후기 삭제</a>
 								</div>
 
 							</div>

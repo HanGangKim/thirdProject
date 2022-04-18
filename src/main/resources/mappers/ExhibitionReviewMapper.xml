@@ -54,12 +54,10 @@
       WHERE REVIEW_ID  =#{review_id} 
     </update>
 	
-	
-
-
-	<delete id="deleteReview">
+	<!-- 리뷰 삭제  -->
+	<delete id="deleteReview" parameterType="Hashmap">
 		DELETE
 		FROM REVIEW
-		WHERE REVIEW_ID = #{seq}
+		WHERE REVIEW_ID = ${review_id}
 	</delete>
 </mapper>

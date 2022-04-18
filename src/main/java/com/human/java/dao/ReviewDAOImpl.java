@@ -44,29 +44,16 @@ public class ReviewDAOImpl implements ReviewDAO{
 	}
 
 	@Override
-	public void deleteReview(ReviewVO vo) {
+	public void deleteReview(HashMap map) {
 		
 		System.out.println("===============");
-		System.out.println("deleteReview DAO 호출");
-		System.out.println("ReviewVO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("getMyReviewList 서비스 호출");
 		System.out.println("===============");
-		mybatis.delete("exhibitionReviewMapper.deleteReview", vo);
+		
+		
+		mybatis.delete("exhibitionReviewMapper.deleteReview", map);
 	}
 
-//	// 모든 리뷰 리스트
-//	@Override
-//	public List<ReviewVO> getReviewList(HashMap map) {
-//		
-//		System.out.println("===============");
-//		System.out.println("getReviewList DAO 호출");
-////			System.out.println("DAO : "+map.get("searchCondition"));
-////			System.out.println("DAO : "+map.get("searchKeyword"));
-//		System.out.println("===============");
-//		
-//		return mybatis.selectList("exhibitionReviewMapper.getReviewList" , map);
-//	}
-		
-	// 모든 리뷰 리스트
 	@Override
 	public List<ReviewVO> getReviewList(HashMap map, int endRow) {
 		

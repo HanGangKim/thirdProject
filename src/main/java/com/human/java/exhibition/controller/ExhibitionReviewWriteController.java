@@ -44,18 +44,31 @@ public class ExhibitionReviewWriteController {
 		return "/Customer/CustomerExhibitionMyReviewList";
 	}
 
-	// 나의 글 삭제(플래그 업데이트 or 삭제)
-	@RequestMapping("deleteReview.do")
-	public String deleteReview(ReviewVO vo) {
-		
-		System.out.println("===============");
-		System.out.println("deleteReview.do 호출");
-		System.out.println("ReviewVO : " + ToStringBuilder.reflectionToString(vo));
-		System.out.println("===============");
-		
-		reviewService.deleteReview(vo);
-		return "/Exhibition/ExhibitionReviewListTest";
-	}
+	// 나의 글 삭제
+		@RequestMapping("deleteReview.do")
+		public String deleteReview(ReviewVO vo , Model model) {
+			
+			String id = vo.getCustomer_id();
+			int review_id = vo.getReview_id();
+			
+			System.out.println("customer_id:"+id);
+			
+			// [1] 삭제
+	 		System.out.println("===============");
+			System.out.println("deleteReview.do 호출");
+			System.out.println("ReviewVO : " + ToStringBuilder.reflectionToString(vo));
+			System.out.println("===============");
+			HashMap delete_map = new HashMap();
+			delete_map.put("review_id", review_id);
+			reviewService.deleteReview(delete_map);
+			
+			
+			//[2] 조회
+			HashMap map = new HashMap();
+			map.put("id", id);
+			model.addAttribute("myReviewList", reviewService.getMyReviewList(map , id));
+			return "/Customer/CustomerExhibitionMyReviewList"; 
+		}
 
 	// 나의 글 수정
 	@RequestMapping("updateReview.do")
@@ -77,5 +90,8 @@ public class ExhibitionReviewWriteController {
 		model.addAttribute("myReviewList", reviewService.getMyReviewList(map , id));
 		return "/Customer/CustomerExhibitionMyReviewList";
 	}
+	
+	
+	
 
 }
