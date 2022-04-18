@@ -16,7 +16,7 @@ public interface ReviewDAO {
 	void updateReview(ReviewVO vo);
 
 	// 글 삭제
-	void deleteReview(ReviewVO vo);
+	void deleteReview(HashMap map);
 	
 //	// 글 목록 조회
 //	List<ReviewVO> getReviewList(HashMap map);

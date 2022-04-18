@@ -42,14 +42,13 @@ public class ReviewServiceImpl implements ReviewService{
 	}
 
 	@Override
-	public void deleteReview(ReviewVO vo) {
+	public void deleteReview(HashMap map) {
 		
 		System.out.println("===============");
 		System.out.println("deleteReview 서비스 호출");
-		System.out.println("ReviewVO : " + ToStringBuilder.reflectionToString(vo));
 		System.out.println("===============");
 		
-		reviewDAO.deleteReview(vo);
+		reviewDAO.deleteReview(map);
 		
 	}
 
