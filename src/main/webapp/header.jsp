@@ -52,7 +52,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <body>
 
 	<!-- 헤더 시작 -->
-	<header class="z-index-fixed header-transparent header-boxed header-sticky">
+	<header class="z-index-fixed header-transparent header-boxed">
 
 		<div class="navbar-boxed">
 			<div class="container">

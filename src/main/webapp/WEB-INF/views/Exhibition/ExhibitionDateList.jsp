@@ -28,16 +28,21 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="/resources/img/favicon.ico" type="image/ico">
-<link rel="stylesheet"
-	href="/resources/vendor/node_modules/css/choices.min.css">
-<link rel="stylesheet"
-	href="/resources/vendor/node_modules/css/simplebar.min.css">
-<link rel="stylesheet"
-	href="/resources/vendor/node_modules/css/nouislider.min.css">
+<link rel="stylesheet" href="/resources/vendor/node_modules/css/choices.min.css">
+<link rel="stylesheet" href="/resources/vendor/node_modules/css/simplebar.min.css">
+<link rel="stylesheet" href="/resources/vendor/node_modules/css/nouislider.min.css">
 	
-<!--Icons-->
-<link href="/resources/fonts/boxicons/css/boxicons.min.css"
-	rel="stylesheet">
+<!--Box Icons-->
+<link rel="stylesheet" href="/resources/fonts/boxicons/css/boxicons.min.css" />
+
+<!--Iconsmind Icons-->
+<link rel="stylesheet" href="/resources/fonts/iconsmind/iconsmind.css" />
+
+<!--Select style-->
+<link rel="stylesheet" href="/resources/vendor/node_modules/css/choices.min.css">
+
+<!--Swiper slider-->
+<link rel="stylesheet" href="/resources/vendor/node_modules/css/swiper-bundle.min.css" />
 	
 <!-- Aos Animations CSS -->
 <link href="/resources/vendor/node_modules/css/aos.css" rel="stylesheet">
@@ -45,16 +50,15 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <!--Google fonts-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap"
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap"
 	rel="stylesheet">
 	
-<!-- Main CSS -->
-<link href="/resources/css/theme-shop.min.css" rel="stylesheet">
-
 <!--Flatpickr-->
 <link rel="stylesheet"
 	href="/resources/vendor/node_modules/css/flatpickr.min.css">
+
+<!-- Main CSS -->
+<link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
 
 <title>Exhibition</title>
@@ -84,9 +88,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	<jsp:include page="/header.jsp" />
 
 
-	<!--Main content-->
 	<main>
-
 		<!--Page header start-->
 		<section class="position-relative bg-dark text-white overflow-hidden">
 			<svg class="position-absolute end-0 top-0 text-primary width-14x h-auto w-lg-20"
@@ -148,8 +150,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		<!-- 전시 리스트 -->
 		<section class="position-relative bg-white">
 			<div class="container py-9 py-lg-11 position-relative">
-
-
 				<div class="row mb-5"  id="more_list">
 					<c:forEach items="${vo}" var="vo">
 						<div class="col-md-6 col-xl-4 mb-4">
@@ -187,6 +187,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 				<input type='hidden' id='totalDate' value='${param.totalDate }' />
 			</div>
 		</section>
+		<!-- /전시 리스트 -->
 
 	</main>
 
@@ -200,15 +201,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 <!--Select scripts-->
 <script src="/resources/vendor/node_modules/js/choices.min.js"></script>
-
-<!--Custom scrollbar-->
-<!-- <script src="/resources/vendor/node_modules/js/simplebar.min.js"></script> -->
-
-<!--Pricing range-->
-<!-- <script src="/resources/vendor/node_modules/js/nouislider.min.js"></script> -->
-
-<!--App calendar Plugin-->
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.js"></script>
 
 <!-- 달력 선택 스크립트 -->
 <script src="/resources/vendor/node_modules/js/flatpickr.min.js"></script>
