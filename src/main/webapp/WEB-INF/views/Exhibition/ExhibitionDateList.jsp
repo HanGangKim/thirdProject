@@ -60,6 +60,19 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <title>Exhibition</title>
 </head>
 
+<!-- 오늘날짜 뽑는 스크립트 -->
+<script type="text/javascript">
+
+	window.onload = function(){
+		var date = new Date();
+		var date1 = date.toISOString().substring(0, 10)
+		var date2 = new Date(date.setDate(date.getDate()+14)).toISOString().substring(0, 10);
+											
+		document.getElementById('now_date').value = date1 + ' to ' + date2	
+	
+	}
+</script>
+
 <body>
 	<!--:Preloader Spinner-->
 	<div class="spinner-loader bg-gradient-secondary text-white">
@@ -76,21 +89,20 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 		<!--Page header start-->
 		<section class="position-relative bg-dark text-white overflow-hidden">
-			<svg
-				class="position-absolute end-0 top-0 text-primary width-14x h-auto w-lg-20"
+			<svg class="position-absolute end-0 top-0 text-primary width-14x h-auto w-lg-20"
 				width="450" height="426" viewBox="0 0 450 426" fill="none"
 				xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clipPageHeader)">
-          <path fill-rule="evenodd" clip-rule="evenodd"
+		        <g clip-path="url(#clipPageHeader)">
+		          <path fill-rule="evenodd" clip-rule="evenodd"
 					d="M298.999 -192.241C355.489 -184.29 381.574 -118.483 421.706 -77.9221C452.436 -46.8634 475.477 -12.1582 507.054 18.0386C563.019 71.558 665.455 91.3474 678.539 167.687C690.554 237.781 626.362 310.281 562.498 341.514C500.548 371.812 427.798 307.451 360.652 323.154C299.843 337.375 269.726 418.21 207.597 424.514C139.082 431.466 55.4816 414.802 16.3827 358.087C-23.1945 300.678 21.5018 222.882 20.5205 153.15C19.6978 94.6861 -14.5698 34.0886 11.0842 -18.4478C36.6541 -70.8118 102.021 -85.7884 151.898 -115.896C200.173 -145.036 243.168 -200.099 298.999 -192.241Z"
 					fill="currentColor" />
-        </g>
-        <defs>
-          <clipPath id="clipPageHeader">
-            <rect width="450" height="426" fill="white" />
-          </clipPath>
-        </defs>
-      </svg>
+		        </g>
+		        <defs>
+		          <clipPath id="clipPageHeader">
+		            <rect width="450" height="426" fill="white" />
+		          </clipPath>
+		        </defs>
+			</svg>
 			<img src="/resources/img/vectors/dec-brush1.svg"
 				class="position-absolute end-0 top-0 me-2 mt-2 me-lg-5 mt-lg-5 fill-warning width-8x h-auto"
 				data-inject-svg alt="">
@@ -110,11 +122,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			</div>
 		</section>
 		
-		<section class="sticky-lg-top top-0">
+		<!-- 날짜 검색 섹션 -->
+		<section class="top-0">
 			<div class="container">
-
-				<form class="position-relative z-index-1 mt-n7 px-3 pb-3 pt-3 bg-white border rounded-3 needs-validation"
-					novalidate action="<c:url value="ExSearchTest.do"/>"
+				<form class="position-relative z-index-1 mt-n7 px-3 pb-3 pt-3 bg-white border rounded-3" action="<c:url value="ExSearchTest.do"/>"
 					style="margin-bottom: 0px;">
 					<div class="row mx-0 g-2 align-items-center">
 						<div class="col-md-9 col-lg-10">
@@ -130,9 +141,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						</div>
 					</div>
 				</form>
-
 			</div>
 		</section>
+		<!-- /날짜 검색 섹션 -->
 		
 		<!-- 전시 리스트 -->
 		<section class="position-relative bg-white">
@@ -186,32 +197,31 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 <!-- scripts -->
 <script src="/resources/js/theme.bundle.js"></script>
-<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
 
 <!--Select scripts-->
 <script src="/resources/vendor/node_modules/js/choices.min.js"></script>
 
 <!--Custom scrollbar-->
-<script src="/resources/vendor/node_modules/js/simplebar.min.js"></script>
+<!-- <script src="/resources/vendor/node_modules/js/simplebar.min.js"></script> -->
 
 <!--Pricing range-->
-<script src="/resources/vendor/node_modules/js/nouislider.min.js"></script>
+<!-- <script src="/resources/vendor/node_modules/js/nouislider.min.js"></script> -->
 
 <!--App calendar Plugin-->
-<script
-	src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.js"></script>
 
 <!-- 달력 선택 스크립트 -->
 <script src="/resources/vendor/node_modules/js/flatpickr.min.js"></script>
 <script>
-        let pickr = document.querySelectorAll("[data-flatpickr]");
-        pickr.forEach(el => {
-            const t = {
-                ...el.dataset.flatpickr ? JSON.parse(el.dataset.flatpickr) : {},
-            }
-            new flatpickr(el, t)
-        }
-        );</script>
+	let pickr = document.querySelectorAll("[data-flatpickr]");
+	pickr.forEach(el => {
+	    const t = {
+	        ...el.dataset.flatpickr ? JSON.parse(el.dataset.flatpickr) : {},
+	    }
+	    new flatpickr(el, t)
+	}
+	);
+</script>
 
 
 
@@ -275,18 +285,5 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 </script>
 
 
-<!-- 오늘날짜 뽑는 스크립트 -->
-<script type="text/javascript">
-
-	window.onload = function(){
-		var date = new Date();
-		var date1 = date.toISOString().substring(0, 10)
-		var date2 = new Date(date.setDate(date.getDate()+14)).toISOString().substring(0, 10);
-											
-		document.getElementById('now_date').value = date1 + ' to ' + date2	
-	
-	}
-		
-</script>
 
 </html>
