@@ -23,7 +23,7 @@ public class StartController {
 			System.out.println("comingExhibition 컨트롤");
 			ModelAndView mv = new ModelAndView();
 			if(request.getServletPath().equals("NoneMemberMain.do")) {
-				mv.setViewName("NoneMemberMain");
+				mv.setViewName("CustomerMain");
 			}else if(request.getServletPath().equals("CustomerMain.do")) {
 				mv.setViewName("CustomerMain");
 			}

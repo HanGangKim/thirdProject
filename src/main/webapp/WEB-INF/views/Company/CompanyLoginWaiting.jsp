@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
 <%request.setCharacterEncoding("UTF-8");%>
 <%
 Object userId = session.getAttribute("userId");
@@ -19,9 +18,8 @@ System.out.println("세션연결 성공:"+userId);
 System.out.println("세션연결 성공:"+userName);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 // LogOut.jsp로 이동
-// 회원가입 성공은 세션이 있으면 못들어가게 Redirect 
+// 로그인 실패 페이지는 세션이 있으면 못들어가게 Redirect 
 response.sendRedirect("../LogOut.do");
-
 }
 %>
 <!doctype html>
@@ -78,12 +76,11 @@ response.sendRedirect("../LogOut.do");
 							class="width-10x height-10x rounded-circle position-relative bg-success text-white flex-center mb-4">
 							<i class="bx bx-check lh-1 display-4 fw-normal"></i>
 						</div>
-						<h1 class="display-2 mb-3">Thanks for your message!</h1>
-						<p class="mb-5 lead mx-auto">We’ve just received your message
-							and will be contacting you as soon as possible. In the meantime
-							you can explore our recent projects.</p>
-						<a href="/LandingLogin.do" class="btn btn-outline-primary btn-lg">
-							Sign In</a>
+						<h1 class="display-2 mb-3">가입 심사중입니다.</h1>
+						<p class="mb-5 lead mx-auto">가입 승인까지는 2 ~ 3일정도 소요됩니다.</p>
+						<p class="mb-5 lead mx-auto">일반회원으로는 누구나 가입할 수 있어요!</p>
+						<a href="/customer/CustomerSignUp.do" class="btn btn-outline-primary btn-lg">
+						Customer Sign In</a>
 
 					</div>
 				</div>

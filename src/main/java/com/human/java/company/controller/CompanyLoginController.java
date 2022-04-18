@@ -34,17 +34,21 @@ public class CompanyLoginController {
 
 		// 로그인 실패
 		if (result == null) {
+			System.out.println("===============");
 			System.out.println("로그인 실패");
-			mv.setViewName("/Customer/CustomerLoginFail");
+			System.out.println("===============");
+			
+			mv.setViewName("/Company/CompanyLoginFail");
 			return mv;
 
 		// 로그인 성공
-		} else {
+		} else if(result.getCompany_flag().equals("D")){
 			System.out.println("[" + result.getCompany_id() + "]" + "로그인 성공");
 			
 			// CompanyVO 확인
 			System.out.println("===============");
 			System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
+			System.out.println("Company Flag:"+result.getCompany_flag());
 			System.out.println("===============");
 
 			session.setAttribute("userName", result.getCompany_name());
@@ -53,9 +57,45 @@ public class CompanyLoginController {
 
 		
 			mv.addObject("vo", exhibitionService.comingExhibition(exvo));
-			mv.setViewName("CustomerMain");
+			mv.setViewName("/Company/CompanyMain");
 			
 			return mv;
+		
+		// 승인대기 	
+		} else if (result.getCompany_flag().equals("W")) {
+			
+			// CompanyVO 확인
+			System.out.println("===============");
+			System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
+			System.out.println("승인대기");
+			System.out.println("Company Flag:"+result.getCompany_flag());
+			System.out.println("===============");
+			mv.setViewName("/Company/CompanyLoginWaiting");
+			return mv;
+			
+		// 승인거절
+		}else if (result.getCompany_flag().equals("R")) {
+			
+			// CompanyVO 확인
+			System.out.println("===============");
+			System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
+			System.out.println("승인거절");
+			System.out.println("Company Flag:"+result.getCompany_flag());
+			System.out.println("===============");
+			mv.setViewName("/Company/CompanyLoginReject");
+			return mv;
+			
+		}else {
+			
+			// CompanyVO 확인
+			System.out.println("===============");
+			System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
+			System.out.println("에러발생");
+			System.out.println("Company Flag:"+result.getCompany_flag());
+			System.out.println("===============");
+			mv.setViewName("/Company/CompanyErrorPage");
+			return mv;
+				
 		}
 		 
 	}

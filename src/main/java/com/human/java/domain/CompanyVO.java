@@ -47,12 +47,15 @@ public class CompanyVO {
 	public void setCompany_regnum(String company_regnum) {
 		this.company_regnum = company_regnum;
 	}
-	public String getCustomer_flag() {
+	public String getCompany_flag() {
 		return company_flag;
 	}
-	public void setCustomer_flag(String customer_flag) {
-		this.company_flag = customer_flag;
+	public void setCompany_flag(String company_flag) {
+		this.company_flag = company_flag;
 	}
+	
+	
+	
 	
 	
 }
