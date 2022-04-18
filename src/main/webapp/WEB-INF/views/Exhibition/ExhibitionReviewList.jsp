@@ -30,19 +30,16 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <link rel="icon" href="/resources/img/favicon.ico" type="image/ico" />
 
 <!--Box Icons-->
-<link rel="stylesheet"
-	href="/resources/fonts/boxicons/css/boxicons.min.css" />
+<link rel="stylesheet" href="/resources/fonts/boxicons/css/boxicons.min.css" />
 
 <!--Iconsmind Icons-->
 <link rel="stylesheet" href="/resources/fonts/iconsmind/iconsmind.css" />
 
 <!--Select style-->
-<link rel="stylesheet"
-	href="/resources/vendor/node_modules/css/choices.min.css">
+<link rel="stylesheet" href="/resources/vendor/node_modules/css/choices.min.css">
 
 <!--Swiper slider-->
-<link rel="stylesheet"
-	href="/resources/vendor/node_modules/css/swiper-bundle.min.css" />
+<link rel="stylesheet" href="/resources/vendor/node_modules/css/swiper-bundle.min.css" />
 	
 <!-- Aos Animations CSS -->
 <link href="/resources/vendor/node_modules/css/aos.css" rel="stylesheet">
@@ -50,12 +47,12 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <!--Google fonts-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap"
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap"
 	rel="stylesheet">
 	
 <!-- Main CSS -->
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
+
 
 <title>Review</title>
 </head>
@@ -74,8 +71,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	<main>
 		<!--Page header start-->
 		<section class="position-relative bg-dark text-white overflow-hidden">
-			<svg
-				class="position-absolute end-0 top-0 text-primary width-14x h-auto w-lg-20"
+			<svg class="position-absolute end-0 top-0 text-primary width-14x h-auto w-lg-20"
 				width="450" height="426" viewBox="0 0 450 426" fill="none"
 				xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clipPageHeader)">
@@ -133,7 +129,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		<!-- 리뷰 리스트 -->
 		<section class="position-relative bg-white">
 			<div class="container py-9 py-lg-11">
-			
 				<div class="row mb-5" id="more_list">
 					<c:forEach items="${reviewList}" var="vo" varStatus="status">
 						<div class="col-md-6 col-lg-4">
@@ -269,6 +264,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 				<input type='hidden' id='totalReview' value='${param.totalReview }' />
 			</div>
 		</section>
+		<!-- /리뷰 리스트 -->
 	</main>
 
 

@@ -110,7 +110,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	
 	<!-- :Back to top -->
 	<a href="#top"
-		class="position-fixed toTop d-none d-sm-flex btn btn-light rounded-circle p-0 flex-center width-4x height-4x z-index-fixed end-0 bottom-0 mb-3 me-3">
+		class="position-fixed toTop d-none d-sm-flex btn btn-light rounded-circle p-0 flex-center width-4x height-4x z-index-fixed end-0 bottom-0 mb-6 me-6">
 		<i class="bx bxs-up-arrow align-middle lh-1"></i>
 	</a>
 
