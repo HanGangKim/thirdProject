@@ -66,6 +66,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		<div class="spinner-border text-primary" role="status"></div>
 		<span class="small d-block ms-2">Loading...</span>
 	</div>
+	
 
 	<jsp:include page="/header.jsp" />
 	
@@ -107,9 +108,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			</div>
 		</section>
 
-		<section class="sticky-lg-top top-0">
+		<!-- 전시회 검색 섹션 -->
+		<section class="top-0">
 			<div class="container">
-
 				<form class="position-relative z-index-1 mt-n7 px-3 pb-3 pt-3 bg-white border rounded-3">
 					<div class="row mx-0 g-2 align-items-center">
 						<div class="col-md-9 col-lg-10">
@@ -125,9 +126,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						</div>
 					</div>
 				</form>
-				
 			</div>
 		</section>
+		<!-- /전시회 검색 섹션 -->
 
 		<!-- 리뷰 리스트 -->
 		<section class="position-relative bg-white">
@@ -271,9 +272,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	</main>
 
 
-	
-
-
 	<jsp:include page="/footer.jsp" />
 
 
@@ -281,6 +279,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 <!-- scripts -->
 <script src="/resources/js/theme.bundle.js"></script>
+
 <!--Select scripts-->
 <script src="/resources/vendor/node_modules/js/choices.min.js"></script>
 
