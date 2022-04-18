@@ -35,6 +35,15 @@ public class CompanyServiceImpl implements CompanyService{
 		return companyDAO.companyLogin(vo);
 	}
 
+	@Override
+	public int idCheck(CompanyVO vo, String id) {
+		if(companyDAO.idCheck(id)==0) {
+			return 0;
+		} else {
+			return 1;
+		}
+	}
+
 	
 	
 }

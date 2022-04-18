@@ -7,4 +7,6 @@ public interface CompanyDAO {
 	public int companyInsert(CompanyVO vo);
 	
 	public CompanyVO companyLogin(CompanyVO vo);
+	
+	public int idCheck(String id);
 }

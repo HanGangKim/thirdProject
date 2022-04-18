@@ -72,7 +72,7 @@ response.sendRedirect("../LogOut.do");
 							details...</p>
 							
 						<div class="position-relative">
-							<form action="/company/companySignup.do" method="get">
+							<form action="/company/companySignup.do" method="get" id="loginForm">
 							
 								<!-- 회사 아이디 -->
 								<div class="input-icon-group mb-3">
@@ -80,6 +80,7 @@ response.sendRedirect("../LogOut.do");
 									<input type="text" class="form-control" required
 										id="signUpid" placeholder="Company login id" name="company_id">
 								</div>
+								
 								
 								<!-- 비밀번호 입력 -->
 								<div class="input-icon-group mb-3">
@@ -92,7 +93,7 @@ response.sendRedirect("../LogOut.do");
 								<div class="input-icon-group mb-3">
 									<span class="input-icon"> <i class="bx bx-lock-open"></i> </span> 
 									<input type="password" class="form-control" required
-										id="signUpConfirmPassword" placeholder="Confirm password">
+										id="signUpConfirmPassword" placeholder="Confirm password" name="company_password_confirm">
 								</div>
 								
 								<!-- 회사 이름 -->
@@ -106,7 +107,7 @@ response.sendRedirect("../LogOut.do");
 								<div class="input-icon-group mb-3">
 									<span class="input-icon"> <i class="bx bx-mobile"></i> </span> 
 									<input type="text" class="form-control" required
-										id="signUpPH" placeholder="Company phone number" name="company_ph">
+										id="signUpPH" placeholder="Company phone number 010-xxxx-xxxx" name="company_ph">
 								</div>
 								
 								<!-- 회사 이메일 -->
@@ -118,25 +119,26 @@ response.sendRedirect("../LogOut.do");
 
 								<!-- 사업자 번호 -->
 								<div class="input-icon-group mb-3">
-									<span class="input-icon"> <i class="bx bx-envelope"></i></span> 
+									<span class="input-icon"> <i class="bx bx-mobile"></i></span> 
 									<input type="text" class="form-control" required
 										id="signUpCRN"
-										placeholder="Company corporate registration number" name="company_regnum">
+										placeholder="Registration Number xxx-xx-xxxxx" name="company_regnum">
 								</div>
 
 								<!-- 업체속성 -->
-								<div class="input-icon-group mb-3">
+								<div class="input-icon-group mb-3" style="display:none">
 									<span class="input-icon"> <i class="bx bx-envelope"></i> </span> 
 									<select autocomplete="false" id="flag" class="form-control"
 										data-choices='{"searchEnabled":false}'>
-										<Option>C</Option>
-										<Option selected>M</Option>
+										<Option>R</Option>
+										<Option>D</Option>
+										<Option selected>W</Option>
 									</select>
 								</div>
 								
 								<!-- 회원가입 마치기 -->
 								<div class="d-grid">
-									<button class="btn btn-primary" type="submit">Sign Up</button>
+									<input class="btn btn-primary" type="submit" id="next" disabled="disabled" value="Sign Up">
 								</div>
 							</form>
 
@@ -145,7 +147,9 @@ response.sendRedirect("../LogOut.do");
 								Already have an account? <a href="page-account-signin.html"
 									class="ms-2 text-dark fw-semibold link-decoration">Sign in</a>
 							</p>
-							
+							<div class="position-relative d-flex align-items-center py-3" name="errorMassage" id="errorMassage">
+								
+							</div>
 							<!--Divider-->
 							<div class="d-flex align-items-center py-3">
 								<span class="flex-grow-1 border-bottom pt-1"></span>
@@ -167,5 +171,138 @@ response.sendRedirect("../LogOut.do");
 
 <!-- scripts -->
 	<script src="/resources/js/theme.bundle.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	
+	var form = document.getElementById('loginForm');
+	var next = document.getElementById('next');
+	
+	 form.addEventListener('input', () => {
+	    	if (!(input_ok())){
+	    		next.disabled = true;
+	    	} else{
+	    		next.disabled = false;
+	    	}
+//	     	next.disabled = !(input_ok());
 
+			$('#signUpid').focusout(function(){
+	        	let userId = $('#signUpid').val();
+	        	
+	        	$.ajax({
+	        		url:"./checkId.do",
+	        		type:"post",
+	        		data:{'userId':userId},
+	        		success : function(result) {
+
+	    				if(result == 1){
+	    					$('#errorMassage').html('사용할 수 없는 아이디 입니다.');
+	    					$('#errorMassage').attr('color','red');
+	    					next.disabled = true;
+	    				} else{
+	    					$('#errorMassage').html('사용할 수 있는 아이디 입니다.');
+	    					$('#errorMassage').attr('color','green');
+	    					if (pwd&&mail&&regnum&&ph){
+	    						next.disabled = false;
+	    					}
+	    				}
+
+	    			},
+	    			error : function() {
+	    				alert("서버요청 실패");
+	    			}
+	        	})
+	        	
+	        })
+	        
+	 })
+	 function input_ok(){
+
+		const pwd = checkPassword(loginForm.company_id.value, form.company_password.value, form.company_password_confirm.value);
+		const mail = checkMail(form.company_email.value);
+		const regnum = checkRegnum(form.company_regnum.value);
+		const ph = checkph(form.company_ph.value);
+		
+		if (pwd&&mail&&regnum&&ph){
+			return true;
+		} else {
+			if(!(pwd)) {
+				pass = document.createElement('span');
+				pass.innerText = '회원가입 양식이 올바르지 않습니다(비밀번호)';
+				}
+			if(!(mail)) {
+				pass = document.createElement('span');
+				pass.innerText = '회원가입 양식이 올바르지 않습니다(이메일)';
+				}
+			if(!(regnum)) {
+				pass = document.createElement('span');
+				pass.innerText = '회원가입 양식이 올바르지 않습니다(성별)';
+				}
+			if(!(ph)) {
+				pass = document.createElement('span');
+				pass.innerText = '회원가입 양식이 올바르지 않습니다(전화번호)';
+				}
+			return false;
+		}
+		
+
+        }
+      function checkPassword(id, password1, password2) {
+            //비밀번호가 입력되었는지 확인하기
+            if (!checkExistData(password1, "비밀번호를"))
+                return false;
+            //비밀번호 확인이 입력되었는지 확인하기
+            if (!checkExistData(password2, "비밀번호 확인을"))
+                return false;
+     
+            
+            //비밀번호와 비밀번호 확인이 맞지 않다면..
+            if (password1 != password2) {
+
+                return false;
+            }      
+            return true; //확인이 완료되었을 때
+        }    
+
+        function checkph(ph){
+        	var phRegExp = /^[0-1]+[0-9]*[-]{1}[0-9]+[0-9]*[-]{1}[0-9]{1,4}$/;
+            if (!phRegExp.test(ph)) {
+
+                return false;
+            }
+            return true;
+        }
+      
+        function checkMail(mail) {
+            //mail이 입력되었는지 확인하기
+            if (!checkExistData(mail, "이메일을"))
+                return false;
+     
+            var emailRegExp = /^[A-Za-z0-9_]+[A-Za-z0-9]*[@]{1}[A-Za-z0-9]+[A-Za-z0-9]*[.]{1}[A-Za-z]{1,3}$/;
+            if (!emailRegExp.test(mail)) {
+
+                return false;
+            }
+            return true; //확인이 완료되었을 때
+        }
+
+    	function checkRegnum(regnum){
+    		if (!checkExistData(regnum, "사업자등록번호를"))
+                return false;
+     
+            var regnumExp = /([0-9]{3})-?([0-9]{2})-?([0-9]{5})$/;
+            if (!regnumExp.test(regnum)) {
+
+                return false;
+            }
+            return true; //확인이 완료되었을 때
+    	}
+
+        function checkExistData(value, dataName) {
+            if (value == "") {
+                return false;
+            }
+            return true;
+        }
+	
+</script>
 </html>

@@ -8,8 +8,11 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import com.human.java.domain.CompanyVO;
+import com.human.java.domain.CustomerVO;
 import com.human.java.domain.ExhibitionVO;
 import com.human.java.service.CompanyService;
 import com.human.java.service.ExhibitionService;
@@ -23,6 +26,18 @@ public class CompanyLoginController {
 	
 	@Autowired
 	private ExhibitionService exhibitionService;
+	
+	@ResponseBody
+	@RequestMapping("checkId.do")
+	public int checkId(@RequestParam("userId") String userId, CompanyVO vo) {
+		int check = companyService.idCheck(vo,userId);
+		if (check==1) {
+			return 1;
+		} else {
+			return 0;
+		}
+	}
+
 	
 	@RequestMapping("companyLogin.do")	
 	public ModelAndView companyLogin(CompanyVO vo, ExhibitionVO exvo, HttpSession session) {

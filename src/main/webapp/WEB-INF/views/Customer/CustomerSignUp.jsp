@@ -103,7 +103,7 @@ response.sendRedirect("../LogOut.do");
 								<div class="input-icon-group mb-3">
 									<span class="input-icon"> <i class="bx bx-id-card"></i>
 									</span> <input type="text" class="form-control" required id="signUpid"
-										name="customer_id" autofocus placeholder="login id">
+										name="customer_id" placeholder="login id">
 								</div>
 
 								<!-- 비밀번호 입력 -->
@@ -263,6 +263,39 @@ response.sendRedirect("../LogOut.do");
     		next.disabled = false;
     	}
 //     	next.disabled = !(input_ok());
+
+		$('#signUpid').focusout(function(){
+        	let userId = $('#signUpid').val();
+        	
+        	$.ajax({
+        		url:"./checkId.do",
+        		type:"post",
+        		data:{'userId':userId},
+        		success : function(result) {
+
+    				if(result == 1){
+    					$('#errorMassage').html('사용할 수 없는 아이디 입니다.');
+    					$('#errorMassage').attr('color','red');
+    					
+    					next.disabled = true;
+    				} else{
+    					$('#errorMassage').html('사용할 수 있는 아이디 입니다.');
+    					$('#errorMassage').attr('color','green');
+    					
+    					if (pwd&&mail&&gender&&ph){
+    						next.disabled = false;
+    					}
+    					
+    				}
+
+    			},
+    			error : function() {
+    				alert("서버요청 실패");
+    			}
+        	})
+        	
+        })
+
     })
 
      function input_ok(){
@@ -375,30 +408,7 @@ response.sendRedirect("../LogOut.do");
         }
 
     	
-        $('#signUpid').focusout(function(){
-        	let userId = $('#signUpid').val();
-        	
-        	$.ajax({
-        		url:"./checkId.do",
-        		type:"post",
-        		data:{'userId':userId},
-        		success : function(result) {
-
-    				if(result == 1){
-    					$('#errorMassage').html('사용할 수 없는 아이디 입니다.');
-    					$('#errorMassage').attr('color','red');
-    				} else{
-    					$('#errorMassage').html('사용할 수 있는 아이디 입니다.');
-    					$('#errorMassage').attr('color','green');
-    				}
-
-    			},
-    			error : function() {
-    				alert("서버요청 실패");
-    			}
-        	})
-        	
-        })
+        
 
   </script>
 
