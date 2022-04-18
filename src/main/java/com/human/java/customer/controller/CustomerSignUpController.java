@@ -5,6 +5,8 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.human.java.domain.CustomerVO;
@@ -38,6 +40,17 @@ public class CustomerSignUpController {
 		mv.addObject("result", result);
 		return mv;
 
+	}
+	
+	@ResponseBody
+	@RequestMapping("checkId.do")
+	public int checkId(@RequestParam("userId") String userId, CustomerVO vo) {
+		int check = customerService.idCheck(vo,userId);
+		if (check==1) {
+			return 1;
+		} else {
+			return 0;
+		}
 	}
 
 }

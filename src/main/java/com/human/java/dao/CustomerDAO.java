@@ -22,4 +22,6 @@ public interface CustomerDAO {
 	
 	public List<WishListVO> wishListSelectSearch(WishListVO wl, String id, HttpServletRequest request);
 	
+	public int idCheck( String id);
+	
 }
