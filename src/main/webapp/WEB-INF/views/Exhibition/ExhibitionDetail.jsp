@@ -123,7 +123,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									<div
 										class="d-md-flex align-items-center justify-content-between">
 										<h6>${vo.exhibition_location}</h6>
-										<a href="#" class="btn btn-outline-primary" data-bs-target="#modal-loc-bar-2" data-bs-toggle="modal">
+										<a href="#" class="btn btn-outline-dark" data-bs-target="#modal-loc-bar-2" data-bs-toggle="modal">
 											<i class="bx bx-location-plus fs-5"></i>
 										</a>
 									</div>
@@ -236,12 +236,11 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									class="form-control">
 							</div>
 							<!-- 전시회 아이디 -->
-<!-- 							<div class="mb-3"> -->
-<!-- 								<label class="form-label" for="profile_name">전시회 아이디</label> <input -->
-<!-- 									type="text" name="exhibition_id" placeholder="전시아이디" -->
-<%-- 									value="${vo.exhibition_id}" readonly="readonly" --%>
-<!-- 									class="form-control"> -->
-<!-- 							</div> -->
+							<div class="mb-3">
+								<input type="hidden" name="exhibition_id" placeholder="전시아이디"
+									value="${vo.exhibition_id}" readonly="readonly"
+									class="form-control">
+							</div>
 							<!-- 예매자 연락처 -->
 							<div class="mb-3">
 								<label class="form-label" for="profile_name">Phone</label> <input
@@ -260,12 +259,11 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 							<!-- 결제하기 섹션 -->
 							<!-- 기본값 -->
-<!-- 							<div class="mb-3"> -->
-<!-- 								<label class="form-label" for="profile_name">금액</label> <input -->
-<!-- 									type="number" name="totalCustomer" id="d_money" -->
-<%-- 									value="${vo.exhibition_price}" readonly="readonly" --%>
-<!-- 									class="form-control"> -->
-<!-- 							</div> -->
+							<div class="mb-3">
+								<input type="hidden" name="totalCustomer" id="d_money"
+									value="${vo.exhibition_price}" readonly="readonly"
+									class="form-control">
+							</div>
 							<!-- 인원 -->
 							<div class="mb-2">
 								<label class="form-label" for="profile_name">Count</label> <input
@@ -425,7 +423,7 @@ var adress = document.querySelector("#adress").innerText
 <!-- 결제모달 스크립트 시작 -->
 <script type="text/javascript">
 	function count(type) {
-		alert("함수호출")
+// 		alert("함수호출")
 		var totalMoney = document.getElementById("money");
 		var totalResult = document.getElementById("result");
 		var deafultMoney = document.getElementById("d_money");
@@ -435,20 +433,24 @@ var adress = document.querySelector("#adress").innerText
 		var d_money = deafultMoney.value;
 		var result = totalResult.value;
 		
-		alert(money)
+// 		alert(money)
 
 		// 더하기/빼기
 		if (type === 'plus') {
-			alert("+")
+// 			alert("+")
 			result = parseInt(result) + 1;
 			money = parseInt(money) + parseInt(d_money);
-			alert(money)
+// 			alert(money)
 		} else if (type === 'minus') {
-			alert("-")
+// 			alert("-")
+			
+			if( result == 1){
+				alert("1매 이상 선택해주세요.");
+				return;
+			}
 			result = parseInt(result) - 1;
 			money = parseInt(money) - parseInt(d_money);
-		
-		}
+		} 
 		// 결과 출력
 		totalResult.value = result;
 		totalMoney.value = money;
