@@ -34,6 +34,11 @@
 	</update>
 	
 
+	<select id="idCheck" parameterType="map" resultType="Int">
+		SELECT count(*)
+		FROM CUSTOMER_INFO
+		WHERE CUSTOMER_ID = #{id}
+	</select>
 	
 
 </mapper>

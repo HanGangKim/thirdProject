@@ -75,4 +75,13 @@ public class CustomerServiceImpl implements CustomerService{
 		return customerDAO.wishListSearch(wl, id, request);
 	}
 
+	@Override
+	public int idCheck(CustomerVO vo, String id) {
+		if(customerDAO.idCheck(id)==0) {
+			return 0;
+		}else {
+		return 1;
+		}
+	}
+
 }

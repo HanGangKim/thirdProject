@@ -89,6 +89,14 @@ public class CustomerDAOImpl implements  CustomerDAO{
 		return mybatis.selectList("wishlistMapper.wishlistsearch", parms);
 	}
 
+	@Override
+	public int idCheck( String id) {
+		// TODO Auto-generated method stub
+		Map<String, Object> parms = new HashMap<String, Object>();
+		parms.put("id",id);
+		return mybatis.selectOne("customerMapper.idCheck",id);
+	}
+
 	
 	
 	

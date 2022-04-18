@@ -97,13 +97,13 @@ response.sendRedirect("../LogOut.do");
 							details...</p>
 
 						<div class="position-relative">
-							<form action="/customer/customerInsert.do" method="get">
+							<form action="/customer/customerInsert.do" method="get" id="loginForm">
 							
 								<!-- 아이디 -->
 								<div class="input-icon-group mb-3">
 									<span class="input-icon"> <i class="bx bx-id-card"></i>
 									</span> <input type="text" class="form-control" required id="signUpid"
-										name="customer_id" autofocus placeholder="Your login id">
+										name="customer_id" autofocus placeholder="login id">
 								</div>
 
 								<!-- 비밀번호 입력 -->
@@ -118,7 +118,7 @@ response.sendRedirect("../LogOut.do");
 								 <div class="input-icon-group mb-3">
 									<span class="input-icon"> <i class="bx bx-lock-open"></i>
 									</span><input type="password" class="form-control" required
-										id="signUpConfirmPassword" placeholder="Confirm password">
+										id="signUpConfirmPassword" placeholder="Confirm password" name="customer_password_confirm">
 								</div>
 
 								<!-- 이름 -->
@@ -134,9 +134,10 @@ response.sendRedirect("../LogOut.do");
 									<span class="input-icon"> <i class="bx bx-mobile"></i>
 									</span> <input type="text" class="form-control" required
 										id="signUpph" name="customer_ph" autofocus
-										placeholder="Your PhoneNumber">
+										placeholder="Your PhoneNumber 010-xxxx-xxxx">
 								</div>
-								
+
+
 								<!-- 이메일 -->
 								<div class="input-icon-group mb-3">
 									<span class="input-icon"> <i class="bx bx-envelope"></i>
@@ -152,11 +153,12 @@ response.sendRedirect("../LogOut.do");
 										name="customer_gender" class="form-control"
 										data-choices='{"searchEnabled":false}'>
 										<option selected disabled>Gender</option>
-										<option>M</Option>
-										<option>F</Option>
+										<option>Male</Option>
+										<option>Female</Option>
 									</select>
 								</div>
 								
+							
 								<!-- 나이 -->
 								 <div class="input-icon-group mb-3">
 									<span class="input-icon"> <i class="bx bx-calendar"></i>
@@ -166,18 +168,18 @@ response.sendRedirect("../LogOut.do");
 								</div> 
 
 								<!-- 회원속성  -->
-								<div class="input-icon-group mb-3">
+								<div class="input-icon-group mb-3" style="display:none">
 									<span class="input-icon"> <i class="bx bx-envelope"></i>
 									</span> <select autocomplete="false" id="flag" class="form-control"
-										name="customer_flag" data-choices='{"searchEnabled":false}'>
-										<Option>C</Option>
-										<Option selected>M</Option>
+										name="customer_flag" data-choices='{"searchEnabled":false}' >
+										<Option selected>C</Option>
+										<Option>M</Option>
 									</select>
 								</div>
 
 								<!-- 회원가입 마치기 -->
 								<div class="d-grid">
-									<button class="btn btn-primary" type="submit">Sign Up</button>
+									<input class="btn btn-primary" type="submit" id="next" disabled="disabled" value="Sign Up">
 								</div>
 							</form>
 
@@ -186,22 +188,39 @@ response.sendRedirect("../LogOut.do");
 								Already have an account? <a href="CustomerLogin.do"
 									class="ms-2 text-dark fw-semibold link-decoration">Sign in</a>
 							</p>
+<!-- 회원가입 양식이 올바르지 않습니다 -->
+							<div class="position-relative d-flex align-items-center py-3" name="errorMassage" id="errorMassage">
+								()
+							</div>
+<!-- 							<div class="position-relative d-flex align-items-center py-3" name="errorMassagePh"> -->
+<!-- 								(전화) -->
+<!-- 							</div> -->
+<!-- 							<div class="position-relative d-flex align-items-center py-3" name="errorMassageEmail"> -->
+<!-- 								(이메일) -->
+<!-- 							</div> -->
+<!-- 							<div class="position-relative d-flex align-items-center py-3" name="errorMassageGender"> -->
+<!-- 								(성별) -->
+<!-- 							</div> -->
+							
 
 							<!--Divider-->
 							<div class="d-flex align-items-center py-3">
 								<span class="flex-grow-1 border-bottom pt-1"></span>
 							</div>
 						</div>
-						
 					</div>
 				</div>
 			</div>
+
+
 		</section>
 	</main>
 
 
 	<jsp:include page="/footer.jsp" />
 
+
+	
 
 </body>
 
@@ -211,6 +230,8 @@ response.sendRedirect("../LogOut.do");
 
 <!--Select scripts-->
 <script src="/resources/vendor/node_modules/js/choices.min.js?ver=2"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
     var cSelect = document.querySelectorAll("[data-choices]");
     cSelect.forEach(el => {
@@ -230,6 +251,155 @@ response.sendRedirect("../LogOut.do");
       new Choices(el, t)
     }
     );
+    
+ // 로그인 유효성 검사
+    var form = document.getElementById('loginForm');
+    var next = document.getElementById("next");
+
+    form.addEventListener('input', () => {
+    	if (!(input_ok())){
+    		next.disabled = true;
+    	} else{
+    		next.disabled = false;
+    	}
+//     	next.disabled = !(input_ok());
+    })
+
+     function input_ok(){
+//         	if (!checkUserId(form.userId.value)) {
+//                 return false;
+//             } else 
+
+		const pwd = checkPassword(loginForm.customer_id.value, form.customer_password.value, form.customer_password_confirm.value);
+		const mail = checkMail(form.customer_email.value);
+		const gender = checkGender(form.customer_gender.value);
+		const ph = checkph(form.customer_ph.value);
+		
+		if (pwd&&mail&&gender&&ph){
+			return true;
+		} else {
+			if(!(pwd)) {
+				pass = document.createElement('span');
+				pass.innerText = '회원가입 양식이 올바르지 않습니다(비밀번호)';
+				}
+			if(!(mail)) {
+// 				document.getElementsByName("errorMassage").innerText="(이메일)";
+				pass = document.createElement('span');
+				pass.innerText = '회원가입 양식이 올바르지 않습니다(이메일)';
+				}
+			if(!(gender)) {
+// 				document.getElementsByName("errorMassage").innerText="(성별)";
+				pass = document.createElement('span');
+				pass.innerText = '회원가입 양식이 올바르지 않습니다(성별)';
+				}
+			if(!(ph)) {
+// 				document.getElementsByName("errorMassage").innerText="(전화번호)";
+				pass = document.createElement('span');
+				pass.innerText = '회원가입 양식이 올바르지 않습니다(전화번호)';
+				}
+			return false;
+		}
+		
+//             	if (!checkPassword(loginForm.customer_id.value, form.customer_password.value,
+//                     form.customer_password_confirm.value)) {
+//                 return false;
+//             } else if (!checkMail(form.customer_email.value)) {
+//                 return false;
+//             } else if (!checkGender(form.customer_gender.value)){
+//     			return false;	
+//     		}
+//             return true;
+        }
+      function checkPassword(id, password1, password2) {
+            //비밀번호가 입력되었는지 확인하기
+            if (!checkExistData(password1, "비밀번호를"))
+                return false;
+            //비밀번호 확인이 입력되었는지 확인하기
+            if (!checkExistData(password2, "비밀번호 확인을"))
+                return false;
+     
+            
+            //비밀번호와 비밀번호 확인이 맞지 않다면..
+            if (password1 != password2) {
+//                 alert("두 비밀번호가 맞지 않습니다.");
+//                 form.password1.value = "";
+//                 form.password2.value = "";
+//                 form.password2.focus();
+                return false;
+            }
+     
+            
+            return true; //확인이 완료되었을 때
+        }    
+
+        function checkph(ph){
+        	var phRegExp = /^[0-1]+[0-9]*[-]{1}[0-9]+[0-9]*[-]{1}[0-9]{1,4}$/;
+            if (!phRegExp.test(ph)) {
+//                 alert("전화번호 형식이 올바르지 않습니다!");
+//                 form.ph.value = "";
+//                 form.ph.focus();
+                return false;
+            }
+            return true;
+        }
+      
+        function checkMail(mail) {
+            //mail이 입력되었는지 확인하기
+            if (!checkExistData(mail, "이메일을"))
+                return false;
+     
+            var emailRegExp = /^[A-Za-z0-9_]+[A-Za-z0-9]*[@]{1}[A-Za-z0-9]+[A-Za-z0-9]*[.]{1}[A-Za-z]{1,3}$/;
+            if (!emailRegExp.test(mail)) {
+//                 alert("이메일 형식이 올바르지 않습니다!");
+//                 form.mail.value = "";
+//                 form.mail.focus();
+                return false;
+            }
+            return true; //확인이 완료되었을 때
+        }
+
+    	function checkGender(gender){
+    		if(gender=="Gender"){
+//     			alert("성별을 선택하세요");
+    			return false;
+    		}
+    		return true;
+    	}
+
+        function checkExistData(value, dataName) {
+            if (value == "") {
+//                 alert(dataName + " 입력해주세요!");
+                return false;
+            }
+            return true;
+        }
+
+    	
+        $('#signUpid').focusout(function(){
+        	let userId = $('#signUpid').val();
+        	
+        	$.ajax({
+        		url:"./checkId.do",
+        		type:"post",
+        		data:{'userId':userId},
+        		success : function(result) {
+
+    				if(result == 1){
+    					$('#errorMassage').html('사용할 수 없는 아이디 입니다.');
+    					$('#errorMassage').attr('color','red');
+    				} else{
+    					$('#errorMassage').html('사용할 수 있는 아이디 입니다.');
+    					$('#errorMassage').attr('color','green');
+    				}
+
+    			},
+    			error : function() {
+    				alert("서버요청 실패");
+    			}
+        	})
+        	
+        })
+
   </script>
 
 </html>

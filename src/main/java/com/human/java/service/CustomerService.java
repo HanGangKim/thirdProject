@@ -26,4 +26,7 @@ public interface CustomerService {
 	
 	//찜목록
 	public List<WishListVO> WishListSelectService(ExhibitionVO vo, String id, WishListVO wl,  HttpServletRequest request);
+	
+	// 아이디 중복체크
+	public int idCheck(CustomerVO vo, String id);
 }
