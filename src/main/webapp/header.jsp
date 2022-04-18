@@ -139,7 +139,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												</div>
 												<div class="dropdown-divider"></div>
 												<a class="dropdown-item"
-													href="/customer/CustomerChangeInfo.do">Setting</a>
+													href="/customer/customerConfirmPass.do">Setting</a>
 											</div></li>
 										<!--로그아웃-->
 										<li class="nav-item"><a class="nav-link" href="/LogOut.do">

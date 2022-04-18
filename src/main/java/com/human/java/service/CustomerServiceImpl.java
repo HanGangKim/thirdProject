@@ -84,4 +84,10 @@ public class CustomerServiceImpl implements CustomerService{
 		}
 	}
 
+	@Override
+	public int customerconfirmpassword(CustomerVO vo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
