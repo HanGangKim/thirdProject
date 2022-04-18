@@ -98,16 +98,16 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
                       <div id="projects" data-isotope='{"layoutMode": "masonry"}' class="row">
 
                         <div class="col-md-6 mb-4 development grid-item">
-                            <a href="ApproveCompany.do" class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2">
+                            <a href="/company/CompanyExhibitionList.do" class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2">
                                 <img src="/resources/img/projects/1.jpg" alt="" class="w-100 img-zoom">
                                 <div class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
                                 <!-- <a href = "master/MasterPageList1.do"> -->
                                     <div class="card-hover-2-header w-100">
                                         <div class="card-hover-2-title">
-                                            <h5 class="fs-4 mb-2">전시회 등록&조회</h5>
+                                            <h5 class="fs-4 mb-2">전시회 등록 수정&조회</h5>
                                         </div>
                                         <p class="mb-0">
-                                          approval from a company
+                                          
                                         </p>
                                     </div>
                                     <div class="card-hover-2-footer w-100 mt-auto">
@@ -121,15 +121,15 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						</a>
                         </div>
                         <div class="col-md-6 mb-4 motion grid-item">
-                            <a href="ApproveExhibition.do" class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2">
+                            <a href="/company/CompanyChangeInfo.do" class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2">
                                 <img src="/resources/img/projects/5.jpg" alt="" class="w-100 img-zoom">
                                 <div class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
                                     <div class="card-hover-2-header w-100">
                                         <div class="card-hover-2-title">
-                                            <h5 class="fs-4 mb-2">전시회 등록 승인</h5>
+                                            <h5 class="fs-4 mb-2">정보수정</h5>
                                         </div>
                                         <p class="mb-0">
-                                          approval of exhibition registration
+                                          change information
                                         </p>
                                     </div>
                                     <div class="card-hover-2-footer w-100 mt-auto">
