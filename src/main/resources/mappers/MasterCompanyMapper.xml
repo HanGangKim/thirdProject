@@ -10,5 +10,10 @@
 		FROM COMPANY_INFO
 		WHERE COMPANY_FLAG = 'W'
 	</select>
+	
+	<update id="masterCompanyUpdate" parameterType="masterCompany" >
+		UPDATE COMPANY_INFO
+		
+	</update>
 
 </mapper>  

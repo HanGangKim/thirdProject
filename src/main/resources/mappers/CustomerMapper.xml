@@ -20,18 +20,15 @@
 	</select> 
 	
 	<update id="customerUpdate" parameterType="customer">
-	
-	
- 	UPDATE CUSTOMER_INFO
-	SET
-	CUSTOMER_NAME = #{customer_name},
-	CUSTOMER_ID = #{customer_id},
-	CUSTOMER_PH = #{customer_ph},
-	CUSTOMER_EMAIL = #{customer_email},
-	CUSTOMER_GENDER = #{customer_gender}
-	CUSTOMER_AGE = #{customer_age}
-	
-	WHERE CUSTOMER_ID = '3';
+		UPDATE CUSTOMER_INFO
+		SET
+		CUSTOMER_NAME = #{customer_name},
+		CUSTOMER_PH = #{customer_ph},
+		CUSTOMER_EMAIL = #{customer_email},
+		CUSTOMER_GENDER = #{customer_gender},
+		CUSTOMER_AGE = #{customer_age}
+		
+		WHERE CUSTOMER_ID = #{customer_id}
 	
 	
 	</update>

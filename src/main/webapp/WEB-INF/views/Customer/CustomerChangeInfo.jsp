@@ -123,7 +123,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								<div class="pt-5 d-flex flex-column h-100">
 									<div class="card shadow p-3 mb-3">
 										<h5 class="mb-4">Edit profile</h5>
-										<form action = "Customermypage.do",autocomplete="false">
+										<form action = "/customer/CustomerUpdateInfo.do",autocomplete="false" method="get">
 											<div class="row align-items-center">
 												<div class="col-md-12">
 													<div class="row">
