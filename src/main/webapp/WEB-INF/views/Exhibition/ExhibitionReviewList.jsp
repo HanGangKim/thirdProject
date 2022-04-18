@@ -172,7 +172,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												class="d-flex align-items-center justify-content-end flex-shrink-0">
 												<img src="/resources/img/avatar/2.jpg" alt=""
 													class="flex-shrink-0 flex-shrink-0 avatar sm rounded-circle me-2 img-fluid">
-												<span class="small"> ${vo.customer_id} </span>
+												<span class="small"> {vo.customoer_id} </span>
 											</div>
 										</div>
 									</div>
