@@ -51,6 +51,12 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 <body>
 
+	<!--Preloader Spinner-->
+	<div class="spinner-loader bg-tint-primary">
+		<div class="spinner-border text-primary" role="status"></div>
+		<span class="small d-block ms-2">Loading...</span>
+	</div>
+
 	<!-- 헤더 시작 -->
 	<header class="z-index-fixed header-transparent header-boxed">
 
@@ -176,11 +182,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		</div>
 	</div>
 	<!-- 검색버튼 모달 끝 -->
-	
-	<!--cursor-->
-	<div class="cursor">
-		<div class="cursor__inner"></div>
-	</div>
+
 
 </body>
 
@@ -188,8 +190,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <script src="/resources/js/theme.bundle.js"></script>
 <script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
 
-<!-- 커서 스크립트 -->
-<script src="/resources/vendor/node_modules/js/cursor.js"></script>
 
 <script type="text/javascript">
 	function navClick() {

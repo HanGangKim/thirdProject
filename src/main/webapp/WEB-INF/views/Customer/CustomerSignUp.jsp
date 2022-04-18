@@ -62,7 +62,7 @@ response.sendRedirect("../LogOut.do");
 <link rel="stylesheet"
 	href="/resources/vendor/node_modules/css/choices.min.css">
 
-<title>Sign Up</title>
+<title>Customer Sign Up</title>
 
 <style>
 .choices__list--single {
@@ -81,38 +81,29 @@ response.sendRedirect("../LogOut.do");
 </head>
 
 <body>
-	<!--Preloader Spinner-->
-	<div class="spinner-loader bg-tint-primary">
-		<div class="spinner-border text-primary" role="status"></div>
-		<span class="small d-block ms-2">Loading...</span>
-	</div>
-
+	
 	<jsp:include page="/header.jsp" />
 
 	<!--Main content-->
 	<main>
 		<!--page-hero-->
 		<section class="bg-white position-relative">
-			<div
-				class="bg-pattern text-light w-100 h-100 start-0 top-0 position-absolute"></div>
-			<div
-				class="bg-gradientwhite flip-y w-50 h-100 start-50 top-0 translate-middle-x position-absolute"></div>
-			<div
-				class="container pt-11 pt-lg-14 pb-9 pb-lg-11 position-relative z-index-1">
+			<div class="container pt-11 pt-lg-14 pb-9 pb-lg-11 position-relative z-index-1">
 				<div class="row align-items-center justify-content-center">
 					<div class=" col-xl-4 col-lg-5 col-md-6 col-sm-8 z-index-2">
 
-						<h2 class="mb-1 display-6">Member Sign Up</h2>
+						<h2 class="mb-1 display-6">Customer Sign Up</h2>
 						<p class="mb-4 text-muted">To get started, Please signup with
 							details...</p>
 
 						<div class="position-relative">
 							<form action="/customer/customerInsert.do" method="get">
+							
 								<!-- 아이디 -->
 								<div class="input-icon-group mb-3">
 									<span class="input-icon"> <i class="bx bx-id-card"></i>
 									</span> <input type="text" class="form-control" required id="signUpid"
-										name="customer_id" autofocus placeholder="Your id">
+										name="customer_id" autofocus placeholder="Your login id">
 								</div>
 
 								<!-- 비밀번호 입력 -->
@@ -145,8 +136,7 @@ response.sendRedirect("../LogOut.do");
 										id="signUpph" name="customer_ph" autofocus
 										placeholder="Your PhoneNumber">
 								</div>
-
-
+								
 								<!-- 이메일 -->
 								<div class="input-icon-group mb-3">
 									<span class="input-icon"> <i class="bx bx-envelope"></i>
@@ -167,7 +157,6 @@ response.sendRedirect("../LogOut.do");
 									</select>
 								</div>
 								
-							
 								<!-- 나이 -->
 								 <div class="input-icon-group mb-3">
 									<span class="input-icon"> <i class="bx bx-calendar"></i>
@@ -188,7 +177,7 @@ response.sendRedirect("../LogOut.do");
 
 								<!-- 회원가입 마치기 -->
 								<div class="d-grid">
-									<button class="btn btn-dark" type="submit">Next</button>
+									<button class="btn btn-primary" type="submit">Sign Up</button>
 								</div>
 							</form>
 
@@ -203,11 +192,10 @@ response.sendRedirect("../LogOut.do");
 								<span class="flex-grow-1 border-bottom pt-1"></span>
 							</div>
 						</div>
+						
 					</div>
 				</div>
 			</div>
-
-
 		</section>
 	</main>
 
@@ -215,26 +203,11 @@ response.sendRedirect("../LogOut.do");
 	<jsp:include page="/footer.jsp" />
 
 
-	<!-- begin Back to Top button -->
-	<a href="#" class="toTop"> <svg xmlns='http://www.w3.org/2000/svg'
-			viewBox='0 0 13 9' class="align-middle flip-y" width="13" height="9">
-                <path fill='currentColor'
-				d="M12.25 2.30062L10.8988 0.949371L6.5 5.33854L2.10125 0.949371L0.75 2.30062L6.5 8.05062L12.25 2.30062Z">
-                </path>
-            </svg>
-	</a>
-
-	<!--cursor-->
-	<div class="cursor">
-		<div class="cursor__inner"></div>
-	</div>
-
 </body>
 
 <!-- scripts -->
 <script src="/resources/js/theme.bundle.js"></script>
 <script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
-<script src="/resources/vendor/node_modules/js/cursor.js"></script>
 
 <!--Select scripts-->
 <script src="/resources/vendor/node_modules/js/choices.min.js?ver=2"></script>
