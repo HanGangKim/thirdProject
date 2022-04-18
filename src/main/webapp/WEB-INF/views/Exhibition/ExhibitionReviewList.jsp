@@ -140,13 +140,13 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<div class="card rounded-4 mb-5 " data-aos="fade-up" >
 							
 								<div class="mb-0">
-									<a href="#!" class="d-block overflow-hidden rounded-top-4" data-bs-target="#modal-pay-bar-${vo.exhibition_id}" data-bs-toggle="modal">
+									<a href="#!" class="d-block overflow-hidden rounded-top-4" data-bs-target="#modal-pay-bar-${vo.review_id}" data-bs-toggle="modal">
 										<img src="${vo.exhibition_image}" class="img-fluid" alt="${vo.exhibition_title}" style="width:100%;">
 									</a>
 								</div>
 								
 								<div class="card-body overflow-hidden p-4 px-lg-5 flex-grow-1">
-									<a href="#!" class="text-dark d-block mb-4" data-bs-target="#modal-pay-bar-${vo.exhibition_id}" data-bs-toggle="modal">
+									<a href="#!" class="text-dark d-block mb-4" data-bs-target="#modal-pay-bar-${vo.review_id}" data-bs-toggle="modal">
 										<h4 class="text-truncate">${vo.exhibition_title}</h4>
 									</a>
 									<div class="row mb-lg-3">
@@ -182,8 +182,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						</div>
 
 <!-- 						후기 상세 모달 시작 -->
-						<div id="modal-pay-bar-${vo.exhibition_id}" class="modal fade" tabindex="-1"
-							aria-labelledby="modal-pay-bar-${vo.exhibition_id}" aria-hidden="true">
+						<div id="modal-pay-bar-${vo.review_id}" class="modal fade" tabindex="-1"
+							aria-labelledby="modal-pay-bar-${vo.review_id}" aria-hidden="true">
 							<div class="modal-dialog modal-dialog-top modal-md"
 								style="max-width: 700px;">
 								<div class="modal-content position-relative border-0">
@@ -195,22 +195,15 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 											</button>
 										</div>
 
-										<div class="align-items-center row" style="flex-wrap: nowrap;">
+										<div class="align-items-center row mb-2" style="flex-wrap: nowrap; justify-content: space-between;">
 											<!-- 전시회 이미지 -->
 											<div class="mt-4 col-md-6" >
 												<a href="#!" class="d-block overflow-hidden">
-													<img src="${vo.exhibition_image}" class="img-fluid">
+													<img src="${vo.exhibition_image}" class="img-fluid" style="width:100%;">
 												</a>
 											</div>
 
 											<div class="mt-5 align-items-center col-md-6 row" style="flex-direction: column;">
-<!-- 												전시회 아이디 -->
-<!-- 												<div class="mb-3 col-md-6"> -->
-<!-- 													<label class="form-label" for="profile_name">전시회 -->
-<!-- 														아이디</label> <input type="text" placeholder="전시아이디 (히든)" -->
-<%-- 														value="${vo.exhibition_id}" readonly="readonly" --%>
-<!-- 														class="form-control"> -->
-<!-- 												</div> -->
 												<!-- 전시회 이름 -->
 												<div class="mb-3">
 													<label class="form-label" for="profile_name">전시회 이름</label>
@@ -298,7 +291,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 	function loadMoreAjax() {
 		
-		alert("클릭");
+// 		alert("클릭");
 
 		var endRow = $('#endRow').val();
 		var showCnt = 9;
@@ -341,10 +334,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		str += '<div class="col-md-6 col-lg-4">';
 		str += '<div class="card rounded-4 mb-5 " data-aos="fade-up" >';
 		str += '<div class="mb-0" onclick="allReviewDetail()">';
-		str += '<a href="#!" class="d-block overflow-hidden rounded-top-4" data-bs-target="#modal-pay-bar-' + vo.exhibition_id + '" data-bs-toggle="modal">';
+		str += '<a href="#!" class="d-block overflow-hidden rounded-top-4" data-bs-target="#modal-pay-bar-' + vo.review_id + '" data-bs-toggle="modal">';
 		str += '<img src="' + vo.exhibition_image + '" class="img-fluid" alt="' + vo.exhibition_title + '" style="width:100%;"></a></div>';
 		str += '<div class="card-body overflow-hidden p-4 px-lg-5 flex-grow-1">';
-		str += '<a href="#!" class="text-dark d-block mb-4" data-bs-target="#modal-pay-bar-' + vo.exhibition_id + '" data-bs-toggle="modal"><h4 class="text-truncate">' + vo.exhibition_title + '</h4></a>';
+		str += '<a href="#!" class="text-dark d-block mb-4" data-bs-target="#modal-pay-bar-' + vo.review_id + '" data-bs-toggle="modal"><h4 class="text-truncate">' + vo.exhibition_title + '</h4></a>';
 		str += '<div class="row mb-lg-3"><div class="col-3" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Bedrooms">';
 		str += '<div class="d-flex align-items-center"><strong class="small">' + vo.review_date + '</strong></div></div></div>';
 		str += '<p class="mb-4 mb-lg-5 text-truncate">' + vo.review_contents + '</p><div class="row justify-content-between justify-content-lg-start">';
@@ -352,7 +345,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		str += '<div class="d-flex align-items-center justify-content-end flex-shrink-0"><img src="/resources/img/avatar/2.jpg" alt="" class="flex-shrink-0 flex-shrink-0 avatar sm rounded-circle me-2 img-fluid">';
 		str += '<span class="small"> {vo.customoer_id} </span></div></div></div></div></div></div>';
 		/* 모달 */
-		str += '<div id="modal-pay-bar-' + vo.exhibition_id + '" class="modal fade" tabindex="-1" aria-labelledby="modal-pay-bar-' + vo.exhibition_id + '" aria-hidden="true">';
+		str += '<div id="modal-pay-bar-' + vo.review_id + '" class="modal fade" tabindex="-1" aria-labelledby="modal-pay-bar-' + vo.review_id + '" aria-hidden="true">';
 		str += '<div class="modal-dialog modal-dialog-top modal-md" style="max-width: 700px;">';
 		str += '<div class="modal-content position-relative border-0"> <div class="position-relative px-4">';
 		str += '<div class="position-absolute mt-2 end-0 width-7x top-0 d-flex align-items-center justify-content-center">';
