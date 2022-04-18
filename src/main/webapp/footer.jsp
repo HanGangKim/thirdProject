@@ -113,11 +113,19 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		class="position-fixed toTop d-none d-sm-flex btn btn-light rounded-circle p-0 flex-center width-4x height-4x z-index-fixed end-0 bottom-0 mb-6 me-6">
 		<i class="bx bxs-up-arrow align-middle lh-1"></i>
 	</a>
+	
+	<!--cursor-->
+	<div class="cursor">
+		<div class="cursor__inner"></div>
+	</div>
 
 </body>
 
 <!-- 검색버튼 모달 스크립트 -->
 <script src="/resources/js/theme.bundle.js"></script>
 <script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
+
+<!-- 커서 스크립트 -->
+<script src="/resources/vendor/node_modules/js/cursor.js"></script>
 
 </html>

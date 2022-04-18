@@ -54,18 +54,13 @@ response.sendRedirect("../LogOut.do");
 <link href="/resources/css/theme.min.css" rel="stylesheet">
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
-<title>Sign In</title>
+<title>Customer Sign In</title>
 
 
 </head>
 
 <body>
 
-	<!--Preloader Spinner-->
-	<div class="spinner-loader bg-tint-primary">
-		<div class="spinner-border text-primary" role="status"></div>
-		<span class="small d-block ms-2">Loading...</span>
-	</div>
 
 
 	<jsp:include page="/header.jsp" />
@@ -82,7 +77,7 @@ response.sendRedirect("../LogOut.do");
 				<div class="row align-items-center justify-content-center">
 					<div class=" col-xl-4 col-lg-5 col-md-6 col-sm-8 z-index-2">
 
-						<h2 class="mb-1 display-6">Member Sign In</h2>
+						<h2 class="mb-1 display-6">Customer Sign In</h2>
 						<p class="mb-4 text-muted">Please Sign In with details...</p>
 						<div class="position-relative">
 							<div>
@@ -146,20 +141,6 @@ response.sendRedirect("../LogOut.do");
 
 	<jsp:include page="/footer.jsp" />
 
-
-	<!-- begin Back to Top button -->
-	<a href="#" class="toTop"> <svg xmlns='http://www.w3.org/2000/svg'
-			viewBox='0 0 13 9' class="align-middle flip-y" width="13" height="9">
-      <path fill='currentColor'
-				d="M12.25 2.30062L10.8988 0.949371L6.5 5.33854L2.10125 0.949371L0.75 2.30062L6.5 8.05062L12.25 2.30062Z">
-      </path>
-    </svg>
-	</a>
-
-	<!--cursor-->
-	<div class="cursor">
-		<div class="cursor__inner"></div>
-	</div>
 
 </body>
 
