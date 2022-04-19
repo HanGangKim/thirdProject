@@ -1,6 +1,7 @@
 package com.human.java.service;
 
 import com.human.java.domain.CompanyVO;
+import com.human.java.domain.CustomerVO;
 import com.human.java.domain.ExhibitionVO;
 
 public interface CompanyService {
@@ -13,5 +14,8 @@ public interface CompanyService {
 	
 	// 아이디 중복체크
 	public int idCheck(CompanyVO vo, String id);
+	
+	//비밀번호 확인
+	public CompanyVO companyconfirmpassword(CompanyVO vo);
 	
 }

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.human.java.domain.CompanyVO;
 import com.human.java.dao.CompanyDAOImpl;
+import com.human.java.dao.CustomerDAO;
 
 @Service("companyService")
 public class CompanyServiceImpl implements CompanyService{
@@ -44,7 +45,14 @@ public class CompanyServiceImpl implements CompanyService{
 		}
 	}
 
-	
+	@Override
+	public CompanyVO companyconfirmpassword(CompanyVO vo) {
+		System.out.println("===============");
+		System.out.println("companyconfirmpassword 서비스 호출");
+		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+		return companyDAO.companyconfirmpassword(vo);
+	}
 	
 }
 

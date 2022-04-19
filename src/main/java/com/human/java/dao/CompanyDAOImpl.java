@@ -8,6 +8,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.human.java.domain.CompanyVO;
+import com.human.java.domain.CustomerVO;
 
 @Repository("companyDAO")
 public class CompanyDAOImpl implements CompanyDAO {
@@ -40,5 +41,16 @@ public class CompanyDAOImpl implements CompanyDAO {
 		Map<String, Object> parms = new HashMap<String, Object>();
 		parms.put("id",id);
 		return mybatis.selectOne("companyMapper.idCheck",id);
+	}
+	
+	@Override
+	public CompanyVO companyconfirmpassword(CompanyVO vo) {
+		System.out.println("===============");
+		System.out.println("companyInsert 다오 호출");
+		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+		
+		return mybatis.selectOne("companyMapper.companyconfirmpassword",vo);	
+		
 	}
 }
