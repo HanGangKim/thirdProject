@@ -60,10 +60,11 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
 </style> -->
-<title>Assan 4</title>
+<title>Search Date</title>
 </head>
 
 <body>
+
 	<!--Preloader Spinner-->
 	<div class="spinner-loader bg-tint-primary">
 		<div class="spinner-border text-primary" role="status"></div>
@@ -182,5 +183,21 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	}
 	
 </script>
+
+
+<!-- 뒤로가기 막기 -->
+<script type="text/javascript">
+
+// window.onload = function() {	
+// 	history.pushState(null, null, location.href);
+// 	window.onpopstate = function () {
+// 	    history.go(1);
+// 	};
+// }
+
+</script>
+
+
+
 
 </html>

@@ -58,7 +58,7 @@
 										<li data-carousel-layer="fade-start">
 											<a href="#" class="btn btn-white btn-lg btn-hover-text mb-2 me-2"> 
 												<span class="btn-hover-label label-default">More View</span> 
-												<span class="btn-hover-label label-hover">Date Search</span>
+												<span class="btn-hover-label label-hover">Search Date</span>
 											</a>
 										</li>
 									</ul>
@@ -84,7 +84,7 @@
 										<li data-carousel-layer="fade-start">
 											<a href="#" class="btn btn-white btn-lg btn-hover-text mb-2 me-2"> 
 												<span class="btn-hover-label label-default">More View</span> 
-												<span class="btn-hover-label label-hover">Date Search</span>
+												<span class="btn-hover-label label-hover">Search Date</span>
 											</a>
 										</li>
 									</ul>
@@ -110,7 +110,7 @@
 										<li data-carousel-layer="fade-start">
 											<a href="#" class="btn btn-white btn-lg btn-hover-text mb-2 me-2"> 
 												<span class="btn-hover-label label-default">More View</span> 
-												<span class="btn-hover-label label-hover">Date Search</span>
+												<span class="btn-hover-label label-hover">Search Date</span>
 											</a>
 										</li>
 									</ul>
@@ -168,7 +168,7 @@
 						<div class="card border-0 card-hover overflow-hidden">
 							<div class="overflow-hidden position-relative">
 
-								<img src="/resources/img/shop/banners/1.jpeg" class="img-fluid img-zoom" style="width: 100%; height: 550px;">
+								<img src="/resources/img/shop/banners/1.jpeg" class="img-fluid img-zoom" style="width: 100%; height: 500px;">
 <!-- 								<div style="border: 10px solid gray; height: 300px; background-color: gray;"></div> -->
 								<div class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
 							</div>
@@ -179,7 +179,7 @@
 									<a href="/exhibition/ExhibitionDate.do"
 										class="btn btn-white btn-lg btn-hover-text mb-2 me-2"> <span
 										class="btn-hover-label label-default">Exhibition</span> <span
-										class="btn-hover-label label-hover">Date Search</span>
+										class="btn-hover-label label-hover">Search Date</span>
 									</a>
 								</div>
 							</div>
@@ -189,7 +189,7 @@
 						<div class="card border-0 card-hover overflow-hidden">
 							<div class="overflow-hidden position-relative">
 
-								<img src="/resources/img/shop/banners/2.jpeg" class="img-fluid img-zoom" style="width: 100%; height: 550px;">
+								<img src="/resources/img/shop/banners/2.jpeg" class="img-fluid img-zoom" style="width: 100%; height: 500px;">
 <!-- 								<div style="border: 10px solid gray; height: 300px; background-color: gray;"></div> -->
 								<div class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
 							</div>
@@ -216,33 +216,28 @@
 			<div class="container py-9 py-lg-11">
 				<div class="row align-items-end">
 					<div class="col-md-8 mx-auto text-center">
-						<h2 class="mb-5 display-4">Coming Soon Top 8</h2>
+						<h2 class="mb-5 display-4">Coming Soon</h2>
 					</div>
 				</div>
 				<div class="row">
-					<c:forEach items="${vo}" var="vo">
+					<c:forEach items="${vo}" var="vo" end="3">
 						<div class="col-md-6 col-lg-3 mb-4">
 							<!--Card-product-->
-							<div
-								class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0">
-								<div
-									class="card-product-header px-5 p-4 d-block overflow-hidden">
+							<div class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0" title="${vo.exhibition_title}">
+								<div class="card-product-header px-5 p-4 d-block overflow-hidden">
 									<!--Product image-->
-									<a href="#!"> <img src="${vo.exhibition_image}"
-										class="img-fluid" alt="Product">
-									</a>
+									<a href="#!"> <img src="${vo.exhibition_image}" class="img-fluid" alt="Product"> </a>
 								</div>
 								<div class="card-product-body px-4 pb-4 text-center">
-									<a href="#!"
-										class="h6 d-block position-relative mb-2 text-dark">${vo.exhibition_title}</a>
+									<a href="#!" class="h6 d-block position-relative mb-2 text-dark text-truncate">${vo.exhibition_title}</a>
 									<div class="card-product-body-ovelray">
 										<!--Price-->
-										<span class="card-product-price"> <span>${vo.exhibition_start_date}</span>
-											~ <span>${vo.exhibition_end_date}</span>
+										<span class="card-product-price"> 
+											<span>${vo.exhibition_start_date}</span> ~ <span>${vo.exhibition_end_date}</span>
 										</span>
 										<!--Action-->
-										<span class="card-product-view-btn"> <a href="#!"
-											class="link-underline mb-1 fw-semibold text-dark">상세보기</a>
+										<span class="card-product-view-btn"> 
+											<a href="#!" class="link-underline mb-1 fw-semibold text-dark">상세보기</a>
 										</span>
 									</div>
 								</div>
@@ -252,8 +247,8 @@
 				</div>
 				<div class="text-center pt-2">
 					<a href="/exhibition/ExhibitionDate.do" class="btn btn-dark btn-lg btn-hover-text mb-2 me-2">
-						<span class="btn-hover-label label-default">More View</span> <span
-						class="btn-hover-label label-hover">Date Search</span>
+						<span class="btn-hover-label label-default">All Exhibition</span> <span
+						class="btn-hover-label label-hover">Search Date</span>
 					</a>
 				</div>
 			</div>
