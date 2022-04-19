@@ -195,6 +195,7 @@ response.sendRedirect("../LogOut.do");
 	    		$('#errorMassageMail').html('✔');
 	    		$('#errorMassageRegnum').html('✔');
 	    		$('#errorMassagePh').html('✔');
+	    		$('#errorMassageName').html('✔');
 	    	}
 //	     	next.disabled = !(input_ok());
 
@@ -232,13 +233,14 @@ response.sendRedirect("../LogOut.do");
 	 })
 	 function input_ok(){
 
+		const id = checkID(loginForm.company_id_value);
 		const pwd = checkPassword(loginForm.company_id.value, form.company_password.value, form.company_password_confirm.value);
-		const mail = checkMail(form.company_email.value);
-		const regnum = checkRegnum(form.company_regnum.value);
-		const ph = checkph(form.company_ph.value);
-		const name = checkname(form.company_name.value);
+		const mail = checkMail(loginForm.company_email.value);
+		const regnum = checkRegnum(loginForm.company_regnum.value);
+		const ph = checkph(loginForm.company_ph.value);
+		const name = checkname(loginForm.company_name.value);
 		
-		if (pwd&&mail&&regnum&&ph){
+		if (id&&pwd&&mail&&regnum&&ph&&name){
 			return true;
 		} else {
 			if(!(pwd)) {
@@ -286,6 +288,14 @@ response.sendRedirect("../LogOut.do");
 		
 
         }
+	 
+	 function checkID(name){
+		  if (!checkExistData(name, "아이디를")){
+			  return false;
+		  } else{
+			  return true;
+		  }
+	  }
 	 
 	  function checkname(name){
 		  if (!checkExistData(name, "회사이름을")){
