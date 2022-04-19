@@ -20,8 +20,7 @@ public class ExhibitionCompanyExhibitionWriteController {
 	// 업체 전시회 등록
 	@RequestMapping("exhibitionCompanyExhibitionWrite.do")
 	public String exhibitionCompanyExhibitionWrite(ExhibitionVO vo) {
-		// DB에 접속을 해야합니다.
-		// 접속을 하면 DB에 insert하는 과정을 추가
+		
 		System.out.println("===============");
 		System.out.println("exhibitionCompanyExhibitionWrite.do 호출");
 		System.out.println("ExhibitionVO : " + ToStringBuilder.reflectionToString(vo));

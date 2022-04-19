@@ -19,7 +19,6 @@ public interface ExhibitionDAO {
 	
 	public List<ExhibitionVO> comingExhibition(ExhibitionVO vo);
 	
-//	public List<ExhibitionVO> exhibitionSearch(ExhibitionVO vo, String st, String ed);
 	
 	public List<ExhibitionVO> exhibitionSearch(ExhibitionVO vo, String st, String ed, int endRow);
 	
@@ -31,6 +30,10 @@ public interface ExhibitionDAO {
 	// 티켓팅 내역 조회
 	public List<TicketingSelectVO> ticketSelect(HashMap map, String id);
 	
-	// 전시회 등록
+	// 업체 전시회 등록
 	public int companyInsertExhibition(ExhibitionVO vo);
+	
+	// 업체 전시회 조회
+	public List<ExhibitionVO> getExhibitionCompanyServiceList(ExhibitionVO vo , String companyId);
+	
 }

@@ -109,7 +109,7 @@ if (session.getAttribute("userId") == null) {
 
 
 				<h2 class="mb-4"></h2>
-				<%-- 	<c:forEach items="" var="vo"> --%>
+			 	<c:forEach items="" var="vo"> 
 				<article
 					class="row g-0 mb-4 mb-lg-5 position-relative overflow-hidden hover-lift hover-shadow-lg border rounded-4 card-hover shadow-sm align-items-center">
 
@@ -133,41 +133,31 @@ if (session.getAttribute("userId") == null) {
 								<h6>등록한 전시회 정보입니다.</h6>
 								<h2 class="mb-4">
 									<table>
-										<tr>
-											<td><h2>
-													<!--  -->
-												</h2></td>
-										</tr>
-										<tr>
-											<td><h6>
-													<!--  -->
-												</h6></td>
-										</tr>
-										<tr>
-											<td><h6>
-													<!--  -->
-												</h6></td>
-										</tr>
-										<tr>
-											<td><h6>
-													<!--  -->
-												</h6></td>
-										</tr>
-										<tr>
-											<td><h6>
-													<!--  -->
-												</h6></td>
-										</tr>
-										<tr>
-											<td><h6>
-													<!--  -->
-												</h6></td>
-										</tr>
+											<tr>
+												<td><h2>업체ID : ${vo.company_id}</h2></td>
+											</tr>
+											
+											<tr>
+												<td><h6>등록 전시회 ID : ${vo.exhibition_id}</h6></td>
+											</tr>
+											
+											<tr>
+												<td><h6>등록 전시회 제목 : ${vo.}</h6></td>
+											</tr>
+											<tr>
+												<td><h6>등록 전시회 내용 : ${vo.exhibition_contents}</h6></td>
+											</tr>
+											<tr>
+												<td><h6>등록 전시회 날짜 : ${vo.exhibition_total_date}</h6></td>
+											</tr>
+											<tr>
+												<td><h6>등록 전시회 금액 : ${vo.exhibition_price}</h6></td>
+											</tr>
+											<tr>
+												<td><h6>승인 상태 : ${vo.exhibition_flag}</h6></td>
+											</tr>
 
-
-
-
-									</table>
+										</table>
 								</h2>
 
 								<br> <br>
@@ -184,7 +174,7 @@ if (session.getAttribute("userId") == null) {
 					<!-- <a href="#" class="stretched-link"></a> -->
 
 				</article>
-				<%-- </c:forEach> --%>
+			 </c:forEach> 
 
 
 	<!-- 버튼 -->

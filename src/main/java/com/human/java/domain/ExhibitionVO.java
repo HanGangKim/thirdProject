@@ -20,7 +20,16 @@ public class ExhibitionVO {
 	// 전시회 등록시 필요한 회사의 ID
 	private String company_id;
 
+	// 전시회 등록 승인 여부 
+	private String exhibition_flag;
+
 	
+	public String getExhibition_flag() {
+		return exhibition_flag;
+	}
+	public void setExhibition_flag(String exhibition_flag) {
+		this.exhibition_flag = exhibition_flag;
+	}
 	
 	public String getExhibition_contents() {
 		return exhibition_contents;

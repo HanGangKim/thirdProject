@@ -124,6 +124,18 @@ public class ExhibitionServiceImpl implements ExhibitionService{
 		return exhibitionDAO.companyInsertExhibition(vo);
 	}
 
+	@Override
+	public List<ExhibitionVO> getExhibitionCompanyServiceList(ExhibitionVO vo, String companyId) {
+		
+		
+		System.out.println("===============");
+		System.out.println("getExhibitionCompanyServiceList 서비스 호출");
+		System.out.println("companyId : " + companyId);
+		System.out.println("===============");
+		
+		return exhibitionDAO.getExhibitionCompanyServiceList(vo,companyId);
+	}
+
 	
 	
 	

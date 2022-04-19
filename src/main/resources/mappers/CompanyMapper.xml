@@ -32,6 +32,13 @@
 		(SEQ_EXHIBITION.nextval  , #{exhibition_title} , #{exhibition_start_date} , #{exhibition_end_date} , #{exhibition_total_date} , #{exhibition_image} , #{exhibition_contents} , #{exhibition_location} , #{exhibition_price} , #{company_id}  ,'W')
 	</insert>
 	
+	<select id="companyExhibitionList" parameterType="exhibition" resultType="exhibition">
+	SELECT * FROM EXHIBITION_INFO
+	WHERE COMPANY_ID = #{company_id}
+	
+	</select>
+	
+	
 	<select id="companyconfirmpassword" parameterType="company" resultType="company">
 	SELECT *
 	FROM CUSTOMER_INFO
