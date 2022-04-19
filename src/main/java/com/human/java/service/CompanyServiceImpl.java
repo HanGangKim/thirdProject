@@ -54,5 +54,16 @@ public class CompanyServiceImpl implements CompanyService{
 		return companyDAO.companyconfirmpassword(vo);
 	}
 	
+	@Override
+	public void companyUpdate(CompanyVO vo) {
+		
+		System.out.println("===============");
+		System.out.println("companyupdate 서비스 호출");
+		System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+		
+		companyDAO.companyupdate(vo);
+	}
+	
 }
 
