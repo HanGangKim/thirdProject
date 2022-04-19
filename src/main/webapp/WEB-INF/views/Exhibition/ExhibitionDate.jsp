@@ -73,10 +73,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	<!--Main content-->
 	<main>
 		<!--page-hero-->
-		<section
-			class="bg-white position-relative d-flex justify-content-center h-100">
-			<div
-				class="bg-dark d-none d-md-flex position-fixed end-0 top-0 w-md-50 w-lg-60 h-100">
+		<section class="bg-white position-relative d-flex justify-content-center h-100">
+			<div class="bg-dark d-none d-md-flex position-fixed end-0 top-0 w-md-50 w-lg-60 h-100">
 				<!--Divider shape-->
 				<svg
 					class="position-absolute start-0 top-0 h-100 text-white z-index-1"
@@ -93,8 +91,11 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
                 </svg>
 
 				<!--Image-->
-				<img src="/resources/img/backgrounds/bg3.jpg" alt=""
-					class="bg-image">
+<!-- 				<img src="/resources/img/backgrounds/4.jpeg" alt="" class="bg-image"> -->
+				<video muted autoplay loop>
+					<source src="/resources/img/backgrounds/ARTE MUSEUM Overview.mp4" type="video/mp4">
+				</video>
+				
 			</div>
 			<div class="container z-index-2 position-relative">
 				<div class="row align-items-center vh-100">

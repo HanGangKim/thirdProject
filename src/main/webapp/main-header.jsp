@@ -72,11 +72,11 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								<c:choose>
 									<c:when test="${sessionScope.userId == null}">
 										<a href="demo-shop-wishlist.html"
-											class="lh-1 position-relative">Hello :)</a>
+											class="lh-1 position-relative text-light">Hello :)</a>
 									</c:when>
 									<c:when test="${sessionScope.userId != null}">
 										<a href="demo-shop-wishlist.html"
-											class="lh-1 position-relative">Welcome !</a>
+											class="lh-1 position-relative text-light">Welcome !</a>
 									</c:when>
 								</c:choose>
 							</div>
