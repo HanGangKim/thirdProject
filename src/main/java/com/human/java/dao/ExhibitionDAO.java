@@ -30,4 +30,7 @@ public interface ExhibitionDAO {
 	
 	// 티켓팅 내역 조회
 	public List<TicketingSelectVO> ticketSelect(HashMap map, String id);
+	
+	// 전시회 등록
+	public int companyInsertExhibition(ExhibitionVO vo);
 }

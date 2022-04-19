@@ -60,23 +60,7 @@ public class ExhibitionServiceImpl implements ExhibitionService{
 		return exhibitionDAO.comingExhibition(vo);
 	}
 
-//	@Override
-//	public List<ExhibitionVO> exhibitionSearch(ExhibitionVO vo, String totalDate) {
-//		
-//		System.out.println("===============");
-//		System.out.println("exhibitionSearch 서비스 호출");
-//		System.out.println("===============");
-//		
-//		String[] date=totalDate.split(" to ");
-//		String st = date[0];
-//		st = st.replace("-", ".");
-//		String ed = date[1];
-//		ed = ed.replace("-", ".");
-//		System.out.println(st);
-//		System.out.println(ed);
-//		
-//		return exhibitionDAO.exhibitionSearch(vo,st,ed);
-//	}
+
 	
 	@Override
 	public List<ExhibitionVO> exhibitionSearch(ExhibitionVO vo, String totalDate, int endRow) {
@@ -129,5 +113,18 @@ public class ExhibitionServiceImpl implements ExhibitionService{
 		return exhibitionDAO.ticketSelect(map , id);
 	}
 
+	@Override
+	public int companyInsertExhibition(ExhibitionVO vo) {
+		
+		System.out.println("===============");
+		System.out.println("companyInsertExhibition 서비스 호출");
+		System.out.println("ExhibitionVO vo : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+		
+		return exhibitionDAO.companyInsertExhibition(vo);
+	}
+
+	
+	
 	
 }

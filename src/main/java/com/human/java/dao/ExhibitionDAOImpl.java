@@ -58,20 +58,6 @@ public class ExhibitionDAOImpl implements ExhibitionDAO {
 		return mybatis.selectList("exhibitionMapper.comingExhibition", vo);
 	}
 
-//	@Override
-//	public List<ExhibitionVO> exhibitionSearch(ExhibitionVO vo, String st, String ed) {
-//
-//		System.out.println("===============");
-//		System.out.println("exhibition 서치 다오 호출");
-//		System.out.println("===============");
-//
-//		Map<String, Object> parms = new HashMap<String, Object>();
-//		parms.put("vo", vo);
-//		parms.put("st", st);
-//		parms.put("ed", ed);
-//
-//		return mybatis.selectList("exhibitionMapper.exhibitionSearch", parms);
-//	}
 	
 	@Override
 	public List<ExhibitionVO> exhibitionSearch(ExhibitionVO vo, String st, String ed, int endRow) {
@@ -106,7 +92,7 @@ public class ExhibitionDAOImpl implements ExhibitionDAO {
 	public int ticketInsert(TicketingVO vo) {
 
 		System.out.println("===============");
-		System.out.println("ticketInsert 서비스 호출");
+		System.out.println("ticketInsert 다오 호출");
 		System.out.println("TicketingVO : " + ToStringBuilder.reflectionToString(vo));
 		System.out.println("===============");
 				
@@ -127,6 +113,17 @@ public class ExhibitionDAOImpl implements ExhibitionDAO {
 		System.out.println("===============");
 		
 		return mybatis.selectList("ticketingMapper.ticketSelecting", map);
+	}
+
+	@Override
+	public int companyInsertExhibition(ExhibitionVO vo) {
+		
+		System.out.println("===============");
+		System.out.println("companyInsertExhibition 다오 호출");
+		System.out.println("ExhibitionVO vo : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+		
+		return mybatis.insert("companyMapper.companyInsertExhibition",vo);
 	}
 
 }

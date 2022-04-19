@@ -8,17 +8,34 @@ public class ExhibitionVO {
 
 	private int exhibition_id;
 	private String exhibition_title;
-//	private Date exhibition_start_date;
-//	private Date exhibition_end_date;
-//	private Date exhibition_total_date;
+
+	private String exhibition_contents;
 	private String exhibition_start_date;
 	private String exhibition_end_date;
 	private String exhibition_total_date;
 	private String exhibition_image;
 	private String exhibition_location;
 	private int exhibition_price;
-	private String exhibition_latitude;
-	private String exhibition_longitude;
+	
+	// 전시회 등록시 필요한 회사의 ID
+	private String company_id;
+
+	
+	
+	public String getExhibition_contents() {
+		return exhibition_contents;
+	}
+	public void setExhibition_contents(String exhibition_contents) {
+		this.exhibition_contents = exhibition_contents;
+	}
+	
+	// 전시회 등록시 필요한 회사의 ID
+	public String getCompany_id() {
+		return company_id;
+	}
+	public void setCompany_id(String company_id) {
+		this.company_id = company_id;
+	}
 	
 	
 	public int getExhibition_id() {
@@ -33,24 +50,7 @@ public class ExhibitionVO {
 	public void setExhibition_title(String exhibition_title) {
 		this.exhibition_title = exhibition_title;
 	}
-//	public Date getExhibition_start_date() {
-//		return exhibition_start_date;
-//	}
-//	public void setExhibition_start_date(Date exhibition_start_date) {
-//		this.exhibition_start_date = exhibition_start_date;
-//	}
-//	public Date getExhibition_end_date() {
-//		return exhibition_end_date;
-//	}
-//	public void setExhibition_end_date(Date exhibition_end_date) {
-//		this.exhibition_end_date = exhibition_end_date;
-//	}
-//	public Date getExhibition_total_date() {
-//		return exhibition_total_date;
-//	}
-//	public void setExhibition_total_date(Date exhibition_total_date) {
-//		this.exhibition_total_date = exhibition_total_date;
-//	}
+
 	public String getExhibition_start_date() {
 		return exhibition_start_date;
 	}
@@ -87,18 +87,7 @@ public class ExhibitionVO {
 	public void setExhibition_price(int exhibition_price) {
 		this.exhibition_price = exhibition_price;
 	}
-	public String getExhibition_latitude() {
-		return exhibition_latitude;
-	}
-	public void setExhibition_latitude(String exhibition_latitude) {
-		this.exhibition_latitude = exhibition_latitude;
-	}
-	public String getExhibition_longitude() {
-		return exhibition_longitude;
-	}
-	public void setExhibition_longitude(String exhibition_longitude) {
-		this.exhibition_longitude = exhibition_longitude;
-	}
+
 	
 	
 }

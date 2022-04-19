@@ -25,7 +25,12 @@
 		WHERE COMPANY_ID = #{id}
 	</select>
 	
-
+	<insert id="companyInsertExhibition" parameterType="exhibition">
+		INSERT INTO EXHIBITION_INFO
+		(EXHIBITION_ID , EXHIBITION_TITLE , EXHIBITION_START_DATE , EXHIBITION_END_DATE , EXHIBITION_TOTAL_DATE , EXHIBITION_IMAGE , EXHIBITION_CONTENTS , EXHIBITION_LOCATION , EXHIBITION_PRICE , COMPANY_ID , EXHIBITION_FLAG)
+		VALUES 
+		(SEQ_EXHIBITION.nextval  , #{exhibition_title} , #{exhibition_start_date} , #{exhibition_end_date} , #{exhibition_total_date} , #{exhibition_image} , #{exhibition_contents} , #{exhibition_location} , #{exhibition_price} , #{company_id}  ,'W')
+	</insert>
 	
 
 </mapper>

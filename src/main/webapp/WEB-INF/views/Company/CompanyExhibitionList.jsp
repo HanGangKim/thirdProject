@@ -187,19 +187,24 @@ if (session.getAttribute("userId") == null) {
 				<%-- </c:forEach> --%>
 
 
-			</div>
-
-			<!-- 버튼 -->
-			<div
-				class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-center">
+	<!-- 버튼 -->
+	 <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-center">
 				<!--전시회 목록보기-->
 				<div class="mb-3 mb-sm-0"></div>
 				<!--예매하기 버튼-->
 				<div>
-					<a href="/exhibition/ExhibitionDate.do" class="btn btn-primary">Continue
-						exhibition</a>
+					<a href="/company/CompanyExhibitionWrite.do" class="btn btn-primary">New exhibition</a>
 				</div>
+		</div>
+
+	
+
 			</div>
+
+
+		
+	
+			
 
 		</section>
 		<!--/.Article header-end-->

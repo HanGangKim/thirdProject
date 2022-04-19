@@ -9,7 +9,7 @@ public class CompanyVO {
 	private String company_email;
 	private String company_regnum;
 	private String company_flag;
-	
+
 	
 	public String getCompany_id() {
 		return company_id;
