@@ -75,10 +75,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<div class="nav-item me-3">
 								<c:choose>
 									<c:when test="${sessionScope.userId == null}">
-										<a class="lh-1 position-relative">Hello :)</a>
+										<a class="lh-1 position-relative text-light">Hello :)</a>
 									</c:when>
 									<c:when test="${sessionScope.userId != null}">
-										<a class="lh-1 position-relative">Welcome !</a>
+										<a class="lh-1 position-relative text-light">Welcome !</a>
 									</c:when>
 								</c:choose>
 							</div>

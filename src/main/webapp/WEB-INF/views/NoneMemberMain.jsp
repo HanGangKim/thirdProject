@@ -30,11 +30,6 @@
 </head>
 
 <body>
-	<!--:Preloader Spinner-->
-	<div class="spinner-loader bg-gradient-secondary text-white">
-		<div class="spinner-border text-primary" role="status"></div>
-		<span class="small d-block ms-2">Loading...</span>
-	</div>
 
 	<jsp:include page="/main-header.jsp" />
 
@@ -43,88 +38,81 @@
 		<!-- 슬라이더 시작 -->
 		<section class="position-relative overflow-hidden">
 			<!--:Swiper classic -->
-			<div
-				class="swiper-container swiper-classic overflow-hidden position-relative vh-100">
+			<div class="swiper-container swiper-classic overflow-hidden position-relative vh-100">
 				<div class="swiper-wrapper">
 					<!--:Slide-->
-					<div class="swiper-slide"
-						style="background-image: url('/resources/img/shop/banners/03.jpg')">
-						<div
-							class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
+					<div class="swiper-slide" style="background-image: url('/resources/img/shop/banners/1.jpeg'); background-size: cover;">
+						<div class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
 						<!--:container-->
-						<div
-							class="container h-100 text-white position-relative z-index-1">
+						<div class="container h-100 text-white position-relative z-index-1">
 							<div class="row d-flex align-items-center h-100">
 								<div class="col-xl-10 mx-auto text-center">
 									<!--:slider layers-->
 									<ul class="carousel-layers list-unstyled mb-0 pt-lg-9">
 										<li data-carousel-layer="fade-start">
-											<h2 class="display-1 mb-3">3차 프로젝트_전시회</h2>
+											<h3 class="display-3 mb-3">[강릉] 아르떼뮤지엄</h3>
 										</li>
 										<li data-carousel-layer="fade-end">
-											<p class="lead mb-4 mb-lg-5">3차 프로젝트_전시회</p>
+											<p class="lead mb-4 mb-lg-5">강릉 아르떼뮤지엄</p>
 										</li>
-										<li data-carousel-layer="fade-start"><a href="#"
-											class="btn btn-white btn-lg btn-hover-text mb-2 me-2"> <span
-												class="btn-hover-label label-default">3차 프로젝트_전시회</span> <span
-												class="btn-hover-label label-hover">3차 프로젝트_전시회</span>
-										</a></li>
+										<li data-carousel-layer="fade-start">
+											<a href="#" class="btn btn-white btn-lg btn-hover-text mb-2 me-2"> 
+												<span class="btn-hover-label label-default">More View</span> 
+												<span class="btn-hover-label label-hover">Date Search</span>
+											</a>
+										</li>
 									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
 					<!--:Slide-->
-					<div class="swiper-slide"
-						style="background-image: url('/resources/img/shop/banners/06.jpg')">
-						<div
-							class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
+					<div class="swiper-slide" style="background-image: url('/resources/img/shop/banners/2.jpeg'); background-size: cover;">
+						<div class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
 						<!--:container-->
-						<div
-							class="container h-100 text-white position-relative z-index-1">
+						<div class="container h-100 text-white position-relative z-index-1">
 							<div class="row d-flex align-items-center h-100">
 								<div class="col-xl-10 mx-auto text-center">
 									<!--:slider layers-->
 									<ul class="carousel-layers list-unstyled mb-0 pt-lg-9">
 										<li data-carousel-layer="fade-start">
-											<h2 class="display-1 mb-3">3차 프로젝트_전시회</h2>
+											<h3 class="display-3 mb-3">플라워 바이 네이키드</h3>
 										</li>
 										<li data-carousel-layer="fade-end">
-											<p class="lead mb-4 mb-lg-5">3차 프로젝트_전시회</p>
+											<p class="lead mb-4 mb-lg-5">네이처랩스</p>
 										</li>
-										<li data-carousel-layer="fade-start"><a href="#"
-											class="btn btn-white btn-lg btn-hover-text mb-2 me-2"> <span
-												class="btn-hover-label label-default">3차 프로젝트_전시회</span> <span
-												class="btn-hover-label label-hover">3차 프로젝트_전시회</span>
-										</a></li>
+										<li data-carousel-layer="fade-start">
+											<a href="#" class="btn btn-white btn-lg btn-hover-text mb-2 me-2"> 
+												<span class="btn-hover-label label-default">More View</span> 
+												<span class="btn-hover-label label-hover">Date Search</span>
+											</a>
+										</li>
 									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
 					<!--:Slide-->
-					<div class="swiper-slide"
-						style="background-image: url('/resources/img/shop/banners/07.jpg')">
-						<div
-							class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
+					<div class="swiper-slide" style="background-image: url('/resources/img/shop/banners/3.png'); background-size: cover;">
+						<div class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
 						<!--:container-->
-						<div
-							class="container h-100 text-white position-relative z-index-1">
+						<div class="container h-100 text-white position-relative z-index-1">
 							<div class="row d-flex align-items-center h-100">
 								<div class="col-xl-10 mx-auto text-center">
 									<!--:slider layers-->
 									<ul class="carousel-layers list-unstyled mb-0 pt-lg-9">
 										<li data-carousel-layer="fade-start">
-											<h2 class="display-1 mb-3">3차 프로젝트_전시회</h2>
+											<h3 class="display-3 mb-3">빛: 영국 테이트미술관 특별전</h3>
 										</li>
 										<li data-carousel-layer="fade-end">
-											<p class="lead mb-4 mb-lg-5">3차 프로젝트_전시회</p>
+											<p class="lead mb-4 mb-lg-5">서울시립 북서울미술관</p>
 										</li>
-										<li data-carousel-layer="fade-start"><a href="#"
-											class="btn btn-white btn-lg btn-hover-text mb-2 me-2"> <span
-												class="btn-hover-label label-default">3차 프로젝트_전시회</span> <span
-												class="btn-hover-label label-hover">3차 프로젝트_전시회</span>
-										</a></li>
+										<li data-carousel-layer="fade-start">
+											<a href="#" class="btn btn-white btn-lg btn-hover-text mb-2 me-2"> 
+												<span class="btn-hover-label label-default">More View</span> 
+												<span class="btn-hover-label label-hover">Date Search</span>
+											</a>
+										</li>
 									</ul>
 								</div>
 							</div>
@@ -133,15 +121,10 @@
 				</div>
 
 				<!--:Add Pagination -->
-				<div
-					class="swiper-pagination swiperClassic-pagination z-index-1 text-white"></div>
+				<div class="swiper-pagination swiperClassic-pagination z-index-1 text-white"></div>
 				<!--:Add arrows-->
-				<div
-					class="swiper-button-prev swiperClassic-button-prev width-2x height-2x bg-transparent text-white">
-				</div>
-				<div
-					class="swiper-button-next swiperClassic-button-next width-2x height-2x bg-transparent text-white">
-				</div>
+				<div class="swiper-button-prev swiperClassic-button-prev width-2x height-2x bg-transparent text-white"> </div>
+				<div class="swiper-button-next swiperClassic-button-next width-2x height-2x bg-transparent text-white"> </div>
 			</div>
 		</section>
 		<!-- 슬라이더 끝 -->
@@ -154,22 +137,22 @@
 					<div
 						class="col-md-4 border-end-md border-light text-center mb-7 mb-md-0">
 						<div class="mb-3">
-							<h1>이미지</h1>
+							<h1><i class="bx bx-calendar"></i></h1>
 						</div>
-						<h6 class="mb-0">Chapter.1</h6>
+						<h6 class="mb-0">Search</h6>
 					</div>
 					<div
 						class="col-md-4 border-end-md border-light text-center mb-7 mb-md-0">
 						<div class="mb-3">
-							<h1>이미지</h1>
+							<h1><i class="bx bx-heart"></i></h1>
 						</div>
-						<h6 class="mb-0">Chapter.2</h6>
+						<h6 class="mb-0">Select</h6>
 					</div>
 					<div class="col-md-4 text-center">
 						<div class="mb-3">
-							<h1>이미지</h1>
+							<h1><i class="bx bx-credit-card"></i></h1>
 						</div>
-						<h6 class="mb-0">Chapter.3</h6>
+						<h6 class="mb-0">Success</h6>
 					</div>
 				</div>
 			</div>
@@ -185,20 +168,18 @@
 						<div class="card border-0 card-hover overflow-hidden">
 							<div class="overflow-hidden position-relative">
 
-								<!-- <img src="/resources/img/shop/banners/women.jpg" class="img-fluid img-zoom" alt=""> -->
-								<div
-									style="border: 10px solid gray; height: 300px; background-color: gray;"></div>
-
+								<img src="/resources/img/shop/banners/1.jpeg" class="img-fluid img-zoom" style="width: 100%; height: 550px;">
+<!-- 								<div style="border: 10px solid gray; height: 300px; background-color: gray;"></div> -->
+								<div class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
 							</div>
-							<div
-								class="position-absolute text-white start-0 top-0 p-4 justify-content-center text-center align-items-center d-flex w-100 h-100">
+							<div class="position-absolute text-white start-0 top-0 p-4 justify-content-center text-center align-items-center d-flex w-100 h-100">
 								<div class="">
-									<span>3차_프로젝트</span>
-									<h5 class="mb-4 display-3">Menu01</h5>
-									<a href="#"
+									<span>All Exhibition</span>
+									<h5 class="mb-4 display-3">Exhibition</h5>
+									<a href="/exhibition/ExhibitionDate.do"
 										class="btn btn-white btn-lg btn-hover-text mb-2 me-2"> <span
-										class="btn-hover-label label-default">Button1</span> <span
-										class="btn-hover-label label-hover">Button2</span>
+										class="btn-hover-label label-default">Exhibition</span> <span
+										class="btn-hover-label label-hover">Date Search</span>
 									</a>
 								</div>
 							</div>
@@ -208,20 +189,19 @@
 						<div class="card border-0 card-hover overflow-hidden">
 							<div class="overflow-hidden position-relative">
 
-								<!-- <img src="/resources/img/shop/banners/men.jpg" class="img-fluid img-zoom" alt=""> -->
-								<div
-									style="border: 10px solid gray; height: 300px; background-color: gray;"></div>
-
+								<img src="/resources/img/shop/banners/2.jpeg" class="img-fluid img-zoom" style="width: 100%; height: 550px;">
+<!-- 								<div style="border: 10px solid gray; height: 300px; background-color: gray;"></div> -->
+								<div class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
 							</div>
 							<div
 								class="position-absolute text-white start-0 top-0 p-4 justify-content-center text-center align-items-center d-flex w-100 h-100">
 								<div class="">
-									<span>3차_프로젝트</span>
-									<h5 class="mb-4 display-3">Menu02</h5>
-									<a href="#"
+									<span>All Review</span>
+									<h5 class="mb-4 display-3">Review</h5>
+									<a href="/exhibition/getReviewList.do"
 										class="btn btn-white btn-lg btn-hover-text mb-2 me-2"> <span
-										class="btn-hover-label label-default">Button1</span> <span
-										class="btn-hover-label label-hover">Button2</span>
+										class="btn-hover-label label-default">Review</span> <span
+										class="btn-hover-label label-hover">Review</span>
 									</a>
 								</div>
 							</div>
@@ -236,7 +216,7 @@
 			<div class="container py-9 py-lg-11">
 				<div class="row align-items-end">
 					<div class="col-md-8 mx-auto text-center">
-						<h2 class="mb-5 display-4">다가오는 전시회 top8</h2>
+						<h2 class="mb-5 display-4">Coming Soon Top 8</h2>
 					</div>
 				</div>
 				<div class="row">
@@ -271,7 +251,7 @@
 					</c:forEach>
 				</div>
 				<div class="text-center pt-2">
-					<a href="#" class="btn btn-dark btn-lg btn-hover-text mb-2 me-2">
+					<a href="/exhibition/ExhibitionDate.do" class="btn btn-dark btn-lg btn-hover-text mb-2 me-2">
 						<span class="btn-hover-label label-default">More View</span> <span
 						class="btn-hover-label label-hover">Date Search</span>
 					</a>
@@ -321,35 +301,16 @@
 
 	<jsp:include page="/footer.jsp" />
 
-	<!-- :Back to top -->
-	<a href="#top"
-		class="position-fixed toTop d-none d-sm-flex btn btn-light rounded-circle p-0 flex-center width-4x height-4x z-index-fixed end-0 bottom-0 mb-3 me-3">
-		<i class="bx bxs-up-arrow align-middle lh-1"></i>
-	</a>
-
-
-	<!--cursor-->
-	<div class="cursor">
-		<div class="cursor__inner"></div>
-	</div>
-
-	<!-- scripts -->
-
-
 
 </body>
 
 
 <script src="/resources/js/theme.bundle.js"></script>
-<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
-<script src="/resources/vendor/node_modules/js/cursor.js"></script>
-
 
 <!--Page Countdown script-->
 <script src="/resources/vendor/node_modules/js/jquery.min.js"></script>
 <script src="/resources/vendor/node_modules/js/jquery.countdown.min.js"></script>
 <script src="/resources/vendor/node_modules/js/swiper-bundle.min.js"></script>
-
 
 <script>
 	//swiper
@@ -358,7 +319,7 @@
 		slidesPerView : 1,
 		spaceBetween : 0,
 		effect : 'fade',
-		speed : 800,
+		speed : 500,
 		loop : true,
 		autoplay : {
 			delay : 2500
