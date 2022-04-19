@@ -29,4 +29,7 @@ public interface CustomerService {
 	
 	// 아이디 중복체크
 	public int idCheck(CustomerVO vo, String id);
+	
+	//비밀번호 확인
+	public int customerconfirmpassword(CustomerVO vo);
 }
