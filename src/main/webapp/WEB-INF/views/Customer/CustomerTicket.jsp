@@ -42,8 +42,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <!--Google fonts-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap"
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap"
 	rel="stylesheet">
 
 <!-- Main CSS -->
@@ -88,10 +87,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<ol class="breadcrumb mb-3">
 								<li class="breadcrumb-item"><a href="#!">Home</a></li>
 								<li class="breadcrumb-item active">Mypage</li>
-								<li class="breadcrumb-item active">Ticket</li>
+								<li class="breadcrumb-item active">My Ticket</li>
 							</ol>
 						</nav>
-						<h1 class="mb-0 display-3">Ticket</h1>
+						<h1 class="mb-0 display-3">My Ticket</h1>
 					</div>
 				</div>
 				<!--/.row-->
@@ -121,19 +120,24 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			<div class="container pb-7 pb-lg-12 pt-7">
 				<c:forEach items="${selectList}" var="vo">
 					<div class="col-lg-10 offset-lg-1">
+					
 						<!--:Wishlist card-->
 						<div class="card hover-lift shadow flex-sm-row mb-6 align-items-center">
+							
+							<!-- 이미지 -->
 							<div class="col-sm-5 col-lg-4 mb-4 mb-md-0">
 								<a href="./ExhibitionDetail.do?id=${vo.exhibition_id}" class="d-block"> 
 									<img src="${vo.exhibition_image}" class="img-fluid card-img">
 								</a>
 							</div>
+							
+							<!-- 내용 -->
 							<div class="col-sm-7 py-sm-5 col-12 col-lg-6 offset-lg-1 px-5">
 								<a href="./ExhibitionDetail.do?id=${vo.exhibition_id}"
 									class="mb-3 d-block text-dark">
 									<h4 class="text-truncate">${vo.exhibition_title}</h4>
 								</a>
-								<p class="lead mb-5">${vo.ticketing_date}</p>
+								<p class="lead mb-5">${vo.ticketing_date} Visit</p>
 								<div class="d-flex mb-3 align-items-center">
 									<span class="text-muted me-3">Place</span> <strong>${vo.exhibition_location}</strong>
 								</div>
@@ -142,21 +146,25 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										~ ${vo.exhibition_end_date}</strong>
 								</div>
 								<div class="d-flex mb-3 align-items-center">
-									<span class="text-muted me-3">consumer name</span> <strong>${vo.consumer_name}</strong>
+									<span class="text-muted me-3">Consumer Name</span> <strong>${vo.consumer_name}</strong>
 
 								</div>
 								<div class="d-flex mb-5 align-items-center">
-									<span class="me-3 text-muted">consumer number</span> <strong>${vo.consumer_ph}</strong>
+									<span class="me-3 text-muted">Consumer Number</span> <strong>${vo.consumer_ph}</strong>
 								</div>
 								
 								<!--QR 확인버튼-->
 								<div class="d-grid pb-4 pb-md-0">
+									<!-- QR -->
 									<a href="#" class="btn btn-primary" style="margin-bottom: 10px;">Move to qr</a> 
-									<a href="../customer/CustomerExhibitionReviewWrite.do?exhibition_id=${vo.exhibition_id}&customer_id=${vo.customer_id}&ticketing_id=${vo.ticketing_id}" class="btn btn-dark">후기작성</a>
+									<!-- 후기작성 -->
+									<a href="../customer/CustomerExhibitionReviewWrite.do?exhibition_id=${vo.exhibition_id}&customer_id=${vo.customer_id}&ticketing_id=${vo.ticketing_id}" 
+									class="btn btn-dark">Write Review</a>
 								</div>
-
 							</div>
 						</div>
+						<!--:Wishlist card-->
+						
 					</div>
 				</c:forEach>
 			</div>
@@ -169,26 +177,13 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 	<jsp:include page="/footer.jsp" />
 
-	<!-- :Back to top -->
-	<a href="#top"
-		class="position-fixed toTop d-none d-sm-flex btn btn-light rounded-circle p-0 flex-center width-4x height-4x z-index-fixed end-0 bottom-0 mb-3 me-3">
-		<i class="bx bxs-up-arrow align-middle lh-1"></i>
-	</a>
-
-
-	<!--cursor-->
-	<div class="cursor">
-		<div class="cursor__inner"></div>
-	</div>
-
-	<!-- scripts -->
-	<script src="/resources/js/theme.bundle.js"></script>
-	<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
-	<script src="/resources/vendor/node_modules/js/cursor.js"></script>
-
-	<!--Select scripts-->
-	<script src="/resources/vendor/node_modules/js/choices.min.js"></script>
 
 </body>
+
+<!-- scripts -->
+<script src="/resources/js/theme.bundle.js"></script>
+
+<!--Select scripts-->
+<script src="/resources/vendor/node_modules/js/choices.min.js"></script>
 
 </html>
