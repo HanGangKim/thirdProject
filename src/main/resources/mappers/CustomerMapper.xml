@@ -40,6 +40,12 @@
 		WHERE CUSTOMER_ID = #{id}
 	</select>
 	
+	<select id="customerconfirmpassword" parameterType="customer" resultType="customer">
+	SELECT *
+	FROM CUSTOMER_INFO
+	WHERE CUSTOMER_PASSWORD = #{customer_password} AND CUSTOMER_ID =#{customer_id}
+	
+	</select>
 
 </mapper>
 

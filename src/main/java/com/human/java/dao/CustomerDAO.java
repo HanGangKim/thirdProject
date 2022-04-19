@@ -24,4 +24,6 @@ public interface CustomerDAO {
 	
 	public int idCheck( String id);
 	
+	public CustomerVO customerconfirmpassword(CustomerVO vo);
+	
 }

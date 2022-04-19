@@ -85,9 +85,12 @@ public class CustomerServiceImpl implements CustomerService{
 	}
 
 	@Override
-	public int customerconfirmpassword(CustomerVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+	public CustomerVO customerconfirmpassword(CustomerVO vo) {
+		System.out.println("===============");
+		System.out.println("customerconfirmpassword 서비스 호출");
+		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+		return customerDAO.customerconfirmpassword(vo);
 	}
 
 }

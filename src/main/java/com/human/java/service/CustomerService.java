@@ -31,5 +31,5 @@ public interface CustomerService {
 	public int idCheck(CustomerVO vo, String id);
 	
 	//비밀번호 확인
-	public int customerconfirmpassword(CustomerVO vo);
+	public CustomerVO customerconfirmpassword(CustomerVO vo);
 }

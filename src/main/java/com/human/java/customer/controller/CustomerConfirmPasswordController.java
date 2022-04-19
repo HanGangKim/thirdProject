@@ -26,6 +26,7 @@ public class CustomerConfirmPasswordController {
 	@RequestMapping("customerConfirmPassword.do")
 	public ModelAndView customerconfirm(CustomerVO vo, HttpSession session) {
 		System.out.println("CustomerConfirmPasswod 메소드 호출");
+		System.out.println("CustomerVO : " + ToStringBuilder.reflectionToString(vo));
 		CustomerVO result = customerService.customerLogin(vo);
 		ModelAndView mv = new ModelAndView();
 		
@@ -41,11 +42,12 @@ public class CustomerConfirmPasswordController {
 			System.out.println("[" + result.getCustomer_id() + "]" + "패스워드 확인 성공");
 			
 			session.setAttribute("userPass" , result.getCustomer_password());
-			
+			session.setAttribute("userId", result.getCustomer_id());
 		
 			
 			mv.addObject("vo", customerService.customerconfirmpassword(vo));
-			mv.setViewName("CustomerUpdate");
+			
+			mv.setViewName("/Customer/CustomerChangeInfo");
 		}
 		return mv;
 	}
