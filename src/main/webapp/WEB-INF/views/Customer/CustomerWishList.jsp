@@ -90,10 +90,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<ol class="breadcrumb mb-3">
 								<li class="breadcrumb-item"><a href="#!">Home</a></li>
 								<li class="breadcrumb-item active">Mypage</li>
-								<li class="breadcrumb-item active">Wishlist</li>
+								<li class="breadcrumb-item active">My Wishlist</li>
 							</ol>
 						</nav>
-						<h1 class="mb-0 display-3">Wishlist</h1>
+						<h1 class="mb-0 display-3">My Wishlist</h1>
 					</div>
 				</div>
 				<!--/.row-->
@@ -173,8 +173,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 <!-- scripts -->
 <script src="/resources/js/theme.bundle.js"></script>
-<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
-<script src="/resources/vendor/node_modules/js/cursor.js"></script>
+
 <!-- <script>history.replaceState({}, null, location.pathname);</script> -->
 
 </html>
