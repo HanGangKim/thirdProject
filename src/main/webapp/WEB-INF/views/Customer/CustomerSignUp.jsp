@@ -101,14 +101,14 @@ response.sendRedirect("../LogOut.do");
 							
 								<!-- 아이디 -->
 								<div class="input-icon-group mb-3">
-									<span class="input-icon"> <i class="bx bx-id-card"></i>
+									<span class="input-icon" name="errorMassageId" id="errorMassageId"> <i class="bx bx-id-card"></i>
 									</span> <input type="text" class="form-control" required id="signUpid"
 										name="customer_id" placeholder="login id">
 								</div>
 
 								<!-- 비밀번호 입력 -->
 								<div class="input-icon-group mb-3">
-									<span class="input-icon"> <i class="bx bx-lock-open"></i>
+									<span class="input-icon" name="errorMassagePw" id="errorMassagePw"> <i class="bx bx-lock-open"></i>
 									</span> <input type="password" class="form-control" required
 										name="customer_password" id="signUpPassword"
 										placeholder="Enter password">
@@ -116,14 +116,14 @@ response.sendRedirect("../LogOut.do");
 
 								 <!-- 비밀번호 확인 -->
 								 <div class="input-icon-group mb-3">
-									<span class="input-icon"> <i class="bx bx-lock-open"></i>
+									<span class="input-icon" name="errorMassagePwc" id="errorMassagePwc"> <i class="bx bx-lock-open"></i>
 									</span><input type="password" class="form-control" required
 										id="signUpConfirmPassword" placeholder="Confirm password" name="customer_password_confirm">
 								</div>
 
 								<!-- 이름 -->
 								<div class="input-icon-group mb-3">
-									<span class="input-icon"> <i class="bx bx-user"></i>
+									<span class="input-icon" name="errorMassageName" id="errorMassageName"> <i class="bx bx-user"></i>
 									</span> <input type="text" class="form-control" required
 										name="customer_name" id="signUpName" autofocus
 										placeholder="Your full name">
@@ -131,7 +131,7 @@ response.sendRedirect("../LogOut.do");
 
 								<!-- 전화번호 -->
 								<div class="input-icon-group mb-3">
-									<span class="input-icon"> <i class="bx bx-mobile"></i>
+									<span class="input-icon" name="errorMassagePh" id="errorMassagePh"> <i class="bx bx-mobile"></i>
 									</span> <input type="text" class="form-control" required
 										id="signUpph" name="customer_ph" autofocus
 										placeholder="Your PhoneNumber 010-xxxx-xxxx">
@@ -140,7 +140,7 @@ response.sendRedirect("../LogOut.do");
 
 								<!-- 이메일 -->
 								<div class="input-icon-group mb-3">
-									<span class="input-icon"> <i class="bx bx-envelope"></i>
+									<span class="input-icon" name="errorMassageMail" id="errorMassageMail"> <i class="bx bx-envelope"></i>
 									</span> <input type="email" class="form-control" required
 										name="customer_email" id="signUpMail"
 										placeholder="Your email address">
@@ -148,7 +148,7 @@ response.sendRedirect("../LogOut.do");
 								
 								<!-- 성별 -->
 								<div class="input-icon-group mb-3">
-									<span class="input-icon"> <i class="bx bx-male-female"></i>
+									<span class="input-icon" name="errorMassageGender" id="errorMassageGender"> <i class="bx bx-male-female"></i>
 									</span> <select autocomplete="false" id="profile_gender"
 										name="customer_gender" class="form-control"
 										data-choices='{"searchEnabled":false}'>
@@ -161,7 +161,7 @@ response.sendRedirect("../LogOut.do");
 							
 								<!-- 나이 -->
 								 <div class="input-icon-group mb-3">
-									<span class="input-icon"> <i class="bx bx-calendar"></i>
+									<span class="input-icon" name="errorMassageAge" id="errorMassageAge"> <i class="bx bx-calendar"></i>
 									</span> <input type="number" class="form-control" required
 										id="signUpage" name="customer_age" autofocus
 										placeholder="Your age">
@@ -189,9 +189,7 @@ response.sendRedirect("../LogOut.do");
 									class="ms-2 text-dark fw-semibold link-decoration">Sign in</a>
 							</p>
 <!-- 회원가입 양식이 올바르지 않습니다 -->
-							<div class="position-relative d-flex align-items-center py-3" name="errorMassage" id="errorMassage">
-								()
-							</div>
+							
 <!-- 							<div class="position-relative d-flex align-items-center py-3" name="errorMassagePh"> -->
 <!-- 								(전화) -->
 <!-- 							</div> -->
@@ -261,6 +259,13 @@ response.sendRedirect("../LogOut.do");
     		next.disabled = true;
     	} else{
     		next.disabled = false;
+    		$('#errorMassagePw').html('✔');
+    		$('#errorMassagePwc').html('✔');
+    		$('#errorMassageMail').html('✔');
+    		$('#errorMassageGender').html('✔');
+    		$('#errorMassagePh').html('✔');
+    		$('#errorMassageAge').html('✔');
+    		$('#errorMassageName').html('✔');
     	}
 //     	next.disabled = !(input_ok());
 
@@ -274,13 +279,12 @@ response.sendRedirect("../LogOut.do");
         		success : function(result) {
 
     				if(result == 1){
-    					$('#errorMassage').html('사용할 수 없는 아이디 입니다.');
-    					$('#errorMassage').attr('color','red');
-    					
+    					$('#errorMassageId').html('❌');
+    					$('#errorMassageId').attr('color','red');
     					next.disabled = true;
     				} else{
-    					$('#errorMassage').html('사용할 수 있는 아이디 입니다.');
-    					$('#errorMassage').attr('color','green');
+    					$('#errorMassageId').html('✔');
+    					$('#errorMassageId').attr('color','green');
     					
     					if (pwd&&mail&&gender&&ph){
     						next.disabled = false;
@@ -299,50 +303,92 @@ response.sendRedirect("../LogOut.do");
     })
 
      function input_ok(){
-//         	if (!checkUserId(form.userId.value)) {
-//                 return false;
-//             } else 
 
+    	const id = checkID(loginForm.customer_id_value);
 		const pwd = checkPassword(loginForm.customer_id.value, form.customer_password.value, form.customer_password_confirm.value);
-		const mail = checkMail(form.customer_email.value);
-		const gender = checkGender(form.customer_gender.value);
-		const ph = checkph(form.customer_ph.value);
+		const mail = checkMail(loginForm.customer_email.value);
+		const gender = checkGender(loginForm.customer_gender.value);
+		const ph = checkph(loginForm.customer_ph.value);
+		const name = checkname(loginForm.customer_name.value);
+		const age = checkage(loginForm.customer_age.value);
 		
-		if (pwd&&mail&&gender&&ph){
+		if (id&&pwd&&mail&&gender&&ph&&age&&name){
 			return true;
 		} else {
 			if(!(pwd)) {
-				pass = document.createElement('span');
-				pass.innerText = '회원가입 양식이 올바르지 않습니다(비밀번호)';
+				$('#errorMassagePw').html('❌');
+				$('#errorMassagePw').attr('color','red');
+				$('#errorMassagePwc').html('❌');
+				$('#errorMassagePwc').attr('color','red');
+				}else{
+					$('#errorMassagePw').html('✔');
+					$('#errorMassagePw').attr('color','green');
+					$('#errorMassagePwc').html('✔');
+					$('#errorMassagePwc').attr('color','green');
 				}
 			if(!(mail)) {
-// 				document.getElementsByName("errorMassage").innerText="(이메일)";
-				pass = document.createElement('span');
-				pass.innerText = '회원가입 양식이 올바르지 않습니다(이메일)';
+				$('#errorMassageMail').html('❌');
+				$('#errorMassageMail').attr('color','red');
+				}else{
+					$('#errorMassageMail').html('✔');
+					$('#errorMassageMail').attr('color','red');
 				}
 			if(!(gender)) {
-// 				document.getElementsByName("errorMassage").innerText="(성별)";
-				pass = document.createElement('span');
-				pass.innerText = '회원가입 양식이 올바르지 않습니다(성별)';
+				$('#errorMassageGender').html('❌');
+				$('#errorMassageGender').attr('color','red');
+				}else{
+					$('#errorMassageGender').html('✔');
+					$('#errorMassageGender').attr('color','red');
 				}
 			if(!(ph)) {
-// 				document.getElementsByName("errorMassage").innerText="(전화번호)";
-				pass = document.createElement('span');
-				pass.innerText = '회원가입 양식이 올바르지 않습니다(전화번호)';
+				$('#errorMassagePh').html('❌');
+				$('#errorMassagePh').attr('color','red');
+				}else{
+					$('#errorMassagePh').html('✔');
+					$('#errorMassagePh').attr('color','red');
+				}
+			if(!(name)){
+				$('#errorMassageName').html('❌');
+				$('#errorMassageName').attr('color','red');
+				}else{
+					$('#errorMassageName').html('✔');
+					$('#errorMassageName').attr('color','red');
 				}
 			return false;
 		}
-		
-//             	if (!checkPassword(loginForm.customer_id.value, form.customer_password.value,
-//                     form.customer_password_confirm.value)) {
-//                 return false;
-//             } else if (!checkMail(form.customer_email.value)) {
-//                 return false;
-//             } else if (!checkGender(form.customer_gender.value)){
-//     			return false;	
-//     		}
-//             return true;
+
         }
+    
+    function checkID(id){
+    	if (!checkExistData(id, "아이디를")){
+    		$('#errorMassageId').html('❌');
+			$('#errorMassageId').attr('color','red');
+			  return false;
+		  } else{
+			  return true;
+		  }
+    }
+    
+    function checkage(age){
+    	if (!checkExistData(age, "나이를")){
+    		$('#errorMassageAge').html('❌');
+			$('#errorMassageAge').attr('color','red');
+			  return false;
+		  } else{
+			  $('#errorMassageAge').html('✔');
+			  $('#errorMassageAge').attr('color','red');
+			  return true;
+		  }
+    }
+    
+    function checkname(name){
+		  if (!checkExistData(name, "이름을")){
+			  return false;
+		  } else{
+			  return true;
+		  }
+	  }
+    
       function checkPassword(id, password1, password2) {
             //비밀번호가 입력되었는지 확인하기
             if (!checkExistData(password1, "비밀번호를"))
@@ -394,9 +440,14 @@ response.sendRedirect("../LogOut.do");
     	function checkGender(gender){
     		if(gender=="Gender"){
 //     			alert("성별을 선택하세요");
+				$('#errorMassageGender').html('❌');
+				$('#errorMassageGender').attr('color','red');
     			return false;
+    		}else{
+    			$('#errorMassageGender').html('✔');
+				$('#errorMassageGender').attr('color','red');
+    			return true;
     		}
-    		return true;
     	}
 
         function checkExistData(value, dataName) {
