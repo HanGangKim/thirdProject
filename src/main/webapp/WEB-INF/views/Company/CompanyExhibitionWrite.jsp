@@ -188,7 +188,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 													<!--주소 모달 버튼-->
 													<div class="mt-5">
 <!-- 															<label class="form-label" for="profile_com"></label>  -->
-														<a onclick="sample2_execDaumPostcode()" class="d-block btn btn-primary">Address Here</a>
+														<a onclick="sample2_execDaumPostcode()" class="d-block btn btn-dark">Search</a>
 													</div>
 												</div>
 												<!-- 지역 끝 -->		

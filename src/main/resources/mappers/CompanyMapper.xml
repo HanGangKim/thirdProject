@@ -35,7 +35,11 @@
 	<select id="companyExhibitionList" parameterType="exhibition" resultType="exhibition">
 	SELECT * FROM EXHIBITION_INFO
 	WHERE COMPANY_ID = #{company_id}
+	</select>
 	
+	<select id="companyExhibitionDetail" parameterType="exhibition" resultType="exhibition">
+	SELECT * FROM EXHIBITION_INFO
+	WHERE COMPANY_ID = #{company_id} AND EXHIBITION_ID = #{exhibition_id}
 	</select>
 	
 	
@@ -43,7 +47,6 @@
 	SELECT *
 	FROM CUSTOMER_INFO
 	WHERE CUSTOMER_PASSWORD = #{company_password} AND CUSTOMER_ID =#{company_id}
-	
 	</select>
 	
 
