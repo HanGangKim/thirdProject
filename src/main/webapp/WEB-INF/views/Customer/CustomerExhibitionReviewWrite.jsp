@@ -65,11 +65,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 </head>
 
 <body>
-	<!--Preloader Spinner-->
-	<div class="spinner-loader bg-gradient-secondary text-white">
-		<div class="spinner-border text-primary" role="status"></div>
-		<span class="small d-block ms-2">Loading...</span>
-	</div>
+	
 
 	<jsp:include page="/header.jsp" />
 
@@ -124,7 +120,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 										<!-- form 태그시작  -->
 										<form autocomplete="false" action="/exhibition/saveReview.do"
-											method="get">
+											method="post" enctype="multipart/form-data">
 											<div class="row align-items-center">
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
@@ -134,7 +130,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												</div>
 
 												<!-- 넘겨줄 예매내역 ticketing_id  -->
-												<input name="ticketing_id" value="${param.ticketing_id}">
+												<input name="ticketing_id" value="${param.ticketing_id}" hidden>
 						
 												<!-- 넘겨줄 전시회 hidden 아이디  -->
 												<input type="number" name="exhibition_id"
@@ -175,8 +171,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 													<!-- 이미지 업로드전까지 DEFAULT_IMG 벨류 부여 -->
 													<!-- 이미지 업로드 전까지 file->text 변경  -->
-													<input name="review_img" value="DEFAULT_IMG" type="text"
-														id="profile_address" class="form-control">
+													<input name="review_img" value="DEFAULT_IMG" type="file"
+														id="review_img" class="form-control" accept="image/png image/jpg image/gif">
 												</div>
 											</div>
 											<hr class="mt-5 mb-3">
@@ -200,17 +196,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 	<jsp:include page="/footer.jsp" />
 
-	<!-- :Back to top -->
-	<a href="#top"
-		class="position-fixed toTop d-none d-sm-flex btn btn-light rounded-circle p-0 flex-center width-4x height-4x z-index-fixed end-0 bottom-0 mb-3 me-3">
-		<i class="bx bxs-up-arrow align-middle lh-1"></i>
-	</a>
 
-
-	<!--cursor-->
-	<div class="cursor">
-		<div class="cursor__inner"></div>
-	</div>
 
 
 
