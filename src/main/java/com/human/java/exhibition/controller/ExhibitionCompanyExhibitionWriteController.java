@@ -31,4 +31,19 @@ public class ExhibitionCompanyExhibitionWriteController {
 		return "/Company/CompanyWriteWaiting";
 	}
 	
+	// 업체 전시회 등록
+	@RequestMapping("exhibitionCompanyExhibitionUpdate.do")
+	public String exhibitionCompanyExhibitionUpdate(ExhibitionVO vo) {
+		
+		System.out.println("===============");
+		System.out.println("exhibitionCompanyExhibitionUpdate.do 호출");
+		System.out.println("ExhibitionVO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+		
+		exhibitionService.companyUpdateExhibition(vo);
+		
+		return "/Company/CompanyWriteWaiting";
+	}
+	
+	
 }

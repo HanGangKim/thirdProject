@@ -122,7 +122,7 @@
 											<h5 class="mb-4">Writing A Review</h5>
 	
 											<!-- form 태그시작  -->
-											<form action="/exhibition/exhibitionCompanyExhibitionWrite.do" method="get">
+											<form action="/exhibition/exhibitionCompanyExhibitionUpdate.do" method="get">
 												<div class="row align-items-center">
 													<!--아이디-->
 													<div class="col-md-6 mb-3">
@@ -176,7 +176,7 @@
 												<div class="d-flex col-md-12 mb-3" style="justify-content: space-between;">
 													<div class="col-md-10 mb-3 me-4">
 														<label class="form-label" for="profile_com">Location</label> 
-														<input name="exhibition_location" type="text" value="${CompanyExhibition.exhibition_location}" class="form-control" id="sample2_address" placeholder="adress" readonly="readonly" required="required">
+														<input name="exhibition_location" type="text" value="${CompanyExhibition.exhibition_location}" class="form-control" id="sample2_address" placeholder="adress" required="required" readonly="readonly" >
 														<!-- 주소모달 호출 버튼 -->
 														<!-- <input type="button" onclick="sample2_execDaumPostcode()" value="우편번호 찾기"><br> -->
 														
@@ -222,11 +222,11 @@
 												<hr class="mt-5 mb-3">
 												
 												<!-- 업데이트를 위한 hidden 태그 -->
-												<input name="" type="text" hidden="hidden" value="${CompanyExhibition.exhibition_id}">
+												<input name="exhibition_id" type="text" hidden="hidden" value="${CompanyExhibition.exhibition_id}">
 												
 												<!--저장 버튼-->
 												<div class="text-end">
-													<button type="submit" class="btn btn-primary">Insert Review</button>
+													<button type="submit" class="btn btn-primary">Update Review</button>
 												</div>
 											</form>
 											<!-- form 태그 종료 -->

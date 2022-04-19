@@ -125,6 +125,18 @@ public class ExhibitionServiceImpl implements ExhibitionService{
 	}
 
 	@Override
+	public int companyUpdateExhibition(ExhibitionVO vo) {
+		
+		System.out.println("===============");
+		System.out.println("companyUpdateExhibition 서비스 호출");
+		System.out.println("ExhibitionVO vo : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+		
+		return exhibitionDAO.companyUpdateExhibition(vo);
+	}
+	
+	
+	@Override
 	public List<ExhibitionVO> getExhibitionCompanyServiceList(ExhibitionVO vo, String companyId) {
 		
 		

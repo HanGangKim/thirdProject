@@ -32,6 +32,9 @@ public interface ExhibitionDAO {
 	// 업체 전시회 등록
 	public int companyInsertExhibition(ExhibitionVO vo);
 	
+	// 업체 전시회 수정 
+	public int companyUpdateExhibition(ExhibitionVO vo);
+	
 	// 업체 전시회 조회
 	public List<ExhibitionVO> getExhibitionCompanyList(ExhibitionVO vo , String companyId);
 	

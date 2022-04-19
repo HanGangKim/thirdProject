@@ -176,10 +176,7 @@ if (session.getAttribute("userId") == null) {
 									<input value="${vo.exhibition_id}" hidden="hidden">
 									<button type="submit" class="btn btn-primary">삭제</button>
 									</form>
-									
-									
 								</div>
-
 
 							</div>
 						</div>
@@ -198,6 +195,18 @@ if (session.getAttribute("userId") == null) {
 				<!--예매하기 버튼-->
 				<div>
 					<a href="/company/CompanyExhibitionWrite.do" class="btn btn-primary">New exhibition</a>
+				</div>
+		</div>
+		
+		<br>
+		
+	<!-- 버튼 -->
+	 <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-center">
+				<!--전시회 목록보기-->
+				<div class="mb-3 mb-sm-0"></div>
+				<!--예매하기 버튼-->
+				<div>
+					<a href="/company/CompanyMain.do" class="btn btn-primary">Go  MainPage</a>
 				</div>
 		</div>
 

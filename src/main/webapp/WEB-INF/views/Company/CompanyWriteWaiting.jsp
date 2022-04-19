@@ -74,9 +74,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							class="width-10x height-10x rounded-circle position-relative bg-success text-white flex-center mb-4">
 							<i class="bx bx-check lh-1 display-4 fw-normal"></i>
 						</div>
-						<h1 class="display-2 mb-3">등록이 완료되었습니다.</h1>
-						<p class="mb-5 lead mx-auto">실제 등록까지는 2 ~ 3일정도 소요됩니다.</p>
-						<a href="/customer/CustomerSignUp.do" class="btn btn-outline-primary btn-lg">등록 리스트 보러가기</a>
+						<h1 class="display-2 mb-3">등록/수정이 완료되었습니다.</h1>
+						<p class="mb-5 lead mx-auto">실제 등록/수정까지는 2 ~ 3일정도 소요됩니다.</p>
+						<a href="/exhibition/CompanyExhibitionList.do?company_id=<%=userId%>" class="btn btn-outline-primary btn-lg">등록 리스트 보러가기</a>
 
 					</div>
 				</div>

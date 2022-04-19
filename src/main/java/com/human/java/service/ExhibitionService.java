@@ -38,6 +38,9 @@ public interface ExhibitionService {
 	// 업체 전시회 등록
 	public int companyInsertExhibition (ExhibitionVO vo);
 	
+	// 업체 전시회 수정 
+	public int companyUpdateExhibition (ExhibitionVO vo);
+ 	
 	// 업체 전시회 등록 리스트
 	public List<ExhibitionVO> getExhibitionCompanyServiceList(ExhibitionVO vo , String companyId);
 	

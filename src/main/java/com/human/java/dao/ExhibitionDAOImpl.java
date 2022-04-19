@@ -126,6 +126,20 @@ public class ExhibitionDAOImpl implements ExhibitionDAO {
 		return mybatis.insert("companyMapper.companyInsertExhibition",vo);
 	}
 
+	
+	@Override
+	public int companyUpdateExhibition(ExhibitionVO vo) {
+		
+		System.out.println("===============");
+		System.out.println("companyUpdateExhibition 다오 호출");
+		System.out.println("ExhibitionVO vo : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+		
+		return mybatis.update("companyMapper.companyUpdateExhibition",vo);
+	}
+
+	
+	
 	@Override
 	public List<ExhibitionVO> getExhibitionCompanyList(ExhibitionVO vo, String companyId) {
 		
@@ -150,5 +164,6 @@ public class ExhibitionDAOImpl implements ExhibitionDAO {
 		
 		return mybatis.selectOne("companyMapper.companyExhibitionDetail",vo);
 	}
+
 
 }
