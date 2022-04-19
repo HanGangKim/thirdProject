@@ -259,13 +259,13 @@ response.sendRedirect("../LogOut.do");
     		next.disabled = true;
     	} else{
     		next.disabled = false;
-    		$('#errorMassagePw').html('✔');
-    		$('#errorMassagePwc').html('✔');
-    		$('#errorMassageMail').html('✔');
-    		$('#errorMassageGender').html('✔');
-    		$('#errorMassagePh').html('✔');
-    		$('#errorMassageAge').html('✔');
-    		$('#errorMassageName').html('✔');
+    		$('#errorMassagePw').html('✓');
+    		$('#errorMassagePwc').html('✓');
+    		$('#errorMassageMail').html('✓');
+    		$('#errorMassageGender').html('✓');
+    		$('#errorMassagePh').html('✓');
+    		$('#errorMassageAge').html('✓');
+    		$('#errorMassageName').html('✓');
     	}
 //     	next.disabled = !(input_ok());
 
@@ -279,11 +279,11 @@ response.sendRedirect("../LogOut.do");
         		success : function(result) {
 
     				if(result == 1){
-    					$('#errorMassageId').html('❌');
+    					$('#errorMassageId').html('✕');
     					$('#errorMassageId').attr('color','red');
     					next.disabled = true;
     				} else{
-    					$('#errorMassageId').html('✔');
+    					$('#errorMassageId').html('✓');
     					$('#errorMassageId').attr('color','green');
     					
     					if (pwd&&mail&&gender&&ph){
@@ -316,42 +316,42 @@ response.sendRedirect("../LogOut.do");
 			return true;
 		} else {
 			if(!(pwd)) {
-				$('#errorMassagePw').html('❌');
+				$('#errorMassagePw').html('✕');
 				$('#errorMassagePw').attr('color','red');
-				$('#errorMassagePwc').html('❌');
+				$('#errorMassagePwc').html('✕');
 				$('#errorMassagePwc').attr('color','red');
 				}else{
-					$('#errorMassagePw').html('✔');
+					$('#errorMassagePw').html('✓');
 					$('#errorMassagePw').attr('color','green');
-					$('#errorMassagePwc').html('✔');
+					$('#errorMassagePwc').html('✓');
 					$('#errorMassagePwc').attr('color','green');
 				}
 			if(!(mail)) {
-				$('#errorMassageMail').html('❌');
+				$('#errorMassageMail').html('✕');
 				$('#errorMassageMail').attr('color','red');
 				}else{
-					$('#errorMassageMail').html('✔');
+					$('#errorMassageMail').html('✓');
 					$('#errorMassageMail').attr('color','red');
 				}
 			if(!(gender)) {
-				$('#errorMassageGender').html('❌');
+				$('#errorMassageGender').html('✕');
 				$('#errorMassageGender').attr('color','red');
 				}else{
-					$('#errorMassageGender').html('✔');
+					$('#errorMassageGender').html('✓');
 					$('#errorMassageGender').attr('color','red');
 				}
 			if(!(ph)) {
-				$('#errorMassagePh').html('❌');
+				$('#errorMassagePh').html('✕');
 				$('#errorMassagePh').attr('color','red');
 				}else{
-					$('#errorMassagePh').html('✔');
+					$('#errorMassagePh').html('✓');
 					$('#errorMassagePh').attr('color','red');
 				}
 			if(!(name)){
-				$('#errorMassageName').html('❌');
+				$('#errorMassageName').html('✕');
 				$('#errorMassageName').attr('color','red');
 				}else{
-					$('#errorMassageName').html('✔');
+					$('#errorMassageName').html('✓');
 					$('#errorMassageName').attr('color','red');
 				}
 			return false;
@@ -361,7 +361,7 @@ response.sendRedirect("../LogOut.do");
     
     function checkID(id){
     	if (!checkExistData(id, "아이디를")){
-    		$('#errorMassageId').html('❌');
+    		$('#errorMassageId').html('✕');
 			$('#errorMassageId').attr('color','red');
 			  return false;
 		  } else{
@@ -371,11 +371,11 @@ response.sendRedirect("../LogOut.do");
     
     function checkage(age){
     	if (!checkExistData(age, "나이를")){
-    		$('#errorMassageAge').html('❌');
+    		$('#errorMassageAge').html('✕');
 			$('#errorMassageAge').attr('color','red');
 			  return false;
 		  } else{
-			  $('#errorMassageAge').html('✔');
+			  $('#errorMassageAge').html('✓');
 			  $('#errorMassageAge').attr('color','red');
 			  return true;
 		  }
@@ -412,7 +412,7 @@ response.sendRedirect("../LogOut.do");
         }    
 
         function checkph(ph){
-        	var phRegExp = /^[0-1]+[0-9]*[-]{1}[0-9]+[0-9]*[-]{1}[0-9]{1,4}$/;
+        	var phRegExp = /^01([0|1|6|7|8|9])-?([0-9]{4})-?([0-9]{4})$/;
             if (!phRegExp.test(ph)) {
 //                 alert("전화번호 형식이 올바르지 않습니다!");
 //                 form.ph.value = "";
@@ -440,11 +440,11 @@ response.sendRedirect("../LogOut.do");
     	function checkGender(gender){
     		if(gender=="Gender"){
 //     			alert("성별을 선택하세요");
-				$('#errorMassageGender').html('❌');
+				$('#errorMassageGender').html('✕');
 				$('#errorMassageGender').attr('color','red');
     			return false;
     		}else{
-    			$('#errorMassageGender').html('✔');
+    			$('#errorMassageGender').html('✓');
 				$('#errorMassageGender').attr('color','red');
     			return true;
     		}

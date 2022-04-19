@@ -190,12 +190,12 @@ response.sendRedirect("../LogOut.do");
 	    		next.disabled = true;
 	    	} else{
 	    		next.disabled = false;
-	    		$('#errorMassagePw').html('✔');
-	    		$('#errorMassagePwc').html('✔');
-	    		$('#errorMassageMail').html('✔');
-	    		$('#errorMassageRegnum').html('✔');
-	    		$('#errorMassagePh').html('✔');
-	    		$('#errorMassageName').html('✔');
+	    		$('#errorMassagePw').html('✓');
+	    		$('#errorMassagePwc').html('✓');
+	    		$('#errorMassageMail').html('✓');
+	    		$('#errorMassageRegnum').html('✓');
+	    		$('#errorMassagePh').html('✓');
+	    		$('#errorMassageName').html('✓');
 	    	}
 //	     	next.disabled = !(input_ok());
 
@@ -210,12 +210,12 @@ response.sendRedirect("../LogOut.do");
 	        		success : function(result) {
 
 	    				if(result == 1){
-	    					$('#errorMassageId').html('❌');
+	    					$('#errorMassageId').html('✕');
 	    					$('#errorMassageId').attr('color','red');
 	    					next.disabled = true;
 	    					$('#errorMassageId').style.display="inline-block";
 	    				} else{
-	    					$('#errorMassageId').html('✔');
+	    					$('#errorMassageId').html('✓');
 	    					$('#errorMassageId').attr('color','green');
 	    					if (pwd&&mail&&regnum&&ph){
 	    						next.disabled = false;
@@ -244,42 +244,42 @@ response.sendRedirect("../LogOut.do");
 			return true;
 		} else {
 			if(!(pwd)) {
-				$('#errorMassagePw').html('❌');
+				$('#errorMassagePw').html('✕');
 				$('#errorMassagePw').attr('color','red');
-				$('#errorMassagePwc').html('❌');
+				$('#errorMassagePwc').html('✕');
 				$('#errorMassagePwc').attr('color','red');
 				}else{
-					$('#errorMassagePw').html('✔');
+					$('#errorMassagePw').html('✓');
 					$('#errorMassagePw').attr('color','green');
-					$('#errorMassagePwc').html('✔');
+					$('#errorMassagePwc').html('✓');
 					$('#errorMassagePwc').attr('color','green');
 				}
 			if(!(mail)) {
-				$('#errorMassageMail').html('❌');
+				$('#errorMassageMail').html('✕');
 				$('#errorMassageMail').attr('color','red');
 				}else{
-					$('#errorMassageMail').html('✔');
+					$('#errorMassageMail').html('✓');
 					$('#errorMassageMail').attr('color','red');
 				}
 			if(!(regnum)) {
-				$('#errorMassageRegnum').html('❌');
+				$('#errorMassageRegnum').html('✕');
 				$('#errorMassageRegnum').attr('color','red');
 				}else{
-					$('#errorMassageRegnum').html('✔');
+					$('#errorMassageRegnum').html('✓');
 					$('#errorMassageRegnum').attr('color','red');
 				}
 			if(!(ph)) {
-				$('#errorMassagePh').html('❌');
+				$('#errorMassagePh').html('✕');
 				$('#errorMassagePh').attr('color','red');
 				}else{
-					$('#errorMassagePh').html('✔');
+					$('#errorMassagePh').html('✓');
 					$('#errorMassagePh').attr('color','red');
 				}
 			if(!(name)){
-				$('#errorMassageName').html('❌');
+				$('#errorMassageName').html('✕');
 				$('#errorMassageName').attr('color','red');
 				}else{
-					$('#errorMassageName').html('✔');
+					$('#errorMassageName').html('✓');
 					$('#errorMassageName').attr('color','red');
 				}
 			return false;
@@ -323,7 +323,7 @@ response.sendRedirect("../LogOut.do");
         }    
 
         function checkph(ph){
-        	var phRegExp = /^[0-1]+[0-9]*[-]{1}[0-9]+[0-9]*[-]{1}[0-9]{1,4}$/;
+        	var phRegExp =  /^01([0|1|6|7|8|9])-?([0-9]{4})-?([0-9]{4})$/;
             if (!phRegExp.test(ph)) {
 
                 return false;
