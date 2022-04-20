@@ -43,8 +43,8 @@
 	
 	<!-- 리뷰 입력  -->
 	<insert id="insertReview" parameterType="review">
-		INSERT INTO REVIEW(REVIEW_ID , REVIEW_TITLE, REVIEW_CONTENTS, REVIEW_DATE, REVIEW_STAR_SCORE , REVIEW_IMAGE , EXHIBITION_ID , CUSTOMER_ID)
-		VALUES(SEQ_REVIEW.nextval, #{review_title}, #{review_contents} , sysdate , #{review_star_score} , #{review_img} , #{exhibition_id}, #{customer_id})
+		INSERT INTO REVIEW(REVIEW_ID , REVIEW_TITLE, REVIEW_CONTENTS, REVIEW_DATE, REVIEW_STAR_SCORE  , EXHIBITION_ID , CUSTOMER_ID)
+		VALUES(SEQ_REVIEW.nextval, #{review_title}, #{review_contents} , sysdate , #{review_star_score}  , #{exhibition_id}, #{customer_id})
 	</insert>
 	
 	<!-- 리뷰 업데이트 -->

@@ -120,7 +120,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 										<!-- form 태그시작  -->
 										<form autocomplete="false" action="/exhibition/saveReview.do"
-											method="post" enctype="multipart/form-data">
+											method="get" >
 											<div class="row align-items-center">
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
@@ -171,8 +171,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 													<!-- 이미지 업로드전까지 DEFAULT_IMG 벨류 부여 -->
 													<!-- 이미지 업로드 전까지 file->text 변경  -->
-													<input name="review_img" value="DEFAULT_IMG" type="file"
-														id="review_img" class="form-control" accept="image/png image/jpg image/gif">
+													
 												</div>
 											</div>
 											<hr class="mt-5 mb-3">
@@ -181,6 +180,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<button type="submit" class="btn btn-primary">Upadte
 													Review</button>
 											</div>
+											
+											<img src="" id="img">
 										</form>
 										<!-- form 태그 종료 -->
 									</div>
@@ -243,5 +244,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
     }
     );
   </script>
+<script>
+
+</script>
 
 </html>

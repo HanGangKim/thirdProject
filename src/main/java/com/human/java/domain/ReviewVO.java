@@ -11,7 +11,6 @@ public class ReviewVO {
 	private String review_contents;
 	private String review_date;
 	private double review_star_score;
-	private String review_img;
 	private int exhibition_id;
 	private String customer_id;
 	
@@ -70,12 +69,7 @@ public class ReviewVO {
 	}
 
 	
-	public String getReview_img() {
-		return review_img;
-	}
-	public void setReview_img(String review_img) {
-		this.review_img = review_img;
-	}
+
 	public int getExhibition_id() {
 		return exhibition_id;
 	}
