@@ -20,6 +20,6 @@ public interface CompanyService {
 	
 	//업체 정보수정
 	
-	public void companyUpdate(CompanyVO vo);
+	public void companyupdate(CompanyVO vo);
 	
 }
