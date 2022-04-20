@@ -94,7 +94,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 				<!--Image-->
 <!-- 				<img src="/resources/img/backgrounds/4.jpeg" alt="" class="bg-image"> -->
 				<video muted autoplay loop>
-					<source src="/resources/img/backgrounds/ARTE MUSEUM Overview.mp4" type="video/mp4">
+					<source src="/resources/img/backgrounds/ARTE MUSEUM Overview.mp4" type="video/mp4" class="bg-image">
 				</video>
 				
 			</div>
@@ -102,11 +102,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 				<div class="row align-items-center vh-100">
 					<div
 						class="col-lg-4 pt-3 pb-4 pb-lg-5 pt-lg-5 me-auto col-md-6 z-index-2">
-						<div>
+<!-- 						<div> -->
 							<!--로고-->
-							<a href="demo-shop.html"> <img
-								src="/resources/img/logo/logo.svg" alt=""
-								class="width-8x d-block mb-5">
+							<a href="/CustomerMain.do"> 
+								<img src="/resources/img/logo/black-logo.png" class="width-8x d-block mb-4">
 							</a>
 							<!--제목-->
 							<h2 class="mb-1 display-6">
@@ -130,11 +129,11 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 									<!--검색버튼-->
 									<div class="d-grid">
-										<button class="btn btn-primary" type="submit">Search</button>
+										<button class="btn btn-primary" type="submit">Move To List</button>
 									</div>
 								</form>
 							</div>
-						</div>
+<!-- 						</div> -->
 					</div>
 				</div>
 			</div>
