@@ -217,6 +217,9 @@
 														<!-- 이미지 업로드 전까지 file->text 변경  -->
 														<input name="exhibition_image" value="DEFAULT_IMG" type="text"
 															value="${CompanyExhibition.exhibition_image}" id="profile_address" class="form-control">
+															
+														<input name="file" value="DEFAULT_IMG" type="file"
+														id="file" class="form-control" accept="image/*">
 													</div>
 												</div>
 												<hr class="mt-5 mb-3">

@@ -22,12 +22,55 @@ public class ExhibitionVO {
 	private String exhibition_location;
 	private int exhibition_price;
 	MultipartFile file;
+	MultipartFile file_sub;
 	 private String t_file_name;
 	 private String t_file_name_en;
 	 private long t_file_size;
 	 public boolean t_fileExtension;
+	 private String exhibition_memo;
 	
 	
+	public String getExhibition_memo() {
+		return exhibition_memo;
+	}
+	public void setExhibition_memo(String exhibition_memo) {
+		this.exhibition_memo = exhibition_memo;
+	}
+	public MultipartFile getFile_sub() {
+		return file_sub;
+	}
+	public void setFile_sub(MultipartFile file_sub) {
+		this.file_sub = file_sub;
+		
+		if(! file_sub.isEmpty()){
+	         this.t_file_name = file_sub.getOriginalFilename();
+	         this.t_file_size = file_sub.getSize();
+	         
+	         String fileExtension=t_file_name.substring(t_file_name.lastIndexOf("."));
+	         
+	         if (!(fileExtension.equals(".jpg") || fileExtension.equals(".jpeg") || fileExtension.equals(".png"))) {
+	            t_fileExtension = true;
+	            return;
+	         }
+	         //1. 가짜이름은 파일의 확장자가 없습니다. >> 진짜 이름에서 확장자를 가져와야한다.
+	         //2. 사용자가 파일을 저장할때 겹치지않도록 암호화하는 코드
+	         //형식 ip_랜덤문자32자리.확장자명
+	         this.t_file_name_en=UUID.randomUUID().toString().replaceAll("-","")+fileExtension;
+	         //***********************************************
+	         // 해당 경로로 변경
+	         File f = new File("C:\\Users\\human\\Desktop\\STS4\\thirdProject\\src\\main\\webapp\\resources\\img\\exhibition_sub\\"+t_file_name_en);
+	         try {
+	        	 file_sub.transferTo(f);
+	            setExhibition_contents("/resources/img/exhibition_sub/"+t_file_name_en);
+	            
+	         } catch (IllegalStateException e) {            
+	            e.printStackTrace();
+	         } catch (IOException e) {
+	            
+	            e.printStackTrace();
+	         }
+	      }
+	}
 	public MultipartFile getFile() {
 		return file;
 	}
