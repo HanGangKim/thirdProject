@@ -47,4 +47,7 @@ public interface ExhibitionService {
 	// 업체 전시회 등록 상세조회 
 	public ExhibitionVO getExhibitionCompanyServiceDetail(ExhibitionVO vo);
 	
+	// 업체 전시회 등록 삭제
+	public int exhibitionCompanyExhibitionDelete(ExhibitionVO vo);
+	
 }

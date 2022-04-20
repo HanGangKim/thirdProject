@@ -164,6 +164,13 @@ public class ExhibitionDAOImpl implements ExhibitionDAO {
 		
 		return mybatis.selectOne("companyMapper.companyExhibitionDetail",vo);
 	}
+	
+	@Override
+	public int exhibitionCompanyExhibitionDelete(ExhibitionVO vo) {
+		System.out.println("exhibitionCompanyExhibitionDelete 다오 호출");
+		System.out.println(vo.getExhibition_id());
+		return mybatis.delete("companyMapper.exhibitionCompanyExhibitionDelete",vo);
+	}
 
 
 }

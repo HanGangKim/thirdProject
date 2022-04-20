@@ -160,7 +160,12 @@ public class ExhibitionServiceImpl implements ExhibitionService{
 		return exhibitionDAO.getExhibitionCompanyDetail(vo);
 	}
 
-	
-	
+	@Override
+	public int exhibitionCompanyExhibitionDelete(ExhibitionVO vo) {
+		System.out.println("exhibitionCompanyExhibitionDelete 서ꈰ스 호출");
+		System.out.println(vo.getExhibition_id());
+	return	exhibitionDAO.exhibitionCompanyExhibitionDelete(vo);
+		
+	}
 	
 }

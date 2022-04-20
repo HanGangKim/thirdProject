@@ -65,5 +65,10 @@
 		WHERE COMPANY_ID = #{company_id}
 	</update>
 	
-
+	
+	<delete id="exhibitionCompanyExhibitionDelete" parameterType="exhibition">
+		DELETE
+		FROM EXHIBITION_INFO
+		WHERE EXHIBITION_ID = #{exhibition_id}
+	</delete>
 </mapper>
