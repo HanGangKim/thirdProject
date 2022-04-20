@@ -92,5 +92,14 @@ public class CustomerServiceImpl implements CustomerService{
 		System.out.println("===============");
 		return customerDAO.customerconfirmpassword(vo);
 	}
+	
+	@Override
+	public CustomerVO customerFindPassword(CustomerVO vo) {
+		System.out.println("===============");
+		System.out.println("customerFindPassword 서비스 호출");
+		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+		return customerDAO.customerFindPassword(vo);
+	}
 
 }

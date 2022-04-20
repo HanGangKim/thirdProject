@@ -4,6 +4,7 @@
 <%
 Object userId = session.getAttribute("userId");
 Object userName = session.getAttribute("userName");
+Object userEmail = session.getAttribute("userEmail");
 // 세션 연결
 if (session.getAttribute("userId") == null) {
 // 세션 연결에 실패하면 null	
@@ -137,6 +138,21 @@ response.sendRedirect("../LogOut.do");
 			</div>
 		</section>
 	</main>
+	
+	
+	<hr>
+	<!-- 추후 모달로 변경돨 예정  -->
+	<!-- 전송방식은 post  -->
+	<form action="customerFindPassword.do" method="get">
+	<h2>비밀번호 찾기</h2>
+	<input name="customer_id" type="text" placeholder="아이디를 입력해주세요">
+	<input name="customer_email" type="text" placeholder="이메일을 입력하세요">
+	<button type="submit">제출</button>
+	<!-- 비밀번호 찾기 성공시 'CustomerFindPassword' 페이지 이동 - 비밀번호 보여주기 -->
+	<!-- 비밀번호 찾기 실패시 CustomerLogin 페이지 돌아오기  -->
+	</form>
+	<hr>
+	
 
 
 	<jsp:include page="/footer.jsp" />

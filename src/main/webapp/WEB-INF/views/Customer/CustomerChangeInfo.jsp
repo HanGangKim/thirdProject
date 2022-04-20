@@ -234,24 +234,24 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									</div>
 
 									<!--Password card-->
-									<div class="card shadow p-3">
+									<!-- <div class="card shadow p-3">
 										<h5 class="mb-4">Update Password</h5>
 
 										<form>
 											<div class="row">
-												<!--현재 비밀번호-->
+												현재 비밀번호
 												<div class="col-md-4 mb-3">
 													<label for="update_pass_current" class="form-label">Current
 														password</label> <input id="update_pass_current" type="text"
 														value="<%=userPass%>" class="form-control">
 												</div>
-												<!--새 비밀번호-->
+												새 비밀번호
 												<div class="col-md-4 mb-3">
 													<label for="update_pass_new" class="form-label">New
 														password</label> <input type="text" class="form-control"
 														id="update_pass_new">
 												</div>
-												<!--비밀번호 확인-->
+												비밀번호 확인
 												<div class="col-md-4 mb-3">
 													<label for="update_pass_new_confirm" class="form-label">Confirm
 														new password</label> <input type="text" class="form-control"
@@ -263,7 +263,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 											<div class="text-end">
 												<button type="button" class="btn btn-primary">Save
 													Update Password</button>
-											</div>
+											</div>-->
 										</form>
 									</div>
 								</div>
@@ -279,16 +279,11 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	<jsp:include page="/footer.jsp" />
 
 	<!-- :Back to top -->
-	<a href="#top"
-		class="position-fixed toTop d-none d-sm-flex btn btn-light rounded-circle p-0 flex-center width-4x height-4x z-index-fixed end-0 bottom-0 mb-3 me-3">
-		<i class="bx bxs-up-arrow align-middle lh-1"></i>
-	</a>
+	
 
 
 	<!--cursor-->
-	<div class="cursor">
-		<div class="cursor__inner"></div>
-	</div>
+	
 
 
 </body>
