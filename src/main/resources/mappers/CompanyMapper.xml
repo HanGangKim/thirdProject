@@ -38,8 +38,6 @@
 		WHERE EXHIBITION_ID = #{exhibition_id}
 	</insert>
 	
-	
-	
 	<select id="companyExhibitionList" parameterType="exhibition" resultType="exhibition">
 	SELECT * FROM EXHIBITION_INFO
 	WHERE COMPANY_ID = #{company_id}
@@ -53,9 +51,19 @@
 	
 	<select id="companyconfirmpassword" parameterType="company" resultType="company">
 	SELECT *
-	FROM CUSTOMER_INFO
-	WHERE CUSTOMER_PASSWORD = #{company_password} AND CUSTOMER_ID =#{company_id}
+	FROM COMPANY_INFO
+	WHERE COMPANY_PASSWORD = #{company_password} AND COMPANY_ID =#{company_id}
 	</select>
+	
+	<update id="companyUpdate" parameterType="company">
+		UPDATE COMPANY_INFO
+		SET
+		COMPANY_NAME = #{company_name},
+		COMPANY_PH = #{company_ph},
+		COMPANY_EMAIL = #{company_email},
+		COMPANY_REGNUM = #{company_regnum}
+		WHERE COMPANY_ID = #{company_id}
+	</update>
 	
 
 </mapper>

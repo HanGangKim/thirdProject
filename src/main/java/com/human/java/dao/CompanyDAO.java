@@ -12,4 +12,6 @@ public interface CompanyDAO {
 	public int idCheck(String id);
 	
 	public CompanyVO companyconfirmpassword(CompanyVO vo);
+	
+	public void companyupdate(CompanyVO vo);
 }

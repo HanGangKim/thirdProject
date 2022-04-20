@@ -120,7 +120,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								<div class="pt-5 d-flex flex-column h-100">
 									<div class="card shadow p-3 mb-3">
 										<h5 class="mb-4">Edit profile</h5>
-										<form action = "/customer/CustomerUpdateInfo.do",autocomplete="false" method="get">
+										<form action = "/company/CompanyUpdateInfo.do",autocomplete="false" method="get">
 											<div class="row align-items-center">
 												<div class="col-md-12">
 													<div class="row">
@@ -177,34 +177,34 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<!--이름-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_name">Name</label> <input
-														class="form-control" id="profile_name" name="customer_name"type="text"
+														class="form-control" id="profile_name" name="company_name"type="text"
 														value="">
 												</div>
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_com">Id</label> <input
-														type="text" class="form-control" id="profile_com" name="customer_id"
+														type="text" class="form-control" id="profile_com" name="company_id"
 														value="<%=userId%>" readonly="readonly">
 												</div>
 
 												<!-- 회사번호  -->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_phon">Phone</label>
-													<input type="text" id="profile_phon" name="customer_ph"
+													<input type="text" id="profile_phon" name="company_ph"
 														value="" class="form-control">
 												</div>
 												
 												<!--이메일-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_gender">E-mail</label>
-													<input class="form-control" type="email" name="customer_gender"id="profile_email"
+													<input class="form-control" type="email" name="company_email"id="profile_email"
 														value="">
 												</div>
 												<!--사업자 등록번호-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_dob">
 														사업자 등록번호</label> <input type="text" id="profile_dob"
-														class="form-control" name="customer_age" data-flatpickr value="">
+														class="form-control" name="company_regnum" data-flatpickr value="">
 												</div>
 												
 												<!--주소-->

@@ -53,4 +53,14 @@ public class CompanyDAOImpl implements CompanyDAO {
 		return mybatis.selectOne("companyMapper.companyconfirmpassword",vo);	
 		
 	}
+	
+	@Override
+	public void companyupdate(CompanyVO vo) {
+		System.out.println("===============");
+		System.out.println("customerupdate 다오 호출");
+		System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+		
+		mybatis.update("companyMapper.companyupdate",vo);
+	}
 }
