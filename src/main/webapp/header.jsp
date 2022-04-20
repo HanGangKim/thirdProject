@@ -66,8 +66,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 					<div class="container position-relative">
 						<!-- 로고 -->
 						<a class="navbar-brand" href="/CustomerMain.do"> 
-						<!-- <img src="/resources/img/logo/logo-shop.svg" alt="" class="img-fluid"> -->
-							Fiennale
+							<img src="/resources/img/logo/black-logo.png" alt="" class="img-fluid">	
 						</a>
 						<!-- 검색버튼 -->
 						<div
