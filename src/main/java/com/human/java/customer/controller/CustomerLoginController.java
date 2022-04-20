@@ -40,10 +40,24 @@ public class CustomerLoginController {
 			mv.setViewName("/Customer/CustomerLoginFail");
 			return mv;
 
+		}else if((result.getCustomer_id()).equals("admin")&(result.getCustomer_password()).equals("admin")&(result.getCustomer_flag().equals("M"))){	
+			
+			System.out.println("Master : [" + result.getCustomer_id() + "]" + "로그인 성공");
+			
+			// 운영자 세션 부여
+			session.setAttribute("masterName", result.getCustomer_name());
+			session.setAttribute("masterId", result.getCustomer_id());	
+			session.setAttribute("masterSessionTime", new Date().toLocaleString());
+			
+			mv.addObject("vo", exhibitionService.comingExhibition(exvo));
+			mv.setViewName("/Master/MasterPage");
+			
+			
+			return mv;
 		} else {
 			// CompanyVO 확인
 			System.out.println("===============");
-			System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
+			System.out.println("CustomerVO : " + ToStringBuilder.reflectionToString(vo));
 			System.out.println("===============");
 
 			System.out.println("[" + result.getCustomer_id() + "]" + "로그인 성공");
@@ -64,6 +78,7 @@ public class CustomerLoginController {
 
 			return mv;
 		}
+		
 
 	}
 

@@ -6,22 +6,23 @@
 
 <%request.setCharacterEncoding("UTF-8");%>
 <%
-Object userId = session.getAttribute("userId");
-Object userName = session.getAttribute("userName");
+Object companyId = session.getAttribute("companyId");
+Object companyName = session.getAttribute("companyName");
 // 세션 연결
-if (session.getAttribute("userId") == null) {
+if (session.getAttribute("companyId") == null) {
 // 세션 연결에 실패하면 null	
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-System.out.println("세션연결 실패:"+userId);
-System.out.println("세션연결 실패:"+userName);
+System.out.println("세션연결 실패:"+companyId);
+System.out.println("세션연결 실패:"+companyName);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+
 //LogOut.jsp로 이동	
-response.sendRedirect("LogOut.do");
+response.sendRedirect("../LogOut.do");
 
 }else{
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-System.out.println("세션연결 성공:"+userId);
-System.out.println("세션연결 성공:"+userName);
+System.out.println("세션연결 성공:"+companyId);
+System.out.println("세션연결 성공:"+companyName);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	
 }
@@ -98,7 +99,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
                       <div id="projects" data-isotope='{"layoutMode": "masonry"}' class="row">
 
                         <div class="col-md-6 mb-4 development grid-item">
-                            <a href="/exhibition/CompanyExhibitionList.do?company_id=<%=userId%>" class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2">
+                            <a href="/exhibition/CompanyExhibitionList.do?company_id=<%=companyId%>" class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2">
                                 <img src="/resources/img/projects/1.jpg" alt="" class="w-100 img-zoom">
                                 <div class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
                                 <!-- <a href = "master/MasterPageList1.do"> -->

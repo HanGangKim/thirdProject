@@ -2,22 +2,22 @@
 	pageEncoding="UTF-8"%>
 <%request.setCharacterEncoding("UTF-8");%>
 <%
-Object userId = session.getAttribute("userId");
-Object userName = session.getAttribute("userName");
+Object companyId = session.getAttribute("=companyId");
+Object companyName = session.getAttribute("companyName");
 // 세션 연결
-if (session.getAttribute("userId") == null) {
+if (session.getAttribute("companyId") == null) {
 // 세션 연결에 실패하면 null	
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-System.out.println("세션연결 실패:"+userId);
-System.out.println("세션연결 실패:"+userName);
-System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-	
-}else{
-System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-System.out.println("세션연결 성공:"+userId);
-System.out.println("세션연결 성공:"+userName);
+System.out.println("세션연결 실패:"+companyId);
+System.out.println("세션연결 실패:"+companyName);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
+}else{
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+System.out.println("세션연결 성공:"+companyId);
+System.out.println("세션연결 성공:"+companyName);
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+	
 }
 %>
 <!doctype html>
@@ -76,7 +76,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						</div>
 						<h1 class="display-2 mb-3">등록/수정이 완료되었습니다.</h1>
 						<p class="mb-5 lead mx-auto">실제 등록/수정까지는 2 ~ 3일정도 소요됩니다.</p>
-						<a href="/exhibition/CompanyExhibitionList.do?company_id=<%=userId%>" class="btn btn-outline-primary btn-lg">등록 리스트 보러가기</a>
+						<a href="/exhibition/CompanyExhibitionList.do?company_id=<%=companyId%>" class="btn btn-outline-primary btn-lg">등록 리스트 보러가기</a>
 
 					</div>
 				</div>

@@ -330,6 +330,8 @@
 	});
 
 	function get1dayFromNow() {
+		
+		/* 시간 계산하는 구간  */
 		return new Date(new Date().valueOf() + 1 * 24 * 60 * 60 * 1000);
 	}
 

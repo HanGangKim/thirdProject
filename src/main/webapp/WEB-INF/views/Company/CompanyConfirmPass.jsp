@@ -1,34 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <%request.setCharacterEncoding("UTF-8");%>
 <%
-Object userId = session.getAttribute("userId");
-Object userName = session.getAttribute("userName");
-Object userPh = session.getAttribute("userPh");
-Object userEmail = session.getAttribute("userEmail");
-Object userGender = session.getAttribute("userGender");
-Object userAge = session.getAttribute("userAge");
-Object userPass = session.getAttribute("userPass");
+Object companyId = session.getAttribute("companyId");
+Object companyName = session.getAttribute("companyName");
+Object companyPh = session.getAttribute("companyPh");
+Object companyEmail = session.getAttribute("companyEmail");
+Object companyGender = session.getAttribute("companyGender");
+Object companyAge = session.getAttribute("companyAge");
+Object companyPass = session.getAttribute("companyPass");
+Object companyRegnum = session.getAttribute("companyRegnum");
 
 // 세션 연결
-if (session.getAttribute("userId") == null) {
+if (session.getAttribute("companyId") == null) {
 // 세션 연결에 실패하면 null	
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-System.out.println("세션연결 실패:"+userId);
-System.out.println("세션연결 실패:"+userName);
+System.out.println("세션연결 실패:"+companyId);
+System.out.println("세션연결 실패:"+companyName);
+System.out.println("세션연결 실패:"+companyRegnum);
+System.out.println("세션연결 실패:"+companyPh);
+System.out.println("세션연결 실패:"+companyEmail);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-//LogOut.jsp로 이동
-response.sendRedirect("../LogOut.do");	
+
 }else{
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-System.out.println("세션연결 성공:"+userId);
-System.out.println("세션연결 성공:"+userName);
+System.out.println("세션연결 성공:"+companyId);
+System.out.println("세션연결 성공:"+companyName);
+System.out.println("세션연결 성공:"+companyRegnum);
+System.out.println("세션연결 성공:"+companyPh);
+System.out.println("세션연결 성공:"+companyEmail);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 }
 %>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -104,7 +108,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
                                             <input type="password" required class="form-control" id="userpass" autofocus
                                                 name ="company_password" value="" placeholder="Please enter your password.">
                                              <input type="hidden" required class="form-control" id="username" autofocus
-                                             	name="company_id" value="<%=userId%>" readonly="readonly">
+                                             	name="company_id" value="<%=companyId%>" readonly="readonly">
                                         </div>
                                         <div class="mb-3 d-flex justify-content-between">
                                             <div class="form-check">

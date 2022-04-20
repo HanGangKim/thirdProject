@@ -2,22 +2,22 @@
 	pageEncoding="UTF-8"%>
 <%request.setCharacterEncoding("UTF-8");%>
 <%
-Object userId = session.getAttribute("userId");
-Object userName = session.getAttribute("userName");
+Object companyId = session.getAttribute("=companyId");
+Object companyName = session.getAttribute("companyName");
 // 세션 연결
-if (session.getAttribute("userId") == null) {
+if (session.getAttribute("companyId") == null) {
 // 세션 연결에 실패하면 null	
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-System.out.println("세션연결 실패:"+userId);
-System.out.println("세션연결 실패:"+userName);
+System.out.println("세션연결 실패:"+companyId);
+System.out.println("세션연결 실패:"+companyName);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 }else{
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-System.out.println("세션연결 성공:"+userId);
-System.out.println("세션연결 성공:"+userName);
+System.out.println("세션연결 성공:"+companyId);
+System.out.println("세션연결 성공:"+companyName);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-
+	
 }
 %>
 <!doctype html>
@@ -65,7 +65,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 <body>
 
-	<jsp:include page="/header.jsp" />
 
 	<!--Main content-->
 	<main>
@@ -121,7 +120,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_com">Id</label> <input
-														name="company_id" value="<%=userId%>"
+														name="company_id" value="<%=companyId%>"
 														type="text" class="form-control" id="profile_com" readonly>
 												</div>
 
@@ -242,10 +241,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	</main>
 	
 	
-	
-
-
-	<jsp:include page="/footer.jsp" />
 		
 
 </body>

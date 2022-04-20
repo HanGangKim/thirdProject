@@ -3,33 +3,33 @@
 	pageEncoding="UTF-8"%>
 <%request.setCharacterEncoding("UTF-8");%>
 <%
-Object userId = session.getAttribute("userId");
-Object userName = session.getAttribute("userName");
-Object userPh = session.getAttribute("userPh");
-Object userEmail = session.getAttribute("userEmail");
-Object userGender = session.getAttribute("userGender");
-Object userAge = session.getAttribute("userAge");
-Object userPass = session.getAttribute("userPass");
-Object userRegnum = session.getAttribute("userRegnum");
+Object companyId = session.getAttribute("companyId");
+Object companyName = session.getAttribute("companyName");
+Object companyPh = session.getAttribute("companyPh");
+Object companyEmail = session.getAttribute("companyEmail");
+Object companyGender = session.getAttribute("companyGender");
+Object companyAge = session.getAttribute("companyAge");
+Object companyPass = session.getAttribute("companyPass");
+Object companyRegnum = session.getAttribute("companyRegnum");
 
 // 세션 연결
-if (session.getAttribute("userId") == null) {
+if (session.getAttribute("companyId") == null) {
 // 세션 연결에 실패하면 null	
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-System.out.println("세션연결 실패:"+userId);
-System.out.println("세션연결 실패:"+userName);
-System.out.println("세션연결 실패:"+userRegnum);
-System.out.println("세션연결 실패:"+userPh);
-System.out.println("세션연결 실패:"+userEmail);
+System.out.println("세션연결 실패:"+companyId);
+System.out.println("세션연결 실패:"+companyName);
+System.out.println("세션연결 실패:"+companyRegnum);
+System.out.println("세션연결 실패:"+companyPh);
+System.out.println("세션연결 실패:"+companyEmail);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 }else{
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-System.out.println("세션연결 성공:"+userId);
-System.out.println("세션연결 성공:"+userName);
-System.out.println("세션연결 성공:"+userRegnum);
-System.out.println("세션연결 성공:"+userPh);
-System.out.println("세션연결 성공:"+userEmail);
+System.out.println("세션연결 성공:"+companyId);
+System.out.println("세션연결 성공:"+companyName);
+System.out.println("세션연결 성공:"+companyRegnum);
+System.out.println("세션연결 성공:"+companyPh);
+System.out.println("세션연결 성공:"+companyEmail);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 }
@@ -186,33 +186,33 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_name">Name</label> <input
 														class="form-control" id="profile_name" name="company_name"type="text"
-														value="<%=userName%>">
+														value="<%=companyName%>">
 												</div>
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_com">Id</label> <input
 														type="text" class="form-control" id="profile_com" name="company_id"
-														value="<%=userId%>" readonly="readonly">
+														value="<%=companyId%>" readonly="readonly">
 												</div>
 
 												<!-- 회사번호  -->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_phon">Phone</label>
 													<input type="text" id="profile_phon" name="company_ph"
-														value="<%=userPh %>" class="form-control">
+														value="<%=companyPh %>" class="form-control">
 												</div>
 												
 												<!--이메일-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_gender">E-mail</label>
 													<input class="form-control" type="email" name="company_email"id="profile_email"
-														value="<%=userEmail%>">
+														value="<%=companyEmail%>">
 												</div>
 												<!--사업자 등록번호-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_dob">
 														사업자 등록번호</label> <input type="text" id="profile_dob"
-														class="form-control" name="company_regnum" value="<%=userRegnum%>">
+														class="form-control" name="company_regnum" value="<%=companyRegnum%>">
 												</div>
 												
 												<!--주소-->

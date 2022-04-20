@@ -151,12 +151,32 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 								</div>
 							</div>
-							<!--/.colors-->
+							
+							
+							
+							<%
+							// 세션 연결
+							if (session.getAttribute("userId") == null) {
+							// 세션 연결에 실패하면 null	
+							%>						
+							<div class="d-grid mb-2">
+								<a class="btn btn-outline-primary hover-lift"> 
+									<i class="bx bx-heart fs-4 me-2"></i> Add to Wishlist
+								</a>
+							</div>
+							<% 
+							}else{
+							%>
 							<div class="d-grid mb-2">
 								<a href="../customer/CustomerWishList.do?id=${vo.exhibition_id}" class="btn btn-outline-primary hover-lift"> 
 									<i class="bx bx-heart fs-4 me-2"></i> Add to Wishlist
 								</a>
 							</div>
+							<% 
+							}
+							%>
+							
+							
 							<div class="d-grid">
 								<a href="#" class="btn btn-primary hover-lift"
 									data-bs-target="#modal-pay-bar-2" data-bs-toggle="modal"> <i class="bx bx-credit-card fs-4 me-2"></i> 
