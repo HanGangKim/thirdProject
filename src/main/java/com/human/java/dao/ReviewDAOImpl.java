@@ -59,10 +59,12 @@ public class ReviewDAOImpl implements ReviewDAO{
 		
 		System.out.println("===============");
 		System.out.println("getReviewList DAO 호출");
+		System.out.println(map.get("searchKeyword"));
 		System.out.println("===============");
 		
 		Map<String, Object> parms = new HashMap<String, Object>();
 		parms.put("map", map);
+		parms.put("searchKeyword", map.get("searchKeyword"));
 		parms.put("endRow", endRow+1);
 		
 		return mybatis.selectList("exhibitionReviewMapper.getReviewList" , parms);

@@ -23,13 +23,16 @@ public class ExhibitionReviewListController {
 
 	// 모든 사용자의 리뷰 조회
 	@RequestMapping("getReviewList.do")
-	public String getReviewList(Model model) {
+	public String getReviewList(Model model , String searchKeyword) {
 		
 		System.out.println("===============");
-		System.out.println("getReview.do 호출");
+		System.out.println("getReviewList.do 호출");
+		System.out.println("검색어 : "+searchKeyword);
 		System.out.println("===============");
-		
+			
 		HashMap map = new HashMap();
+		map.put("searchKeyword", searchKeyword);
+		
 		ReviewVO vo = new ReviewVO();
 
 		// DB 접속해서 데이터 가져오기
