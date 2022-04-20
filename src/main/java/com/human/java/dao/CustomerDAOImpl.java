@@ -108,5 +108,14 @@ public class CustomerDAOImpl implements  CustomerDAO{
 		
 	}
 	
+	@Override
+	public CustomerVO customerFindPassword(CustomerVO vo) {
+		System.out.println("===============");
+		System.out.println("customerFindPassword 다오 호출");
+		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+		
+		return mybatis.selectOne("customerMapper.customerFindPassword",vo);
+	}
 	
 }

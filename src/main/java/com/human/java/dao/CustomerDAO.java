@@ -26,4 +26,6 @@ public interface CustomerDAO {
 	
 	public CustomerVO customerconfirmpassword(CustomerVO vo);
 	
+	public CustomerVO customerFindPassword(CustomerVO vo);
+	
 }

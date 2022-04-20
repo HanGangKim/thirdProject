@@ -46,6 +46,13 @@
 	WHERE CUSTOMER_PASSWORD = #{customer_password} AND CUSTOMER_ID =#{customer_id}
 	
 	</select>
+	
+	<select id="customerFindPassword" parameterType="customer" resultType="customer">
+	SELECT *
+	FROM CUSTOMER_INFO
+	WHERE CUSTOMER_ID = #{customer_id} AND CUSTOMER_EMAIL = #{customer_email}
+	
+	</select>
 
 </mapper>
 

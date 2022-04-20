@@ -51,4 +51,36 @@ public class CustomerConfirmPasswordController {
 		}
 		return mv;
 	}
+	
+	@RequestMapping("customerFindPassword.do")
+	public ModelAndView customerFindPass(CustomerVO vo,HttpSession session) {
+		System.out.println("customerFindPass 메소드 호출");
+		System.out.println("CustomerVO : " + ToStringBuilder.reflectionToString(vo));
+		// vo : id email 
+		// >> 결과 : password  select 
+		CustomerVO result = customerService.customerFindPassword(vo);
+		ModelAndView mv = new ModelAndView();
+		
+		if(result == null) {
+			System.out.println("확인실패");
+			mv.setViewName("/Customer/CustomerLogin");
+			return mv;
+		}else {
+			System.out.println("===============");
+			System.out.println("CustomerVO : " + ToStringBuilder.reflectionToString(vo));
+			System.out.println("===============");
+			
+			System.out.println("[" + result.getCustomer_id() + "]" + "아이디 확인 성공");
+			
+			session.setAttribute("userPass" , result.getCustomer_password());
+			session.setAttribute("userId", result.getCustomer_id());
+			session.setAttribute("userEmail", result.getCustomer_email());
+			
+			mv.addObject("vo",customerService.customerFindPassword(vo));
+			
+			mv.setViewName("/Customer/CustomerFindPassword");
+			
+		}
+		return mv;
+	}
 }
