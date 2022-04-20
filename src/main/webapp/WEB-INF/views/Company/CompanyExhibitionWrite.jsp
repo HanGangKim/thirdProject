@@ -116,7 +116,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										<h5 class="mb-4">Writing A Review</h5>
 
 										<!-- form 태그시작  -->
-										<form action="/exhibition/exhibitionCompanyExhibitionWrite.do" method="get">
+										<form action="/exhibition/exhibitionCompanyExhibitionWrite.do" method="post" enctype="multipart/form-data">
 											<div class="row align-items-center">
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
@@ -206,8 +206,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 													<!-- 이미지 업로드전까지 DEFAULT_IMG 벨류 부여 -->
 													<!-- 이미지 업로드 전까지 file->text 변경  -->
-													<input name="exhibition_image" value="DEFAULT_IMG" type="text"
-														id="profile_address" class="form-control">
+													<input name="file" value="DEFAULT_IMG" type="file"
+														id="file" class="form-control" accept="image/*">
 												</div>
 											</div>
 											<hr class="mt-5 mb-3">
