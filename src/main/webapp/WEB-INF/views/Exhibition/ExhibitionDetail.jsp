@@ -89,6 +89,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						<img src="${vo.exhibition_image}" alt="" style="width: 1500px"
 							class="img-fluid mb-3"> <img
 							src="/resources/img/exam/22.jpg" alt="" class="img-fluid mb-3">
+							<img src="${vo.exhibition_contents}" alt="" style="width: 1500px"
+							class="img-fluid mb-3">
 					</div>
 					<!--/.col-->
 					<div class="col-md-8 mx-auto col-lg-5">
@@ -142,7 +144,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										<h6 style="color: #f15b66;">Schedule</h6>
 										<div class="d-flex" role="group"
 											aria-label="Basic radio toggle button group">
-											<h6>10:30 ~ 19:00 (입장마감 18:00) 연중무휴, 추석 당일 휴관</h6>
+											<h6>${vo.exhibition_memo }</h6>
 										</div>
 									</div>
 									<!--/.정보-->
