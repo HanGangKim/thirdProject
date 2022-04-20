@@ -33,7 +33,18 @@
 
 <title>Assan 4</title>
 </head>
+<style>
+	.approveCompanyInput {
+		border: 0px solid black;
+		text-align: right;
 
+	}
+	
+	.approveCompanySign {
+		border: 0px solid black;
+		width : 20px
+	}
+</style>
 
 <body>
 
@@ -159,14 +170,19 @@
 
 
 									<br> <br>
-									<div class="text-end">
-
-										<button type="button" class="btn btn-primary"
-											onclick="companyApproval()" value="">승인</button>
-										<button type="button" class="btn btn-primary"
-											onclick="companyRefusal()">거절</button>
-										<br> <input type="text" class="approveCompanyInput"
-											value="testValue" name="test1"></input>
+									<div class="text-end">	
+									
+									
+									<button type="button" class="btn btn-primary"
+											onclick="companyApproval('${vo.company_id}','${status.count}')">승인</button>
+									
+									<button type="button" class="btn btn-primary"
+											onclick="companyRefusal('${vo.company_id}','${status.count}')">거절</button>
+									
+												
+										<br> 
+										<input type="text" class="approveCompanyInput" value="testValue"></input>
+										<input type="text" class="approveCompanySign" value="W"></input>
 									</div>
 
 
@@ -175,6 +191,20 @@
 						</div>
 					</article>
 				</c:forEach>
+
+
+								<!-- 승인 -->
+									<form action="/master/masterCompanyUpdate.do" method="get" name="frmS">
+										<input name="company_id" id="success_id" type="text" readonly>
+										<input name="company_flag" id="success_flag" type="text" readonly>	
+									</form>	
+											
+											
+									<!-- 거절 -->		
+									<form action="/master/masterCompanyUpdate.do" name="frmR">	
+										<input name="company_id" id="recheck_id" type="text" readonly>
+										<input name="company_flag" id="recheck_flag" type="text" readonly>
+									</form>
 
 				<!--/.article-->
 
@@ -264,24 +294,78 @@
 	<script src="/resources/js/theme.bundle.js"></script>
 
 </body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
-	var target = document.querySelectorAll(".btn");
 
-	/* var tartgetLength = target.length;
-	console.log("tartgetLength : " + tartgetLength) */
-
-	for (var i = 0; i < target.length; i++) {
-		target[i].addEventListener("click", function() {
-			 alert("나온다나와!!"); 
-			// class는 배열형식 - value가 없음둥
-			var inputBtn = document.getElementsByClassName("approveCompanyInput");
- 			for (var i = 0; i < inputBtn.length; i++) {
-				inputBtn[i].style.fontSize = "x-large";
- 			}
-		});
-
+	function companyApproval(data,idx) {
+		alert("승인되었습니다");
+		
+		//  데이터 확인 작업 
+		// 클릭한 대상의 회사명 : data 
+		// 클랙한 대상의 순서 : idx ( 1부터 시작 )
+		// 클릭한 대상안에 있는 텍스트박스 선택 : inputText ( 배열이기때문에 0부터 시작이기때문에 idx-1 ) 
+		
+		// 		var inputText = document.getElementsByClassName('approveCompanyInput')[idx-1] ;
+		// 		alert(data +  " " + inputText)
+		// 		inputText.value = data;
+		
+		document.getElementsByClassName('approveCompanyInput')[idx-1].value = data;
+		document.getElementsByClassName('approveCompanySign')[idx-1].value = 'D';
+		
+		document.getElementById('success_id').value = data
+		document.getElementById('success_flag').value = 'D'
+		
+		alert(document.getElementById('success_id').value)
+		alert(document.getElementById('success_flag').value)
+		
+		/* $(function(){ */
+		/* document.hiddenForm.submit(); */
+		document.frmS.submit();
+	/* }) */
+	
 	}
-</script>
+</script> 
+
+<script type="text/javascript">
+	function companyRefusal(data,idx) {
+		alert("거절되었습니다");
+		
+		//  데이터 확인 작업 
+		// 클릭한 대상의 회사명 : data 
+		// 클랙한 대상의 순서 : idx ( 1부터 시작 )
+		// 클릭한 대상안에 있는 텍스트박스 선택 : inputText ( 배열이기때문에 0부터 시작이기때문에 idx-1 ) 
+		
+		// 		var inputText = document.getElementsByClassName('approveCompanyInput')[idx-1] ;
+		// 		alert(data +  " " + inputText)
+		// 		inputText.value = data;
+		
+		document.getElementsByClassName('approveCompanyInput')[idx-1].value = data;
+		document.getElementsByClassName('approveCompanySign')[idx-1].value = 'R';
+		
+		document.getElementById('recheck_id').value = data
+		document.getElementById('recheck_flag').value = 'R'
+		
+		alert(document.getElementById('recheck_id').value)
+		alert(document.getElementById('recheck_flag').value)
+		
+		/* $(function(){ */
+		/* document.hiddenForm.submit(); */
+		document.frmR.submit();
+	/* }) */
+	
+		
+	
+		
+	}
+</script> 
+
+<!-- <script type="text/javascript">
+var inputBtn = document.querySelectorAll(".btn")
+for (var i = 0; i < inputBtn.length; i++) {
+		alert("나와제발");
+
+</script> -->
+
 
 
 
