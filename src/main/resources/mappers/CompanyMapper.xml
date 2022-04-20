@@ -55,7 +55,7 @@
 	WHERE COMPANY_PASSWORD = #{company_password} AND COMPANY_ID =#{company_id}
 	</select>
 	
-	<update id="companyUpdate" parameterType="company">
+	<update id="companyupdate" parameterType="company">
 		UPDATE COMPANY_INFO
 		SET
 		COMPANY_NAME = #{company_name},

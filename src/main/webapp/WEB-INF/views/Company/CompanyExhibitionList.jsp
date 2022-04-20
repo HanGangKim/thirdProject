@@ -171,9 +171,9 @@ if (session.getAttribute("userId") == null) {
 									
 									<br>
 									
-									<form action="/exhibition/" method="post">
-									<input value="${vo.company_id}" hidden="hidden">
-									<input value="${vo.exhibition_id}" hidden="hidden">
+									<form action="/exhibition/exhibitionCompanyExhibitionDelete.do" method="post">
+									<input  name="company_id" value="${vo.company_id}" hidden="hidden">
+									<input  name="exhibition_id" value="${vo.exhibition_id}" hidden="hidden">
 									<button type="submit" class="btn btn-primary">삭제</button>
 									</form>
 								</div>

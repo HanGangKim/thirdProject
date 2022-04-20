@@ -55,7 +55,7 @@ public class CompanyServiceImpl implements CompanyService{
 	}
 	
 	@Override
-	public void companyUpdate(CompanyVO vo) {
+	public void companyupdate(CompanyVO vo) {
 		
 		System.out.println("===============");
 		System.out.println("companyupdate 서비스 호출");
