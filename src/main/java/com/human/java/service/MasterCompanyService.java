@@ -10,7 +10,8 @@ public interface MasterCompanyService {
 	public List<MasterCompanyVO>  masterCompany ();
 	
 	// company update
-	void updateMasterCompany(MasterCompanyVO vo);
+
+	public void masterCompanyUpdate(MasterCompanyVO vo);
 	
 	
 }

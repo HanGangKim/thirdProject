@@ -13,7 +13,8 @@
 	
 	<update id="masterCompanyUpdate" parameterType="masterCompany" >
 		UPDATE COMPANY_INFO
-		
+		SET COMPANY_FLAG = #{company_flag}
+		WHERE = #{company_id}
 	</update>
 
 </mapper>  

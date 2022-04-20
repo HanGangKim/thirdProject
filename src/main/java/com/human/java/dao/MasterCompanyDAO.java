@@ -10,6 +10,6 @@ public interface MasterCompanyDAO {
 	public List<MasterCompanyVO> masterCompany();
 	
 	// update company
-	void updateMasterCompany(MasterCompanyVO vo);
+	void masterCompanyUpdate(MasterCompanyVO vo);
 
 }
