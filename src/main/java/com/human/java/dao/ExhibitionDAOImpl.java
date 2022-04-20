@@ -126,8 +126,22 @@ public class ExhibitionDAOImpl implements ExhibitionDAO {
 		return mybatis.insert("companyMapper.companyInsertExhibition",vo);
 	}
 
+	
 	@Override
-	public List<ExhibitionVO> getExhibitionCompanyServiceList(ExhibitionVO vo, String companyId) {
+	public int companyUpdateExhibition(ExhibitionVO vo) {
+		
+		System.out.println("===============");
+		System.out.println("companyUpdateExhibition 다오 호출");
+		System.out.println("ExhibitionVO vo : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+		
+		return mybatis.update("companyMapper.companyUpdateExhibition",vo);
+	}
+
+	
+	
+	@Override
+	public List<ExhibitionVO> getExhibitionCompanyList(ExhibitionVO vo, String companyId) {
 		
 		
 		System.out.println("===============");
@@ -138,5 +152,25 @@ public class ExhibitionDAOImpl implements ExhibitionDAO {
 		
 		return mybatis.selectList("companyMapper.companyExhibitionList",companyId);
 	}
+
+	@Override
+	public ExhibitionVO getExhibitionCompanyDetail(ExhibitionVO vo) {
+		
+		System.out.println("===============");
+		System.out.println("getExhibitionCompanyServiceList 다오 호출");
+		System.out.println("업체ID: "+vo.getCompany_id());
+		System.out.println("전시회ID:"+vo.getExhibition_id());
+		System.out.println("===============");
+		
+		return mybatis.selectOne("companyMapper.companyExhibitionDetail",vo);
+	}
+	
+	@Override
+	public int exhibitionCompanyExhibitionDelete(ExhibitionVO vo) {
+		System.out.println("exhibitionCompanyExhibitionDelete 다오 호출");
+		System.out.println(vo.getExhibition_id());
+		return mybatis.delete("companyMapper.exhibitionCompanyExhibitionDelete",vo);
+	}
+
 
 }

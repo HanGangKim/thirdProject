@@ -71,11 +71,11 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			<div class="row mb-7">
 				<div class="col-md-4 mb-5 mb-md-0 text-md-center order-md-2">
 					<!-- 로고 -->
-					<a href="#"><img src="/resources/img/logo/logo-white.svg"
+					<a href="#"><img src="/resources/img/logo/white-logo.png"
 							class="width-10x d-block h-auto mx-md-auto" alt=""></a>
 				</div>
 				<div class="col-md-4 order-md-1 mb-3 mb-md-0">
-					<a href="mailto:mail@domain.com" class="fs-4 link-hover-underline">human@mail.com</a>
+					<a href="mailto:mail@domain.com" class="fs-4 link-hover-underline">fiennale@mail.com</a>
 				</div>
 				<div class="col-md-4 text-md-end order-md-3">
 					<a href="mailto:mail@domain.com" class="fs-4 link-hover-underline">+01

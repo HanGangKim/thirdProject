@@ -18,4 +18,8 @@ public interface CompanyService {
 	//비밀번호 확인
 	public CompanyVO companyconfirmpassword(CompanyVO vo);
 	
+	//업체 정보수정
+	
+	public void companyupdate(CompanyVO vo);
+	
 }

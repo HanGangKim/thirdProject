@@ -100,7 +100,7 @@ if (session.getAttribute("userId") == null) {
 		<!--/section-->
 	</main>
 
-	<!--Main content start-->
+	<!--Main content start-->	
 	<main>
 
 		<section class="position-relative bg-white">
@@ -109,7 +109,7 @@ if (session.getAttribute("userId") == null) {
 
 
 				<h2 class="mb-4"></h2>
-			 	<c:forEach items="" var="vo"> 
+			 	<c:forEach items="${CompanyExhibitionList}" var="vo"> 
 				<article
 					class="row g-0 mb-4 mb-lg-5 position-relative overflow-hidden hover-lift hover-shadow-lg border rounded-4 card-hover shadow-sm align-items-center">
 
@@ -134,7 +134,7 @@ if (session.getAttribute("userId") == null) {
 								<h2 class="mb-4">
 									<table>
 											<tr>
-												<td><h2>업체ID : ${vo.company_id}</h2></td>
+												<td><h4>업체ID : ${vo.company_id}</h4></td>
 											</tr>
 											
 											<tr>
@@ -142,7 +142,7 @@ if (session.getAttribute("userId") == null) {
 											</tr>
 											
 											<tr>
-												<td><h6>등록 전시회 제목 : ${vo.}</h6></td>
+												<td><h6>등록 전시회 제목 : ${vo.exhibition_title}</h6></td>
 											</tr>
 											<tr>
 												<td><h6>등록 전시회 내용 : ${vo.exhibition_contents}</h6></td>
@@ -162,10 +162,21 @@ if (session.getAttribute("userId") == null) {
 
 								<br> <br>
 								<div class="text-end">
-									<button type="button" class="btn btn-primary">수정</button>
-									<button type="button" class="btn btn-primary">삭제</button>
+								
+									<form action="/exhibition/CompanyExhibitionDetail.do" method="post">
+									<input name="company_id" value="${vo.company_id}" hidden="hidden">
+									<input  name="exhibition_id" value="${vo.exhibition_id}" hidden="hidden">
+									<button type="submit" class="btn btn-primary">수정</button>
+									</form>
+									
+									<br>
+									
+									<form action="/exhibition/exhibitionCompanyExhibitionDelete.do" method="post">
+									<input  name="company_id" value="${vo.company_id}" hidden="hidden">
+									<input  name="exhibition_id" value="${vo.exhibition_id}" hidden="hidden">
+									<button type="submit" class="btn btn-primary">삭제</button>
+									</form>
 								</div>
-
 
 							</div>
 						</div>
@@ -184,6 +195,18 @@ if (session.getAttribute("userId") == null) {
 				<!--예매하기 버튼-->
 				<div>
 					<a href="/company/CompanyExhibitionWrite.do" class="btn btn-primary">New exhibition</a>
+				</div>
+		</div>
+		
+		<br>
+		
+	<!-- 버튼 -->
+	 <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-center">
+				<!--전시회 목록보기-->
+				<div class="mb-3 mb-sm-0"></div>
+				<!--예매하기 버튼-->
+				<div>
+					<a href="/company/CompanyMain.do" class="btn btn-primary">Go  MainPage</a>
 				</div>
 		</div>
 

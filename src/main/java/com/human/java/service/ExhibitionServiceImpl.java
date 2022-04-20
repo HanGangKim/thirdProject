@@ -125,6 +125,18 @@ public class ExhibitionServiceImpl implements ExhibitionService{
 	}
 
 	@Override
+	public int companyUpdateExhibition(ExhibitionVO vo) {
+		
+		System.out.println("===============");
+		System.out.println("companyUpdateExhibition 서비스 호출");
+		System.out.println("ExhibitionVO vo : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+		
+		return exhibitionDAO.companyUpdateExhibition(vo);
+	}
+	
+	
+	@Override
 	public List<ExhibitionVO> getExhibitionCompanyServiceList(ExhibitionVO vo, String companyId) {
 		
 		
@@ -133,10 +145,27 @@ public class ExhibitionServiceImpl implements ExhibitionService{
 		System.out.println("companyId : " + companyId);
 		System.out.println("===============");
 		
-		return exhibitionDAO.getExhibitionCompanyServiceList(vo,companyId);
+		return exhibitionDAO.getExhibitionCompanyList(vo,companyId);
 	}
 
-	
-	
+	@Override
+	public ExhibitionVO getExhibitionCompanyServiceDetail(ExhibitionVO vo) {
+		
+		System.out.println("===============");
+		System.out.println("getExhibitionCompanyServiceDetail 서비스 호출");
+		System.out.println("업체ID : " + vo.getCompany_id());
+		System.out.println("전시회ID:"+vo.getExhibition_id());
+		System.out.println("===============");
+		
+		return exhibitionDAO.getExhibitionCompanyDetail(vo);
+	}
+
+	@Override
+	public int exhibitionCompanyExhibitionDelete(ExhibitionVO vo) {
+		System.out.println("exhibitionCompanyExhibitionDelete 서ꈰ스 호출");
+		System.out.println(vo.getExhibition_id());
+	return	exhibitionDAO.exhibitionCompanyExhibitionDelete(vo);
+		
+	}
 	
 }

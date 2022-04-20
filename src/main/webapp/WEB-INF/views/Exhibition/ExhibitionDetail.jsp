@@ -248,9 +248,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							</div>
 							<!-- 방문 날짜 -->
 							<div class="mb-3">
-								<label class="form-label" for="profile_name">Visit Date</label> <input
-									type="text" name="ticketing_date" placeholder="날짜"
-									data-flatpickr value="2022.01.01" class="form-control">
+								<label class="form-label" for="profile_name">Visit Date</label> 
+								<input type="date" name="ticketing_date" placeholder="날짜" id="now_date"
+									data-flatpickr class="form-control">
 							</div>
 							<!-- 구분선 -->
 							<div class="d-flex align-items-center py-3">
@@ -259,11 +259,11 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 							<!-- 결제하기 섹션 -->
 							<!-- 기본값 -->
-							<div class="mb-3">
+<!-- 							<div class="mb-3"> -->
 								<input type="hidden" name="totalCustomer" id="d_money"
 									value="${vo.exhibition_price}" readonly="readonly"
 									class="form-control">
-							</div>
+<!-- 							</div> -->
 							<!-- 인원 -->
 							<div class="mb-2">
 								<label class="form-label" for="profile_name">Count</label> <input
@@ -460,6 +460,7 @@ var adress = document.querySelector("#adress").innerText
 
 
 
+
 <!-- scripts -->
 <script src="/resources/js/theme.bundle.js"></script>
 
@@ -481,5 +482,20 @@ var adress = document.querySelector("#adress").innerText
         
 //         history.replaceState({}, null, location.pathname);
 	</script>
+	
+	
+<!-- 오늘날짜 뽑는 스크립트 -->
+<script type="text/javascript">
+
+	window.onload = function(){
+		var date = new Date();
+		var date1 = date.toISOString().substring(0, 10)
+// 		var date2 = new Date(date.setDate(date.getDate()+14)).toISOString().substring(0, 10);
+											
+		document.getElementById('now_date').value = date1
+		
+	}
+	
+</script>
 
 </html>

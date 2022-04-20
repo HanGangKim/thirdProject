@@ -30,9 +30,9 @@
 <!-- Main CSS -->
 <link href="/resources/css/theme.min.css" rel="stylesheet">
 
+
 <title>Assan 4</title>
 </head>
-
 
 
 <body>
@@ -54,6 +54,13 @@
 </body>
 
 <body>
+
+	<!-- <script type="text/javascript">
+		function companyApproval() {
+			document.getElementById("approveCompanyInput").value = "잘 클릭하셨네요";
+		}
+	</script> -->
+
 	<!--Preloader Spinner-->
 	<div class="spinner-loader bg-tint-primary">
 		<div class="spinner-border text-primary" role="status"></div>
@@ -97,7 +104,7 @@
 
 
 				<h2 class="mb-4"></h2>
-				<c:forEach items="${vo}" var="vo">
+				<c:forEach items="${vo}" var="vo" varStatus="status">
 					<article
 						class="row g-0 mb-4 mb-lg-5 position-relative overflow-hidden hover-lift hover-shadow-lg border rounded-4 card-hover shadow-sm align-items-center">
 
@@ -153,17 +160,22 @@
 
 									<br> <br>
 									<div class="text-end">
-										<button type="button" class="btn btn-primary">승인</button>
-										<button type="button" class="btn btn-primary">거절</button>
+
+										<button type="button" class="btn btn-primary"
+											onclick="companyApproval()" value="">승인</button>
+										<button type="button" class="btn btn-primary"
+											onclick="companyRefusal()">거절</button>
+										<br> <input type="text" class="approveCompanyInput"
+											value="testValue" name="test1"></input>
 									</div>
 
 
 								</div>
 							</div>
 						</div>
-						<a href="#" class="stretched-link"></a>
 					</article>
 				</c:forEach>
+
 				<!--/.article-->
 
 				<!--/.article-->
@@ -252,5 +264,25 @@
 	<script src="/resources/js/theme.bundle.js"></script>
 
 </body>
+<script type="text/javascript">
+	var target = document.querySelectorAll(".btn");
+
+	/* var tartgetLength = target.length;
+	console.log("tartgetLength : " + tartgetLength) */
+
+	for (var i = 0; i < target.length; i++) {
+		target[i].addEventListener("click", function() {
+			 alert("나온다나와!!"); 
+			// class는 배열형식 - value가 없음둥
+			var inputBtn = document.getElementsByClassName("approveCompanyInput");
+ 			for (var i = 0; i < inputBtn.length; i++) {
+				inputBtn[i].style.fontSize = "x-large";
+ 			}
+		});
+
+	}
+</script>
+
+
 
 </html>

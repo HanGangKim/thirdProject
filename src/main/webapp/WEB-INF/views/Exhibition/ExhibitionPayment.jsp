@@ -55,30 +55,35 @@ System.out.println("totalPrice: " + totalPrice);
 	src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 </head>
 
-<body>
+<body style="background-color: gray;">
 
 	<!-- 차후 히든타입으로 바뀔 예정 -->
 	<form name="hiddenForm" action="/exhibition/ExhibitionTicketing.do"
 		method="get">
-		회원ID:<input type="text" value="<%=userId%>" name="customer_id">
+<!-- 		회원ID: -->
+		<input type="hidden" value="<%=userId%>" name="customer_id">
 		<br><br> 
-		예약자이름:<input type="text" value="<%=consumer_name%>"
+<!-- 		예약자이름: -->
+		<input type="hidden" value="<%=consumer_name%>"
 			name="consumer_name"> <br>
 		<br><br> 
-		예약일자:<input type="text" value="<%=ticketing_date%>"
+<!-- 		예약일자: -->
+		<input type="hidden" value="<%=ticketing_date%>"
 			name="ticketing_date"> <br>
 		<br><br>  
-		예약자번호:<input type="text" value="<%=consumer_ph%>"
+<!-- 		예약자번호: -->
+		<input type="hidden" value="<%=consumer_ph%>"
 			name="consumer_ph"> <br>
 		<br><br>  
-		전시회ID:<input type="text" value="<%=exhibition_id%>"
+<!-- 		전시회ID: -->
+		<input type="hidden" value="<%=exhibition_id%>"
 			name="exhibition_id"> <br>
 		<br><br> 
 	</form>
 
-	<h1>여기 예쁜거로 배경 꾸며줘요 !</h1>
 
 </body>
+
 <script>
     $(function(){
         var IMP = window.IMP; // 생략가능
@@ -133,5 +138,6 @@ System.out.println("totalPrice: " + totalPrice);
         });
         
     });
-    </script>
+</script>
+    
 </html>
