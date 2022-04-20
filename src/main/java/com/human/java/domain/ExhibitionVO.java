@@ -1,6 +1,11 @@
 package com.human.java.domain;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Date;
+import java.util.UUID;
+
+import org.springframework.web.multipart.MultipartFile;
 
 //import java.sql.Date;
 
@@ -16,6 +21,50 @@ public class ExhibitionVO {
 	private String exhibition_image;
 	private String exhibition_location;
 	private int exhibition_price;
+	MultipartFile file;
+	 private String t_file_name;
+	 private String t_file_name_en;
+	 private long t_file_size;
+	 public boolean t_fileExtension;
+	
+	
+	public MultipartFile getFile() {
+		return file;
+	}
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	      // 업로드 파일 접근
+	      if(! file.isEmpty()){
+	         this.t_file_name = file.getOriginalFilename();
+	         this.t_file_size = file.getSize();
+	         
+	         String fileExtension=t_file_name.substring(t_file_name.lastIndexOf("."));
+	         
+	         if (!(fileExtension.equals(".jpg") || fileExtension.equals(".jpeg") || fileExtension.equals(".png"))) {
+	            t_fileExtension = true;
+	            return;
+	         }
+	         //1. 가짜이름은 파일의 확장자가 없습니다. >> 진짜 이름에서 확장자를 가져와야한다.
+	         //2. 사용자가 파일을 저장할때 겹치지않도록 암호화하는 코드
+	         //형식 ip_랜덤문자32자리.확장자명
+	         this.t_file_name_en=UUID.randomUUID().toString().replaceAll("-","")+fileExtension;
+	         //***********************************************
+	         // 해당 경로로 변경
+	         File f = new File("C:\\Users\\human\\Desktop\\STS4\\thirdProject\\src\\main\\webapp\\resources\\img\\exhibition_imgs\\"+t_file_name_en);
+	         try {
+	            file.transferTo(f);
+	            setExhibition_image("/resources/img/exhibition_imgs/"+t_file_name_en);
+	            
+	         } catch (IllegalStateException e) {            
+	            e.printStackTrace();
+	         } catch (IOException e) {
+	            
+	            e.printStackTrace();
+	         }
+	      }
+	   }
+
+		
 	
 	// 전시회 등록시 필요한 회사의 ID
 	private String company_id;

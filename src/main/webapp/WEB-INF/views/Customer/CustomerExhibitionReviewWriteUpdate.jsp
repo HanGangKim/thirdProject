@@ -176,8 +176,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 													<!-- 이미지 업로드전까지 DEFAULT_IMG 벨류 부여 -->
 													<!-- 이미지 업로드 전까지 file->text 변경  -->
-													<input name="review_img" value="DEFAULT_IMG" type="file"
-														id="review_img" class="form-control" readonly="readonly" accept="image/png image/jpg image/gif">
+													
 												</div>
 											</div>
 											<hr class="mt-5 mb-3">

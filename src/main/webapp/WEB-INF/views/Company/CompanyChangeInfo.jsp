@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%request.setCharacterEncoding("UTF-8");%>
@@ -9,6 +10,7 @@ Object userEmail = session.getAttribute("userEmail");
 Object userGender = session.getAttribute("userGender");
 Object userAge = session.getAttribute("userAge");
 Object userPass = session.getAttribute("userPass");
+Object userRegnum = session.getAttribute("userRegnum");
 
 // 세션 연결
 if (session.getAttribute("userId") == null) {
@@ -16,12 +18,18 @@ if (session.getAttribute("userId") == null) {
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 System.out.println("세션연결 실패:"+userId);
 System.out.println("세션연결 실패:"+userName);
+System.out.println("세션연결 실패:"+userRegnum);
+System.out.println("세션연결 실패:"+userPh);
+System.out.println("세션연결 실패:"+userEmail);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 }else{
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 System.out.println("세션연결 성공:"+userId);
 System.out.println("세션연결 성공:"+userName);
+System.out.println("세션연결 성공:"+userRegnum);
+System.out.println("세션연결 성공:"+userPh);
+System.out.println("세션연결 성공:"+userEmail);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 }
@@ -178,7 +186,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_name">Name</label> <input
 														class="form-control" id="profile_name" name="company_name"type="text"
-														value="">
+														value="<%=userName%>">
 												</div>
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
@@ -191,20 +199,20 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_phon">Phone</label>
 													<input type="text" id="profile_phon" name="company_ph"
-														value="" class="form-control">
+														value="<%=userPh %>" class="form-control">
 												</div>
 												
 												<!--이메일-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_gender">E-mail</label>
 													<input class="form-control" type="email" name="company_email"id="profile_email"
-														value="">
+														value="<%=userEmail%>">
 												</div>
 												<!--사업자 등록번호-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_dob">
 														사업자 등록번호</label> <input type="text" id="profile_dob"
-														class="form-control" name="company_regnum" data-flatpickr value="">
+														class="form-control" name="company_regnum" value="<%=userRegnum%>">
 												</div>
 												
 												<!--주소-->

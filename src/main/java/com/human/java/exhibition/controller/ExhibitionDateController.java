@@ -64,6 +64,7 @@ public class ExhibitionDateController {
 		mv.setViewName("/Exhibition/ExhibitionDateList");
 		System.out.println(ToStringBuilder.reflectionToString(vo) + "전달");
 		mv.addObject("vo", exhibitionService.exhibitionSearch(vo, totalDate, 8));
+		System.out.println(ToStringBuilder.reflectionToString(vo) + "전달");
 
 		return mv;
 	}
