@@ -40,4 +40,8 @@ public interface ExhibitionDAO {
 	
 	// 업체 전시회 상세조회
 	public ExhibitionVO getExhibitionCompanyDetail(ExhibitionVO vo);
+	
+	// 업체 전시회 등록 삭제
+	
+	int exhibitionCompanyExhibitionDelete(ExhibitionVO vo);
 }

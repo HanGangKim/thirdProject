@@ -73,7 +73,7 @@ public class ExhibitionCompanyExhibitionWriteController {
 		//  매퍼 : 컴패니 매퍼 
 		
 		// 서비스 호출 방식은 아래와 같이 진행된다.
-		//	exhibitionService.(vo);
+			exhibitionService.exhibitionCompanyExhibitionDelete(vo);
 		
 		// -------------------------------------
 		
