@@ -27,6 +27,7 @@
 		AND t.TICKETING_FLAG = <![CDATA[']]>N<![CDATA[']]>
 		</if>
 		</where>
+		ORDER BY t.TICKETING_DATE
 	</select>
 	
 	<!-- TICKETING_FLAG -->

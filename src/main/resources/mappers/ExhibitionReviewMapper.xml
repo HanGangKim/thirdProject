@@ -23,6 +23,7 @@
 			FROM HAN.EXHIBITION_INFO e , HAN.REVIEW r
 		WHERE e.EXHIBITION_ID = r.EXHIBITION_ID )
 		WHERE <![CDATA[ ROWNUM <= ]]> ${endRow}
+		ORDER BY REVIEW_DATE DESC
 	</select>
 	
 	<!-- 나의 리뷰 조회 -->
@@ -33,6 +34,7 @@
 		<where>
 		e.EXHIBITION_ID = r.EXHIBITION_ID AND r.CUSTOMER_ID =  <![CDATA[']]>${id}<![CDATA[']]>
 		</where>
+		ORDER BY r.REVIEW_DATE DESC
 	</select>
 	
 	<!-- 나의 리뷰 상세조회  -->
