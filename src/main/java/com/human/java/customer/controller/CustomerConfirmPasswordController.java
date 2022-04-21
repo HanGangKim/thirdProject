@@ -74,6 +74,7 @@ public class CustomerConfirmPasswordController {
 			
 			session.setAttribute("userPass" , result.getCustomer_password());
 			session.setAttribute("userId", result.getCustomer_id());
+			session.setAttribute("userName", result.getCustomer_id());
 			session.setAttribute("userEmail", result.getCustomer_email());
 			
 			mv.addObject("vo",customerService.customerFindPassword(vo));

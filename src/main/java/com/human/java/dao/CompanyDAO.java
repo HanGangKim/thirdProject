@@ -14,4 +14,6 @@ public interface CompanyDAO {
 	public CompanyVO companyconfirmpassword(CompanyVO vo);
 	
 	public void companyupdate(CompanyVO vo);
+	
+	public CompanyVO companyFindPassword(CompanyVO vo);
 }

@@ -71,4 +71,10 @@
 		FROM EXHIBITION_INFO
 		WHERE EXHIBITION_ID = #{exhibition_id}
 	</delete>
+	
+	<select id="companyFindPassword" parameterType="company" resultType="company">
+	SELECT *
+	FROM COMPANY_INFO
+	WHERE COMPANY_ID = #{company_id} AND COMPANY_EMAIL = #{company_email}
+	</select>
 </mapper>

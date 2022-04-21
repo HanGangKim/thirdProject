@@ -22,4 +22,8 @@ public interface CompanyService {
 	
 	public void companyupdate(CompanyVO vo);
 	
+	// 업체 비밀번호 찾기
+	
+	public CompanyVO companyFindPassword(CompanyVO vo);
+	
 }

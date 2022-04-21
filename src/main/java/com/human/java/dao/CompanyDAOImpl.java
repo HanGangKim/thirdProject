@@ -46,7 +46,7 @@ public class CompanyDAOImpl implements CompanyDAO {
 	@Override
 	public CompanyVO companyconfirmpassword(CompanyVO vo) {
 		System.out.println("===============");
-		System.out.println("companyInsert 다오 호출");
+		System.out.println("companyconfirmpassword 다오 호출");
 		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
 		System.out.println("===============");
 		
@@ -62,5 +62,16 @@ public class CompanyDAOImpl implements CompanyDAO {
 		System.out.println("===============");
 		
 		mybatis.update("companyMapper.companyupdate",vo);
+	}
+	
+	@Override
+	public CompanyVO companyFindPassword(CompanyVO vo) {
+		System.out.println("===============");
+		System.out.println("customerFindPassword 다오 호출");
+		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+		
+		return mybatis.selectOne("companyMapper.companyFindPassword",vo);
+		
 	}
 }
