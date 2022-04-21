@@ -1,31 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+    <%request.setCharacterEncoding("UTF-8");%>
 <%
-request.setCharacterEncoding("UTF-8");
-%>
-<%
-Object userId = session.getAttribute("userId");
-Object userName = session.getAttribute("userName");
-Object userPh = session.getAttribute("userPh");
-Object userEmail = session.getAttribute("userEmail");
-Object userGender = session.getAttribute("userGender");
-Object userAge = session.getAttribute("userAge");
-Object userPass = session.getAttribute("userPass");
+Object companyId = session.getAttribute("=companyId");
+Object companyName = session.getAttribute("companyName");
+Object companyPh = session.getAttribute("companyPh");
+Object companyEmail = session.getAttribute("companyEmail");
+Object companyGender = session.getAttribute("companyGender");
+Object companyAge = session.getAttribute("companyAge");
+Object companyPass = session.getAttribute("companyPass");
+Object companyRegnum = session.getAttribute("companyRegnum");
 
 // 세션 연결
-if (session.getAttribute("userId") == null) {
-	// 세션 연결에 실패하면 null	
-	System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-	System.out.println("세션연결 실패:" + userId);
-	System.out.println("세션연결 실패:" + userName);
-	System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-	//LogOut.jsp로 이동
-	response.sendRedirect("../LogOut.do");
-} else {
-	System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-	System.out.println("세션연결 성공:" + userId);
-	System.out.println("세션연결 성공:" + userName);
-	System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+if (session.getAttribute("companyId") == null) {
+// 세션 연결에 실패하면 null	
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+System.out.println("세션연결 실패:"+companyId);
+System.out.println("세션연결 실패:"+companyName);
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+//LogOut.jsp로 이동
+response.sendRedirect("../LogOut.do");	
+}else{
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+System.out.println("세션연결 실패:"+companyId);
+System.out.println("세션연결 실패:"+companyName);
+System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 }
 %>
@@ -83,12 +82,11 @@ if (session.getAttribute("userId") == null) {
 							class="width-10x height-10x rounded-circle position-relative bg-success text-white flex-center mb-4">
 							<i class="bx bx-check lh-1 display-4 fw-normal"></i>
 						</div>
-						<h1 class="display-2 mb-3">비밀번호 찾기 성공 !</h1>
-						<!-- 아이디는 본인이 입력한 것 -->
-						<p class="mb-5 lead mx-auto">${vo.customer_id}님의비밀번호는...</p>
-
+						<h1 class="display-2 mb-3">비밀번호 찾기 성공!</h1>
+						<p class="mb-5 lead mx-auto">${companyId} 님의 비밀번호는 ...</p>
+						
 						<!-- 비밀번호의 뒷자리 3자리를 안보이게 가능 -->
-						<p class="mb-5 lead mx-auto" id='passwordmasking'>${vo.customer_password}</p>
+						<p class="mb-5 lead mx-auto" id="passwordmasking">${companyPass} 입니다!</p>
 						<a href="/LandingLogin.do" class="btn btn-outline-primary btn-lg">
 							Sign In</a>
 
@@ -102,43 +100,28 @@ if (session.getAttribute("userId") == null) {
 	<jsp:include page="/footer.jsp" />
 
 
-	<!-- begin Back to Top button -->
-	<!-- <a href="#" class="toTop"> <i class="bx bxs-up-arrow"></i>
+<!-- 	begin Back to Top button
+	<a href="#" class="toTop"> <i class="bx bxs-up-arrow"></i>
 	</a>
-
+	
 	cursor
 	<div class="cursor">
 		<div class="cursor__inner"></div>
 	</div>
--->
+ -->
 </body>
-
 <script>
 
-// var name = ${vo.customer_password};
+var name = document.getElementById('passwordmasking').innerHTML;
+let maskingStr;
 
+if(name.length < 3){
+	maskingStr = name.replace(/(?<=.{1})./gi, "*");
+}else {
+	maskingStr = name.replace(/(?<=.{2})./gi, "*"); 
+}
 
-
-// function(str){
-	var name = document.getElementById('passwordmasking').innerHTML;
-	let maskingStr;
-	
-// 	if(this.checkNull(name) == true){ 
-// 		return name;
-// 	}
-	
-	if(name.length < 3){
-		maskingStr = name.replace(/(?<=.{1})./gi, "*");
-	}else {
-		maskingStr = name.replace(/(?<=.{2})./gi, "*"); 
-	}
-
-// window.onload = function(){	
-	document.getElementById('passwordmasking').innerHTML = maskingStr+" 입니다!";
-	
-// }	
-
-
+document.getElementById('passwordmasking').innerHTML = maskingStr+" 입니다!";
 
 </script>
 <!-- scripts -->

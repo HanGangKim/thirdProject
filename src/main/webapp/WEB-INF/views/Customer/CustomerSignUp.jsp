@@ -111,7 +111,7 @@ response.sendRedirect("../LogOut.do");
 									<span class="input-icon" name="errorMassagePw" id="errorMassagePw"> <i class="bx bx-lock-open"></i>
 									</span> <input type="password" class="form-control" required
 										name="customer_password" id="signUpPassword"
-										placeholder="Enter password">
+										placeholder="Enter password" maxlength="10">
 								</div>
 
 								 <!-- 비밀번호 확인 -->

@@ -53,4 +53,35 @@ public class CompanyConfirmPasswordController {
 		}
 		return mv;
 	}
+	
+	@RequestMapping("companyFindPassword.do")
+	public ModelAndView companyFindPass(CompanyVO vo, HttpSession session) {
+		System.out.println("companyFindPass 메소드 호출");
+		System.out.println("Company vo : "+ToStringBuilder.reflectionToString(vo));
+		CompanyVO result = companyService.companyFindPassword(vo);
+		ModelAndView mv = new ModelAndView();
+		
+		if(result ==null) {
+			System.out.println("확인실패");
+			mv.setViewName("/Company/CompanyLogin");
+			return mv;
+		}else {
+			System.out.println("===============");
+			System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
+			System.out.println("===============");
+			
+			System.out.println("[" + result.getCompany_id() + "]" + "아이디 확인 성공");
+			
+			session.setAttribute("companyPass" , result.getCompany_password());
+			session.setAttribute("companyId", result.getCompany_id());
+			session.setAttribute("companyEmail", result.getCompany_email());
+			System.out.println(session);
+//			mv.addObject("vo",companyService.companyconfirmpassword(vo));
+
+			mv.addObject(result);
+			mv.setViewName("/Company/CompanyFindPassword");
+			
+		}
+		return mv;
+	}
 }

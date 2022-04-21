@@ -64,6 +64,15 @@ public class CompanyServiceImpl implements CompanyService{
 		
 		companyDAO.companyupdate(vo);
 	}
+		
+	@Override
+	public CompanyVO companyFindPassword(CompanyVO vo) {
+		System.out.println("===============");
+		System.out.println("companyFindPassword 서비스 호출");
+		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
+		System.out.println("===============");
+		return companyDAO.companyFindPassword(vo);
+	}
 	
 }
 
