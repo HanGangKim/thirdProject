@@ -25,6 +25,7 @@ public class MasterCompanyServiceImpl implements MasterCompanyService{
 	@Override
 	public void masterCompanyUpdate(MasterCompanyVO vo) {
 		// TODO Auto-generated method stub
+		System.out.println("service 호출");
 		
 		masterCompanyDAO.masterCompanyUpdate(vo);
 		
