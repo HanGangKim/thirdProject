@@ -44,6 +44,12 @@ public interface ExhibitionDAO {
 	public ExhibitionVO getExhibitionCompanyDetail(ExhibitionVO vo);
 	
 	// 업체 전시회 등록 삭제
-	
 	int exhibitionCompanyExhibitionDelete(ExhibitionVO vo);
+	
+	// 랜덤뽑기
+	public List<ExhibitionVO> randomExhibition(ExhibitionVO vo);
+	
+	// 마감임박
+	public ExhibitionVO lastExhibition(ExhibitionVO vo);
+	
 }

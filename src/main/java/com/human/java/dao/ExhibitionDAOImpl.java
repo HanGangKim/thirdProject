@@ -191,5 +191,19 @@ public class ExhibitionDAOImpl implements ExhibitionDAO {
 		return mybatis.delete("companyMapper.exhibitionCompanyExhibitionDelete",vo);
 	}
 
+	@Override
+	public List<ExhibitionVO> randomExhibition(ExhibitionVO vo) {
+		// TODO Auto-generated method stub
+		System.out.println("rand");
+		return mybatis.selectList("exhibitionMapper.randomExhibition", vo);
+	}
+
+	@Override
+	public ExhibitionVO lastExhibition(ExhibitionVO vo) {
+		// TODO Auto-generated method stub
+		System.out.println("last");
+		return mybatis.selectOne("exhibitionMapper.lastExhibition", vo);
+	}
+
 
 }

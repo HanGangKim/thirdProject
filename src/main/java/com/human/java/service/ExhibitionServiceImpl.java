@@ -178,5 +178,17 @@ public class ExhibitionServiceImpl implements ExhibitionService{
 	return	exhibitionDAO.exhibitionCompanyExhibitionDelete(vo);
 		
 	}
+
+	@Override
+	public List<ExhibitionVO> randomExhibition(ExhibitionVO vo) {
+		// TODO Auto-generated method stub
+		return exhibitionDAO.randomExhibition(vo);
+	}
+
+	@Override
+	public ExhibitionVO lastExhibition(ExhibitionVO vo) {
+		// TODO Auto-generated method stub
+		return exhibitionDAO.lastExhibition(vo);
+	}
 	
 }

@@ -52,4 +52,10 @@ public interface ExhibitionService {
 	// 업체 전시회 등록 삭제
 	public int exhibitionCompanyExhibitionDelete(ExhibitionVO vo);
 	
+	// 램덤 전시회 뽑기
+	public List<ExhibitionVO> randomExhibition(ExhibitionVO vo);
+	
+	// 마감임박 전시회 뽑기
+	public ExhibitionVO lastExhibition(ExhibitionVO vo);
+	
 }
