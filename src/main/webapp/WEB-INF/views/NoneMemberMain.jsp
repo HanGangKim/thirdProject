@@ -35,13 +35,16 @@
 
 	<main>
 	
+
+	
 		<!-- 슬라이더 시작 -->
 		<section class="position-relative overflow-hidden">
 			<!--:Swiper classic -->
 			<div class="swiper-container swiper-classic overflow-hidden position-relative vh-100">
 				<div class="swiper-wrapper">
 					<!--:Slide-->
-					<div class="swiper-slide" style="background-image: url('/resources/img/shop/banners/1.jpeg'); background-size: cover;">
+					<c:forEach items="${voRand}" var="voRand" end="3">
+					<div class="swiper-slide" style="background-image: url('${voRand.exhibition_image}'); background-size: auto;">
 						<div class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
 						<!--:container-->
 						<div class="container h-100 text-white position-relative z-index-1">
@@ -50,10 +53,10 @@
 									<!--:slider layers-->
 									<ul class="carousel-layers list-unstyled mb-0 pt-lg-9">
 										<li data-carousel-layer="fade-start">
-											<h3 class="display-3 mb-3">[강릉] 아르떼뮤지엄</h3>
+											<h3 class="display-3 mb-3">${voRand.exhibition_title}</h3>
 										</li>
 										<li data-carousel-layer="fade-end">
-											<p class="lead mb-4 mb-lg-5">강릉 아르떼뮤지엄</p>
+											<p class="lead mb-4 mb-lg-5">${voRand.exhibition_location}</p>
 										</li>
 										<li data-carousel-layer="fade-start">
 											<a href="#" class="btn btn-white btn-lg btn-hover-text mb-2 me-2"> 
@@ -66,14 +69,15 @@
 							</div>
 						</div>
 					</div>
+					</c:forEach>
 					<!--:Slide-->
-					<div class="swiper-slide" style="background-image: url('/resources/img/shop/banners/2.jpeg'); background-size: cover;">
+					<!-- <div class="swiper-slide" style="background-image: url('/resources/img/shop/banners/2.jpeg'); background-size: cover;">
 						<div class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
-						<!--:container-->
+						:container
 						<div class="container h-100 text-white position-relative z-index-1">
 							<div class="row d-flex align-items-center h-100">
 								<div class="col-xl-10 mx-auto text-center">
-									<!--:slider layers-->
+									:slider layers
 									<ul class="carousel-layers list-unstyled mb-0 pt-lg-9">
 										<li data-carousel-layer="fade-start">
 											<h3 class="display-3 mb-3">플라워 바이 네이키드</h3>
@@ -92,14 +96,14 @@
 							</div>
 						</div>
 					</div>
-					<!--:Slide-->
+					:Slide
 					<div class="swiper-slide" style="background-image: url('/resources/img/shop/banners/3.png'); background-size: cover;">
 						<div class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
-						<!--:container-->
+						:container
 						<div class="container h-100 text-white position-relative z-index-1">
 							<div class="row d-flex align-items-center h-100">
 								<div class="col-xl-10 mx-auto text-center">
-									<!--:slider layers-->
+									:slider layers
 									<ul class="carousel-layers list-unstyled mb-0 pt-lg-9">
 										<li data-carousel-layer="fade-start">
 											<h3 class="display-3 mb-3">빛: 영국 테이트미술관 특별전</h3>
@@ -117,7 +121,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 
 				<!--:Add Pagination -->
@@ -266,8 +270,8 @@
 							class="bx bx-stopwatch fs-5 me-1"></i> 전시 종료 임박!! </span>
 						<div
 							class="countdown-timer py-3 mb-3 d-flex flex-wrap align-items-center"></div>
-						<h2 class="display-1 mb-4">Pororo</h2>
-						<h5 class="mb-5">On order above $200</h5>
+						<h2 class="display-1 mb-4">${volast.exhibition_title}</h2>
+						<h5 class="mb-5">${volast.exhibition_price} 원</h5>
 						<a href="#" class="btn btn-dark btn-lg btn-hover-text mb-2 me-2">
 							<span class="btn-hover-label label-default">Explore
 								products</span> <span class="btn-hover-label label-hover">Explore
@@ -276,9 +280,10 @@
 					</div>
 					<div class="col-md-6 ms-auto mb-5 mb-md-0 order-1 order-md-last">
 						<div class="position-relative pe-12 pb-12">
-							<img src="/resources/img/shop/banners/women3.jpg"
+							<%-- <img src="${volast.exhibition_image }"
 								class="img-fluid position-absolute w-50 end-0 bottom-0 rounded-4"
-								alt=""> <img src="/resources/img/shop/banners/lg1.jpg"
+								alt="">  --%>
+								<img src="${volast.exhibition_image }"
 								class="img-fluid rounded-4" alt="">
 
 						</div>

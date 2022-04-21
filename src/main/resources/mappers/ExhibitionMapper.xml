@@ -62,4 +62,18 @@
 		WHERE EXHIBITION_ID = ${id}
 	</select>
 	
+	<select id="randomExhibition" parameterType="exhibition" resultType="exhibition">
+		<![CDATA[select * from  (select * from EXHIBITION_INFO order by dbms_random.value)
+		where rownum <= 3]]>
+	</select>
+	
+	<select id="lastExhibition" parameterType="exhibition" resultType="exhibition">
+		<![CDATA[SELECT *
+		FROM(SELECT *
+			FROM EXHIBITION_INFO
+			WHERE TO_DATE(EXHIBITION_END_DATE) >= SYSDATE
+			ORDER BY EXHIBITION_END_DATE)
+		WHERE ROWNUM=1]]>
+	</select>
+	
 </mapper>
