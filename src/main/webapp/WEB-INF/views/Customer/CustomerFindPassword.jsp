@@ -85,10 +85,11 @@ if (session.getAttribute("userId") == null) {
 						</div>
 						<h1 class="display-2 mb-3">비밀번호 찾기 성공 !</h1>
 						<!-- 아이디는 본인이 입력한 것 -->
-						<p class="mb-5 lead mx-auto">${vo.customer_id}님의비밀번호는...</p>
+						<p class="mb-5 lead mx-auto">${vo.customer_id}님의 비밀번호는...</p>
 
 						<!-- 비밀번호의 뒷자리 3자리를 안보이게 가능 -->
 						<p class="mb-5 lead mx-auto" id='passwordmasking'>${vo.customer_password}</p>
+						<p class="mb-5 lead mx-auto" id='passwordmasking'>자세한 비밀번호는 등록한 이메일에서 확인가능하세요 !</p>
 						<a href="/LandingLogin.do" class="btn btn-outline-primary btn-lg">
 							Sign In</a>
 
@@ -134,7 +135,7 @@ if (session.getAttribute("userId") == null) {
 	}
 
 // window.onload = function(){	
-	document.getElementById('passwordmasking').innerHTML = maskingStr+" 입니다!";
+	document.getElementById('passwordmasking').innerHTML = maskingStr+" 입니다.";
 	
 // }	
 
