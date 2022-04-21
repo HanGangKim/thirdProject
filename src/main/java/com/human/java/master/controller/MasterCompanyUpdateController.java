@@ -26,7 +26,8 @@ public class MasterCompanyUpdateController {
 		
 //		String id = vo.getCompany_id();
 		
-		return "Master/ApproveCompany";
+		// .do = 컨트롤러를 타겠다
+		return "redirect:ApproveCompany.do";
 	}
 }
 //}

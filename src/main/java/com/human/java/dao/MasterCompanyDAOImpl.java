@@ -22,6 +22,7 @@ public class MasterCompanyDAOImpl implements MasterCompanyDAO {
 	
 	@Override
 	public void masterCompanyUpdate(MasterCompanyVO vo) {
+		System.out.println("DAO 호출");
 
 		mybatis.update("masterCompanyMapper.masterCompanyUpdate",vo);
 	}
