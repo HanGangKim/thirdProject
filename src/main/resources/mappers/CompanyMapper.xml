@@ -34,7 +34,7 @@
 	
 	<insert id="companyUpdateExhibition" parameterType="exhibition">
 		UPDATE EXHIBITION_INFO
-		SET EXHIBITION_TITLE = #{exhibition_title} , EXHIBITION_START_DATE = #{exhibition_start_date} , EXHIBITION_END_DATE = #{exhibition_end_date} , EXHIBITION_TOTAL_DATE = #{exhibition_total_date} , EXHIBITION_IMAGE = #{exhibition_image} , EXHIBITION_CONTENTS = #{exhibition_contents} , EXHIBITION_LOCATION = #{exhibition_location} , EXHIBITION_PRICE = #{exhibition_price} , EXHIBITION_FLAG = 'W'
+		SET EXHIBITION_TITLE = #{exhibition_title} , EXHIBITION_START_DATE = #{exhibition_start_date} , EXHIBITION_END_DATE = #{exhibition_end_date} , EXHIBITION_TOTAL_DATE = #{exhibition_total_date} , EXHIBITION_IMAGE = #{exhibition_image} , EXHIBITION_CONTENTS = #{exhibition_contents} , EXHIBITION_LOCATION = #{exhibition_location} , EXHIBITION_PRICE = #{exhibition_price} , EXHIBITION_FLAG = 'W' , EXHIBITION_MEMO = #{exhibition_memo}
 		WHERE EXHIBITION_ID = #{exhibition_id}
 	</insert>
 	

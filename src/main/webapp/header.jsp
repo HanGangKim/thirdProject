@@ -167,15 +167,20 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						<button type="button" class="btn-close w-auto small"
 							data-bs-dismiss="modal" aria-label="Close">Cancel</button>
 					</div>
-					<form class="mb-0">
+					
+					<!-- 전시회 검색 시작  -->
+					<form class="mb-0" name="searchForm" onkeyup="enterkey()" action="/exhibition/ExSearchTitle.do" method="post">
 						<div class="d-flex align-items-center">
 							<div class="d-flex flex-grow-1 align-items-center">
-								<i class="bx bx-search fs-4"></i> <input type="text"
-									placeholder="Search...."
-									class="form-control shadow-none border-0 flex-grow-1 form-control-lg">
+								<i class="bx bx-search fs-4">
+								</i> 
+								<input type="text" placeholder="Exhibition Search Here !" name = "exhibition_title"
+								class="form-control shadow-none border-0 flex-grow-1 form-control-lg">
 							</div>
 						</div>
 					</form>
+					<!-- 전시회 검색 끝  -->
+					
 				</div>
 			</div>
 		</div>
@@ -184,6 +189,17 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 
 </body>
+
+<!-- 검색모달 기능 JS  -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+function enterkey() {
+if (window.event.keyCode == 13) {
+	alert("엔터키 이벤트 호출")
+	document.searchForm.submit();
+ }
+}
+</script>
 
 <!-- 검색버튼 모달 스크립트 -->
 <script src="/resources/js/theme.bundle.js"></script>

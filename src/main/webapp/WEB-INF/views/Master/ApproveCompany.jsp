@@ -195,15 +195,15 @@
 
 								<!-- 승인 -->
 									<form action="/master/masterCompanyUpdate.do" method="get" name="frmS">
-										<input name="company_id" id="success_id" type="text" readonly>
-										<input name="company_flag" id="success_flag" type="text" readonly>	
+										<input name="company_id" id="success_id" type="text" hidden>
+										<input name="company_flag" id="success_flag" type="text" hidden>	
 									</form>	
 											
 											
 									<!-- 거절 -->		
 									<form action="/master/masterCompanyUpdate.do" name="frmR">	
-										<input name="company_id" id="recheck_id" type="text" readonly>
-										<input name="company_flag" id="recheck_flag" type="text" readonly>
+										<input name="company_id" id="recheck_id" type="text" hidden>
+										<input name="company_flag" id="recheck_flag" type="text" hidden>
 									</form>
 
 				<!--/.article-->

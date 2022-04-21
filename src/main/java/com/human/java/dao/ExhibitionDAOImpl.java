@@ -75,6 +75,25 @@ public class ExhibitionDAOImpl implements ExhibitionDAO {
 		return mybatis.selectList("exhibitionMapper.exhibitionSearch", parms);
 	}
 
+	
+	
+	@Override
+	public List<ExhibitionVO> exhibitionSearchTitle(ExhibitionVO vo, String title, int endRow) {
+
+		System.out.println("===============");
+		System.out.println("exhibitionTitle 서치 다오 호출");
+		System.out.println("===============");
+
+		Map<String, Object> parms = new HashMap<String, Object>();
+		parms.put("vo", vo);
+		parms.put("title", title);
+		parms.put("endRow", endRow+1);
+
+		return mybatis.selectList("exhibitionMapper.exhibitionSearchTitle", parms);
+	}
+	
+	
+	
 	@Override
 	public ExhibitionVO exhibitionDetail(ExhibitionVO vo, String id) {
 

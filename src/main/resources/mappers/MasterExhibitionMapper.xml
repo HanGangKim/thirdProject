@@ -8,7 +8,7 @@
 	<select id="masterExhibitionSelect" resultType="masterExhibition">
 		SELECT EXHIBITION_TITLE, EXHIBITION_TOTAL_DATE
 		FROM EXHIBITION_INFO
-		
+		WHERE EXHIBITION_FLAG = 'W'
 	</select>
 
 </mapper>  
