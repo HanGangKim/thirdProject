@@ -66,23 +66,19 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <!-- Main CSS -->
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
-<title>Assan 4</title>
+<title>전시회 등록 대기</title>
 </head>
 
 
 <body>
-	<!--Preloader Spinner-->
-	<div class="spinner-loader bg-tint-primary">
-		<div class="spinner-border text-primary" role="status"></div>
-		<span class="small d-block ms-2">Loading...</span>
-	</div>
+	
 	<!--Header Start-->
 	<header
 		class="z-index-fixed header-transparent header-absolute-top pt-lg-2">
 		<nav class="navbar navbar-expand-lg navbar-light navbar-link-white">
 			<div class="container position-relative">
-				<a class="navbar-brand" href="index.html"> <img
-					src="/resources/img/logo/logo-white.svg" alt="" class="img-fluid">
+				<a class="navbar-brand" href="/company/CompanyMain.do"> <img
+					src="/resources/img/logo/white-logo.png" alt="" class="img-fluid">
 				</a>
 			</div>
 		</nav>
@@ -252,8 +248,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			class="container pt-9 pt-lg-11 pb-5 pb-lg-7 position-relative z-index-1">
 			<div class="row mb-5 mb-lg-7">
 				<div class="col-md-4 mb-5 mb-md-0 text-md-center order-md-2">
-					<a href="index.html"><img
-						src="/resources/img/logo/logo-white.svg"
+					<a href="/company/CompanyMain.do"><img
+						src="/resources/img/logo/white-logo.png"
 						class="width-10x d-block h-auto mx-md-auto" alt=""></a>
 				</div>
 				<div class="col-md-4 order-md-1 mb-3 mb-md-0">
@@ -282,7 +278,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 					<span class="d-block my-2 lh-sm text-muted">&copy; Copyright
 						<script>
 							document.write(new Date().getFullYear())
-						</script>. Assan
+						</script>. Fiennale
 					</span>
 				</div>
 			</div>

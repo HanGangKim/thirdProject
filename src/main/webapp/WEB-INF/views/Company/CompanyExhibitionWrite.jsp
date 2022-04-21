@@ -50,7 +50,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <link rel="stylesheet"
 	href="/resources/vendor/node_modules/css/choices.min.css">
 
-<title>Update Exhibition</title>
+<title>Insert Exhibition</title>
 
 <style>
 #youna-box-size {
@@ -93,10 +93,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						<nav class="d-flex justify-content-center" aria-label="breadcrumb">
 							<ol class="breadcrumb mb-3">
 								<li class="breadcrumb-item"><a href="#!">Home</a></li>
-								<li class="breadcrumb-item active">Update</li>
+								<li class="breadcrumb-item active">Insert Exhibition Info</li>
 							</ol>
 						</nav>
-						<h1 class="mb-0 display-3">Update</h1>
+						<h1 class="mb-0 display-3">Insert Exhibition Info</h1>
 					</div>
 				</div>
 				<!--/.row-->
