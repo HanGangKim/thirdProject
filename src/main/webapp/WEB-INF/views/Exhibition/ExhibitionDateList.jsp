@@ -149,7 +149,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		
 		<script type="text/javascript">
 		function nullCheck() {
-			if(document.getElementByName("totalDate") = ""){
+			if(document.getElementByName("totalDate") = null){
 				alert("날짜를 입력해주세요!")
 			}
 		}

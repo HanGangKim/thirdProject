@@ -169,7 +169,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 					</div>
 					
 					<!-- 전시회 검색 시작  -->
-					<form class="mb-0" name="searchForm" onkeyup="enterkey()" action="/exhibition/ExSearch.do" method="post">
+					<form class="mb-0" name="searchForm" onkeyup="enterkey()" action="/exhibition/ExSearchTitle.do" method="post">
 						<div class="d-flex align-items-center">
 							<div class="d-flex flex-grow-1 align-items-center">
 								<i class="bx bx-search fs-4">
