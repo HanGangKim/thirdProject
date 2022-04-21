@@ -10,5 +10,11 @@
 		FROM EXHIBITION_INFO
 		WHERE EXHIBITION_FLAG = 'W'
 	</select>
+	
+	<update id="masterExhibitionUpdate" parameterType="masterExhibition">
+		UPDATE EXHIBITION_INFO
+		SET EXHIBITION_FLAG = #{exhibition_flag}
+		WHERE EXHIBITION_TITLE = #{exhibition_title}
+	</update>
 
 </mapper>  

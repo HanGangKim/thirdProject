@@ -315,8 +315,8 @@
 		document.getElementById('success_id').value = data
 		document.getElementById('success_flag').value = 'D'
 		
-		alert(document.getElementById('success_id').value)
-		alert(document.getElementById('success_flag').value)
+		/* alert(document.getElementById('success_id').value)
+		alert(document.getElementById('success_flag').value) */
 		
 		/* $(function(){ */
 		/* document.hiddenForm.submit(); */
@@ -345,8 +345,8 @@
 		document.getElementById('recheck_id').value = data
 		document.getElementById('recheck_flag').value = 'R'
 		
-		alert(document.getElementById('recheck_id').value)
-		alert(document.getElementById('recheck_flag').value)
+		/* alert(document.getElementById('recheck_id').value)
+		alert(document.getElementById('recheck_flag').value) */
 		
 		/* $(function(){ */
 		/* document.hiddenForm.submit(); */
