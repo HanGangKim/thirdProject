@@ -23,6 +23,7 @@ public class ExhibitionDateController {
 	@RequestMapping("ExSearch.do")
 	public ModelAndView exhibitionSearch(ExhibitionVO vo, @RequestParam("totalDate") String totalDate) {
 
+		
 		System.out.println("===============");
 		System.out.println("ExSearchTest.do 호출");
 		System.out.println("===============");
@@ -56,6 +57,23 @@ public class ExhibitionDateController {
 		
 	}
 	
+	@RequestMapping("ExSearchTitle.do")
+	public ModelAndView exSearchTitle (ExhibitionVO vo) {
+		String title =  vo.getExhibition_title();
+		
+		System.out.println("===============");
+		System.out.println("ExSearchTitle 호출");
+		System.out.println("전시회명:" + title);
+		System.out.println("===============");
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/Exhibition/ExhibitionDateList");
+		mv.addObject("vo", exhibitionService.exhibitionSearchTitle(vo, title , 8));
+		System.out.println(ToStringBuilder.reflectionToString(vo) + "전달");
+
+	
+		return mv;
+	}
 
 	@RequestMapping("ExhibitionDetail.do")
 	public ModelAndView exhibitionDetail(ExhibitionVO vo, @RequestParam("id") String id) {

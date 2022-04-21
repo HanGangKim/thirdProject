@@ -132,6 +132,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 					<div class="row mx-0 g-2 align-items-center">
 						<div class="col-md-9 col-lg-10">
 							<div class="position-relative">
+							
 								<input type="text" value="${param.totalDate }"
 									data-flatpickr='{"mode":"range"}'
 									class="form-control border-0 shadow-none form-control-lg ps-4"
@@ -139,12 +140,21 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							</div>
 						</div>
 						<div class="col-md-3 col-lg-2">
-							<button type="submit" class="btn btn-primary btn-lg w-100">Search</button>
+							<button type="submit" onclick="nullCheck()" class="btn btn-primary btn-lg w-100">Search</button>
 						</div>
 					</div>
 				</form>
 			</div>
 		</section>
+		
+		<script type="text/javascript">
+		function nullCheck() {
+			if(document.getElementByName("totalDate") = ""){
+				alert("날짜를 입력해주세요!")
+			}
+		}
+		</script>
+		
 		<!-- /날짜 검색 섹션 -->
 		
 		<!-- 전시 리스트 -->

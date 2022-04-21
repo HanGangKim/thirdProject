@@ -21,6 +21,8 @@ public interface ExhibitionDAO {
 	
 	public List<ExhibitionVO> exhibitionSearch(ExhibitionVO vo, String st, String ed, int endRow);
 	
+	public List<ExhibitionVO> exhibitionSearchTitle(ExhibitionVO vo , String title , int endRow);
+	
 	public ExhibitionVO exhibitionDetail(ExhibitionVO vo, String id);
 	
 	// 티켓팅 
