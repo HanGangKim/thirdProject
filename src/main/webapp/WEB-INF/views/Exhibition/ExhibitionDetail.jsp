@@ -282,16 +282,18 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<!-- 결제하기 섹션 -->
 							<!-- 기본값 -->
 <!-- 							<div class="mb-3"> -->
-								<input type="hidden" name="totalCustomer" id="d_money"
+								<input type="hidden" id="d_money"
 									value="${vo.exhibition_price}" readonly="readonly"
 									class="form-control">
 <!-- 							</div> -->
+
 							<!-- 인원 -->
 							<div class="mb-2">
 								<label class="form-label" for="profile_name">Count</label> <input
 									type="number" name="totalCustomer" id="result" value="1"
 									readonly="readonly" class="form-control">
 							</div>
+							
 							<div class="mb-3 d-flex" style="justify-content: space-between;">
 								<button class="btn btn-light" type="button"
 									onclick='count("plus")' style="width: 49%;">
@@ -302,6 +304,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									<i class="bx bx-caret-down fs-4 me-2"></i>
 								</button>
 							</div>
+							
 							<!-- 금액 -->
 							<div class="mb-3">
 								<label class="form-label" for="profile_name">Total Price</label> <input

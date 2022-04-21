@@ -32,6 +32,7 @@ String consumer_ph = (String) request.getParameter("consumer_ph");
 String ticketing_date = (String) request.getParameter("ticketing_date");
 String stotalPrice = (String) request.getParameter("totalPrice");
 int totalPrice = Integer.parseInt(stotalPrice);
+int totalCustomer = Integer.parseInt(request.getParameter("totalCustomer"));
 
 System.out.println("customer_id: " + customer_id);
 System.out.println("consumer_name: " + consumer_name);
@@ -41,6 +42,7 @@ System.out.println("ticketing_date: " + ticketing_date);
 System.out.println("exhibition_id: " + exhibition_id);
 System.out.println("stotalPrice: " + stotalPrice);
 System.out.println("totalPrice: " + totalPrice);
+System.out.println("totalCustomer: " + totalCustomer);
 %>
 
 
@@ -79,6 +81,11 @@ System.out.println("totalPrice: " + totalPrice);
 		<input type="hidden" value="<%=exhibition_id%>"
 			name="exhibition_id"> <br>
 		<br><br> 
+		<input type="hidden" value="<%=totalPrice%>"
+		name="ticketing_money"> <br>
+		<br><br> 
+		<input type="hidden" value="<%=totalCustomer%>"
+		name="ticketing_people"> <br>
 	</form>
 
 

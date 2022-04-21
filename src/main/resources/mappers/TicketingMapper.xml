@@ -9,17 +9,17 @@
 		TICKETING
 		(TICKETING_ID, TICKETING_DATE , CONSUMER_NAME , CONSUMER_PH,
 		CUSTOMER_ID
-		,EXHIBITION_ID , TICKETING_FLAG)
+		,EXHIBITION_ID , TICKETING_FLAG , TICKETING_PEOPLE , TICKETING_MONEY)
 		VALUES
 		(seq_ticketing.nextval ,
 		#{ticketing_date} , #{consumer_name} , #{consumer_ph} ,
 		#{customer_id}
-		, #{exhibition_id} , 'N')
+		, #{exhibition_id} , 'N' , #{ticketing_people} , #{ticketing_money})
 	</insert>
 
-
 	<select id="ticketSelecting" parameterType="Hashmap" resultType="ticketSelect">
-		SELECT e.EXHIBITION_ID , e.EXHIBITION_TITLE ,e.EXHIBITION_START_DATE , e.EXHIBITION_END_DATE , e.EXHIBITION_IMAGE , e.EXHIBITION_LOCATION , t.TICKETING_DATE , t.CONSUMER_NAME , t.CONSUMER_PH , t.CUSTOMER_ID , t.TICKETING_ID
+		SELECT e.EXHIBITION_ID , e.EXHIBITION_TITLE ,e.EXHIBITION_START_DATE , e.EXHIBITION_END_DATE , e.EXHIBITION_IMAGE , e.EXHIBITION_LOCATION 
+		, t.TICKETING_DATE , t.CONSUMER_NAME , t.CONSUMER_PH , t.CUSTOMER_ID , t.TICKETING_ID , t.TICKETING_PEOPLE , t.TICKETING_MONEY
 		FROM EXHIBITION_INFO e , TICKETING t
 		<where>
   		<if test="id != null">
