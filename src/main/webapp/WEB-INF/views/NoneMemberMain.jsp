@@ -44,7 +44,7 @@
 				<div class="swiper-wrapper">
 					<!--:Slide-->
 					<c:forEach items="${voRand}" var="voRand" end="3">
-					<div class="swiper-slide" style="background-image: url('${voRand.exhibition_image}'); background-size: auto;">
+					<div class="swiper-slide" style="background-image: url('${voRand.exhibition_image}'); background-size: width:100%;">
 						<div class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
 						<!--:container-->
 						<div class="container h-100 text-white position-relative z-index-1">
@@ -270,21 +270,25 @@
 							class="bx bx-stopwatch fs-5 me-1"></i> 전시 종료 임박!! </span>
 						<div
 							class="countdown-timer py-3 mb-3 d-flex flex-wrap align-items-center"></div>
-						<h2 class="display-1 mb-4">${volast.exhibition_title}</h2>
-						<h5 class="mb-5">${volast.exhibition_price} 원</h5>
+						<h3>${volast.exhibition_title}</h3>	
+						<br>
+						<%-- <h6 class="display-1 mb-4">${volast.exhibition_title}</h6> --%>
+						<%-- <h5 class="mb-5">${volast.exhibition_price} 원</h5> --%>
 						<a href="#" class="btn btn-dark btn-lg btn-hover-text mb-2 me-2">
 							<span class="btn-hover-label label-default">Explore
 								products</span> <span class="btn-hover-label label-hover">Explore
 								products</span>
 						</a>
+						
 					</div>
 					<div class="col-md-6 ms-auto mb-5 mb-md-0 order-1 order-md-last">
 						<div class="position-relative pe-12 pb-12">
 							<%-- <img src="${volast.exhibition_image }"
 								class="img-fluid position-absolute w-50 end-0 bottom-0 rounded-4"
 								alt="">  --%>
-								<img src="${volast.exhibition_image }"
-								class="img-fluid rounded-4" alt="">
+								<img src="${volast.exhibition_image}"
+								class="img-fluid rounded-3" alt="" style="width:650px">
+							
 
 						</div>
 					</div>
