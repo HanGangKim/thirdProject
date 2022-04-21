@@ -120,7 +120,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			<div class="container pb-7 pb-lg-12 pt-7">
 				<c:forEach items="${selectList}" var="vo">
 					<div class="col-lg-10 offset-lg-1">
-					
 						<!--:Wishlist card-->
 						<div class="card hover-lift shadow flex-sm-row mb-6 align-items-center">
 							
@@ -156,16 +155,43 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								<!--QR 확인버튼-->
 								<div class="d-grid pb-4 pb-md-0">
 									<!-- QR -->
-									<a href="#" class="btn btn-primary" style="margin-bottom: 10px;">Move to qr</a> 
+									<a href="#" class="btn btn-primary" style="margin-bottom: 10px;" data-bs-target="#modal-qr-bar-${vo.exhibition_id}" data-bs-toggle="modal">Move to qr</a> 
 									<!-- 후기작성 -->
 									<a href="../customer/CustomerExhibitionReviewWrite.do?exhibition_id=${vo.exhibition_id}&customer_id=${vo.customer_id}&ticketing_id=${vo.ticketing_id}" 
 									class="btn btn-dark">Write Review</a>
 								</div>
 							</div>
 						</div>
-						<!--:Wishlist card-->
-						
+						<!--:Wishlist card-->	
 					</div>
+					
+					
+					<!-- qr 모달 시작 -->
+					<div id="modal-qr-bar-${vo.exhibition_id}" class="modal fade" tabindex="-1" aria-labelledby="modal-qr-bar-${vo.exhibition_id}" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-top modal-md">
+							<div class="modal-content position-relative border-0">
+								<div class="position-relative px-4">
+									<div class="position-absolute mt-2 end-0 width-7x top-0 d-flex align-items-center justify-content-center">
+										<button type="button" class="btn-close w-auto small"
+											data-bs-dismiss="modal" aria-label="Close">
+											<i class="bx bx-x fs-4 me-2"></i>
+										</button>
+									</div>
+
+									<div class="align-items-center row mb-2">
+										<div class="mt-10 d-flex flex-column align-items-center">
+											<label class="form-label h6" for="profile_name">${vo.exhibition_title}</label>
+											
+											<!-- QR 이미지 -->
+											<img src="https://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=<%=userId%>">
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- qr 모달 끝 -->
 				</c:forEach>
 			</div>
 		</section>
