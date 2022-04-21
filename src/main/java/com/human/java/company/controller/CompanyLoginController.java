@@ -66,12 +66,12 @@ public class CompanyLoginController {
 			System.out.println("Company Flag:"+result.getCompany_flag());
 			System.out.println("===============");
 
-			session.setAttribute("userId", result.getCompany_id());
-			session.setAttribute("userPass", result.getCompany_password());
-			session.setAttribute("userPh", result.getCompany_ph());
-			session.setAttribute("userName", result.getCompany_name());
-			session.setAttribute("userEmail", result.getCompany_email());
-			session.setAttribute("userRegnum", result.getCompany_regnum());
+			session.setAttribute("companyId", result.getCompany_id());
+			session.setAttribute("companyPass", result.getCompany_password());
+			session.setAttribute("companyPh", result.getCompany_ph());
+			session.setAttribute("companyName", result.getCompany_name());
+			session.setAttribute("companyEmail", result.getCompany_email());
+			session.setAttribute("companyRegnum", result.getCompany_regnum());
 			session.setAttribute("sessionTime", new Date().toLocaleString());
 
 		

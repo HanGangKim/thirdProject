@@ -26,7 +26,7 @@ public class ExhibitionCompanyExhibitionWriteController {
 
 	// 업체 전시회 등록
 	@RequestMapping("exhibitionCompanyExhibitionWrite.do")
-	public String exhibitionCompanyExhibitionWrite(ExhibitionVO vo, @RequestParam("file") MultipartFile file) {
+	public String exhibitionCompanyExhibitionWrite(ExhibitionVO vo, @RequestParam("file") MultipartFile file, @RequestParam("file_sub") MultipartFile file_sub) {
 		
 
 		

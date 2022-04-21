@@ -43,8 +43,8 @@ public class CompanyConfirmPasswordController {
 
 			System.out.println("[" + result.getCompany_id() + "]" + "패스워드 확인 성공");
 			
-			session.setAttribute("userPass" , result.getCompany_password());
-			session.setAttribute("userId", result.getCompany_id());
+			session.setAttribute("companyPass" , result.getCompany_password());
+			session.setAttribute("companyId", result.getCompany_id());
 		
 			
 			mv.addObject("vo", companyService.companyconfirmpassword(vo));

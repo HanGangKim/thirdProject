@@ -164,15 +164,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 													<input name="review_contents" type="text"
 														id="youna-box-size" class="form-control"
 														placeholder="Please enter the contents.">
-												</div>
-												<!--첨부파일-->
-												<div class="col-12">
-													<label for="profile_address" class="form-label">File</label>
-
-													<!-- 이미지 업로드전까지 DEFAULT_IMG 벨류 부여 -->
-													<!-- 이미지 업로드 전까지 file->text 변경  -->
-													
-												</div>
+												</div>	
 											</div>
 											<hr class="mt-5 mb-3">
 											<!--저장 버튼-->

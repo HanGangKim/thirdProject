@@ -32,4 +32,8 @@ public interface CustomerService {
 	
 	//비밀번호 확인
 	public CustomerVO customerconfirmpassword(CustomerVO vo);
+	
+	//비밀번호 찾기
+	
+	public CustomerVO customerFindPassword(CustomerVO vo);
 }

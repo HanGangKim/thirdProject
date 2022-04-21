@@ -78,8 +78,8 @@ response.sendRedirect("../LogOut.do");
 						</div>
 						<h1 class="display-2 mb-3">Login Fail</h1>
 						<p class="mb-5 lead mx-auto">아이디를 찾을 수 없어요 ...</p>
-						<a href="index.html" class="btn btn-outline-primary btn-lg">
-							Sign In</a>
+						<a href="/customer/CustomerLogin.do" class="btn btn-outline-primary btn-lg">
+							Retry</a>
 
 					</div>
 				</div>

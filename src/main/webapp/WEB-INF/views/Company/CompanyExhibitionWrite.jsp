@@ -2,22 +2,22 @@
 	pageEncoding="UTF-8"%>
 <%request.setCharacterEncoding("UTF-8");%>
 <%
-Object userId = session.getAttribute("userId");
-Object userName = session.getAttribute("userName");
+Object companyId = session.getAttribute("=companyId");
+Object companyName = session.getAttribute("companyName");
 // 세션 연결
-if (session.getAttribute("userId") == null) {
+if (session.getAttribute("companyId") == null) {
 // 세션 연결에 실패하면 null	
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-System.out.println("세션연결 실패:"+userId);
-System.out.println("세션연결 실패:"+userName);
+System.out.println("세션연결 실패:"+companyId);
+System.out.println("세션연결 실패:"+companyName);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 }else{
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-System.out.println("세션연결 성공:"+userId);
-System.out.println("세션연결 성공:"+userName);
+System.out.println("세션연결 성공:"+companyId);
+System.out.println("세션연결 성공:"+companyName);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-
+	
 }
 %>
 <!doctype html>
@@ -65,7 +65,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 <body>
 
-	<jsp:include page="/header.jsp" />
 
 	<!--Main content-->
 	<main>
@@ -121,7 +120,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_com">Id</label> <input
-														name="company_id" value="<%=userId%>"
+														name="company_id" value="<%=companyId%>"
 														type="text" class="form-control" id="profile_com" readonly>
 												</div>
 
@@ -196,8 +195,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<!--내용-->
 												<div class="col-12 mb-3">
 													<label for="profile_address" class="form-label">Memo</label>
-													<input name="exhibition_contents" type="text"
-														id="youna-box-size" class="form-control"
+													<input name="exhibition_memo" type="text"
+														id="exhibition_memo" class="form-control"
 														placeholder="Please enter the contents.">
 												</div>
 												<!--대표사진 첨부파일-->
@@ -206,8 +205,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 													<!-- 이미지 업로드전까지 DEFAULT_IMG 벨류 부여 -->
 													<!-- 이미지 업로드 전까지 file->text 변경  -->
-													<input name="exhibition_image" value="DEFAULT_IMG" type="file"
-														id="profile_address" class="form-control">
+													<input name="file" value="DEFAULT_IMG" type="file"
+														id="file" class="form-control" accept="image/*">
 												</div>
 												<!--상세사진 첨부파일-->
 												<div class="col-12">
@@ -216,11 +215,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 													<!-- 이미지 업로드전까지 DEFAULT_IMG 벨류 부여 -->
 													<!-- 이미지 업로드 전까지 file->text 변경  -->
 
-													<input name="exhibition_image" value="DEFAULT_IMG" type="file"
-														id="profile_address" class="form-control">
+													<input name="file_sub" value="DEFAULT_IMG" type="file"
+														id="file_sub" class="form-control" accept="image/*">
 
-													<input name="file" value="DEFAULT_IMG" type="file"
-														id="file" class="form-control" accept="image/*">
+													
 
 												</div>
 											</div>
@@ -243,10 +241,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	</main>
 	
 	
-	
-
-
-	<jsp:include page="/footer.jsp" />
 		
 
 </body>

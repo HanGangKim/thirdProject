@@ -23,10 +23,10 @@ public class MasterCompanyServiceImpl implements MasterCompanyService{
 	
 	// update company
 	@Override
-	public void updateMasterCompany(MasterCompanyVO vo) {
+	public void masterCompanyUpdate(MasterCompanyVO vo) {
 		// TODO Auto-generated method stub
 		
-		masterCompanyDAO.updateMasterCompany(vo);
+		masterCompanyDAO.masterCompanyUpdate(vo);
 		
 	}
 

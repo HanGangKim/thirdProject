@@ -4,6 +4,7 @@
 <%
 Object userId = session.getAttribute("userId");
 Object userName = session.getAttribute("userName");
+Object userEmail = session.getAttribute("userEmail");
 // 세션 연결
 if (session.getAttribute("userId") == null) {
 // 세션 연결에 실패하면 null	
@@ -99,8 +100,8 @@ response.sendRedirect("../LogOut.do");
 									</div>
 									<div class="mb-3 d-flex justify-content-between">
 										<div class="form-check">
-											<input class="form-check-input" type="checkbox" value=""
-												id="flexCheckDefault"> <label
+											<input class="form-check-input" type="checkbox" 
+											name="remember"	id="flexCheckDefault"> <label
 												class="form-check-label" for="flexCheckDefault">
 												Remember me </label>
 										</div>
@@ -137,6 +138,21 @@ response.sendRedirect("../LogOut.do");
 			</div>
 		</section>
 	</main>
+	
+	
+	<hr>
+	<!-- 추후 모달로 변경돨 예정  -->
+	<!-- 전송방식은 post  -->
+	<form action="customerFindPassword.do" method="get">
+	<h2>비밀번호 찾기</h2>
+	<input name="customer_id" type="text" placeholder="아이디를 입력해주세요">
+	<input name="customer_email" type="text" placeholder="이메일을 입력하세요">
+	<button type="submit">제출</button>
+	<!-- 비밀번호 찾기 성공시 'CustomerFindPassword' 페이지 이동 - 비밀번호 보여주기 -->
+	<!-- 비밀번호 찾기 실패시 CustomerLogin 페이지 돌아오기  -->
+	</form>
+	<hr>
+	
 
 
 	<jsp:include page="/footer.jsp" />
@@ -148,5 +164,54 @@ response.sendRedirect("../LogOut.do");
 <script src="/resources/js/theme.bundle.js"></script>
 <script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
 <script src="/resources/vendor/node_modules/js/cursor.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<!-- 아이디 기억하기 jquery -->
+<script>
+    $(document).ready(function()
+    {
+        var userId = getCookie("cookieUserId"); 
+        $("input[name='customer_id']").val(userId); 
+         
+        if($("input[name='customer_id']").val() != ""){ // Cookie에 만료되지 않은 아이디가 있어 입력됬으면 체크박스가 체크되도록 표시
+            $("input[name='remember']").attr("checked", true);
+        }
+         
+        $("button[type='submit']", $('.needs-validation')).click(function(){ // Login Form을 Submit할 경우,
+            if($("input[name='remember']").is(":checked")){ // ID 기억하기 체크시 쿠키에 저장
+                var userId = $("input[name='customer_id']").val();
+                setCookie("cookieUserId", userId, 7); // 7일동안 쿠키 보관
+            } else {
+                deleteCookie("cookieUserId");
+            }
+        });             
+    })
+ 
+    function setCookie(cookieName, value, exdays){
+        var exdate = new Date();
+        exdate.setDate(exdate.getDate()+exdays);
+        var cookieValue = escape(value)+((exdays==null)? "": "; expires="+exdate.toGMTString());
+        document.cookie = cookieName+"="+cookieValue;
+    }
+    function deleteCookie(cookieName){
+        var expireDate = new Date();
+        expireDate.setDate(expireDate.getDate()-1);
+        document.cookie = cookieName+"= "+"; expires="+expireDate.toGMTString();
+    }
+    function getCookie(cookieName){
+        cookieName = cookieName + '=';
+        var cookieData = document.cookie;
+        var start = cookieData.indexOf(cookieName);
+        var cookieValue = '';
+        if(start != -1){
+            start += cookieName.length;
+            var end = cookieData.indexOf(';', start);
+            if(end == -1) end = cookieData.length;
+            cookieValue = cookieData.substring(start, end);
+        }
+        return unescape(cookieValue);
+         
+    }
+</script>
 
 </html>

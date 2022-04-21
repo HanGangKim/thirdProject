@@ -2,24 +2,22 @@
 	pageEncoding="UTF-8"%>
 <%request.setCharacterEncoding("UTF-8");%>
 <%
-Object userId = session.getAttribute("userId");
-Object userName = session.getAttribute("userName");
+Object companyId = session.getAttribute("=companyId");
+Object companyName = session.getAttribute("companyName");
 // 세션 연결
-if (session.getAttribute("userId") == null) {
+if (session.getAttribute("companyId") == null) {
 // 세션 연결에 실패하면 null	
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-System.out.println("세션연결 실패:"+userId);
-System.out.println("세션연결 실패:"+userName);
+System.out.println("세션연결 실패:"+companyId);
+System.out.println("세션연결 실패:"+companyName);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 }else{
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-System.out.println("세션연결 성공:"+userId);
-System.out.println("세션연결 성공:"+userName);
+System.out.println("세션연결 성공:"+companyId);
+System.out.println("세션연결 성공:"+companyName);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-//LogOut.jsp로 이동
-//로그인은 세션이 있으면 못들어가게 Redirect
-response.sendRedirect("../LogOut.do");	
+	
 }
 %>
 
@@ -91,7 +89,7 @@ response.sendRedirect("../LogOut.do");
 									</div>
 									<div class="mb-3 d-flex justify-content-between">
 										<div class="form-check">
-											<input class="form-check-input" type="checkbox" value=""
+											<input class="form-check-input" type="checkbox" name="remember"
 												id="flexCheckDefault"> <label
 												class="form-check-label" for="flexCheckDefault">
 												Remember me </label>
@@ -137,5 +135,54 @@ response.sendRedirect("../LogOut.do");
 
 <!-- scripts -->
 <script src="/resources/js/theme.bundle.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<!-- 아이디 기억하기 jquery -->
+<script>
+    $(document).ready(function()
+    {
+        var userId = getCookie("cookieUserId"); 
+        $("input[name='company_id']").val(userId); 
+         
+        if($("input[name='company_id']").val() != ""){ // Cookie에 만료되지 않은 아이디가 있어 입력됬으면 체크박스가 체크되도록 표시
+            $("input[name='remember']").attr("checked", true);
+        }
+         
+        $("button[type='submit']", $('.needs-validation')).click(function(){ // Login Form을 Submit할 경우,
+            if($("input[name='remember']").is(":checked")){ // ID 기억하기 체크시 쿠키에 저장
+                var userId = $("input[name='company_id']").val();
+                setCookie("cookieUserId", userId, 7); // 7일동안 쿠키 보관
+            } else {
+                deleteCookie("cookieUserId");
+            }
+        });             
+    })
+ 
+    function setCookie(cookieName, value, exdays){
+        var exdate = new Date();
+        exdate.setDate(exdate.getDate()+exdays);
+        var cookieValue = escape(value)+((exdays==null)? "": "; expires="+exdate.toGMTString());
+        document.cookie = cookieName+"="+cookieValue;
+    }
+    function deleteCookie(cookieName){
+        var expireDate = new Date();
+        expireDate.setDate(expireDate.getDate()-1);
+        document.cookie = cookieName+"= "+"; expires="+expireDate.toGMTString();
+    }
+    function getCookie(cookieName){
+        cookieName = cookieName + '=';
+        var cookieData = document.cookie;
+        var start = cookieData.indexOf(cookieName);
+        var cookieValue = '';
+        if(start != -1){
+            start += cookieName.length;
+            var end = cookieData.indexOf(';', start);
+            if(end == -1) end = cookieData.length;
+            cookieValue = cookieData.substring(start, end);
+        }
+        return unescape(cookieValue);
+         
+    }
+</script>
 
 </html>
