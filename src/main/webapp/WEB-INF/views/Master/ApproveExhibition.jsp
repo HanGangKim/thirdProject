@@ -31,7 +31,19 @@
 
 <title>Assan 4</title>
 </head>
+<style>
+	.approveExhibitionInput {
+		border: 0px solid black;
+		text-align: right;
+		width : 300px
 
+	}
+	
+	.approveExhibitionSign {
+		border: 0px solid black;
+		width : 20px
+	}
+</style>
 
 
 <body>
@@ -85,7 +97,7 @@
 		<section class="position-relative bg-white">
 			<br> <br>
 			<div class="container z-index-1 position-relative pb-9 pb-lg-11">
-				<c:forEach items="${vo}" var="vo">
+				<c:forEach items="${vo}" var="vo" varStatus="status">
 					<article
 						class="row g-0 mb-4 mb-lg-5 position-relative overflow-hidden hover-lift hover-shadow-lg border rounded-4 card-hover shadow-sm align-items-center">
 						<div class="col-md-6 col-lg-5 p-0 p-lg-0">
@@ -115,18 +127,41 @@
 
 									<h6>해당 전시회의 등록을 승인하시겠습니까?</h6>
 									<br> <br>
-									<div class="text-end">
-										<button type="button" class="btn btn-primary">승인</button>
-										<button type="button" class="btn btn-primary">거절</button>
+									<div class="text-end">	
+									
+									
+									<button type="button" class="btn btn-primary"
+											onclick="exhibitionApproval('${vo.exhibition_title}','${status.count}')">승인</button>
+									
+									<button type="button" class="btn btn-primary"
+											onclick="exhibitionRefusal('${vo.exhibition_title}','${status.count}')">거절</button>
+									
+												
+										<br> 
+										<input type="text" class="approveExhibitionInput" value="testValue"></input>
+										<input type="text" class="approveExhibitionSign" value="W"></input>
 									</div>
 
 
 								</div>
 							</div>
 						</div>
-						<a href="#" class="stretched-link"></a>
 					</article>
 				</c:forEach>
+				
+									<!-- 승인 -->
+									<form action="/master/masterExhibitionUpdate.do" method="get" name="exfrmS">
+										<input name="exhibition_title" id="success_extitle" type="text" hidden>
+										<input name="exhibition_flag" id="success_exflag" type="text" hidden>	
+									</form>	
+											
+											
+									<!-- 거절 -->		
+									<form action="/master/masterExhibitionUpdate.do" name="exfrmR">
+										<input name="exhibition_title" id="recheck_extitle" type="text" hidden>
+										<input name="exhibition_flag" id="recheck_exflag" type="text" hidden>	
+									</form>	 
+				
 				<!--/.article-->
 
 				<!--/.article-->
@@ -215,4 +250,68 @@
 	<script src="/resources/js/theme.bundle.js"></script>
 </body>
 
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+
+	function exhibitionApproval(data,idx) {
+		alert("승인되었습니다");
+		
+		//  데이터 확인 작업 
+		// 클릭한 대상의 회사명 : data 
+		// 클랙한 대상의 순서 : idx ( 1부터 시작 )
+		// 클릭한 대상안에 있는 텍스트박스 선택 : inputText ( 배열이기때문에 0부터 시작이기때문에 idx-1 ) 
+		
+		// 		var inputText = document.getElementsByClassName('approveCompanyInput')[idx-1] ;
+		// 		alert(data +  " " + inputText)
+		// 		inputText.value = data;
+		
+		document.getElementsByClassName('approveExhibitionInput')[idx-1].value = data;
+		document.getElementsByClassName('approveExhibitionSign')[idx-1].value = 'D';
+		
+		document.getElementById('success_extitle').value = data
+		document.getElementById('success_exflag').value = 'D' 
+		
+		/* alert(document.getElementById('success_id').value)
+		alert(document.getElementById('success_flag').value) */
+		
+		/* $(function(){ */
+		/* document.hiddenForm.submit(); */
+		document.exfrmS.submit();
+	/* }) */
+	
+	}
+</script> 
+
+<script type="text/javascript">
+	function exhibitionRefusal(data,idx) {
+		alert("거절되었습니다");
+		
+		//  데이터 확인 작업 
+		// 클릭한 대상의 회사명 : data 
+		// 클랙한 대상의 순서 : idx ( 1부터 시작 )
+		// 클릭한 대상안에 있는 텍스트박스 선택 : inputText ( 배열이기때문에 0부터 시작이기때문에 idx-1 ) 
+		
+		// 		var inputText = document.getElementsByClassName('approveCompanyInput')[idx-1] ;
+		// 		alert(data +  " " + inputText)
+		// 		inputText.value = data;
+		
+		document.getElementsByClassName('approveExhibitionInput')[idx-1].value = data;
+		document.getElementsByClassName('approveExhibitionSign')[idx-1].value = 'R';
+		
+		document.getElementById('recheck_extitle').value = data
+		document.getElementById('recheck_exflag').value = 'R' 
+		
+		/* alert(document.getElementById('recheck_id').value)
+		alert(document.getElementById('recheck_flag').value) */
+		
+		/* $(function(){ */
+		/* document.hiddenForm.submit(); */
+		document.exfrmR.submit();
+	/* }) */
+	
+		
+	
+		
+	}
+</script> 
 </html>

@@ -7,7 +7,7 @@ import com.human.java.domain.MasterCompanyVO;
 public interface MasterCompanyService {
 	
 	// company select 
-	public List<MasterCompanyVO>  masterCompany ();
+	public List<MasterCompanyVO> masterCompany ();
 	
 	// company update
 
