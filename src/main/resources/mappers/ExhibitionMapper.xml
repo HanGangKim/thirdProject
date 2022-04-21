@@ -44,14 +44,14 @@
 		WHERE EXHIBITION_START_DATE <![CDATA[< TO_DATE(']]>${st}<![CDATA[')]]>
 		AND EXHIBITION_END_DATE <![CDATA[> TO_DATE(']]>${ed}<![CDATA[')]]>
 		ORDER BY EXHIBITION_ID )
-		WHERE <![CDATA[ ROWNUM <= ]]> ${endRow}
+		WHERE <![CDATA[ ROWNUM <= ]]> ${endRow} AND EXHIBITION_FLAG = 'D'
 	</select>
 	
 	
 	<select id="exhibitionSearchTitle" parameterType="map" resultType="exhibition">
 		SELECT *
 		FROM ( SELECT * FROM EXHIBITION_INFO
-		WHERE EXHIBITION_TITLE LIKE '%${title}%'
+		WHERE EXHIBITION_TITLE LIKE '%${title}%' AND EXHIBITION_FLAG = 'D'
 		ORDER BY EXHIBITION_ID )
 	</select>
 	
@@ -59,19 +59,19 @@
 	<select id="exhibitionDetail" parameterType="map" resultType="exhibition">
 		SELECT *
 		FROM EXHIBITION_INFO
-		WHERE EXHIBITION_ID = ${id}
+		WHERE EXHIBITION_ID = ${id} AND EXHIBITION_FLAG = 'D'
 	</select>
 	
 	<select id="randomExhibition" parameterType="exhibition" resultType="exhibition">
 		<![CDATA[select * from  (select * from EXHIBITION_INFO order by dbms_random.value)
-		where rownum <= 3]]>
+		where rownum <= 3 AND EXHIBITION_FLAG = 'D']]>
 	</select>
 	
 	<select id="lastExhibition" parameterType="exhibition" resultType="exhibition">
 		<![CDATA[SELECT *
 		FROM(SELECT *
 			FROM EXHIBITION_INFO
-			WHERE TO_DATE(EXHIBITION_END_DATE) >= SYSDATE
+			WHERE TO_DATE(EXHIBITION_END_DATE) >= SYSDATE AND EXHIBITION_FLAG = 'D'
 			ORDER BY EXHIBITION_END_DATE)
 		WHERE ROWNUM=1]]>
 	</select>
