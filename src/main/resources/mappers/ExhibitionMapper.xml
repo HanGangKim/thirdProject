@@ -53,7 +53,6 @@
 		FROM ( SELECT * FROM EXHIBITION_INFO
 		WHERE EXHIBITION_TITLE LIKE '%${title}%'
 		ORDER BY EXHIBITION_ID )
-		WHERE <![CDATA[ ROWNUM <= ]]> ${endRow}
 	</select>
 	
 	

@@ -195,7 +195,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <script type="text/javascript">
 function enterkey() {
 if (window.event.keyCode == 13) {
-	alert("엔터키 이벤트 호출")
+
 	document.searchForm.submit();
  }
 }

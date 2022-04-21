@@ -127,7 +127,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		<!-- 날짜 검색 섹션 -->
 		<section class="top-0">
 			<div class="container">
-				<form class="position-relative z-index-1 mt-n7 px-3 pb-3 pt-3 bg-white border rounded-3" action="<c:url value="/exhibition/ExSearch.do"/>"
+				<form name="dateForm"  onsubmit="return nullCheck()" class="position-relative z-index-1 mt-n7 px-3 pb-3 pt-3 bg-white border rounded-3" action="<c:url value="/exhibition/ExSearch.do"/>"
 					style="margin-bottom: 0px;">
 					<div class="row mx-0 g-2 align-items-center">
 						<div class="col-md-9 col-lg-10">
@@ -140,17 +140,20 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							</div>
 						</div>
 						<div class="col-md-3 col-lg-2">
-							<button type="submit" onclick="nullCheck()" class="btn btn-primary btn-lg w-100">Search</button>
+							<button type="submit" class="btn btn-primary btn-lg w-100">Search</button>
 						</div>
 					</div>
 				</form>
 			</div>
 		</section>
 		
+		<!-- 달력 공백 예외처리  -->
 		<script type="text/javascript">
 		function nullCheck() {
-			if(document.getElementByName("totalDate") = null){
+			if(!document.dateForm.totalDate.value){
 				alert("날짜를 입력해주세요!")
+				document.dateForm.totalDate.focus();
+				return false;
 			}
 		}
 		</script>

@@ -81,13 +81,13 @@ public class ExhibitionServiceImpl implements ExhibitionService{
 	}
 	
 	@Override
-	public List<ExhibitionVO> exhibitionSearchTitle(ExhibitionVO vo, String title , int endRow) {
+	public List<ExhibitionVO> exhibitionSearchTitle(ExhibitionVO vo, String title) {
 		
 		System.out.println("===============");
 		System.out.println("exhibitionSearchTitle 서비스 호출");
 		System.out.println("===============");
 		
-		return exhibitionDAO.exhibitionSearchTitle(vo,title ,endRow);
+		return exhibitionDAO.exhibitionSearchTitle(vo,title);
 	}
 	
 	
