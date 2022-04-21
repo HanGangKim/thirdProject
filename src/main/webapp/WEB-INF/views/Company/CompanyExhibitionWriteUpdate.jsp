@@ -99,10 +99,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<nav class="d-flex justify-content-center" aria-label="breadcrumb">
 								<ol class="breadcrumb mb-3">
 									<li class="breadcrumb-item"><a href="#!">Home</a></li>
-									<li class="breadcrumb-item active">My Review</li>
+									<li class="breadcrumb-item active">Update Exhibition Info</li>
 								</ol>
 							</nav>
-							<h1 class="mb-0 display-3">My Review</h1>
+							<h1 class="mb-0 display-3">Update Exhibition Info</h1>
 						</div>
 					</div>
 					<!--/.row-->
@@ -118,10 +118,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								<div class="col-lg-9 mx-auto">
 									<div class="pt-5 d-flex flex-column h-100">
 										<div class="card shadow p-3 mb-3">
-											<h5 class="mb-4">Writing A Review</h5>
+											<h5 class="mb-4">Writing A Exhibition Info</h5>
 	
 											<!-- form 태그시작  -->
-											<form action="/exhibition/exhibitionCompanyExhibitionUpdate.do" method="get">
+											<form action="/exhibition/exhibitionCompanyExhibitionUpdate.do" method="post" enctype="multipart/form-data">
 												<div class="row align-items-center">
 													<!--아이디-->
 													<div class="col-md-6 mb-3">
@@ -203,22 +203,23 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 																
 													<!--내용-->
 													<div class="col-12 mb-3">
-														<label for="profile_address" class="form-label">Content</label>
-														<input name="exhibition_contents" type="text"
-														value="${CompanyExhibition.exhibition_contents}" id="youna-box-size" class="form-control"
+														<label for="profile_address" class="form-label">Memo</label>
+														<input name="exhibition_memo" type="text"
+														value="${CompanyExhibition.exhibition_memo}" id="youna-box-size" class="form-control"
 															placeholder="Please enter the contents.">
 													</div>
 													<!--첨부파일-->
 													<div class="col-12">
-														<label for="profile_address" class="form-label">File</label>
+														<label for="profile_address" class="form-label">Main Image</label>
 	
 														<!-- 이미지 업로드전까지 DEFAULT_IMG 벨류 부여 -->
 														<!-- 이미지 업로드 전까지 file->text 변경  -->
-														<input name="exhibition_image" value="DEFAULT_IMG" type="text"
-															value="${CompanyExhibition.exhibition_image}" id="profile_address" class="form-control">
-															
 														<input name="file" value="DEFAULT_IMG" type="file"
-														id="file" class="form-control" accept="image/*">
+															value="${CompanyExhibition.exhibition_image}" id="file" class="form-control"><img src="${CompanyExhibition.exhibition_image}">
+															
+														<label for="profile_address" class="form-label">Sub Image</label>
+														<input name="file_sub" value="DEFAULT_IMG" type="file"
+														id="file_sub" class="form-control" accept="image/*"><img src="${CompanyExhibition.exhibition_contents}">
 													</div>
 												</div>
 												<hr class="mt-5 mb-3">
