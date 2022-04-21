@@ -127,7 +127,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		<!-- 날짜 검색 섹션 -->
 		<section class="top-0">
 			<div class="container">
-				<form class="position-relative z-index-1 mt-n7 px-3 pb-3 pt-3 bg-white border rounded-3" action="<c:url value="ExSearchTest.do"/>"
+				<form class="position-relative z-index-1 mt-n7 px-3 pb-3 pt-3 bg-white border rounded-3" action="<c:url value="/exhibition/ExSearch.do"/>"
 					style="margin-bottom: 0px;">
 					<div class="row mx-0 g-2 align-items-center">
 						<div class="col-md-9 col-lg-10">
@@ -231,7 +231,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		
 		$.ajax({
 			type: 'post',
-			url : './ExSearchTestAjax.do',
+			url : './ExSearchAjax.do',
 			data : { 'endRow': showEndRow, 'totalDate':totalDate},
 			success : function(list){
 				

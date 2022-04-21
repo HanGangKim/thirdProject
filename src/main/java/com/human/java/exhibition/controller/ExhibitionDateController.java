@@ -20,38 +20,7 @@ public class ExhibitionDateController {
 	@Autowired
 	private ExhibitionService exhibitionService;
 
-	@RequestMapping("ExhibitionTest.do")
-	public ModelAndView exhibitionInfo(ExhibitionVO vo) {
-
-		System.out.println("===============");
-		System.out.println("ExhibitionTest.do 호출");
-		System.out.println("===============");
-
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/Exhibition/ExhibitionTest");
-		mv.addObject("vo", exhibitionService.exhibitionList(vo));
-
-		return mv;
-	}
-
-	@RequestMapping("ExhibitionAllTest.do")
-	public ModelAndView exhibitionInfoAll(ExhibitionVO vo) {
-
-		System.out.println("===============");
-		System.out.println("ExhibitionAllTest.do 호출");
-		System.out.println("===============");
-
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/Exhibition/ExhibitionAllTest");
-
-		System.out.println(ToStringBuilder.reflectionToString(vo) + "전달");
-
-		mv.addObject("vo", exhibitionService.exhibitionAll(vo));
-
-		return mv;
-	}
-
-	@RequestMapping("ExSearchTest.do")
+	@RequestMapping("ExSearch.do")
 	public ModelAndView exhibitionSearch(ExhibitionVO vo, @RequestParam("totalDate") String totalDate) {
 
 		System.out.println("===============");
@@ -70,7 +39,7 @@ public class ExhibitionDateController {
 	}
 	
 	@ResponseBody
-	@RequestMapping("ExSearchTestAjax.do")
+	@RequestMapping("ExSearchAjax.do")
 	public Object exSearchTestAjax(@RequestParam("endRow") String endRow, @RequestParam("totalDate") String totalDate) {
 		
 		

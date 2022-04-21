@@ -116,7 +116,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<p class="mb-4 text-muted">원하는 전시회 기간을 선택해주세요.</p>
 							<div>
 								<!--기간 넘기는 form 태그-->
-								<form class="needs-validation" novalidate action=" <c:url value="ExSearchTest.do"/>">
+								<form class="needs-validation" novalidate action=" <c:url value="/exhibition/ExSearch.do"/>">
 									<div class="row mb-3">
 										<!--기간으로 날짜 검색 (우리가 쓸 태그)-->
 										<div class="mb-5 mb-md-0 mb-3">
