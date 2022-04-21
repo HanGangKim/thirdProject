@@ -144,12 +144,13 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									<span class="me-3 text-muted">Date</span> <strong>${vo.exhibition_start_date}
 										~ ${vo.exhibition_end_date}</strong>
 								</div>
+								
 								<div class="d-flex mb-3 align-items-center">
 									<span class="text-muted me-3">Consumer Name</span> <strong>${vo.consumer_name}</strong>
 
 								</div>
 								
-								<div class="d-flex mb-5 align-items-center">
+								<div class="d-flex mb-3 align-items-center">
 									<span class="me-3 text-muted">Consumer Number</span> <strong>${vo.consumer_ph}</strong>
 								</div>
 								

@@ -83,13 +83,34 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		</section>
 	</main>
 
+<input type="hidden" id="uploadState" name = "uploadState" value="1" />
+
 
 	<jsp:include page="/footer.jsp" />
 
 </body>
 
+<script type="text/javascript">
+function noEvent() { // 새로 고침 방지
+	 
+    if ($("#uploadState").val() == "1") {
+        if (event.keyCode == 116) {
+            alert("새로고침을 할 수 없습니다.");
+            event.keyCode = 2;
+            return false;
+        } else if (event.ctrlKey
+                && (event.keyCode == 78 || event.keyCode == 82)) {
+            return false;
+        }
+    }
+}
+document.onkeydown = noEvent;
+</script>
+
 <!-- scripts -->
 <script src="/resources/js/theme.bundle.js"></script>
 <script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
+
+
 
 </html>
