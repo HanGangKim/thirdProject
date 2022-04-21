@@ -13,9 +13,22 @@ public class TicketingSelectVO {
 	private String consumer_name;
 	private String consumer_ph;
 	private String ticketing_flag;
+	private int ticketing_money;
+	private int ticketing_people;
 	
 	
-	
+	public int getTicketing_money() {
+		return ticketing_money;
+	}
+	public void setTicketing_money(int ticketing_money) {
+		this.ticketing_money = ticketing_money;
+	}
+	public int getTicketing_people() {
+		return ticketing_people;
+	}
+	public void setTicketing_people(int ticketing_people) {
+		this.ticketing_people = ticketing_people;
+	}
 	public int getTicketing_id() {
 		return ticketing_id;
 	}
