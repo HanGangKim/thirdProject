@@ -183,7 +183,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 											<label class="form-label h6" for="profile_name">${vo.exhibition_title}</label>
 											
 											<!-- QR 이미지 -->
-											<img src="https://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=https://www.happykoo.net">
+											<img src="https://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=<%=userId%>">
 										</div>
 									</div>
 
