@@ -64,32 +64,25 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 </head>
 
 <body>
-	<!--Preloader Spinner-->
-	<div class="spinner-loader bg-tint-primary">
-		<div class="spinner-border text-primary" role="status"></div>
-		<span class="small d-block ms-2">Loading...</span>
-	</div>
-
 	<jsp:include page="/header.jsp" />
 
 	<!--Main content-->
-	<main class="main-content" id="main-content">
-		<section class="position-relative">
-			<div class="container pt-14 pb-9 pb-lg-11">
-				<div class="row pt-lg-7 justify-content-center text-center">
-					<div class="col-xl-8">
-						<div
-							class="width-10x height-10x rounded-circle position-relative bg-success text-white flex-center mb-4">
-							<i class="bx bx-check lh-1 display-4 fw-normal"></i>
+	<main class="main-content " id="main-content">
+		<section class="position-relative ">
+			<div class="container pt-12 pb-lg-16 ">
+				<div class="row pt-lg-5 pb-5 justify-content-center text-center">
+					<div class="col-xl-6 ">
+						<div class="width-8x height-8x rounded-circle position-relative bg-success text-white flex-center mb-5">
+							<i class="bx bx-check lh-1 display-5 fw-normal"></i>
 						</div>
-						<h1 class="display-2 mb-3">비밀번호 찾기 성공!</h1>
-						<p class="mb-5 lead mx-auto">${companyId} 님의 비밀번호는 ...</p>
-						
-						<!-- 비밀번호의 뒷자리 3자리를 안보이게 가능 -->
-						<p class="mb-5 lead mx-auto" id="passwordmasking">${companyPass} 입니다!</p>
-						<a href="/LandingLogin.do" class="btn btn-outline-primary btn-lg">
-							Sign In</a>
-
+						<h4 class="display-4 mb-3">Find Success !</h4>
+						<p class="mb-5 lead mx-auto">자세한 비밀번호는 이메일 수신함을 확인해주세요.</p>
+						<p class="mb-0 lead mx-auto">${companyId}님의 비밀번호는</p>
+						<p class="mb-5 lead mx-auto" id='passwordmasking'>${companyPass}</p>
+						<div class="col-md-6 mx-auto">
+							<a href="/LandingLogin.do" class="btn btn-primary mb-2 d-grid">Sign In</a>
+							<a href="/CustomerMain.do" class="btn btn-outline-secondary  d-grid mb-2">Go to Main</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -100,15 +93,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	<jsp:include page="/footer.jsp" />
 
 
-<!-- 	begin Back to Top button
-	<a href="#" class="toTop"> <i class="bx bxs-up-arrow"></i>
-	</a>
-	
-	cursor
-	<div class="cursor">
-		<div class="cursor__inner"></div>
-	</div>
- -->
 </body>
 <script>
 

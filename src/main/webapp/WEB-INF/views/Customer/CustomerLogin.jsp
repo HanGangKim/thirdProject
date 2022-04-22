@@ -55,7 +55,7 @@ response.sendRedirect("../LogOut.do");
 <link href="/resources/css/theme.min.css" rel="stylesheet">
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
-<title>Customer Sign In</title>
+<title>Member Sign In</title>
 
 
 </head>
@@ -72,11 +72,11 @@ response.sendRedirect("../LogOut.do");
 		<!--page-hero-->
 		<section class="bg-white position-relative">
 			<div class="bg-pattern text-light w-100 h-100 start-0 top-0 position-absolute"></div>
-			<div class="container pt-11 pt-lg-14 pb-9 pb-lg-11 position-relative z-index-1">
+			<div class="container pt-11 pt-lg-14 pb-9 pb-lg-18 position-relative z-index-1">
 				<div class="row align-items-center justify-content-center">
 					<div class=" col-xl-4 col-lg-5 col-md-6 col-sm-8 z-index-2">
 
-						<h2 class="mb-1 display-6">Customer Sign In</h2>
+						<h2 class="mb-1 display-6">Member Sign In</h2>
 						<p class="mb-4 text-muted">Please Sign In with details...</p>
 						<div class="position-relative">
 							<div>
@@ -121,13 +121,6 @@ response.sendRedirect("../LogOut.do");
 									Don’t have an account yet? <a href="CustomerSignUp.do"
 										class="ms-2 text-dark fw-semibold link-underline">Sign Up</a>
 								</p>
-								<!--Divider-->
-								<div class="d-flex align-items-center py-3">
-									<span class="flex-grow-1 border-bottom pt-1"></span>
-									<!-- <span class="d-inline-flex flex-center lh-1 width-2x height-2x rounded-circle bg-white text-mono">or</span> -->
-									<span class="flex-grow-1 border-bottom pt-1"></span>
-								</div>
-
 
 							</div>
 						</div>

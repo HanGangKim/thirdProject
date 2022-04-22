@@ -59,31 +59,24 @@ response.sendRedirect("../LogOut.do");
 </head>
 
 <body>
-	<!--Preloader Spinner-->
-	<div class="spinner-loader bg-tint-primary">
-		<div class="spinner-border text-primary" role="status"></div>
-		<span class="small d-block ms-2">Loading...</span>
-	</div>
 
 	<jsp:include page="/header.jsp" />
 
+	
 	<!--Main content-->
-	<main class="main-content" id="main-content">
-		<section class="position-relative">
-			<div class="container pt-14 pb-9 pb-lg-11">
-				<div class="row pt-lg-7 justify-content-center text-center">
-					<div class="col-xl-8">
-						<div
-							class="width-10x height-10x rounded-circle position-relative bg-success text-white flex-center mb-4">
-							<i class="bx bx-check lh-1 display-4 fw-normal"></i>
+	<main class="main-content " id="main-content">
+		<section class="position-relative ">
+			<div class="container pt-12 pb-lg-16 ">
+				<div class="row pt-lg-5 pb-5 justify-content-center text-center">
+					<div class="col-xl-6 ">
+						<div class="width-8x height-8x rounded-circle position-relative bg-success text-white flex-center mb-5">
+							<i class="bx bx-check lh-1 display-5 fw-normal"></i>
 						</div>
-						<h1 class="display-2 mb-3">Thanks for your message!</h1>
-						<p class="mb-5 lead mx-auto">We’ve just received your message
-							and will be contacting you as soon as possible. In the meantime
-							you can explore our recent projects.</p>
-						<a href="/LandingLogin.do" class="btn btn-outline-primary btn-lg">
-							Sign In</a>
-
+						<h4 class="display-4 mb-3">Sign Up Success !</h4>
+						<p class="mb-5 lead mx-auto">자세한 비밀번호는 이메일 수신함을 확인해주세요.</p>
+						<div class="col-md-6 mx-auto">
+							<a href="/LandingLogin.do" class="btn btn-primary mb-2 d-grid">Sign In</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -93,21 +86,10 @@ response.sendRedirect("../LogOut.do");
 
 	<jsp:include page="/footer.jsp" />
 
-
-	<!-- begin Back to Top button -->
-	<a href="#" class="toTop"> <i class="bx bxs-up-arrow"></i>
-	</a>
-	
-	<!--cursor-->
-	<div class="cursor">
-		<div class="cursor__inner"></div>
-	</div>
-
 </body>
 
 <!-- scripts -->
 <script src="/resources/js/theme.bundle.js"></script>
 <script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
-<script src="/resources/vendor/node_modules/js/cursor.js"></script>
 
 </html>
