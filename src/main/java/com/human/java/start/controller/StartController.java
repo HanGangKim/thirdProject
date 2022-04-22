@@ -30,7 +30,6 @@ public class StartController {
 			mv.addObject("voRand", exhibitionService.randomExhibition(vo));
 			mv.addObject("vo", exhibitionService.comingExhibition(vo));
 			mv.addObject("volast", exhibitionService.lastExhibition(vo));
-			System.out.println(vo + "전달합니다");
 			
 			return mv;
 		}
