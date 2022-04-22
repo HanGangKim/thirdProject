@@ -92,7 +92,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								class="small text-muted me-4 link-hover-underline my-2 block">Exhibition</a>
 						<a href="/exhibition/ExhibitionReviewList.do"
 								class="small text-muted me-4 link-hover-underline my-2 block">Review</a>
-						<a href="/customer/CustomerChangeInfo.do"
+						<a href="/customer/CustomerConfirmPass.do"
 								class="small text-muted me-4 link-hover-underline my-2 block">Setting</a>
 					</div>
 				</div>
