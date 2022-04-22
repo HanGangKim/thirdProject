@@ -34,6 +34,8 @@ public interface CustomerService {
 	public CustomerVO customerconfirmpassword(CustomerVO vo);
 	
 	//비밀번호 찾기
-	
 	public CustomerVO customerFindPassword(CustomerVO vo);
+	
+	// 회원내역 삭제 
+	public int customerTotalDelete(CustomerVO vo);
 }

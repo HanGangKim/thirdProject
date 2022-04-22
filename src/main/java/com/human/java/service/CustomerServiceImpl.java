@@ -102,4 +102,14 @@ public class CustomerServiceImpl implements CustomerService{
 		return customerDAO.customerFindPassword(vo);
 	}
 
+	@Override
+	public int customerTotalDelete(CustomerVO vo) {
+		System.out.println("===============");
+		System.out.println("customerTotalDelete 서비스 호출");
+		System.out.println(vo.getCustomer_id());
+		System.out.println("===============");
+		
+		return customerDAO.customerTotalDelete(vo);
+	}
+	
 }

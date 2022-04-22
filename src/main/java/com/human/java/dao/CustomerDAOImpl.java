@@ -118,4 +118,20 @@ public class CustomerDAOImpl implements  CustomerDAO{
 		return mybatis.selectOne("customerMapper.customerFindPassword",vo);
 	}
 	
+	@Override 
+	public int customerTotalDelete(CustomerVO vo) {
+		System.out.println("===============");
+		System.out.println("customerTotalDelete 서비스 호출");
+		System.out.println(vo.getCustomer_id());
+		System.out.println("===============");
+		
+		
+		mybatis.delete("customerMapper.customerReviewDelete",vo);
+		mybatis.delete("customerMapper.customerTicketingDelete",vo);
+		mybatis.delete("customerMapper.customerWishListDelete",vo);	
+			
+		
+		return mybatis.delete("customerMapper.customerTotalDelete",vo);
+	}
+	
 }
