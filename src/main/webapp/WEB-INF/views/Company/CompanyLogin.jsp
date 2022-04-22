@@ -67,7 +67,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			<div
 				class="bg-pattern text-light w-100 h-100 start-0 top-0 position-absolute"></div>
 			<div
-				class="container pt-11 pt-lg-14 pb-9 pb-lg-11 position-relative z-index-1">
+				class="container pt-11 pt-lg-14 pb-9 pb-lg-18 position-relative z-index-1">
 				<div class="row align-items-center justify-content-center">
 					<div class=" col-xl-4 col-lg-5 col-md-6 col-sm-8 z-index-2">
 
@@ -95,8 +95,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												Remember me </label>
 										</div>
 										<div>
-											<label class="text-end d-block small mb-0"><a
-												href="page-account-forget-password.html"
+											<label class="text-end d-block small mb-0">
+											<a href="page-account-forget-password.html" data-bs-target="#modal-password-bar-1" data-bs-toggle="modal"
 												class="text-muted link-decoration">Forget Password?</a></label>
 										</div>
 									</div>
@@ -112,13 +112,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									Don’t have an account yet? <a href="CompanySignUp.do"
 										class="ms-2 text-dark fw-semibold link-underline">Sign Up</a>
 								</p>
-								<!--Divider-->
-								<div class="d-flex align-items-center py-3">
-									<span class="flex-grow-1 border-bottom pt-1"></span>
-									<!-- <span class="d-inline-flex flex-center lh-1 width-2x height-2x rounded-circle bg-white text-mono">or</span> -->
-									<span class="flex-grow-1 border-bottom pt-1"></span>
-								</div>
-
 
 							</div>
 						</div>
@@ -128,18 +121,63 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		</section>
 	</main>
 	
-	<hr>
-	<!-- 추후 모달로 변경돨 예정  -->
-	<!-- 전송방식은 post  -->
+	<!-- <hr>
+	추후 모달로 변경돨 예정 
+	전송방식은 post 
 	<form action="companyFindPassword.do" method="get">
 	<h2>비밀번호 찾기</h2>
 	<input name="company_id" type="text" placeholder="아이디를 입력해주세요">
 	<input name="company_email" type="text" placeholder="이메일을 입력하세요">
 	<button type="submit">제출</button>
-	<!-- 비밀번호 찾기 성공시 'CustomerFindPassword' 페이지 이동 - 비밀번호 보여주기 -->
-	<!-- 비밀번호 찾기 실패시 CustomerLogin 페이지 돌아오기  -->
+	비밀번호 찾기 성공시 'CustomerFindPassword' 페이지 이동 - 비밀번호 보여주기
+	비밀번호 찾기 실패시 CustomerLogin 페이지 돌아오기 
 	</form>
-	<hr>
+	<hr> -->
+	
+	
+	<div id="modal-password-bar-1" class="modal fade" tabindex="-1" aria-labelledby="modal-password-bar-1" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-top modal-md">
+			<div class="modal-content position-relative border-0">
+				<div class="position-relative px-4">
+					<div class="position-absolute mt-2 end-0 width-7x top-0 d-flex align-items-center justify-content-center">
+						<button type="button" class="btn-close w-auto small" data-bs-dismiss="modal" aria-label="Close">
+							<i class="bx bx-x fs-4 me-2"></i>
+						</button>
+					</div>
+
+					<form class="mb-0" action="customerFindPassword.do" method="get">
+						<div class="align-items-center">
+							<h6 class="d-flex mt-4" style="justify-content: center;">Find Password</h6>
+
+							<!-- 구분선 -->
+							<div class="d-flex align-items-center py-3">
+								<span class="flex-grow-1 border-bottom pt-1"></span>
+							</div>
+							<!-- 아이디 -->
+							<div class="mb-3">
+								<label class="form-label">Company Id</label> 
+								<input type="text" name="company_id" placeholder="Please Enter Company Id" class="form-control">
+							</div>
+							<!-- 이메일 -->
+							<div class="">
+								<label class="form-label">Company Email</label> 
+								<input type="email" name="company_email" placeholder="Please Enter Company Email" class="form-control">
+							</div>
+
+							<div class="d-flex align-items-center py-3">
+								<span class="flex-grow-1 border-bottom pt-1"></span>
+							</div>
+							
+							<div class="mb-4 text-end">
+								<button type="submit" class="btn btn-primary form-control">Find Password</button>
+							</div>
+						</div>
+					</form>
+						
+				</div>
+			</div>
+		</div>
+	</div>
 	
 
 	<jsp:include page="/footer.jsp" />	
