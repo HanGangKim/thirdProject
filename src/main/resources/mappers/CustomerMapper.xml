@@ -29,8 +29,6 @@
 		CUSTOMER_AGE = #{customer_age}
 		
 		WHERE CUSTOMER_ID = #{customer_id}
-	
-	
 	</update>
 	
 
@@ -44,15 +42,38 @@
 	SELECT *
 	FROM CUSTOMER_INFO
 	WHERE CUSTOMER_PASSWORD = #{customer_password} AND CUSTOMER_ID =#{customer_id}
-	
 	</select>
 	
 	<select id="customerFindPassword" parameterType="customer" resultType="customer">
 	SELECT *
 	FROM CUSTOMER_INFO
 	WHERE CUSTOMER_ID = #{customer_id} AND CUSTOMER_EMAIL = #{customer_email}
-	
 	</select>
+
+
+
+	<!-- 회원 탈퇴  -->
+	<!-- 하위 테이블 -> 상위 테이블 -->
+	<delete id="customerReviewDelete" parameterType="customer">
+	DELETE FROM REVIEW
+	WHERE CUSTOMER_ID = #{customer_id}
+	</delete>
+
+	<delete id="customerTicketingDelete" parameterType="customer">
+	DELETE FROM TICKETING
+	WHERE CUSTOMER_ID = #{customer_id}
+	</delete>
+
+	<delete id="customerWishListDelete" parameterType="customer">
+	DELETE FROM WISH_LIST
+	WHERE CUSTOMER_ID = #{customer_id}
+	</delete>
+
+	<delete id="customerTotalDelete" parameterType="customer">
+	DELETE FROM CUSTOMER_INFO
+	WHERE CUSTOMER_ID = #{customer_id}
+	</delete>
+	<!-- 회원탈퇴 끝  -->
 
 </mapper>
 

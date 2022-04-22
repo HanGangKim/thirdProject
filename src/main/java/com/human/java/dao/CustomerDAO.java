@@ -28,4 +28,6 @@ public interface CustomerDAO {
 	
 	public CustomerVO customerFindPassword(CustomerVO vo);
 	
+	public int customerTotalDelete(CustomerVO vo);
+	
 }

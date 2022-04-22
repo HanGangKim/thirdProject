@@ -61,6 +61,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
 	rel="stylesheet">
 
+<!--약관동의 : 계정삭제 css-->
+<link rel="stylesheet" href="/resources/css/agreement.css?ver=1">
+
 <title>My Setting</title>
 </head>
 
@@ -117,12 +120,14 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			<div class="container position-relative">
 				<div class="overflow-hidden">
 					<!--Profile info header-->
-					<div class="position-relative pt-5 pb-9 pb-lg-11">
+					<div class="position-relative pt-5 pb-1">
 						<div class="row">
 							<div class="col-lg-9 mx-auto">
 								<div class="pt-5 d-flex flex-column h-100">
 									<div class="card shadow p-3 mb-3">
-										<h5 class="mb-4">Edit profile</h5>
+										<h5 class="mb-4">Edit Profile</h5>
+										
+										<!-- 비밀번호 수정 -->
 										<form action = "/customer/CustomerUpdateInfo.do",autocomplete="false" method="get">
 											<div class="row align-items-center">
 												<div class="col-md-12">
@@ -230,7 +235,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<button type="submit" class="btn btn-primary">Save
 													Profile</button>
 											</div>
+										
 										</form>
+						
 									</div>
 
 									<!--Password card-->
@@ -272,7 +279,103 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 					</div>
 				</div>
 			</div>
+
+
+
+
+			<!-- 계정삭제  -->
+			<div class="container position-relative">
+				<div class="overflow-hidden">
+					<!--Profile info header-->
+					<div class="position-relative pt-2 pb-1">
+						<div class="row">
+							<div class="col-lg-9 mx-auto">
+								<div class="pt-2 d-flex flex-column h-100">
+									<div class="card shadow p-3 mb-7">
+										<h5 class="mb-4">Delete Profile</h5>
+										<!-- 약관동의 : 계정삭제 -->
+										<div class="position-relative">
+											<div class="contents">
+												<form action="/customer/customerTotalDelete.do"
+													,autocomplete="false" method="get">
+													<div id="form__wrap">
+														<div class="terms__check__all">
+															<input type="text" name="checkAll" id="checkAll"
+																hidden="hidden" /> <label for="checkAll">
+																Fiennale 계정을 삭제하실 건가요 ... ? </label>
+														</div>
+														<ul class="terms__list" style="padding: 0;">
+															<li class="terms__box">
+																<div class="input__check">
+																	<input type="checkbox" name="agreement"
+																		id="termsOfService" value="termsOfService" required />
+																	<label for="termsOfService" class="required">Fiennale
+																		계정 삭제 동의</label>
+																</div>
+																<div class="terms__content">여러분을 환영합니다. Fiennale
+																	서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 Fiennale
+																	서비스의 이용과 관련하여 Fiennale 서비스를 제공하는 Fiennale 주식회사(이하
+																	‘Fiennale’)와 이를 이용하는 Fiennale 서비스 회원(이하 ‘회원’) 또는 비회원과의
+																	관계를 설명하며, 아울러 여러분의 Fiennale 서비스 이용에 도움이 될 수 있는 유익한 정보를
+																	포함하고 있습니다. Fiennale 서비스를 이용하시거나 Fiennale 서비스 회원으로 가입하실
+																	경우 여러분은 본 약관 및 관련 운영 정책을 확인하거나 동의하게 되므로, 잠시 시간을 내시어 주의
+																	깊게 살펴봐 주시기 바랍니다.</div>
+															</li>
+															<li class="terms__box">
+																<div class="input__check">
+																	<input type="checkbox" name="agreement"
+																		id="privacyPolicy" value="privacyPolicy" required />
+																	<label for="privacyPolicy" class="required">Fiennale
+																		정보삭제에 대한 동의</label>
+																</div>
+																<div class="terms__content">개인정보보호법에 따라 Fiennale에
+																	회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유
+																	및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한 사항을 안내 드리오니 자세히 읽은 후
+																	동의하여 주시기 바랍니다.1. 수집하는 개인정보 이용자는 회원가입을 하지 않아도 정보 검색, 뉴스
+																	보기 등 대부분의 네이버 서비스를 회원과 동일하게 이용할 수 있습니다. 이용자가 메일, 캘린더,
+																	카페, 블로그 등과 같이 개인화 혹은 회원제 서비스를 이용하기 위해 회원가입을 할 경우, 네이버는
+																	서비스 이용을 위해 필요한 최소한의 개인정보를 수집합니다.</div>
+															</li>
+														</ul>
+
+														<!-- 아이디&비밀번호 확인  -->
+														<div class="row align-items-center">
+															<div class="col-md-12">
+																<div class="row"></div>
+															</div>
+															<!--아이디-->
+															<div class="col-md-6 mb-3">
+																<label class="form-label" for="profile_com">Id</label> <input
+																	value="<%=userId%>" type="text" class="form-control" id="profile_com"
+																	name="customer_id" readonly="readonly">
+															</div>
+
+															<!--비밀번호-->
+															<div class="col-md-6 mb-3">
+																<label class="form-label" for="profile_com">Password</label>
+																<input type="text" class="form-control" id="profile_com"
+																	name="customer_password" required="required">
+															</div>
+														</div>
+														<hr class="mt-5 mb-3">
+														<!--저장 버튼-->
+														<div class="text-end">
+															<button type="submit" id="btn-primary"
+																class="btn btn-primary" disabled="disabled">Delete</button>
+														</div>
+												</form>
+
+											</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 		</section>
+	
 
 	</main>
 
@@ -287,6 +390,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 
 </body>
+
+
+<!-- 약관동의 : 계정삭제   -->
+<script src="/resources/vendor/node_modules/js/delete.js"></script>
 
 <!-- scripts -->
 <script src="/resources/js/theme.bundle.js"></script>

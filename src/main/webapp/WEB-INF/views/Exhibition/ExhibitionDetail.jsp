@@ -230,7 +230,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<i class="bx bx-x fs-4 me-2"></i>
 						</button>
 					</div>
-					<form class="mb-0" action="ExhibitionPayment.do">
+					<form class="mb-0" action="ExhibitionPayment.do" method="post">
 						<div class="align-items-center">
 							<h6 class="d-flex mt-4" style="justify-content: center;">Ticekting</h6>
 
