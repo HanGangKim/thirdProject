@@ -126,15 +126,13 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								<div class="pt-5 d-flex flex-column h-100">
 									<div class="card shadow p-3 mb-3">
 										<h5 class="mb-4">Edit Profile</h5>
-										
 										<!-- 비밀번호 수정 -->
-										<form action = "/customer/CustomerUpdateInfo.do",autocomplete="false" method="get">
+										<form action="/customer/CustomerUpdateInfo.do" autocomplete="false" method="get">
 											<div class="row align-items-center">
 												<div class="col-md-12">
 													<div class="row">
 														<div class="col-md-6 mb-4">
-															<div
-																class="filepond--root width-15x height-15x filepond--hopper"
+															<div class="filepond--root width-15x height-15x filepond--hopper"
 																id="update_profile"
 																data-style-panel-layout="compact circle"
 																data-style-button-remove-item-position="left bottom"
@@ -185,14 +183,14 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<!--이름-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_name">Name</label> <input
-														class="form-control" id="profile_name" name="customer_name"type="text"
-														value="<%=userName%>">
+														class="form-control" id="profile_name"
+														name="customer_name" type="text" value="<%=userName%>">
 												</div>
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_com">Id</label> <input
-														type="text" class="form-control" id="profile_com" name="customer_id"
-														value="<%=userId%>" readonly="readonly">
+														type="text" class="form-control" id="profile_com"
+														name="customer_id" value="<%=userId%>" readonly="readonly">
 												</div>
 
 												<!--전화번호-->
@@ -205,136 +203,78 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_email">Email
 														address</label> <input class="form-control" type="email"
-														id="profile_email" name="customer_email" value="<%=userEmail%>">
+														id="profile_email" name="customer_email"
+														value="<%=userEmail%>">
 												</div>
 												<!--성별-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_gender">Gender</label>
-													<input class="form-control" type="text" name="customer_gender"id="profile_email"
+													<input class="form-control" type="text"
+														name="customer_gender" id="profile_email"
 														value="<%=userGender%>">
 												</div>
 												<!--나이-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_dob">Date of
 														Age</label> <input type="text" id="profile_dob"
-														class="form-control" name="customer_age" data-flatpickr value="<%=userAge%>">
+														class="form-control" name="customer_age" data-flatpickr
+														value="<%=userAge%>">
 												</div>
-												
-												<!--주소-->
-												<!-- <div class="col-12">
-													<label for="profile_address" class="form-label">Address</label>
-													<input type="text" id="profile_address"
-														class="form-control"
-														value="1355 Market St, Suite 900 San Francisco CA 94103">
-												</div>  -->
-												
+
 											</div>
-											<hr class="mt-5 mb-3">
+											<hr class="mt-3 mb-3">
 											<!--저장 버튼-->
 											<div class="text-end">
 												<button type="submit" class="btn btn-primary">Save
 													Profile</button>
 											</div>
-										
-										</form>
-						
-									</div>
 
-									<!--Password card-->
-									<!-- <div class="card shadow p-3">
-										<h5 class="mb-4">Update Password</h5>
-
-										<form>
-											<div class="row">
-												현재 비밀번호
-												<div class="col-md-4 mb-3">
-													<label for="update_pass_current" class="form-label">Current
-														password</label> <input id="update_pass_current" type="text"
-														value="<%=userPass%>" class="form-control">
-												</div>
-												새 비밀번호
-												<div class="col-md-4 mb-3">
-													<label for="update_pass_new" class="form-label">New
-														password</label> <input type="text" class="form-control"
-														id="update_pass_new">
-												</div>
-												비밀번호 확인
-												<div class="col-md-4 mb-3">
-													<label for="update_pass_new_confirm" class="form-label">Confirm
-														new password</label> <input type="text" class="form-control"
-														id="update_pass_new_confirm">
-												</div>
-											</div>
-											<small class="help-text text-muted">비밀번호는 영문/숫자 포함
-												8자리를 입력해주세요.</small>
-											<div class="text-end">
-												<button type="button" class="btn btn-primary">Save
-													Update Password</button>
-											</div>-->
 										</form>
+
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
+					<!-- ./Profile info header-->
 
-
-
-
-			<!-- 계정삭제  -->
-			<div class="container position-relative">
-				<div class="overflow-hidden">
 					<!--Profile info header-->
-					<div class="position-relative pt-2 pb-1">
+					<div class="position-relative pt-1 pb-5">
 						<div class="row">
-							<div class="col-lg-9 mx-auto">
+							<div class="col-lg-9 mx-auto"> 
 								<div class="pt-2 d-flex flex-column h-100">
 									<div class="card shadow p-3 mb-7">
 										<h5 class="mb-4">Delete Profile</h5>
 										<!-- 약관동의 : 계정삭제 -->
 										<div class="position-relative">
 											<div class="contents">
-												<form action="/customer/customerTotalDelete.do"
-													,autocomplete="false" method="get">
+												<form action="/customer/customerTotalDelete.do" autocomplete="false" method="get">
 													<div id="form__wrap">
-														<div class="terms__check__all">
-															<input type="text" name="checkAll" id="checkAll"
-																hidden="hidden" /> <label for="checkAll">
-																Fiennale 계정을 삭제하실 건가요 ... ? </label>
-														</div>
-														<ul class="terms__list" style="padding: 0;">
+															<label class="text-primary mb-2"> Fiennale 계정을 삭제하실 건가요 ... ? </label>
+<!-- 															<label class="text-primary mb-2"> Fiennale 계정 탈퇴 전 꼭 확인해 주세요!</label> -->
+														<ul class="terms__list p-0">
 															<li class="terms__box">
 																<div class="input__check">
-																	<input type="checkbox" name="agreement"
-																		id="termsOfService" value="termsOfService" required />
-																	<label for="termsOfService" class="required">Fiennale
-																		계정 삭제 동의</label>
+																	<input type="checkbox" name="agreement" id="privacyPolicy" value="privacyPolicy" required />
+																	<label for="privacyPolicy" class="required">Fiennale 계정삭제에 대한 동의</label>
 																</div>
-																<div class="terms__content">여러분을 환영합니다. Fiennale
-																	서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 Fiennale
-																	서비스의 이용과 관련하여 Fiennale 서비스를 제공하는 Fiennale 주식회사(이하
-																	‘Fiennale’)와 이를 이용하는 Fiennale 서비스 회원(이하 ‘회원’) 또는 비회원과의
-																	관계를 설명하며, 아울러 여러분의 Fiennale 서비스 이용에 도움이 될 수 있는 유익한 정보를
-																	포함하고 있습니다. Fiennale 서비스를 이용하시거나 Fiennale 서비스 회원으로 가입하실
-																	경우 여러분은 본 약관 및 관련 운영 정책을 확인하거나 동의하게 되므로, 잠시 시간을 내시어 주의
-																	깊게 살펴봐 주시기 바랍니다.</div>
+																<div class="terms__content">- 회원탈퇴 처리 후에는 회원님의 개인정보를 복원할 수 없으며, 회원탈퇴 진행 시 해당 아이디는 영구적으로 삭제됩니다.<br>
+																- 탈퇴한 아이디는 본인과 타인 모두 재사용 및 복구가 불가하오니 신중하게 선택하시기 바랍니다.<br>
+																- 소속된 회사가 존재할 경우, '탈퇴'회원으로 조회됩니다.<br>
+																- 회사가 Fiennale 내에 존재하는 경우, 회사에 귀속된 데이터에 대해서는 보관됩니다.</div>
 															</li>
 															<li class="terms__box">
 																<div class="input__check">
-																	<input type="checkbox" name="agreement"
-																		id="privacyPolicy" value="privacyPolicy" required />
-																	<label for="privacyPolicy" class="required">Fiennale
-																		정보삭제에 대한 동의</label>
+																	<input type="checkbox" name="agreement" id="termsOfService" value="termsOfService" required />
+																	<label for="termsOfService" class="required">Fiennale 정보삭제에 대한 동의</label>
 																</div>
-																<div class="terms__content">개인정보보호법에 따라 Fiennale에
-																	회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유
-																	및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한 사항을 안내 드리오니 자세히 읽은 후
-																	동의하여 주시기 바랍니다.1. 수집하는 개인정보 이용자는 회원가입을 하지 않아도 정보 검색, 뉴스
-																	보기 등 대부분의 네이버 서비스를 회원과 동일하게 이용할 수 있습니다. 이용자가 메일, 캘린더,
-																	카페, 블로그 등과 같이 개인화 혹은 회원제 서비스를 이용하기 위해 회원가입을 할 경우, 네이버는
-																	서비스 이용을 위해 필요한 최소한의 개인정보를 수집합니다.</div>
+																<div class="terms__content">회원탈퇴 시 개인정보 및 Fiennale에서 만들어진 모든 데이터는 삭제됩니다.<br>
+																(단, 아래 항목은 표기된 법률에 따라 특정 기간 동안 보관됩니다.)<br><br>
+																1. 계약 또는 청약철회 등에 관한 기록 보존 이유 : 전자상거래 등에서의 소비자보호에 관한 법률 / 보존기간 : 5년<br>
+																2. 대금결제 및 재화 등의 공급에 관한 기록 보존 이유 : 전자상거래 등에서의 소비자보호에 관한 법률 / 보존기간 : 5년<br>
+																3. 전자금융 거래에 관한 기록 보존 이유 / 전자금융거래법 보존기간 : 5년<br>
+																4. 소비자의 불만 또는 분쟁처리에 관한 기록 보존 이유 : 신용정보의 이용 및 보호에 관한 법률 / 보존기간 : 3년<br>
+																5. 신용정보의 수집/처리 및 이용 등에 관한 기록 보존 이유 : 신용정보의 이용 및 보호에 관한 법률 / 보존기간 : 3년</div>
 															</li>
 														</ul>
 
@@ -345,9 +285,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 															</div>
 															<!--아이디-->
 															<div class="col-md-6 mb-3">
-																<label class="form-label" for="profile_com">Id</label> <input
-																	value="<%=userId%>" type="text" class="form-control" id="profile_com"
-																	name="customer_id" readonly="readonly">
+																<label class="form-label" for="profile_com">Id</label> 
+																<input value="<%=userId%>" type="text" class="form-control"
+																	id="profile_com" name="customer_id" readonly="readonly">
 															</div>
 
 															<!--비밀번호-->
@@ -357,25 +297,28 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 																	name="customer_password" required="required">
 															</div>
 														</div>
-														<hr class="mt-5 mb-3">
+														<hr class="mt-3 mb-3">
 														<!--저장 버튼-->
 														<div class="text-end">
 															<button type="submit" id="btn-primary"
-																class="btn btn-primary" disabled="disabled">Delete</button>
+																class="btn btn-primary" disabled="disabled">Delete Profile</button>
 														</div>
+													</div>
 												</form>
 
 											</div>
-											</form>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+					<!-- ./Profile info header-->
+					
 				</div>
+			</div>
 		</section>
-	
+
 
 	</main>
 
