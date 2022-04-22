@@ -269,7 +269,9 @@
 						<span class="d-block mb-2"><i
 							class="bx bx-stopwatch fs-5 me-1"></i> 전시 종료 임박!! </span>
 						<div
-							class="countdown-timer py-3 mb-3 d-flex flex-wrap align-items-center"></div>
+							class="countdown-timer py-3 mb-3 d-flex flex-wrap align-items-center">
+							<div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4"><span id="day">day</span></h2><span class="small text-muted">days</span></div><div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4"><span id="hour">hour</span></h2><span class="small text-muted">Hours</span></div><div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4"><span id="minute">minute</span></h2><span class="small text-muted">Minutes</span></div><div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4"><span id="second">second</span></h2><span class="small text-muted">Seconds</span></div>
+							</div>
 						<h3>${volast.exhibition_title}</h3>	
 						<br>
 						<%-- <h6 class="display-1 mb-4">${volast.exhibition_title}</h6> --%>
@@ -288,7 +290,7 @@
 								alt="">  --%>
 								<img src="${volast.exhibition_image}"
 								class="img-fluid rounded-3" alt="" style="width:650px">
-							
+								<input type="hidden" id = "end" value="${volast.exhibition_end_date }">
 
 						</div>
 					</div>
@@ -337,24 +339,66 @@
 			prevEl : ".swiperClassic-button-prev"
 		}
 	});
+	
+	
+	
+	var now = new Date()
+	var end = document.getElementById("end").value;
+	console.log(end);
 
-	function get1dayFromNow() {
+	var year = now.getFullYear();
+	var month = now.getMonth()+1;
+	var day = now.getDate();
+	console.log(month+" / "+day);
+	
+	var hours = now.getHours();
+	var minutes = now.getMinutes();
+	var seconds = now.getSeconds();
+	console.log(hours+" / "+minutes + " / "+seconds);
+	
+	
+	
+	var t_year = end.split(".")[0];
+	var t_month = end.split(".")[1];
+	var t_day = end.split(".")[2];
+	console.log(t_month+" / "+t_day);
+	
+	var t_hours = 23;
+	var t_minutes = 59;
+	var t_seconds = 59;
+	console.log(t_hours+" / "+t_minutes);
+	
+	
+	
+	var nowDate = new Date(year,month-1,day,hours,minutes,seconds);
+	var t_Date = new Date(t_year, t_month-1, t_day, t_hours, t_minutes, t_seconds);
+	console.log(nowDate);
+	console.log(t_Date);
+	
+	var SecGap = (t_Date.getTime() - nowDate.getTime()) / 1000;
+//		console.log(SecGap +"/"+ MinGap +"/"+ HourGap, DayGap);
+	
+// 	console.log(s+" / "+m+" / "+h+" / "+DayGap);
+	
+	var x = setInterval(function(){
 		
-		/* 시간 계산하는 구간  */
-		return new Date(new Date().valueOf() + 1 * 24 * 60 * 60 * 1000);
-	}
+		
+	var s = parseInt(SecGap % 60);
+	var MinGap = SecGap / 60;
+	var m = parseInt(MinGap %60);
+	var HourGap = MinGap / 60;
+	var h = parseInt(HourGap %24);
+	var DayGap = parseInt(HourGap /24);
+		
+		document.getElementById('day').innerHTML = DayGap;
+		document.getElementById('hour').innerHTML = h;
+		document.getElementById('minute').innerHTML = m;
+		document.getElementById('second').innerHTML = s;
+		
+		SecGap--;
+		
+	},1000);
 
-	var $clock = $('.countdown-timer');
-
-	$clock
-			.countdown(
-					get1dayFromNow(),
-					function(event) {
-						$(this)
-								.html(
-										event
-												.strftime('<div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4">%H</h2><span class="small text-muted">Hours</span></div><div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4">%M</h2><span class="small text-muted">Minutes</span></div><div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4">%S</h2><span class="small text-muted">Seconds</span></div>'));
-					});
 </script>
 
 </html>
