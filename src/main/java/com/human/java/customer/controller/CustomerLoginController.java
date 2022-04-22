@@ -49,7 +49,9 @@ public class CustomerLoginController {
 			session.setAttribute("masterId", result.getCustomer_id());	
 			session.setAttribute("masterSessionTime", new Date().toLocaleString());
 			
+			mv.addObject("voRand", exhibitionService.randomExhibition(exvo));
 			mv.addObject("vo", exhibitionService.comingExhibition(exvo));
+			mv.addObject("volast", exhibitionService.lastExhibition(exvo));
 			mv.setViewName("/Master/MasterPage");
 			
 			
@@ -72,8 +74,9 @@ public class CustomerLoginController {
 			
 			// 세션시간			
 			session.setAttribute("sessionTime", new Date().toLocaleString());
-
+			mv.addObject("voRand", exhibitionService.randomExhibition(exvo));
 			mv.addObject("vo", exhibitionService.comingExhibition(exvo));
+			mv.addObject("volast", exhibitionService.lastExhibition(exvo));
 			mv.setViewName("CustomerMain");
 
 			return mv;
