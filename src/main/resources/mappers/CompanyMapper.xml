@@ -77,4 +77,11 @@
 	FROM COMPANY_INFO
 	WHERE COMPANY_ID = #{company_id} AND COMPANY_EMAIL = #{company_email}
 	</select>
+	
+	<delete id="companyTotalDelete" parameterType="company">
+	DELETE FROM COMPANY_INFO
+	WHERE COMPANY_ID = #{company_id}
+	
+	
+	</delete>
 </mapper>

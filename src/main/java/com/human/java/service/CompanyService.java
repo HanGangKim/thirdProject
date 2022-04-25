@@ -26,4 +26,6 @@ public interface CompanyService {
 	
 	public CompanyVO companyFindPassword(CompanyVO vo);
 	
+	public int companyTotalDelete(CompanyVO vo);
+	
 }

@@ -74,4 +74,14 @@ public class CompanyDAOImpl implements CompanyDAO {
 		return mybatis.selectOne("companyMapper.companyFindPassword",vo);
 		
 	}
+	
+	@Override
+	public int companyTotalDelete(CompanyVO vo) {
+		System.out.println("===============");
+		System.out.println("companyTotalDelete 서비스 호출");
+		System.out.println(vo.getCompany_id());
+		System.out.println("===============");
+		
+		return mybatis.delete("companyMapper.companyTotalDelete",vo);
+	}
 }

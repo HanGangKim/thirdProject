@@ -16,4 +16,6 @@ public interface CompanyDAO {
 	public void companyupdate(CompanyVO vo);
 	
 	public CompanyVO companyFindPassword(CompanyVO vo);
+	
+	public int companyTotalDelete(CompanyVO vo);
 }

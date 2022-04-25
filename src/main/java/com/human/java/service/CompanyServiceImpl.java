@@ -73,6 +73,15 @@ public class CompanyServiceImpl implements CompanyService{
 		System.out.println("===============");
 		return companyDAO.companyFindPassword(vo);
 	}
+	@Override
+	public int companyTotalDelete(CompanyVO vo) {
+		System.out.println("===============");
+		System.out.println("companyTotalDelete 서비스 호출");
+		System.out.println(vo.getCompany_id());
+		System.out.println("===============");
+		
+		return companyDAO.companyTotalDelete(vo);
+	}
 	
 }
 
