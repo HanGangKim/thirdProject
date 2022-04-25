@@ -249,9 +249,16 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										<div class="position-relative">
 											<div class="contents">
 												<form action="/customer/customerTotalDelete.do" autocomplete="false" method="get">
+												
+											
+												
 													<div id="form__wrap">
 															<label class="text-primary mb-2"> Fiennale 계정을 삭제하실 건가요 ... ? </label>
 <!-- 															<label class="text-primary mb-2"> Fiennale 계정 탈퇴 전 꼭 확인해 주세요!</label> -->
+
+																	<!-- 체크박스 JS 히든 input -->
+																	<input type="text" class="checkAll" name="checkAll" id="checkAll" hidden="hidden" />	
+
 														<ul class="terms__list p-0">
 															<li class="terms__box">
 																<div class="input__check">
