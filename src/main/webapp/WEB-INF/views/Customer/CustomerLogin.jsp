@@ -170,12 +170,12 @@ response.sendRedirect("../LogOut.do");
 							<!-- 아이디 -->
 							<div class="mb-3">
 								<label class="form-label">Your Id</label> 
-								<input type="text" name="customer_id" placeholder="Please Enter Your Id" class="form-control">
+								<input type="text" name="customer_id" placeholder="Please Enter Your Id" required class="form-control">
 							</div>
 							<!-- 이메일 -->
 							<div class="">
 								<label class="form-label">Your Email</label> 
-								<input type="email" name="customer_email" placeholder="Please Enter Your Email" class="form-control">
+								<input type="email" name="customer_email" placeholder="Please Enter Your Email" required class="form-control">
 							</div>
 
 							<div class="d-flex align-items-center py-3">
