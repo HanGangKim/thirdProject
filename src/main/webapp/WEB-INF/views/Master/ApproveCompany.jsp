@@ -42,7 +42,16 @@
 	
 	.approveCompanySign {
 		border: 0px solid black;
-		width : 20px
+		width : 100px
+	}
+	
+	#btnHover {
+		background-color: rgb(108, 116, 130);
+	}
+	
+	#btnHover:hover {
+	
+		background-color : black;
 	}
 </style>
 
@@ -66,11 +75,7 @@
 
 <body>
 
-	<!-- <script type="text/javascript">
-		function companyApproval() {
-			document.getElementById("approveCompanyInput").value = "잘 클릭하셨네요";
-		}
-	</script> -->
+	
 
 	<!--Preloader Spinner-->
 	<div class="spinner-loader bg-tint-primary">
@@ -83,7 +88,7 @@
 		<nav class="navbar navbar-expand-lg navbar-light navbar-link-white">
 			<div class="container position-relative">
 				<a class="navbar-brand" href="index.html"> <img
-					src="/resources/img/logo/logo-white.svg" alt="" class="img-fluid">
+					src="/resources/img/logo/white-logo.png" alt="" class="img-fluid">
 				</a>
 			</div>
 		</nav>
@@ -95,7 +100,9 @@
 			<div class="container position-relative py-9 py-lg-15">
 				<div class="row pt-9 pt-lg-9">
 					<div class="col-xl-9">
-						<h1 class="display-4 mb-3">Approve Company</h1>
+						<h1 class="display-4 mb-3">Company</h1>
+						<h6>(approval from a Company) </h6>
+						
 
 					</div>
 				</div>
@@ -121,7 +128,7 @@
 
 						<div class="col-md-6 col-lg-5 p-0 p-lg-0">
 							<div class="overflow-hidden">
-								<img src="/resources/img/960x900/1.jpg" alt=""
+								<img src="/resources/img/master/masterLogo.png" alt=""
 									class="img-fluid img-zoom">
 
 							</div>
@@ -173,16 +180,16 @@
 									<div class="text-end">	
 									
 									
-									<button type="button" class="btn btn-primary"
+									<button type="button" class="btn btn-primary"id="btnHover" 
 											onclick="companyApproval('${vo.company_id}','${status.count}')">승인</button>
 									
-									<button type="button" class="btn btn-primary"
+									<button type="button" class="btn btn-primary" id="btnHover"
 											onclick="companyRefusal('${vo.company_id}','${status.count}')">거절</button>
 									
 												
 										<br> 
-										<input type="text" class="approveCompanyInput" value="testValue"></input>
-										<input type="text" class="approveCompanySign" value="W"></input>
+										<input type="text" class="approveCompanyInput" value=""></input>
+										<input type="text" class="approveCompanySign" value=""></input>
 									</div>
 
 
@@ -211,7 +218,7 @@
 				<!--/.article-->
 
 				<!--/.article-->
-				<nav aria-label="Page navigation example"
+				<!-- <nav aria-label="Page navigation example"
 					class="d-flex justify-content-end" data-aos="fade-up">
 					<ul class="pagination">
 						<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
@@ -220,7 +227,7 @@
 						<li class="page-item"><a class="page-link" href="#">3</a></li>
 						<li class="page-item"><a class="page-link" href="#">Next</a></li>
 					</ul>
-				</nav>
+				</nav> -->
 			</div>
 		</section>
 		<!--/.Article header-end-->
@@ -250,7 +257,7 @@
 			<div class="row mb-5 mb-lg-7">
 				<div class="col-md-4 mb-5 mb-md-0 text-md-center order-md-2">
 					<a href="index.html"><img
-						src="/resources/img/logo/logo-white.svg"
+						src="/resources/img/logo/white-logo.png"
 						class="width-10x d-block h-auto mx-md-auto" alt=""></a>
 				</div>
 				<div class="col-md-4 order-md-1 mb-3 mb-md-0">
@@ -298,7 +305,7 @@
 <script type="text/javascript">
 
 	function companyApproval(data,idx) {
-		alert("승인되었습니다");
+		/* alert("승인되었습니다"); */
 		
 		//  데이터 확인 작업 
 		// 클릭한 대상의 회사명 : data 
@@ -310,7 +317,7 @@
 		// 		inputText.value = data;
 		
 		document.getElementsByClassName('approveCompanyInput')[idx-1].value = data;
-		document.getElementsByClassName('approveCompanySign')[idx-1].value = 'D';
+		document.getElementsByClassName('approveCompanySign')[idx-1].value = '승인되었습니다';
 		
 		document.getElementById('success_id').value = data
 		document.getElementById('success_flag').value = 'D'
@@ -328,7 +335,7 @@
 
 <script type="text/javascript">
 	function companyRefusal(data,idx) {
-		alert("거절되었습니다");
+		/* alert("거절되었습니다"); */
 		
 		//  데이터 확인 작업 
 		// 클릭한 대상의 회사명 : data 
@@ -340,7 +347,7 @@
 		// 		inputText.value = data;
 		
 		document.getElementsByClassName('approveCompanyInput')[idx-1].value = data;
-		document.getElementsByClassName('approveCompanySign')[idx-1].value = 'R';
+		document.getElementsByClassName('approveCompanySign')[idx-1].value = '거절되었습니다';
 		
 		document.getElementById('recheck_id').value = data
 		document.getElementById('recheck_flag').value = 'R'
