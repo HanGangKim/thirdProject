@@ -232,6 +232,87 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 											</div>
 										</form>
 									</div>
+														<div class="position-relative pt-1 pb-5">
+						<div class="row">
+							<div class="col-lg-9 mx-auto"> 
+								<div class="pt-2 d-flex flex-column h-100">
+									<div class="card shadow p-3 mb-7">
+										<h5 class="mb-4">Delete Profile</h5>
+										<!-- 약관동의 : 계정삭제 -->
+										<div class="position-relative">
+											<div class="contents">
+												<form action="/company/CompanyTotalDelete.do" autocomplete="false" method="get">
+												
+											
+												
+													<div id="form__wrap">
+															<label class="text-primary mb-2"> Fiennale 계정을 삭제하실 건가요 ... ? </label>
+<!-- 															<label class="text-primary mb-2"> Fiennale 계정 탈퇴 전 꼭 확인해 주세요!</label> -->
+
+																	<!-- 체크박스 JS 히든 input -->
+																	<input type="text" class="checkAll" name="checkAll" id="checkAll" hidden="hidden" />	
+
+														<ul class="terms__list p-0">
+															<li class="terms__box">
+																<div class="input__check">
+																	<input type="checkbox" name="agreement" id="privacyPolicy" value="privacyPolicy" required />
+																	<label for="privacyPolicy" class="required">Fiennale 계정삭제에 대한 동의</label>
+																</div>
+																<div class="terms__content">- 회원탈퇴 처리 후에는 회원님의 개인정보를 복원할 수 없으며, 회원탈퇴 진행 시 해당 아이디는 영구적으로 삭제됩니다.<br>
+																- 탈퇴한 아이디는 본인과 타인 모두 재사용 및 복구가 불가하오니 신중하게 선택하시기 바랍니다.<br>
+																- 소속된 회사가 존재할 경우, '탈퇴'회원으로 조회됩니다.<br>
+																- 회사가 Fiennale 내에 존재하는 경우, 회사에 귀속된 데이터에 대해서는 보관됩니다.</div>
+															</li>
+															<li class="terms__box">
+																<div class="input__check">
+																	<input type="checkbox" name="agreement" id="termsOfService" value="termsOfService" required />
+																	<label for="termsOfService" class="required">Fiennale 정보삭제에 대한 동의</label>
+																</div>
+																<div class="terms__content">회원탈퇴 시 개인정보 및 Fiennale에서 만들어진 모든 데이터는 삭제됩니다.<br>
+																(단, 아래 항목은 표기된 법률에 따라 특정 기간 동안 보관됩니다.)<br><br>
+																1. 계약 또는 청약철회 등에 관한 기록 보존 이유 : 전자상거래 등에서의 소비자보호에 관한 법률 / 보존기간 : 5년<br>
+																2. 대금결제 및 재화 등의 공급에 관한 기록 보존 이유 : 전자상거래 등에서의 소비자보호에 관한 법률 / 보존기간 : 5년<br>
+																3. 전자금융 거래에 관한 기록 보존 이유 / 전자금융거래법 보존기간 : 5년<br>
+																4. 소비자의 불만 또는 분쟁처리에 관한 기록 보존 이유 : 신용정보의 이용 및 보호에 관한 법률 / 보존기간 : 3년<br>
+																5. 신용정보의 수집/처리 및 이용 등에 관한 기록 보존 이유 : 신용정보의 이용 및 보호에 관한 법률 / 보존기간 : 3년</div>
+															</li>
+														</ul>
+
+														<!-- 아이디&비밀번호 확인  -->
+														<div class="row align-items-center">
+															<div class="col-md-12">
+																<div class="row"></div>
+															</div>
+															<!--아이디-->
+															<div class="col-md-6 mb-3">
+																<label class="form-label" for="profile_com">Id</label> 
+																<input value="<%=companyId%>" type="text" class="form-control"
+																	id="profile_com" name="company_id" readonly="readonly">
+															</div>
+
+															<!--비밀번호-->
+															<div class="col-md-6 mb-3">
+																<label class="form-label" for="profile_com">Password</label>
+																<input type="text" class="form-control" id="profile_com"
+																	name="company_password" required="required">
+															</div>
+														</div>
+														<hr class="mt-3 mb-3">
+														<!--저장 버튼-->
+														<div class="text-end">
+															<button type="submit" id="btn-primary"
+																class="btn btn-primary" disabled="disabled">Delete Profile</button>
+														</div>
+													</div>
+												</form>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
 									
 								</div>
@@ -307,6 +388,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 </body>
 
 <!-- scripts -->
+<!-- 약관동의 : 계정삭제 -->
+<script src="/resources/vendor/node_modules/js/delete.js"></script>
 <script src="/resources/js/theme.bundle.js"></script>
 <script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
 <script src="/resources/vendor/node_modules/js/cursor.js"></script>

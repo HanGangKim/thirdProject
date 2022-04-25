@@ -149,7 +149,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						</button>
 					</div>
 
-					<form class="mb-0" action="customerFindPassword.do" method="get">
+					<form class="mb-0" action="companyFindPassword.do" method="get">
 						<div class="align-items-center">
 							<h6 class="d-flex mt-4" style="justify-content: center;">Find Password</h6>
 
