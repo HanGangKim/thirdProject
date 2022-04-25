@@ -71,15 +71,15 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		<section class="position-relative ">
 			<div class="container pt-12 pb-lg-16 ">
 				<div class="row pt-lg-5 pb-5 justify-content-center text-center">
-					<div class="col-xl-6 ">
+					<div class="col-xl-4">
 						<div class="width-8x height-8x rounded-circle position-relative bg-success text-white flex-center mb-5">
 							<i class="bx bx-check lh-1 display-5 fw-normal"></i>
 						</div>
 						<h4 class="display-4 mb-3">Find Success !</h4>
 						<p class="mb-5 lead mx-auto">자세한 비밀번호는 이메일 수신함을 확인해주세요.</p>
-						<p class="mb-0 lead mx-auto">${companyId}님의 비밀번호는</p>
-						<p class="mb-5 lead mx-auto" id='passwordmasking'>${companyPass}</p>
-						<div class="col-md-6 mx-auto">
+						<p class="mb-0 lead mx-auto fs-6">${companyId}님의 비밀번호는</p>
+						<p class="mb-5 lead mx-auto fs-6" id='passwordmasking'>${companyPass}</p>
+						<div class="mx-auto">
 							<a href="/LandingLogin.do" class="btn btn-primary mb-2 d-grid">Sign In</a>
 							<a href="/CustomerMain.do" class="btn btn-outline-secondary  d-grid mb-2">Go to Main</a>
 						</div>
