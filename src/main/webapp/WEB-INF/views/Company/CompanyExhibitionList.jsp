@@ -66,159 +66,191 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <!-- Main CSS -->
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
-<title>전시회 등록 대기</title>
+<title><%=companyName %> - Exhibition</title>
 </head>
 
 
 <body>
 	
-	<!--Header Start-->
-	<header
-		class="z-index-fixed header-transparent header-absolute-top pt-lg-2">
-		<nav class="navbar navbar-expand-lg navbar-light navbar-link-white">
-			<div class="container position-relative">
-				<a class="navbar-brand" href="/company/CompanyMain.do"> <img
-					src="/resources/img/logo/white-logo.png" alt="" class="img-fluid">
-				</a>
-			</div>
-		</nav>
+	<!--Preloader Spinner-->
+	<div class="spinner-loader bg-gradient-secondary text-white">
+		<div class="spinner-border text-primary" role="status"></div>
+		<span class="small d-block ms-2">Loading...</span>
+	</div>
+	
+	<!-- header -->
+	<header class="z-index-fixed header-transparent header-absolute-top">
+		<div class="container ">
+			<nav class="navbar navbar-expand-lg navbar-light navbar-link-white">
+				<div class="container  position-relative navbar-no-collapse-items">
+					<a class="navbar-brand nav-item" href="/company/CompanyMain.do" style="margin: 0;"> 
+						<img src="/resources/img/logo/white-logo.png" class="img-fluid">
+					</a>
+					
+					<div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
+                       <div class="nav-item me-3 me-lg-0">
+                           <a href="/LogOut.do" class="btn btn-success btn-sm rounded-pill">Sign Out</a>
+                       </div>
+                    </div>
+				</div>
+			</nav>
+		</div>
 	</header>
 
-	<!--Main content-->
-	<main class="main-content" id="main-content">
-		<section class="position-relative bg-dark text-white">
-			<div class="container position-relative py-9 py-lg-15">
-				<div class="row pt-9 pt-lg-9">
-					<div class="col-xl-9">
-						<h1 class="display-4 mb-3">Approve Company</h1>
-
-					</div>
-				</div>
-				<!--/.row-->
-			</div>
-			<!--/.content-->
-		</section>
-		<!--/section-->
-	</main>
 
 	<!--Main content start-->	
 	<main>
-
-		<section class="position-relative bg-white">
-			<br> <br>
-			<div class="container z-index-1 position-relative pb-9 pb-lg-11">
-
-
-				<h2 class="mb-4"></h2>
-			 	<c:forEach items="${CompanyExhibitionList}" var="vo"> 
-				<article
-					class="row g-0 mb-4 mb-lg-5 position-relative overflow-hidden hover-lift hover-shadow-lg border rounded-4 card-hover shadow-sm align-items-center">
-
-					<div class="col-md-6 col-lg-5 p-0 p-lg-0">
-						<div class="overflow-hidden">
-							<img src="/resources/img/960x900/1.jpg" alt=""
-								class="img-fluid img-zoom">
-
-						</div>
+		<section id="page-header" class="position-relative bg-dark text-white overflow-hidden">
+			<div class="container pt-12 pb-10">
+				<div class="row pt-lg-7">
+					<div class="col-lg-7">
+						<h1 class="mb-2 display-4">Exhibition</h1>
+						<p class="lead mb-0 text-muted"><%=companyName %></p>
 					</div>
-					<div class="col-md-6 col-lg-7">
+				</div>
+			</div>
+		</section>
 
-						<div class="position-relative p-4 p-lg-5">
-							<div
-								class="d-flex justify-content-start w-100 pb-3 align-items-center">
-								<small class="text-muted">전시회 등록정보</small>
+		<section class="position-relative hr-linear-bottom bg-white">
+			<div class="container  position-relative py-lg-11">
+				<c:forEach items="${CompanyExhibitionList}" var="vo">
+					<div class="row position-relative overflow-hidden hover-lift hover-shadow-lg shadow rounded-4 border flex-sm-row mb-6 align-items-center">
 
+						<div class="col-md-6 col-lg-5 p-0 p-lg-0">
+							<div class="overflow-hidden">
+								<img src="/resources/img/960x900/1.jpg" class="img-fluid card-img img-zoom">
 							</div>
-							<div>
+						</div>
+						<div class="col-sm-7 py-sm-5 col-12 col-lg-6 ms-5 px-5">
+							<!-- 업체 id -->
+							<div class="d-flex mb-3 align-items-center">
+								<span class="text-muted me-3">Company Id</span> 
+								<strong>${vo.company_id}</strong>
+							</div>
+							<!-- 전시 id -->
+							<div class="d-flex mb-3 align-items-center">
+								<span class="text-muted me-3">Exhibition Id</span> 
+								<strong>${vo.exhibition_id}</strong>
+							</div>
+							<!-- 전시 제목 -->
+							<div class="d-flex mb-3 align-items-center">
+								<span class="text-muted me-3">Title</span> 
+								<strong>${vo.exhibition_title}</strong>
+							</div>
+							<!-- 전시 내용 -->
+							<div class="d-flex mb-3 align-items-center">
+								<span class="text-muted me-3">Contents</span> 
+								<strong>${vo.exhibition_contents}</strong>
+							</div>
+							<!-- 전시 기간 -->
+							<div class="d-flex mb-3 align-items-center">
+								<span class="text-muted me-3">Date</span> 
+								<strong>${vo.exhibition_total_date}</strong>
+							</div>
+							<!-- 전시 금액 -->
+							<div class="d-flex mb-5 align-items-center">
+								<span class="text-muted me-3">Price</span> 
+								<strong>${vo.exhibition_price}</strong>
+							</div>
+							
+<!-- 							<div class="d-flex justify-content-start w-100 pb-3 align-items-center"> -->
+<!-- 								<small class="text-muted">전시회 등록정보</small> -->
 
-								<h6>등록한 전시회 정보입니다.</h6>
-								<h2 class="mb-4">
-									<table>
-											<tr>
-												<td><h4>업체ID : ${vo.company_id}</h4></td>
-											</tr>
-											
-											<tr>
-												<td><h6>등록 전시회 ID : ${vo.exhibition_id}</h6></td>
-											</tr>
-											
-											<tr>
-												<td><h6>등록 전시회 제목 : ${vo.exhibition_title}</h6></td>
-											</tr>
-											<tr>
-												<td><h6>등록 전시회 내용 : ${vo.exhibition_contents}</h6></td>
-											</tr>
-											<tr>
-												<td><h6>등록 전시회 날짜 : ${vo.exhibition_total_date}</h6></td>
-											</tr>
-											<tr>
-												<td><h6>등록 전시회 금액 : ${vo.exhibition_price}</h6></td>
-											</tr>
-											<tr>
-												<td><h6>승인 상태 : ${vo.exhibition_flag}</h6></td>
-											</tr>
+<!-- 							</div> -->
+							
+<!-- 							<div> -->
+<!-- 								<h6>등록한 전시회 정보입니다.</h6> -->
+<!-- 								<table> -->
+<!-- 									<tr> -->
+<%-- 										<td><h4>업체ID : ${vo.company_id}</h4></td> --%>
+<!-- 									</tr> -->
 
-										</table>
-								</h2>
+<!-- 									<tr> -->
+<%-- 										<td><h6>등록 전시회 ID : ${vo.exhibition_id}</h6></td> --%>
+<!-- 									</tr> -->
 
-								<br> <br>
-								<div class="text-end">
+<!-- 									<tr> -->
+<%-- 										<td><h6>등록 전시회 제목 : ${vo.exhibition_title}</h6></td> --%>
+<!-- 									</tr> -->
+<!-- 									<tr> -->
+<%-- 										<td><h6>등록 전시회 내용 : ${vo.exhibition_contents}</h6></td> --%>
+<!-- 									</tr> -->
+<!-- 									<tr> -->
+<%-- 										<td><h6>등록 전시회 날짜 : ${vo.exhibition_total_date}</h6></td> --%>
+<!-- 									</tr> -->
+<!-- 									<tr> -->
+<%-- 										<td><h6>등록 전시회 금액 : ${vo.exhibition_price}</h6></td> --%>
+<!-- 									</tr> -->
+<!-- 									<tr> -->
+<%-- 										<td><h6>승인 상태 : ${vo.exhibition_flag}</h6></td> --%>
+<!-- 									</tr> -->
+
+<!-- 								</table> -->
+
+<!-- 								<br> <br> -->
+<!-- 							</div> -->
 								
+								<div class="col-md-6 pb-4 pb-md-0">
 									<form action="/exhibition/CompanyExhibitionDetail.do" method="post">
-									<input name="company_id" value="${vo.company_id}" hidden="hidden">
-									<input  name="exhibition_id" value="${vo.exhibition_id}" hidden="hidden">
-									<button type="submit" class="btn btn-primary">수정</button>
+										<div class="mb-2 d-grid">
+											<input name="company_id" value="${vo.company_id}"
+												hidden="hidden"> <input name="exhibition_id"
+												value="${vo.exhibition_id}" hidden="hidden">
+											<button type="submit" class="btn btn-primary">수정</button>
+										</div>
 									</form>
-									
-									<br>
 									
 									<form action="/exhibition/exhibitionCompanyExhibitionDelete.do" method="post">
-									<input  name="company_id" value="${vo.company_id}" hidden="hidden">
-									<input  name="exhibition_id" value="${vo.exhibition_id}" hidden="hidden">
-									<button type="submit" class="btn btn-primary">삭제</button>
+										<div class="d-grid">
+											<input name="company_id" value="${vo.company_id}"
+												hidden="hidden"> <input name="exhibition_id"
+												value="${vo.exhibition_id}" hidden="hidden">
+											<button type="submit" class="btn btn-primary">삭제</button>
+										</div>
 									</form>
 								</div>
-
-							</div>
 						</div>
+
+						<!-- <a href="#" class="stretched-link"></a> -->
+
 					</div>
-
-					<!-- <a href="#" class="stretched-link"></a> -->
-
-				</article>
-			 </c:forEach> 
+				</c:forEach>
 
 
-	<!-- 버튼 -->
-	 <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-center">
-				<!--전시회 목록보기-->
-				<div class="mb-3 mb-sm-0"></div>
-				<!--예매하기 버튼-->
-				<div>
-					<a href="/company/CompanyExhibitionWrite.do" class="btn btn-primary">New exhibition</a>
+				<!-- 버튼 -->
+				<div
+					class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-center">
+					<!--전시회 목록보기-->
+					<div class="mb-3 mb-sm-0"></div>
+					<!--예매하기 버튼-->
+					<div>
+						<a href="/company/CompanyExhibitionWrite.do"
+							class="btn btn-primary">New exhibition</a>
+					</div>
 				</div>
-		</div>
-		
-		<br>
-		
-	<!-- 버튼 -->
-	 <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-center">
-				<!--전시회 목록보기-->
-				<div class="mb-3 mb-sm-0"></div>
-				<!--예매하기 버튼-->
-				<div>
-					<a href="/company/CompanyMain.do" class="btn btn-primary">Go  MainPage</a>
-				</div>
-		</div>
 
-	
+				<br>
+
+				<!-- 버튼 -->
+				<div
+					class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-center">
+					<!--전시회 목록보기-->
+					<div class="mb-3 mb-sm-0"></div>
+					<!--예매하기 버튼-->
+					<div>
+						<a href="/company/CompanyMain.do" class="btn btn-primary">Go
+							MainPage</a>
+					</div>
+				</div>
+
+
 
 			</div>
 
 
-		
-	
-			
+
+
+
 
 		</section>
 		<!--/.Article header-end-->

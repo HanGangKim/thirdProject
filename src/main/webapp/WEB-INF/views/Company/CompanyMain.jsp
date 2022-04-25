@@ -82,13 +82,18 @@ span.card-hover-2-footer-link:after {
 
 <body>
 
+	<!--Preloader Spinner-->
+	<div class="spinner-loader bg-gradient-secondary text-white">
+		<div class="spinner-border text-primary" role="status"></div>
+		<span class="small d-block ms-2">Loading...</span>
+	</div>
 
 	<!-- header -->
 	<header class="z-index-fixed header-transparent header-absolute-top">
 		<div class="container ">
 			<nav class="navbar navbar-expand-lg navbar-light navbar-link-white">
 				<div class="container  position-relative navbar-no-collapse-items">
-					<a class="navbar-brand nav-item" href="/CustomerMain.do" style="margin: 0;"> 
+					<a class="navbar-brand nav-item" href="/company/CompanyMain.do" style="margin: 0;"> 
 						<img src="/resources/img/logo/white-logo.png" class="img-fluid">
 					</a>
 					
@@ -142,7 +147,7 @@ span.card-hover-2-footer-link:after {
 					
 					<!-- 정보수정 -->
 					<div class="col-md-6 mb-4 motion grid-item">
-						<a href="/company/CompanyConfirmPass.do" class="text-black bg-light position-relative d-block overflow-hidden card-hover-2 card">
+						<a href="/company/CompanyConfirmPass.do?company_id=<%=companyId%>" class="text-black bg-light position-relative d-block overflow-hidden card-hover-2 card">
 							<img src="/resources/img/graphics/illustration/05.svg" class="w-100 img-zoom">
 							<div class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
 								<div class="card-hover-2-header w-100">
