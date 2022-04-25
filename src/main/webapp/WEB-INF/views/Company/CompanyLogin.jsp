@@ -160,12 +160,12 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<!-- 아이디 -->
 							<div class="mb-3">
 								<label class="form-label">Company Id</label> 
-								<input type="text" name="company_id" placeholder="Please Enter Company Id" class="form-control">
+								<input type="text" name="company_id" placeholder="Please Enter Company Id" required class="form-control">
 							</div>
 							<!-- 이메일 -->
 							<div class="">
 								<label class="form-label">Company Email</label> 
-								<input type="email" name="company_email" placeholder="Please Enter Company Email" class="form-control">
+								<input type="email" name="company_email" placeholder="Please Enter Company Email" required class="form-control">
 							</div>
 
 							<div class="d-flex align-items-center py-3">
