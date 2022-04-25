@@ -5,6 +5,7 @@ public class MasterExhibitionVO {
 	private String exhibition_title;
 	private String exhibition_total_date;
 	private String exhibition_flag;
+	private String exhibition_image;
 		
 	
 	
@@ -25,6 +26,12 @@ public class MasterExhibitionVO {
 	}
 	public void setExhibition_flag(String exhibition_flag) {
 		this.exhibition_flag = exhibition_flag;
+	}
+	public String getExhibition_image() {
+		return exhibition_image;
+	}
+	public void setExhibition_image(String exhibition_image) {
+		this.exhibition_image = exhibition_image;
 	}
 	
 	

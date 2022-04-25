@@ -6,7 +6,7 @@
 <mapper namespace="masterExhibitionMapper">
 
 	<select id="masterExhibitionSelect" resultType="masterExhibition">
-		SELECT EXHIBITION_TITLE, EXHIBITION_TOTAL_DATE
+		SELECT EXHIBITION_TITLE, EXHIBITION_TOTAL_DATE, EXHIBITION_IMAGE
 		FROM EXHIBITION_INFO
 		WHERE EXHIBITION_FLAG = 'W'
 	</select>
