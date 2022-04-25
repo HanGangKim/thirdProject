@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%request.setCharacterEncoding("UTF-8");%>
 <%
 Object companyId = session.getAttribute("companyId");
@@ -13,140 +13,136 @@ Object companyRegnum = session.getAttribute("companyRegnum");
 
 // 세션 연결
 if (session.getAttribute("companyId") == null) {
-// 세션 연결에 실패하면 null	
-System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-System.out.println("세션연결 실패:"+companyId);
-System.out.println("세션연결 실패:"+companyName);
-System.out.println("세션연결 실패:"+companyRegnum);
-System.out.println("세션연결 실패:"+companyPh);
-System.out.println("세션연결 실패:"+companyEmail);
-System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+	// 세션 연결에 실패하면 null	
+	System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+	System.out.println("세션연결 실패:" + companyId);
+	System.out.println("세션연결 실패:" + companyName);
+	System.out.println("세션연결 실패:" + companyRegnum);
+	System.out.println("세션연결 실패:" + companyPh);
+	System.out.println("세션연결 실패:" + companyEmail);
+	System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
-}else{
-System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
-System.out.println("세션연결 성공:"+companyId);
-System.out.println("세션연결 성공:"+companyName);
-System.out.println("세션연결 성공:"+companyRegnum);
-System.out.println("세션연결 성공:"+companyPh);
-System.out.println("세션연결 성공:"+companyEmail);
-System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+} else {
+	System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+	System.out.println("세션연결 성공:" + companyId);
+	System.out.println("세션연결 성공:" + companyName);
+	System.out.println("세션연결 성공:" + companyRegnum);
+	System.out.println("세션연결 성공:" + companyPh);
+	System.out.println("세션연결 성공:" + companyEmail);
+	System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 }
 %>
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="/resources/img/favicon.ico" type="image/ico">
-        <!--Box Icons-->
-        <link rel="stylesheet" href="/resources/fonts/boxicons/css/boxicons.min.css">
-
-        <!--AOS Animations-->
-        <link rel="stylesheet" href="/resources/vendor/node_modules/css/aos.css">
-
-        <!--Iconsmind Icons-->
-        <link rel="stylesheet" href="/resources/fonts/iconsmind/iconsmind.css">
-
-        <!--Google fonts-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Source+Serif+Pro:ital@0;1&display=swap" rel="stylesheet">
-        <!-- Main CSS -->
-        <link href="/resources/css/theme.min.css" rel="stylesheet">
-
-        <title>Assan 4</title>
-    </head>
-
-    <body>
-        <!--Preloader Spinner-->
-         <!--Preloader Spinner-->
-         <form action="companyConfirmPassword.do">
-         <div class="spinner-loader bg-tint-primary">
-            <div class="spinner-border text-primary" role="status">
-            </div>
-            <span class="small d-block ms-2">Loading...</span>
-        </div>
-
-        <!--Main content-->
-        <main>
-            <!--page-hero-->
-            <section class="bg-white position-relative d-flex justify-content-center h-100">
-                <div class="bg-dark d-none d-md-flex position-fixed end-0 top-0 w-md-50 w-lg-60 h-100">
-                    <!--Divider shape-->
-                    <svg class="position-absolute start-0 top-0 h-100 text-white z-index-1" width="80" height="1096"
-                        preserveAspectRatio="none" viewBox="0 0 58 1096" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path opacity="0.24" fill-rule="evenodd" clip-rule="evenodd"
-                            d="M58 1096L53.2727 1034.97C48.3636 973.947 38.7273 852.719 39.8182 730.667C41.0909 608.614 53.2727 487.386 52 365.333C50.7273 243.281 36.3636 122.053 29.0909 61.0263L21.8182 2.02656e-06H-1.72853e-06L-1.72853e-06 61.0263C-1.72853e-06 122.053 -1.72853e-06 243.281 -1.72853e-06 365.333C-1.72853e-06 487.386 -1.72853e-06 608.614 -1.72853e-06 730.667C-1.72853e-06 852.719 -1.72853e-06 973.947 -1.72853e-06 1034.97L-1.72853e-06 1096H58Z"
-                            fill="white" />
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M37 1096L33.9843 1034.97C30.8527 973.947 24.7053 852.719 25.4013 730.667C26.2132 608.614 33.9843 487.386 33.1724 365.333C32.3605 243.281 23.1975 122.053 18.558 61.0263L13.9185 2.02656e-06H1.11014e-06L1.11014e-06 61.0263C1.11014e-06 122.053 1.11014e-06 243.281 1.11014e-06 365.333C1.11014e-06 487.386 1.11014e-06 608.614 1.11014e-06 730.667C1.11014e-06 852.719 1.11014e-06 973.947 1.11014e-06 1034.97L1.11014e-06 1096H37Z"
-                            fill="white" />
-                    </svg>
-
-                    <!--Image-->
-                    <img src="/resources/img/backgrounds/bg7.jpg" alt="" class="bg-image">
-                </div>
-                <div class="container z-index-2 position-relative">
-                    <div class="row align-items-center vh-100">
-                        <div class="col-lg-4 pt-3 pb-4 pb-lg-5 pt-lg-5 me-auto col-md-6 z-index-2">
-                            <div>
-                                <a href="index.html">
-                                    <img src="/resources/img/logo/logo.svg" alt="" class="width-8x d-block mb-5">
-                                </a>
-                                <h2 class="mb-2">
-                                    You must enter the password to modify the information.
-                                </h2>
-                                <p class="mb-4 text-muted">
-                                    Please enter your current password.
-                                </p>
-                                <div>
-                                    <form class="needs-validation" novalidate>
-                                        <div class="mb-3">
-                                            <input type="password" required class="form-control" id="userpass" autofocus
-                                                name ="company_password" value="" placeholder="Please enter your password.">
-                                             <input type="hidden" required class="form-control" id="username" autofocus
-                                             	name="company_id" value="<%=companyId%>" readonly="readonly">
-                                        </div>
-                                        <div class="mb-3 d-flex justify-content-between">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDefault">
-                                                <label class="form-check-label small" for="flexCheckDefault">
-                                                    Sign out from all devices.
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div class="d-grid">
-                                            <button class="btn btn-dark" type="submit">
-                                                Confirm Password
-                                            </button>
-                                           
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-           </form>
-        </main>
-        <!-- scripts -->
-        <script src="/resources/js/theme.bundle.js"></script>
-    </body>
-
-</html>
-
-
-<html>
 <head>
-<meta charset="UTF-8">
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/resources/img/favicon.ico" type="image/ico">
+<!--Box Icons-->
+<link rel="stylesheet"
+	href="/resources/fonts/boxicons/css/boxicons.min.css">
+
+<!--AOS Animations-->
+<link rel="stylesheet" href="/resources/vendor/node_modules/css/aos.css">
+
+<!--Iconsmind Icons-->
+<link rel="stylesheet" href="/resources/fonts/iconsmind/iconsmind.css">
+
+<!--Google fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Source+Serif+Pro:ital@0;1&display=swap"
+	rel="stylesheet">
+<!-- Main CSS -->
+<link href="/resources/css/theme.min.css" rel="stylesheet">
+
+<title>Fiennale - <%=companyName %></title>
 </head>
+
 <body>
 
+	<!--Preloader Spinner-->
+	<div class="spinner-loader bg-gradient-secondary text-white">
+		<div class="spinner-border text-primary" role="status"></div>
+		<span class="small d-block ms-2">Loading...</span>
+	</div>
+	
+	<!-- header -->
+	<header class="z-index-fixed header-transparent header-absolute-top">
+		<div class="container ">
+			<nav class="navbar navbar-expand-lg navbar-light navbar-link-white">
+				<div class="container  position-relative navbar-no-collapse-items">
+					<a class="navbar-brand nav-item" href="/company/CompanyMain.do" style="margin: 0;"> 
+						<img src="/resources/img/logo/white-logo.png" class="img-fluid">
+					</a>
+					
+					<div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
+                       <div class="nav-item me-3 me-lg-0">
+                           <a href="/LogOut.do" class="btn btn-success btn-sm rounded-pill">Sign Out</a>
+                       </div>
+                    </div>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+	
+	<!--Main content-->
+	<main class="main-content " id="main-content">
+		<section id="page-header" class="position-relative bg-dark text-white overflow-hidden">
+			<div class="container pt-12 pb-10">
+				<div class="row pt-lg-7">
+					<div class="col-lg-7">
+						<h1 class="mb-2 display-4"><%=companyName %></h1>
+						<p class="lead mb-0 text-muted">Welcome! <%=companyName %></p>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<section class="position-relative ">
+			<div class="container pt-12 pb-lg-16 ">
+				<div class="row pt-lg-5 pb-5 justify-content-center text-center">
+					<div class="col-xl-6">
+<!-- 						<div class="width-8x height-8x rounded-circle position-relative bg-success text-white flex-center mb-5"> -->
+<!-- 							<i class="bx bx-check lh-1 display-5 fw-normal"></i> -->
+<!-- 						</div> -->
+						<h4 class="display-4 mb-3">Confirm Password<br>For Setting</h4>
+						<p class="mb-5 lead mx-auto">Please enter your current password.</p>
+						
+						<div class="mx-auto col-md-8">
+							<form class="needs-validation" action="companyConfirmPassword.do" novalidate>
+								<!-- 아이디 확인 -->
+								<div class="mb-3">
+									<input type="text" required class="form-control" id="username" name="company_id" value="<%=companyId%>" readonly="readonly">
+								</div>
+								<!-- 비밀번호 확인 -->
+								<div class="mb-0">
+									<input type="password" required class="form-control" id="userpass" autofocus name="company_password" value="" placeholder="Please enter your password."> 
+								</div>
+								<div class="d-flex align-items-center py-3">
+									<span class="flex-grow-1 border-bottom pt-1"></span>
+								</div>
+								<!-- submit 버튼 -->
+								<div class="d-grid">
+									<button class="btn btn-dark" type="submit">Go To Setting</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+
+	<jsp:include page="/footer.jsp" />
+
+
 </body>
+
 </html>
