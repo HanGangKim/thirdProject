@@ -96,7 +96,7 @@ response.sendRedirect("../LogOut.do");
 										<input type="password" name="customer_password"
 											class="form-control" required placeholder="Password">
 									</div>
-									<div class="mb-3 d-flex justify-content-between">
+									<div class="mb-0 d-flex justify-content-between">
 										<div class="form-check">
 											<input class="form-check-input" type="checkbox" 
 											name="remember"	id="flexCheckDefault"> <label
@@ -108,6 +108,10 @@ response.sendRedirect("../LogOut.do");
 											<a href="page-account-forget-password.html" data-bs-target="#modal-password-bar-1" data-bs-toggle="modal"
 												class="text-muted link-decoration">Forget Password?</a></label>
 										</div>
+									</div>
+									
+									<div class="d-flex align-items-center py-3">
+										<span class="flex-grow-1 border-bottom pt-1"></span>
 									</div>
 
 									<div class="d-grid">

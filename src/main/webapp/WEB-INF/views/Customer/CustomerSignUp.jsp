@@ -46,8 +46,7 @@ response.sendRedirect("../LogOut.do");
 <!--Google fonts-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap"
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap"
 	rel="stylesheet">
 
 <!-- Main CSS -->
@@ -62,11 +61,12 @@ response.sendRedirect("../LogOut.do");
 <link rel="stylesheet"
 	href="/resources/vendor/node_modules/css/choices.min.css">
 
-<title>Customer Sign Up</title>
+<title>Member Sign Up</title>
 
 <style>
 .choices__list--single {
 	padding: 0px;
+/* 	color: lightgray ; */
 }
 
 .choices {
@@ -76,6 +76,15 @@ response.sendRedirect("../LogOut.do");
 	font-size: 16px;
 	margin-bottom: 24px;
 }
+
+div.input-icon-group input::placeholder {
+	color: lightgray ;
+}
+
+div.choices__list--single select option:disabled {
+	color: lightgray ;
+}
+
 </style>
 
 </head>
@@ -92,7 +101,7 @@ response.sendRedirect("../LogOut.do");
 				<div class="row align-items-center justify-content-center">
 					<div class=" col-xl-4 col-lg-5 col-md-6 col-sm-8 z-index-2">
 
-						<h2 class="mb-1 display-6">Customer Sign Up</h2>
+						<h2 class="mb-1 display-6">Member Sign Up</h2>
 						<p class="mb-4 text-muted">To get started, Please signup with
 							details...</p>
 
@@ -102,15 +111,14 @@ response.sendRedirect("../LogOut.do");
 								<!-- 아이디 -->
 								<div class="input-icon-group mb-3">
 									<span class="input-icon" name="errorMassageId" id="errorMassageId"> <i class="bx bx-id-card"></i>
-									</span> <input type="text" class="form-control" required id="signUpid"
-										name="customer_id" placeholder="login id">
+									</span> <input type="text" class="form-control" required id="signUpid" autofocus
+										name="customer_id" placeholder="Member login id">
 								</div>
 
 								<!-- 비밀번호 입력 -->
 								<div class="input-icon-group mb-3">
 									<span class="input-icon" name="errorMassagePw" id="errorMassagePw"> <i class="bx bx-lock-open"></i>
-									</span> <input type="password" class="form-control" required
-										name="customer_password" id="signUpPassword"
+									</span> <input type="password" class="form-control" required name="customer_password" id="signUpPassword"
 										placeholder="Enter password" maxlength="10">
 								</div>
 
@@ -125,7 +133,7 @@ response.sendRedirect("../LogOut.do");
 								<div class="input-icon-group mb-3">
 									<span class="input-icon" name="errorMassageName" id="errorMassageName"> <i class="bx bx-user"></i>
 									</span> <input type="text" class="form-control" required
-										name="customer_name" id="signUpName" autofocus
+										name="customer_name" id="signUpName" 
 										placeholder="Your full name">
 								</div>
 
@@ -133,10 +141,9 @@ response.sendRedirect("../LogOut.do");
 								<div class="input-icon-group mb-3">
 									<span class="input-icon" name="errorMassagePh" id="errorMassagePh"> <i class="bx bx-mobile"></i>
 									</span> <input type="text" class="form-control" required
-										id="signUpph" name="customer_ph" autofocus
-										placeholder="Your PhoneNumber 010-xxxx-xxxx">
+										id="signUpph" name="customer_ph" 
+										placeholder="Your phone number ex)010-1234-5678">
 								</div>
-
 
 								<!-- 이메일 -->
 								<div class="input-icon-group mb-3">
@@ -146,19 +153,6 @@ response.sendRedirect("../LogOut.do");
 										placeholder="Your email address">
 								</div>
 								
-								<!-- 성별 -->
-								<div class="input-icon-group mb-3">
-									<span class="input-icon" name="errorMassageGender" id="errorMassageGender"> <i class="bx bx-male-female"></i>
-									</span> <select autocomplete="false" id="profile_gender"
-										name="customer_gender" class="form-control"
-										data-choices='{"searchEnabled":false}'>
-										<option selected disabled>Gender</option>
-										<option>Male</Option>
-										<option>Female</Option>
-									</select>
-								</div>
-								
-							
 								<!-- 나이 -->
 								 <div class="input-icon-group mb-3">
 									<span class="input-icon" name="errorMassageAge" id="errorMassageAge"> <i class="bx bx-calendar"></i>
@@ -166,15 +160,31 @@ response.sendRedirect("../LogOut.do");
 										id="signUpage" name="customer_age" autofocus
 										placeholder="Your age">
 								</div> 
-
+								
+								<!-- 성별 -->
+								<div class="input-icon-group mb-0">
+									<span class="input-icon" name="errorMassageGender" id="errorMassageGender"> <i class="bx bx-male-female"></i>
+									</span> <select autocomplete="false" id="profile_gender"
+										name="customer_gender" class="form-control" required
+										data-choices='{"searchEnabled":false}'>
+										<option selected disabled style="color: lightgray;">Gender</option>
+										<option>Male</Option>
+										<option>Female</Option>
+									</select>
+								</div>
+								
 								<!-- 회원속성  -->
-								<div class="input-icon-group mb-3" style="display:none">
+								<div class="input-icon-group mb-0" style="display:none">
 									<span class="input-icon"> <i class="bx bx-envelope"></i>
 									</span> <select autocomplete="false" id="flag" class="form-control"
 										name="customer_flag" data-choices='{"searchEnabled":false}' >
 										<Option selected>C</Option>
 										<Option>M</Option>
 									</select>
+								</div>
+								
+								<div class="d-flex align-items-center py-3">
+									<span class="flex-grow-1 border-bottom pt-1"></span>
 								</div>
 
 								<!-- 회원가입 마치기 -->
@@ -184,27 +194,9 @@ response.sendRedirect("../LogOut.do");
 							</form>
 
 							<!-- 로그인 버튼 -->
-							<p class="pt-3 small text-muted">
-								Already have an account? <a href="CustomerLogin.do"
-									class="ms-2 text-dark fw-semibold link-decoration">Sign in</a>
+							<p class="pt-3 small text-muted">Already have an account? 
+								<a href="CustomerLogin.do" class="ms-2 text-dark fw-semibold link-decoration">Sign in</a>
 							</p>
-<!-- 회원가입 양식이 올바르지 않습니다 -->
-							
-<!-- 							<div class="position-relative d-flex align-items-center py-3" name="errorMassagePh"> -->
-<!-- 								(전화) -->
-<!-- 							</div> -->
-<!-- 							<div class="position-relative d-flex align-items-center py-3" name="errorMassageEmail"> -->
-<!-- 								(이메일) -->
-<!-- 							</div> -->
-<!-- 							<div class="position-relative d-flex align-items-center py-3" name="errorMassageGender"> -->
-<!-- 								(성별) -->
-<!-- 							</div> -->
-							
-
-							<!--Divider-->
-							<div class="d-flex align-items-center py-3">
-								<span class="flex-grow-1 border-bottom pt-1"></span>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -221,10 +213,6 @@ response.sendRedirect("../LogOut.do");
 	
 
 </body>
-
-<!-- scripts -->
-<script src="/resources/js/theme.bundle.js"></script>
-<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
 
 <!--Select scripts-->
 <script src="/resources/vendor/node_modules/js/choices.min.js?ver=2"></script>
