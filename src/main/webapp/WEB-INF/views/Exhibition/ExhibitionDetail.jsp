@@ -271,7 +271,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<!-- 방문 날짜 -->
 							<div class="mb-3">
 								<label class="form-label" for="profile_name">Visit Date</label> 
-								<input type="date" name="ticketing_date" placeholder="날짜" id="now_date"
+								<input type="date" name="ticketing_date" placeholder="날짜를 선택해주세요." id="now_date"
 									data-flatpickr class="form-control">
 							</div>
 							<!-- 구분선 -->
@@ -339,7 +339,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 														
 							
 							<div class="mb-3 text-end">
-								<button type="reset" class="btn btn-outline-dark form-control">취소하기</button>
+								<button type="reset" aria-label="Close" data-bs-dismiss="modal" class="btn btn-outline-dark form-control">취소하기</button>
 							</div>
 						</div>
 					</form>
