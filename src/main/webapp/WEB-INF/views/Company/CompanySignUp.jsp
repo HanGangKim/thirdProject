@@ -41,15 +41,23 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <!--Google fonts-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Source+Serif+Pro:ital@0;1&display=swap"
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Source+Serif+Pro:ital@0;1&display=swap"
 	rel="stylesheet">
+	
 <!-- Main CSS -->
 <link href="/resources/css/theme.min.css" rel="stylesheet">
-
+<link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
 
 <title>Company Sign Up</title>
+
+<style>
+
+div.input-icon-group input::placeholder {
+	color: lightgray ;
+}
+
+</style>
 </head>
 
 <body>
@@ -74,11 +82,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								<!-- 회사 아이디 -->
 								<div class="input-icon-group mb-3">
 									<span class="input-icon" name="errorMassage" id="errorMassageId"> <i class="bx bx-id-card"></i> </span> 
-									<input type="text" class="form-control" required
+									<input type="text" class="form-control" required autofocus
 										id="signUpid" placeholder="Company login id" name="company_id">
 								</div>
-								
-								
 								
 								<!-- 비밀번호 입력 -->
 								<div class="input-icon-group mb-3">
@@ -94,24 +100,19 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										id="signUpConfirmPassword" placeholder="Confirm password" name="company_password_confirm">
 								</div>
 								
-								
-								
-								
 								<!-- 회사 이름 -->
 								<div class="input-icon-group mb-3">
 									<span class="input-icon" name="errorMassage" id="errorMassageName"> <i class="bx bx-user"></i>
 									</span> <input type="text" class="form-control" required
-										id="signUpName" autofocus placeholder="Company name" name="company_name">
+										id="signUpName" placeholder="Company name" name="company_name">
 								</div>
 								
 								<!-- 회사 연락처 -->
 								<div class="input-icon-group mb-3">
 									<span class="input-icon" name="errorMassage" id="errorMassagePh"> <i class="bx bx-mobile"></i> </span> 
 									<input type="text" class="form-control" required
-										id="signUpPH" placeholder="Company phone number 010-xxxx-xxxx" name="company_ph">
+										id="signUpPH" placeholder="Company phone number ex)010-1234-5678" name="company_ph">
 								</div>
-								
-								
 								
 								<!-- 회사 이메일 -->
 								<div class="input-icon-group mb-3">
@@ -120,20 +121,16 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										id="signUpMail" placeholder="Company email address" name="company_email">
 								</div>
 
-								
-
 								<!-- 사업자 번호 -->
-								<div class="input-icon-group mb-3">
-									<span class="input-icon" name="errorMassage" id="errorMassageRegnum"> <i class="bx bx-mobile"></i></span> 
+								<div class="input-icon-group mb-0">
+									<span class="input-icon" name="errorMassage" id="errorMassageRegnum"> <i class="bx bx-credit-card-front"></i></span> 
 									<input type="text" class="form-control" required
 										id="signUpCRN"
-										placeholder="Registration Number xxx-xx-xxxxx" name="company_regnum">
+										placeholder="Registration Number ex)000-00-00000" name="company_regnum">
 								</div>
 
-								
-
 								<!-- 업체속성 -->
-								<div class="input-icon-group mb-3" style="display:none">
+								<div class="input-icon-group mb-0" style="display:none">
 									<span class="input-icon"> <i class="bx bx-envelope"></i> </span> 
 									<select autocomplete="false" id="flag" class="form-control"
 										data-choices='{"searchEnabled":false}'>
@@ -143,6 +140,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									</select>
 								</div>
 								
+								<div class="d-flex align-items-center py-3">
+									<span class="flex-grow-1 border-bottom pt-1"></span>
+								</div>
+								
 								<!-- 회원가입 마치기 -->
 								<div class="d-grid">
 									<input class="btn btn-primary" type="submit" id="next" disabled="disabled" value="Sign Up">
@@ -150,15 +151,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							</form>
 
 							<!-- 로그인 버튼 -->
-							<p class="pt-3 small text-muted">
-								Already have an account? <a href="page-account-signin.html"
-									class="ms-2 text-dark fw-semibold link-decoration">Sign in</a>
+							<p class="pt-3 small text-muted">Already have an account? 
+								<a href="CompanyLogin.do" class="ms-2 text-dark fw-semibold link-decoration">Sign in</a>
 							</p>
-							
-							<!--Divider-->
-							<div class="d-flex align-items-center py-3">
-								<span class="flex-grow-1 border-bottom pt-1"></span>
-							</div>
 						</div>
 						
 					</div>
@@ -175,7 +170,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 </body>
 
 <!-- scripts -->
-	<script src="/resources/js/theme.bundle.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 	
