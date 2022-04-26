@@ -269,9 +269,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 </body>
 
-<!-- scripts -->
-<script src="/resources/js/theme.bundle.js"></script>
-
 <!--Select scripts-->
 <script src="/resources/vendor/node_modules/js/choices.min.js"></script>
 

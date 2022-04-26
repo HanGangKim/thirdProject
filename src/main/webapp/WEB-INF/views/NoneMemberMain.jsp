@@ -33,10 +33,7 @@
 
 	<jsp:include page="/main-header.jsp" />
 
-	<main>
-	
-
-	
+	<main>	
 		<!-- 슬라이더 시작 -->
 		<section class="position-relative overflow-hidden">
 			<!--:Swiper classic -->
@@ -310,8 +307,6 @@
 
 </body>
 
-
-<script src="/resources/js/theme.bundle.js"></script>
 
 <!--Page Countdown script-->
 <script src="/resources/vendor/node_modules/js/jquery.min.js"></script>

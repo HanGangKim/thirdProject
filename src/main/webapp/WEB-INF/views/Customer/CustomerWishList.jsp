@@ -170,10 +170,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 
 </body>
-
-<!-- scripts -->
-<script src="/resources/js/theme.bundle.js"></script>
-
 <!-- <script>history.replaceState({}, null, location.pathname);</script> -->
 
 </html>

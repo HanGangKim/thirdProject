@@ -373,12 +373,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 </body>
 
-
-<script src="/resources/js/theme.bundle.js"></script>
-<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
-<script src="/resources/vendor/node_modules/js/cursor.js"></script>
-
-
 <!--Page Countdown script-->
 <script src="/resources/vendor/node_modules/js/jquery.min.js"></script>
 <script src="/resources/vendor/node_modules/js/jquery.countdown.min.js"></script>

@@ -67,7 +67,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 					</a>
 					
 					<div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
-                       <div class="nav-item me-3 me-lg-0">
+                       <div class="nav-item me-0 me-lg-0">
                            <a href="/LogOut.do" class="btn btn-success btn-sm rounded-pill">Sign Out</a>
                        </div>
                     </div>

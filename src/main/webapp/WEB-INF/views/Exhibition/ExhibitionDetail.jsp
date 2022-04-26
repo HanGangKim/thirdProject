@@ -70,12 +70,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 </head>
 
 <body>
-	<!--:Preloader Spinner-->
-	<div class="spinner-loader bg-gradient-secondary text-white">
-		<div class="spinner-border text-primary" role="status"></div>
-		<span class="small d-block ms-3">Loading...</span>
-	</div>
-
 
 	<jsp:include page="/header.jsp" />
 
@@ -123,7 +117,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										<h6 class="mb-0" style="color: #f15b66;">Location</h6>
 									</div>
 									<div
-										class="d-md-flex align-items-center justify-content-between">
+										class="d-md-flex d-flex align-items-center justify-content-between">
 										<h6>${vo.exhibition_location}</h6>
 										<a href="#" class="btn btn-outline-dark" data-bs-target="#modal-loc-bar-2" data-bs-toggle="modal">
 											<i class="bx bx-location-plus fs-5"></i>
@@ -483,11 +477,6 @@ var adress = document.querySelector("#adress").innerText
 </script>
 <!-- 결제모달 스크립트 끝 -->
 
-
-
-
-<!-- scripts -->
-<script src="/resources/js/theme.bundle.js"></script>
 
 <!--Select scripts-->
 <script src="/resources/vendor/node_modules/js/choices.min.js"></script>

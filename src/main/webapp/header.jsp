@@ -63,14 +63,19 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		<div class="navbar-boxed">
 			<div class="container">
 				<nav class="navbar navbar-expand-lg navbar-light rounded-lg-4">
-					<div class="container position-relative">
+<!-- 					<div class="container position-relative"> -->
 						<!-- 로고 -->
 						<a class="navbar-brand" href="/CustomerMain.do"> 
 							<img src="/resources/img/logo/black-logo.png" alt="" class="img-fluid">	
 						</a>
 						<!-- 검색버튼 -->
-						<div
-							class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
+						<div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
+							<!-- 햄버거 메뉴 -->
+							<button class="navbar-toggler order-last" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarTheme" aria-controls="mainNavbarTheme" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon">
+                                    <i></i>
+                                </span>
+                            </button>
 							<div class="nav-item me-3">
 								<c:choose>
 									<c:when test="${sessionScope.userId == null}">
@@ -81,7 +86,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									</c:when>
 								</c:choose>
 							</div>
-							<div class="nav-item me-4 me-lg-0">
+							<div class="nav-item me-3 me-lg-0">
 								<a href="#" data-bs-target="#modal-search-bar-2"
 									data-bs-toggle="modal" class="nav-link lh-1"> <i
 									class="bx bx-search fs-4"></i>
@@ -118,28 +123,17 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									</c:when>
 									<c:when test="${sessionScope.userId != null}">
 										<!--마이페이지-->
-										<li class="nav-item dropdown me-lg-3"><a
-											class="nav-link dropdown-toggle" data-bs-auto-close="outside"
-											role="button" data-bs-toggle="dropdown" aria-haspopup="true"
-											aria-expanded="false">Mypage </a> <!--마이페이지 드롭다운-->
+										<li class="nav-item dropdown me-lg-3">
+											<a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Mypage </a> 
+											<!--마이페이지 드롭다운-->
 											<div class="dropdown-menu p-lg-3">
-												<div class="dropend">
-													<a class="dropdown-item" aria-expanded="false"
-														href="/customer/CustomerWishSelectList.do?id=<%=userId%>">My Wishlist</a>
-												</div>
-												<div class="dropend">
-													<a class="dropdown-item" href="/exhibition/ExhibitionTicketingSelect.do?id=<%=userId%>"
-														aria-expanded="false">My Ticket</a>
-												</div>
-												<div class="dropend">
-													<a class="dropdown-item"
-														href="/exhibition/getMyReviewList.do?id=<%=userId%>"
-														aria-expanded="false">My Review</a>
-												</div>
+												<a class="dropdown-item" href="/customer/CustomerWishSelectList.do?id=<%=userId%>">My Wishlist</a> 
+												<a class="dropdown-item" href="/exhibition/ExhibitionTicketingSelect.do?id=<%=userId%>">My Ticket</a> 
+												<a class="dropdown-item" href="/exhibition/getMyReviewList.do?id=<%=userId%>">My Review</a>
 												<div class="dropdown-divider"></div>
-												<a class="dropdown-item"
-													href="/customer/CustomerConfirmPass.do">Setting</a>
-											</div></li>
+												<a class="dropdown-item" href="/customer/CustomerConfirmPass.do">Setting</a>
+											</div>
+										</li>
 										<!--로그아웃-->
 										<li class="nav-item"><a class="nav-link" href="/LogOut.do">
 												Sign Out </a></li>
@@ -149,7 +143,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 							</ul>
 						</div>
-					</div>
+<!-- 					</div> -->
 				</nav>
 			</div>
 		</div>
@@ -190,6 +184,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 </body>
 
+<!-- 검색버튼 모달 스크립트 -->
+<script src="/resources/js/theme.bundle.js"></script>
+<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
+
 <!-- 검색모달 기능 JS  -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
@@ -200,10 +198,6 @@ if (window.event.keyCode == 13) {
  }
 }
 </script>
-
-<!-- 검색버튼 모달 스크립트 -->
-<script src="/resources/js/theme.bundle.js"></script>
-<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
 
 
 <script type="text/javascript">
@@ -225,7 +219,5 @@ if (window.event.keyCode == 13) {
 		})
 	}
 </script>
-
-
 
 </html>

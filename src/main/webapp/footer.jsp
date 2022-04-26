@@ -121,10 +121,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 </body>
 
-<!-- 검색버튼 모달 스크립트 -->
-<script src="/resources/js/theme.bundle.js"></script>
-<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
-
 <!-- 커서 스크립트 -->
 <script src="/resources/vendor/node_modules/js/cursor.js"></script>
 
