@@ -58,7 +58,8 @@ public class ExhibitionVO {
 	         this.t_file_name_en=UUID.randomUUID().toString().replaceAll("-","")+fileExtension;
 	         //***********************************************
 	         // 해당 경로로 변경
-	         File f = new File("C:\\Users\\human\\Desktop\\STS4\\thirdProject\\src\\main\\webapp\\resources\\img\\exhibition_sub\\"+t_file_name_en);
+	         //	File f = new File("C:\\Users\\human\\Desktop\\STS4\\thirdProject\\src\\main\\webapp\\resources\\img\\exhibition_sub\\"+t_file_name_en);
+	         File f = new File("C:\\project\\thirdProject\\src\\main\\webapp\\resources\\img\\exhibition_imgs\\"+t_file_name_en);
 	         try {
 	        	 file_sub.transferTo(f);
 	            setExhibition_contents("/resources/img/exhibition_sub/"+t_file_name_en);
@@ -93,7 +94,8 @@ public class ExhibitionVO {
 	         this.t_file_name_en=UUID.randomUUID().toString().replaceAll("-","")+fileExtension;
 	         //***********************************************
 	         // 해당 경로로 변경
-	         File f = new File("C:\\Users\\human\\Desktop\\STS4\\thirdProject\\src\\main\\webapp\\resources\\img\\exhibition_imgs\\"+t_file_name_en);
+	         //	File f = new File("C:\\Users\\human\\Desktop\\STS4\\thirdProject\\src\\main\\webapp\\resources\\img\\exhibition_imgs\\"+t_file_name_en);
+	         File f = new File("C:\\project\\thirdProject\\src\\main\\webapp\\resources\\img\\exhibition_imgs\\"+t_file_name_en);
 	         try {
 	            file.transferTo(f);
 	            setExhibition_image("/resources/img/exhibition_imgs/"+t_file_name_en);
