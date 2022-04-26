@@ -3,7 +3,7 @@
 	
 <%request.setCharacterEncoding("UTF-8");%>
 <%
-Object companyId = session.getAttribute("=companyId");
+Object companyId = session.getAttribute("companyId");
 Object companyName = session.getAttribute("companyName");
 // 세션 연결
 if (session.getAttribute("companyId") == null) {
@@ -69,7 +69,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 				<div class="row pt-lg-7">
 					<div class="col-lg-7">
 						<h1 class="mb-2 display-4">Thank You,</h1>
-						<p class="lead mb-0 text-muted"><%=companyName %></p>
+						<p class="lead mb-0 text-muted">See you again</p>
 					</div>
 				</div>
 			</div>
@@ -80,7 +80,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			<div class="container pt-12 pb-lg-16 ">
 				<div class="row pt-lg-5 pb-5 justify-content-center text-center">
 					<div class="col-xl-4">
-						<div class="width-8x height-8x rounded-circle position-relative bg-success text-white flex-center mb-5">
+						<div class="width-8x height-8x rounded-circle position-relative bg-dark text-white flex-center mb-5">
 							<i class="bx bx-check lh-1 display-5 fw-normal"></i>
 						</div>
 						<h4 class="display-4 mb-3">Good Bye !</h4>
