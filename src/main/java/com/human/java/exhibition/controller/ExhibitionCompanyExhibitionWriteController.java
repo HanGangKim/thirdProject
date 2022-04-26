@@ -39,8 +39,13 @@ public class ExhibitionCompanyExhibitionWriteController {
 //		try(
 //				// 맥일 경우 
 //				//FileOutputStream fos = new FileOutputStream("/tmp/" + file.getOriginalFilename());
+//				// 윈도우일 경우 
+//				// FileOutputStream fos = new FileOutputStream("C:/Users/human/Desktop/STS4/thirdProject/src/main/webapp/resources/img/exhibition_imgs/" + file.getOriginalFilename());
+//				//				
 //				// 윈도우일 경우
-//				FileOutputStream fos = new FileOutputStream("C:/Users/human/Desktop/STS4/thirdProject/src/main/webapp/resources/img/exhibition_imgs/" + file.getOriginalFilename());
+//				FileOutputStream fos = new FileOutputStream("C:/project/thirdProject/src/main/webapp/resources/img/exhibition_imgs" + file.getOriginalFilename());
+//				
+//				
 //				
 //				InputStream is = file.getInputStream();
 //				){
@@ -53,7 +58,7 @@ public class ExhibitionCompanyExhibitionWriteController {
 //		}catch(Exception ex){
 //			throw new RuntimeException("file Save Error");
 //		}
-		
+//		
 		exhibitionService.companyInsertExhibition(vo);
 	
 		return "/Company/CompanyWriteWaiting";

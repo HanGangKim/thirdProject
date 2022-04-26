@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%request.setCharacterEncoding("UTF-8");%>
 <%
-Object companyId = session.getAttribute("=companyId");
+Object companyId = session.getAttribute("companyId");
 Object companyName = session.getAttribute("companyName");
 // 세션 연결
 if (session.getAttribute("companyId") == null) {
@@ -197,7 +197,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 													<label for="profile_address" class="form-label">Memo</label>
 													<input name="exhibition_memo" type="text"
 														id="exhibition_memo" class="form-control"
-														placeholder="Please enter the contents.">
+														placeholder="Please enter the contents."
+														>
 												</div>
 												<!--대표사진 첨부파일-->
 												<div class="col-12 mb-3">
