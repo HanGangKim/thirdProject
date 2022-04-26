@@ -82,6 +82,8 @@ public class CompanyDAOImpl implements CompanyDAO {
 		System.out.println(vo.getCompany_id());
 		System.out.println("===============");
 		
+		mybatis.delete("companyMapper.companyExhibitionDelete",vo);
+		
 		return mybatis.delete("companyMapper.companyTotalDelete",vo);
 	}
 }

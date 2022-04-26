@@ -78,8 +78,14 @@
 	WHERE COMPANY_ID = #{company_id} AND COMPANY_EMAIL = #{company_email}
 	</select>
 	
+	<delete id="companyExhibitionDelete" parameterType="company">
+	DELETE FROM EXHIBITION_INFO
+	WHERE COMPANY_ID = #{company_id}
+	
+	</delete>
+	
 	<delete id="companyTotalDelete" parameterType="company">
-	DELETE FROM COMPANY_INFO
+	DELETE FROM COMPANY_INFO	
 	WHERE COMPANY_ID = #{company_id}
 	
 	
