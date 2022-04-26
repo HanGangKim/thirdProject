@@ -82,34 +82,12 @@ span.card-hover-2-footer-link:after {
 
 <body>
 
-	<!--Preloader Spinner-->
-	<div class="spinner-loader bg-gradient-secondary text-white">
-		<div class="spinner-border text-primary" role="status"></div>
-		<span class="small d-block ms-2">Loading...</span>
-	</div>
-
-	<!-- header -->
-	<header class="z-index-fixed header-transparent header-absolute-top">
-		<div class="container ">
-			<nav class="navbar navbar-expand-lg navbar-light navbar-link-white">
-				<div class="container  position-relative navbar-no-collapse-items">
-					<a class="navbar-brand nav-item" href="/company/CompanyMain.do" style="margin: 0;"> 
-						<img src="/resources/img/logo/white-logo.png" class="img-fluid">
-					</a>
-					
-					<div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
-                       <div class="nav-item me-3 me-lg-0">
-                           <a href="/LogOut.do" class="btn btn-success btn-sm rounded-pill">Sign Out</a>
-                       </div>
-                    </div>
-				</div>
-			</nav>
-		</div>
-	</header>
+	<jsp:include page="/headerCompany.jsp" />
 	
 	
 	<!--Main content-->
 	<main>
+		<!-- 페이지 헤더 -->
 		<section id="page-header" class="position-relative bg-dark text-white overflow-hidden">
 			<div class="container pt-12 pb-10">
 				<div class="row pt-lg-7">
@@ -120,7 +98,9 @@ span.card-hover-2-footer-link:after {
 				</div>
 			</div>
 		</section>
+		<!-- ./페이지 헤더 -->
 
+		<!-- 내용 -->
 		<section class="position-relative hr-linear-bottom bg-white">
 			<div class="container py-9 py-lg-11 position-relative z-index-1">
 				<div id="projects" data-isotope='{"layoutMode": "masonry"}' class="row">
@@ -168,19 +148,10 @@ span.card-hover-2-footer-link:after {
 				</div>
 			</div>
 		</section>
-
-
-
+		<!-- ./내용 -->
 	</main>
 
-	<jsp:include page="/footer.jsp" />
-
-<!-- 더보기 버튼 구현 ajax -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-<script type="text/javascript">
-</script>
-
+	<jsp:include page="/footerCompany.jsp" />
 
 
 

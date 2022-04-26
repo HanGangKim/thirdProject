@@ -51,35 +51,30 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <link href="/resources/css/theme.min.css" rel="stylesheet">
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
-<title>Welcome!</title>
+<title>Waiting...</title>
 
 </head>
 
 <body>
-	<!--Preloader Spinner-->
-	<div class="spinner-loader bg-tint-primary">
-		<div class="spinner-border text-primary" role="status"></div>
-		<span class="small d-block ms-2">Loading...</span>
-	</div>
-
+	
 	<jsp:include page="/header.jsp" />
 
+	
 	<!--Main content-->
-	<main class="main-content" id="main-content">
-		<section class="position-relative">
-			<div class="container pt-14 pb-9 pb-lg-11">
-				<div class="row pt-lg-7 justify-content-center text-center">
-					<div class="col-xl-8">
-						<div
-							class="width-10x height-10x rounded-circle position-relative bg-success text-white flex-center mb-4">
-							<i class="bx bx-check lh-1 display-4 fw-normal"></i>
+	<main class="main-content " id="main-content">
+		<section class="position-relative ">
+			<div class="container pt-12 pb-lg-16 ">
+				<div class="row pt-lg-5 pb-5 justify-content-center text-center">
+					<div class="col-xl-4">
+						<div class="width-8x height-8x rounded-circle position-relative bg-dark text-white flex-center mb-5">
+							<i class="bx bx-dots-horizontal-rounded lh-1 display-5 fw-normal"></i>
 						</div>
-						<h1 class="display-2 mb-3">가입 심사중입니다.</h1>
-						<p class="mb-5 lead mx-auto">가입 승인까지는 2 ~ 3일정도 소요됩니다.</p>
-						<p class="mb-5 lead mx-auto">일반회원으로는 누구나 가입할 수 있어요!</p>
-						<a href="/customer/CustomerSignUp.do" class="btn btn-outline-primary btn-lg">
-						Customer Sign In</a>
-
+						<h4 class="display-4 mb-3">Sign Up Waiting ...</h4>
+						<p class="mb-2 lead mx-auto">가입 승인까지는 2~3일정도 소요됩니다.</p>
+						<p class="mb-5 lead mx-auto fs-6">일반회원으로는 누구나 가입할 수 있어요!</p>
+						<div class="mx-auto">
+							<a href="/customer/Agreement.do" class="btn btn-primary mb-2 d-grid">Member Sign Up</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -88,16 +83,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 
 	<jsp:include page="/footer.jsp" />
-
-
-	<!-- begin Back to Top button -->
-	<a href="#" class="toTop"> <i class="bx bxs-up-arrow"></i>
-	</a>
-	
-	<!--cursor-->
-	<div class="cursor">
-		<div class="cursor__inner"></div>
-	</div>
 
 </body>
 
