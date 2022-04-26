@@ -75,7 +75,7 @@ if (session.getAttribute("userId") == null) {
 					
 					<div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
                        <div class="nav-item me-3 me-lg-0">
-                           <a href="/LandingSignUp.do" class="btn btn-success btn-sm rounded-pill" style="background-color: #F15B66; border: 0;">Sign Up</a>
+                           <a href="/LandingSignUp.do" class="btn btn-primary btn-sm rounded-pill">Sign Up</a>
                        </div>
                     </div>
 				</div>
@@ -100,7 +100,7 @@ if (session.getAttribute("userId") == null) {
 			</div>
 			<div class="container position-relative z-index-1">
 				<div class="row d-flex align-items-center justify-content-center text-center">
-					<div class="col-xl-11">
+					<div class="col-xl-11 col-11">
 
 						<div class="container py-lg-9 position-relative z-index-1">
 
