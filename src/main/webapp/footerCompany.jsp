@@ -53,7 +53,7 @@ if (session.getAttribute("companyId") == null) {
 
 	<!--Footer Start-->
 	<footer id="footer" class="bg-dark">
-	    <div class="container pt-9 pt-lg-11 pb-5">
+	    <div class="container col-11 pt-9 pt-lg-11 pb-5">
 	        <div class="row text-light">
 	            <div class="col-sm-7 mb-4 mb-sm-0">
 	                <!--Address-->

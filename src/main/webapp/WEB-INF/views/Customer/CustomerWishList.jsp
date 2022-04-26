@@ -103,7 +103,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		<section class="position-relative bg-white">
 			<div class="container pb-7 pb-lg-12 pt-7 position-relative">
 				<div class="row justify-content-between">
-					<div class="col-lg-10 mx-auto">
+					<div class="col-lg-10  mx-auto">
 
 						<!--Cart table start-->
 						
@@ -127,7 +127,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										<tr>
 											<td><img src="${vo.exhibition_image}" class="width-7x rounded-3"></td>
 											<td style="width: 36%">
-												<a href="/exhibition/ExhibitionDetail.do?id=${vo.exhibition_id}" class="text-dark h5">${vo.exhibition_title}</a>
+												<a href="/exhibition/ExhibitionDetail.do?id=${vo.exhibition_id}" class="text-dark h6">${vo.exhibition_title}</a>
 											</td>
 											<td>${vo.exhibition_total_date}</td>
 											<td>${vo.exhibition_location}</td>

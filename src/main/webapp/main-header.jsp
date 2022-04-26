@@ -56,7 +56,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	<header class="z-index-fixed header-absolute-top header-transparent header-boxed header-sticky">
 
 		<div class="navbar-boxed">
-			<div class="container">
+			<div class="container col-11">
 				<nav class="navbar navbar-expand-lg navbar-dark rounded-lg-4">
 					<!-- 로고 -->
 					<a class="navbar-brand" href="/CustomerMain.do"> 

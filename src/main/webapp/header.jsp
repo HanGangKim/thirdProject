@@ -61,7 +61,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	<header class="z-index-fixed header-transparent header-boxed">
 
 		<div class="navbar-boxed">
-			<div class="container">
+			<div class="container col-11">
 				<nav class="navbar navbar-expand-lg navbar-light rounded-lg-4">
 <!-- 					<div class="container position-relative"> -->
 						<!-- 로고 -->

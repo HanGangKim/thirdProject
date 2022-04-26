@@ -67,7 +67,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		    	</svg>
 
 
-		<div class="container pt-9 pt-lg-11 pb-7 position-relative z-index-1">
+		<div class="container col-11 pt-9 pt-lg-11 pb-7 position-relative z-index-1">
 			<div class="row mb-7">
 				<div class="col-md-4 mb-5 mb-md-0 text-md-center order-md-2">
 					<!-- 로고 -->

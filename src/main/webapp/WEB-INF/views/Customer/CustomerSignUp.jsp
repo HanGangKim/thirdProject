@@ -99,7 +99,7 @@ div.choices__list--single select option:disabled {
 		<section class="bg-white position-relative">
 			<div class="container pt-11 pt-lg-14 pb-9 pb-lg-11 position-relative z-index-1">
 				<div class="row align-items-center justify-content-center">
-					<div class=" col-xl-4 col-lg-5 col-md-6 col-sm-8 z-index-2">
+					<div class="col-11 col-xl-4 col-lg-5 col-md-6 col-sm-8 z-index-2">
 
 						<h2 class="mb-1 display-6">Member Sign Up</h2>
 						<p class="mb-4 text-muted">To get started, Please signup with

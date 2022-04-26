@@ -89,7 +89,7 @@ span.card-hover-2-footer-link:after {
 	<main>
 		<!-- 페이지 헤더 -->
 		<section id="page-header" class="position-relative bg-dark text-white overflow-hidden">
-			<div class="container pt-12 pb-10">
+			<div class="container col-11 pt-12 pb-10">
 				<div class="row pt-lg-7">
 					<div class="col-lg-7">
 						<h1 class="mb-2 display-4"><%=companyName %></h1>
@@ -102,7 +102,7 @@ span.card-hover-2-footer-link:after {
 
 		<!-- 내용 -->
 		<section class="position-relative hr-linear-bottom bg-white">
-			<div class="container py-9 py-lg-11 position-relative z-index-1">
+			<div class="container col-11 py-9 py-lg-11 position-relative z-index-1">
 				<div id="projects" data-isotope='{"layoutMode": "masonry"}' class="row">
 
 					<!-- 전시회 등록 수정&조회 -->

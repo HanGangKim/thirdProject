@@ -65,7 +65,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	<main class="main-content " id="main-content">
 		<!-- 페이지 헤더 -->
 		<section id="page-header" class="position-relative bg-dark text-white overflow-hidden">
-			<div class="container pt-12 pb-10">
+			<div class="container col-11 pt-12 pb-10">
 				<div class="row pt-lg-7">
 					<div class="col-lg-7">
 						<h1 class="mb-2 display-4">Thank You,</h1>

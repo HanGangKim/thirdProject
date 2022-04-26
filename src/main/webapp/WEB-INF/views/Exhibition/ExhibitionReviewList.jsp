@@ -102,7 +102,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 		<!-- 전시회 검색 섹션 -->
 		<section class="top-0">
-			<div class="container">
+			<div class="container col-11">
 				<form action="/exhibition/getReviewList.do"
 				class="position-relative z-index-1 mt-n7 px-3 pb-3 pt-3 bg-white border rounded-3">
 					<div class="row mx-0 g-2 align-items-center">
@@ -125,7 +125,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 		<!-- 리뷰 리스트 -->
 		<section class="position-relative bg-white">
-			<div class="container py-9 py-lg-11">
+			<div class="container col-11 py-9 py-lg-11">
 				<div class="row mb-5" id="more_list">
 					<c:forEach items="${reviewList}" var="vo" varStatus="status">
 						<div class="col-md-6 col-lg-4">
@@ -250,7 +250,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 					</c:forEach>
 				</div>
 
-				<div class="d-grid d-sm-flex justify-content-sm-center" onclick="loadMoreAjax()">
+				<div class="d-grid d-sm-flex col-11 justify-content-center justify-content-sm-center" onclick="loadMoreAjax()">
 					<a class="btn btn-outline-dark rounded-pill btn-lg btn-hover-text" >
 						<span class="btn-hover-label label-default">Load more</span> 
 						<span class="btn-hover-label label-hover">Load more</span>

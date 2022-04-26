@@ -82,7 +82,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			<div class="container pt-11 pt-lg-14 pb-9 pb-lg-11 position-relative z-index-1">
 				<div class="row align-items-center justify-content-center">
 
-					<div class=" col-xl-4 col-lg-5 col-md-6 col-sm-8 z-index-2">
+					<div class=" col-xl-4 col-11 col-lg-5 col-md-6 col-sm-8 z-index-2">
 
 						<h2 class="mb-1 display-6">Terms & Conditions</h2>
 						<p class="mb-4 text-muted">To get started company, Please signup with details...</p>
@@ -93,7 +93,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									<div class="terms__check__all">
 										<input type="checkbox" name="checkAll" id="checkAll" /> <label
 											for="checkAll">Fiennale 이용약관, 개인정보 수집 및 이용, 프로모션 정보
-											수신에<br />모두 동의합니다.
+											수신에 모두 동의합니다.
 										</label>
 									</div>
 									<ul class="terms__list" style="padding: 0;">
