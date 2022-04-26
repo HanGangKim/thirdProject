@@ -89,11 +89,11 @@ if (session.getAttribute("userId") == null) {
 
 		<section class="vh-100 position-relative bg-shade-dark text-white jarallax overflow-hidden" data-jarallax=".3" id="hero">
 			<!--Parallax background-->
-			<div class="container position-relative pt-lg-10 ">
-				<div class="row pt-lg-7">
+			<div class="container position-relative pt-10 pt-lg-10 ">
+				<div class="row mb-2 mb-lg-0 pt-lg-7">
 					<div class="text-center">
 						<h1 class="display-4 mb-2">Sign In</h1>
-						<p class="lead mb-0 text-muted">Please Select Member Or Company</p>
+						<p class="lead text-muted">Please Select Member Or Company</p>
 					</div>
 				</div>
 <!-- 				/.row -->
