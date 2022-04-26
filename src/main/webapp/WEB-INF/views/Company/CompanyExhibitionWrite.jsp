@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%request.setCharacterEncoding("UTF-8");%>
 <%
-Object companyId = session.getAttribute("=companyId");
+Object companyId = session.getAttribute("companyId");
 Object companyName = session.getAttribute("companyName");
 // 세션 연결
 if (session.getAttribute("companyId") == null) {
@@ -60,106 +60,90 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 .choices__list--single {
 	padding: 0px;
 }
+
+input.form-control[readonly] {
+	background-color: white;
+}
 </style>
 </head>
 
 <body>
 
+	<jsp:include page="/headerCompany.jsp" />
 
-	<!--Main content-->
+
 	<main>
-		<!--Page header start-->
-		<section class="position-relative bg-dark text-white overflow-hidden">
-			<svg class="position-absolute end-0 top-0 text-primary width-14x h-auto w-lg-20"
-				width="450" height="426" viewBox="0 0 450 426" fill="none"
-				xmlns="http://www.w3.org/2000/svg">
-        		<g clip-path="url(#clipPageHeader)">
-          		<path fill-rule="evenodd" clip-rule="evenodd"
-					d="M298.999 -192.241C355.489 -184.29 381.574 -118.483 421.706 -77.9221C452.436 -46.8634 475.477 -12.1582 507.054 18.0386C563.019 71.558 665.455 91.3474 678.539 167.687C690.554 237.781 626.362 310.281 562.498 341.514C500.548 371.812 427.798 307.451 360.652 323.154C299.843 337.375 269.726 418.21 207.597 424.514C139.082 431.466 55.4816 414.802 16.3827 358.087C-23.1945 300.678 21.5018 222.882 20.5205 153.15C19.6978 94.6861 -14.5698 34.0886 11.0842 -18.4478C36.6541 -70.8118 102.021 -85.7884 151.898 -115.896C200.173 -145.036 243.168 -200.099 298.999 -192.241Z"
-					fill="currentColor" />
-        		</g>
-        		<defs>
-          		<clipPath id="clipPageHeader">
-            		<rect width="450" height="426" fill="white" />
-		          </clipPath>
-		        </defs>
-			</svg>
-			<img src="/resources/img/vectors/dec-brush1.svg"
-				class="position-absolute end-0 top-0 me-2 mt-2 me-lg-5 mt-lg-5 fill-warning width-8x h-auto"
-				data-inject-svg alt="">
-			<div class="container py-11 py-lg-15 position-relative">
-				<div class="row align-items-center">
-					<div class="col-lg-10 mx-auto text-center">
-						<nav class="d-flex justify-content-center" aria-label="breadcrumb">
-							<ol class="breadcrumb mb-3">
-								<li class="breadcrumb-item"><a href="#!">Home</a></li>
-								<li class="breadcrumb-item active">Insert Exhibition Info</li>
-							</ol>
-						</nav>
-						<h1 class="mb-0 display-3">Insert Exhibition Info</h1>
+		<!-- 페이지 헤더 -->
+		<section id="page-header" class="position-relative bg-dark text-white overflow-hidden">
+			<div class="container pt-12 pb-10">
+				<div class="row pt-lg-7">
+					<div class="col-lg-7">
+						<h1 class="mb-2 display-4">Insert Exhibition</h1>
+						<p class="lead mb-0 text-muted"><%=companyName %></p>
 					</div>
 				</div>
-				<!--/.row-->
 			</div>
 		</section>
-
+		<!-- ./페이지 헤더 -->
+		
+		<!-- 내용 -->
 		<section class="position-relative">
 			<div class="container position-relative">
 				<div class="overflow-hidden">
-					<!--Profile info header-->
 					<div class="position-relative pt-5 pb-9 pb-lg-11">
 						<div class="row">
 							<div class="col-lg-9 mx-auto">
 								<div class="pt-5 d-flex flex-column h-100">
 									<div class="card shadow p-3 mb-3">
-										<h5 class="mb-4">Update Exhibition</h5>
+										<h5 class="mb-4">Insert Exhibition Info</h5>
 
 										<!-- form 태그시작  -->
 										<form action="/exhibition/exhibitionCompanyExhibitionWrite.do" method="post" enctype="multipart/form-data">
 											<div class="row align-items-center">
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
-													<label class="form-label" for="profile_com">Id</label> <input
-														name="company_id" value="<%=companyId%>"
-														type="text" class="form-control" id="profile_com" readonly>
+													<label class="form-label" for="profile_com">Company</label> 
+													<input name="company_id" value="<%=companyId%>" type="hidden" class="form-control" id="profile_com" readonly>
+													<input value="<%=companyName%>" style="background-color: #f9f9f9;" type="text" class="form-control" readonly>
 												</div>
-
 											
 												<!--등록 전시회 제목-->
 												<div class="col-md-6 mb-3">
-													<label class="form-label" for="profile_com">Exhibition title</label> <input name="exhibition_title" type="text"
+													<label class="form-label" for="profile_com">Exhibition Title</label> 
+													<input name="exhibition_title" type="text"
 														class="form-control" id="profile_com"
-														placeholder="전시 제목을 입력해주세요." required="required">
+														placeholder="Please enter the title." required="required">
 												</div>
 
 												<!--시작날짜-->
 												<div class="col-md-6 mb-3">
-													<label class="form-label" for="profile_com">Start date</label> 
-														<input name="exhibition_start_date" type="date" class="form-control" id="start_date"
+													<label class="form-label" for="profile_com">Start Date</label> 
+													<input name="exhibition_start_date" type="date" class="form-control" id="start_date"
 														placeholder="전시 시작일을 입력해주세요." required="required" data-flatpickr>
 												</div>
 												
 												
 												<!--종료날짜-->
 												<div class="col-md-6 mb-3">
-													<label class="form-label" for="profile_com">End date</label> 
-														<input name="exhibition_end_date" type="date" class="form-control" id="end_date"
+													<label class="form-label" for="profile_com">End Date</label> 
+													<input name="exhibition_end_date" type="date" class="form-control" id="end_date"
 														placeholder="전시 종료일을 입력해주세요." required="required" data-flatpickr>
 												</div>
 												
 												
 												<!--전체날짜-->
 												<div class="col-md-6 mb-3">
-													<label class="form-label" for="profile_com">Total date</label> 
+													<label class="form-label" for="profile_com">Total Date</label> 
 														<input name="exhibition_total_date" type="date" class="form-control" id="total_date"
 														placeholder="전시 기간을 입력해주세요." required="required" data-flatpickr='{"mode":"range"}'>
 												</div>		
 												
 												<!--금액-->
 												<div class="col-md-6 mb-3">
-													<label class="form-label" for="profile_com">Price</label> <input name="exhibition_price" type="number"
+													<label class="form-label" for="profile_com">Price</label> 
+													<input name="exhibition_price" type="number"
 														class="form-control" id="profile_com"
-														placeholder="전시 금액을 입력해주세요." required="required">
+														placeholder="Please enter the price." required="required">
 												</div>
 												<!-- 금액 끝 -->
 												
@@ -167,11 +151,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<div class="d-flex col-md-12 mb-3" style="justify-content: space-between;">
 													<div class="col-md-10 me-4">
 														<label class="form-label" for="profile_com">Location</label> 
-														<input name="exhibition_location" type="text" class="form-control" id="sample2_address" placeholder="adress" readonly="readonly" required="required">
-														<!-- 주소모달 호출 버튼 -->
-														<!-- <input type="button" onclick="sample2_execDaumPostcode()" value="우편번호 찾기"><br> -->
-														
-														
+														<input name="exhibition_location" type="text" class="form-control" id="sample2_address" placeholder="adress" required="required">
 														
 														<!-- 주소 모달창 -->
 														<!-- iOS에서는 position:fixed 버그가 있음, 적용하는 사이트에 맞게 position:absolute 등을 이용하여 top,left값 조정 필요 -->
@@ -184,7 +164,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 														<input type="text" id="sample2_detailAddress" placeholder="상세주소" hidden>
 														<input type="text" id="sample2_extraAddress" placeholder="참고항목" hidden>
 													</div>
-													<!--주소 모달 버튼-->
+													<!--주소 검색 버튼-->
 													<div class="mt-5">
 <!-- 															<label class="form-label" for="profile_com"></label>  -->
 														<a onclick="sample2_execDaumPostcode()" class="d-block btn btn-dark">Search</a>
@@ -199,33 +179,29 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 														id="exhibition_memo" class="form-control"
 														placeholder="Please enter the contents.">
 												</div>
+												
 												<!--대표사진 첨부파일-->
 												<div class="col-12 mb-3">
 													<label for="profile_address" class="form-label">Main Image</label>
-
 													<!-- 이미지 업로드전까지 DEFAULT_IMG 벨류 부여 -->
 													<!-- 이미지 업로드 전까지 file->text 변경  -->
 													<input name="file" value="DEFAULT_IMG" type="file"
 														id="file" class="form-control" accept="image/*">
 												</div>
+												
 												<!--상세사진 첨부파일-->
 												<div class="col-12">
 													<label for="profile_address" class="form-label">Sub Image</label>
-
 													<!-- 이미지 업로드전까지 DEFAULT_IMG 벨류 부여 -->
 													<!-- 이미지 업로드 전까지 file->text 변경  -->
-
 													<input name="file_sub" value="DEFAULT_IMG" type="file"
 														id="file_sub" class="form-control" accept="image/*">
-
-													
-
 												</div>
 											</div>
 											<hr class="mt-5 mb-3">
 											<!--저장 버튼-->
 											<div class="text-end">
-												<button type="submit" class="btn btn-primary">Update Exhibition</button>
+												<button type="submit" class="btn btn-primary">Insert Exhibition</button>
 											</div>
 										</form>
 										<!-- form 태그 종료 -->
@@ -240,7 +216,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 	</main>
 	
-	
+	<jsp:include page="/footerCompany.jsp" />
 		
 
 </body>

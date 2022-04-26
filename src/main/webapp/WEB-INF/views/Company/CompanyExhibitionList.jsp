@@ -72,34 +72,12 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 <body>
 	
-	<!--Preloader Spinner-->
-	<div class="spinner-loader bg-gradient-secondary text-white">
-		<div class="spinner-border text-primary" role="status"></div>
-		<span class="small d-block ms-2">Loading...</span>
-	</div>
-	
-	<!-- header -->
-	<header class="z-index-fixed header-transparent header-absolute-top">
-		<div class="container ">
-			<nav class="navbar navbar-expand-lg navbar-light navbar-link-white">
-				<div class="container  position-relative navbar-no-collapse-items">
-					<a class="navbar-brand nav-item" href="/company/CompanyMain.do" style="margin: 0;"> 
-						<img src="/resources/img/logo/white-logo.png" class="img-fluid">
-					</a>
-					
-					<div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
-                       <div class="nav-item me-3 me-lg-0">
-                           <a href="/LogOut.do" class="btn btn-success btn-sm rounded-pill">Sign Out</a>
-                       </div>
-                    </div>
-				</div>
-			</nav>
-		</div>
-	</header>
+	<jsp:include page="/headerCompany.jsp" />
 
 
 	<!--Main content start-->	
 	<main>
+		<!-- 페이지 헤더 -->
 		<section id="page-header" class="position-relative bg-dark text-white overflow-hidden">
 			<div class="container pt-12 pb-10">
 				<div class="row pt-lg-7">
@@ -110,18 +88,20 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 				</div>
 			</div>
 		</section>
+		<!-- ./페이지 헤더 -->
 
+		<!-- 내용 -->
 		<section class="position-relative hr-linear-bottom bg-white">
 			<div class="container  position-relative py-lg-11">
 				<c:forEach items="${CompanyExhibitionList}" var="vo">
+					<!-- 카드 -->
 					<div class="row position-relative overflow-hidden hover-lift hover-shadow-lg shadow rounded-4 border flex-sm-row mb-6 align-items-center">
-
 						<div class="col-md-6 col-lg-5 p-0 p-lg-0">
 							<div class="overflow-hidden">
-								<img src="/resources/img/960x900/1.jpg" class="img-fluid card-img img-zoom">
+								<img src="/resources/img/960x900/1.jpg" class="img-fluid img-zoom">
 							</div>
 						</div>
-						<div class="col-sm-7 py-sm-5 col-12 col-lg-6 ms-5 px-5">
+						<div class="col-sm-7 py-sm-5 col-12 col-lg-6 ms-7 px-5">
 							<!-- 업체 id -->
 							<div class="d-flex mb-3 align-items-center">
 								<span class="text-muted me-3">Company Id</span> 
@@ -148,181 +128,60 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								<strong>${vo.exhibition_total_date}</strong>
 							</div>
 							<!-- 전시 금액 -->
-							<div class="d-flex mb-5 align-items-center">
+							<div class="d-flex mb-3 align-items-center">
 								<span class="text-muted me-3">Price</span> 
 								<strong>${vo.exhibition_price}</strong>
 							</div>
-							
-<!-- 							<div class="d-flex justify-content-start w-100 pb-3 align-items-center"> -->
-<!-- 								<small class="text-muted">전시회 등록정보</small> -->
+							<!-- 승인 상태 -->
+							<div class="d-flex mb-6 align-items-center">
+								<span class="text-muted me-3">Flag</span> 
+								<strong>${vo.exhibition_flag}</strong>
+							</div>
+							<!-- 버튼 div -->
+							<div class="col-md-6 pb-4 pb-md-0">
+								<!-- 수정버튼 -->
+								<form action="/exhibition/CompanyExhibitionDetail.do" method="post">
+									<div class="mb-2 d-grid">
+										<input name="company_id" value="${vo.company_id}"
+											hidden="hidden"> <input name="exhibition_id"
+											value="${vo.exhibition_id}" hidden="hidden">
+										<button type="submit" class="btn btn-outline-dark">수정</button>
+									</div>
+								</form>
 
-<!-- 							</div> -->
-							
-<!-- 							<div> -->
-<!-- 								<h6>등록한 전시회 정보입니다.</h6> -->
-<!-- 								<table> -->
-<!-- 									<tr> -->
-<%-- 										<td><h4>업체ID : ${vo.company_id}</h4></td> --%>
-<!-- 									</tr> -->
-
-<!-- 									<tr> -->
-<%-- 										<td><h6>등록 전시회 ID : ${vo.exhibition_id}</h6></td> --%>
-<!-- 									</tr> -->
-
-<!-- 									<tr> -->
-<%-- 										<td><h6>등록 전시회 제목 : ${vo.exhibition_title}</h6></td> --%>
-<!-- 									</tr> -->
-<!-- 									<tr> -->
-<%-- 										<td><h6>등록 전시회 내용 : ${vo.exhibition_contents}</h6></td> --%>
-<!-- 									</tr> -->
-<!-- 									<tr> -->
-<%-- 										<td><h6>등록 전시회 날짜 : ${vo.exhibition_total_date}</h6></td> --%>
-<!-- 									</tr> -->
-<!-- 									<tr> -->
-<%-- 										<td><h6>등록 전시회 금액 : ${vo.exhibition_price}</h6></td> --%>
-<!-- 									</tr> -->
-<!-- 									<tr> -->
-<%-- 										<td><h6>승인 상태 : ${vo.exhibition_flag}</h6></td> --%>
-<!-- 									</tr> -->
-
-<!-- 								</table> -->
-
-<!-- 								<br> <br> -->
-<!-- 							</div> -->
-								
-								<div class="col-md-6 pb-4 pb-md-0">
-									<form action="/exhibition/CompanyExhibitionDetail.do" method="post">
-										<div class="mb-2 d-grid">
-											<input name="company_id" value="${vo.company_id}"
-												hidden="hidden"> <input name="exhibition_id"
-												value="${vo.exhibition_id}" hidden="hidden">
-											<button type="submit" class="btn btn-primary">수정</button>
-										</div>
-									</form>
-									
-									<form action="/exhibition/exhibitionCompanyExhibitionDelete.do" method="post">
-										<div class="d-grid">
-											<input name="company_id" value="${vo.company_id}"
-												hidden="hidden"> <input name="exhibition_id"
-												value="${vo.exhibition_id}" hidden="hidden">
-											<button type="submit" class="btn btn-primary">삭제</button>
-										</div>
-									</form>
-								</div>
+								<!-- 삭제버튼 -->
+								<form action="/exhibition/exhibitionCompanyExhibitionDelete.do" method="post">
+									<div class="d-grid">
+										<input name="company_id" value="${vo.company_id}"
+											hidden="hidden"> <input name="exhibition_id"
+											value="${vo.exhibition_id}" hidden="hidden">
+										<button type="submit" class="btn btn-dark ">삭제</button>
+									</div>
+								</form>
+							</div>
+							<!-- ./ 버튼 div -->
 						</div>
-
-						<!-- <a href="#" class="stretched-link"></a> -->
-
 					</div>
+					<!-- ./카드 -->
 				</c:forEach>
 
-
 				<!-- 버튼 -->
-				<div
-					class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-center">
-					<!--전시회 목록보기-->
-					<div class="mb-3 mb-sm-0"></div>
-					<!--예매하기 버튼-->
-					<div>
-						<a href="/company/CompanyExhibitionWrite.do"
-							class="btn btn-primary">New exhibition</a>
+				<div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-center">
+					<div class="mb-3 mb-sm-0">
+<!-- 						<a href="/company/CompanyMain.do" class="btn btn-primary">Go MainPage</a> -->
+					</div>
+					<!-- 새 전시회 등록 -->
+					<div class="mb-3 mb-sm-0">
+						<a href="/company/CompanyExhibitionWrite.do" class="btn btn-primary">New exhibition</a>
 					</div>
 				</div>
-
-				<br>
-
-				<!-- 버튼 -->
-				<div
-					class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-center">
-					<!--전시회 목록보기-->
-					<div class="mb-3 mb-sm-0"></div>
-					<!--예매하기 버튼-->
-					<div>
-						<a href="/company/CompanyMain.do" class="btn btn-primary">Go
-							MainPage</a>
-					</div>
-				</div>
-
-
 
 			</div>
-
-
-
-
-
-
 		</section>
-		<!--/.Article header-end-->
-		<!--/.content section/-->
-
-
-
+		<!-- ./내용 -->
 	</main>
 
-	<!--Footer Start-->
-	<footer id="footer"
-		class="overflow-hidden position-relative bg-dark text-white">
-		<!--Divider-->
-		<svg class="position-absolute start-0 bottom-0 text-gray-800 h-40"
-			preserveAspectRatio="none" width="100%" height="250"
-			viewBox="0 0 1200 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path opacity="0.1" fill-rule="evenodd"
-				clip-rule="evenodd"
-				d="M0 62.5L22 46.875C44 31.25 89 0 133 0C178 0 222 31.25 267 72.9167C311 114.583 356 166.667 400 187.5C444 208.333 489 197.917 533 182.292C578 166.667 622 145.833 667 114.583C711 83.3333 756 41.6667 800 26.0417C844 10.4167 889 20.8333 933 62.5C978 104.167 1022 177.083 1067 208.333C1111 239.583 1156 229.167 1178 223.958L1200 218.75V250H1178C1156 250 1111 250 1067 250C1022 250 978 250 933 250C889 250 844 250 800 250C756 250 711 250 667 250C622 250 578 250 533 250C489 250 444 250 400 250C356 250 311 250 267 250C222 250 178 250 133 250C89 250 44 250 22 250H0V62.5Z"
-				fill="currentColor" />
-                <path opacity="0.1" fill-rule="evenodd"
-				clip-rule="evenodd"
-				d="M0 93.667L24.8889 87.4756C49.7778 82.8321 99.5556 71.9971 149.333 93.667C200.889 113.789 250.667 166.416 300.444 186.538C350.222 208.208 400 197.373 449.778 171.06C499.556 144.746 549.333 102.954 600.889 76.6407C650.667 50.3272 700.444 41.0401 750.222 61.1622C800 82.8321 849.778 135.459 899.556 129.268C949.333 124.624 1000.89 61.1622 1050.67 50.3272C1100.44 41.0401 1150.22 82.8321 1175.11 102.954L1200 124.624V250H1175.11C1150.22 250 1100.44 250 1050.67 250C1000.89 250 949.333 250 899.556 250C849.778 250 800 250 750.222 250C700.444 250 650.667 250 600.889 250C549.333 250 499.556 250 449.778 250C400 250 350.222 250 300.444 250C250.667 250 200.889 250 149.333 250C99.5556 250 49.7778 250 24.8889 250H0V93.667Z"
-				fill="currentColor" />
-            </svg>
-		<div
-			class="container pt-9 pt-lg-11 pb-5 pb-lg-7 position-relative z-index-1">
-			<div class="row mb-5 mb-lg-7">
-				<div class="col-md-4 mb-5 mb-md-0 text-md-center order-md-2">
-					<a href="/company/CompanyMain.do"><img
-						src="/resources/img/logo/white-logo.png"
-						class="width-10x d-block h-auto mx-md-auto" alt=""></a>
-				</div>
-				<div class="col-md-4 order-md-1 mb-3 mb-md-0">
-					<a href="mailto:mail@domain.com" class="fs-4 link-hover-underline">mail@domain.com</a>
-				</div>
-				<div class="col-md-4 text-md-end order-md-3">
-					<a href="mailto:mail@domain.com" class="fs-4 link-hover-underline">+01
-						123-4567-890</a>
-				</div>
-			</div>
-			<div class="row align-items-center">
-				<div class="col-md-8 order-md-last mb-3 mb-md-0">
-					<div class="d-flex flex-wrap justify-content-md-end me-n4">
-						<a href="#!"
-							class="small text-muted me-4 link-hover-underline my-2 block">Properties</a>
-						<a href="#!"
-							class="small text-muted me-4 link-hover-underline my-2 block">Careers</a>
-						<a href="#!"
-							class="small text-muted me-4 link-hover-underline my-2 block">Company</a>
-						<a href="#!"
-							class="small text-muted me-4 link-hover-underline my-2 block">Privacy
-							policy</a>
-					</div>
-				</div>
-				<div class="col-md-4 order-md-1 small">
-					<span class="d-block my-2 lh-sm text-muted">&copy; Copyright
-						<script>
-							document.write(new Date().getFullYear())
-						</script>. Fiennale
-					</span>
-				</div>
-			</div>
-		</div>
-
-	</footer>
-
-	<!-- begin Back to Top button -->
-	<a href="#" class="toTop"> <i class="bx bxs-up-arrow"></i>
-	</a>
-	<!-- scripts -->
-	<script src="/resources/js/theme.bundle.js"></script>
+	<jsp:include page="/footerCompany.jsp" />
 
 </body>
 
