@@ -75,7 +75,7 @@ if (session.getAttribute("userId") == null) {
 					
 					<div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
                        <div class="nav-item me-3 me-lg-0">
-                           <a href="/LandingSignUp.do" class="btn btn-success btn-sm rounded-pill">Sign Up</a>
+                           <a href="/LandingSignUp.do" class="btn btn-success btn-sm rounded-pill" style="background-color: #F15B66; border: 0;">Sign Up</a>
                        </div>
                     </div>
 				</div>
@@ -109,7 +109,7 @@ if (session.getAttribute("userId") == null) {
 								<!-- 일반회원 로그인 -->
 								<div class="col-md-6 mb-4 development grid-item">
 									<a href="customer/CustomerLogin.do" class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card"  style="border: 0px;">
-										<img src="/resources/img/projects/1.jpg" class="w-100 img-zoom">
+										<img src="/resources/img/landing/loginMember4.jpg" class="w-100 img-zoom" style="height: 555px">
 										<div class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
 											<div class="card-hover-2-header w-100">
 												<div class="card-hover-2-title">
@@ -130,7 +130,7 @@ if (session.getAttribute("userId") == null) {
 								<!-- 업체회원 로그인 -->
 								<div class="col-md-6 mb-4 motion grid-item">
 									<a href="company/CompanyLogin.do" class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card" style="border: 0px;">
-										<img src="/resources/img/projects/1.jpg" class="w-100 img-zoom">
+										<img src="/resources/img/master/masterCompany.jpg" class="w-100 img-zoom" style="height: 555px">
 										<div class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
 											<div class="card-hover-2-header w-100">
 												<div class="card-hover-2-title">
@@ -155,7 +155,7 @@ if (session.getAttribute("userId") == null) {
 				</div>
 			</div>
 			<div id="jarallax-container-0" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; z-index: -100; background-color: #363636;">
-				<img src="/resources/img/shop/banners/07.jpg" class="jarallax-img opacity-50">
+				<img class="jarallax-img opacity-50">
 			</div>
 		</section>
 

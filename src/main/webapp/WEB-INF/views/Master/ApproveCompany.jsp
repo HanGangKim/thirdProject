@@ -34,25 +34,23 @@
 <title>Assan 4</title>
 </head>
 <style>
-	.approveCompanyInput {
-		border: 0px solid black;
-		text-align: right;
+.approveCompanyInput {
+	border: 0px solid black;
+	text-align: right;
+}
 
-	}
-	
-	.approveCompanySign {
-		border: 0px solid black;
-		width : 100px
-	}
-	
-	#btnHover {
-		background-color: rgb(108, 116, 130);
-	}
-	
-	#btnHover:hover {
-	
-		background-color : black;
-	}
+.approveCompanySign {
+	border: 0px solid black;
+	width: 100px
+}
+
+#btnHover {
+	background-color: rgb(108, 116, 130);
+}
+
+#btnHover:hover {
+	background-color: black;
+}
 </style>
 
 <body>
@@ -75,7 +73,7 @@
 
 <body>
 
-	
+
 
 	<!--Preloader Spinner-->
 	<div class="spinner-loader bg-tint-primary">
@@ -101,8 +99,8 @@
 				<div class="row pt-9 pt-lg-9">
 					<div class="col-xl-9">
 						<h1 class="display-4 mb-3">Company</h1>
-						<h6>(approval from a Company) </h6>
-						
+						<h6>(approval from a Company)</h6>
+
 
 					</div>
 				</div>
@@ -116,6 +114,7 @@
 	<!--Main content start-->
 	<main>
 
+		
 		<section class="position-relative bg-white">
 			<br> <br>
 			<div class="container z-index-1 position-relative pb-9 pb-lg-11">
@@ -177,19 +176,19 @@
 
 
 									<br> <br>
-									<div class="text-end">	
-									
-									
-									<button type="button" class="btn btn-primary"id="btnHover" 
+									<div class="text-end">
+
+
+										<button type="button" class="btn btn-primary" id="btnHover"
 											onclick="companyApproval('${vo.company_id}','${status.count}')">승인</button>
-									
-									<button type="button" class="btn btn-primary" id="btnHover"
+
+										<button type="button" class="btn btn-primary" id="btnHover"
 											onclick="companyRefusal('${vo.company_id}','${status.count}')">거절</button>
-									
-												
-										<br> 
-										<input type="text" class="approveCompanyInput" value=""></input>
-										<input type="text" class="approveCompanySign" value=""></input>
+
+
+										<br> <input type="text" class="approveCompanyInput"
+											value=""></input> <input type="text"
+											class="approveCompanySign" value=""></input>
 									</div>
 
 
@@ -200,18 +199,19 @@
 				</c:forEach>
 
 
-								<!-- 승인 -->
-									<form action="/master/masterCompanyUpdate.do" method="get" name="frmS">
-										<input name="company_id" id="success_id" type="text" hidden>
-										<input name="company_flag" id="success_flag" type="text" hidden>	
-									</form>	
-											
-											
-									<!-- 거절 -->		
-									<form action="/master/masterCompanyUpdate.do" name="frmR">	
-										<input name="company_id" id="recheck_id" type="text" hidden>
-										<input name="company_flag" id="recheck_flag" type="text" hidden>
-									</form>
+				<!-- 승인 -->
+				<form action="/master/masterCompanyUpdate.do" method="get"
+					name="frmS">
+					<input name="company_id" id="success_id" type="text" hidden>
+					<input name="company_flag" id="success_flag" type="text" hidden>
+				</form>
+
+
+				<!-- 거절 -->
+				<form action="/master/masterCompanyUpdate.do" name="frmR">
+					<input name="company_id" id="recheck_id" type="text" hidden>
+					<input name="company_flag" id="recheck_flag" type="text" hidden>
+				</form>
 
 				<!--/.article-->
 
@@ -301,70 +301,63 @@
 	<script src="/resources/js/theme.bundle.js"></script>
 
 </body>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
-
-	function companyApproval(data,idx) {
+	function companyApproval(data, idx) {
 		/* alert("승인되었습니다"); */
-		
+
 		//  데이터 확인 작업 
 		// 클릭한 대상의 회사명 : data 
 		// 클랙한 대상의 순서 : idx ( 1부터 시작 )
 		// 클릭한 대상안에 있는 텍스트박스 선택 : inputText ( 배열이기때문에 0부터 시작이기때문에 idx-1 ) 
-		
 		// 		var inputText = document.getElementsByClassName('approveCompanyInput')[idx-1] ;
 		// 		alert(data +  " " + inputText)
 		// 		inputText.value = data;
-		
-		document.getElementsByClassName('approveCompanyInput')[idx-1].value = data;
-		document.getElementsByClassName('approveCompanySign')[idx-1].value = '승인되었습니다';
-		
+		document.getElementsByClassName('approveCompanyInput')[idx - 1].value = data;
+		document.getElementsByClassName('approveCompanySign')[idx - 1].value = '승인되었습니다';
+
 		document.getElementById('success_id').value = data
 		document.getElementById('success_flag').value = 'D'
-		
+
 		/* alert(document.getElementById('success_id').value)
 		alert(document.getElementById('success_flag').value) */
-		
+
 		/* $(function(){ */
 		/* document.hiddenForm.submit(); */
 		document.frmS.submit();
-	/* }) */
-	
+		/* }) */
+
 	}
-</script> 
+</script>
 
 <script type="text/javascript">
-	function companyRefusal(data,idx) {
+	function companyRefusal(data, idx) {
 		/* alert("거절되었습니다"); */
-		
+
 		//  데이터 확인 작업 
 		// 클릭한 대상의 회사명 : data 
 		// 클랙한 대상의 순서 : idx ( 1부터 시작 )
 		// 클릭한 대상안에 있는 텍스트박스 선택 : inputText ( 배열이기때문에 0부터 시작이기때문에 idx-1 ) 
-		
 		// 		var inputText = document.getElementsByClassName('approveCompanyInput')[idx-1] ;
 		// 		alert(data +  " " + inputText)
 		// 		inputText.value = data;
-		
-		document.getElementsByClassName('approveCompanyInput')[idx-1].value = data;
-		document.getElementsByClassName('approveCompanySign')[idx-1].value = '거절되었습니다';
-		
+		document.getElementsByClassName('approveCompanyInput')[idx - 1].value = data;
+		document.getElementsByClassName('approveCompanySign')[idx - 1].value = '거절되었습니다';
+
 		document.getElementById('recheck_id').value = data
 		document.getElementById('recheck_flag').value = 'R'
-		
+
 		/* alert(document.getElementById('recheck_id').value)
 		alert(document.getElementById('recheck_flag').value) */
-		
+
 		/* $(function(){ */
 		/* document.hiddenForm.submit(); */
 		document.frmR.submit();
-	/* }) */
-	
-		
-	
-		
+		/* }) */
+
 	}
-</script> 
+</script>
 
 <!-- <script type="text/javascript">
 var inputBtn = document.querySelectorAll(".btn")

@@ -49,8 +49,16 @@ if (session.getAttribute("userId") == null) {
 	
 <!-- Main CSS -->
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
+    
+    <!--Master slider-->
+    <link rel="stylesheet" href="/resources/vendor/masterslider/style/masterslider.css">
+    <link rel="stylesheet" href="/resources/vendor/masterslider/skins/black-1/style.css">
+
+    <!--Swiper slider-->
+    <link rel="stylesheet" href="/resources/vendor/node_modules/css/swiper-bundle.min.css">
 
 
+    
 
 
 <title>Master Page</title>
@@ -159,6 +167,142 @@ if (session.getAttribute("userId") == null) {
 				<!-- <img src="/resources/img/shop/banners/07.jpg" class="jarallax-img opacity-50"> -->
 			</div>
 		</section>
+		
+		<section class="position-relative overflow-hidden" data-aos="fade" data-aos-once="false" data-aos-offset="200">
+        <div class="position-absolute start-0 top-0 w-100 h-100 h-lg-60 bg-secondary"></div>
+        <div class="container position-relative z-index-1 pt-9 pt-lg-11">
+          <div class="row mb-5 mb-lg-7 justify-content-center align-items-end">
+            <div class="col-lg-7 text-white mb-5 mb-lg-0">
+              <!--Subheading-->
+              <div class="mb-3">
+                <span class="h6 text-muted">Case studies</span>
+              </div>
+              <!--Section Heading-->
+              <h2 class="mb-0 display-4">Our work speaks for itself</h2>
+            </div>
+            <div class="col-12 col-lg-auto text-lg-end ms-auto">
+             
+              <!-- Swiper Navigation buttons (Remove it or Keep it) -->
+              <div class="position-relative d-flex justify-content-lg-end align-items-center">
+                <!--Buttons navigation-->
+                <div
+                  class="swiperProjects-button-prev swiper-button-prev mt-0 position-relative start-0 rounded-circle me-2 text-white bg-transparent border border-white">
+                </div>
+                <div
+                  class="swiperProjects-button-next swiper-button-next mt-0 position-relative mx-0 end-0 rounded-circle text-white bg-transparent border border-white">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container pb-9 pb-lg-11">
+          <div class="row">
+            <div class="col-12 position-relative">
+
+              <!--Projects swiper slider-->
+              <div class="swiper-container swiper-projects overflow-visible">
+                <div class="swiper-wrapper">
+
+                  <!--Swiper-slide-->
+                  <div class="swiper-slide">
+                    <a href="#!" class="card-over d-block card-hover overflow-hidden">
+                      <img src="/resources/img/projects/1.jpg" alt="" class="img-fluid img-zoom">
+                      <div class="card-overlay p-4 d-flex align-items-end text-white">
+                        <ul class="list-unstyled overlay-items">
+                          <li>
+                            <h4 class="mb-1">Awesome title</h4>
+                          </li>
+                          <li><span class="opacity-75">Awesome Subtitle</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!--Swiper-slide-->
+                  <div class="swiper-slide">
+                    <a href="#!" class="card-over d-block card-hover overflow-hidden">
+                      <img src="/resources/img/projects/2.jpg" alt="" class="img-fluid img-zoom">
+                      <div class="card-overlay p-4 d-flex align-items-end text-white">
+                        <ul class="list-unstyled overlay-items">
+                          <li>
+                            <h4 class="mb-1">Awesome title</h4>
+                          </li>
+                          <li><span class="opacity-75">Awesome Subtitle</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!--Swiper-slide-->
+                  <div class="swiper-slide">
+                    <a href="#!" class="card-over d-block card-hover overflow-hidden">
+                      <img src="/resources/img/projects/3.jpg" alt="" class="img-fluid img-zoom">
+                      <div class="card-overlay p-4 d-flex align-items-end text-white">
+                        <ul class="list-unstyled overlay-items">
+                          <li>
+                            <h4 class="mb-1">Awesome title</h4>
+                          </li>
+                          <li><span class="opacity-75">Awesome Subtitle</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!--Swiper-slide-->
+                  <div class="swiper-slide">
+                    <a href="#!" class="card-over d-block card-hover overflow-hidden">
+                      <img src="/resources/img/projects/4.jpg" alt="" class="img-fluid img-zoom">
+                      <div class="card-overlay p-4 d-flex align-items-end text-white">
+                        <ul class="list-unstyled overlay-items">
+                          <li>
+                            <h4 class="mb-1">Awesome title</h4>
+                          </li>
+                          <li><span class="opacity-75">Awesome Subtitle</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!--Swiper-slide-->
+                  <div class="swiper-slide">
+                    <a href="#!" class="card-over d-block card-hover overflow-hidden">
+                      <img src="/resources/img/projects/5.jpg" alt="" class="img-fluid img-zoom">
+                      <div class="card-overlay p-4 d-flex align-items-end text-white">
+                        <ul class="list-unstyled overlay-items">
+                          <li>
+                            <h4 class="mb-1">Awesome title</h4>
+                          </li>
+                          <li><span class="opacity-75">Awesome Subtitle</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!--Swiper-slide-->
+                  <div class="swiper-slide">
+                    <a href="#!" class="card-over d-block card-hover overflow-hidden">
+                      <img src="/resources/img/projects/7.jpg" alt="" class="img-fluid img-zoom">
+                      <div class="card-overlay p-4 d-flex align-items-end text-white">
+                        <ul class="list-unstyled overlay-items">
+                          <li>
+                            <h4 class="mb-1">Awesome title</h4>
+                          </li>
+                          <li><span class="opacity-75">Awesome Subtitle</span></li>
+                        </ul>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="text-center pt-9">
+                  <a href="#!" class="btn btn-light hover-lift">
+                    View all case studies
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
 	</main>
 	

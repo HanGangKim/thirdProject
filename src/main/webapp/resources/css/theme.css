@@ -1523,6 +1523,13 @@ progress {
     flex: 0 0 auto;
     width: 50%;
   }
+  
+  /* @media (max-width: 800px) {
+  .col-md-6 {
+    flex: 1 0 0%;
+    text-align: center;
+    margin: 0 auto;
+  } */
 
   .col-md-7 {
     flex: 0 0 auto;
