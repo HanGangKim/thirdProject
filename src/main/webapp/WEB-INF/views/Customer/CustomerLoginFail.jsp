@@ -67,7 +67,7 @@ response.sendRedirect("../LogOut.do");
 		<section class="position-relative ">
 			<div class="container pt-12 pb-lg-16 ">
 				<div class="row pt-lg-5 pb-5 justify-content-center text-center">
-					<div class="col-xl-4">
+					<div class="col-xl-4 col-11">
 						<div class="width-8x height-8x rounded-circle position-relative bg-dark text-white flex-center mb-5">
 							<i class="bx bx-x lh-1 display-5 fw-normal"></i>
 						</div>

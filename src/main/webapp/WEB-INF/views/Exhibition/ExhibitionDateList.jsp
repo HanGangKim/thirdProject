@@ -126,7 +126,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		
 		<!-- 날짜 검색 섹션 -->
 		<section class="top-0">
-			<div class="container">
+			<div class="container col-11">
 				<form name="dateForm"  onsubmit="return nullCheck()" class="position-relative z-index-1 mt-n7 px-3 pb-3 pt-3 bg-white border rounded-3" action="<c:url value="/exhibition/ExSearch.do"/>"
 					style="margin-bottom: 0px;">
 					<div class="row mx-0 g-2 align-items-center">
@@ -190,7 +190,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 					</c:forEach>
 				</div>
 				
-				<div class="d-grid d-sm-flex justify-content-sm-center" onclick="loadMoreAjax()">
+				<div class="d-grid d-sm-flex col-11 justify-content-center justify-content-sm-center" onclick="loadMoreAjax()">
 					<a class="btn btn-outline-dark rounded-pill btn-lg btn-hover-text" >
 						<span class="btn-hover-label label-default">Load more</span> 
 						<span class="btn-hover-label label-hover">Load more</span>

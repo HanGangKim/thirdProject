@@ -79,7 +79,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		<section class="position-relative bg-white">
 			<div class="container py-9 position-relative">
 				<div class="row justify-content-between">
-					<div class="col-lg-6 col-sm-7 mx-auto mx-lg-0 mb-5 mb-lg-0">
+					<div class="col-lg-6 col-11 col-sm-7 mx-auto mx-lg-0 mb-5 mb-lg-0">
 						<img src="${vo.exhibition_image}" alt="" style="width: 1500px"
 							class="img-fluid mb-3"> <img
 							src="/resources/img/exam/22.jpg" alt="" class="img-fluid mb-3">
@@ -87,7 +87,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							class="img-fluid mb-3">
 					</div>
 					<!--/.col-->
-					<div class="col-md-8 mx-auto col-lg-5">
+					<div class="col-md-8 col-11 mx-auto col-lg-5">
 
 						<div class="sticky-top top-0">
 							<!--Breadcrumbs-->

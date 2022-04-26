@@ -70,7 +70,7 @@ if (session.getAttribute("userId") == null) {
 		<section class="position-relative ">
 			<div class="container pt-12 pb-lg-16 ">
 				<div class="row pt-lg-5 pb-5 justify-content-center text-center">
-					<div class="col-xl-6">
+					<div class="col-xl-6 col-11">
 <!-- 						<div class="width-8x height-8x rounded-circle position-relative bg-success text-white flex-center mb-5"> -->
 <!-- 							<i class="bx bx-check lh-1 display-5 fw-normal"></i> -->
 <!-- 						</div> -->

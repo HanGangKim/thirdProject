@@ -69,7 +69,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			<div
 				class="container pt-11 pt-lg-14 pb-9 pb-lg-18 position-relative z-index-1">
 				<div class="row align-items-center justify-content-center">
-					<div class=" col-xl-4 col-lg-5 col-md-6 col-sm-8 z-index-2">
+					<div class=" col-xl-4 col-11 col-lg-5 col-md-6 col-sm-8 z-index-2">
 
 						<h2 class="mb-1 display-6">Company Sign In</h2>
 						<p class="mb-4 text-muted">Please Sign In with details...</p>
@@ -113,7 +113,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 								<!---->
 								<p class="pt-4 small text-muted">
-									Don’t have an account yet? <a href="CompanySignUp.do"
+									Don’t have an account yet? <a href="/company/Agreement.do"
 										class="ms-2 text-dark fw-semibold link-underline">Sign Up</a>
 								</p>
 

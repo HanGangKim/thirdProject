@@ -71,36 +71,13 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 <body>
 
-	<!--Preloader Spinner-->
-	<div class="spinner-loader bg-gradient-secondary text-white">
-		<div class="spinner-border text-primary" role="status"></div>
-		<span class="small d-block ms-2">Loading...</span>
-	</div>
-	
-	<!-- header -->
-	<header class="z-index-fixed header-transparent header-absolute-top">
-		<div class="container ">
-			<nav class="navbar navbar-expand-lg navbar-light navbar-link-white">
-				<div class="container  position-relative navbar-no-collapse-items">
-					<a class="navbar-brand nav-item" href="/company/CompanyMain.do" style="margin: 0;"> 
-						<img src="/resources/img/logo/white-logo.png" class="img-fluid">
-					</a>
-					
-					<div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
-                       <div class="nav-item me-3 me-lg-0">
-                           <a href="/LogOut.do" class="btn btn-success btn-sm rounded-pill">Sign Out</a>
-                       </div>
-                    </div>
-				</div>
-			</nav>
-		</div>
-	</header>
+	<jsp:include page="/headerCompany.jsp" />
 
   
 	<!--Main content-->
 	<main>
 		<section id="page-header" class="position-relative bg-dark text-white overflow-hidden">
-			<div class="container pt-12 pb-10">
+			<div class="container col-11 pt-12 pb-10">
 				<div class="row pt-lg-7">
 					<div class="col-lg-7">
 						<h1 class="mb-2 display-4">Setting</h1>

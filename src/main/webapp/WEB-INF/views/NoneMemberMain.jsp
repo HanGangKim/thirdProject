@@ -164,8 +164,8 @@
 		<!-- 메뉴선택 두개 시작 -->
 		<section class="position-relative bg-white">
 			<div class="container-fluid px-lg-4 position-relative pt-7 pt-lg-12">
-				<div class="row justify-content-between">
-					<div class="col-md-6 mb-3 mb-md-0">
+				<div class="row justify-content-center ">
+					<div class="col-md-6 col-11 mb-3 mb-md-0">
 						<div class="card border-0 card-hover overflow-hidden">
 							<div class="overflow-hidden position-relative">
 
@@ -186,7 +186,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-6 col-11">
 						<div class="card border-0 card-hover overflow-hidden">
 							<div class="overflow-hidden position-relative">
 

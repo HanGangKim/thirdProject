@@ -59,9 +59,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	
 	<!-- header -->
 	<header class="z-index-fixed header-transparent header-absolute-top">
-		<div class="container ">
+		<div class="container col-11">
 			<nav class="navbar navbar-expand-lg navbar-light navbar-link-white">
-				<div class="container  position-relative navbar-no-collapse-items">
+				<div class="container px-0 position-relative navbar-no-collapse-items">
 					<a class="navbar-brand nav-item" href="/company/CompanyMain.do" style="margin: 0;"> 
 						<img src="/resources/img/logo/white-logo.png" class="img-fluid">
 					</a>

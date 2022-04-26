@@ -71,7 +71,7 @@ if (session.getAttribute("userId") == null) {
 					</a>
 					
 					<div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
-                       <div class="nav-item me-3 me-lg-0">
+                       <div class="nav-item">
                            <a href="/LandingLogin.do" class="btn btn-primary btn-sm rounded-pill">Sign In</a>
                        </div>
                     </div>
@@ -106,7 +106,7 @@ if (session.getAttribute("userId") == null) {
 
 								<!-- 일반회원 로그인 -->
 								<div class="col-md-6 mb-4 development grid-item">
-									<a href="customer/Agreement.do" class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card"  style="border: 0px;">
+									<a href="/customer/Agreement.do" class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card"  style="border: 0px;">
 										<img src="/resources/img/landing/loginMember4.jpeg" class="w-100 img-zoom" >
 										<div class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
 											<div class="card-hover-2-header w-100">
@@ -127,7 +127,7 @@ if (session.getAttribute("userId") == null) {
 
 								<!-- 업체회원 로그인 -->
 								<div class="col-md-6 mb-4 motion grid-item">
-									<a href="company/Agreement.do" class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card" style="border: 0px;">
+									<a href="/company/Agreement.do" class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card" style="border: 0px;">
 										<img src="/resources/img/master/masterCompany.jpeg" class="w-100 img-zoom" >
 										<div class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
 											<div class="card-hover-2-header w-100">

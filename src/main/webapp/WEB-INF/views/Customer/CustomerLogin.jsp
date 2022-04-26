@@ -74,7 +74,7 @@ response.sendRedirect("../LogOut.do");
 			<div class="bg-pattern text-light w-100 h-100 start-0 top-0 position-absolute"></div>
 			<div class="container pt-11 pt-lg-14 pb-9 pb-lg-18 position-relative z-index-1">
 				<div class="row align-items-center justify-content-center">
-					<div class=" col-xl-4 col-lg-5 col-md-6 col-sm-8 z-index-2">
+					<div class=" col-xl-4 col-11 col-lg-5 col-md-6 col-sm-8 z-index-2">
 
 						<h2 class="mb-1 display-6">Member Sign In</h2>
 						<p class="mb-4 text-muted">Please Sign In with details...</p>
@@ -122,7 +122,7 @@ response.sendRedirect("../LogOut.do");
 
 								<!---->
 								<p class="pt-4 small text-muted">
-									Don’t have an account yet? <a href="CustomerSignUp.do"
+									Don’t have an account yet? <a href="/customer/Agreement.do"
 										class="ms-2 text-dark fw-semibold link-underline">Sign Up</a>
 								</p>
 

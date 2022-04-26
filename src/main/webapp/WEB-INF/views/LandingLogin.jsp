@@ -74,7 +74,7 @@ if (session.getAttribute("userId") == null) {
 					</a>
 					
 					<div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
-                       <div class="nav-item me-3 me-lg-0">
+                       <div class="nav-item">
                            <a href="/LandingSignUp.do" class="btn btn-primary btn-sm rounded-pill">Sign Up</a>
                        </div>
                     </div>

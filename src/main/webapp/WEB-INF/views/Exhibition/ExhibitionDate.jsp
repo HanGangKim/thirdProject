@@ -98,10 +98,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 				</video>
 				
 			</div>
-			<div class="container z-index-2 position-relative">
+			<div class="container  col-11 z-index-2 position-relative">
 				<div class="row align-items-center vh-100">
-					<div
-						class="col-lg-4 pt-3 pb-4 pb-lg-5 pt-lg-5 me-auto col-md-6 z-index-2">
+					<div class="col-lg-4  pt-3 pb-4 pb-lg-5 pt-lg-5 me-auto col-md-6 z-index-2">
 <!-- 						<div> -->
 							<!--로고-->
 							<a href="/CustomerMain.do"> 
