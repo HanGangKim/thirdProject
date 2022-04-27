@@ -92,7 +92,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 		<!-- 내용 -->
 		<section class="position-relative hr-linear-bottom bg-white">
-			<div class="container  position-relative py-lg-11">
+			<div class="container pt-10 col-11 position-relative py-lg-11">
 				<c:forEach items="${CompanyExhibitionList}" var="vo">
 					<!-- 카드 -->
 					<div class="row position-relative overflow-hidden hover-lift hover-shadow-lg shadow rounded-4 border flex-sm-row mb-6 align-items-center">
@@ -101,63 +101,70 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								<img src="/resources/img/960x900/1.jpg" class="img-fluid img-zoom">
 							</div>
 						</div>
-						<div class="col-sm-7 py-sm-5 col-12 col-lg-6 ms-7 px-5">
+						<div class="col-sm-7 p-sm-4 col-12 col-lg-6 ms-sm-7 p-5">
 							<!-- 업체 id -->
-							<div class="d-flex mb-3 align-items-center">
+							<div class="d-flex mb-2 align-items-center">
+<!-- 								<span class="text-muted me-3">Title</span> -->
+<%-- 								<h4 class="text-truncate">${vo.exhibition_title}</h4> --%>
+								<h4 class="text-truncate"><%=companyName %></h4>
+							</div>
+							
+							<!-- 업체 id -->
+							<div class="d-flex mb-2 align-items-center">
 								<span class="text-muted me-3">Company Id</span> 
 								<strong>${vo.company_id}</strong>
 							</div>
 							<!-- 전시 id -->
-							<div class="d-flex mb-3 align-items-center">
+							<div class="d-flex mb-2 align-items-center">
 								<span class="text-muted me-3">Exhibition Id</span> 
 								<strong>${vo.exhibition_id}</strong>
 							</div>
 							<!-- 전시 제목 -->
-							<div class="d-flex mb-3 align-items-center">
+							<div class="d-flex mb-2 align-items-center">
 								<span class="text-muted me-3">Title</span> 
 								<strong>${vo.exhibition_title}</strong>
 							</div>
 							<!-- 전시 내용 -->
-							<div class="d-flex mb-3 align-items-center">
-								<span class="text-muted me-3">Contents</span> 
-								<strong>${vo.exhibition_contents}</strong>
-							</div>
+<!-- 							<div class="d-flex mb-2 align-items-center"> -->
+<!-- 								<span class="text-muted me-3">Contents</span>  -->
+<%-- 								<strong class="text-truncate">${vo.exhibition_contents}</strong> --%>
+<!-- 							</div> -->
 							<!-- 전시 기간 -->
-							<div class="d-flex mb-3 align-items-center">
+							<div class="d-flex mb-2 align-items-center">
 								<span class="text-muted me-3">Date</span> 
 								<strong>${vo.exhibition_total_date}</strong>
 							</div>
 							<!-- 전시 금액 -->
-							<div class="d-flex mb-3 align-items-center">
+							<div class="d-flex mb-2 align-items-center">
 								<span class="text-muted me-3">Price</span> 
 								<strong>${vo.exhibition_price}</strong>
 							</div>
 							<!-- 승인 상태 -->
-							<div class="d-flex mb-6 align-items-center">
+							<div class="d-flex mb-5 align-items-center">
 								<span class="text-muted me-3">Flag</span> 
 								<strong>${vo.exhibition_flag}</strong>
 							</div>
 							<!-- 버튼 div -->
-							<div class="col-md-6 pb-4 pb-md-0">
+							<div class="d-flex pb-4 pb-md-0 justify-content-end">
 								<!-- 수정버튼 -->
+									<div class="me-2">
 								<form action="/exhibition/CompanyExhibitionDetail.do" method="post">
-									<div class="mb-2 d-grid">
 										<input name="company_id" value="${vo.company_id}"
 											hidden="hidden"> <input name="exhibition_id"
 											value="${vo.exhibition_id}" hidden="hidden">
 										<button type="submit" class="btn btn-outline-dark">수정</button>
-									</div>
 								</form>
+									</div>
 
 								<!-- 삭제버튼 -->
+									<div class="">
 								<form action="/exhibition/exhibitionCompanyExhibitionDelete.do" method="post">
-									<div class="d-grid">
 										<input name="company_id" value="${vo.company_id}"
 											hidden="hidden"> <input name="exhibition_id"
 											value="${vo.exhibition_id}" hidden="hidden">
 										<button type="submit" class="btn btn-dark ">삭제</button>
-									</div>
 								</form>
+									</div>
 							</div>
 							<!-- ./ 버튼 div -->
 						</div>
