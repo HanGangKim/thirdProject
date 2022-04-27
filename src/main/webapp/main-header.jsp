@@ -192,7 +192,6 @@ if (window.event.keyCode == 13) {
 }
 </script>
 
-
 <script type="text/javascript">
 	function navClick() {
 		var navElement = document.getElementsByClassName("nav-link");
@@ -201,16 +200,33 @@ if (window.event.keyCode == 13) {
 		})
 	}
 	
+	function navSetting(){
+		var navElement = document.getElementsByClassName("nav-link");
+		Array.from(navElement).forEach(v =>{
+			v.classList.add('active');
+		})
+	}
+	
 	window.onload = function(){	
+		navSetting();
+		
 		var ul = document.querySelector('#mainNavbarTheme > ul')
 		
-		ul.addEventListener("click",function(e){
+		ul.addEventListener("mouseover",function(e){
 			navClick()
-			console.log(e.target)
-			e.target.classList.add('active')
+// 			console.log(e.target)
+			if (e.target.classList.contains('nav-link')){
+				
+				e.target.classList.add('active')
+			}
+		})
+		
+		ul.addEventListener("mouseout", function(e) {
 			
+			navSetting()
 		})
 	}
 </script>
+
 
 </html>

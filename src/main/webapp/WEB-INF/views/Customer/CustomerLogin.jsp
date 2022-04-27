@@ -200,9 +200,6 @@ response.sendRedirect("../LogOut.do");
 
 </body>
 
-<!-- scripts -->
-<script src="/resources/js/theme.bundle.js"></script>
-<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 <!-- 아이디 기억하기 jquery -->

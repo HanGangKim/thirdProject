@@ -98,33 +98,33 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<ul class="navbar-nav mx-auto">
 								<!--홈-->
 								<li class="nav-item position-lg-static me-lg-3"><a
-									class="nav-link active" href="/CustomerMain.do" role="button"
+									class="nav-link" href="/CustomerMain.do?menu=home" role="button" data-choices
 									aria-haspopup="false" aria-expanded="false"> Home </a></li>
 								<!--전시회-->
 								<li class="nav-item position-lg-static me-lg-3"><a
-									class="nav-link" href="/exhibition/ExhibitionDate.do"
+									class="nav-link" href="/exhibition/ExhibitionDate.do?menu=exhibition" data-choices
 									role="button" aria-haspopup="true" aria-expanded="false">
 										Exhibition </a></li>
 								<!--리뷰-->
 								<li class="nav-item position-static me-lg-3"><a
-									class="nav-link" href="/exhibition/getReviewList.do"
+									class="nav-link" href="/exhibition/getReviewList.do" data-choices
 									role="button" aria-haspopup="true" aria-expanded="false">
 										Review </a></li>
 								<c:choose>
 									<c:when test="${sessionScope.userId == null}">
 										<!-- 회원가입 -->
 										<li class="nav-item position-lg-static me-lg-3"><a
-											class="nav-link" href="/LandingSignUp.do" role="button"
+											class="nav-link" href="/LandingSignUp.do" role="button" data-choices
 											aria-haspopup="true" aria-expanded="false">Sign Up </a></li>
 										<!-- 로그인 -->
 										<li class="nav-item position-lg-static me-lg-3"><a
-											class="nav-link" href="/LandingLogin.do" role="button"
+											class="nav-link" href="/LandingLogin.do" role="button" data-choices
 											aria-haspopup="true" aria-expanded="false"> Sign In </a></li>
 									</c:when>
 									<c:when test="${sessionScope.userId != null}">
 										<!--마이페이지-->
 										<li class="nav-item dropdown me-lg-3">
-											<a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Mypage </a> 
+											<a class="nav-link dropdown-toggle" role="button" data-choices data-bs-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Mypage </a> 
 											<!--마이페이지 드롭다운-->
 											<div class="dropdown-menu p-lg-3">
 												<a class="dropdown-item" href="/customer/CustomerWishSelectList.do?id=<%=userId%>">My Wishlist</a> 
@@ -200,6 +200,7 @@ if (window.event.keyCode == 13) {
 </script>
 
 
+
 <script type="text/javascript">
 	function navClick() {
 		var navElement = document.getElementsByClassName("nav-link");
@@ -208,16 +209,71 @@ if (window.event.keyCode == 13) {
 		})
 	}
 	
+	function navSetting(){
+		var navElement = document.getElementsByClassName("nav-link");
+		Array.from(navElement).forEach(v =>{
+			v.classList.add('active');
+		})
+	}
+	
 	window.onload = function(){	
+		navSetting();
+		
 		var ul = document.querySelector('#mainNavbarTheme > ul')
 		
-		ul.addEventListener("click",function(e){
+		ul.addEventListener("mouseover",function(e){
 			navClick()
-			console.log(e.target)
-			e.target.classList.add('active')
+// 			console.log(e.target)
+			if (e.target.classList.contains('nav-link')){
+				
+				e.target.classList.add('active')
+			}
 			
+		})
+		
+		ul.addEventListener("mouseout", function(e) {
+			
+			navSetting()
 		})
 	}
 </script>
+
+<!-- <script type="text/javascript">
+	
+	function getKeyValue(object, value){
+		
+		return Object.keys(object).find(key => object[key] === value);
+	}
+	
+	
+	
+	
+	
+	var link = document.location.href.split(".do")[0].split("/");
+	
+	var targetNav = link[link.length-1];
+	
+	var navDict = {
+			// 규칙에 맞춰서 코딩 
+			0 : ['main'],
+			1 : 'exsearch',
+			2 : ['review'],
+			3 : ['signup'],
+			4 : ['login']
+	}
+	
+	
+	var ul = document.querySelectorAll('#mainNavbarTheme > ul > li > a')
+	
+	console.log(targetNav.toLowerCase())
+	
+	var result = getKeyValue(navDict,targetNav.toLowerCase())
+	
+	console.log(result);
+	
+	ul[1].classList.add('active')
+	console.log(ul[1]);
+
+</script> -->
 
 </html>
