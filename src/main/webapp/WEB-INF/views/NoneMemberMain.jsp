@@ -227,7 +227,7 @@
 							<div class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0" title="${vo.exhibition_title}">
 								<div class="card-product-header px-5 p-4 d-block overflow-hidden">
 									<!--Product image-->
-									<a href="#!"> <img src="${vo.exhibition_image}" class="img-fluid" alt="Product"> </a>
+									<a href="#!"> <img src="${vo.exhibition_image}" class="img-fluid" alt="Image Loading..."> </a>
 								</div>
 								<div class="card-product-body px-4 pb-4 text-center">
 									<a href="#!" class="h6 d-block position-relative mb-2 text-dark text-truncate">${vo.exhibition_title}</a>

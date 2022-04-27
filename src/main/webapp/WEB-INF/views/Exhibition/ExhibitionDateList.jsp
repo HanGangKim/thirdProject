@@ -165,7 +165,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<div class="card hover-shadow overflow-hidden hover-lift card-product border-0">
 								<div class="card-product-header px-5 p-4 d-block overflow-hidden position-relative text-center">
 									<a href="./ExhibitionDetail.do?id=${vo.exhibition_id}"> 
-										<img src="${vo.exhibition_image}" class="img-fluid" alt="Product" style="width:300px; height:400px;">
+										<img src="${vo.exhibition_image}" class="img-fluid" alt="Image Loading..." style="width:300px; height:400px;">
 									</a>
 								</div>
 								<div class="card-product-body px-4 pb-4 text-center">
@@ -185,7 +185,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 					</c:forEach>
 				</div>
 				
-				<div class="d-grid d-sm-flex col-11 justify-content-center justify-content-sm-center" onclick="loadMoreAjax()">
+				<div class="d-grid d-sm-flex  justify-content-center justify-content-sm-center" onclick="loadMoreAjax()">
 					<a class="btn btn-outline-dark rounded-pill btn-lg btn-hover-text" >
 						<span class="btn-hover-label label-default">Load more</span> 
 						<span class="btn-hover-label label-hover">Load more</span>
