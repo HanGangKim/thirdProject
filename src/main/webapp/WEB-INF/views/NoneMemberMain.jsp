@@ -215,14 +215,14 @@
 
 		<section class="overflow-hidden bg-white">
 			<div class="container py-9 py-lg-11">
-				<div class="row align-items-end">
+				<div class="row align-items-end justify-content-center">
 					<div class="col-md-8 mx-auto text-center">
 						<h2 class="mb-5 display-4">Coming Soon</h2>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row justify-content-center">
 					<c:forEach items="${vo}" var="vo" end="3">
-						<div class="col-md-6 col-lg-3 mb-4">
+						<div class="col-md-6 col-11 col-lg-3 mb-4">
 							<!--Card-product-->
 							<div class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0" title="${vo.exhibition_title}">
 								<div class="card-product-header px-5 p-4 d-block overflow-hidden">
@@ -261,10 +261,10 @@
 			</div>
 			<div class="container py-9 py-lg-11 position-relative">
 				<div class="row align-items-center">
-					<div class="col-md-6 col-xl-5 ms-md-auto order-last order-md-1">
+					<div class="col-md-6 col-11 col-xl-5 mx-auto ms-md-auto order-last order-md-1">
 
 						<span class="d-block mb-2"><i
-							class="bx bx-stopwatch fs-5 me-1"></i> 전시 종료 임박!! </span>
+							class="bx bx-stopwatch fs-5 me-1"></i>  Limited time offer </span>
 						<div
 							class="countdown-timer py-3 mb-3 d-flex flex-wrap align-items-center">
 							<div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4"><span id="day">day</span></h2><span class="small text-muted">days</span></div><div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4"><span id="hour">hour</span></h2><span class="small text-muted">Hours</span></div><div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4"><span id="minute">minute</span></h2><span class="small text-muted">Minutes</span></div><div class="d-flex flex-column px-2 width-7x"><h2 class="mb-0 h4"><span id="second">second</span></h2><span class="small text-muted">Seconds</span></div>
@@ -280,14 +280,17 @@
 						</a>
 						
 					</div>
-					<div class="col-md-6 ms-auto mb-5 mb-md-0 order-1 order-md-last">
-						<div class="position-relative pe-12 pb-12">
-							<%-- <img src="${volast.exhibition_image }"
-								class="img-fluid position-absolute w-50 end-0 bottom-0 rounded-4"
-								alt="">  --%>
-								<img src="${volast.exhibition_image}"
-								class="img-fluid rounded-3" alt="" style="width:650px">
-								<input type="hidden" id = "end" value="${volast.exhibition_end_date }">
+					<div class="col-md-6 col-11 mx-auto mb-5 mb-md-0 order-1 order-md-last">
+<!-- 						<div class="position-relative pb-9"> -->
+<%-- 							<img src="${volast.exhibition_image}" class="img-fluid rounded-3" style="width: 500px;"> --%>
+<!-- 							<img src="/resources/img/master/masterLogo.png" class="img-fluid position-absolute w-60 end-0 bottom-0 rounded-4"> -->
+<%-- 							<input type="hidden" id="end" value="${volast.exhibition_end_date }"> --%>
+
+<!-- 						</div> -->
+						<div class="position-relative pe-8 pb-9">
+							<img src="${volast.exhibition_image}" class="img-fluid rounded-4 shadow" style="width: 500px;">
+							<a href="#"><img src="/resources/img/master/masterLogo-pink.png" class="img-fluid shadow position-absolute w-50 end-0 bottom-0 rounded-4"></a>
+							<input type="hidden" id="end" value="${volast.exhibition_end_date }">
 
 						</div>
 					</div>

@@ -125,10 +125,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								<strong>${vo.exhibition_title}</strong>
 							</div>
 							<!-- 전시 내용 -->
-<!-- 							<div class="d-flex mb-2 align-items-center"> -->
-<!-- 								<span class="text-muted me-3">Contents</span>  -->
-<%-- 								<strong class="text-truncate">${vo.exhibition_contents}</strong> --%>
-<!-- 							</div> -->
+							<div class="d-flex mb-2 align-items-center">
+								<span class="text-muted me-3">Contents</span> 
+								<strong class="text-truncate">${vo.exhibition_contents}</strong>
+							</div>
 							<!-- 전시 기간 -->
 							<div class="d-flex mb-2 align-items-center">
 								<span class="text-muted me-3">Date</span> 
