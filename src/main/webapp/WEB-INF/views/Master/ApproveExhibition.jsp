@@ -97,7 +97,7 @@
 				<div class="row pt-9 pt-lg-9">
 					<div class="col-xl-9">
 						<h1 class="display-4 mb-3">Exhibition</h1>
-						<h6>(approval of exhibition registration)</h6>
+						<h6>(Approval of exhibition registration)</h6>
 
 					</div>
 				</div>
@@ -274,7 +274,7 @@
 	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
 	function exhibitionApproval(data, idx) {
-		/* alert("승인되었습니다"); */
+		alert(data+"의 등록이 승인되었습니다");
 
 		//  데이터 확인 작업 
 		// 클릭한 대상의 회사명 : data 
@@ -283,8 +283,8 @@
 		// 		var inputText = document.getElementsByClassName('approveCompanyInput')[idx-1] ;
 		// 		alert(data +  " " + inputText)
 		// 		inputText.value = data;
-		document.getElementsByClassName('approveExhibitionInput')[idx - 1].value = data;
-		document.getElementsByClassName('approveExhibitionSign')[idx - 1].value = '승인되었습니다';
+		/* document.getElementsByClassName('approveExhibitionInput')[idx - 1].value = data;
+		document.getElementsByClassName('approveExhibitionSign')[idx - 1].value = '승인되었습니다'; */
 
 		document.getElementById('success_extitle').value = data
 		document.getElementById('success_exflag').value = 'D'
@@ -302,7 +302,7 @@
 
 <script type="text/javascript">
 	function exhibitionRefusal(data, idx) {
-		// alet("거절되었습니다");
+		alert(data+"의 등록이 거절되었습니다");
 
 		//  데이터 확인 작업 
 		// 클릭한 대상의 회사명 : data 
@@ -313,8 +313,8 @@
 		// 		alert(data +  " " + inputText)
 		// 		inputText.value = data;
 
-		document.getElementsByClassName('approveExhibitionInput')[idx - 1].value = data;
-		document.getElementsByClassName('approveExhibitionSign')[idx - 1].value = '거절되었습니다';
+/* 		document.getElementsByClassName('approveExhibitionInput')[idx - 1].value = data;
+		document.getElementsByClassName('approveExhibitionSign')[idx - 1].value = '거절되었습니다'; */
 
 		document.getElementById('recheck_extitle').value = data
 		document.getElementById('recheck_exflag').value = 'R'

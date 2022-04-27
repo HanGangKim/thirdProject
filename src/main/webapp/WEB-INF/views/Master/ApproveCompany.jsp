@@ -99,7 +99,7 @@
 				<div class="row pt-9 pt-lg-9">
 					<div class="col-xl-9">
 						<h1 class="display-4 mb-3">Company</h1>
-						<h6>(approval from a Company)</h6>
+						<h6>(Approval of company registration)</h6>
 
 
 					</div>
@@ -305,7 +305,7 @@
 	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
 	function companyApproval(data, idx) {
-		/* alert("승인되었습니다"); */
+		alert(data+"의 등록이 승인되었습니다"); 
 
 		//  데이터 확인 작업 
 		// 클릭한 대상의 회사명 : data 
@@ -314,8 +314,8 @@
 		// 		var inputText = document.getElementsByClassName('approveCompanyInput')[idx-1] ;
 		// 		alert(data +  " " + inputText)
 		// 		inputText.value = data;
-		document.getElementsByClassName('approveCompanyInput')[idx - 1].value = data;
-		document.getElementsByClassName('approveCompanySign')[idx - 1].value = '승인되었습니다';
+		/* document.getElementsByClassName('approveCompanyInput')[idx - 1].value = data;
+		document.getElementsByClassName('approveCompanySign')[idx - 1].value = '승인되었습니다'; */
 
 		document.getElementById('success_id').value = data
 		document.getElementById('success_flag').value = 'D'
@@ -333,7 +333,7 @@
 
 <script type="text/javascript">
 	function companyRefusal(data, idx) {
-		/* alert("거절되었습니다"); */
+		alert(data+"의 등록이 거절되었습니다"); 
 
 		//  데이터 확인 작업 
 		// 클릭한 대상의 회사명 : data 
@@ -342,8 +342,8 @@
 		// 		var inputText = document.getElementsByClassName('approveCompanyInput')[idx-1] ;
 		// 		alert(data +  " " + inputText)
 		// 		inputText.value = data;
-		document.getElementsByClassName('approveCompanyInput')[idx - 1].value = data;
-		document.getElementsByClassName('approveCompanySign')[idx - 1].value = '거절되었습니다';
+		/* document.getElementsByClassName('approveCompanyInput')[idx - 1].value = data;
+		document.getElementsByClassName('approveCompanySign')[idx - 1].value = '거절되었습니다'; */
 
 		document.getElementById('recheck_id').value = data
 		document.getElementById('recheck_flag').value = 'R'
