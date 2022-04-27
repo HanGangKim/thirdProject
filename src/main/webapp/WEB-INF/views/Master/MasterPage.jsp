@@ -65,7 +65,15 @@ if (session.getAttribute("userId") == null) {
 <title>Assan 4</title>
 </head>
 
+<style>
+body {
+	background-color: #323232;
+}
 
+.card {
+	border: 0px;
+}
+</style>
 
 
 <body>
@@ -83,7 +91,8 @@ if (session.getAttribute("userId") == null) {
 				<div class="container  position-relative navbar-no-collapse-items">
 					<a class="navbar-brand nav-item" href="/CustomerMain.do"
 						style="margin: 0;"> <img
-						src="/resources/img/logo/white-logo.png" class="img-fluid">
+						src="/resources/img/logo/white-logo.png" class="img-fluid"
+						style="border-radius: 0px;">
 					</a>
 
 					<div
@@ -102,7 +111,7 @@ if (session.getAttribute("userId") == null) {
 	<!--Main content-->
 	<main>
 		<section class="position-relative overflow-hidden" data-aos="fade"
-			data-aos-once="false" data-aos-offset="200">
+			data-aos-once="false" data-aos-offset="200" style="">
 			<div
 				class="position-absolute start-0 top-0 w-100 h-100 h-lg-60 bg-secondary"></div>
 			<div class="container position-relative z-index-1 pt-9 pt-lg-11">
@@ -142,75 +151,108 @@ if (session.getAttribute("userId") == null) {
 								<!--Swiper-slide-->
 								<div class="swiper-slide">
 									<a href="#!"
-										class="card-over d-block card-hover overflow-hidden"> <img
-										src="/resources/img/master/masterGraph.jpg" alt=""
-										class="img-fluid img-zoom" style="height: 555px">
+										class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card">
+
+										<img src="/resources/img/master/masterGraph.jpg" alt=""
+										class="img-fluid w-100 img-zoom" style="height: 555px">
+
+
 										<div
-											class="card-overlay p-4 d-flex align-items-end text-white">
-											<ul class="list-unstyled overlay-items">
-												<li>
-													<h4 class="mb-1">Reservation</h4>
-												</li>
-												<li><span class="opacity-75">예매율 확인</span></li>
-											</ul>
+											class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
+											<div class="card-hover-2-header w-100">
+												<div class="card-hover-2-title">
+													<h4 class="fs-2 mb-2">Reservation</h4>
+												</div>
+												<p class="mb-0">예매율 확인</p>
+											</div>
+											<div class="card-hover-2-footer w-100 mt-auto">
+												<span class="tags d-block flex-grow-1">Next Page</span> <span
+													class="card-hover-2-footer-link"> <span>Check
+														the reservation rate</span>
+												</span>
+											</div>
 										</div>
+
 									</a>
 								</div>
 
 								<!--Swiper-slide-->
 								<div class="swiper-slide">
-									<a href="#!"
-										class="card-over d-block card-hover overflow-hidden"> 
-										<div class="masterImage">
+									<a href="/master/ApproveCompany.do"
+										class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card">
+
 										<img src="/resources/img/master/masterCompany4.jpg" alt=""
-										class="img-fluid img-zoom" style="height: 555px">
-										</div>
-										
+										class="img-fluid w-100 img-zoom" style="height: 555px">
+
+
 										<div
-											class="card-overlay p-4 d-flex align-items-end text-white">
-											<ul class="list-unstyled overlay-items">
-												<li>
-													<h3 class="mb-1">Company</h3>
-												</li>
-												<li><span class="opacity-75">업체 승인</span></li>
-											</ul>
+											class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
+											<div class="card-hover-2-header w-100">
+												<div class="card-hover-2-title">
+													<h4 class="fs-2 mb-2">Company</h4>
+												</div>
+												<p class="mb-0">업체 승인</p>
+											</div>
+											<div class="card-hover-2-footer w-100 mt-auto">
+												<span class="tags d-block flex-grow-1">Next Page</span> <span
+													class="card-hover-2-footer-link"> <span>Approval of company registration</span>
+												</span>
+											</div>
 										</div>
+
+									</a>
+								</div>
+
+
+								<!--Swiper-slide-->
+								<div class="swiper-slide">
+									<a href="/master/ApproveExhibition.do"
+										class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card">
+										<img src="/resources/img/master/masterExhibition.jpg" alt=""
+										class="img-fluid img-zoom" style="height: 555px">
+
+										<div
+											class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
+											<div class="card-hover-2-header w-100">
+												<div class="card-hover-2-title">
+													<h4 class="fs-2 mb-2">Exhibition</h4>
+												</div>
+												<p class="mb-0">전시회 등록 승인</p>
+											</div>
+											<div class="card-hover-2-footer w-100 mt-auto">
+												<span class="tags d-block flex-grow-1">Next Page</span> <span
+													class="card-hover-2-footer-link"> <span>Approval of exhibition registration</span>
+												</span>
+											</div>
+										</div>
+
 									</a>
 								</div>
 
 								<!--Swiper-slide-->
 								<div class="swiper-slide">
 									<a href="#!"
-										class="card-over d-block card-hover overflow-hidden"> <img
-										src="/resources/img/master/masterExhibition.jpg" alt=""
-										class="img-fluid img-zoom" style="height: 555px">
-										<div
-											class="card-overlay p-4 d-flex align-items-end text-white">
-											<ul class="list-unstyled overlay-items">
-												<li>
-													<h4 class="mb-1">Exhibition</h4>
-												</li>
-												<li><span class="opacity-75">전시회등록 승인</span></li>
-											</ul>
-										</div>
-									</a>
-								</div>
+										class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card">
 
-								<!--Swiper-slide-->
-								<div class="swiper-slide">
-									<a href="#!"
-										class="card-over d-block card-hover overflow-hidden"> <img
-										src="/resources/img/master/masterList.jpg" alt=""
-										class="img-fluid img-zoom" style="height: 555px">
+										<img src="/resources/img/master/masterList2.jpg" alt=""
+										class="img-fluid w-100 img-zoom" style="height: 555px">
+
+
 										<div
-											class="card-overlay p-4 d-flex align-items-end text-white">
-											<ul class="list-unstyled overlay-items">
-												<li>
-													<h4 class="mb-1">Awesome title</h4>
-												</li>
-												<li><span class="opacity-75">Awesome Subtitle</span></li>
-											</ul>
+											class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
+											<div class="card-hover-2-header w-100">
+												<div class="card-hover-2-title">
+													<h4 class="fs-2 mb-2">D&R List</h4>
+												</div>
+												<p class="mb-0">승인/거절 리스트</p>
+											</div>
+											<div class="card-hover-2-footer w-100 mt-auto">
+												<span class="tags d-block flex-grow-1">Next Page</span> <span
+													class="card-hover-2-footer-link"> <span>Approval List and Reject List</span>
+												</span>
+											</div>
 										</div>
+
 									</a>
 								</div>
 
