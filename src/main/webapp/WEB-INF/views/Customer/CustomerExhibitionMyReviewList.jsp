@@ -54,11 +54,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 </head>
 
 <body>
-	<!--Preloader Spinner-->
-	<div class="spinner-loader bg-gradient-secondary text-white">
-		<div class="spinner-border text-primary" role="status"></div>
-		<span class="small d-block ms-2">Loading...</span>
-	</div>
 
 	<jsp:include page="/header.jsp" />
 

@@ -1,7 +1,7 @@
 package com.human.java.domain;
 
 public class TicketingSelectVO {
-	private int exhibition_id;
+	private String exhibition_id;
 	private String exhibition_title;
 	private String exhibition_start_date;
 	private String exhibition_end_date;
@@ -41,10 +41,10 @@ public class TicketingSelectVO {
 	public void setTicketing_flag(String ticketing_flag) {
 		this.ticketing_flag = ticketing_flag;
 	}
-	public int getExhibition_id() {
+	public String getExhibition_id() {
 		return exhibition_id;
 	}
-	public void setExhibition_id(int exhibition_id) {
+	public void setExhibition_id(String exhibition_id) {
 		this.exhibition_id = exhibition_id;
 	}
 	public String getExhibition_title() {

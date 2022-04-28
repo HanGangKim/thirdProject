@@ -96,7 +96,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										</div>
 										<div>
 											<label class="text-end d-block small mb-0">
-											<a href="page-account-forget-password.html" data-bs-target="#modal-password-bar-1" data-bs-toggle="modal"
+											<a href="#" data-bs-target="#modal-password-bar-1" data-bs-toggle="modal"
 												class="text-muted link-decoration">Forget Password?</a></label>
 										</div>
 									</div>
@@ -189,10 +189,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	
 </body>
 
-<!-- scripts -->
-<script src="/resources/js/theme.bundle.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-
 <!-- 아이디 기억하기 jquery -->
 <script>
     $(document).ready(function()

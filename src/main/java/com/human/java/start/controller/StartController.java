@@ -23,9 +23,9 @@ public class StartController {
 			System.out.println("comingExhibition 컨트롤");
 			ModelAndView mv = new ModelAndView();
 			if(request.getServletPath().equals("NoneMemberMain.do")) {
-				mv.setViewName("CustomerMain");
+				mv.setViewName("NoneMemberMain");
 			}else if(request.getServletPath().equals("CustomerMain.do")) {
-				mv.setViewName("CustomerMain");
+				mv.setViewName("NoneMemberMain");
 			}
 			mv.addObject("voRand", exhibitionService.randomExhibition(vo));
 			mv.addObject("vo", exhibitionService.comingExhibition(vo));

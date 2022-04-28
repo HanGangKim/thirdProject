@@ -52,7 +52,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <link href="/resources/css/theme.min.css" rel="stylesheet">
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
-<title>Welcome!</title>
+<title>Thank You!</title>
 
 </head>
 
@@ -85,9 +85,5 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	<jsp:include page="/footer.jsp" />
 
 </body>
-
-<!-- scripts -->
-<script src="/resources/js/theme.bundle.js"></script>
-<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
 
 </html>

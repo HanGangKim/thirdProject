@@ -97,7 +97,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								<div class="pt-5 d-flex flex-column h-100">
 									<div class="card shadow p-3 mb-3">
 										<h5 class="mb-4">Edit profile</h5>
-										<form action = "/company/CompanyUpdateInfo.do",autocomplete="false" method="get">
+										<form action = "/company/CompanyUpdateInfo.do" autocomplete="false" method="get">
 											<div class="row align-items-center">
 												<div class="col-md-12">
 													<div class="row">
@@ -192,8 +192,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 											<hr class="mb-3">
 											<!--저장 버튼-->
 											<div class="text-end">
-												<button type="submit" class="btn btn-primary">Save
-													Profile</button>
+												<button type="submit" class="btn btn-primary">Save Profile</button>
 											</div>
 										</form>
 									</div>
@@ -304,10 +303,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <script src="/resources/vendor/node_modules/js/choices.min.js"></script>
 
 <!--Profile photo upload-->
-<script
-	src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
-<script
-	src="https://unpkg.com/filepond-plugin-file-poster/dist/filepond-plugin-file-poster.js"></script>
+<script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+<script src="https://unpkg.com/filepond-plugin-file-poster/dist/filepond-plugin-file-poster.js"></script>
 <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
 
 

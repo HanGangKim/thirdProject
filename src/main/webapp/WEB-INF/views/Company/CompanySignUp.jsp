@@ -77,7 +77,7 @@ div.input-icon-group input::placeholder {
 							details...</p>
 							
 						<div class="position-relative">
-							<form action="/company/companySignup.do" method="get" id="loginForm">
+							<form action="/company/companyInsert.do" method="get" id="loginForm">
 							
 								<!-- 회사 아이디 -->
 								<div class="input-icon-group mb-3">

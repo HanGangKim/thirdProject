@@ -51,7 +51,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <link href="/resources/css/theme.min.css" rel="stylesheet">
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
-<title>Welcome!</title>
+<title>Fiennale</title>
 
 </head>
 
@@ -61,9 +61,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	<!--Main content-->
 	<main class="main-content " id="main-content">
 		<section class="position-relative ">
-			<div class="container pt-12 pb-lg-16 ">
+			<div class="container col-11 pb-9 pt-12 pb-lg-16 ">
 				<div class="row pt-lg-5 pb-5 justify-content-center text-center">
-					<div class="col-xl-4 col-11">
+					<div class="col-xl-4 ">
 						<div class="width-8x height-8x rounded-circle position-relative bg-dark text-white flex-center mb-5">
 							<i class="bx bx-x lh-1 display-5 fw-normal"></i>
 						</div>
@@ -73,7 +73,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<a href="/company/CompanyLogin.do" class="btn btn-primary d-grid">Again Sign In</a>
 						</div>
 						<p class="pt-3 small text-muted"> Don’t have an account yet? 
-							<a href="/company/CompanySignUp.do" class="ms-2 text-dark fw-semibold link-underline">Sign Up</a>
+							<a href="/company/Agreement.do" class="ms-2 text-dark fw-semibold link-underline">Sign Up</a>
 						</p>
 					</div>
 				</div>

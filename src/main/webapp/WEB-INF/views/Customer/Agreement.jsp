@@ -62,12 +62,6 @@ response.sendRedirect("../LogOut.do");
 
 <body>
 
-	<!--Preloader Spinner-->
-	<div class="spinner-loader bg-tint-primary">
-		<div class="spinner-border text-primary" role="status"></div>
-		<span class="small d-block ms-2">Loading...</span>
-	</div>
-
 	<jsp:include page="/header.jsp" />
 
 	<!--Main content-->
@@ -138,8 +132,8 @@ response.sendRedirect("../LogOut.do");
 								
 								<!-- 로그인 버튼 -->
 								<p class="pt-3 small text-muted">
-									Already have an account? <a href="CustomerLogin.do"
-										class="ms-2 text-dark fw-semibold link-decoration">Sign in</a>
+									Already have an account? 
+									<a href="CustomerLogin.do" class="ms-2 text-dark fw-semibold link-decoration">Sign in</a>
 								</p>
 							</div>
 						</div>

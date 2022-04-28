@@ -74,8 +74,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						<h4 class="display-4 mb-3">Ticketing Success</h4>
 						<p class="mb-5 lead mx-auto"><%=userName%>님, 예매가 완료되었습니다.</p>
 						<div class="col-md-6 mx-auto">
-							<a href="/exhibition/ExhibitionDate.do" class="btn btn-outline-secondary mb-2 d-grid">Search Exhibition</a>
 							<a href="/exhibition/ExhibitionTicketingSelect.do?id=<%=userId%>" class="btn btn-primary d-grid mb-2">My Ticket</a>
+							<a href="/exhibition/ExhibitionDate.do" class="btn btn-outline-secondary mb-2 d-grid">Search Exhibition</a>
 						</div>
 					</div>
 				</div>
@@ -83,7 +83,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		</section>
 	</main>
 
-<input type="hidden" id="uploadState" name = "uploadState" value="1" />
+	<input type="hidden" id="uploadState" name = "uploadState" value="1" />
 
 
 	<jsp:include page="/footer.jsp" />
@@ -106,11 +106,5 @@ function noEvent() { // 새로 고침 방지
 }
 document.onkeydown = noEvent;
 </script>
-
-<!-- scripts -->
-<script src="/resources/js/theme.bundle.js"></script>
-<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
-
-
 
 </html>

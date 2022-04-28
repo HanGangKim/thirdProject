@@ -66,14 +66,14 @@ response.sendRedirect("../LogOut.do");
 	<!--Main content-->
 	<main class="main-content " id="main-content">
 		<section class="position-relative ">
-			<div class="container pt-12 pb-lg-16 ">
+			<div class="container col-11 pb-9 pt-12 pb-lg-16 ">
 				<div class="row pt-lg-5 pb-5 justify-content-center text-center">
 					<div class="col-xl-4">
 						<div class="width-8x height-8x rounded-circle position-relative bg-success text-white flex-center mb-5">
 							<i class="bx bx-check lh-1 display-5 fw-normal"></i>
 						</div>
 						<h4 class="display-4 mb-3">Sign Up Success !</h4>
-						<p class="mb-5 lead mx-auto">자세한 비밀번호는 이메일 수신함을 확인해주세요.</p>
+						<p class="mb-5 lead mx-auto">가입이 완료되었습니다.</p>
 						<div class="mx-auto">
 							<a href="/LandingLogin.do" class="btn btn-primary mb-2 d-grid">Sign In</a>
 						</div>
@@ -87,9 +87,5 @@ response.sendRedirect("../LogOut.do");
 	<jsp:include page="/footer.jsp" />
 
 </body>
-
-<!-- scripts -->
-<script src="/resources/js/theme.bundle.js"></script>
-<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
 
 </html>

@@ -59,7 +59,7 @@ if (session.getAttribute("companyId") == null) {
 	<main class="main-content d-grid" id="main-content">
 		<!-- 페이지 헤더 -->
 		<section id="page-header" class="position-relative bg-dark text-white overflow-hidden">
-			<div class="container pt-12 pb-10">
+			<div class="container col-11 pt-12 pb-10">
 				<div class="row pt-lg-7">
 					<div class="col-lg-7">
 						<h1 class="mb-2 display-4">Sorry</h1>
@@ -82,11 +82,9 @@ if (session.getAttribute("companyId") == null) {
 								<img src="/resources/img/graphics/illustration/404.svg"
 									class="width-18x mx-auto" alt="">
 							</div>
-							<h1 class="display-1 mb-2">404</h1>
+							<h1 class="display-1 mb-2">Error!</h1>
 							<h2 class="mb-4">Oops! Page not found</h2>
-							<p class="w-lg-75 lead mx-auto mb-5">This is a completely
-								custom 404 error page. It seems that page you are looking for no
-								longer exists.</p>
+							<p class="w-lg-75 lead mx-auto mb-5">알 수 없는 이유로 에러가 발생했습니다.</p>
 							<a href="/LogOut.do" class="fw-semibold"> 
 								<i class="bx bx-left-arrow-alt lh-1 fw-normal me-2"></i>Back to Home
 							</a>

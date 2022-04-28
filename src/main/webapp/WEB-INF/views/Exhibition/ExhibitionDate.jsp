@@ -101,38 +101,36 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			<div class="container  col-11 z-index-2 position-relative">
 				<div class="row align-items-center vh-100">
 					<div class="col-lg-4  pt-3 pb-4 pb-lg-5 pt-lg-5 me-auto col-md-6 z-index-2">
-<!-- 						<div> -->
-							<!--로고-->
-							<a href="/CustomerMain.do"> 
-								<img src="/resources/img/logo/black-logo.png" class="width-8x d-block mb-4">
-							</a>
-							<!--제목-->
-							<h2 class="mb-1 display-6">
-								<!-- Welcome back! -->
-								Search Date
-							</h2>
-							<!--부제-->
-							<p class="mb-4 text-muted">원하는 전시회 기간을 선택해주세요.</p>
-							<div>
-								<!--기간 넘기는 form 태그-->
-								<form class="needs-validation" novalidate action=" <c:url value="/exhibition/ExSearch.do"/>">
-									<div class="row mb-3">
-										<!--기간으로 날짜 검색 (우리가 쓸 태그)-->
-										<div class="mb-5 mb-md-0 mb-3">
-											<!-- <h5 class="mb-4">Range</h5> -->
-											<input type="date" id="now_date"
-												data-flatpickr='{"mode":"range"}' class="form-control" name="totalDate">
-										</div>
+						<!--로고-->
+						<a href="/NoneMemberMain.do"> 
+							<img src="/resources/img/logo/black-logo.png" class="width-8x d-block mb-4">
+						</a>
+						<!--제목-->
+						<h2 class="mb-1 display-6">
+							<!-- Welcome back! -->
+							Search Date
+						</h2>
+						<!--부제-->
+						<p class="mb-4 text-muted">원하는 전시회 기간을 선택해주세요.</p>
+						<div>
+							<!--기간 넘기는 form 태그-->
+							<form class="needs-validation" method="post" novalidate action=" <c:url value="/exhibition/ExSearch.do"/>">
+								<div class="row mb-3">
+									<!--기간으로 날짜 검색 (우리가 쓸 태그)-->
+									<div class="mb-5 mb-md-0 mb-3">
+										<!-- <h5 class="mb-4">Range</h5> -->
+										<input type="date" id="now_date"
+											data-flatpickr='{"mode":"range"}' class="form-control" name="totalDate">
 									</div>
-								
+								</div>
+							
 
-									<!--검색버튼-->
-									<div class="d-grid">
-										<button class="btn btn-primary" type="submit">Move To List</button>
-									</div>
-								</form>
-							</div>
-<!-- 						</div> -->
+								<!--검색버튼-->
+								<div class="d-grid">
+									<button class="btn btn-primary" type="submit">Move To List</button>
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>

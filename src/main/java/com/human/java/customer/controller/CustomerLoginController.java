@@ -77,7 +77,7 @@ public class CustomerLoginController {
 			mv.addObject("voRand", exhibitionService.randomExhibition(exvo));
 			mv.addObject("vo", exhibitionService.comingExhibition(exvo));
 			mv.addObject("volast", exhibitionService.lastExhibition(exvo));
-			mv.setViewName("CustomerMain");
+			mv.setViewName("NoneMemberMain");
 
 			return mv;
 		}

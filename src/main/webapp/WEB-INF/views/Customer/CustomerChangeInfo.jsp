@@ -68,11 +68,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 </head>
 
 <body>
-	<!--Preloader Spinner-->
-	<div class="spinner-loader bg-gradient-secondary text-white">
-		<div class="spinner-border text-primary" role="status"></div>
-		<span class="small d-block ms-2">Loading...</span>
-	</div>
 
 	<jsp:include page="/header.jsp" />
 
@@ -345,11 +340,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <!-- 약관동의 : 계정삭제   -->
 <script src="/resources/vendor/node_modules/js/delete.js"></script>
 
-<!-- scripts -->
-<script src="/resources/js/theme.bundle.js"></script>
-<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
-<script src="/resources/vendor/node_modules/js/cursor.js"></script>
-
 <!--Page scripts-->
 <script src="/resources/vendor/node_modules/js/flatpickr.min.js"></script>
 
@@ -357,10 +347,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <script src="/resources/vendor/node_modules/js/choices.min.js"></script>
 
 <!--Profile photo upload-->
-<script
-	src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
-<script
-	src="https://unpkg.com/filepond-plugin-file-poster/dist/filepond-plugin-file-poster.js"></script>
+<script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+<script src="https://unpkg.com/filepond-plugin-file-poster/dist/filepond-plugin-file-poster.js"></script>
 <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
 
 

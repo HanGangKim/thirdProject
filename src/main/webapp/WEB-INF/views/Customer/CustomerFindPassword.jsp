@@ -60,23 +60,18 @@ if (session.getAttribute("userId") == null) {
 <link href="/resources/css/theme.min.css" rel="stylesheet">
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
-<title>Welcome!</title>
+<title>Fiennale</title>
 
 </head>
 
 <body>
-	<!--Preloader Spinner-->
-	<div class="spinner-loader bg-tint-primary">
-		<div class="spinner-border text-primary" role="status"></div>
-		<span class="small d-block ms-2">Loading...</span>
-	</div>
 
 	<jsp:include page="/header.jsp" />
 	
 	<!--Main content-->
 	<main class="main-content " id="main-content">
 		<section class="position-relative ">
-			<div class="container pt-12 pb-lg-16 ">
+			<div class="container col-11 pb-9 pt-12 pb-lg-16 ">
 				<div class="row pt-lg-5 pb-5 justify-content-center text-center">
 					<div class="col-xl-4">
 						<div class="width-8x height-8x rounded-circle position-relative bg-success text-white flex-center mb-5">
@@ -88,7 +83,7 @@ if (session.getAttribute("userId") == null) {
 						<p class="mb-5 lead mx-auto fs-6" id='passwordmasking'>${vo.customer_password}</p>
 						<div class="mx-auto">
 							<a href="/LandingLogin.do" class="btn btn-primary mb-2 d-grid">Sign In</a>
-							<a href="/CustomerMain.do" class="btn btn-outline-secondary  d-grid mb-2">Go to Main</a>
+							<a href="/NoneMemberMain.do" class="btn btn-outline-secondary  d-grid mb-2">Go to Main</a>
 						</div>
 					</div>
 				</div>
@@ -129,9 +124,4 @@ if (session.getAttribute("userId") == null) {
 
 
 </script>
-<!-- scripts -->
-<script src="/resources/js/theme.bundle.js"></script>
-<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
-<script src="/resources/vendor/node_modules/js/cursor.js"></script>
-
 </html>

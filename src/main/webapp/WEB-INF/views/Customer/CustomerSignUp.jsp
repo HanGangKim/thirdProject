@@ -106,7 +106,7 @@ div.choices__list--single select option:disabled {
 							details...</p>
 
 						<div class="position-relative">
-							<form action="/customer/customerInsert.do" method="get" id="loginForm">
+							<form action="/customer/customerInsert.do" method="post" id="loginForm">
 							
 								<!-- 아이디 -->
 								<div class="input-icon-group mb-3">
@@ -215,28 +215,28 @@ div.choices__list--single select option:disabled {
 </body>
 
 <!--Select scripts-->
-<script src="/resources/vendor/node_modules/js/choices.min.js?ver=2"></script>
+<!-- <script src="/resources/vendor/node_modules/js/choices.min.js?ver=2"></script> -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-    var cSelect = document.querySelectorAll("[data-choices]");
-    cSelect.forEach(el => {
-      const t = {
-        ...el.dataset.choices ? JSON.parse(el.dataset.choices) : {}, ...{
-          classNames: {
-            containerInner: el.className,
-            input: "form-control",
-            inputCloned: "form-control-sm",
-            listDropdown: "dropdown-menu",
-            itemChoice: "dropdown-item",
-            activeState: "show",
-            selectedState: "active"
-          }
-        }
-      }
-      new Choices(el, t)
-    }
-    );
+//     var cSelect = document.querySelectorAll("[data-choices]");
+//     cSelect.forEach(el => {
+//       const t = {
+//         ...el.dataset.choices ? JSON.parse(el.dataset.choices) : {}, ...{
+//           classNames: {
+//             containerInner: el.className,
+//             input: "form-control",
+//             inputCloned: "form-control-sm",
+//             listDropdown: "dropdown-menu",
+//             itemChoice: "dropdown-item",
+//             activeState: "show",
+//             selectedState: "active"
+//           }
+//         }
+//       }
+//       new Choices(el, t)
+//     }
+//     );
     
  // 로그인 유효성 검사
     var form = document.getElementById('loginForm');

@@ -103,8 +103,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		<!-- 전시회 검색 섹션 -->
 		<section class="top-0">
 			<div class="container col-11">
-				<form action="/exhibition/getReviewList.do"
-				class="position-relative z-index-1 mt-n7 px-3 pb-3 pt-3 bg-white border rounded-3">
+				<form action="/exhibition/getReviewList.do" method="post" class="position-relative z-index-1 mt-n7 px-3 pb-3 pt-3 bg-white border rounded-3">
 					<div class="row mx-0 g-2 align-items-center">
 						<div class="col-md-9 col-lg-10">
 							<div class="position-relative">
