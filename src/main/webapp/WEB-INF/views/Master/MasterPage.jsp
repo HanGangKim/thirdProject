@@ -62,7 +62,7 @@ if (session.getAttribute("userId") == null) {
 <!-- Main CSS -->
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
-<title>Assan 4</title>
+<title>MasterPage</title>
 </head>
 
 <style>
@@ -150,7 +150,7 @@ body {
 
 								<!--Swiper-slide-->
 								<div class="swiper-slide">
-									<a href="#!"
+									<a href="/master/CheckReservation.do"
 										class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card">
 
 										<img src="/resources/img/master/masterGraph.jpg" alt=""
@@ -231,7 +231,7 @@ body {
 
 								<!--Swiper-slide-->
 								<div class="swiper-slide">
-									<a href="#!"
+									<a href="/master/CheckDnR.do"
 										class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card">
 
 										<img src="/resources/img/master/masterList2.jpg" alt=""
@@ -248,7 +248,7 @@ body {
 											</div>
 											<div class="card-hover-2-footer w-100 mt-auto">
 												<span class="tags d-block flex-grow-1">Next Page</span> <span
-													class="card-hover-2-footer-link"> <span>Approval List and Reject List</span>
+													class="card-hover-2-footer-link"> <span>Check the approval List and Reject List</span>
 												</span>
 											</div>
 										</div>
