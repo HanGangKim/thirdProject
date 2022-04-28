@@ -60,31 +60,28 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 				<nav class="navbar navbar-expand-lg navbar-dark rounded-lg-4">
 					<!-- 로고 -->
 					<a class="navbar-brand" href="/CustomerMain.do"> 
-					<img src="/resources/img/logo/white-logo.png" alt="" class="img-fluid">	
+						<img src="/resources/img/logo/white-logo.png" alt="" class="img-fluid">	
 					</a>
 					<!-- 검색버튼 -->
 					<div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
 						<button class="navbar-toggler order-last collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarTheme" aria-controls="mainNavbarTheme" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon">
-                                    <i></i>
-                                </span>
-                            </button>
+	                        <span class="navbar-toggler-icon">
+	                        	<i></i>
+	                        </span>
+                        </button>
 						<div class="nav-item me-3">
 							<c:choose>
 								<c:when test="${sessionScope.userId == null}">
-									<a href="demo-shop-wishlist.html"
-										class="lh-1 position-relative text-light">Hello :)</a>
+									<a class="lh-1 position-relative text-light">Hello :)</a>
 								</c:when>
 								<c:when test="${sessionScope.userId != null}">
-									<a href="demo-shop-wishlist.html"
-										class="lh-1 position-relative text-light">Welcome !</a>
+									<a class="lh-1 position-relative text-light">Welcome !</a>
 								</c:when>
 							</c:choose>
 						</div>
 						<div class="nav-item me-3 me-lg-0">
-							<a href="#" data-bs-target="#modal-search-bar-2"
-								data-bs-toggle="modal" class="nav-link lh-1"> <i
-								class="bx bx-search fs-4"></i>
+							<a href="#" data-bs-target="#modal-search-bar-2" data-bs-toggle="modal" class="nav-link lh-1 active"> 
+								<i class="bx bx-search fs-4"></i>
 							</a>
 						</div>
 					</div>
@@ -94,32 +91,32 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						<ul class="navbar-nav mx-auto">
 							<!--홈-->
 							<li class="nav-item position-lg-static me-lg-3"><a
-								class="nav-link active" href="/CustomerMain.do" role="button"
+								class="nav-link nav-over active" href="/CustomerMain.do" role="button"
 								aria-haspopup="false" aria-expanded="false"> Home </a></li>
 							<!--전시회-->
 							<li class="nav-item position-lg-static me-lg-3"><a
-								class="nav-link" href="/exhibition/ExhibitionDate.do"
+								class="nav-link nav-over" href="/exhibition/ExhibitionDate.do"
 								role="button" aria-haspopup="true" aria-expanded="false">
 									Exhibition </a></li>
 							<!--리뷰-->
 							<li class="nav-item position-static me-lg-3"><a
-								class="nav-link" href="/exhibition/getReviewList.do" role="button" aria-haspopup="true"
+								class="nav-link nav-over" href="/exhibition/getReviewList.do" role="button" aria-haspopup="true"
 								aria-expanded="false"> Review </a></li>
 							<c:choose>
 								<c:when test="${sessionScope.userId == null}">
 									<!-- 회원가입 -->
 									<li class="nav-item position-lg-static me-lg-3"><a
-										class="nav-link" href="/LandingSignUp.do" role="button"
+										class="nav-link nav-over" href="/LandingSignUp.do" role="button"
 										aria-haspopup="true" aria-expanded="false">Sign Up </a></li>
 									<!-- 로그인 -->
 									<li class="nav-item position-lg-static me-lg-3"><a
-										class="nav-link" href="/LandingLogin.do" role="button"
+										class="nav-link nav-over" href="/LandingLogin.do" role="button"
 										aria-haspopup="true" aria-expanded="false"> Sign In </a></li>
 								</c:when>
 								<c:when test="${sessionScope.userId != null}">
 									<!--마이페이지-->
 									<li class="nav-item dropdown me-lg-3">
-										<a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Mypage </a> 
+										<a class="nav-link nav-over dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Mypage </a> 
 										<!--마이페이지 드롭다운-->
 										<div class="dropdown-menu p-lg-3">
 											<a class="dropdown-item" href="/customer/CustomerWishSelectList.do?id=<%=userId%>">My Wishlist</a>
@@ -130,7 +127,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										</div>
 									</li>
 									<!--로그아웃-->
-									<li class="nav-item"><a class="nav-link" href="/LogOut.do">
+									<li class="nav-item"><a class="nav-link nav-over" href="/LogOut.do">
 											Sign Out </a></li>
 								</c:when>
 							</c:choose>
@@ -194,14 +191,14 @@ if (window.event.keyCode == 13) {
 
 <script type="text/javascript">
 	function navClick() {
-		var navElement = document.getElementsByClassName("nav-link");
+		var navElement = document.getElementsByClassName("nav-over");
 		Array.from(navElement).forEach(v =>{
 			v.classList.remove('active');
 		})
 	}
 	
 	function navSetting(){
-		var navElement = document.getElementsByClassName("nav-link");
+		var navElement = document.getElementsByClassName("nav-over");
 		Array.from(navElement).forEach(v =>{
 			v.classList.add('active');
 		})
@@ -215,7 +212,7 @@ if (window.event.keyCode == 13) {
 		ul.addEventListener("mouseover",function(e){
 			navClick()
 // 			console.log(e.target)
-			if (e.target.classList.contains('nav-link')){
+			if (e.target.classList.contains('nav-over')){
 				
 				e.target.classList.add('active')
 			}
