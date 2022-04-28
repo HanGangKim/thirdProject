@@ -63,7 +63,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	<!--Main content-->
 	<main class="main-content " id="main-content">
 		<section class="position-relative ">
-			<div class="container pt-12 pb-lg-16 ">
+			<div class="container pt-12  pb-8  pb-lg-16 ">
 				<div class="row pt-lg-5 pb-5 justify-content-center text-center">
 					<div class="col-xl-4">
 						<div class="width-8x height-8x rounded-circle position-relative bg-dark text-white flex-center mb-5">
@@ -71,9 +71,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						</div>
 						<h4 class="display-4 mb-3">Sign Up Waiting ...</h4>
 						<p class="mb-2 lead mx-auto">가입 승인까지는 2~3일정도 소요됩니다.</p>
-						<p class="mb-5 lead mx-auto fs-6">일반회원으로는 누구나 가입할 수 있어요!</p>
 						<div class="mx-auto">
-							<a href="/customer/Agreement.do" class="btn btn-primary mb-2 d-grid">Member Sign Up</a>
+							<a href="/NoneMemberMain.do" class="btn btn-primary mb-2 d-grid">Go To Main</a>
 						</div>
 					</div>
 				</div>
@@ -85,10 +84,5 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	<jsp:include page="/footer.jsp" />
 
 </body>
-
-<!-- scripts -->
-<script src="/resources/js/theme.bundle.js"></script>
-<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
-<script src="/resources/vendor/node_modules/js/cursor.js"></script>
 
 </html>

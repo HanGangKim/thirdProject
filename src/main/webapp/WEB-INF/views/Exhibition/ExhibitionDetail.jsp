@@ -224,7 +224,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<i class="bx bx-x fs-4 me-2"></i>
 						</button>
 					</div>
-					<form class="mb-0" action="ExhibitionPayment.do" method="post">
+					<form name="dateForm" class="mb-0" action="ExhibitionPayment.do" method="post" onsubmit="return nullCheck()">
 						<div class="align-items-center">
 							<h6 class="d-flex mt-4" style="justify-content: center;">Ticekting</h6>
 
@@ -232,36 +232,65 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<div class="d-flex align-items-center py-3">
 								<span class="flex-grow-1 border-bottom pt-1"></span>
 							</div>
-							<!-- 전시회 이름 -->
-							<div class="mb-3">
-								<label class="form-label" for="profile_name">Exhibition</label> <input
-									type="text" name="title" placeholder="전시회명" title="${vo.exhibition_title}"
-									value="${vo.exhibition_title}" readonly="readonly"
-									class="form-control">
-							</div>
-							<!-- 이름 -->
-<!-- 							<div class="mb-3"> -->
-<!-- 								<label class="form-label" for="profile_name">Id</label> <input -->
-<!-- 									type="text" name="customer_id" placeholder="세션아이디" -->
-<%-- 									value="<%=userId%>" readonly="readonly" class="form-control"> --%>
-<!-- 							</div> -->
-							<!-- 예매자 이름 -->
-							<div class="mb-3">
-								<label class="form-label" for="profile_name">Name</label> <input
-									type="text" name="consumer_name" placeholder="구매자" value="<%=userName %>"
-									class="form-control">
-							</div>
+							
 							<!-- 전시회 아이디 -->
 							<div class="mb-3">
 								<input type="hidden" name="exhibition_id" placeholder="전시아이디"
-									value="${vo.exhibition_id}" readonly="readonly"
+									readonly="readonly" class="form-control" value="${vo.exhibition_id}">
+							</div>
+							
+							<!-- 전시회 이름 -->
+							<div class="mb-3">
+								<label class="form-label" for="profile_name">Exhibition</label> 
+								<input type="text" name="title" placeholder="전시회명" title="${vo.exhibition_title}"
+									value="${vo.exhibition_title}" readonly="readonly"
 									class="form-control">
+							</div>
+
+							<!-- 사용자 아이디 -->
+							<div class="mb-3">
+								<input type="hidden" name="customer_id" placeholder="유저아이디"
+									value="<%=userId%>" readonly="readonly" class="form-control">
+							</div>
+
+							<%
+							// 세션 연결
+							if (session.getAttribute("userId") == null) {
+								// 세션 연결에 실패하면 null
+							%>
+							<!-- 예매자 이름 -->
+							<div class="mb-3">
+								<label class="form-label" for="profile_name">Name</label> <input
+									type="text" name="consumer_name" placeholder="로그인 후 이용 가능"
+									readonly="readonly" class="form-control">
 							</div>
 							<!-- 예매자 연락처 -->
 							<div class="mb-3">
 								<label class="form-label" for="profile_name">Phone</label> <input
-									type="text" name="consumer_ph" placeholder="핸드폰번호" value="<%=userPh%>" class="form-control">
+									type="text" name="consumer_ph" placeholder="로그인 후 이용 가능"
+									readonly="readonly" class="form-control">
 							</div>
+							<%
+							} else {
+							%>
+							<!-- 예매자 이름 -->
+							<div class="mb-3">
+								<label class="form-label" for="profile_name">Name</label> <input
+									type="text" name="consumer_name" placeholder="예매자 이름"
+									value="<%=userName%>" class="form-control">
+							</div>
+							<!-- 예매자 연락처 -->
+							<div class="mb-3">
+								<label class="form-label" for="profile_name">Phone</label> <input
+									type="text" name="consumer_ph" placeholder="예매자 연락처"
+									value="<%=userPh%>" class="form-control">
+							</div>
+							<%
+							}
+							%>
+
+
+
 							<!-- 방문 날짜 -->
 							<div class="mb-3">
 								<label class="form-label" for="profile_name">Visit Date</label> 
@@ -343,39 +372,16 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	</div>
 	<!-- 예매 모달 끝 -->
 	
-
-	<!-- 추후 결제모달로 바뀔 예정 (시작) -->
-<!-- 	<hr> -->
-<!-- 	<form action="ExhibitionPayment.do"> -->
-<!-- 		<br> <br> <br> -->
-<!-- 		<h1>결제모달 예정</h1> -->
-<!-- 		<hr> -->
-<!-- 		<input type="text" name="customer_id" placeholder="세션아이디" -->
-<!-- 			value="default" readonly="readonly"> <br> <input -->
-<!-- 			type="text" placeholder="구매자" name="consumer_name" value="김한수"> -->
-<!-- 		<br> <input type="text" placeholder="전시아이디" name="exhibition_id" -->
-<%-- 			value="${vo.exhibition_id}" readonly="readonly"> <br> <input --%>
-<%-- 			type="text" value="${vo.exhibition_title}" placeholder="전시회명" --%>
-<!-- 			readonly="readonly" name="title"> <br> <input -->
-<!-- 			type="text" value="0" placeholder="핸드폰번호" name="consumer_ph"> -->
-<!-- 		<br> <input type="text" placeholder="날짜" value="2022.01.01" -->
-<!-- 			name="ticketing_date" readonly="readonly"> -->
-		<!-- 달력 들어갈 예정 -->
-<!-- 		<br> <br> 금액 :<input type="number" -->
-<%-- 			value="${vo.exhibition_price}" id="money" readonly="readonly" --%>
-<!-- 			name="totalPrice"> 인원 : <input type="number" id='result' -->
-<!-- 			value="1" name="totalCustomer"> 기본값 : <input type="number" -->
-<%-- 			value="${vo.exhibition_price}" id="d_money" readonly="readonly"> --%>
-<!-- 		<input type='button' onclick='count("plus")' value='+' /> <input -->
-<!-- 			type='button' onclick='count("minus")' value='-' /> <br> <input -->
-<!-- 			type="submit" value="결제하기"> <input type="reset" value="취소하기"> -->
-<!-- 	</form> -->
-<!-- 	<hr> -->
-<!-- 	<br> -->
-<!-- 	<br> -->
-<!-- 	<br> -->
-<!-- 	<hr> -->
-	<!-- 추후 결제모달로 바뀔 예정 (끝)  -->
+	<!-- 달력 공백 예외처리  -->
+	<script type="text/javascript">
+	function nullCheck() {
+		if(!document.dateForm.ticketing_date.value){
+			alert("날짜를 입력해주세요!")
+			document.dateForm.ticketing_date.focus();
+			return false;
+		}
+	}
+	</script>
 
 
 <jsp:include page="/footer.jsp" />

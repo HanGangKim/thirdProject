@@ -122,8 +122,8 @@ response.sendRedirect("../LogOut.do");
 
 								<!---->
 								<p class="pt-4 small text-muted">
-									Don’t have an account yet? <a href="/customer/Agreement.do"
-										class="ms-2 text-dark fw-semibold link-underline">Sign Up</a>
+									Don’t have an account yet? 
+									<a href="/customer/Agreement.do" class="ms-2 text-dark fw-semibold link-underline">Sign Up</a>
 								</p>
 
 							</div>

@@ -35,19 +35,12 @@ public class ExhibitionTicketingController {
 		ModelAndView mv = new ModelAndView();
 		
 		if (result > 0) {
-			// [1] 예매
-			mv.setViewName("Exhibition/ExhibitionPaySucess");
-			mv.addObject("customer_id", vo.getCustomer_id());
-			System.out.println("예매성공");
-			
-			// [2] 찜목록 플래그 업데이트
-			// Dao에서 처리
-			
+			mv.setViewName("redirect:/exhibition/ExhibitionPaySucess.do");
+
 			return mv;
 
 		} else {
-			mv.setViewName("Exhibition/ExhibitionPayFail");
-			System.out.println("예매실패");
+			mv.setViewName("redirect:/exhibition/ExhibitionPayFail.do");
 			return mv;
 		}
 	}

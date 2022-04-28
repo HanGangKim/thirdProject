@@ -328,13 +328,6 @@ input.form-control[readonly] {
 	    }
 	</script>
 
-
-<!-- scripts -->
-<script src="/resources/js/theme.bundle.js"></script>
-<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
-<script src="/resources/vendor/node_modules/js/cursor.js"></script>
-
-
 <!--Page scripts-->
 <script src="/resources/vendor/node_modules/js/flatpickr.min.js"></script>
 <script>

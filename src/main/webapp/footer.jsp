@@ -90,10 +90,21 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								class="small text-muted me-4 link-hover-underline my-2 block">Home</a>
 						<a href="/exhibition/ExhibitionDate.do"
 								class="small text-muted me-4 link-hover-underline my-2 block">Exhibition</a>
-						<a href="/exhibition/ExhibitionReviewList.do"
+						<a href="/exhibition/getReviewList.do"
 								class="small text-muted me-4 link-hover-underline my-2 block">Review</a>
+						<%
+						if (session.getAttribute("userId") == null) {
+						%>
+						<a href="/LandingLogin.do"
+							class="small text-muted me-4 link-hover-underline my-2 block">Login</a>
+						<%
+						} else {
+						%>
 						<a href="/customer/CustomerConfirmPass.do"
-								class="small text-muted me-4 link-hover-underline my-2 block">Setting</a>
+							class="small text-muted me-4 link-hover-underline my-2 block">Setting</a>
+						<%
+						}
+						%>
 					</div>
 				</div>
 				

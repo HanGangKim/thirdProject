@@ -1,7 +1,6 @@
 
 package com.human.java.customer.controller;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,24 +21,16 @@ public class CustomerSignUpController {
 	// 회원가입
 	@RequestMapping("customerInsert.do")
 	public ModelAndView customerInsert(CustomerVO vo) {
-		
-		System.out.println("===============");
-		System.out.println("customerInsert 컨트롤러 호출");
-		System.out.println("CustomerVO : " + ToStringBuilder.reflectionToString(vo));
-		System.out.println("===============");
 
-		// 가입실패
 		int result = customerService.customerInsert(vo);
-		String message = "가입되지 않았습니다.";
-
-		if (result > 0)
-			message = vo.getCustomer_name() + "님 , 가입을 축하드립니다.";
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("Customer/CustomerSignUpSucess");
-		mv.addObject("message", message);
-		mv.addObject("result", result);
-		return mv;
 
+		if (result > 0) {
+			mv.setViewName("redirect:/customer/CustomerSignUpSucess.do");
+		} else {
+			mv.setViewName("redirect:/customer/CompanyErrorPage.do");
+		}
+		return mv;
 	}
 	
 	@ResponseBody

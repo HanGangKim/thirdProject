@@ -53,7 +53,7 @@ response.sendRedirect("../LogOut.do");
 <link href="/resources/css/theme.min.css" rel="stylesheet">
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
-<title>Welcome!</title>
+<title>Fiennale</title>
 
 </head>
 

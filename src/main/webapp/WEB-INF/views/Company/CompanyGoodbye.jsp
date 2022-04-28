@@ -52,7 +52,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <link href="/resources/css/theme.min.css" rel="stylesheet">
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
-<title>Good Bye Fiennale</title>
+<title>Thank You!</title>
 
 </head>
 

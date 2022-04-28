@@ -72,7 +72,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			<div class="container col-11">
 				<nav class="navbar navbar-expand-lg navbar-light rounded-lg-4">
 					<!-- 로고 -->
-					<a class="navbar-brand" href="/CustomerMain.do"> 
+					<a class="navbar-brand" href="/NoneMemberMain.do"> 
 						<img src="/resources/img/logo/black-logo.png" alt="" class="img-fluid">	
 					</a>
 					<!-- 검색버튼 -->
@@ -104,7 +104,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						<ul class="navbar-nav mx-auto">
 							<!--홈-->
 							<li class="nav-item position-lg-static me-lg-3"><a
-								class="nav-link nav-over" href="/CustomerMain.do" role="button"
+								class="nav-link nav-over" href="/NoneMemberMain.do" role="button"
 								aria-haspopup="false" aria-expanded="false"> Home </a></li>
 							<!--전시회-->
 							<li class="nav-item position-lg-static me-lg-3"><a

@@ -119,8 +119,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										<h5 class="mb-4">Writing A Review</h5>
 
 										<!-- form 태그시작  -->
-										<form autocomplete="false" action="/exhibition/saveReview.do"
-											method="get" >
+										<form autocomplete="false" action="/exhibition/saveReview.do" method="get" >
 											<div class="row align-items-center">
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
@@ -169,8 +168,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 											<hr class="mt-5 mb-3">
 											<!--저장 버튼-->
 											<div class="text-end">
-												<button type="submit" class="btn btn-primary">Upadte
-													Review</button>
+												<button type="submit" class="btn btn-primary">Upadte Review</button>
 											</div>
 											
 											<img src="" id="img">
@@ -182,6 +180,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						</div>
 					</div>
 				</div>
+			</div>
 		</section>
 
 	</main>
@@ -194,12 +193,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 
 </body>
-
-<!-- scripts -->
-<script src="/resources/js/theme.bundle.js"></script>
-<script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
-<script src="/resources/vendor/node_modules/js/cursor.js"></script>
-
 
 <!--Page scripts-->
 <script src="/resources/vendor/node_modules/js/flatpickr.min.js"></script>

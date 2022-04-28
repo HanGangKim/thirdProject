@@ -63,7 +63,7 @@ System.out.println("totalCustomer: " + totalCustomer);
 	<form name="hiddenForm" action="/exhibition/ExhibitionTicketing.do"
 		method="post">
 <!-- 		회원ID: -->
-		<input type="hidden" value="<%=userId%>" name="customer_id">
+		<input type="hidden" value="<%=customer_id%>" name="customer_id">
 		<br><br> 
 <!-- 		예약자이름: -->
 		<input type="hidden" value="<%=consumer_name%>"

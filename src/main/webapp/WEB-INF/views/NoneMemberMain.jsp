@@ -227,10 +227,10 @@
 							<div class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0" title="${vo.exhibition_title}">
 								<div class="card-product-header px-5 p-4 d-block overflow-hidden">
 									<!--Product image-->
-									<a href="#!"> <img src="${vo.exhibition_image}" class="img-fluid" alt="Image Loading..."> </a>
+									<a href="/exhibition/ExhibitionDetail.do?id=${vo.exhibition_id}"> <img src="${vo.exhibition_image}" class="img-fluid" alt="Image Loading..."> </a>
 								</div>
 								<div class="card-product-body px-4 pb-4 text-center">
-									<a href="#!" class="h6 d-block position-relative mb-2 text-dark text-truncate">${vo.exhibition_title}</a>
+									<a href="/exhibition/ExhibitionDetail.do?id=${vo.exhibition_id}" class="h6 d-block position-relative mb-2 text-dark text-truncate">${vo.exhibition_title}</a>
 									<div class="card-product-body-ovelray">
 										<!--Price-->
 										<span class="card-product-price"> 
@@ -238,7 +238,7 @@
 										</span>
 										<!--Action-->
 										<span class="card-product-view-btn"> 
-											<a href="#!" class="link-underline mb-1 fw-semibold text-dark">상세보기</a>
+											<a href="/exhibition/ExhibitionDetail.do?id=${vo.exhibition_id}" class="link-underline mb-1 fw-semibold text-dark">상세보기</a>
 										</span>
 									</div>
 								</div>
@@ -256,9 +256,7 @@
 		</section>
 
 		<section class="position-relative overflow-hidden bg-white">
-			<div
-				class="position-absolute w-100 w-lg-60 start-0 top-0 h-100 bg-tint-primary w-100 rounded-end-lg-4">
-			</div>
+			<div class="position-absolute w-100 w-lg-60 start-0 top-0 h-100 bg-tint-primary w-100 rounded-end-lg-4"></div>
 			<div class="container py-9 py-lg-11 position-relative">
 				<div class="row align-items-center">
 					<div class="col-md-6 col-11 col-xl-5 mx-auto ms-md-auto order-last order-md-1">
@@ -273,7 +271,7 @@
 						<br>
 						<%-- <h6 class="display-1 mb-4">${volast.exhibition_title}</h6> --%>
 						<%-- <h5 class="mb-5">${volast.exhibition_price} 원</h5> --%>
-						<a href="#" class="btn btn-dark btn-lg btn-hover-text mb-2 me-2">
+						<a href="/exhibition/ExhibitionDetail.do?id=${volast.exhibition_id}" class="btn btn-dark btn-lg btn-hover-text mb-2 me-2">
 							<span class="btn-hover-label label-default">Explore
 								products</span> <span class="btn-hover-label label-hover">Explore
 								products</span>
