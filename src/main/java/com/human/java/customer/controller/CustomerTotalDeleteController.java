@@ -48,7 +48,6 @@ public class CustomerTotalDeleteController {
 		}else {
 			
 			customerService.customerTotalDelete(vo);
-			mv.addObject("userId" , userId);
 			mv.setViewName("redirect:/customer/CustomerGoodbye.do");
 			session.invalidate(); // 세션에 있는 값을 전부다 지우기
 			System.out.println("회원탈퇴 성공");

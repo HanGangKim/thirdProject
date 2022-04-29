@@ -113,7 +113,7 @@ input.form-control[readonly] {
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_com">Start Date</label> 
 													<input name="exhibition_start_date" type="date" class="form-control" id="start_date"
-														placeholder="전시 시작일을 입력해주세요." required="required" data-flatpickr>
+														placeholder="전시 시작일을 선택해주세요." required="required" data-flatpickr>
 												</div>
 												
 												
@@ -121,7 +121,7 @@ input.form-control[readonly] {
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_com">End Date</label> 
 													<input name="exhibition_end_date" type="date" class="form-control" id="end_date"
-														placeholder="전시 종료일을 입력해주세요." required="required" data-flatpickr>
+														placeholder="전시 종료일을 선택해주세요." required="required" data-flatpickr>
 												</div>
 												
 												
@@ -129,7 +129,7 @@ input.form-control[readonly] {
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_com">Total Date</label> 
 														<input name="exhibition_total_date" type="date" class="form-control" id="total_date"
-														placeholder="전시 기간을 입력해주세요." required="required" data-flatpickr='{"mode":"range"}'>
+														placeholder="전시 기간을 선택해주세요." required="required" data-flatpickr='{"mode":"range"}'>
 												</div>		
 												
 												<!--금액-->
@@ -181,8 +181,7 @@ input.form-control[readonly] {
 													<label for="profile_address" class="form-label">Memo</label>
 													<input name="exhibition_memo" type="text"
 														id="exhibition_memo" class="form-control"
-														placeholder="간단한 내용을 입력해주세요."
-														>
+														placeholder="간단한 내용을 입력해주세요.">
 												</div>
 												
 												<!--대표사진 첨부파일-->
