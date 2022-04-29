@@ -120,7 +120,7 @@ input.form-control[readonly] {
 													<input name="exhibition_start_date" type="text"
 														class="form-control" id="profile_com" data-flatpickr
 														value="${CompanyExhibition.exhibition_start_date}"
-														placeholder="전시 시작일을 입력해주세요." required="required">
+														placeholder="전시 시작일을 선택해주세요." required="required">
 												</div>
 
 												<!--종료날짜-->
@@ -129,7 +129,7 @@ input.form-control[readonly] {
 													<input name="exhibition_end_date" type="text"
 														class="form-control" id="profile_com" data-flatpickr
 														value="${CompanyExhibition.exhibition_end_date}"
-														placeholder="전시 종료일을 입력해주세요." required="required">
+														placeholder="전시 종료일을 선택해주세요." required="required">
 												</div>
 
 												<!--전체날짜-->
@@ -138,7 +138,7 @@ input.form-control[readonly] {
 													<input name="exhibition_total_date" type="text"
 														class="form-control" id="profile_com" data-flatpickr='{"mode":"range"}'
 														value="${CompanyExhibition.exhibition_total_date}"
-														placeholder="전시 기간을 입력해주세요." required="required">
+														placeholder="전시 기간을 선택해주세요." required="required">
 												</div>
 
 												<!--금액-->

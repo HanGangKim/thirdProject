@@ -186,15 +186,15 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 											</button>
 										</div>
 
-										<div class="align-items-center row mb-2" style="flex-wrap: nowrap; justify-content: space-between;">
+										<div class="align-items-center row mb-2 justify-content-between">
 											<!-- 전시회 이미지 -->
-											<div class="mt-4 col-md-6" >
+											<div class="mt-7 mt-md-3 col-md-6" >
 												<a href="#!" class="d-block overflow-hidden">
-													<img src="${vo.exhibition_image}" class="img-fluid" style="width:100%;">
+													<img src="${vo.exhibition_image}" class="img-fluid w-100">
 												</a>
 											</div>
 
-											<div class="mt-5 align-items-center col-md-6 row" style="flex-direction: column;">
+											<div class="mt-5 align-items-center col-md-6">
 												<!-- 전시회 이름 -->
 												<div class="mb-3">
 													<label class="form-label" for="profile_name">전시회 이름</label>
@@ -237,7 +237,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<label class="form-label" for="profile_name">내용</label> <input
 													type="text" placeholder="내용"
 													value="${vo.review_contents}" readonly="readonly"
-													class="form-control" style="height: 300px;">
+													class="form-control" style="height: 200px;">
 											</div>
 										</div>
 
