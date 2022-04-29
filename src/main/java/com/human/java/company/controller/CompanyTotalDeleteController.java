@@ -41,7 +41,6 @@ public class CompanyTotalDeleteController {
 			return mv;
 		}else {
 			companyService.companyTotalDelete(vo);
-			mv.addObject("companyId",companyId);
 			mv.setViewName("redirect:/company/CompanyGoodbye.do");
 			session.invalidate();
 			System.out.println("회원탈퇴 성공");
