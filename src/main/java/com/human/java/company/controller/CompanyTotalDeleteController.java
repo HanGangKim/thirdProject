@@ -36,13 +36,13 @@ public class CompanyTotalDeleteController {
 		//[1] 아이디, 패스워드 불일치
 		if(result ==null) {
 			System.out.println("탈퇴실패");
-			mv.setViewName("Company/CompanyErrorPage");
+			mv.setViewName("redirect:/company/CompanyConfirmPass.do");
 			
 			return mv;
 		}else {
 			companyService.companyTotalDelete(vo);
 			mv.addObject("companyId",companyId);
-			mv.setViewName("Company/CompanyGoodbye");
+			mv.setViewName("redirect:/company/CompanyGoodbye.do");
 			session.invalidate();
 			System.out.println("회원탈퇴 성공");
 			return mv;

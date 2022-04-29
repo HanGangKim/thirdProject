@@ -95,13 +95,14 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			<div class="container pt-10 col-11 position-relative py-lg-11">
 				<c:forEach items="${CompanyExhibitionList}" var="vo">
 					<!-- 카드 -->
-					<div class="row position-relative overflow-hidden hover-lift hover-shadow-lg shadow rounded-4 border flex-sm-row mb-6 align-items-center">
-						<div class="col-md-6 col-lg-5 p-0 p-lg-0">
+					<div class="row col-lg-10 offset-lg-1 position-relative overflow-hidden hover-lift hover-shadow-lg shadow rounded-4 border flex-sm-row mb-6 align-items-center">
+						<!-- 전시회 포스터 -->
+						<div class="col-md-6 col-lg-4 p-0 p-lg-0 text-center">
+								<img src="${vo.exhibition_image}" class="img-fluid img-zoom w-100 h-auto">
 							<div class="overflow-hidden">
-								<img src="/resources/img/960x900/1.jpg" class="img-fluid img-zoom">
 							</div>
 						</div>
-						<div class="col-sm-7 p-sm-4 col-12 col-lg-6 ms-sm-7 p-5">
+						<div class="col-sm-7 p-sm-4 col-12 col-lg-7 ms-sm-7 p-5">
 							<!-- 업체 id -->
 							<div class="d-flex mb-2 align-items-center">
 <!-- 								<span class="text-muted me-3">Title</span> -->
@@ -115,7 +116,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								<strong>${vo.company_id}</strong>
 							</div>
 							<!-- 전시 id -->
-							<div class="d-flex mb-2 align-items-center">
+							<div class="d-flex mb-2 align-items-center d-none">
 								<span class="text-muted me-3">Exhibition Id</span> 
 								<strong>${vo.exhibition_id}</strong>
 							</div>
@@ -126,8 +127,13 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							</div>
 							<!-- 전시 내용 -->
 							<div class="d-flex mb-2 align-items-center">
-								<span class="text-muted me-3">Contents</span> 
-								<strong class="text-truncate">${vo.exhibition_contents}</strong>
+								<span class="text-muted me-3">Memo</span> 
+								<strong class="text-truncate">${vo.exhibition_memo}</strong>
+							</div>
+							<!-- 전시 장소 -->
+							<div class="d-flex mb-2 align-items-center">
+								<span class="text-muted me-3">Place</span> 
+								<strong class="text-truncate">${vo.exhibition_location}</strong>
 							</div>
 							<!-- 전시 기간 -->
 							<div class="d-flex mb-2 align-items-center">
@@ -140,7 +146,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								<strong>${vo.exhibition_price}</strong>
 							</div>
 							<!-- 승인 상태 -->
-							<div class="d-flex mb-5 align-items-center">
+							<div class="d-flex mb-3 align-items-center">
 								<span class="text-muted me-3">Flag</span> 
 								<strong>${vo.exhibition_flag}</strong>
 							</div>
@@ -173,12 +179,12 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 				</c:forEach>
 
 				<!-- 버튼 -->
-				<div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-center">
+				<div class="d-flex col-lg-10 offset-lg-1 flex-column flex-sm-row justify-content-sm-between align-items-center">
 					<div class="mb-3 mb-sm-0">
 <!-- 						<a href="/company/CompanyMain.do" class="btn btn-primary">Go MainPage</a> -->
 					</div>
 					<!-- 새 전시회 등록 -->
-					<div class="mb-3 mb-sm-0">
+					<div class="mb-9 mb-sm-0">
 						<a href="/company/CompanyExhibitionWrite.do" class="btn btn-primary">New exhibition</a>
 					</div>
 				</div>

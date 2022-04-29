@@ -122,7 +122,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									<div class="card shadow p-3 mb-3">
 										<h5 class="mb-4">Edit Profile</h5>
 										<!-- 비밀번호 수정 -->
-										<form action="/customer/CustomerUpdateInfo.do" autocomplete="false" method="get">
+										<form action="/customer/CustomerUpdateInfo.do" autocomplete="false" method="post">
 											<div class="row align-items-center">
 												<div class="col-md-12">
 													<div class="row">
@@ -178,40 +178,40 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<!--이름-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_name">Name</label> <input
-														class="form-control" id="profile_name"
+														class="form-control" id="profile_name" required="required"
 														name="customer_name" type="text" value="<%=userName%>">
 												</div>
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_com">Id</label> <input
-														type="text" class="form-control" id="profile_com"
+														type="text" class="form-control" id="profile_com" required="required"
 														name="customer_id" value="<%=userId%>" readonly="readonly">
 												</div>
 
 												<!--전화번호-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_phon">Phone</label>
-													<input type="text" id="profile_phon" name="customer_ph"
+													<input type="text" id="profile_phon" name="customer_ph" required="required"
 														value="<%=userPh%>" class="form-control">
 												</div>
 												<!--이메일-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_email">Email
-														address</label> <input class="form-control" type="email"
+														address</label> <input class="form-control" type="email" required="required"
 														id="profile_email" name="customer_email"
 														value="<%=userEmail%>">
 												</div>
 												<!--성별-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_gender">Gender</label>
-													<input class="form-control" type="text"
+													<input class="form-control" type="text" required="required"
 														name="customer_gender" id="profile_email"
 														value="<%=userGender%>">
 												</div>
 												<!--나이-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_dob">Date of
-														Age</label> <input type="text" id="profile_dob"
+														Age</label> <input type="text" id="profile_dob" required="required"
 														class="form-control" name="customer_age" data-flatpickr
 														value="<%=userAge%>">
 												</div>
@@ -243,7 +243,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										<!-- 약관동의 : 계정삭제 -->
 										<div class="position-relative">
 											<div class="contents">
-												<form action="/customer/customerTotalDelete.do" autocomplete="false" method="get">
+												<form action="/customer/customerTotalDelete.do" autocomplete="false" method="post">
 												
 											
 												

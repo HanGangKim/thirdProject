@@ -41,6 +41,7 @@
 	<select id="companyExhibitionList" parameterType="exhibition" resultType="exhibition">
 	SELECT * FROM EXHIBITION_INFO
 	WHERE COMPANY_ID = #{company_id}
+	ORDER BY EXHIBITION_ID DESC
 	</select>
 	
 	<select id="companyExhibitionDetail" parameterType="exhibition" resultType="exhibition">

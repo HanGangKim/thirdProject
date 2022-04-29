@@ -43,20 +43,14 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
 <!--Flatpickr-->
-<link rel="stylesheet"
-	href="/resources/vendor/node_modules/css/flatpickr.min.css">
+<link rel="stylesheet" href="/resources/vendor/node_modules/css/flatpickr.min.css">
 
 <!--Choices css-->
-<link rel="stylesheet"
-	href="/resources/vendor/node_modules/css/choices.min.css">
+<link rel="stylesheet" href="/resources/vendor/node_modules/css/choices.min.css">
 
 <title>Insert Exhibition</title>
 
 <style>
-#youna-box-size {
-	height: 100px;
-}
-
 .choices__list--single {
 	padding: 0px;
 }
@@ -98,7 +92,7 @@ input.form-control[readonly] {
 										<h5 class="mb-4">Insert Exhibition Info</h5>
 
 										<!-- form 태그시작  -->
-										<form action="/exhibition/exhibitionCompanyExhibitionWrite.do" method="post" enctype="multipart/form-data">
+										<form action="/exhibition/exhibitionCompanyExhibitionWrite.do" onsubmit="return nullCheck()" name="exhibitionForm" method="post" enctype="multipart/form-data">
 											<div class="row align-items-center">
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
@@ -109,10 +103,10 @@ input.form-control[readonly] {
 											
 												<!--등록 전시회 제목-->
 												<div class="col-md-6 mb-3">
-													<label class="form-label" for="profile_com">Exhibition Title</label> 
+													<label class="form-label" for="profile_com" maxlength="5">Exhibition Title</label> 
 													<input name="exhibition_title" type="text"
 														class="form-control" id="profile_com"
-														placeholder="Please enter the title." required="required">
+														placeholder="전시 제목을 입력해주세요." required="required">
 												</div>
 
 												<!--시작날짜-->
@@ -143,7 +137,7 @@ input.form-control[readonly] {
 													<label class="form-label" for="profile_com">Price</label> 
 													<input name="exhibition_price" type="number"
 														class="form-control" id="profile_com"
-														placeholder="Please enter the price." required="required">
+														placeholder="전시 금액을 입력해주세요." required="required">
 												</div>
 												<!-- 금액 끝 -->
 												
@@ -151,7 +145,7 @@ input.form-control[readonly] {
 												<div class="d-flex col-md-12 mb-3" style="justify-content: space-between;">
 													<div class="col-md-10 me-4">
 														<label class="form-label" for="profile_com">Location</label> 
-														<input name="exhibition_location" type="text" class="form-control" id="sample2_address" placeholder="adress" required="required">
+														<input name="exhibition_location" type="text" class="form-control" readonly="readonly" id="sample2_address" placeholder="전시 장소를 검색해주세요." required="required" style="background-color: #f9f9f9;">
 														
 														<!-- 주소 모달창 -->
 														<!-- iOS에서는 position:fixed 버그가 있음, 적용하는 사이트에 맞게 position:absolute 등을 이용하여 top,left값 조정 필요 -->
@@ -170,14 +164,24 @@ input.form-control[readonly] {
 														<a onclick="sample2_execDaumPostcode()" class="d-block btn btn-dark">Search</a>
 													</div>
 												</div>
-												<!-- 지역 끝 -->		
-															
+												<!-- 지역 끝 -->
+												<!-- 지역공백 예외처리  -->
+												<script type="text/javascript">
+													function nullCheck() {
+													   if(!document.exhibitionForm.exhibition_location.value){
+													      alert("주소를 입력해주세요!")
+													      document.exhibitionForm.exhibition_location.focus();
+													      return false;
+													   }
+													}
+												</script>
+
 												<!--내용-->
 												<div class="col-12 mb-3">
 													<label for="profile_address" class="form-label">Memo</label>
 													<input name="exhibition_memo" type="text"
 														id="exhibition_memo" class="form-control"
-														placeholder="Please enter the contents."
+														placeholder="간단한 내용을 입력해주세요."
 														>
 												</div>
 												
@@ -186,7 +190,7 @@ input.form-control[readonly] {
 													<label for="profile_address" class="form-label">Main Image</label>
 													<!-- 이미지 업로드전까지 DEFAULT_IMG 벨류 부여 -->
 													<!-- 이미지 업로드 전까지 file->text 변경  -->
-													<input name="file" value="DEFAULT_IMG" type="file"
+													<input name="file" value="DEFAULT_IMG" type="file" required="required"
 														id="file" class="form-control" accept="image/*">
 												</div>
 												
@@ -195,14 +199,24 @@ input.form-control[readonly] {
 													<label for="profile_address" class="form-label">Sub Image</label>
 													<!-- 이미지 업로드전까지 DEFAULT_IMG 벨류 부여 -->
 													<!-- 이미지 업로드 전까지 file->text 변경  -->
-													<input name="file_sub" value="DEFAULT_IMG" type="file"
+													<input name="file_sub" value="DEFAULT_IMG" type="file" required="required"
 														id="file_sub" class="form-control" accept="image/*">
 												</div>
 											</div>
 											<hr class="mt-5 mb-3">
 											<!--저장 버튼-->
 											<div class="text-end">
-												<button type="submit" class="btn btn-primary">Insert Exhibition</button>
+												<button type="submit" onclick="loadClick()" class="btn btn-primary">
+													<span id="loadingBar" class="spinner-border spinner-border-sm me-2 d-none" role="status" aria-hidden="false"></span> Insert Exhibition 
+												</button>
+												<!-- 이미지 업로드 로딩 스크립트 -->
+												<script type="text/javascript">
+													function loadClick() {
+														var loadingBar = document.getElementById("loadingBar");
+														
+														loadingBar.classList.remove('d-none');
+													}
+												</script>
 											</div>
 										</form>
 										<!-- form 태그 종료 -->
@@ -275,7 +289,7 @@ input.form-control[readonly] {
                // 우편번호와 주소 정보를 해당 필드에 넣는다.
                document.getElementById('sample2_postcode').value = data.zonecode;
                document.getElementById("sample2_address").value = addr;
-              	alert(document.getElementById("sample2_address").value)
+//               	alert(document.getElementById("sample2_address").value)
                // 커서를 상세주소 필드로 이동한다.
                document.getElementById("sample2_detailAddress").focus();
 
@@ -336,7 +350,7 @@ input.form-control[readonly] {
 		var date1 = date.toISOString().substring(0, 10)
 		var date2 = new Date(date.setDate(date.getDate()+91)).toISOString().substring(0, 10);
 											
-		document.getElementById('total_date').value = date1 + ' to ' + date2	
+		document.getElementById('total_date').value = date1 + '~' + date2	
 		
 		document.getElementById('start_date').value = date1
 		document.getElementById('end_date').value = date2

@@ -78,14 +78,14 @@ if (session.getAttribute("userId") == null) {
 						<p class="mb-5 lead mx-auto">Please enter your current password.</p>
 						
 						<div class="mx-auto col-md-8">
-							<form class="needs-validation" action="customerConfirmPassword.do" novalidate>
+							<form class="needs-validation" action="customerConfirmPassword.do" method="post">
 								<!-- 아이디 확인 -->
 								<div class="mb-3">
 									<input type="text" required class="form-control" id="username" name="customer_id" value="<%=userId%>" readonly="readonly">
 								</div>
 								<!-- 비밀번호 확인 -->
 								<div class="mb-0">
-									<input type="password" required class="form-control" id="userpass" autofocus name="customer_password" value="" placeholder="Please enter your password."> 
+									<input type="password" required class="form-control" id="userpass" autofocus name="customer_password" placeholder="Please enter your password."> 
 								</div>
 								<div class="d-flex align-items-center py-3">
 									<span class="flex-grow-1 border-bottom pt-1"></span>

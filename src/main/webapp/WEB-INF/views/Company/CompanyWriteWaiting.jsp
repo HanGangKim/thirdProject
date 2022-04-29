@@ -64,7 +64,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	<main class="main-content " id="main-content">
 		<!-- 페이지 헤더 -->
 		<section id="page-header" class="position-relative bg-dark text-white overflow-hidden">
-			<div class="container pt-12 pb-10">
+			<div class="container col-11 pt-12 pb-10">
 				<div class="row pt-lg-7">
 					<div class="col-lg-7">
 						<h1 class="mb-2 display-4">Success</h1>
@@ -76,7 +76,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		<!-- ./페이지 헤더 -->
 		
 		<section class="position-relative ">
-			<div class="container pt-12 pb-lg-16 ">
+			<div class="container col-11 pb-9 pt-12 pb-lg-16 ">
 				<div class="row pt-lg-5 pb-5 justify-content-center text-center">
 					<div class="col-xl-4">
 						<div class="width-8x height-8x rounded-circle position-relative bg-dark text-white flex-center mb-5">

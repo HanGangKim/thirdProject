@@ -164,8 +164,19 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									<!-- QR -->
 									<a href="#" class="btn btn-primary" style="margin-bottom: 10px;" data-bs-target="#modal-qr-bar-${vo.exhibition_id}" data-bs-toggle="modal">Move to qr</a> 
 									<!-- 후기작성 -->
-									<a href="../customer/CustomerExhibitionReviewWrite.do?exhibition_id=${vo.exhibition_id}&customer_id=${vo.customer_id}&ticketing_id=${vo.ticketing_id}" 
-									class="btn btn-dark">Write Review</a>
+		                           <a onclick="hiddenFromSubmit()" class="btn btn-dark">Write Review</a>
+		                           <form id="hiddenForm" name="hiddenForm" action="/customer/CustomerExhibitionReviewWrite.do" method="post">
+		                           <input type="hidden" name="exhibition_id" value="${vo.exhibition_id}">
+		                           <input type="hidden" name="customer_id" value="${vo.customer_id}">
+		                           <input type="hidden" name="ticketing_id" value="${vo.ticketing_id}"> 
+		                           </form>
+		                           <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+		                           <script type="text/javascript">
+		                           function hiddenFromSubmit(){
+		                              alert("호출")
+		                              $("#hiddenForm").submit(); 
+		                           }
+		                           </script>
 								</div>
 							</div>
 						</div>
