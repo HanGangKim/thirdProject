@@ -97,7 +97,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								<div class="pt-5 d-flex flex-column h-100">
 									<div class="card shadow p-3 mb-3">
 										<h5 class="mb-4">Edit profile</h5>
-										<form action = "/company/CompanyUpdateInfo.do" autocomplete="false" method="get">
+										<form action = "/company/CompanyUpdateInfo.do" autocomplete="false" method="post">
 											<div class="row align-items-center">
 												<div class="col-md-12">
 													<div class="row">
@@ -150,33 +150,33 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<!--이름-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_name">Name</label> <input
-														class="form-control" id="profile_name" name="company_name"type="text"
+														class="form-control" id="profile_name" name="company_name"type="text" required="required"
 														value="<%=companyName%>">
 												</div>
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_com">Id</label> <input
-														type="text" class="form-control" id="profile_com" name="company_id"
+														type="text" class="form-control" id="profile_com" name="company_id" required="required"
 														value="<%=companyId%>" readonly="readonly">
 												</div>
 
 												<!-- 회사번호  -->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_phon">Phone</label>
-													<input type="text" id="profile_phon" name="company_ph"
+													<input type="text" id="profile_phon" name="company_ph" required="required"
 														value="<%=companyPh %>" class="form-control">
 												</div>
 												
 												<!--이메일-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_gender">E-mail</label>
-													<input class="form-control" type="email" name="company_email"id="profile_email"
+													<input class="form-control" type="email" name="company_email"id="profile_email" required="required"
 														value="<%=companyEmail%>">
 												</div>
 												<!--사업자 등록번호-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_dob">
-														사업자 등록번호</label> <input type="text" id="profile_dob"
+														사업자 등록번호</label> <input type="text" id="profile_dob" required="required"
 														class="form-control" name="company_regnum" value="<%=companyRegnum%>">
 												</div>
 												
@@ -212,7 +212,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										<!-- 약관동의 : 계정삭제 -->
 										<div class="position-relative">
 											<div class="contents">
-												<form action="/company/CompanyTotalDelete.do" autocomplete="false" method="get">
+												<form action="/company/CompanyTotalDelete.do" autocomplete="false" method="post">
 													<div id="form__wrap">
 															<label class="text-primary mb-2"> Fiennale 계정을 삭제하실 건가요 ... ? </label>
 <!-- 															<label class="text-primary mb-2"> Fiennale 계정 탈퇴 전 꼭 확인해 주세요!</label> -->

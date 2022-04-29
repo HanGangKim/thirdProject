@@ -107,7 +107,17 @@ span.card-hover-2-footer-link:after {
 
 					<!-- 전시회 등록 수정&조회 -->
 					<div class="col-md-6 mb-4 development grid-item">
-						<a href="/exhibition/CompanyExhibitionList.do?company_id=<%=companyId%>" class="text-black bg-light position-relative d-block overflow-hidden card-hover-2 card">
+						<a onclick="hiddenFromSubmit()" class="text-black bg-light position-relative d-block overflow-hidden card-hover-2 card">
+	                     <!-- hidden form  -->
+	                     <form id="hiddenForm" name="hiddenForm" action="/exhibition/CompanyExhibitionList.do" method="post">
+	                     	<input type="hidden" name="company_id" value="<%=companyId%>">
+	                     </form>
+	                     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	                     <script type="text/javascript">
+	                           function hiddenFromSubmit(){
+	                              $("#hiddenForm").submit(); 
+	                           }
+	                     </script>
 							<img src="/resources/img/graphics/illustration/09.svg" class="w-100 img-zoom">
 							<div class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
 								<div class="card-hover-2-header w-100">
@@ -127,7 +137,7 @@ span.card-hover-2-footer-link:after {
 					
 					<!-- 정보수정 -->
 					<div class="col-md-6 mb-4 motion grid-item">
-						<a href="/company/CompanyConfirmPass.do?company_id=<%=companyId%>" class="text-black bg-light position-relative d-block overflow-hidden card-hover-2 card">
+						<a href="/company/CompanyConfirmPass.do" class="text-black bg-light position-relative d-block overflow-hidden card-hover-2 card">
 							<img src="/resources/img/graphics/illustration/05.svg" class="w-100 img-zoom">
 							<div class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
 								<div class="card-hover-2-header w-100">

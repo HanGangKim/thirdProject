@@ -54,10 +54,6 @@ if (session.getAttribute("companyId") == null) {
 <title>Update Exhibition</title>
 
 <style>
-#youna-box-size {
-	height: 300px;
-}
-
 .choices__list--single {
 	padding: 0px;
 }
@@ -100,7 +96,7 @@ input.form-control[readonly] {
 										<h5 class="mb-4">Update Exhibition Info</h5>
 										
 										<!-- form 태그시작  -->
-										<form action="/exhibition/exhibitionCompanyExhibitionUpdate.do" method="post" enctype="multipart/form-data">
+										<form action="/exhibition/exhibitionCompanyExhibitionUpdate.do" onsubmit="return nullCheck()" name="exhibitionForm" method="post" enctype="multipart/form-data">
 											<div class="row align-items-center">
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
@@ -158,10 +154,10 @@ input.form-control[readonly] {
 												<div class="d-flex col-md-12 mb-3" style="justify-content: space-between;">
 													<div class="col-md-10 mb-3 me-4">
 														<label class="form-label" for="profile_com">Location</label>
-														<input name="exhibition_location" type="text"
+														<input name="exhibition_location" type="text" readonly="readonly"
 															value="${CompanyExhibition.exhibition_location}"
-															class="form-control" id="sample2_address"
-															placeholder="adress" required="required">
+															class="form-control" id="sample2_address" style="background-color: #f9f9f9;"
+															placeholder="전시 장소를 검색해주세요." required="required">
 														
 														<!-- 주소 모달창 -->
 														<!-- iOS에서는 position:fixed 버그가 있음, 적용하는 사이트에 맞게 position:absolute 등을 이용하여 top,left값 조정 필요 -->
@@ -182,14 +178,23 @@ input.form-control[readonly] {
 													</div>
 												</div>
 												<!-- 지역 끝 -->
+												<!-- 지역공백 예외처리  -->
+												<script type="text/javascript">
+													function nullCheck() {
+													   if(!document.exhibitionForm.exhibition_location.value){
+													      alert("주소를 입력해주세요!")
+													      document.exhibitionForm.exhibition_location.focus();
+													      return false;
+													   }
+													}
+												</script>
 
 												<!--내용-->
 												<div class="col-12 mb-3">
 													<label for="profile_address" class="form-label">Memo</label>
 													<input name="exhibition_memo" type="text"
-														value="${CompanyExhibition.exhibition_memo}"
-														id="youna-box-size" class="form-control"
-														placeholder="Please enter the contents.">
+														value="${CompanyExhibition.exhibition_memo}" class="form-control"
+														placeholder="간단한 내용을 입력해주세요.">
 												</div>
 												
 												<!--메인 첨부파일-->
@@ -197,17 +202,15 @@ input.form-control[readonly] {
 													<label for="profile_address" class="form-label">Main Image</label>
 													<!-- 이미지 업로드전까지 DEFAULT_IMG 벨류 부여 -->
 													<!-- 이미지 업로드 전까지 file->text 변경  -->
-													<input name="file" value="DEFAULT_IMG" type="file"
+													<input name="file" value="DEFAULT_IMG" type="file" required="required"
 														value="${CompanyExhibition.exhibition_image}" id="file"
 														class="form-control">
-													<img src="${CompanyExhibition.exhibition_image}">
 												</div>
 												
 												<!--서브 첨부파일-->
 												<div class="col-12">
 													<label for="profile_address" class="form-label">Sub Image</label>
-													<input name="file_sub" value="DEFAULT_IMG" type="file" id="file_sub" class="form-control" accept="image/*">
-													<img src="${CompanyExhibition.exhibition_contents}">
+													<input name="file_sub" value="DEFAULT_IMG" type="file" required="required" id="file_sub" class="form-control" accept="image/*">
 												</div>
 											</div>
 											
@@ -218,8 +221,18 @@ input.form-control[readonly] {
 
 											<!--저장 버튼-->
 											<div class="text-end">
-												<button type="submit" class="btn btn-primary">Update Exhibition</button>
+												<button type="submit" onclick="loadClick()" class="btn btn-primary">
+													<span id="loadingBar" class="spinner-border spinner-border-sm me-2 d-none" role="status" aria-hidden="false"></span>Update Exhibition
+												</button>
 											</div>
+											<!-- 이미지 업로드 로딩 스크립트 -->
+											<script type="text/javascript">
+												function loadClick() {
+													var loadingBar = document.getElementById("loadingBar");
+													
+													loadingBar.classList.remove('d-none');
+												}
+											</script>
 										</form>
 										<!-- form 태그 종료 -->
 									</div>
@@ -290,7 +303,7 @@ input.form-control[readonly] {
 	                // 우편번호와 주소 정보를 해당 필드에 넣는다.
 	                document.getElementById('sample2_postcode').value = data.zonecode;
 	                document.getElementById("sample2_address").value = addr;
-	               	alert(document.getElementById("sample2_address").value)
+// 	               	alert(document.getElementById("sample2_address").value)
 	                // 커서를 상세주소 필드로 이동한다.
 	                document.getElementById("sample2_detailAddress").focus();
 	

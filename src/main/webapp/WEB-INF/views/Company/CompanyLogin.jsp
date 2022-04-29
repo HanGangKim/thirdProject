@@ -44,8 +44,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <!--Google fonts-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap"
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap"
 	rel="stylesheet">
 
 <!-- Main CSS -->
@@ -75,17 +74,16 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						<p class="mb-4 text-muted">Please Sign In with details...</p>
 						<div class="position-relative">
 							<div>
-								<form action="/company/companyLogin.do"
-									class="needs-validation" novalidate>
+								<form action="/company/companyLogin.do" method="post" class="needs-validation">
+									<!-- 아이디 input -->
 									<div class="input-icon-group mb-3">
-										<span class="input-icon"> <i class="bx bx-envelope"></i>
-										</span> <input type="text" class="form-control" required autofocus
-											placeholder="Username" name="company_id">
+										<span class="input-icon"> <i class="bx bx-envelope"></i> </span> 
+										<input type="text" class="form-control" autofocus placeholder="Username" name="company_id" required="required">
 									</div>
+									<!-- 비밀번호 input -->
 									<div class="input-icon-group mb-3">
-										<span class="input-icon"> <i class="bx bx-lock-open"></i>
-										</span> <input type="password" class="form-control" required
-											placeholder="Password" name="company_password">
+										<span class="input-icon"> <i class="bx bx-lock-open"></i> </span> 
+										<input type="password" class="form-control" placeholder="Password" name="company_password" required="required">
 									</div>
 									<div class="mb-0 d-flex justify-content-between">
 										<div class="form-check">
@@ -106,8 +104,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									</div>
 
 									<div class="d-grid">
-										<button class="btn btn-primary" type="submit">Sign in
-										</button>
+										<button class="btn btn-primary" type="submit">Sign in</button>
 									</div>
 								</form>
 
@@ -125,19 +122,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		</section>
 	</main>
 	
-	<!-- <hr>
-	추후 모달로 변경돨 예정 
-	전송방식은 post 
-	<form action="companyFindPassword.do" method="get">
-	<h2>비밀번호 찾기</h2>
-	<input name="company_id" type="text" placeholder="아이디를 입력해주세요">
-	<input name="company_email" type="text" placeholder="이메일을 입력하세요">
-	<button type="submit">제출</button>
-	비밀번호 찾기 성공시 'CustomerFindPassword' 페이지 이동 - 비밀번호 보여주기
-	비밀번호 찾기 실패시 CustomerLogin 페이지 돌아오기 
-	</form>
-	<hr> -->
-	
 	
 	<div id="modal-password-bar-1" class="modal fade" tabindex="-1" aria-labelledby="modal-password-bar-1" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-top modal-md">
@@ -149,7 +133,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						</button>
 					</div>
 
-					<form class="mb-0" action="companyFindPassword.do" method="get">
+					<form class="mb-0" action="companyFindPassword.do" method="post">
 						<div class="align-items-center">
 							<h6 class="d-flex mt-4" style="justify-content: center;">Find Password</h6>
 

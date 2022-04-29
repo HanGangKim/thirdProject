@@ -61,7 +61,7 @@ public class ExhibitionCompanyExhibitionWriteController {
 //		
 		exhibitionService.companyInsertExhibition(vo);
 	
-		return "/Company/CompanyWriteWaiting";
+		return "redirect:/company/CompanyWriteWaiting.do";
 	}
 	
 	// 업체 전시회 수정
@@ -75,7 +75,7 @@ public class ExhibitionCompanyExhibitionWriteController {
 		
 		exhibitionService.companyUpdateExhibition(vo);
 		
-		return "/Company/CompanyWriteWaiting";
+		return "redirect:/company/CompanyWriteWaiting.do";
 	}
 	
 	// 업체 전시회 삭제 

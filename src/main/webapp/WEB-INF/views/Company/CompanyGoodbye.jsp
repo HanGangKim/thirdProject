@@ -77,14 +77,14 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		<!-- ./페이지 헤더 -->
 		
 		<section class="position-relative ">
-			<div class="container pt-12 pb-lg-16 ">
+			<div class="container col-11 pb-9 pt-12 pb-lg-16 ">
 				<div class="row pt-lg-5 pb-5 justify-content-center text-center">
 					<div class="col-xl-4">
 						<div class="width-8x height-8x rounded-circle position-relative bg-dark text-white flex-center mb-5">
 							<i class="bx bx-check lh-1 display-5 fw-normal"></i>
 						</div>
 						<h4 class="display-4 mb-3">Good Bye !</h4>
-						<p class="mb-5 lead mx-auto">${companyId}님 , 계정 탈퇴가 완료되었습니다.</p>
+						<p class="mb-5 lead mx-auto">계정 탈퇴가 완료되었습니다.</p>
 						<div class="mx-auto">
 							<a href="../LogOut.do" class="btn btn-primary mb-2 d-grid">Go To Main</a>
 						</div>

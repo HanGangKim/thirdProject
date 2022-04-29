@@ -1,15 +1,33 @@
 package com.human.java.domain;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Date;
+import java.util.Properties;
 import java.util.UUID;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.jcraft.jsch.Channel;
+import com.jcraft.jsch.ChannelSftp;
+import com.jcraft.jsch.JSch;
+import com.jcraft.jsch.Session;
+
 //import java.sql.Date;
 
 public class ExhibitionVO {
+	
+	// FTP 통신 변수 
+    protected static String FTP_IP   = "210.114.6.197";   // FTP 접속지 IP ( 주소대신 IP 설정 )
+    protected static int    FTP_PORT = 22;                // FTP 접속지 Port
+    protected static String FTP_ID   = "xdo19";           // ID
+    protected static String FTP_PWD  = "rnjsalstjd9656!"; // PASSWORD
+    protected static String FTP_PATH = "";
+    ChannelSftp chSftp               = null;
 
 	private int exhibition_id;
 	private String exhibition_title;
@@ -39,75 +57,7 @@ public class ExhibitionVO {
 	public MultipartFile getFile_sub() {
 		return file_sub;
 	}
-	public void setFile_sub(MultipartFile file_sub) {
-		this.file_sub = file_sub;
-		
-		if(! file_sub.isEmpty()){
-	         this.t_file_name = file_sub.getOriginalFilename();
-	         this.t_file_size = file_sub.getSize();
-	         
-	         String fileExtension=t_file_name.substring(t_file_name.lastIndexOf("."));
-	         
-	         if (!(fileExtension.equals(".jpg") || fileExtension.equals(".jpeg") || fileExtension.equals(".png"))) {
-	            t_fileExtension = true;
-	            return;
-	         }
-	         //1. 가짜이름은 파일의 확장자가 없습니다. >> 진짜 이름에서 확장자를 가져와야한다.
-	         //2. 사용자가 파일을 저장할때 겹치지않도록 암호화하는 코드
-	         //형식 ip_랜덤문자32자리.확장자명
-	         this.t_file_name_en=UUID.randomUUID().toString().replaceAll("-","")+fileExtension;
-	         //***********************************************
-	         // 해당 경로로 변경
-	         //	File f = new File("C:\\Users\\human\\Desktop\\STS4\\thirdProject\\src\\main\\webapp\\resources\\img\\exhibition_sub\\"+t_file_name_en);
-	         File f = new File("C:\\project\\thirdProject\\src\\main\\webapp\\resources\\img\\exhibition_imgs\\"+t_file_name_en);
-	         try {
-	        	 file_sub.transferTo(f);
-	            setExhibition_contents("/resources/img/exhibition_sub/"+t_file_name_en);
-	            
-	         } catch (IllegalStateException e) {            
-	            e.printStackTrace();
-	         } catch (IOException e) {
-	            
-	            e.printStackTrace();
-	         }
-	      }
-	}
-	public MultipartFile getFile() {
-		return file;
-	}
-	public void setFile(MultipartFile file) {
-		this.file = file;
-	      // 업로드 파일 접근
-	      if(! file.isEmpty()){
-	         this.t_file_name = file.getOriginalFilename();
-	         this.t_file_size = file.getSize();
-	         
-	         String fileExtension=t_file_name.substring(t_file_name.lastIndexOf("."));
-	         
-	         if (!(fileExtension.equals(".jpg") || fileExtension.equals(".jpeg") || fileExtension.equals(".png"))) {
-	            t_fileExtension = true;
-	            return;
-	         }
-	         //1. 가짜이름은 파일의 확장자가 없습니다. >> 진짜 이름에서 확장자를 가져와야한다.
-	         //2. 사용자가 파일을 저장할때 겹치지않도록 암호화하는 코드
-	         //형식 ip_랜덤문자32자리.확장자명
-	         this.t_file_name_en=UUID.randomUUID().toString().replaceAll("-","")+fileExtension;
-	         //***********************************************
-	         // 해당 경로로 변경
-	         //	File f = new File("C:\\Users\\human\\Desktop\\STS4\\thirdProject\\src\\main\\webapp\\resources\\img\\exhibition_imgs\\"+t_file_name_en);
-	         File f = new File("C:\\project\\thirdProject\\src\\main\\webapp\\resources\\img\\exhibition_imgs\\"+t_file_name_en);
-	         try {
-	            file.transferTo(f);
-	            setExhibition_image("/resources/img/exhibition_imgs/"+t_file_name_en);
-	            
-	         } catch (IllegalStateException e) {            
-	            e.printStackTrace();
-	         } catch (IOException e) {
-	            
-	            e.printStackTrace();
-	         }
-	      }
-	   }
+	
 
 		
 	
@@ -189,6 +139,207 @@ public class ExhibitionVO {
 	}
 	public void setExhibition_price(int exhibition_price) {
 		this.exhibition_price = exhibition_price;
+	}
+	
+	// 메인 이미지 업로드
+	public void setFile(MultipartFile file) {
+		Session ses = null;
+		Channel ch = null;
+		JSch jsch = new JSch();
+		String deleteFileName = null;
+
+		try {
+			// [1] FTP 연결
+			ses = jsch.getSession(FTP_ID, FTP_IP, FTP_PORT);
+			ses.setPassword(FTP_PWD);
+			Properties p = new Properties();
+			p.put("StrictHostKeyChecking", "no");
+			ses.setConfig(p);
+			ses.connect();
+			ch = ses.openChannel("sftp");
+			ch.connect();
+			chSftp = (ChannelSftp) ch;
+			System.out.println("FTP 연결이 되었습니다.");
+
+		} catch (Exception e) {
+			// [1] FTP 연결 실패시
+			e.printStackTrace();
+			System.out.println("FTP 연결에 실패했습니다.");
+
+		}
+
+		this.file = file;
+		// 업로드 파일 접근
+		if (!file.isEmpty()) {
+			this.t_file_name = file.getOriginalFilename();
+			this.t_file_size = file.getSize();
+
+			String fileExtension = t_file_name.substring(t_file_name.lastIndexOf("."));
+
+			if (!(fileExtension.equals(".jpg") || fileExtension.equals(".jpeg") || fileExtension.equals(".png"))) {
+				t_fileExtension = true;
+				return;
+			}
+
+			this.t_file_name_en = UUID.randomUUID().toString().replaceAll("-", "") + fileExtension;
+			deleteFileName = this.t_file_name_en;
+
+//			File f = new File("D:\\STS\\thirdProject_boot\\src\\main\\resources\\resources\\img\\exhibition_imgs\\" // 윈도우용 주소
+			File f = new File("/Users/iyxuna/Desktop/Project/thirdProject/src/main/webapp/resources/img/exhibition_imgs/" // 유나 맥용 주소
+					+ t_file_name_en);
+
+			try {
+				// [3-1] resources 정적파일 업로드
+				file.transferTo(f);
+
+				try {
+					// [3-2] 업로드 한 파일 FTP 통신 -> 서버 저장
+//					String f_location = "D:/STS/thirdProject_boot/src/main/resources/resources/img/exhibition_imgs/" // 윈도우용 주소
+					String f_location = "/Users/iyxuna/Desktop/Project/thirdProject/src/main/webapp/resources/img/exhibition_imgs/" // 유나 맥용 주소
+							+ t_file_name_en;
+					File ftpFile = new File(f_location); // file 객체 생성 (파일 경로 입력)
+					FileInputStream ftpSubmit = new FileInputStream(ftpFile);
+					chSftp.cd("/xdo19/tomcat/webapps/ROOT/WEB-INF/classes/resources/img/exhibition_imgs");
+					chSftp.put(ftpSubmit, ftpFile.getName()); // 서버에 파일 보내기
+
+				} catch (Exception e) {
+					System.out.println("전송실패:" + e);
+				}
+
+				// [3-3] 저장한 서버 파일 경로저장
+				setExhibition_image("http://xdo19.cafe24.com/resources/img/exhibition_imgs/" + t_file_name_en);
+
+			} catch (IllegalStateException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+			// [4] 연결성공 -> 연결종료
+			try {
+				chSftp.quit(); // Sftp 연결 종료
+				System.out.println("FTP 연결을 종료합니다.");
+			} catch (Exception e) {
+				System.err.println(e.getMessage());
+			}
+
+		}
+
+		// [5] resources 정적파일 삭제
+		try {
+			Thread.sleep(20000);
+			Path deleteFile = Paths
+//					.get("D:\\STS\\thirdProject_boot\\src\\main\\resources\\resources\\img\\exhibition_imgs\\" // 윈도우용 주소
+					.get("/Users/iyxuna/Desktop/Project/thirdProject/src/main/webapp/resources/img/exhibition_imgs/" // 유나 맥용 주소
+							+ deleteFileName);
+			Files.delete(deleteFile);
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
+
+	}
+
+	// -------------------------------------------------------------------------------------------------------------------
+
+	// 부가 이미지 업로드
+	public void setFile_sub(MultipartFile file) {
+
+		Session ses = null;
+		Channel ch = null;
+		JSch jsch = new JSch();
+
+		String deleteFileName = null;
+
+		try {
+			// [1] FTP 연결
+			ses = jsch.getSession(FTP_ID, FTP_IP, FTP_PORT);
+			ses.setPassword(FTP_PWD);
+			Properties p = new Properties();
+			p.put("StrictHostKeyChecking", "no");
+			ses.setConfig(p);
+			ses.connect();
+			ch = ses.openChannel("sftp");
+			ch.connect();
+			chSftp = (ChannelSftp) ch;
+			System.out.println("FTP 연결이 되었습니다.");
+
+		} catch (Exception e) {
+			// [1] FTP 연결 실패시
+			e.printStackTrace();
+			System.out.println("FTP 연결에 실패했습니다.");
+
+		}
+
+		this.file = file;
+		// 업로드 파일 접근
+		if (!file.isEmpty()) {
+			this.t_file_name = file.getOriginalFilename();
+			this.t_file_size = file.getSize();
+
+			String fileExtension = t_file_name.substring(t_file_name.lastIndexOf("."));
+
+			if (!(fileExtension.equals(".jpg") || fileExtension.equals(".jpeg") || fileExtension.equals(".png"))) {
+				t_fileExtension = true;
+				return;
+			}
+
+			this.t_file_name_en = UUID.randomUUID().toString().replaceAll("-", "") + fileExtension;
+
+			deleteFileName = this.t_file_name_en;
+
+//			File f = new File("D:\\STS\\thirdProject_boot\\src\\main\\resources\\resources\\img\\exhibition_sub\\" // 윈도우용 주소
+			File f = new File("/Users/iyxuna/Desktop/Project/thirdProject/src/main/webapp/resources/img/exhibition_sub/" // 유나 맥용 주소
+					+ t_file_name_en);
+			try {
+				// [3-1] resources 정적파일 업로드
+				file.transferTo(f);
+
+				try {
+					// [3-2] 업로드 한 파일 FTP 통신 -> 서버 저장
+//					String f_location = "D:/STS/thirdProject_boot/src/main/resources/resources/img/exhibition_sub/" // 윈도우용 주소
+					String f_location = "/Users/iyxuna/Desktop/Project/thirdProject/src/main/webapp/resources/img/exhibition_sub/" // 유나 맥용 주소
+							+ t_file_name_en;
+					File ftpFile = new File(f_location); // file 객체 생성 (파일 경로 입력)
+					FileInputStream ftpSubmit = new FileInputStream(ftpFile);
+					chSftp.cd("/xdo19/tomcat/webapps/ROOT/WEB-INF/classes/resources/img/exhibition_sub");
+					chSftp.put(ftpSubmit, ftpFile.getName()); // 서버에 파일 보내기
+
+				} catch (Exception e) {
+					System.out.println("전송실패:" + e);
+				}
+
+				// [3-3] 저장한 서버 파일 경로저장
+				setExhibition_contents("http://xdo19.cafe24.com/resources/img/exhibition_sub/" + t_file_name_en);
+
+			} catch (IllegalStateException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+
+				e.printStackTrace();
+			}
+
+			// [4] 연결성공 -> 연결종료
+			try {
+				chSftp.quit(); // Sftp 연결 종료
+				System.out.println("FTP 연결을 종료합니다.");
+			} catch (Exception e) {
+				System.err.println(e.getMessage());
+			}
+
+		}
+
+		// [5] resources 정적파일 삭제
+		try {
+			Thread.sleep(20000);
+			Path deleteFile = Paths
+//					.get("D:\\STS\\thirdProject_boot\\src\\main\\resources\\resources\\img\\exhibition_sub\\" // 윈도우용 주소
+					.get("/Users/iyxuna/Desktop/Project/thirdProject/src/main/webapp/resources/img/exhibition_sub/" // 유나 맥용 주소
+							+ deleteFileName);
+			Files.delete(deleteFile);
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
+
 	}
 
 	

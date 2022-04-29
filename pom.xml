@@ -235,6 +235,13 @@
 		<artifactId>mail</artifactId>
 		<version>1.4.7</version>
 	</dependency>
+
+	<!-- jsch : sftp 라이브러리 -->
+	<dependency>
+		<groupId>com.jcraft</groupId>
+		<artifactId>jsch</artifactId>
+		<version>0.1.54</version>
+	</dependency>
 		
 	</dependencies>
 
