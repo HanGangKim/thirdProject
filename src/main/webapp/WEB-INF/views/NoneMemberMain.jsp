@@ -131,7 +131,7 @@
 					<div class="col-md-6 col-11 mb-3 mb-md-0">
 						<div class="card border-0 card-hover overflow-hidden">
 							<div class="overflow-hidden position-relative">
-								<img src="/resources/img/shop/banners/1.jpeg" class="img-fluid img-zoom w-100">
+								<img src="/resources/img/shop/banners/banner2.jpg" class="img-fluid img-zoom h-100">
 								<div class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
 							</div>
 							<div class="position-absolute text-white start-0 top-0 p-4 justify-content-center text-center align-items-center d-flex w-100 h-100">
