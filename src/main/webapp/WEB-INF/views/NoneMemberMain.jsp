@@ -354,9 +354,15 @@
 	
 	
 	
-	var t_year = end.split("-")[0];
-	var t_month = end.split("-")[1];
-	var t_day = end.split("-")[2];
+    if (end[4]==".") {
+        var t_year = end.split(".")[0];
+        var t_month = end.split(".")[1];
+        var t_day = end.split(".")[2];
+    } else{
+        var t_year = end.split("-")[0];
+        var t_month = end.split("-")[1];
+        var t_day = end.split("-")[2];
+    }
 	console.log(t_month+" / "+t_day);
 	
 	var t_hours = 23;
