@@ -108,12 +108,16 @@ public class ExhibitionVO {
 		return exhibition_start_date;
 	}
 	public void setExhibition_start_date(String exhibition_start_date) {
+		exhibition_start_date = exhibition_start_date.replace("-", ".");
+		
 		this.exhibition_start_date = exhibition_start_date;
 	}
 	public String getExhibition_end_date() {
 		return exhibition_end_date;
 	}
 	public void setExhibition_end_date(String exhibition_end_date) {
+		exhibition_end_date = exhibition_end_date.replace("-", ".");
+		
 		this.exhibition_end_date = exhibition_end_date;
 	}
 	public String getExhibition_total_date() {
