@@ -4,6 +4,7 @@ public class ReviewVO {
 	
 	// CUSTOMER_INFO 테이블 
 	private String customer_name;
+	private String customer_id;
 
 	// REVIEW 테이블
 	private int review_id;
@@ -11,8 +12,6 @@ public class ReviewVO {
 	private String review_contents;
 	private String review_date;
 	private double review_star_score;
-	private int exhibition_id;
-	private String customer_id;
 	
 	// exhibition 테이블
 	private String exhibition_title;
@@ -20,6 +19,7 @@ public class ReviewVO {
 	private String exhibition_end_date;
 	private String exhibition_image;
 	private String exhibition_location;
+	private int exhibition_id;
 	
 	// ticketing 테이블
 	private int ticketing_id;

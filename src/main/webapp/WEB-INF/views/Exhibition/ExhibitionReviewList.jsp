@@ -124,7 +124,34 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 		<!-- 리뷰 리스트 -->
 		<section class="position-relative bg-white">
-			<div class="container col-11 py-9 py-lg-11">
+			<div class="container col-11 pt-10">
+				<div class="row mb-5" id="more_list">
+					<div class="col-md-6 col-lg-6">
+						<!--Property-item-row-->
+						<div class="card rounded-4 mb-5 " data-aos="fade-up" >
+							<div class="mb-0">
+								<a href="#!" class="d-block overflow-hidden rounded-4">
+									<img src="/resources/img/960x640/word-cloud-1.png" class="img-fluid" alt="${vo.exhibition_title}" style="width:100%;">
+								</a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-6">
+						<!--Property-item-row-->
+						<div class="card rounded-4 mb-5 " data-aos="fade-up" >
+							<div class="mb-0">
+								<a href="#!" class="d-block overflow-hidden rounded-4">
+									<img src="/resources/img/960x640/word-cloud-3.png" class="img-fluid" alt="${vo.exhibition_title}" style="width:100%; height:425px;">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="container col-11 py-9 pt-5">
 				<div class="row mb-5" id="more_list">
 					<c:forEach items="${reviewList}" var="vo" varStatus="status">
 						<div class="col-md-6 col-lg-4">
@@ -186,15 +213,15 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 											</button>
 										</div>
 
-										<div class="align-items-center row mb-2" style="flex-wrap: nowrap; justify-content: space-between;">
+										<div class="align-items-center row mb-2 justify-content-between">
 											<!-- 전시회 이미지 -->
-											<div class="mt-4 col-md-6" >
+											<div class="mt-7 mt-md-3 col-md-6" >
 												<a href="#!" class="d-block overflow-hidden">
-													<img src="${vo.exhibition_image}" class="img-fluid" style="width:100%;">
+													<img src="${vo.exhibition_image}" class="img-fluid w-100">
 												</a>
 											</div>
 
-											<div class="mt-5 align-items-center col-md-6 row" style="flex-direction: column;">
+											<div class="mt-5 align-items-center col-md-6">
 												<!-- 전시회 이름 -->
 												<div class="mb-3">
 													<label class="form-label" for="profile_name">전시회 이름</label>
@@ -237,7 +264,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<label class="form-label" for="profile_name">내용</label> <input
 													type="text" placeholder="내용"
 													value="${vo.review_contents}" readonly="readonly"
-													class="form-control" style="height: 300px;">
+													class="form-control" style="height: 200px;">
 											</div>
 										</div>
 

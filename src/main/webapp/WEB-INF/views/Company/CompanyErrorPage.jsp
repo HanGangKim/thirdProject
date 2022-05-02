@@ -55,7 +55,6 @@ if (session.getAttribute("companyId") == null) {
 	<jsp:include page="/headerCompany.jsp" />
 
 	<!--Main content-->
-
 	<main class="main-content d-grid" id="main-content">
 		<!-- 페이지 헤더 -->
 		<section id="page-header" class="position-relative bg-dark text-white overflow-hidden">
@@ -71,16 +70,12 @@ if (session.getAttribute("companyId") == null) {
 		<!-- ./페이지 헤더 -->
 		
 		<section class="position-relative overflow-hidden">
-			<div class="container pt-14 pb-9">
+			<div class="container col-11 pt-14 pb-9">
 				<div class="row">
-					<div
-						class="col-md-10 col-lg-8 mx-auto text-center position-relative">
-
-						<div class=" position-relative z-index-1">
-
+					<div class="col-md-10 col-lg-8 mx-auto text-center position-relative"> 
+						<div class=" position-relative z-index-1"> 
 							<div class="text-danger mb-5">
-								<img src="/resources/img/graphics/illustration/404.svg"
-									class="width-18x mx-auto" alt="">
+								<img src="/resources/img/graphics/illustration/404.svg" class="width-18x mx-auto" alt="">
 							</div>
 							<h1 class="display-1 mb-2">Error!</h1>
 							<h2 class="mb-4">Oops! Page not found</h2>

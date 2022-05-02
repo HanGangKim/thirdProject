@@ -225,17 +225,6 @@ public class ExhibitionVO {
 
 		}
 
-		// [5] resources 정적파일 삭제
-		try {
-			Thread.sleep(20000);
-			Path deleteFile = Paths
-//					.get("D:\\STS\\thirdProject_boot\\src\\main\\resources\\resources\\img\\exhibition_imgs\\" // 윈도우용 주소
-					.get("/Users/iyxuna/Desktop/Project/thirdProject/src/main/webapp/resources/img/exhibition_imgs/" // 유나 맥용 주소
-							+ deleteFileName);
-			Files.delete(deleteFile);
-		} catch (Exception e) {
-			System.err.println(e.getMessage());
-		}
 
 	}
 

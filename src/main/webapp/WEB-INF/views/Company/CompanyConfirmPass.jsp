@@ -92,7 +92,7 @@ if (session.getAttribute("companyId") == null) {
 						<p class="mb-5 lead mx-auto">Please enter your current password.</p>
 						
 						<div class="mx-auto col-md-8">
-							<form class="needs-validation" action="companyConfirmPassword.do" method="post">
+							<form class="needs-validation" action="/company/companyConfirmPassword.do" method="post">
 								<!-- 아이디 확인 -->
 								<div class="mb-3">
 									<input type="text" required class="form-control" id="username" name="company_id" value="<%=companyId%>" readonly="readonly">

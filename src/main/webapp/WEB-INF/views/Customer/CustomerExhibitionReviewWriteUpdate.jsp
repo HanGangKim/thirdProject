@@ -123,27 +123,31 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 										
 										<!-- form 태그시작  -->
-										<form autocomplete="false" action="/exhibition/updateReview.do"
-											method="get" enctype="multipart/form-data">
+										<form autocomplete="false" action="/exhibition/updateReview.do" method="post" enctype="multipart/form-data">
 											<div class="row align-items-center">
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_com">Id</label> <input
-														name="customer_id" value="${review.customer_id}"
+														name="customer_id" value="${review.customer_id}" required="required"
+														type="text" class="form-control" id="profile_com" readonly>
+												</div>
+												
+												<!--전시 제목-->
+												<div class="col-md-6 mb-3">
+													<label class="form-label" for="profile_com">Exhibition Title</label> 
+													<input name="exhibition_title" value="${review.exhibition_title}" required="required"
 														type="text" class="form-control" id="profile_com" readonly>
 												</div>
 
-											<!-- 변하지 않는 시퀀스 -->
-											 <input type="number" name="exhibition_id"
-													value="${review.exhibition_id}" hidden>
-											<input type="number" name="review_id"
-													value="${review.review_id}" hidden>
+												<!-- 변하지 않는 시퀀스 -->
+												<input type="number" name="exhibition_id" value="${review.exhibition_id}" hidden>
+												<input type="number" name="review_id" value="${review.review_id}" hidden>
 													
 												<!--리뷰 제목-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_com">review
 														title</label> <input name="review_title" type="text"
-														value="${review.review_title}"
+														value="${review.review_title}" required="required"
 														class="form-control" id="profile_com"
 														placeholder="제목을 입력해주세요.">
 												</div>
@@ -165,17 +169,16 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<!--내용-->
 												<div class="col-12 mb-3">
 													<label for="profile_address" class="form-label">Content</label>
-													<input name="review_contents" type="text"
-													value="${review.review_contents}"
+													<textarea name="review_contents" required="required"
 														id="youna-box-size" class="form-control"
-														placeholder="Please enter the contents.">
+														placeholder="Please enter the contents.">${review.review_contents}</textarea>
 												</div>
 												
 											</div>
 											<hr class="mt-5 mb-3">
 											<!--저장 버튼-->
 											<div class="text-end">
-												<button type="submit" class="btn btn-primary">Upadte Review</button>
+												<button type="submit" class="btn btn-primary">Update Review</button>
 											</div>
 										</form>
 										<!-- form 태그 종료 -->

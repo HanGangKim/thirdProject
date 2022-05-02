@@ -35,27 +35,21 @@
 	<!--Header Start-->
 	<jsp:include page="/header.jsp" />
 
-	<!--Main content-->
-
+	<!--Main content--> 
 	<main class="main-content d-grid" id="main-content">
 		<section class="position-relative overflow-hidden">
 			<div class="container col-11 pt-14 pb-9">
 				<div class="row">
-					<div
-						class="col-md-10 col-lg-8 mx-auto text-center position-relative">
-
-						<div class=" position-relative z-index-1">
-
+					<div class="col-md-10 col-lg-8 mx-auto text-center position-relative">
+						<div class=" position-relative z-index-1"> 
 							<div class="text-danger mb-5">
-								<img src="/resources/img/graphics/illustration/404.svg"
-									class="width-18x mx-auto" alt="">
+								<img src="/resources/img/graphics/illustration/404.svg" class="width-18x mx-auto" alt="">
 							</div>
 							<h1 class="display-1 mb-2">Error!</h1>
 							<h2 class="mb-4">Oops! Page not found</h2>
 							<p class="w-lg-75 lead mx-auto mb-5">알 수 없는 이유로 에러가 발생했습니다.</p>
-							<a href="/LogOut.do" class="fw-semibold"> <i
-								class="bx bx-left-arrow-alt lh-1 fw-normal me-2"></i>Back to
-								Home
+							<a href="/LogOut.do" class="fw-semibold"> 
+								<i class="bx bx-left-arrow-alt lh-1 fw-normal me-2"></i>Back to Home
 							</a>
 						</div>
 					</div>
@@ -65,7 +59,6 @@
 	</main>
 
 	<!--Footer start-->
-
 	<jsp:include page="/footer.jsp" />
 	
 </body>
