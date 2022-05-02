@@ -34,42 +34,16 @@
 <title>Assan 4</title>
 </head>
 <style>
-.approveCompanyInput {
-	border: 0px solid black;
-	text-align: right;
+
+.nav-tabs .nav-link:not(:first-child) {
+    margin-left: 0rem;
 }
 
-.approveCompanySign {
-	border: 0px solid black;
-	width: 100px
+.mb-5 {
+    margin-bottom: 1.5rem!important;
 }
 
-#btnHover {
-	background-color: rgb(108, 116, 130);
-}
-
-#btnHover:hover {
-	background-color: black;
-}
 </style>
-
-<body>
-
-	<%-- <c:forEach items="${vo}" var="vo">
-		<table border=1>
-			<tr>
-				<td>${vo.company_id}</td>
-				<td>${vo.company_password}</td>
-				<td>${vo.company_name}</td>
-				<td>${vo.company_ph}</td>
-				<td>${vo.company_email}</td>
-				<td>${vo.company_regnum}</td>
-				<td>${vo.company_flag}</td>
-
-			</tr>
-		</table>
-	</c:forEach> --%>
-</body>
 
 <body>
 
@@ -115,123 +89,216 @@
 	<main>
 
 		
-		<section class="position-relative bg-white">
-			<br> <br>
-			<div class="container z-index-1 position-relative pb-9 pb-lg-11">
+		<section class="position-relative overflow-hidden">
+        <!--Divider shape-->
+        <svg class="w-100 text-white position-absolute bottom-0 start-0" preserveAspectRatio="none" width="1200"
+          height="80" viewBox="0 0 1200 148" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0 126.857L1200 0V148H0V126.857Z" fill="currentColor" />
+        </svg>
+        <div class="container-fluid px-xl-9 position-relative py-9 py-lg-11 z-index-1">
+          <!--Tabs-->
+          <div>
 
+            <!--Tabs nav-->
+            <div class="text-center">
+              <nav class="nav nav-fill nav-tabs mb-7 mb-lg-9">
+                <a href="#feature_tab_1" class="nav-link py-3 flex-shrink-0 active" data-bs-toggle="tab"
+                  aria-expanded="true">
+                  <h6 class="text-reset mb-0">Company</h6>
+                </a>
+               <!--  <a href="#feature_tab_2" class="nav-link py-3 flex-shrink-0" data-bs-toggle="tab"
+                  aria-expanded="false">
+                  <h6 class="text-reset mb-0">Integrations</h6>
+                </a> -->
+                <a href="#feature_tab_3" class="nav-link py-3 flex-shrink-0" data-bs-toggle="tab"
+                  aria-expanded="false">
+                  <h6 class="text-reset mb-0">Exhibition</h6>
+                </a>
+              </nav>
+            </div>
 
-				<h2 class="mb-4"></h2>
-				<c:forEach items="${vo}" var="vo" varStatus="status">
-					<article
-						class="row g-0 mb-4 mb-lg-5 position-relative overflow-hidden hover-lift hover-shadow-lg border rounded-4 card-hover shadow-sm align-items-center">
+            <!--Tabs content-->
+            <div class="tab-content">
 
-						<div class="col-md-6 col-lg-5 p-0 p-lg-0">
-							<div class="overflow-hidden">
-								<img src="/resources/img/master/masterLogo.png" alt=""
-									class="img-fluid img-zoom">
+              <!--Tab Pane(item)-->
+              <div class="tab-pane show fade active" id="feature_tab_1">
+                <div class="row align-items-center justify-content-between">
+                  <div class="col-lg-5 col-xl-4 me-lg-auto" data-aos="fade-up" data-aos-delay="100">
+                    <!--Subtitle-->
+                    <p class="mb-4 badge bg-info px-3 py-2 rounded-pill">Company</p>
 
-							</div>
-						</div>
-						<div class="col-md-6 col-lg-7">
+                    <!--Title-->
+                    <div class="mb-lg-4 display-4">
+                      <span>Company D&R List</span><br />
+                    </div>
+                    <div class="d-flex align-items-center mb-4">
+                      <div>
+                        <p class="mb-0">
+                         Hello admin:) <br>
+                         Welcome to Fiennale!
+                         Please check the approval and rejection details of the company here
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                        <div class="col-sm-6">
+                            <div class="card card-body border-0">
+                            <span class="input-icon">
+                                              <i class="bx d-flex bx-message-alt-check" style="align-items:center; display: flex;">
+                                              <strong><h5>&nbsp;Approval List / 승인리스트</h5></strong></i>
+                                            </span>
+                                <!-- <p><strong><h5>승인리스트 / Approval List</h5></strong></p> -->
+                                <br>
+                                 <article class="d-flex card-hover mb-4 align-items-stretch">
+                                <div class="me-3">
+                                    <a href="#!" class="overflow-hidden rounded-3 shadow d-block">
+                                        <img src="/resources/img/960x640/6.jpg" alt="Image" class="width-9x img-zoom">
+                                    </a>
+                                </div>
+                                <div class="flex-gropw-1 justify-content-between">
+                                    <a href="#!" class="text-dark">
+                                        <h6 class="mb-2 text-reset">
+                                            Company_ID
+                                        </h6>
+                                    </a>
+                                    <div class="d-flex justify-content-between">
+                                        <small class="mb-0">
+                                            <a href="#!">Fiennale</a>
+                                        </small>
+                                       
+                                    </div>
+                                </div>
+                            </article>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card card-body border-0">
+                            <i class="bx d-flex bx-message-alt-x" style="align-items:center; display: flex;">
+                                              <strong><h5>&nbsp;Rejection List / 거절리스트</h5></strong></i>
+                                            </span>
+                                <!-- <p><strong><h5>거절리스트 / Rejection List</h4></strong></p> -->
+                                <br>
+                                <article class="d-flex card-hover mb-4 align-items-stretch">
+                                <div class="me-3">
+                                    <a href="#!" class="overflow-hidden rounded-3 shadow d-block">
+                                        <img src="/resources/img/960x640/6.jpg" alt="Image" class="width-9x img-zoom">
+                                    </a>
+                                </div>
+                                <div class="flex-gropw-1 justify-content-between">
+                                    <a href="#!" class="text-dark">
+                                        <h6 class="mb-2 text-reset">
+                                            Company_ID
+                                        </h6>
+                                    </a>
+                                    <div class="d-flex justify-content-between">
+                                        <small class="mb-0">
+                                            <a href="#!">Fiennale</a>
+                                        </small>
+                                       
+                                    </div>
+                                </div>
+                            </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+				
+				
+              <!--Tab Pane(item)-->
+              
 
-							<div class="position-relative p-4 p-lg-5">
-								<div
-									class="d-flex justify-content-start w-100 pb-3 align-items-center">
-									<small class="text-muted">업체가입</small>
-
-								</div>
-								<div>
-									<!-- <h2 class="mb-4"> -->
-
-									<h2 class="mb-4">
-										<table>
-											<tr>
-												<td><h2>${vo.company_id}</h2></td>
-											</tr>
-											<tr>
-												<td><h6>${vo.company_password}</h6></td>
-											</tr>
-											<tr>
-												<td><h6>${vo.company_ph}</h6></td>
-											</tr>
-											<tr>
-												<td><h6>${vo.company_email}</h6></td>
-											</tr>
-											<tr>
-												<td><h6>${vo.company_regnum}</h6></td>
-											</tr>
-											<tr>
-												<td><h6>${vo.company_flag}</h6></td>
-											</tr>
-
-
-
-
-										</table>
-									</h2>
-
-									<h6>해당 업체(갤러리)를 홈페이지의 가맹 업체로 승인하시습니까?</h6>
-
-									<!-- </h2> -->
-
-
-									<br> <br>
-									<div class="text-end">
-
-
-										<button type="button" class="btn btn-primary" id="btnHover"
-											onclick="companyApproval('${vo.company_id}','${status.count}')">승인</button>
-
-										<button type="button" class="btn btn-primary" id="btnHover"
-											onclick="companyRefusal('${vo.company_id}','${status.count}')">거절</button>
-
-
-										<br> <input type="text" class="approveCompanyInput"
-											value=""></input> <input type="text"
-											class="approveCompanySign" value=""></input>
-									</div>
-
-
-								</div>
-							</div>
-						</div>
-					</article>
-				</c:forEach>
-
-
-				<!-- 승인 -->
-				<form action="/master/masterCompanyUpdate.do" method="get"
-					name="frmS">
-					<input name="company_id" id="success_id" type="text" hidden>
-					<input name="company_flag" id="success_flag" type="text" hidden>
-				</form>
-
-
-				<!-- 거절 -->
-				<form action="/master/masterCompanyUpdate.do" name="frmR">
-					<input name="company_id" id="recheck_id" type="text" hidden>
-					<input name="company_flag" id="recheck_flag" type="text" hidden>
-				</form>
-
-				<!--/.article-->
-
-				<!--/.article-->
-
-				<!--/.article-->
-				<!-- <nav aria-label="Page navigation example"
-					class="d-flex justify-content-end" data-aos="fade-up">
-					<ul class="pagination">
-						<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-						<li class="page-item active"><a class="page-link" href="#">1</a></li>
-						<li class="page-item"><a class="page-link" href="#">2</a></li>
-						<li class="page-item"><a class="page-link" href="#">3</a></li>
-						<li class="page-item"><a class="page-link" href="#">Next</a></li>
-					</ul>
-				</nav> -->
-			</div>
-		</section>
-		<!--/.Article header-end-->
-		<!--/.content section/-->
+              <!--Tab Pane(item)-->
+              <div class="tab-pane fade" id="feature_tab_3">
+                <div class="row align-items-center justify-content-between">
+                  <div class="col-lg-6 ms-auto mb-5 mb-lg-0 order-lg-last">
+                    <!-- <div class="position-relative rounded-3" data-aos="fade-right" data-aos-delay="100">
+                      <img class="img-fluid rounded-3 shadow-xl" src="/resources/img/graphics/saas/hero.png"
+                        alt="content" />
+                    </div> -->
+                  </div>
+                  <div class="col-lg-5 col-xl-4 me-auto" data-aos="fade-up" data-aos-delay="100">
+                    <!--Subtitle-->
+                    <p class="mb-4 badge bg-info px-3 py-2 rounded-pill">Exhibition</p>
+                    <!--Title-->
+                    <h2 class="mb-4 display-4 me-lg-n18">
+                      Exhibition D&R List
+                    </h2>
+                    <p class="mb-5">
+                       Hello admin:) <br>
+                         Welcome to Fiennale!
+                         Please check the approval and rejection details of the exhibition here
+                    </p>
+                    
+                  </div>
+                  <div class="row mb-3">
+                        <div class="col-sm-6">
+                            <div class="card card-body border-0">
+                            <span class="input-icon">
+                                              <i class="bx d-flex bx-message-alt-check" style="align-items:center; display: flex;">
+                                              <strong><h5>&nbsp;Approval List / 승인리스트</h5></strong></i>
+                                            </span>
+                                <!-- <p><strong><h5>승인리스트 / Approval List</h5></strong></p> -->
+                                <br>
+                                 <article class="d-flex card-hover mb-4 align-items-stretch">
+                                <div class="me-3">
+                                    <a href="#!" class="overflow-hidden rounded-3 shadow d-block">
+                                        <img src="/resources/img/960x640/6.jpg" alt="Image" class="width-9x img-zoom">
+                                    </a>
+                                </div>
+                                <div class="flex-gropw-1 justify-content-between">
+                                    <a href="#!" class="text-dark">
+                                        <h6 class="mb-2 text-reset">
+                                           Exhibition_title
+                                        </h6>
+                                    </a>
+                                    <div class="d-flex justify-content-between">
+                                        <small class="mb-0">
+                                            <a href="#!">Fiennale</a>
+                                        </small>
+                                       
+                                    </div>
+                                </div>
+                            </article>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card card-body border-0">
+                            <i class="bx d-flex bx-message-alt-x" style="align-items:center; display: flex;">
+                                              <strong><h5>&nbsp;Rejection List / 거절리스트</h5></strong></i>
+                                            </span>
+                                <!-- <p><strong><h5>거절리스트 / Rejection List</h4></strong></p> -->
+                                <br>
+                                <article class="d-flex card-hover mb-4 align-items-stretch">
+                                <div class="me-3">
+                                    <a href="#!" class="overflow-hidden rounded-3 shadow d-block">
+                                        <img src="/resources/img/960x640/6.jpg" alt="Image" class="width-9x img-zoom">
+                                    </a>
+                                </div>
+                                <div class="flex-gropw-1 justify-content-between">
+                                    <a href="#!" class="text-dark">
+                                        <h6 class="mb-2 text-reset">
+                                            Exhibition_title
+                                        </h6>
+                                    </a>
+                                    <div class="d-flex justify-content-between">
+                                        <small class="mb-0">
+                                            <a href="#!">Fiennale</a>
+                                        </small>
+                                       
+                                    </div>
+                                </div>
+                            </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      </section>
 
 	</main>
 
@@ -301,70 +368,6 @@
 	<script src="/resources/js/theme.bundle.js"></script>
 
 </body>
-<script type="text/javascript"
-	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script type="text/javascript">
-	function companyApproval(data, idx) {
-		alert(data+"의 등록이 승인되었습니다"); 
-
-		//  데이터 확인 작업 
-		// 클릭한 대상의 회사명 : data 
-		// 클랙한 대상의 순서 : idx ( 1부터 시작 )
-		// 클릭한 대상안에 있는 텍스트박스 선택 : inputText ( 배열이기때문에 0부터 시작이기때문에 idx-1 ) 
-		// 		var inputText = document.getElementsByClassName('approveCompanyInput')[idx-1] ;
-		// 		alert(data +  " " + inputText)
-		// 		inputText.value = data;
-		/* document.getElementsByClassName('approveCompanyInput')[idx - 1].value = data;
-		document.getElementsByClassName('approveCompanySign')[idx - 1].value = '승인되었습니다'; */
-
-		document.getElementById('success_id').value = data
-		document.getElementById('success_flag').value = 'D'
-
-		/* alert(document.getElementById('success_id').value)
-		alert(document.getElementById('success_flag').value) */
-
-		/* $(function(){ */
-		/* document.hiddenForm.submit(); */
-		document.frmS.submit();
-		/* }) */
-
-	}
-</script>
-
-<script type="text/javascript">
-	function companyRefusal(data, idx) {
-		alert(data+"의 등록이 거절되었습니다"); 
-
-		//  데이터 확인 작업 
-		// 클릭한 대상의 회사명 : data 
-		// 클랙한 대상의 순서 : idx ( 1부터 시작 )
-		// 클릭한 대상안에 있는 텍스트박스 선택 : inputText ( 배열이기때문에 0부터 시작이기때문에 idx-1 ) 
-		// 		var inputText = document.getElementsByClassName('approveCompanyInput')[idx-1] ;
-		// 		alert(data +  " " + inputText)
-		// 		inputText.value = data;
-		/* document.getElementsByClassName('approveCompanyInput')[idx - 1].value = data;
-		document.getElementsByClassName('approveCompanySign')[idx - 1].value = '거절되었습니다'; */
-
-		document.getElementById('recheck_id').value = data
-		document.getElementById('recheck_flag').value = 'R'
-
-		/* alert(document.getElementById('recheck_id').value)
-		alert(document.getElementById('recheck_flag').value) */
-
-		/* $(function(){ */
-		/* document.hiddenForm.submit(); */
-		document.frmR.submit();
-		/* }) */
-
-	}
-</script>
-
-<!-- <script type="text/javascript">
-var inputBtn = document.querySelectorAll(".btn")
-for (var i = 0; i < inputBtn.length; i++) {
-		alert("나와제발");
-
-</script> -->
 
 
 
