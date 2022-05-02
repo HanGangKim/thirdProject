@@ -161,13 +161,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script type="text/javascript">
     function hiddenFormSubmit(ex_id, rv_id){
-       alert("호출")
-       
        $('#ex_id').val(ex_id);
-       $('#rv_id').val(rv_id);
-      
+       $('#rv_id').val(rv_id); 
        document.hiddenForm.submit();
-       
     }
     </script>
 
