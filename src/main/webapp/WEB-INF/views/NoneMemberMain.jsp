@@ -190,7 +190,7 @@
 						<div class="card border-0 card-hover overflow-hidden">
 							<div class="overflow-hidden position-relative">
 
-								<img src="/resources/img/shop/banners/2.jpeg" class="img-fluid img-zoom" style="width: 100%; height: 500px;">
+								<img src="/resources/img/960x640/word-cloud-5.png" class="img-fluid img-zoom" style="width: 100%; height: 500px;">
 <!-- 								<div style="border: 10px solid gray; height: 300px; background-color: gray;"></div> -->
 								<div class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
 							</div>
