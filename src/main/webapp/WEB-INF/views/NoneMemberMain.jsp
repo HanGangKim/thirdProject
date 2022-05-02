@@ -26,6 +26,22 @@
 <!-- Main CSS -->
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
+<style type="text/css">
+
+#imgswap #img2{
+	display:none;
+}
+
+#imgswap:hover #img1{ 
+	display:none;
+}  
+
+#imgswap:hover #img2{ 
+	display:inline-block; 
+}
+
+</style>
+
 <title>Fiennale</title>
 </head>
 
@@ -67,60 +83,7 @@
 						</div>
 					</div>
 					</c:forEach>
-					<!--:Slide-->
-					<!-- <div class="swiper-slide" style="background-image: url('/resources/img/shop/banners/2.jpeg'); background-size: cover;">
-						<div class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
-						:container
-						<div class="container h-100 text-white position-relative z-index-1">
-							<div class="row d-flex align-items-center h-100">
-								<div class="col-xl-10 mx-auto text-center">
-									:slider layers
-									<ul class="carousel-layers list-unstyled mb-0 pt-lg-9">
-										<li data-carousel-layer="fade-start">
-											<h3 class="display-3 mb-3">플라워 바이 네이키드</h3>
-										</li>
-										<li data-carousel-layer="fade-end">
-											<p class="lead mb-4 mb-lg-5">네이처랩스</p>
-										</li>
-										<li data-carousel-layer="fade-start">
-											<a href="#" class="btn btn-white btn-lg btn-hover-text mb-2 me-2"> 
-												<span class="btn-hover-label label-default">More View</span> 
-												<span class="btn-hover-label label-hover">Search Date</span>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					:Slide
-					<div class="swiper-slide" style="background-image: url('/resources/img/shop/banners/3.png'); background-size: cover;">
-						<div class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
-						:container
-						<div class="container h-100 text-white position-relative z-index-1">
-							<div class="row d-flex align-items-center h-100">
-								<div class="col-xl-10 mx-auto text-center">
-									:slider layers
-									<ul class="carousel-layers list-unstyled mb-0 pt-lg-9">
-										<li data-carousel-layer="fade-start">
-											<h3 class="display-3 mb-3">빛: 영국 테이트미술관 특별전</h3>
-										</li>
-										<li data-carousel-layer="fade-end">
-											<p class="lead mb-4 mb-lg-5">서울시립 북서울미술관</p>
-										</li>
-										<li data-carousel-layer="fade-start">
-											<a href="#" class="btn btn-white btn-lg btn-hover-text mb-2 me-2"> 
-												<span class="btn-hover-label label-default">More View</span> 
-												<span class="btn-hover-label label-hover">Search Date</span>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div> -->
-				</div>
-
+					
 				<!--:Add Pagination -->
 				<div class="swiper-pagination swiperClassic-pagination z-index-1 text-white"></div>
 				<!--:Add arrows-->
@@ -168,9 +131,7 @@
 					<div class="col-md-6 col-11 mb-3 mb-md-0">
 						<div class="card border-0 card-hover overflow-hidden">
 							<div class="overflow-hidden position-relative">
-
-								<img src="/resources/img/shop/banners/1.jpeg" class="img-fluid img-zoom" style="width: 100%; height: 500px;">
-<!-- 								<div style="border: 10px solid gray; height: 300px; background-color: gray;"></div> -->
+								<img src="/resources/img/shop/banners/1.jpeg" class="img-fluid img-zoom w-100">
 								<div class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
 							</div>
 							<div class="position-absolute text-white start-0 top-0 p-4 justify-content-center text-center align-items-center d-flex w-100 h-100">
@@ -178,7 +139,7 @@
 									<span>All Exhibition</span>
 									<h5 class="mb-4 display-3">Exhibition</h5>
 									<a href="/exhibition/ExhibitionDate.do"
-										class="btn btn-white btn-lg btn-hover-text mb-2 me-2"> <span
+										class="btn btn-white btn-lg btn-hover-text"> <span
 										class="btn-hover-label label-default">Exhibition</span> <span
 										class="btn-hover-label label-hover">Search Date</span>
 									</a>
@@ -187,20 +148,31 @@
 						</div>
 					</div>
 					<div class="col-md-6 col-11">
-						<div class="card border-0 card-hover overflow-hidden">
-							<div class="overflow-hidden position-relative">
-
-								<img src="/resources/img/960x640/word-cloud-4.png" class="img-fluid img-zoom" style="width: 100%; height: 500px;">
-<!-- 								<div style="border: 10px solid gray; height: 300px; background-color: gray;"></div> -->
+						<div class="card border-0 card-hover overflow-hidden" >
+							<div class="overflow-hidden position-relative" >
+								<img src="/resources/img/shop/banners/word-cloud-1.png" class="img-fluid img-zoom w-100">
+<!-- 									<img src="/resources/img/shop/banners/women.jpg" id="img1" class="img-fluid img-zoom w-100"> -->
+<!-- 									<img src="/resources/img/shop/banners/men.jpg" id="img2" class="img-fluid img-zoom w-100"> -->
+									
+									<script type="text/javascript">
+// 									var before = document.getElementById("img1");
+// 									var after = document.getElementById("img2");
+// 									var swap = document.getElementById("imgswap");
+									
+// 									swap.addEventListener("mouseover", function() {
+// 										alert("1");
+// 									})
+									</script>
+									
 								<div class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
 							</div>
 							<div
 								class="position-absolute text-white start-0 top-0 p-4 justify-content-center text-center align-items-center d-flex w-100 h-100">
-								<div class="">
+								<div>
 									<span>All Review</span>
 									<h5 class="mb-4 display-3">Review</h5>
-									<a href="/exhibition/getReviewList.do"
-										class="btn btn-white btn-lg btn-hover-text mb-2 me-2"> <span
+									<a href="/exhibition/getReviewList.do" 
+										class="btn btn-white btn-lg btn-hover-text"> <span
 										class="btn-hover-label label-default">Review</span> <span
 										class="btn-hover-label label-hover">Review</span>
 									</a>

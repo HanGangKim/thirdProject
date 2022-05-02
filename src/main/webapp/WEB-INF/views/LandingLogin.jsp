@@ -100,7 +100,7 @@ if (session.getAttribute("userId") == null) {
 			</div>
 			<div class="container position-relative z-index-1">
 				<div class="row d-flex align-items-center justify-content-center text-center">
-					<div class="col-xl-11 col-11">
+					<div class="col-xl-11 col-10">
 
 						<div class="container py-lg-9 position-relative z-index-1">
 
@@ -154,7 +154,7 @@ if (session.getAttribute("userId") == null) {
 					</div>
 				</div>
 			</div>
-			<div id="jarallax-container-0" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; z-index: -100; background-color: #363636;">
+			<div id="jarallax-container-0" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; z-index: -100; background-color: #262626;">
 				<img class="jarallax-img opacity-50">
 			</div>
 		</section>
