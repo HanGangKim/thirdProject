@@ -76,4 +76,6 @@
 		WHERE ROWNUM=1]]>
 	</select>
 	
+<!-- 	<select id="top3Exhibition" parameterType="exhibition" resultType="exhibition">
+	</select> -->
 </mapper>

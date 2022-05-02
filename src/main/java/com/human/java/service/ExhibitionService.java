@@ -23,7 +23,14 @@ public interface ExhibitionService {
 	
 	public List<ExhibitionVO> comingExhibition(ExhibitionVO vo);
 	
-//	public List<ExhibitionVO> exhibitionSearch(ExhibitionVO vo, String totalDate);
+	// 램덤 전시회 뽑기
+	public List<ExhibitionVO> randomExhibition(ExhibitionVO vo);
+	
+	// 마감임박 전시회 뽑기
+	public ExhibitionVO lastExhibition(ExhibitionVO vo);
+	
+	// 상위 TOP 3 전시회 뽑기 
+	public List<ExhibitionVO> top3Exhibition(ExhibitionVO vo);
 	
 	public List<ExhibitionVO> exhibitionSearch(ExhibitionVO vo, String totalDate, int endRow);
 	
@@ -52,10 +59,6 @@ public interface ExhibitionService {
 	// 업체 전시회 등록 삭제
 	public int exhibitionCompanyExhibitionDelete(ExhibitionVO vo);
 	
-	// 램덤 전시회 뽑기
-	public List<ExhibitionVO> randomExhibition(ExhibitionVO vo);
-	
-	// 마감임박 전시회 뽑기
-	public ExhibitionVO lastExhibition(ExhibitionVO vo);
+
 	
 }

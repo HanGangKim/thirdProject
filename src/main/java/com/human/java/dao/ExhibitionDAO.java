@@ -52,4 +52,6 @@ public interface ExhibitionDAO {
 	// 마감임박
 	public ExhibitionVO lastExhibition(ExhibitionVO vo);
 	
+	public List<ExhibitionVO> top3Exhibition(ExhibitionVO vo);
+	
 }

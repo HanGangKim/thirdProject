@@ -181,14 +181,20 @@ public class ExhibitionServiceImpl implements ExhibitionService{
 
 	@Override
 	public List<ExhibitionVO> randomExhibition(ExhibitionVO vo) {
-		// TODO Auto-generated method stub
 		return exhibitionDAO.randomExhibition(vo);
 	}
 
 	@Override
 	public ExhibitionVO lastExhibition(ExhibitionVO vo) {
-		// TODO Auto-generated method stub
 		return exhibitionDAO.lastExhibition(vo);
 	}
+
+	@Override
+	public List<ExhibitionVO> top3Exhibition(ExhibitionVO vo) {
+		
+		return exhibitionDAO.top3Exhibition(vo);
+	}
+	
+	
 	
 }
