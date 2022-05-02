@@ -124,7 +124,34 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 		<!-- 리뷰 리스트 -->
 		<section class="position-relative bg-white">
-			<div class="container col-11 py-9 py-lg-11">
+			<div class="container col-11 pt-10">
+				<div class="row mb-5" id="more_list">
+					<div class="col-md-6 col-lg-6">
+						<!--Property-item-row-->
+						<div class="card rounded-4 mb-5 " data-aos="fade-up" >
+							<div class="mb-0">
+								<a href="#!" class="d-block overflow-hidden rounded-4">
+									<img src="/resources/img/960x640/word-cloud-1.png" class="img-fluid" alt="${vo.exhibition_title}" style="width:100%;">
+								</a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-6">
+						<!--Property-item-row-->
+						<div class="card rounded-4 mb-5 " data-aos="fade-up" >
+							<div class="mb-0">
+								<a href="#!" class="d-block overflow-hidden rounded-4">
+									<img src="/resources/img/960x640/word-cloud-3.png" class="img-fluid" alt="${vo.exhibition_title}" style="width:100%; height:425px;">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="container col-11 py-9 pt-5">
 				<div class="row mb-5" id="more_list">
 					<c:forEach items="${reviewList}" var="vo" varStatus="status">
 						<div class="col-md-6 col-lg-4">

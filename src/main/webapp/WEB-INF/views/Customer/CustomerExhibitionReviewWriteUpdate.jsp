@@ -123,8 +123,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 										
 										<!-- form 태그시작  -->
-										<form autocomplete="false" action="/exhibition/updateReview.do"
-											method="get" enctype="multipart/form-data">
+										<form autocomplete="false" action="/exhibition/updateReview.do" method="post" enctype="multipart/form-data">
 											<div class="row align-items-center">
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
@@ -132,12 +131,17 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 														name="customer_id" value="${review.customer_id}"
 														type="text" class="form-control" id="profile_com" readonly>
 												</div>
+												
+												<!--전시 제목-->
+												<div class="col-md-6 mb-3">
+													<label class="form-label" for="profile_com">Exhibition Title</label> 
+													<input name="exhibition_title" value="${param.exhibition_title}"
+														type="text" class="form-control" id="profile_com" readonly>
+												</div>
 
-											<!-- 변하지 않는 시퀀스 -->
-											 <input type="number" name="exhibition_id"
-													value="${review.exhibition_id}" hidden>
-											<input type="number" name="review_id"
-													value="${review.review_id}" hidden>
+												<!-- 변하지 않는 시퀀스 -->
+												<input type="number" name="exhibition_id" value="${review.exhibition_id}" hidden>
+												<input type="number" name="review_id" value="${review.review_id}" hidden>
 													
 												<!--리뷰 제목-->
 												<div class="col-md-6 mb-3">

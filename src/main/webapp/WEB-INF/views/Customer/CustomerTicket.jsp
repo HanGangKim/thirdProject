@@ -118,8 +118,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		<!--예매내역카드 섹션 시작-->
 		<section class="position-relative">
 			<div class="container pb-7 pb-lg-12 pt-7">
-				<c:forEach items="${selectList}" var="vo">
-					<div class="col-lg-10 offset-lg-1">
+				<c:forEach items="${selectList}" var="vo" >
+					<div class="col-lg-10 offset-lg-1" >
 						<!--:Wishlist card-->
 						<div class="card hover-lift shadow flex-sm-row mb-6 align-items-center">
 							
@@ -164,19 +164,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									<!-- QR -->
 									<a href="#" class="btn btn-primary" style="margin-bottom: 10px;" data-bs-target="#modal-qr-bar-${vo.exhibition_id}" data-bs-toggle="modal">Move to qr</a> 
 									<!-- 후기작성 -->
-		                           <a onclick="hiddenFromSubmit()" class="btn btn-dark">Write Review</a>
-		                           <form id="hiddenForm" name="hiddenForm" action="/customer/CustomerExhibitionReviewWrite.do" method="post">
-		                           <input type="hidden" name="exhibition_id" value="${vo.exhibition_id}">
-		                           <input type="hidden" name="customer_id" value="${vo.customer_id}">
-		                           <input type="hidden" name="ticketing_id" value="${vo.ticketing_id}"> 
-		                           </form>
-		                           <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-		                           <script type="text/javascript">
-		                           function hiddenFromSubmit(){
-		                              alert("호출")
-		                              $("#hiddenForm").submit(); 
-		                           }
-		                           </script>
+		                           <a onclick="hiddenFormSubmit('${vo.exhibition_id}','${vo.customer_id}','${vo.ticketing_id}', '${vo.exhibition_title}')" class="btn btn-dark">Write Review</a>
+		                           
 								</div>
 							</div>
 						</div>
@@ -217,7 +206,27 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		
 	</main>
 	<!-- /Main content -->
-
+	
+	<form id="hiddenForm" name="hiddenForm" action="/customer/CustomerExhibitionReviewWrite.do" method="post">
+		<input type="hidden" id="ex_id" name="exhibition_id" value="">
+		<input type="hidden" id="cus_id" name="customer_id" value="">
+	    <input type="hidden" id="tic_id" name="ticketing_id" value="">
+	    <input type="hidden" id="ex_tit" name="exhibition_title" value=""> 
+	</form>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+    function hiddenFormSubmit(ex_id, cus_id, tic_id, ex_tit){
+       alert("호출")
+       
+       $('#ex_id').val(ex_id);
+       $('#cus_id').val(cus_id);
+       $('#tic_id').val(tic_id);
+       $('#ex_tit').val(ex_tit);
+       
+       document.hiddenForm.submit();
+       
+    }
+    </script>
 
 	<jsp:include page="/footer.jsp" />
 
