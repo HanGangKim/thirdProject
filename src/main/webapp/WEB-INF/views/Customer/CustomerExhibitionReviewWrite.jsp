@@ -124,14 +124,14 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_com">Id</label> 
-													<input name="customer_id" value="${param.customer_id}"
+													<input name="customer_id" value="${param.customer_id}" required="required"
 														type="text" class="form-control" id="profile_com" readonly>
 												</div>
 												
 												<!--전시 제목-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_com">Exhibition Title</label> 
-													<input name="exhibition_title" value="${param.exhibition_title}"
+													<input name="exhibition_title" value="${param.exhibition_title}" required="required"
 														type="text" class="form-control" id="profile_com" readonly>
 												</div>
 
@@ -145,7 +145,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_com">Review Title</label> 
 													<input name="review_title" type="text" class="form-control" id="profile_com"
-														placeholder="제목을 입력해주세요.">
+														placeholder="제목을 입력해주세요." required="required">
 												</div>
 
 
@@ -165,9 +165,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<!--내용-->
 												<div class="col-12 mb-3">
 													<label for="profile_address" class="form-label">Content</label>
-													<input name="review_contents" type="text"
+													<textarea name="review_contents" required="required"
 														id="youna-box-size" class="form-control"
-														placeholder="Please enter the contents.">
+														placeholder="Please enter the contents."></textarea>
 												</div>	
 											</div>
 											<hr class="mt-5 mb-3">

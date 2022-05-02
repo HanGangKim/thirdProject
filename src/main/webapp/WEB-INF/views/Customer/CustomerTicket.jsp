@@ -216,7 +216,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script type="text/javascript">
     function hiddenFormSubmit(ex_id, cus_id, tic_id, ex_tit){
-       alert("호출")
+//        alert("호출")
        
        $('#ex_id').val(ex_id);
        $('#cus_id').val(cus_id);
