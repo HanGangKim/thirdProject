@@ -1,5 +1,6 @@
 package com.human.java.customer.controller;
 
+import java.lang.ProcessBuilder.Redirect;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -60,5 +61,13 @@ public class CustomerWishController {
 		return mv;
 	}
 	
+	@RequestMapping("CustomerWishDelete.do")
+	public ModelAndView deleteWish(ExhibitionVO vo, @RequestParam("id") String id, WishListVO wl, HttpServletRequest request) {
+		System.out.println("deletecont / "+vo+""+ id+""+ wl+""+ request.getParameter("ExId"));
+		customerService.WishDelete(vo, id, wl, request);
+		System.out.println(vo+""+ id+""+ wl+""+ request.getParameter("ExId"));
+		SearchWish(vo, id, wl, request);
+		return SearchWish(vo, id, wl, request);
+	}
 
 }

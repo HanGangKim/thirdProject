@@ -40,6 +40,12 @@
 		SET WISH_LIST_FLAG = 'Y'
 		WHERE EXHIBITION_ID= #{exhibition_id} AND CUSTOMER_ID = #{customer_id}
 	</update>
+	
+	<delete id="wishlistdelete" parameterType="map">
+		<![CDATA[DELETE
+		FROM WISH_LIST
+		WHERE EXHIBITION_ID= ]]>${ex}<![CDATA[ AND CUSTOMER_ID =]]> '${id}'
+	</delete>
 
 	
 

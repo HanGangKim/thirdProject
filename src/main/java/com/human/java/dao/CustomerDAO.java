@@ -20,6 +20,8 @@ public interface CustomerDAO {
 	
 	public List<WishListVO> wishListSearch(WishListVO wl, String id, HttpServletRequest request);
 	
+	public int WishDelete(ExhibitionVO vo, String id, WishListVO wl, HttpServletRequest request);
+	
 	public List<WishListVO> wishListSelectSearch(WishListVO wl, String id, HttpServletRequest request);
 	
 	public int idCheck( String id);
