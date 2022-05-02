@@ -133,5 +133,20 @@ public class CustomerDAOImpl implements  CustomerDAO{
 		
 		return mybatis.delete("customerMapper.customerTotalDelete",vo);
 	}
+
+	@Override
+	public int WishDelete(ExhibitionVO vo, String id, WishListVO wl, HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		Map<String, Object> parms = new HashMap<String, Object>();
+		parms.put("wl", wl);
+		parms.put("id", id);
+		parms.put("ex", request.getParameter("ExId"));
+		System.out.println(id);
+		String userId = (String)request.getSession().getAttribute("userId");
+		parms.put("request", userId);
+		System.out.println(request.getParameter("ExId"));
+		System.out.println("다오");
+		return mybatis.delete("wishlistMapper.wishlistdelete", parms);
+	}
 	
 }

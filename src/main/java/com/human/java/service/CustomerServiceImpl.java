@@ -111,5 +111,12 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		return customerDAO.customerTotalDelete(vo);
 	}
+
+	@Override
+	public int WishDelete(ExhibitionVO vo, String id, WishListVO wl, HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		System.out.println("서비스");
+		return customerDAO.WishDelete(vo, id, wl, request);
+	}
 	
 }
