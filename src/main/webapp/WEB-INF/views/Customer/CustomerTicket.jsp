@@ -118,7 +118,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		<!--예매내역카드 섹션 시작-->
 		<section class="position-relative">
 			<div class="container pb-7 pb-lg-12 pt-7">
-				<c:forEach items="${selectList}" var="vo" >
+				<c:forEach items="${selectList}" var="vo" varStatus="status" >
 					<div class="col-lg-10 offset-lg-1" >
 						<!--:Wishlist card-->
 						<div class="card hover-lift shadow flex-sm-row mb-6 align-items-center">
@@ -158,15 +158,30 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									<span class="me-3 text-muted">People Count</span> <strong>${vo.ticketing_people}</strong>
 								</div>
 								
+							
 								
+								<c:if test="${vo.ticketing_flag eq 'Y'}">
 								<!--QR 확인버튼-->
-								<div class="d-grid pb-4 pb-md-0">
+								<div class="d-grid pb-4 pb-md-0" id="finish">
+									<!-- QR -->
+									<a href="#" class="btn btn-primary" style="margin-bottom: 10px;">Finish Exhibition</a> 
+									<!-- 후기작성 -->
+		                           <a  href="#" onclick="flag_toggle()" class="btn btn-dark">Finish Exhibition</a>
+								</div>
+								</c:if>
+								
+								<c:if test="${vo.ticketing_flag eq 'N'}">
+								<!-- 리뷰 미작성시 -->
+								<div class="d-grid pb-4 pb-md-0" id="noneFinish">
 									<!-- QR -->
 									<a href="#" class="btn btn-primary" style="margin-bottom: 10px;" data-bs-target="#modal-qr-bar-${vo.exhibition_id}" data-bs-toggle="modal">Move to qr</a> 
 									<!-- 후기작성 -->
 		                           <a onclick="hiddenFormSubmit('${vo.exhibition_id}','${vo.customer_id}','${vo.ticketing_id}', '${vo.exhibition_title}')" class="btn btn-dark">Write Review</a>
-		                           
 								</div>
+								</c:if>
+								
+								
+								
 							</div>
 						</div>
 						<!--:Wishlist card-->	
@@ -188,7 +203,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									<div class="align-items-center row mb-2">
 										<div class="mt-10 d-flex flex-column align-items-center">
 											<label class="form-label h6" for="profile_name">${vo.exhibition_title}</label>
-											
 											<!-- QR 이미지 -->
 											<img src="https://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=<%=userId%>">
 										</div>

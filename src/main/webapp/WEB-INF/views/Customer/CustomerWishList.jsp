@@ -120,7 +120,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								<tbody>
 									<c:forEach items="${vo}" var="vo">
 								<form action="../customer/CustomerWishDelete.do?id=<%=userId %>" method="post">
-
 										<tr>
 											<td><img src="${vo.exhibition_image}" class="width-7x rounded-3"></td>
 											<td style="width: 36%">

@@ -2,6 +2,8 @@ package com.human.java.exhibition.controller;
 
 import java.util.HashMap;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -46,7 +48,7 @@ public class ExhibitionTicketingController {
 	}
 
 	@RequestMapping("ExhibitionTicketingSelect.do")
-	public String ticketSelect(Model model, @RequestParam("id") String id) {
+	public String ticketSelect(Model model, @RequestParam("id") String id , HttpSession session) {
 
 		System.out.println("ExhibitionTicketingSelect.do");
 		System.out.println("세션 아이디 : " + id);
@@ -57,6 +59,10 @@ public class ExhibitionTicketingController {
 		TicketingSelectVO vo = new TicketingSelectVO();
 
 		model.addAttribute("selectList", exhibitionService.ticketSelect(map, id));
+		
+		// 티켓팅 플래그 세선부여
+		session.setAttribute("ticketing_flag", vo.getTicketing_flag());
+		
 		return "/Customer/CustomerTicket";
 
 	}
