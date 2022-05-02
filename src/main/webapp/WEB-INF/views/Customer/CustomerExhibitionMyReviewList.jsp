@@ -100,39 +100,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 
 
-<!-- 정보가져오는 forEach 문  -->
-<%-- <c:forEach items="${myReviewList}" var="vo">
-	<table border=1>
-	<tr>
-				<td>사용자ID</td>
-				<td>전시회 제목</td>
-				<td>전시회 시작날짜</td>
-				<td>전시회 종료날짜</td>
-				<td>전시회 이미지</td>
-				<td>전시회 장소</td>
-				<td>리뷰 아이디</td>
-				<td>리뷰 제목</td>
-				<td>리뷰 내용</td>
-				<td>리뷰 게시일</td>
-				<td>리뷰 별점</td>
-		</tr>
-		<tr>
-				<td>${vo.customer_id}</td>
-				<td>${vo.exhibition_title}</td>
-				<td>${vo.exhibition_start_date}</td>
-				<td>${vo.exhibition_end_date}</td>
-				<td>${vo.exhibition_image}</td>
-				<td>${vo.exhibition_location}</td>
-				<td>${vo.review_id}</td>
-				<td>${vo.review_title}</td>
-				<td>${vo.review_contents}</td>
-				<td>${vo.review_date}</td>
-				<td>${vo.review_star_score}</td>
-		</tr>
-	</table>
-	</c:forEach> --%>
-
-
 
 		<!--예매내역카드 섹션 시작-->
 		<section class="position-relative">
@@ -170,9 +137,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								<!-- 수정, 삭제 -->
 								<div class="d-grid pb-4 pb-md-0">
 									<!-- 후기 수정 -->
-									<a href="/exhibition/getMyReview.do?review_id=${vo.review_id}" class="btn btn-primary" style="margin-bottom: 10px;">Update Review</a>
+									 <a onclick="hiddenFormSubmit('${vo.exhibition_id}','${vo.review_id}')"  class="btn btn-primary" style="margin-bottom: 10px;">Update Review</a>
 									<!-- 후기 삭제 -->
 									<a href="/exhibition/deleteReview.do?customer_id=<%=userId%>&review_id=${vo.review_id}" class="btn btn-dark">Delete Review</a>
+									
 								</div>
 							</div>
 						</div>
@@ -185,6 +153,23 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		<!--예매내역카드 섹션 끝-->
 		
 	</main>
+	
+	<form id="hiddenForm" name="hiddenForm" action="/exhibition/getMyReview.do" method="post">
+		<input type="hidden" id="ex_id" name="exhibition_id" value="">
+		<input type="hidden" id="rv_id" name="review_id" value="">
+	</form>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+    function hiddenFormSubmit(ex_id, rv_id){
+       alert("호출")
+       
+       $('#ex_id').val(ex_id);
+       $('#rv_id').val(rv_id);
+      
+       document.hiddenForm.submit();
+       
+    }
+    </script>
 
 	<jsp:include page="/footer.jsp" />
 

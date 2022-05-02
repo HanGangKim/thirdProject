@@ -79,6 +79,8 @@ public class ExhibitionReviewListController {
 	public String getMyReview(Model model , ReviewVO vo) {
 		
 		System.out.println("===============");
+		System.out.println(vo.getExhibition_id());
+		System.out.println(vo.getReview_id());
 		System.out.println("getMyReview.do 호출");
 		System.out.println("===============");
 		

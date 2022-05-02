@@ -128,7 +128,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<!--아이디-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_com">Id</label> <input
-														name="customer_id" value="${review.customer_id}" required="required"
+														name="customer_id" value="<%=userId%>" required="required"
 														type="text" class="form-control" id="profile_com" readonly>
 												</div>
 												

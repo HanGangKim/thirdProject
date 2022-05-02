@@ -45,8 +45,9 @@
 	
 	<!-- 나의 리뷰 상세조회  -->
 	<select id="getMyReview" parameterType="review" resultType="review">
-		SELECT * FROM REVIEW
-		WHERE REVIEW_ID  =#{review_id}
+		SELECT e.EXHIBITION_TITLE , r.REVIEW_ID , r.REVIEW_TITLE , r.REVIEW_CONTENTS 
+		FROM REVIEW r , EXHIBITION_INFO e 
+		WHERE r.EXHIBITION_ID = #{exhibition_id} AND r.REVIEW_ID = #{review_id} AND e.EXHIBITION_ID = r.EXHIBITION_ID
 	</select>
 	
 	<!-- 리뷰 입력  -->
@@ -59,7 +60,7 @@
    <update id="updateReview" parameterType="review">
       UPDATE REVIEW
       SET REVIEW_TITLE= #{review_title} , REVIEW_CONTENTS = #{review_contents} , REVIEW_STAR_SCORE =#{review_star_score}
-      WHERE REVIEW_ID  =#{review_id} 
+      WHERE REVIEW_ID = #{review_id} 
     </update>
 	
 	<!-- 리뷰 삭제  -->
