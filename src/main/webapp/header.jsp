@@ -242,43 +242,4 @@ if (window.event.keyCode == 13) {
 		})
 	}
 </script>
-
-<!-- <script type="text/javascript">
-	
-	function getKeyValue(object, value){
-		
-		return Object.keys(object).find(key => object[key] === value);
-	}
-	
-	
-	
-	
-	
-	var link = document.location.href.split(".do")[0].split("/");
-	
-	var targetNav = link[link.length-1];
-	
-	var navDict = {
-			// 규칙에 맞춰서 코딩 
-			0 : ['main'],
-			1 : 'exsearch',
-			2 : ['review'],
-			3 : ['signup'],
-			4 : ['login']
-	}
-	
-	
-	var ul = document.querySelectorAll('#mainNavbarTheme > ul > li > a')
-	
-	console.log(targetNav.toLowerCase())
-	
-	var result = getKeyValue(navDict,targetNav.toLowerCase())
-	
-	console.log(result);
-	
-	ul[1].classList.add('active')
-	console.log(ul[1]);
-
-</script> -->
-
 </html>
