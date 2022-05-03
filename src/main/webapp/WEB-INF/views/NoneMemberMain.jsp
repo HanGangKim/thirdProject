@@ -56,8 +56,8 @@
 			<div class="swiper-container swiper-classic overflow-hidden position-relative vh-100">
 				<div class="swiper-wrapper">
 					<!--:Slide-->
-					<c:forEach items="${voRand}" var="voRand" end="3">
-					<div class="swiper-slide" style="background-image: url('${voRand.exhibition_image}'); background-size: width:100%;">
+					<c:forEach items="${top3}" var="top3" end="3">
+					<div class="swiper-slide" style="background-image: url('${top3.exhibition_image}'); background-size: width:100%;">
 						<div class="bg-dark position-absolute start-0 top-0 w-100 h-100 opacity-50"></div>
 						<!--:container-->
 						<div class="container h-100 text-white position-relative z-index-1">
@@ -66,10 +66,10 @@
 									<!--:slider layers-->
 									<ul class="carousel-layers list-unstyled mb-0 pt-lg-9">
 										<li data-carousel-layer="fade-start">
-											<h3 class="display-3 mb-3">${voRand.exhibition_title}</h3>
+											<h3 class="display-3 mb-3">${top3.exhibition_title}</h3>
 										</li>
 										<li data-carousel-layer="fade-end">
-											<p class="lead mb-4 mb-lg-5">${voRand.exhibition_location}</p>
+											<p class="lead mb-4 mb-lg-5">${top3.exhibition_location}</p>
 										</li>
 										<li data-carousel-layer="fade-start">
 											<a href="#" class="btn btn-white btn-lg btn-hover-text mb-2 me-2"> 
@@ -136,13 +136,16 @@
 							</div>
 							<div class="position-absolute text-white start-0 top-0 p-4 justify-content-center text-center align-items-center d-flex w-100 h-100">
 								<div class="">
-									<span>All Exhibition</span>
-									<h5 class="mb-4 display-3">Exhibition</h5>
-									<a href="/exhibition/ExhibitionDate.do"
+								<c:forEach items="${voRand}" var="voRand" end="1">
+									<span>${voRand.exhibition_title}</span>
+									<h5 class="mb-4 display-3 mt-2">Exhibition</h5>
+									<a  href="/exhibition/ExhibitionDetail.do?id=${voRand.exhibition_id}"
 										class="btn btn-white btn-lg btn-hover-text"> <span
-										class="btn-hover-label label-default">Exhibition</span> <span
-										class="btn-hover-label label-hover">Search Date</span>
+										class="btn-hover-label label-default">Today</span> <span
+										class="btn-hover-label label-hover">Choice</span>
 									</a>
+									</c:forEach>
+									
 								</div>
 							</div>
 						</div>
@@ -169,7 +172,7 @@
 							<div class="position-absolute text-white start-0 top-0 p-4 justify-content-center text-center align-items-center d-flex w-100 h-100">
 								<div>
 									<span>All Review</span>
-									<h5 class="mb-4 display-3">Review</h5>
+									<h5 class="mb-4 display-3 mt-2">Review</h5>
 									<a href="/exhibition/getReviewList.do" 
 										class="btn btn-white btn-lg btn-hover-text"> <span
 										class="btn-hover-label label-default">Review</span> <span

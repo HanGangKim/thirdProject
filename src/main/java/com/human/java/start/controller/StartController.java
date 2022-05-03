@@ -30,7 +30,7 @@ public class StartController {
 			mv.addObject("voRand", exhibitionService.randomExhibition(vo));
 			mv.addObject("vo", exhibitionService.comingExhibition(vo));
 			mv.addObject("volast", exhibitionService.lastExhibition(vo));
-			
+			mv.addObject("top3" , exhibitionService.top3Exhibition(vo));
 			return mv;
 		}
 		

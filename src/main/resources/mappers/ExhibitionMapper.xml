@@ -2,39 +2,44 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
+
 <mapper namespace="exhibitionMapper">
-	<select id="exhibitionList" parameterType="exhibition" resultType="exhibition">
+	<select id="exhibitionList" parameterType="exhibition"
+		resultType="exhibition">
 		SELECT *
 		FROM EXHIBITION_INFO
-		WHERE EXHIBITION_START_DATE = TO_DATE('2022.04.28') AND EXHIBITION_END_DATE  = TO_DATE('2022.05.31')
+		WHERE EXHIBITION_START_DATE =
+		TO_DATE('2022.04.28') AND EXHIBITION_END_DATE = TO_DATE('2022.05.31')
 	</select>
-	
-	<select id="exhibitionAll" parameterType="exhibition" resultType="exhibition">
+
+	<select id="exhibitionAll" parameterType="exhibition"
+		resultType="exhibition">
 		SELECT *
 		FROM EXHIBITION_INFO
 	</select>
-	
-	<select id="comingExhibition" parameterType="exhibition" resultType="exhibition">
-		
+
+	<select id="comingExhibition" parameterType="exhibition"
+		resultType="exhibition">
+
 		SELECT *
-		
+
 		FROM (
-			SELECT *
-			FROM EXHIBITION_INFO
-			WHERE EXHIBITION_START_DATE > SYSDATE
-			ORDER BY EXHIBITION_START_DATE
-			)
+		SELECT *
+		FROM EXHIBITION_INFO
+		WHERE EXHIBITION_START_DATE > SYSDATE
+		ORDER BY EXHIBITION_START_DATE
+		)
 		WHERE <![CDATA[ ROWNUM <= 8 AND EXHIBITION_FLAG = 'D' ]]>
-		ORDER BY EXHIBITION_START_DATE 
+		ORDER BY EXHIBITION_START_DATE
 	</select>
-	
-<!-- 	<select id="exhibitionSearch" parameterType="map" resultType="exhibition"> -->
-		
-<!-- 		SELECT * -->
-<!-- 		FROM EXHIBITION_INFO -->
-<!-- 		WHERE EXHIBITION_START_DATE <![CDATA[< TO_DATE(']]>${st}<![CDATA[')]]> AND EXHIBITION_END_DATE <![CDATA[> TO_DATE(']]>${ed}<![CDATA[')]]> -->
-<!-- 	</select> -->
+
+	<!-- <select id="exhibitionSearch" parameterType="map" resultType="exhibition"> -->
+
+	<!-- SELECT * -->
+	<!-- FROM EXHIBITION_INFO -->
+	<!-- WHERE EXHIBITION_START_DATE <![CDATA[< TO_DATE(']]>${st}<![CDATA[')]]> 
+		AND EXHIBITION_END_DATE <![CDATA[> TO_DATE(']]>${ed}<![CDATA[')]]> -->
+	<!-- </select> -->
 
 	<select id="exhibitionSearch" parameterType="map"
 		resultType="exhibition">
@@ -44,30 +49,38 @@
 		WHERE EXHIBITION_START_DATE <![CDATA[< TO_DATE(']]>${st}<![CDATA[')]]>
 		AND EXHIBITION_END_DATE <![CDATA[> TO_DATE(']]>${ed}<![CDATA[')]]>
 		ORDER BY EXHIBITION_ID )
-		WHERE <![CDATA[ ROWNUM <= ]]> ${endRow} AND EXHIBITION_FLAG = 'D'
+		WHERE <![CDATA[ ROWNUM <= ]]>
+		${endRow} AND EXHIBITION_FLAG = 'D'
 	</select>
-	
-	
-	<select id="exhibitionSearchTitle" parameterType="map" resultType="exhibition">
+
+
+	<select id="exhibitionSearchTitle" parameterType="map"
+		resultType="exhibition">
 		SELECT *
 		FROM ( SELECT * FROM EXHIBITION_INFO
-		WHERE EXHIBITION_TITLE LIKE '%${title}%' AND EXHIBITION_FLAG = 'D'
-		ORDER BY EXHIBITION_ID )
+		WHERE
+		EXHIBITION_TITLE LIKE '%${title}%' AND EXHIBITION_FLAG = 'D'
+		ORDER BY
+		EXHIBITION_ID )
 	</select>
-	
-	
-	<select id="exhibitionDetail" parameterType="map" resultType="exhibition">
+
+
+	<select id="exhibitionDetail" parameterType="map"
+		resultType="exhibition">
 		SELECT *
 		FROM EXHIBITION_INFO
-		WHERE EXHIBITION_ID = ${id} AND EXHIBITION_FLAG = 'D'
+		WHERE EXHIBITION_ID = ${id} AND
+		EXHIBITION_FLAG = 'D'
 	</select>
-	
-	<select id="randomExhibition" parameterType="exhibition" resultType="exhibition">
+
+	<select id="randomExhibition" parameterType="exhibition"
+		resultType="exhibition">
 		<![CDATA[select * from  (select * from EXHIBITION_INFO order by dbms_random.value)
-		where rownum <= 3 AND EXHIBITION_FLAG = 'D']]>
+		where rownum <= 1 AND EXHIBITION_FLAG = 'D']]>
 	</select>
-	
-	<select id="lastExhibition" parameterType="exhibition" resultType="exhibition">
+
+	<select id="lastExhibition" parameterType="exhibition"
+		resultType="exhibition">
 		<![CDATA[SELECT *
 		FROM(SELECT *
 			FROM EXHIBITION_INFO
@@ -75,7 +88,12 @@
 			ORDER BY EXHIBITION_END_DATE)
 		WHERE ROWNUM=1]]>
 	</select>
-	
-<!-- 	<select id="top3Exhibition" parameterType="exhibition" resultType="exhibition">
-	</select> -->
+
+	<select id="top3Exhibition" parameterType="exhibition" resultType="exhibition">
+		SELECT *
+		FROM EXHIBITION_INFO
+		WHERE EXHIBITION_ID IN (SELECT EXHIBITION_ID FROM ( SELECT SUM(t.TICKETING_PEOPLE), EXHIBITION_ID FROM TICKETING t
+		GROUP BY t.EXHIBITION_ID ORDER BY SUM(t.TICKETING_PEOPLE) DESC )
+		WHERE <![CDATA[ ROWNUM <= 3 ]]>)
+	</select>
 </mapper>
