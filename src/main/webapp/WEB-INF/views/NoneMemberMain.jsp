@@ -150,7 +150,7 @@
 					<div class="col-md-6 col-11">
 						<div class="card border-0 card-hover overflow-hidden" >
 							<div class="overflow-hidden position-relative" >
-								<img src="/resources/img/shop/banners/word-cloud-1.png" class="img-fluid img-zoom w-100">
+								<img src="" class="img-fluid img-zoom" id="random_img" class="img-fluid img-zoom w-100">
 <!-- 									<img src="/resources/img/shop/banners/women.jpg" id="img1" class="img-fluid img-zoom w-100"> -->
 <!-- 									<img src="/resources/img/shop/banners/men.jpg" id="img2" class="img-fluid img-zoom w-100"> -->
 									
@@ -374,5 +374,21 @@
 	},1000);
 
 </script>
+<script>
+	window.onload = function() {
+		/*  var random = int(0,5);*/
+		var image = "/resources/img/shop/banners/word-cloud-";
+		var number = Math.floor(Math.random()*4)+1;
+		var random_img = document.getElementById('random_img');
+		var result =image += number + ".png";
+		
+		
+		
+		$("#random_img").attr("src",result)
+	
+		
+	}
 
+
+</script>
 </html>
