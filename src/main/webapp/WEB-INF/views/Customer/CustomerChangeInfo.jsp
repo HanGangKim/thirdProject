@@ -124,18 +124,18 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										<!-- 비밀번호 수정 -->
 										<form action="/customer/CustomerUpdateInfo.do" autocomplete="false" method="post">
 											<div class="row align-items-center">
+												<!--아이디-->
+												<div class="col-md-6 mb-3">
+													<label class="form-label" for="profile_com">Id</label> <input
+														type="text" class="form-control" id="profile_com" required="required"
+														name="customer_id" value="<%=userId%>" readonly="readonly">
+												</div>
 												
 												<!--이름-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_name">Name</label> <input
 														class="form-control" id="profile_name" required="required"
 														name="customer_name" type="text" value="<%=userName%>">
-												</div>
-												<!--아이디-->
-												<div class="col-md-6 mb-3">
-													<label class="form-label" for="profile_com">Id</label> <input
-														type="text" class="form-control" id="profile_com" required="required"
-														name="customer_id" value="<%=userId%>" readonly="readonly">
 												</div>
 
 												<!--전화번호-->
