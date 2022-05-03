@@ -147,10 +147,16 @@
 								<div class="row mb-3">
 									<div class="col-sm-6">
 										<div class="card card-body border-0">
-											<span class="input-icon"> <i
-												class="bx d-flex bx-message-alt-check"
+											<span class="input-icon d-flex"> <i
+												class="bx d-flex bx-message-alt-check me-8"
 												style="align-items: center; display: flex;"> <strong><h5>&nbsp;Approval
 															List / 승인리스트</h5></strong></i>
+												<div class="position-relative">
+													<i
+														class="bx bx-search-alt-2 small ms-3 opacity-50 position-absolute start-0 top-50 translate-middle-y"></i>
+													<input type="text" id="p_location"
+														class="form-control ps-6" placeholder="search company...">
+												</div>
 											</span>
 											<!-- <p><strong><h5>승인리스트 / Approval List</h5></strong></p> -->
 											<br>
@@ -190,9 +196,17 @@
 									</div>
 									<div class="col-sm-6">
 										<div class="card card-body border-0">
-											<i class="bx d-flex bx-message-alt-x"
+											<span class="input-icon d-flex"> <i
+												class="bx d-flex bx-message-alt-x me-8"
 												style="align-items: center; display: flex;"> <strong><h5>&nbsp;Rejection
-														List / 거절리스트</h5></strong></i> </span>
+															List / 거절리스트</h5></strong></i>
+												<div class="position-relative">
+													<i
+														class="bx bx-search-alt-2 small ms-3 opacity-50 position-absolute start-0 top-50 translate-middle-y"></i>
+													<input type="text" id="p_location"
+														class="form-control ps-6" placeholder="search company...">
+												</div>
+											</span>
 											<!-- <p><strong><h5>거절리스트 / Rejection List</h4></strong></p> -->
 											<br>
 
@@ -266,10 +280,16 @@
 								<div class="row mb-3">
 									<div class="col-sm-6">
 										<div class="card card-body border-0">
-											<span class="input-icon"> <i
-												class="bx d-flex bx-message-alt-check"
+											<span class="input-icon d-flex"> <i
+												class="bx d-flex bx-message-alt-check me-8"
 												style="align-items: center; display: flex;"> <strong><h5>&nbsp;Approval
 															List / 승인리스트</h5></strong></i>
+												<div class="position-relative">
+													<i
+														class="bx bx-search-alt-2 small ms-3 opacity-50 position-absolute start-0 top-50 translate-middle-y"></i>
+													<input type="text" id="p_location"
+														class="form-control ps-6" placeholder="search exhibition...">
+												</div>
 											</span>
 											<!-- <p><strong><h5>승인리스트 / Approval List</h5></strong></p> -->
 											<br>
@@ -287,17 +307,13 @@
 														<div class="flex-gropw-1 justify-content-between">
 															<a href="#!" class="text-dark">
 																<h6 class="mb-2 text-reset">${vo.exhibition_title}</h6>
-															</a> 
-															<a href="#!" class="text-dark">
+															</a> <a href="#!" class="text-dark">
 																<h6 class="mb-2 text-reset">${vo.exhibition_location}</h6>
-															</a> 
-															<a href="#!" class="text-dark">
+															</a> <a href="#!" class="text-dark">
 																<h6 class="mb-2 text-reset">${vo.exhibition_total_date}</h6>
-															</a> 
-															<a href="#!" class="text-dark">
+															</a> <a href="#!" class="text-dark">
 																<h6 class="mb-2 text-reset">${vo.exhibition_memo}</h6>
-															</a> 
-															<a href="#!" class="text-dark">
+															</a> <a href="#!" class="text-dark">
 																<h6 class="mb-2 text-reset">${vo.exhibition_flag}</h6>
 															</a>
 
@@ -314,9 +330,17 @@
 									</div>
 									<div class="col-sm-6">
 										<div class="card card-body border-0">
-											<i class="bx d-flex bx-message-alt-x"
+										<span class="input-icon d-flex">
+											<i class="bx d-flex bx-message-alt-x me-8"
 												style="align-items: center; display: flex;"> <strong><h5>&nbsp;Rejection
-														List / 거절리스트</h5></strong></i> </span>
+														List / 거절리스트</h5></strong></i> 
+														<div class="position-relative">
+													<i
+														class="bx bx-search-alt-2 small ms-3 opacity-50 position-absolute start-0 top-50 translate-middle-y"></i>
+													<input type="text" id="p_location"
+														class="form-control ps-6" placeholder="search exhibition...">
+												</div>
+														</span>
 											<!-- <p><strong><h5>거절리스트 / Rejection List</h4></strong></p> -->
 											<br>
 											<c:forEach items="${exvo}" var="vo" varStatus="status">
@@ -332,17 +356,13 @@
 														<div class="flex-gropw-1 justify-content-between">
 															<a href="#!" class="text-dark">
 																<h6 class="mb-2 text-reset">${vo.exhibition_title}</h6>
-															</a> 
-															<a href="#!" class="text-dark">
+															</a> <a href="#!" class="text-dark">
 																<h6 class="mb-2 text-reset">${vo.exhibition_location}</h6>
-															</a> 
-															<a href="#!" class="text-dark">
+															</a> <a href="#!" class="text-dark">
 																<h6 class="mb-2 text-reset">${vo.exhibition_total_date}</h6>
-															</a> 
-															<a href="#!" class="text-dark">
+															</a> <a href="#!" class="text-dark">
 																<h6 class="mb-2 text-reset">${vo.exhibition_memo}</h6>
-															</a> 
-															<a href="#!" class="text-dark">
+															</a> <a href="#!" class="text-dark">
 																<h6 class="mb-2 text-reset">${vo.exhibition_flag}</h6>
 															</a>
 
@@ -354,7 +374,7 @@
 													</article>
 												</c:if>
 											</c:forEach>
-											
+
 										</div>
 									</div>
 								</div>

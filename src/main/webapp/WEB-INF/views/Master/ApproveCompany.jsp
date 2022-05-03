@@ -51,6 +51,12 @@
 #btnHover:hover {
 	background-color: black;
 }
+
+.btn-primary {
+    color: #fff;
+    background-color: #3655ff;
+    border-color: #6C7482;
+}
 </style>
 
 <body>
