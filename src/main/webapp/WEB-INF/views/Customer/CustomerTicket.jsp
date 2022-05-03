@@ -164,9 +164,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								<!--QR 확인버튼-->
 								<div class="d-grid pb-4 pb-md-0" id="finish">
 									<!-- QR -->
-									<a href="#" class="btn btn-primary" style="margin-bottom: 10px;">Finish Exhibition</a> 
+									<a class="btn btn-primary mb-2 disabled">Move To Qr</a> 
 									<!-- 후기작성 -->
-		                           <a  href="#" onclick="flag_toggle()" class="btn btn-dark">Finish Exhibition</a>
+		                            <a onclick="flag_toggle()" class="btn btn-dark disabled">Write Review</a>
 								</div>
 								</c:if>
 								
@@ -174,7 +174,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								<!-- 리뷰 미작성시 -->
 								<div class="d-grid pb-4 pb-md-0" id="noneFinish">
 									<!-- QR -->
-									<a href="#" class="btn btn-primary" style="margin-bottom: 10px;" data-bs-target="#modal-qr-bar-${vo.exhibition_id}" data-bs-toggle="modal">Move to qr</a> 
+									<a href="#" class="btn btn-primary" style="margin-bottom: 10px;" data-bs-target="#modal-qr-bar-${vo.exhibition_id}" data-bs-toggle="modal">Move To Qr</a> 
 									<!-- 후기작성 -->
 		                           <a onclick="hiddenFormSubmit('${vo.exhibition_id}','${vo.customer_id}','${vo.ticketing_id}', '${vo.exhibition_title}')" class="btn btn-dark">Write Review</a>
 								</div>

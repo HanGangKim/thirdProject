@@ -154,10 +154,15 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							// 세션 연결에 실패하면 null	
 							%>						
 							<div class="d-grid mb-2">
-								<a class="btn btn-outline-primary hover-lift"> 
+								<a class="btn btn-outline-primary hover-lift" onclick="wishClick()"> 
 									<i class="bx bx-heart fs-4 me-2"></i> Add to Wishlist
 								</a>
 							</div>
+							<script type="text/javascript">
+								function wishClick() {
+									alert("로그인 후 이용 가능합니다.");
+								}
+							</script>
 							<% 
 							}else{
 							%>

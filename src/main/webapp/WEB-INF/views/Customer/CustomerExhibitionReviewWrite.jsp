@@ -173,8 +173,13 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 											<hr class="mt-5 mb-3">
 											<!--저장 버튼-->
 											<div class="text-end">
-												<button type="submit" class="btn btn-primary">Update Review</button>
+												<button type="submit" class="btn btn-primary" onclick="btnClk()">Update Review</button>
 											</div>
+											<script type="text/javascript">
+											function btnClk() {
+												alert("후기 작성이 완료되었습니다.")
+											} 
+											</script>
 											
 											<img src="" id="img">
 										</form>
