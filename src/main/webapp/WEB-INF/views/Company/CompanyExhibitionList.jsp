@@ -164,12 +164,13 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 								<!-- 삭제버튼 -->
 								<div class="mb-0">
-									<button type="submit"  data-bs-target="#modal-pay-bar-${vo.exhibition_id}" data-bs-toggle="modal" class="btn btn-dark ">삭제</button>
+									<button type="submit" data-bs-target="#modal-pay-bar-${vo.exhibition_id}" data-bs-toggle="modal" class="btn btn-dark ">삭제</button>
 								</div>
 							</div>
 							<!-- ./ 버튼 div -->
 						</div>
 					</div>
+					<!-- ./카드 -->
 					
 					<!-- 삭제 물어보는 모달 -->
 					<div id="modal-pay-bar-${vo.exhibition_id}" class="modal fade" tabindex="-1" aria-labelledby="modal-pay-bar-${vo.exhibition_id}" aria-hidden="true">
@@ -213,7 +214,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 					</div>
 					<!-- ./삭제 물어보는 모달 -->
 					
-					<!-- ./카드 -->
+					
 				</c:forEach>
 
 				<!-- 버튼 -->
