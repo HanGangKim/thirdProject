@@ -52,6 +52,7 @@ public class CustomerLoginController {
 			mv.addObject("voRand", exhibitionService.randomExhibition(exvo));
 			mv.addObject("vo", exhibitionService.comingExhibition(exvo));
 			mv.addObject("volast", exhibitionService.lastExhibition(exvo));
+			mv.addObject("top3" , exhibitionService.top3Exhibition(exvo));
 			mv.setViewName("/Master/MasterPage");
 			
 			
@@ -77,6 +78,7 @@ public class CustomerLoginController {
 			mv.addObject("voRand", exhibitionService.randomExhibition(exvo));
 			mv.addObject("vo", exhibitionService.comingExhibition(exvo));
 			mv.addObject("volast", exhibitionService.lastExhibition(exvo));
+			mv.addObject("top3" , exhibitionService.top3Exhibition(exvo));
 			mv.setViewName("NoneMemberMain");
 
 			return mv;
