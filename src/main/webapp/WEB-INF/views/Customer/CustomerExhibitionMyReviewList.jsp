@@ -121,7 +121,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<!-- 내용 -->
 							<div class="col-sm-7 py-sm-5 col-12 col-lg-6 offset-lg-1 px-5">
 								<a href="#" class="mb-3 d-block text-dark">
-									<h4 class="">${vo.exhibition_title}</h4>
+									<h4 class="text-truncate">${vo.exhibition_title}</h4>
 								</a>
 								<p class="lead mb-5">${vo.review_date} Write</p>								
 								<div class="d-flex mb-3 align-items-center">
@@ -137,15 +137,53 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								<!-- 수정, 삭제 -->
 								<div class="d-grid pb-4 pb-md-0">
 									<!-- 후기 수정 -->
-									 <a onclick="hiddenFormSubmit('${vo.exhibition_id}','${vo.review_id}')"  class="btn btn-primary" style="margin-bottom: 10px;">Update Review</a>
+									<a onclick="hiddenFormSubmit('${vo.exhibition_id}','${vo.review_id}')"  class="btn btn-primary" style="margin-bottom: 10px;">Update Review</a>
 									<!-- 후기 삭제 -->
-									<a href="/exhibition/deleteReview.do?customer_id=<%=userId%>&review_id=${vo.review_id}" class="btn btn-dark">Delete Review</a>
+									<a href="#" data-bs-target="#modal-pay-bar-${vo.review_id}" data-bs-toggle="modal" class="btn btn-dark">Delete Review</a>
+									
 									
 								</div>
 							</div>
 						</div>
 						<!--:Wishlist card-->
 						
+						<!-- 삭제 물어보는 모달 -->
+						<div id="modal-pay-bar-${vo.review_id}" class="modal fade" tabindex="-1" aria-labelledby="modal-pay-bar-${vo.review_id}" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-top modal-md" style="max-width: 450px;">
+								<div class="modal-content position-relative border-0">
+									<div class="position-relative px-4">
+										<div class="position-absolute mt-2 end-0 width-7x top-0 d-flex align-items-center justify-content-center">
+											<button type="button" class="btn-close w-auto small" data-bs-dismiss="modal" aria-label="Close">
+												<i class="bx bx-x fs-4 me-2"></i>
+											</button>
+										</div>
+										
+										<h6 class="d-flex mt-4 justify-content-center">Delete Review</h6>
+
+										<!-- 구분선 -->
+										<div class="d-flex align-items-center py-3">
+											<span class="flex-grow-1 border-bottom pt-1"></span>
+										</div>
+										
+										<strong>후기를 정말 삭제하시겠습니까?<br>삭제한 후기는 복구 할 수 없습니다.</strong>
+										
+										<!-- 버튼 -->
+										<div class="d-flex mb-4 mt-4 justify-content-end">
+											<!-- 삭제버튼 -->
+											<div class="me-2 text-end">
+												<a href="/exhibition/deleteReview.do?customer_id=<%=userId%>&review_id=${vo.review_id}" class="btn btn-primary form-control">Delete</a>
+											</div>					
+											<!-- 취소버튼 -->
+											<div class="text-end">
+												<button type="reset" aria-label="Close" data-bs-dismiss="modal" class="btn btn-outline-dark form-control">Close</button>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- ./삭제 물어보는 모달 -->
 					</div>
 				</c:forEach>
 			</div>

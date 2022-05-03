@@ -153,28 +153,66 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<!-- 버튼 div -->
 							<div class="d-flex pb-4 pb-md-0 justify-content-end">
 								<!-- 수정버튼 -->
-									<div class="me-2">
-								<form action="/exhibition/CompanyExhibitionDetail.do" method="post">
-										<input name="company_id" value="${vo.company_id}"
-											hidden="hidden"> <input name="exhibition_id"
-											value="${vo.exhibition_id}" hidden="hidden">
-										<button type="submit" class="btn btn-outline-dark">수정</button>
-								</form>
-									</div>
+								<div class="me-2">
+									<form action="/exhibition/CompanyExhibitionDetail.do" method="post">
+											<input name="company_id" value="${vo.company_id}"
+												hidden="hidden"> <input name="exhibition_id"
+												value="${vo.exhibition_id}" hidden="hidden">
+											<button type="submit" class="btn btn-outline-dark">수정</button>
+									</form>
+								</div>
 
 								<!-- 삭제버튼 -->
-									<div class="">
-								<form action="/exhibition/exhibitionCompanyExhibitionDelete.do" method="post">
-										<input name="company_id" value="${vo.company_id}"
-											hidden="hidden"> <input name="exhibition_id"
-											value="${vo.exhibition_id}" hidden="hidden">
-										<button type="submit" class="btn btn-dark ">삭제</button>
-								</form>
-									</div>
+								<div class="mb-0">
+									<button type="submit"  data-bs-target="#modal-pay-bar-${vo.exhibition_id}" data-bs-toggle="modal" class="btn btn-dark ">삭제</button>
+								</div>
 							</div>
 							<!-- ./ 버튼 div -->
 						</div>
 					</div>
+					
+					<!-- 삭제 물어보는 모달 -->
+					<div id="modal-pay-bar-${vo.exhibition_id}" class="modal fade" tabindex="-1" aria-labelledby="modal-pay-bar-${vo.exhibition_id}" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-top modal-md" style="max-width: 450px;">
+							<div class="modal-content position-relative border-0">
+								<div class="position-relative px-4">
+									<div class="position-absolute mt-2 end-0 width-7x top-0 d-flex align-items-center justify-content-center">
+										<button type="button" class="btn-close w-auto small" data-bs-dismiss="modal" aria-label="Close">
+											<i class="bx bx-x fs-4 me-2"></i>
+										</button>
+									</div>
+									
+									<h6 class="d-flex mt-4 justify-content-center">Delete Exhibition</h6>
+
+									<!-- 구분선 -->
+									<div class="d-flex align-items-center py-3">
+										<span class="flex-grow-1 border-bottom pt-1"></span>
+									</div>
+									
+									<strong>등록한 전시 정보를 정말 삭제하시겠습니까?<br>삭제한 전시 정보는 복구 할 수 없습니다.</strong>
+									
+									<!-- 버튼 -->
+									<div class="d-flex mb-4 mt-4 justify-content-end">
+										<!-- 삭제버튼 -->
+										<div class="me-2 text-end">
+											<form action="/exhibition/exhibitionCompanyExhibitionDelete.do" method="post">
+												<input name="company_id" value="${vo.company_id}" hidden="hidden"> 
+												<input name="exhibition_id" value="${vo.exhibition_id}" hidden="hidden">
+												<button type="submit" class="btn btn-primary form-control">Delete</button>
+											</form>
+										</div>					
+										<!-- 취소버튼 -->
+										<div class="text-end">
+											<button type="reset" aria-label="Close" data-bs-dismiss="modal" class="btn btn-outline-dark form-control">Close</button>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- ./삭제 물어보는 모달 -->
+					
 					<!-- ./카드 -->
 				</c:forEach>
 

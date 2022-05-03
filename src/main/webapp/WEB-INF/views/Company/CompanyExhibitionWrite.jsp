@@ -213,10 +213,12 @@ input.form-control[readonly] {
 													function loadClick() {
 														var loadingBar = document.getElementById("loadingBar");
 														
-														loadingBar.classList.remove('d-none');
+														loadingBar.classList.remove('d-none');\
 													}
 												</script>
 											</div>
+											
+											
 										</form>
 										<!-- form 태그 종료 -->
 									</div>
