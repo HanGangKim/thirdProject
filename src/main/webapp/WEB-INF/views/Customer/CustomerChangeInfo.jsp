@@ -124,57 +124,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										<!-- 비밀번호 수정 -->
 										<form action="/customer/CustomerUpdateInfo.do" autocomplete="false" method="post">
 											<div class="row align-items-center">
-												<div class="col-md-12">
-													<div class="row">
-														<div class="col-md-6 mb-4">
-															<div class="filepond--root width-15x height-15x filepond--hopper"
-																id="update_profile"
-																data-style-panel-layout="compact circle"
-																data-style-button-remove-item-position="left bottom"
-																data-style-button-process-item-position="right bottom"
-																data-style-load-indicator-position="center bottom"
-																data-style-progress-indicator-position="right bottom"
-																data-style-button-remove-item-align="false"
-																style="height: 160px;">
-																<input class="filepond--browser" type="file"
-																	id="filepond--browser-ljwqc5fiu"
-																	aria-controls="filepond--assistant-ljwqc5fiu"
-																	aria-labelledby="filepond--drop-label-ljwqc5fiu"
-																	name="filepond"><a class="filepond--credits"
-																	aria-hidden="true" href="https://pqina.nl/"
-																	target="_blank" rel="noopener noreferrer"
-																	style="transform: translateY(160px);">Powered by
-																	PQINA</a>
-																<div class="filepond--drop-label"
-																	style="transform: translate3d(0px, 0px, 0px); opacity: 1;">
-																	<label for="filepond--browser-ljwqc5fiu"
-																		id="filepond--drop-label-ljwqc5fiu" aria-hidden="true">Drag
-																		&amp; Drop picture or Browse</label>
-																</div>
-																<div class="filepond--list-scroller"
-																	style="transform: translate3d(0px, 0px, 0px);">
-																	<ul class="filepond--list" role="list"></ul>
-																</div>
-																<div class="filepond--panel filepond--panel-root"
-																	data-scalable="false">
-																	<div class="filepond--panel-top filepond--panel-root"></div>
-																	<div
-																		class="filepond--panel-center filepond--panel-root"
-																		style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1.6, 1);"></div>
-																	<div
-																		class="filepond--panel-bottom filepond--panel-root"
-																		style="transform: translate3d(0px, 160px, 0px);"></div>
-																</div>
-																<span class="filepond--assistant"
-																	id="filepond--assistant-ljwqc5fiu" role="status"
-																	aria-live="polite" aria-relevant="additions"></span>
-																<div class="filepond--drip"></div>
-																<fieldset class="filepond--data"></fieldset>
-															</div>
-														</div>
-													</div>
-												</div>
-
+												
 												<!--이름-->
 												<div class="col-md-6 mb-3">
 													<label class="form-label" for="profile_name">Name</label> <input
