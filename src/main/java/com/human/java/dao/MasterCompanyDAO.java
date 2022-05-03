@@ -11,5 +11,7 @@ public interface MasterCompanyDAO {
 	
 	// update company
 	void masterCompanyUpdate(MasterCompanyVO vo);
+	
+	public List<MasterCompanyVO> masterCompanyDR();
 
 }

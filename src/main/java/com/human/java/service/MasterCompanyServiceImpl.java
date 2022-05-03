@@ -31,5 +31,10 @@ public class MasterCompanyServiceImpl implements MasterCompanyService{
 		
 	}
 
+	@Override
+	public List<MasterCompanyVO> masterCompanyDR() {
+		return masterCompanyDAO.masterCompanyDR();
+	}
+
 	
 }

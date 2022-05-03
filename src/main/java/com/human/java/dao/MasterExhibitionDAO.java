@@ -13,6 +13,8 @@ public interface MasterExhibitionDAO {
 	// update exhibition
 	void masterExhibitionUpdate(MasterExhibitionVO vo);
 	
-
+	// select exhibition
+	public List<MasterExhibitionVO> masterExhibitionDR();
+	
 }
 

@@ -13,4 +13,6 @@ public interface MasterExhibitionService {
 	// exhibition update
 	public void masterExhibitionUpdate(MasterExhibitionVO vo);
 
+	// exhibition selectD&R
+	public List<MasterExhibitionVO> masterExhibitionDR();
 }

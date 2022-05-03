@@ -11,6 +11,14 @@
 		WHERE EXHIBITION_FLAG = 'W'
 	</select>
 	
+	
+	<select id="masterExhibitionSelectDR" resultType="masterExhibition">
+		SELECT *
+		FROM EXHIBITION_INFO
+		WHERE EXHIBITION_FLAG = 'D' OR  EXHIBITION_FLAG = 'R'
+	</select>
+	
+	
 	<update id="masterExhibitionUpdate" parameterType="masterExhibition">
 		UPDATE EXHIBITION_INFO
 		SET EXHIBITION_FLAG = #{exhibition_flag}

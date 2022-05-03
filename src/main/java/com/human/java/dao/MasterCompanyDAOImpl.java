@@ -27,4 +27,9 @@ public class MasterCompanyDAOImpl implements MasterCompanyDAO {
 		mybatis.update("masterCompanyMapper.masterCompanyUpdate",vo);
 	}
 
+	@Override
+	public List<MasterCompanyVO> masterCompanyDR() {
+		return mybatis.selectList("masterCompanyMapper.masterCompanySelectDR");
+	}
+
 }

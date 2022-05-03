@@ -34,15 +34,13 @@
 <title>Assan 4</title>
 </head>
 <style>
-
 .nav-tabs .nav-link:not(:first-child) {
-    margin-left: 0rem;
+	margin-left: 0rem;
 }
 
 .mb-5 {
-    margin-bottom: 1.5rem!important;
+	margin-bottom: 1.5rem !important;
 }
-
 </style>
 
 <body>
@@ -88,217 +86,284 @@
 	<!--Main content start-->
 	<main>
 
-		
-		<section class="position-relative overflow-hidden">
-        <!--Divider shape-->
-        <svg class="w-100 text-white position-absolute bottom-0 start-0" preserveAspectRatio="none" width="1200"
-          height="80" viewBox="0 0 1200 148" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M0 126.857L1200 0V148H0V126.857Z" fill="currentColor" />
-        </svg>
-        <div class="container-fluid px-xl-9 position-relative py-9 py-lg-11 z-index-1">
-          <!--Tabs-->
-          <div>
 
-            <!--Tabs nav-->
-            <div class="text-center">
-              <nav class="nav nav-fill nav-tabs mb-7 mb-lg-9">
-                <a href="#feature_tab_1" class="nav-link py-3 flex-shrink-0 active" data-bs-toggle="tab"
-                  aria-expanded="true">
-                  <h6 class="text-reset mb-0">Company</h6>
-                </a>
-               <!--  <a href="#feature_tab_2" class="nav-link py-3 flex-shrink-0" data-bs-toggle="tab"
+		<section class="position-relative overflow-hidden">
+			<!--Divider shape-->
+			<svg class="w-100 text-white position-absolute bottom-0 start-0"
+				preserveAspectRatio="none" width="1200" height="80"
+				viewBox="0 0 1200 148" fill="none"
+				xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+					d="M0 126.857L1200 0V148H0V126.857Z" fill="currentColor" />
+        </svg>
+			<div
+				class="container-fluid px-xl-9 position-relative py-9 py-lg-11 z-index-1">
+				<!--Tabs-->
+				<div>
+
+					<!--Tabs nav-->
+					<div class="text-center">
+						<nav class="nav nav-fill nav-tabs mb-7 mb-lg-9">
+							<a href="#feature_tab_1"
+								class="nav-link py-3 flex-shrink-0 active" data-bs-toggle="tab"
+								aria-expanded="true">
+								<h6 class="text-reset mb-0">Company</h6>
+							</a>
+							<!--  <a href="#feature_tab_2" class="nav-link py-3 flex-shrink-0" data-bs-toggle="tab"
                   aria-expanded="false">
                   <h6 class="text-reset mb-0">Integrations</h6>
                 </a> -->
-                <a href="#feature_tab_3" class="nav-link py-3 flex-shrink-0" data-bs-toggle="tab"
-                  aria-expanded="false">
-                  <h6 class="text-reset mb-0">Exhibition</h6>
-                </a>
-              </nav>
-            </div>
+							<a href="#feature_tab_3" class="nav-link py-3 flex-shrink-0"
+								data-bs-toggle="tab" aria-expanded="false">
+								<h6 class="text-reset mb-0">Exhibition</h6>
+							</a>
+						</nav>
+					</div>
 
-            <!--Tabs content-->
-            <div class="tab-content">
+					<!--Tabs content-->
+					<div class="tab-content">
 
-              <!--Tab Pane(item)-->
-              <div class="tab-pane show fade active" id="feature_tab_1">
-                <div class="row align-items-center justify-content-between">
-                  <div class="col-lg-5 col-xl-4 me-lg-auto" data-aos="fade-up" data-aos-delay="100">
-                    <!--Subtitle-->
-                    <p class="mb-4 badge bg-info px-3 py-2 rounded-pill">Company</p>
+						<!--Tab Pane(item)-->
+						<div class="tab-pane show fade active" id="feature_tab_1">
+							<div class="row align-items-center justify-content-between">
+								<div class="col-lg-5 col-xl-4 me-lg-auto" data-aos="fade-up"
+									data-aos-delay="100">
+									<!--Subtitle-->
+									<p class="mb-4 badge bg-info px-3 py-2 rounded-pill">Company</p>
 
-                    <!--Title-->
-                    <div class="mb-lg-4 display-4">
-                      <span>Company D&R List</span><br />
-                    </div>
-                    <div class="d-flex align-items-center mb-4">
-                      <div>
-                        <p class="mb-0">
-                         Hello admin:) <br>
-                         Welcome to Fiennale!
-                         Please check the approval and rejection details of the company here
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                        <div class="col-sm-6">
-                            <div class="card card-body border-0">
-                            <span class="input-icon">
-                                              <i class="bx d-flex bx-message-alt-check" style="align-items:center; display: flex;">
-                                              <strong><h5>&nbsp;Approval List / 승인리스트</h5></strong></i>
-                                            </span>
-                                <!-- <p><strong><h5>승인리스트 / Approval List</h5></strong></p> -->
-                                <br>
-                                 <article class="d-flex card-hover mb-4 align-items-stretch">
-                                <div class="me-3">
-                                    <a href="#!" class="overflow-hidden rounded-3 shadow d-block">
-                                        <img src="/resources/img/960x640/6.jpg" alt="Image" class="width-9x img-zoom">
-                                    </a>
-                                </div>
-                                <div class="flex-gropw-1 justify-content-between">
-                                    <a href="#!" class="text-dark">
-                                        <h6 class="mb-2 text-reset">
-                                            Company_ID
-                                        </h6>
-                                    </a>
-                                    <div class="d-flex justify-content-between">
-                                        <small class="mb-0">
-                                            <a href="#!">Fiennale</a>
-                                        </small>
-                                       
-                                    </div>
-                                </div>
-                            </article>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="card card-body border-0">
-                            <i class="bx d-flex bx-message-alt-x" style="align-items:center; display: flex;">
-                                              <strong><h5>&nbsp;Rejection List / 거절리스트</h5></strong></i>
-                                            </span>
-                                <!-- <p><strong><h5>거절리스트 / Rejection List</h4></strong></p> -->
-                                <br>
-                                <article class="d-flex card-hover mb-4 align-items-stretch">
-                                <div class="me-3">
-                                    <a href="#!" class="overflow-hidden rounded-3 shadow d-block">
-                                        <img src="/resources/img/960x640/6.jpg" alt="Image" class="width-9x img-zoom">
-                                    </a>
-                                </div>
-                                <div class="flex-gropw-1 justify-content-between">
-                                    <a href="#!" class="text-dark">
-                                        <h6 class="mb-2 text-reset">
-                                            Company_ID
-                                        </h6>
-                                    </a>
-                                    <div class="d-flex justify-content-between">
-                                        <small class="mb-0">
-                                            <a href="#!">Fiennale</a>
-                                        </small>
-                                       
-                                    </div>
-                                </div>
-                            </article>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              </div>
-				
-				
-              <!--Tab Pane(item)-->
-              
+									<!--Title-->
+									<div class="mb-lg-4 display-4">
+										<span>Company D&R List</span><br />
+									</div>
+									<div class="d-flex align-items-center mb-4">
+										<div>
+											<p class="mb-0">
+												Hello admin:) <br> Welcome to Fiennale! Please check
+												the approval and rejection details of the company here
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="row mb-3">
+									<div class="col-sm-6">
+										<div class="card card-body border-0">
+											<span class="input-icon"> <i
+												class="bx d-flex bx-message-alt-check"
+												style="align-items: center; display: flex;"> <strong><h5>&nbsp;Approval
+															List / 승인리스트</h5></strong></i>
+											</span>
+											<!-- <p><strong><h5>승인리스트 / Approval List</h5></strong></p> -->
+											<br>
 
-              <!--Tab Pane(item)-->
-              <div class="tab-pane fade" id="feature_tab_3">
-                <div class="row align-items-center justify-content-between">
-                  <div class="col-lg-6 ms-auto mb-5 mb-lg-0 order-lg-last">
-                    <!-- <div class="position-relative rounded-3" data-aos="fade-right" data-aos-delay="100">
+											<c:forEach items="${covo}" var="vo">
+												<c:if test="${vo.company_flag eq 'D'}">
+													<article class="d-flex card-hover mb-4 align-items-stretch">
+														<div class="me-3">
+															<a href="#!"
+																class="overflow-hidden rounded-3 shadow d-block"> <img
+																src="/resources/img/master/masterLogo.png" alt="Image"
+																class="width-9x img-zoom">
+															</a>
+														</div>
+														<div class="flex-gropw-1 justify-content-between">
+															<a href="#!" class="text-dark">
+																<h6 class="mb-2 text-reset">${vo.company_id}</h6>
+															</a> <a href="#!" class="text-dark">
+																<h6 class="mb-2 text-reset">${vo.company_ph}</h6>
+															</a> <a href="#!" class="text-dark">
+																<h6 class="mb-2 text-reset">${vo.company_email}</h6>
+															</a> <a href="#!" class="text-dark">
+																<h6 class="mb-2 text-reset">${vo.company_regnum}</h6>
+															</a>
+
+															<div class="d-flex justify-content-between">
+																<small class="mb-0"> <a href="#!">Fiennale</a>
+																</small>
+															</div>
+														</div>
+													</article>
+												</c:if>
+											</c:forEach>
+
+
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="card card-body border-0">
+											<i class="bx d-flex bx-message-alt-x"
+												style="align-items: center; display: flex;"> <strong><h5>&nbsp;Rejection
+														List / 거절리스트</h5></strong></i> </span>
+											<!-- <p><strong><h5>거절리스트 / Rejection List</h4></strong></p> -->
+											<br>
+
+
+
+											<c:forEach items="${covo}" var="vo">
+												<c:if test="${vo.company_flag eq 'R'}">
+													<article class="d-flex card-hover mb-4 align-items-stretch">
+														<div class="me-3">
+															<a href="#!"
+																class="overflow-hidden rounded-3 shadow d-block"> <img
+																src="/resources/img/master/masterLogo.png" alt="Image"
+																class="width-9x img-zoom">
+															</a>
+														</div>
+														<div class="flex-gropw-1 justify-content-between">
+															<a href="#!" class="text-dark">
+																<h6 class="mb-2 text-reset">${vo.company_id}</h6>
+															</a> <a href="#!" class="text-dark">
+																<h6 class="mb-2 text-reset">${vo.company_ph}</h6>
+															</a> <a href="#!" class="text-dark">
+																<h6 class="mb-2 text-reset">${vo.company_email}</h6>
+															</a> <a href="#!" class="text-dark">
+																<h6 class="mb-2 text-reset">${vo.company_regnum}</h6>
+															</a>
+
+															<div class="d-flex justify-content-between">
+																<small class="mb-0"> <a href="#!">Fiennale</a>
+																</small>
+															</div>
+														</div>
+													</article>
+												</c:if>
+											</c:forEach>
+
+
+
+
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<!--Tab Pane(item)-->
+
+
+						<!--Tab Pane(item)-->
+						<div class="tab-pane fade" id="feature_tab_3">
+							<div class="row align-items-center justify-content-between">
+								<div class="col-lg-6 ms-auto mb-5 mb-lg-0 order-lg-last">
+									<!-- <div class="position-relative rounded-3" data-aos="fade-right" data-aos-delay="100">
                       <img class="img-fluid rounded-3 shadow-xl" src="/resources/img/graphics/saas/hero.png"
                         alt="content" />
                     </div> -->
-                  </div>
-                  <div class="col-lg-5 col-xl-4 me-auto" data-aos="fade-up" data-aos-delay="100">
-                    <!--Subtitle-->
-                    <p class="mb-4 badge bg-info px-3 py-2 rounded-pill">Exhibition</p>
-                    <!--Title-->
-                    <h2 class="mb-4 display-4 me-lg-n18">
-                      Exhibition D&R List
-                    </h2>
-                    <p class="mb-5">
-                       Hello admin:) <br>
-                         Welcome to Fiennale!
-                         Please check the approval and rejection details of the exhibition here
-                    </p>
-                    
-                  </div>
-                  <div class="row mb-3">
-                        <div class="col-sm-6">
-                            <div class="card card-body border-0">
-                            <span class="input-icon">
-                                              <i class="bx d-flex bx-message-alt-check" style="align-items:center; display: flex;">
-                                              <strong><h5>&nbsp;Approval List / 승인리스트</h5></strong></i>
-                                            </span>
-                                <!-- <p><strong><h5>승인리스트 / Approval List</h5></strong></p> -->
-                                <br>
-                                 <article class="d-flex card-hover mb-4 align-items-stretch">
-                                <div class="me-3">
-                                    <a href="#!" class="overflow-hidden rounded-3 shadow d-block">
-                                        <img src="/resources/img/960x640/6.jpg" alt="Image" class="width-9x img-zoom">
-                                    </a>
-                                </div>
-                                <div class="flex-gropw-1 justify-content-between">
-                                    <a href="#!" class="text-dark">
-                                        <h6 class="mb-2 text-reset">
-                                           Exhibition_title
-                                        </h6>
-                                    </a>
-                                    <div class="d-flex justify-content-between">
-                                        <small class="mb-0">
-                                            <a href="#!">Fiennale</a>
-                                        </small>
-                                       
-                                    </div>
-                                </div>
-                            </article>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="card card-body border-0">
-                            <i class="bx d-flex bx-message-alt-x" style="align-items:center; display: flex;">
-                                              <strong><h5>&nbsp;Rejection List / 거절리스트</h5></strong></i>
-                                            </span>
-                                <!-- <p><strong><h5>거절리스트 / Rejection List</h4></strong></p> -->
-                                <br>
-                                <article class="d-flex card-hover mb-4 align-items-stretch">
-                                <div class="me-3">
-                                    <a href="#!" class="overflow-hidden rounded-3 shadow d-block">
-                                        <img src="/resources/img/960x640/6.jpg" alt="Image" class="width-9x img-zoom">
-                                    </a>
-                                </div>
-                                <div class="flex-gropw-1 justify-content-between">
-                                    <a href="#!" class="text-dark">
-                                        <h6 class="mb-2 text-reset">
-                                            Exhibition_title
-                                        </h6>
-                                    </a>
-                                    <div class="d-flex justify-content-between">
-                                        <small class="mb-0">
-                                            <a href="#!">Fiennale</a>
-                                        </small>
-                                       
-                                    </div>
-                                </div>
-                            </article>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              </div>
-            
-          </div>
-        </div>
-      </section>
+								</div>
+								<div class="col-lg-5 col-xl-4 me-auto" data-aos="fade-up"
+									data-aos-delay="100">
+									<!--Subtitle-->
+									<p class="mb-4 badge bg-info px-3 py-2 rounded-pill">Exhibition</p>
+									<!--Title-->
+									<h2 class="mb-4 display-4 me-lg-n18">Exhibition D&R List</h2>
+									<p class="mb-5">
+										Hello admin:) <br> Welcome to Fiennale! Please check the
+										approval and rejection details of the exhibition here
+									</p>
+
+								</div>
+								<div class="row mb-3">
+									<div class="col-sm-6">
+										<div class="card card-body border-0">
+											<span class="input-icon"> <i
+												class="bx d-flex bx-message-alt-check"
+												style="align-items: center; display: flex;"> <strong><h5>&nbsp;Approval
+															List / 승인리스트</h5></strong></i>
+											</span>
+											<!-- <p><strong><h5>승인리스트 / Approval List</h5></strong></p> -->
+											<br>
+
+											<c:forEach items="${exvo}" var="vo" varStatus="status">
+												<c:if test="${vo.exhibition_flag eq 'D'}">
+													<article class="d-flex card-hover mb-4 align-items-stretch">
+														<div class="me-3">
+															<a href="#!"
+																class="overflow-hidden rounded-3 shadow d-block"> <img
+																src="${vo.exhibition_image}" alt="Image"
+																class="width-9x img-zoom">
+															</a>
+														</div>
+														<div class="flex-gropw-1 justify-content-between">
+															<a href="#!" class="text-dark">
+																<h6 class="mb-2 text-reset">${vo.exhibition_title}</h6>
+															</a> 
+															<a href="#!" class="text-dark">
+																<h6 class="mb-2 text-reset">${vo.exhibition_location}</h6>
+															</a> 
+															<a href="#!" class="text-dark">
+																<h6 class="mb-2 text-reset">${vo.exhibition_total_date}</h6>
+															</a> 
+															<a href="#!" class="text-dark">
+																<h6 class="mb-2 text-reset">${vo.exhibition_memo}</h6>
+															</a> 
+															<a href="#!" class="text-dark">
+																<h6 class="mb-2 text-reset">${vo.exhibition_flag}</h6>
+															</a>
+
+															<div class="d-flex justify-content-between">
+																<small class="mb-0"> <a href="#!">Fiennale</a>
+																</small>
+															</div>
+														</div>
+													</article>
+												</c:if>
+											</c:forEach>
+
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="card card-body border-0">
+											<i class="bx d-flex bx-message-alt-x"
+												style="align-items: center; display: flex;"> <strong><h5>&nbsp;Rejection
+														List / 거절리스트</h5></strong></i> </span>
+											<!-- <p><strong><h5>거절리스트 / Rejection List</h4></strong></p> -->
+											<br>
+											<c:forEach items="${exvo}" var="vo" varStatus="status">
+												<c:if test="${vo.exhibition_flag eq 'R'}">
+													<article class="d-flex card-hover mb-4 align-items-stretch">
+														<div class="me-3">
+															<a href="#!"
+																class="overflow-hidden rounded-3 shadow d-block"> <img
+																src="${vo.exhibition_image}" alt="Image"
+																class="width-9x img-zoom">
+															</a>
+														</div>
+														<div class="flex-gropw-1 justify-content-between">
+															<a href="#!" class="text-dark">
+																<h6 class="mb-2 text-reset">${vo.exhibition_title}</h6>
+															</a> 
+															<a href="#!" class="text-dark">
+																<h6 class="mb-2 text-reset">${vo.exhibition_location}</h6>
+															</a> 
+															<a href="#!" class="text-dark">
+																<h6 class="mb-2 text-reset">${vo.exhibition_total_date}</h6>
+															</a> 
+															<a href="#!" class="text-dark">
+																<h6 class="mb-2 text-reset">${vo.exhibition_memo}</h6>
+															</a> 
+															<a href="#!" class="text-dark">
+																<h6 class="mb-2 text-reset">${vo.exhibition_flag}</h6>
+															</a>
+
+															<div class="d-flex justify-content-between">
+																<small class="mb-0"> <a href="#!">Fiennale</a>
+																</small>
+															</div>
+														</div>
+													</article>
+												</c:if>
+											</c:forEach>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+		</section>
 
 	</main>
 

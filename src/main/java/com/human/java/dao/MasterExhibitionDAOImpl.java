@@ -29,6 +29,12 @@ public class MasterExhibitionDAOImpl implements MasterExhibitionDAO {
 		
 	}
 	
+	@Override
+	public List<MasterExhibitionVO> masterExhibitionDR() {
+		return mybatis.selectList("masterExhibitionMapper.masterExhibitionSelectDR");
+	}
+	
+	
 	
 	
 

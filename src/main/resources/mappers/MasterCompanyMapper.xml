@@ -16,5 +16,10 @@
 		SET COMPANY_FLAG = #{company_flag}
 		WHERE COMPANY_ID = #{company_id}
 	</update>
-
+	
+	<select id="masterCompanySelectDR" resultType="masterCompany">
+		SELECT *
+		FROM COMPANY_INFO
+		WHERE COMPANY_FLAG = 'D' OR  COMPANY_FLAG = 'R'
+	</select>
 </mapper>  

@@ -33,6 +33,11 @@ public class MasterExhibitionServiceImpl implements MasterExhibitionService{
 		
 	}
 
+	@Override
+	public List<MasterExhibitionVO> masterExhibitionDR() {
+		return masterExhibitionDAO.masterExhibitionDR();
+	}
+
 	
 }
 
