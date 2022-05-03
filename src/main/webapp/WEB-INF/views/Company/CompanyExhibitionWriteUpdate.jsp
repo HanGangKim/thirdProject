@@ -93,7 +93,8 @@ input.form-control[readonly] {
 							<div class="col-lg-9 mx-auto">
 								<div class="pt-5 d-flex flex-column h-100">
 									<div class="card shadow p-3 mb-3">
-										<h5 class="mb-4">Update Exhibition Info</h5>
+										<h5>Update Exhibition Info</h5>
+										<strong class="mb-4 text-primary">* 전시 정보를 수정하면 승인상태가 초기화됩니다.</strong>
 										
 										<!-- form 태그시작  -->
 										<form action="/exhibition/exhibitionCompanyExhibitionUpdate.do" onsubmit="return nullCheck()" name="exhibitionForm" method="post" enctype="multipart/form-data">
