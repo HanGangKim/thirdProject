@@ -46,7 +46,19 @@ public class MasterCompanySelectController {
 	// 컨트롤러에서 서비스 다오 디비로 이동
 	// 디비에 승인했다는 표시를 해야함
 	// 전시회 정보가 들어있는 테이블 있는데 그 테이블에 승인, 거절 과 같은 내용이 표시되어있는데 
-	// 그것을 우리는 승인으로 바꿔야합니다. 
+	// 그것을 우리는 승인으로 바꿔야합니다.
+	
+	@RequestMapping("masterCompanySearchTitle.do")
+	public ModelAndView masterCompanySearchTitle (MasterCompanyVO vo){
+		String title = vo.getCompany_name();  
+	
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/Master/CheckDnR");
+		mv.addObject("covo", masterCompanyService.masterCompanySearchTitle(vo,title));
+		return mv;
+		
+	}
 
 }
 

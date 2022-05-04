@@ -12,6 +12,9 @@ public interface MasterCompanyDAO {
 	// update company
 	void masterCompanyUpdate(MasterCompanyVO vo);
 	
+	
 	public List<MasterCompanyVO> masterCompanyDR();
+	
+	public List<MasterCompanyVO> masterCompanySearchTitle(MasterCompanyVO vo, String title);
 
 }
