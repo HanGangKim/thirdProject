@@ -36,5 +36,14 @@ public class MasterCompanyServiceImpl implements MasterCompanyService{
 		return masterCompanyDAO.masterCompanyDR();
 	}
 
+	@Override
+	public List<MasterCompanyVO> masterCompanySearchTitle(MasterCompanyVO vo, String title) {
+		System.out.println("===============");
+		System.out.println("masterCompanySearchTitle 서비스 호출");
+		System.out.println("===============");
+		
+		return masterCompanyDAO.masterCompanySearchTitle(vo, title);
+	}
+
 	
 }

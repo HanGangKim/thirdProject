@@ -151,11 +151,27 @@
 												class="bx d-flex bx-message-alt-check me-8"
 												style="align-items: center; display: flex;"> <strong><h5>&nbsp;Approval
 															List / 승인리스트</h5></strong></i>
-												<div class="position-relative">
+											<form name="searchCompanyId" onkeyup="enterkey()" action="/master/masterCompanySearchTitle.do" method="post" >
+											<div class="position-relative">
 													<i
 														class="bx bx-search-alt-2 small ms-3 opacity-50 position-absolute start-0 top-50 translate-middle-y"></i>
-													<input type="text" id="p_location"
-														class="form-control ps-6" placeholder="search company...">
+													<input type="text" id="companyWordD" name="company_name"
+														onkeyup="search(this);" class="form-control ps-6"
+														placeholder="search company...">
+												</div>
+											</form>
+												
+												<div class="col-md-3 col-lg-2">
+													<button type="submit" class="btn btn-primary w-50">
+														<svg xmlns="http://www.w3.org/2000/svg" width="24"
+															height="24" fill="none" viewBox="0 0 24 24"
+															stroke="currentColor">
+                                                <path
+																stroke-linecap="round" stroke-linejoin="round"
+																stroke-width="2"
+																d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                            </svg>
+													</button>
 												</div>
 											</span>
 											<!-- <p><strong><h5>승인리스트 / Approval List</h5></strong></p> -->
@@ -163,7 +179,8 @@
 
 											<c:forEach items="${covo}" var="vo">
 												<c:if test="${vo.company_flag eq 'D'}">
-													<article class="d-flex card-hover mb-4 align-items-stretch">
+													<article class="d-flex card-hover mb-4 align-items-stretch"
+														id="companyListD">
 														<div class="me-3">
 															<a href="#!"
 																class="overflow-hidden rounded-3 shadow d-block"> <img
@@ -288,7 +305,8 @@
 													<i
 														class="bx bx-search-alt-2 small ms-3 opacity-50 position-absolute start-0 top-50 translate-middle-y"></i>
 													<input type="text" id="p_location"
-														class="form-control ps-6" placeholder="search exhibition...">
+														class="form-control ps-6"
+														placeholder="search exhibition...">
 												</div>
 											</span>
 											<!-- <p><strong><h5>승인리스트 / Approval List</h5></strong></p> -->
@@ -330,17 +348,18 @@
 									</div>
 									<div class="col-sm-6">
 										<div class="card card-body border-0">
-										<span class="input-icon d-flex">
-											<i class="bx d-flex bx-message-alt-x me-8"
+											<span class="input-icon d-flex"> <i
+												class="bx d-flex bx-message-alt-x me-8"
 												style="align-items: center; display: flex;"> <strong><h5>&nbsp;Rejection
-														List / 거절리스트</h5></strong></i> 
-														<div class="position-relative">
+															List / 거절리스트</h5></strong></i>
+												<div class="position-relative">
 													<i
 														class="bx bx-search-alt-2 small ms-3 opacity-50 position-absolute start-0 top-50 translate-middle-y"></i>
 													<input type="text" id="p_location"
-														class="form-control ps-6" placeholder="search exhibition...">
+														class="form-control ps-6"
+														placeholder="search exhibition...">
 												</div>
-														</span>
+											</span>
 											<!-- <p><strong><h5>거절리스트 / Rejection List</h4></strong></p> -->
 											<br>
 											<c:forEach items="${exvo}" var="vo" varStatus="status">
@@ -451,6 +470,39 @@
 	</a> -->
 	<!-- scripts -->
 	<script src="/resources/js/theme.bundle.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<!-- <script type="text/javascript">
+	
+	
+	function searchCompanyListD(target){ 
+		
+		var word = target.value; 
+		var encodeWord = encodeURI(companyWordD); 
+		console.log(companyWordD); 
+		console.log(encodeWord);
+		
+		$.ajax({
+			type : 'GET', 
+			dataType : 'json',
+			url : './ExSearchAjax.do',
+		})
+	}
+
+
+	
+	</script> -->
+	
+	<!-- 검색모달 기능 JS  -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+function enterkey() {
+if (window.event.keyCode == 13) {
+
+	document.searchForm.submit();
+ }
+}
+</script>
 
 </body>
 

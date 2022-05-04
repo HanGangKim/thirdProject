@@ -14,4 +14,8 @@ public interface MasterCompanyService {
 	
 	// company DnR select 
 	public List<MasterCompanyVO> masterCompanyDR();
+	
+	//company Title Search select
+	public List<MasterCompanyVO> masterCompanySearchTitle(MasterCompanyVO vo, String title);
+
 }

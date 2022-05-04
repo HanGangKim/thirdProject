@@ -22,4 +22,11 @@
 		FROM COMPANY_INFO
 		WHERE COMPANY_FLAG = 'D' OR  COMPANY_FLAG = 'R'
 	</select>
+	
+	<select id="masterCompanySearchTitle" parameterType="map"
+		resultType="masterCompany">
+		SELECT *
+		FROM COMPANY_INFO
+		WHERE COMPANY_ID LIKE '%${title}%' AND COMPANY_FLAG = 'D'
+	</select>
 </mapper>  
