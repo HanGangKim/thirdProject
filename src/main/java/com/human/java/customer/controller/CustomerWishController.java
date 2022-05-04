@@ -35,7 +35,7 @@ public class CustomerWishController {
 		List<WishListVO> li = customerService.WishListSelectService(vo, id, wl, request);
 		
 		if(li.isEmpty()) {
-			String nullCheck = "null";
+			String nullCheck = "찜한 목록이 없습니다.";
 			mv.addObject("nullCheck", nullCheck);
 		}else {
 			mv.addObject("vo", li);
