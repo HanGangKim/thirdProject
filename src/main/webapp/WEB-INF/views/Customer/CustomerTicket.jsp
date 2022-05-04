@@ -204,7 +204,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										<div class="mt-10 d-flex flex-column align-items-center">
 											<label class="form-label h6" for="profile_name">${vo.exhibition_title}</label>
 											<!-- QR 이미지 -->
-											<img src="https://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=<%=userId%>">
+											<img src="https://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=http://fiennale.shop">
 										</div>
 									</div>
 

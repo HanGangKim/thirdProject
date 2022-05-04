@@ -15,7 +15,6 @@ System.out.println("세션연결 실패:"+userId);
 System.out.println("세션연결 실패:"+userName);
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
-
 }else{
 System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 System.out.println("세션연결 성공:"+userId);
@@ -65,6 +64,36 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	margin: 0px;
 	color: gray;
 }
+
+.mb-4 {
+     margin-bottom: 0rem!important; 
+}
+
+.navbar-brand {
+    padding-top: 2.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    white-space: nowrap;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0px solid #e7e7e7;
+    border-radius: 0.375rem;
+}
+
+.py-9 {
+    padding-top: 4rem!important;
+    padding-bottom: 0rem!important; 
+}
+
 </style>
 
 <title>${vo.exhibition_title}</title>
@@ -72,17 +101,45 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 <body>
 
-	<jsp:include page="/header.jsp" />
-
-
+	<%-- <jsp:include page="/header.jsp" /> --%>
+	<!--Header Start-->
+<header class="z-index-fixed header-transparent header-absolute-top sticky-reverse header-center-logo">
+ <nav class="navbar navbar-expand-lg navbar-light navbar-link-white">
+  <div class="container justify-content-center position-relative">
+      <!--site-logo-->
+       <a class="navbar-brand" href="index.html">
+        <img src="/resources/img/logo/black-logo.png" alt="" class="img-fluid navbar-brand-sticky">
+        <img src="/resources/img/logo/black-logo.png" alt="" class="img-fluid navbar-brand-transparent">
+       </a>
+     <div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
+      
+       <!--navbar action button-->
+       
+   </div>
+   <div class="collapse navbar-collapse" id="mainNavbarTheme">
+      <!--Navbar left-->
+      <ul class="navbar-nav me-lg-auto">
+        <li class="nav-item"> <a href="#" class="nav-link">Home</a> </li>
+        <li class="nav-item"> <a href="#" class="nav-link">About</a> </li>
+        <li class="nav-item"> <a href="#" class="nav-link">Projects</a> </li>
+      </ul>
+      <!--Navbar right-->
+      <ul class="navbar-nav ms-lg-auto">
+         <li class="nav-item"> <a href="#" class="nav-link">Services</a></li>
+         <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+ </nav>
+</header>
 	<!--Main content-->
 	<main>
 		<section class="position-relative bg-white">
 			<div class="container py-9 position-relative">
 				<div class="row justify-content-between">
-					<div class="col-lg-6 col-11 col-sm-7 mx-auto mx-lg-0 mb-5 mb-lg-0">
-						<img src="${vo.exhibition_image}" alt="" style="width: 1500px"
-							class="img-fluid mb-3"> <img
+					<div class="col-lg-6 col-10 col-sm-7 mx-auto mx-lg-0 mb-lg-0">
+						<img src="/resources/img/mainposter/06. 앤서니 브라운의 원더랜드 뮤지엄展.PNG" alt="" style="width: 1500px"
+							class="img-fluid card mb-3"> <img
 							src="/resources/img/exam/22.jpg" alt="" class="img-fluid mb-3">
 							<img src="${vo.exhibition_contents}" alt="" style="width: 1500px"
 							class="img-fluid mb-3">
@@ -94,32 +151,32 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<!--Breadcrumbs-->
 							<nav class="d-md-flex" aria-label="breadcrumb">
 								<ol class="breadcrumb mb-3">
-									<p class="date">${vo.exhibition_total_date}</p>
+									<p class="date">2021.05.10~2021.07.11</p>
 								</ol>
 							</nav>
 							<!-- Product Description -->
-							<div class="mb-4 pb-4 border-bottom">
+							<div class="pb-4">
 								<div class="mb-2">
-									<h3>${vo.exhibition_title}</h3>
+									<h3>스타벅스 프리퀀시 시작</h3>
 									<div class="d-flex justify-content-between align-items-center">
 										<div>
 											<p class="fs-5 mb-0">
-												${vo.exhibition_price} won
+												1,000,000 won
 											</p>
 										</div>
 									</div>
 								</div>
 							</div>
 
-							<div class="mb-4 pb-4 border-bottom">
+							<div>
 								<div class="mb-0">
 									<div
-										class="d-flex align-items-center mb-3 justify-content-between">
+										class="d-flex align-items-center justify-content-between">
 										<h6 class="mb-0" style="color: #f15b66;">Location</h6>
 									</div>
 									<div
 										class="d-md-flex d-flex align-items-center justify-content-between">
-										<h6>${vo.exhibition_location}</h6>
+										<h6>전국 스타벅스 매장</h6>
 										<a href="#" class="btn btn-outline-dark" data-bs-target="#modal-loc-bar-2" data-bs-toggle="modal">
 											<i class="bx bx-location-plus fs-5"></i>
 										</a>
@@ -130,7 +187,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<!--/.size-->
 
 
-							<div class="mb-4 pb-4 border-bottom">
+							<div>
 								<div
 									class="d-flex justify-content-between align-content-stretch">
 
@@ -139,7 +196,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										<h6 style="color: #f15b66;">Schedule</h6>
 										<div class="d-flex" role="group"
 											aria-label="Basic radio toggle button group">
-											<h6>${vo.exhibition_memo }</h6>
+											<h6>올해 프리퀀시 진짜 별로임</h6>
 										</div>
 									</div>
 									<!--/.정보-->
@@ -147,7 +204,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								</div>
 							</div>
 							
-							
+							<%-- 
 							
 							<%
 							// 세션 연결
@@ -155,15 +212,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							// 세션 연결에 실패하면 null	
 							%>						
 							<div class="d-grid mb-2">
-								<a class="btn btn-outline-primary hover-lift" onclick="wishClick()"> 
+								<a class="btn btn-outline-primary hover-lift"> 
 									<i class="bx bx-heart fs-4 me-2"></i> Add to Wishlist
 								</a>
 							</div>
-							<script type="text/javascript">
-								function wishClick() {
-									alert("로그인 후 이용 가능합니다.");
-								}
-							</script>
 							<% 
 							}else{
 							%>
@@ -182,7 +234,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									data-bs-target="#modal-pay-bar-2" data-bs-toggle="modal"> <i class="bx bx-credit-card fs-4 me-2"></i> 
 									Book a Ticket
 								</a>
-							</div>
+							</div> --%>
 							<!--/.cart-action-->
 
 						</div>
@@ -390,7 +442,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	</script>
 
 
-<jsp:include page="/footer.jsp" />
+<%-- <jsp:include page="/footer.jsp" /> --%>
 
 
 </body>
