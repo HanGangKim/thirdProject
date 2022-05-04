@@ -95,7 +95,7 @@ public class CompanyConfirmPasswordController {
 			String sendEmailPassword = result.getCompany_password();
 			
 			//메일에 이미지 띄우기
-			String img = "<img src=\"https://www.lottehotelmagazine.com/resources/57272281-e0a2-43e5-8f90-b78f5cd6e643_img_art_dstrict_detail01.jpg\">";
+			String img = "<img src=\"https://postfiles.pstatic.net/MjAyMjA1MDRfMjcz/MDAxNjUxNjQ2NTg2NDE3.ZK3VHyYKYTaK91p8UNvp49_gOFVLJhr0qGdSoOr41U0g.K0h-bNm1NMOhEN38cRUJ0Vwp6RMRkeCpS6nh1hiBk1og.PNG.hansoo0724/black_logo.png?type=w773\">";
 			MimeMessage mimeMessage =mailSender.createMimeMessage();
 			MimeMessageHelper MessageHelper = new MimeMessageHelper(mimeMessage,true,"UTF-8");
 			
@@ -109,7 +109,7 @@ public class CompanyConfirmPasswordController {
 			MessageHelper.setText("<HTML><h1>Fiennale</h1></HTML>"
 				    + img
 				    + " <HTML><h3> " + sendEmailId + "님의 비밀번호는 " + sendEmailPassword + " 입니다.</h3>"
-				    +"<h3>피엔날레를 이용해주셔서 감사합니다. </h3>"+"</HTML>", true); 
+				    +" <a href=\"http://fiennale.shop/start/NoneMemberMain.do\" style=\"width: 200px; text-decoration: none; display: inline-block; background-color: #f15b66; padding: 0.5rem 1rem; font-size: 1rem; border-radius: 0.375rem; line-height: 1.5; color: #ffffff; cursor: pointer; text-align: center; vertical-align: middle; font-family: Arial, Helvetica, sans-serif;\">Go Fiennale</a>"+"</HTML>", true); 
 			
 			//메일 전송
 			mailSender.send(mimeMessage);
