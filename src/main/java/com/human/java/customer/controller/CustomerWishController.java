@@ -34,8 +34,12 @@ public class CustomerWishController {
 		
 		List<WishListVO> li = customerService.WishListSelectService(vo, id, wl, request);
 		
-		mv.addObject("vo", li);
-		
+		if(li.isEmpty()) {
+			String nullCheck = "null";
+			mv.addObject("nullCheck", nullCheck);
+		}else {
+			mv.addObject("vo", li);
+		}
 		return mv;
 	}
 	
