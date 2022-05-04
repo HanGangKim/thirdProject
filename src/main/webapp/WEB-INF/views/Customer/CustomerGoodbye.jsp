@@ -71,7 +71,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<i class="bx bx-check lh-1 display-5 fw-normal"></i>
 						</div>
 						<h4 class="display-4 mb-3">Good Bye !</h4>
-						<p class="mb-5 lead mx-auto">계정 탈퇴가 완료되었습니다.</p>
+						<p class="mb-0 lead mx-auto">계정 탈퇴가 완료되었습니다.</p>
+						<p class="mb-5 lead mx-auto">감사합니다.</p>
 						<div class="col-md-6 mx-auto">
 							<a href="../LogOut.do" class="btn btn-primary mb-2 d-grid">Go to Main</a>
 						</div>

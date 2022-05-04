@@ -85,10 +85,10 @@ public class CustomerConfirmPasswordController {
 			System.out.println("===============");
 			System.out.println("[" + result.getCustomer_id() + "]" + "아이디 확인 성공");
 			
-			session.setAttribute("userPass" , result.getCustomer_password());
-			session.setAttribute("userId", result.getCustomer_id());
-			session.setAttribute("userName", result.getCustomer_id());
-			session.setAttribute("userEmail", result.getCustomer_email());
+			session.setAttribute("findPass" , result.getCustomer_password());
+			session.setAttribute("findId", result.getCustomer_id());
+			session.setAttribute("findName", result.getCustomer_id());
+			session.setAttribute("findEmail", result.getCustomer_email());
 			
 			mv.addObject("vo",customerService.customerFindPassword(vo));
 			
@@ -98,7 +98,7 @@ public class CustomerConfirmPasswordController {
 			String sendEmailPassword =result.getCustomer_password();
 			// 이미지 
 			// 웹 이미지 경로 변수지정
-			String img = "<img src=\"https://www.lottehotelmagazine.com/resources/57272281-e0a2-43e5-8f90-b78f5cd6e643_img_art_dstrict_detail01.jpg\">";
+			String img = "<img src=\"https://postfiles.pstatic.net/MjAyMjA1MDRfMjcz/MDAxNjUxNjQ2NTg2NDE3.ZK3VHyYKYTaK91p8UNvp49_gOFVLJhr0qGdSoOr41U0g.K0h-bNm1NMOhEN38cRUJ0Vwp6RMRkeCpS6nh1hiBk1og.PNG.hansoo0724/black_logo.png?type=w773\">";
 			
 			MimeMessage mimeMessage = mailSender.createMimeMessage();
 		    MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage, true, "UTF-8");
@@ -112,7 +112,7 @@ public class CustomerConfirmPasswordController {
 		    messageHelper.setText("<HTML><h1>Fiennale</h1></HTML>"
 		    + img
 		    + " <HTML><h3> " + sendEmailId + "님의 비밀번호는" + sendEmailPassword + "입니다.</h3>"
-		    +"<h3>피엔날레를 이용해주셔서 감사합니다. </h3>"+"</HTML>", true); 
+		    +" <a href=\"http://fiennale.shop/start/NoneMemberMain.do\" style=\"width: 200px; text-decoration: none; display: inline-block; background-color: #f15b66; padding: 0.5rem 1rem; font-size: 1rem; border-radius: 0.375rem; line-height: 1.5; color: #ffffff; cursor: pointer; text-align: center; vertical-align: middle; font-family: Arial, Helvetica, sans-serif;\">Go Fiennale</a>"+"</HTML>", true); 
 			// 메일전송	    
 		    mailSender.send(mimeMessage);
 			
