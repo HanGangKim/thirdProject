@@ -119,9 +119,45 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										<a class="nav-link nav-over dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Mypage </a> 
 										<!--마이페이지 드롭다운-->
 										<div class="dropdown-menu p-lg-3">
-											<a class="dropdown-item" href="/customer/CustomerWishSelectList.do?id=<%=userId%>">My Wishlist</a>
-											<a class="dropdown-item" href="/exhibition/ExhibitionTicketingSelect.do?id=<%=userId%>">My Ticket</a>
-											<a class="dropdown-item" href="/exhibition/getMyReviewList.do?id=<%=userId%>">My Review</a>
+											<a class="dropdown-item" onclick="selectHiddenFormSubmit()">My Wishlist</a>
+											<a class="dropdown-item" onclick="ticketingSelectHiddenFormSubmit()">My Ticket</a>
+											<a class="dropdown-item" onclick="myReviewListHiddenFormSubmit()">My Review</a>
+											
+											
+											<!-- hidden form  -->
+											<form id="selectHiddenForm" name="selectHiddenForm" action="/customer/CustomerWishSelectList.do" method="post">
+											<input type="hidden" name="id" value="<%=userId%>">
+											</form>
+											
+											<form id="ticketingSelectHiddenForm" name="ticketingSelectHiddenForm" action="/exhibition/ExhibitionTicketingSelect.do" method="post">
+											<input type="hidden" name="id" value="<%=userId%>">
+											</form>
+											
+											<form id="myReviewListHiddenForm" name="myReviewListHiddenForm" action="/exhibition/getMyReviewList.do" method="post">
+											<input type="hidden" name="id" value="<%=userId%>">
+											</form>
+												
+											<!-- hidden form JS  -->       
+											<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>             
+											<script type="text/javascript">
+											function selectHiddenFormSubmit(){
+											$("#selectHiddenForm").submit(); 
+											}
+											</script>
+
+											<script type="text/javascript">
+											function ticketingSelectHiddenFormSubmit(){
+											$("#ticketingSelectHiddenForm").submit(); 
+											}
+											</script>
+											
+											<script type="text/javascript">
+											function myReviewListHiddenFormSubmit(){
+											$("#myReviewListHiddenForm").submit(); 
+											}
+											</script>
+											
+											
 											<div class="dropdown-divider"></div>
 											<a class="dropdown-item" href="/customer/CustomerConfirmPass.do">Setting</a>
 										</div>
@@ -131,14 +167,13 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 											Sign Out </a></li>
 								</c:when>
 							</c:choose>
-
-
 						</ul>
 					</div>
 				</nav>
 			</div>
 		</div>
 	</header>
+
 
 	<!-- 검색버튼 모달 시작 -->
 	<div id="modal-search-bar-2" class="modal fade" tabindex="-1"
@@ -170,6 +205,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		</div>
 	</div>
 	<!-- 검색버튼 모달 끝 -->
+
+
+
 
 
 </body>

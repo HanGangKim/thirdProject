@@ -59,7 +59,7 @@
 		class="z-index-fixed header-transparent header-absolute-top pt-lg-2">
 		<nav class="navbar navbar-expand-lg navbar-light navbar-link-white">
 			<div class="container position-relative">
-				<a class="navbar-brand" href="index.html"> <img
+				<a class="navbar-brand" href="/master/MasterPage.do"> <img
 					src="/resources/img/logo/white-logo.png" alt="" class="img-fluid">
 				</a>
 			</div>
@@ -115,7 +115,7 @@
                                 <div class="col-md-4 text-md-end">
                                     <nav aria-label="breadcrumb" class="d-md-flex justify-content-md-end">
                                         <ol class="breadcrumb mb-0">
-                                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                            <li class="breadcrumb-item"><a href="/master/MasterPage.do">Home</a></li>
                                             <li class="breadcrumb-item active">Charts</li>
                                         </ol>
                                     </nav>
@@ -305,7 +305,7 @@
 						class="container pt-9 pt-lg-11 pb-5 pb-lg-7 position-relative z-index-1">
 						<div class="row mb-5 mb-lg-7">
 							<div class="col-md-4 mb-5 mb-md-0 text-md-center order-md-2">
-								<a href="index.html"><img
+								<a href="/master/MasterPage.do"><img
 									src="/resources/img/logo/white-logo.png"
 									class="width-10x d-block h-auto mx-md-auto" alt=""></a>
 							</div>
@@ -337,7 +337,7 @@
 									Copyright <script>
 										document
 												.write(new Date().getFullYear())
-									</script>. Assan
+									</script>. Fiennale
 								</span>
 							</div>
 						</div>

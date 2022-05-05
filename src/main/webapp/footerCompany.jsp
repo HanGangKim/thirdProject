@@ -79,13 +79,34 @@ if (session.getAttribute("companyId") == null) {
 	                        <a class="link-hover-underline" href="/company/CompanyMain.do">Home</a>
 	                    </li>
 	                    <li class="list-inline-item">
-	                        <a class="link-hover-underline" href="/exhibition/CompanyExhibitionList.do?company_id=<%=companyId%>">Exhibition</a>
+	                    	<!-- Hidden Form start -->
+	                        <a class="link-hover-underline" onclick="companyExhibitionListHiddenFormSubmit()">Exhibition</a>
+	                   		<form id="companyExhibitionListHiddenForm" name="companyExhibitionListHiddenForm" action="/exhibition/CompanyExhibitionList.do" method="post">
+							<input type="hidden" name="company_id" value="<%=companyId%>">
+							</form>
+							<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>             
+							<script type="text/javascript">
+							function companyExhibitionListHiddenFormSubmit(){
+							$("#companyExhibitionListHiddenForm").submit(); 
+							}
+							</script>
+							<!-- Hidden Form end -->
 	                    </li>
-<!-- 	                    <li class="list-inline-item"> -->
-<!-- 	                        <a class="link-hover-underline" href="#">Linkedin</a> -->
-<!-- 	                    </li> -->
+
+
 	                    <li class="list-inline-item">
-	                        <a class="link-hover-underline" href="/company/CompanyConfirmPass.do?company_id=<%=companyId%>">Setting</a>
+	                    	<!-- Hidden Form start -->
+	                        <a class="link-hover-underline" onclick="companyConfirmPassHiddenFormSubmit()">Setting</a>
+	                    	<form id="companyConfirmPassHiddenForm" name="companyConfirmPassHiddenForm" action="/company/CompanyConfirmPass.do" method="post">
+							<input type="hidden" name="company_id" value="<%=companyId%>">
+							</form>
+							<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>             
+							<script type="text/javascript">
+							function companyConfirmPassHiddenFormSubmit(){
+							$("#companyConfirmPassHiddenForm").submit(); 
+							}
+							</script>
+							<!-- Hidden Form end -->
 	                    </li>
 	                </ul>
 	            </div>
