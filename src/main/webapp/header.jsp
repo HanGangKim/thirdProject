@@ -133,9 +133,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										<a class="nav-link nav-over dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Mypage </a> 
 										<!--마이페이지 드롭다운-->
 										<div class="dropdown-menu p-lg-3">
-											<a class="dropdown-item" onclick="selectHiddenFormSubmit()">My Wishlist</a> 
-											<a class="dropdown-item" onclick="ticketingSelectHiddenFormSubmit()">My Ticket</a> 
-											<a class="dropdown-item" onclick="myReviewListHiddenFormSubmit()">My Review</a>
+											<a href="#" class="dropdown-item" onclick="selectHiddenFormSubmit()">My Wishlist</a> 
+											<a href="#" class="dropdown-item" onclick="ticketingSelectHiddenFormSubmit()">My Ticket</a> 
+											<a href="#" class="dropdown-item" onclick="myReviewListHiddenFormSubmit()">My Review</a>
 											
 											
 											<!-- hidden form  -->
