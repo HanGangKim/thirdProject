@@ -223,7 +223,7 @@ input.form-control[readonly] {
 											<!--저장 버튼-->
 											<div class="text-end">
 												<button type="submit" onclick="loadClick()" class="btn btn-primary">
-													<span id="loadingBar" class="spinner-border spinner-border-sm me-2 d-none" role="status" aria-hidden="false"></span>Update Exhibition
+													<span id="loadingBar" class="spinner-border spinner-border-sm me-2 d-none" role="status" aria-hidden="false"></span> Update Exhibition 
 												</button>
 											</div>
 											<!-- 이미지 업로드 로딩 스크립트 -->

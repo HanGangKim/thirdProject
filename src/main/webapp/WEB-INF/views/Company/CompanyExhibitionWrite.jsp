@@ -210,12 +210,12 @@ input.form-control[readonly] {
 												</button>
 												<!-- 이미지 업로드 로딩 스크립트 -->
 												<script type="text/javascript">
-													function loadClick() {
-														var loadingBar = document.getElementById("loadingBar");
-														
-														loadingBar.classList.remove('d-none');\
-													}
-												</script>
+												function loadClick() {
+													var loadingBar = document.getElementById("loadingBar");
+													
+													loadingBar.classList.remove('d-none');
+												}
+											</script>
 											</div>
 											
 											
