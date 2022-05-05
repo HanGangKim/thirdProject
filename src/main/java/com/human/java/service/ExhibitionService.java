@@ -34,7 +34,7 @@ public interface ExhibitionService {
 	
 	public List<ExhibitionVO> exhibitionSearch(ExhibitionVO vo, String totalDate, int endRow);
 	
-	public List<ExhibitionVO> exhibitionSearchTitle (ExhibitionVO vo , String title);
+	public List<ExhibitionVO> exhibitionSearchTitle (ExhibitionVO vo);
 	
 	public ExhibitionVO exhibitionDetail(ExhibitionVO vo, String id);
 	
