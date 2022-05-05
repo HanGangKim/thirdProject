@@ -134,7 +134,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							
 								<div class="mb-0">
 									<a href="#!" class="d-block overflow-hidden rounded-top-4" data-bs-target="#modal-pay-bar-${vo.review_id}" data-bs-toggle="modal">
-										<img src="${vo.exhibition_image}" class="img-fluid w-100 h-auto" alt="${vo.exhibition_title}" style="width:400px;">
+										<img src="${vo.exhibition_image}" class="img-fluid w-100" alt="${vo.exhibition_title}" style="max-height:550px;">
 									</a>
 								</div>
 								
