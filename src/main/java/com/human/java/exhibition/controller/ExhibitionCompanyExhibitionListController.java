@@ -37,8 +37,6 @@ public class ExhibitionCompanyExhibitionListController {
 			model.addAttribute("CompanyExhibitionList", li);
 			return "/Company/CompanyExhibitionList";
 		}
-		
-		
 	
 	}
 	

@@ -171,7 +171,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										<div class="d-flex mb-4 mt-4 justify-content-end">
 											<!-- 삭제버튼 -->
 											<div class="me-2 text-end">
-												<a href="/exhibition/deleteReview.do?customer_id=<%=userId%>&review_id=${vo.review_id}" class="btn btn-primary form-control">Delete</a>
+												<a onclick="deleteHiddenFormSubmit('${vo.customer_id} }','${vo.review_id}')"  class="btn btn-primary form-control">Delete</a>
 											</div>					
 											<!-- 취소버튼 -->
 											<div class="text-end">
@@ -228,11 +228,14 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		
 	</main>
 	
+	
+	<!-- 상세조회 submit  -->
+	 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<form id="hiddenForm" name="hiddenForm" action="/exhibition/getMyReview.do" method="post">
 		<input type="hidden" id="ex_id" name="exhibition_id" value="">
 		<input type="hidden" id="rv_id" name="review_id" value="">
 	</form>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+   
     <script type="text/javascript">
     function hiddenFormSubmit(ex_id, rv_id){
        $('#ex_id').val(ex_id);
@@ -240,10 +243,21 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
        document.hiddenForm.submit();
     }
     </script>
-
+    
+    
+    <!-- 삭제 submit  -->
+    <form id="deleteHiddenForm" name="deleteHiddenForm" action="/exhibition/deleteReview.do" method="post">
+		<input type="hidden" id="cm_id" name="customer_id" value="">
+		<input type="hidden" id="del_rv_id" name="review_id" value="">
+	</form>
+    <script type="text/javascript">
+    function deleteHiddenFormSubmit(cm_id, del_rv_id){
+       $('#cm_id').val(cm_id);
+       $('#del_rv_id').val(del_rv_id); 
+       document.deleteHiddenForm.submit();
+    }
+    </script>
 	<jsp:include page="/footer.jsp" />
-
-
 </body>
 
 <!-- <script>history.replaceState({}, null, location.pathname);</script> -->
