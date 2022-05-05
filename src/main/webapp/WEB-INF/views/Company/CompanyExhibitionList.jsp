@@ -213,18 +213,16 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						</div>
 					</div>
 					<!-- ./삭제 물어보는 모달 -->
-					
-					
 				</c:forEach>
 				
 				
-				
+				<c:forEach items="${nullCheck}" var="vo">
 				<!-- NullCheck forEach 추가 -->
 				<!-- 카드 -->
 				<div class="row col-lg-10 offset-lg-1 position-relative overflow-hidden hover-lift hover-shadow-lg shadow rounded-4 border flex-sm-row mb-6 align-items-center">
 					<!-- 전시회 포스터 -->
 					<div class="col-md-6 col-lg-4 p-0 p-lg-0 text-center">
-							<img src="${vo.exhibition_image}" class="img-fluid img-zoom w-100 h-auto">
+							<img src="/resources/img/logo/black-logo.png" class="img-fluid img-zoom w-100 h-auto">
 						<div class="overflow-hidden">
 						</div>
 					</div>
@@ -233,51 +231,57 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						<div class="d-flex mb-2 align-items-center">
 <!-- 								<span class="text-muted me-3">Title</span> -->
 <%-- 								<h4 class="text-truncate">${vo.exhibition_title}</h4> --%>
-							<h4 class="text-truncate"><%=companyName %></h4>
+								
+							
+								
+						<%-- 	<h4 class="text-truncate"><%=companyName %></h4> --%>
+							<h4 class="text-truncate">${nullCheck}</h4>
+							
 						</div>
 						
 						<!-- 업체 id -->
 						<div class="d-flex mb-2 align-items-center">
 							<span class="text-muted me-3">Company Id</span> 
-							<strong>${vo.company_id}</strong>
+							<strong><%=companyId %></strong>
 						</div>
 						<!-- 전시 id -->
 						<div class="d-flex mb-2 align-items-center d-none">
 							<span class="text-muted me-3">Exhibition Id</span> 
-							<strong>${vo.exhibition_id}</strong>
+							<strong></strong>
 						</div>
 						<!-- 전시 제목 -->
 						<div class="d-flex mb-2 align-items-center">
 							<span class="text-muted me-3">Title</span> 
-							<strong>${vo.exhibition_title}</strong>
+							<strong></strong>
 						</div>
 						<!-- 전시 내용 -->
 						<div class="d-flex mb-2 align-items-center">
 							<span class="text-muted me-3">Memo</span> 
-							<strong class="text-truncate">${vo.exhibition_memo}</strong>
+							<strong class="text-truncate"></strong>
 						</div>
 						<!-- 전시 장소 -->
 						<div class="d-flex mb-2 align-items-center">
 							<span class="text-muted me-3">Place</span> 
-							<strong class="text-truncate">${vo.exhibition_location}</strong>
+							<strong class="text-truncate"></strong>
 						</div>
 						<!-- 전시 기간 -->
 						<div class="d-flex mb-2 align-items-center">
 							<span class="text-muted me-3">Date</span> 
-							<strong>${vo.exhibition_total_date}</strong>
+							<strong></strong>
 						</div>
 						<!-- 전시 금액 -->
 						<div class="d-flex mb-2 align-items-center">
 							<span class="text-muted me-3">Price</span> 
-							<strong>${vo.exhibition_price}</strong>
+							<strong></strong>
 						</div>
 						<!-- 승인 상태 -->
 						<div class="d-flex mb-3 align-items-center">
 							<span class="text-muted me-3">Flag</span> 
-							<strong>${vo.exhibition_flag}</strong>
+							<strong></strong>
 						</div>
+						
 						<!-- 버튼 div -->
-						<div class="d-flex pb-4 pb-md-0 justify-content-end">
+						<%-- <div class="d-flex pb-4 pb-md-0 justify-content-end">
 							<!-- 수정버튼 -->
 							<div class="me-2">
 								<form action="/exhibition/CompanyExhibitionDetail.do" method="post">
@@ -292,11 +296,13 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<div class="mb-0">
 								<button type="submit" data-bs-target="#modal-pay-bar-${vo.exhibition_id}" data-bs-toggle="modal" class="btn btn-dark ">삭제</button>
 							</div>
-						</div>
+						</div> --%>
 						<!-- ./ 버튼 div -->
+						
 					</div>
 				</div>
 				<!-- ./카드 -->
+				</c:forEach>
 				
 				
 

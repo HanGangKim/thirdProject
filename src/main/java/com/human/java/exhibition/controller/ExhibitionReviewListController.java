@@ -68,10 +68,18 @@ public class ExhibitionReviewListController {
 		HashMap map = new HashMap();
 		map.put("id", id);
 		
-		ReviewVO vo = new ReviewVO();
+		List<ReviewVO> li  = reviewService.getMyReviewList(map , id);
 		
-		model.addAttribute("myReviewList", reviewService.getMyReviewList(map , id));
-		return "/Customer/CustomerExhibitionMyReviewList";
+		if(li.isEmpty()) {
+			String nullCheck = "작성한 리뷰가 없습니다.";
+			model.addAttribute("nullCheck", nullCheck);
+			return "/Customer/CustomerExhibitionMyReviewList";
+		
+		}else {
+			model.addAttribute("myReviewList", li);
+			return "/Customer/CustomerExhibitionMyReviewList";
+		}
+		
 	}
 	
 	// 나의 리뷰 상세조회 

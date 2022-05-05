@@ -187,17 +187,15 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 					</div>
 				</c:forEach>
 				
-				
+				<c:forEach items="${nullCheck}" var="vo">
 				<!-- NullCheck forEach 추가 -->
 				<div class="col-lg-10 offset-lg-1">
-				
 					<!--:Wishlist card-->
 					<div class="card hover-lift shadow flex-sm-row mb-6 align-items-center">
-						
 						<!-- 이미지 -->
 						<div class="col-sm-5 col-lg-4 mb-4 mb-md-0">
 							<a href="#" class="d-block"> 
-							<img src="${vo.exhibition_image}"
+							<img src="/resources/img/logo/black-logo.png"
 								class="img-fluid card-img-top" alt="">
 							</a>
 						</div>
@@ -205,35 +203,25 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						<!-- 내용 -->
 						<div class="col-sm-7 py-sm-5 col-12 col-lg-6 offset-lg-1 px-5">
 							<a href="#" class="mb-3 d-block text-dark">
-								<h4 class="text-truncate">${vo.exhibition_title}</h4>
+								<h4 class="text-truncate">${nullCheck}</h4>
 							</a>
-							<p class="lead mb-5">${vo.review_date} Write</p>								
+							<p class="lead mb-5">Write</p>								
 							<div class="d-flex mb-3 align-items-center">
-								<span class="text-muted me-3">Grade</span> <strong class="text-success">${vo.review_star_score}	</strong>
+								<span class="text-muted me-3">Grade</span> <strong class="text-success"></strong>
 							</div>
 							<div class="d-flex mb-3 align-items-center">
-								<span class="text-muted me-3">Title</span> <strong class="text-truncate">${vo.review_title}</strong>
+								<span class="text-muted me-3">Title</span> <strong class="text-truncate"></strong>
 							</div>
 							<div class="d-flex mb-5 align-items-center">
-								<span class="text-muted me-3">Contents</span> <strong class="text-truncate">${vo.review_contents}</strong>
+								<span class="text-muted me-3">Contents</span> <strong class="text-truncate"></strong>
 							</div>
 							
-							<!-- 수정, 삭제 -->
-							<div class="d-grid pb-4 pb-md-0">
-								<!-- 후기 수정 -->
-								<a onclick="hiddenFormSubmit('${vo.exhibition_id}','${vo.review_id}')"  class="btn btn-primary" style="margin-bottom: 10px;">Update Review</a>
-								<!-- 후기 삭제 -->
-								<a href="#" data-bs-target="#modal-pay-bar-${vo.review_id}" data-bs-toggle="modal" class="btn btn-dark">Delete Review</a>
-								
-								
-							</div>
 						</div>
 					</div>
 					<!--:Wishlist card-->
+					</c:forEach>
+					
 				</div>
-				
-				
-				
 			</div>
 		</section>
 		<!--예매내역카드 섹션 끝-->

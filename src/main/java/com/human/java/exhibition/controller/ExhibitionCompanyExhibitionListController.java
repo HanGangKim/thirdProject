@@ -1,6 +1,7 @@
 package com.human.java.exhibition.controller;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,13 +27,19 @@ public class ExhibitionCompanyExhibitionListController {
 		String companyId = vo.getCompany_id();
 		System.out.println("company_id:"+companyId);
 		
-		System.out.println("===============");
-		System.out.println("exhibitionCompanyExhibitionList.do 호출");
-		System.out.println("===============");
-				
-		model.addAttribute("CompanyExhibitionList", exhibitionService.getExhibitionCompanyServiceList(vo , companyId));
+		List<ExhibitionVO>li = exhibitionService.getExhibitionCompanyServiceList(vo , companyId);	
 		
-		return "/Company/CompanyExhibitionList";
+		if(li.isEmpty()) {
+			String nullCheck = "등록한 전시회가 없습니다.";
+			model.addAttribute("nullCheck" , nullCheck);
+			return "/Company/CompanyExhibitionList";
+		}else {
+			model.addAttribute("CompanyExhibitionList", li);
+			return "/Company/CompanyExhibitionList";
+		}
+		
+		
+	
 	}
 	
 	// 업체 전시회 상세조회

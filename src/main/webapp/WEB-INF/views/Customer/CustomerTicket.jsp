@@ -179,9 +179,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		                           <a onclick="hiddenFormSubmit('${vo.exhibition_id}','${vo.customer_id}','${vo.ticketing_id}', '${vo.exhibition_title}')" class="btn btn-dark">Write Review</a>
 								</div>
 								</c:if>
-								
-								
-								
 							</div>
 						</div>
 						<!--:Wishlist card-->	
@@ -216,7 +213,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 				</c:forEach>
 				
 				
-				<!-- NullCheck forEach 추가 -->
+			<!-- NullCheck forEach -->
+			<c:forEach items="${nullCheck}" var="vo" varStatus="status" > 
 				<div class="col-lg-10 offset-lg-1" >
 					<!--:Wishlist card-->
 					<div class="card hover-lift shadow flex-sm-row mb-6 align-items-center">
@@ -230,60 +228,34 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						
 						<!-- 내용 -->
 						<div class="col-sm-7 py-sm-5 col-12 col-lg-6 offset-lg-1 px-5">
-							<a href="./ExhibitionDetail.do?id=${vo.exhibition_id}"
-								class="mb-3 d-block text-dark">
-								<h4 class="text-truncate">${vo.exhibition_title}</h4>
+							<a class="mb-3 d-block text-dark">
+									<h4 class="text-truncate">${nullCheck}</h4>
 							</a>
-							<p class="lead mb-5">${vo.ticketing_date} Visit</p>
+							<p class="lead mb-5"></p>
 							<div class="d-flex mb-3 align-items-center">
-								<span class="text-muted me-3">Place</span> <strong>${vo.exhibition_location}</strong>
+								<span class="text-muted me-3">Place</span> <strong></strong>
 							</div>
 							<div class="d-flex mb-3 align-items-center">
-								<span class="me-3 text-muted">Date</span> <strong>${vo.exhibition_start_date}
-									~ ${vo.exhibition_end_date}</strong>
+								<span class="me-3 text-muted">Date</span> <strong></strong>
 							</div>
 							
 							<div class="d-flex mb-3 align-items-center">
-								<span class="text-muted me-3">Consumer Name</span> <strong>${vo.consumer_name}</strong>
+								<span class="text-muted me-3">Consumer Name</span> <strong></strong>
 
 							</div>
 							
 							<div class="d-flex mb-3 align-items-center">
-								<span class="me-3 text-muted">Consumer Number</span> <strong>${vo.consumer_ph}</strong>
+								<span class="me-3 text-muted">Consumer Number</span> <strong></strong>
 							</div>
 							
 							<div class="d-flex mb-5 align-items-center">
-								<span class="me-3 text-muted">People Count</span> <strong>${vo.ticketing_people}</strong>
+								<span class="me-3 text-muted">People Count</span> <strong></strong>
 							</div>
-							
-						
-							
-							<c:if test="${vo.ticketing_flag eq 'Y'}">
-							<!--QR 확인버튼-->
-							<div class="d-grid pb-4 pb-md-0" id="finish">
-								<!-- QR -->
-								<a class="btn btn-primary mb-2 disabled">Move To Qr</a> 
-								<!-- 후기작성 -->
-	                            <a onclick="flag_toggle()" class="btn btn-dark disabled">Write Review</a>
-							</div>
-							</c:if>
-							
-							<c:if test="${vo.ticketing_flag eq 'N'}">
-							<!-- 리뷰 미작성시 -->
-							<div class="d-grid pb-4 pb-md-0" id="noneFinish">
-								<!-- QR -->
-								<a href="#" class="btn btn-primary" style="margin-bottom: 10px;" data-bs-target="#modal-qr-bar-${vo.exhibition_id}" data-bs-toggle="modal">Move To Qr</a> 
-								<!-- 후기작성 -->
-	                           <a onclick="hiddenFormSubmit('${vo.exhibition_id}','${vo.customer_id}','${vo.ticketing_id}', '${vo.exhibition_title}')" class="btn btn-dark">Write Review</a>
-							</div>
-							</c:if>
-							
-							
-							
 						</div>
 					</div>
 					<!--:Wishlist card-->	
 				</div>
+				</c:forEach>
 				
 				
 				
