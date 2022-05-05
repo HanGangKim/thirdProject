@@ -222,9 +222,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 				<div class="row col-lg-10 offset-lg-1 position-relative overflow-hidden hover-lift hover-shadow-lg shadow rounded-4 border flex-sm-row mb-6 align-items-center">
 					<!-- 전시회 포스터 -->
 					<div class="col-md-6 col-lg-4 p-0 p-lg-0 text-center">
-							<img src="/resources/img/logo/black-logo.png" class="img-fluid img-zoom w-100 h-auto">
-						<div class="overflow-hidden">
-						</div>
+						<img src="/resources/img/master/masterLogo.png" class="img-fluid img-zoom w-100 h-auto" alt="">
+						<div class="overflow-hidden"></div>
 					</div>
 					<div class="col-sm-7 p-sm-4 col-12 col-lg-7 ms-sm-7 p-5">
 						<!-- 업체 id -->
@@ -252,32 +251,32 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						<!-- 전시 제목 -->
 						<div class="d-flex mb-2 align-items-center">
 							<span class="text-muted me-3">Title</span> 
-							<strong></strong>
+							<strong>Sample Title</strong>
 						</div>
 						<!-- 전시 내용 -->
 						<div class="d-flex mb-2 align-items-center">
 							<span class="text-muted me-3">Memo</span> 
-							<strong class="text-truncate"></strong>
+							<strong class="text-truncate">Sample Memo</strong>
 						</div>
 						<!-- 전시 장소 -->
 						<div class="d-flex mb-2 align-items-center">
 							<span class="text-muted me-3">Place</span> 
-							<strong class="text-truncate"></strong>
+							<strong class="text-truncate">Sample Place</strong>
 						</div>
 						<!-- 전시 기간 -->
 						<div class="d-flex mb-2 align-items-center">
 							<span class="text-muted me-3">Date</span> 
-							<strong></strong>
+							<strong>Sample Date</strong>
 						</div>
 						<!-- 전시 금액 -->
 						<div class="d-flex mb-2 align-items-center">
 							<span class="text-muted me-3">Price</span> 
-							<strong></strong>
+							<strong>Sample Price</strong>
 						</div>
 						<!-- 승인 상태 -->
-						<div class="d-flex mb-3 align-items-center">
+						<div class="d-flex mb-0 align-items-center">
 							<span class="text-muted me-3">Flag</span> 
-							<strong></strong>
+							<strong>Sample Flag</strong>
 						</div>
 						
 						<!-- 버튼 div -->

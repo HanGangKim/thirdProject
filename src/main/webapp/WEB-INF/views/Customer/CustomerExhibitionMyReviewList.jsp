@@ -187,41 +187,41 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 					</div>
 				</c:forEach>
 				
+				
 				<c:forEach items="${nullCheck}" var="vo">
-				<!-- NullCheck forEach 추가 -->
-				<div class="col-lg-10 offset-lg-1">
-					<!--:Wishlist card-->
-					<div class="card hover-lift shadow flex-sm-row mb-6 align-items-center">
-						<!-- 이미지 -->
-						<div class="col-sm-5 col-lg-4 mb-4 mb-md-0">
-							<a href="#" class="d-block"> 
-							<img src="/resources/img/logo/black-logo.png"
-								class="img-fluid card-img-top" alt="">
-							</a>
-						</div>
-						
-						<!-- 내용 -->
-						<div class="col-sm-7 py-sm-5 col-12 col-lg-6 offset-lg-1 px-5">
-							<a href="#" class="mb-3 d-block text-dark">
-								<h4 class="text-truncate">${nullCheck}</h4>
-							</a>
-							<p class="lead mb-5">Write</p>								
-							<div class="d-flex mb-3 align-items-center">
-								<span class="text-muted me-3">Grade</span> <strong class="text-success"></strong>
-							</div>
-							<div class="d-flex mb-3 align-items-center">
-								<span class="text-muted me-3">Title</span> <strong class="text-truncate"></strong>
-							</div>
-							<div class="d-flex mb-5 align-items-center">
-								<span class="text-muted me-3">Contents</span> <strong class="text-truncate"></strong>
+					<!-- NullCheck forEach 추가 -->
+					<div class="col-lg-10 offset-lg-1">
+						<!--:Wishlist card-->
+						<div class="card hover-lift shadow flex-sm-row mb-6 align-items-center">
+							<!-- 이미지 -->
+							<div class="col-sm-5 col-lg-4 mb-4 mb-md-0">
+								<a class="d-block"> 
+									<img src="/resources/img/master/masterLogo.png" class="img-fluid card-img" alt="">
+								</a>
 							</div>
 							
+							<!-- 내용 -->
+							<div class="col-sm-7 py-sm-5 col-12 col-lg-6 offset-lg-1 px-5">
+								<a class="mb-3 d-block text-dark">
+									<h4 class="text-truncate">${nullCheck}</h4>
+								</a>
+								<p class="lead mb-5">Sample Writing Date</p>								
+								<div class="d-flex mb-3 align-items-center">
+									<span class="text-muted me-3">Grade</span> <strong class="text-success">Sample Grade</strong>
+								</div>
+								<div class="d-flex mb-3 align-items-center">
+									<span class="text-muted me-3">Title</span> <strong class="text-truncate">Sample Title</strong>
+								</div>
+								<div class="d-flex mb-0 align-items-center">
+									<span class="text-muted me-3">Contents</span> <strong class="text-truncate">Sample Contents</strong>
+								</div>
+								
+							</div>
 						</div>
+						<!--:Wishlist card-->
 					</div>
-					<!--:Wishlist card-->
-					</c:forEach>
-					
-				</div>
+				</c:forEach>
+				
 			</div>
 		</section>
 		<!--예매내역카드 섹션 끝-->

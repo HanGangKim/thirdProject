@@ -222,7 +222,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						<!-- 이미지 -->
 						<div class="col-sm-5 col-lg-4 mb-4 mb-md-0">
 							<a class="d-block"> 
-								<img src="/resources/img/logo/black-logo.png" class="img-fluid card-img">
+								<img src="/resources/img/master/masterLogo.png" class="img-fluid card-img" alt="">
 							</a>
 						</div>
 						
@@ -233,29 +233,29 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							</a>
 							<p class="lead mb-5"></p>
 							<div class="d-flex mb-3 align-items-center">
-								<span class="text-muted me-3">Place</span> <strong></strong>
+								<span class="text-muted me-3">Place</span> <strong>Sample Place</strong>
 							</div>
 							<div class="d-flex mb-3 align-items-center">
-								<span class="me-3 text-muted">Date</span> <strong></strong>
+								<span class="me-3 text-muted">Date</span> <strong>Sample Date</strong>
 							</div>
 							
 							<div class="d-flex mb-3 align-items-center">
-								<span class="text-muted me-3">Consumer Name</span> <strong></strong>
+								<span class="text-muted me-3">Consumer Name</span> <strong>Sample Name</strong>
 
 							</div>
 							
 							<div class="d-flex mb-3 align-items-center">
-								<span class="me-3 text-muted">Consumer Number</span> <strong></strong>
+								<span class="me-3 text-muted">Consumer Number</span> <strong>Sample Number</strong>
 							</div>
 							
-							<div class="d-flex mb-5 align-items-center">
-								<span class="me-3 text-muted">People Count</span> <strong></strong>
+							<div class="d-flex mb-0 align-items-center">
+								<span class="me-3 text-muted">People Count</span> <strong>Sample Count</strong>
 							</div>
 						</div>
 					</div>
 					<!--:Wishlist card-->	
 				</div>
-				</c:forEach>
+			</c:forEach>
 				
 				
 				
