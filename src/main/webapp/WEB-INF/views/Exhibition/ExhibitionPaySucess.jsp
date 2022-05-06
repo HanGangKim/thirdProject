@@ -74,7 +74,19 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						<h4 class="display-4 mb-3">Ticketing Success</h4>
 						<p class="mb-5 lead mx-auto"><%=userName%>님, 예매가 완료되었습니다.</p>
 						<div class="col-md-6 mx-auto">
-							<a href="/exhibition/ExhibitionTicketingSelect.do?id=<%=userId%>" class="btn btn-primary d-grid mb-2">My Ticket</a>
+						
+							<!-- Hidden Form  -->
+							<a onclick="hiddenFormSubmit()" class="btn btn-primary d-grid mb-2">My Ticket</a>
+								<form id="hiddenForm" name="hiddenForm" action="/exhibition/ExhibitionTicketingSelect.do" method="post">
+								<input type="hidden" id="id" name="id" value="<%=userId%>">
+							</form>
+						    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+						    <script type="text/javascript">
+						    function hiddenFormSubmit(){
+						       document.hiddenForm.submit();
+						    }
+						    </script>
+						    
 							<a href="/exhibition/ExhibitionDate.do" class="btn btn-outline-secondary mb-2 d-grid">Search Exhibition</a>
 						</div>
 					</div>
