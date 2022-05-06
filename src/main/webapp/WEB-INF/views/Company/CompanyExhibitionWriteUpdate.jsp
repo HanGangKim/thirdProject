@@ -193,7 +193,7 @@ input.form-control[readonly] {
 												<!--내용-->
 												<div class="col-12 mb-3">
 													<label for="profile_address" class="form-label">Memo</label>
-													<input name="exhibition_memo" type="text"
+													<input name="exhibition_memo" type="text" required="required"
 														value="${CompanyExhibition.exhibition_memo}" class="form-control"
 														placeholder="간단한 내용을 입력해주세요.">
 												</div>
