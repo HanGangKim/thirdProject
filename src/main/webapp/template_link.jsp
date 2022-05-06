@@ -13,6 +13,9 @@ a{font-size: large;}
 
 </head>
 <body>
+	<h1>인포</h1>
+	<a href="Information.do">소개 페이지</a>
+
 	<h1>일반회원</h1>
 	<a href="customer/CustomerLogin.do">일반회원 로그인 페이지 -- 세션이 <b>"없는"</b> 경우에만 진입가능</a>
 	<br><br>
