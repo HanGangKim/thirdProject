@@ -75,6 +75,10 @@ if (session.getAttribute("companyId") == null) {
 	            <div class="col-sm-7">
 	                <!--Social List-->
 	                <ul class="list-inline">
+	                
+	                  <!-- Session != null일 경우  -->
+	                <c:choose>
+					<c:when test="${sessionScope.companyId != null}">
 	                    <li class="list-inline-item">
 	                        <a class="link-hover-underline" href="/company/CompanyMain.do">Home</a>
 	                    </li>
@@ -92,8 +96,6 @@ if (session.getAttribute("companyId") == null) {
 							</script>
 							<!-- Hidden Form end -->
 	                    </li>
-
-
 	                    <li class="list-inline-item">
 	                    	<!-- Hidden Form start -->
 	                        <a class="link-hover-underline" onclick="companyConfirmPassHiddenFormSubmit()">Setting</a>
@@ -108,6 +110,8 @@ if (session.getAttribute("companyId") == null) {
 							</script>
 							<!-- Hidden Form end -->
 	                    </li>
+	                    </c:when>
+	                    </c:choose>
 	                </ul>
 	            </div>
 	            <div class="col-sm-5 text-sm-end">
