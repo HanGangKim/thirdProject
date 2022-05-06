@@ -171,7 +171,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										<div class="d-flex mb-4 mt-4 justify-content-end">
 											<!-- 삭제버튼 -->
 											<div class="me-2 text-end">
-												<a onclick="deleteHiddenFormSubmit('${vo.customer_id} }','${vo.review_id}')"  class="btn btn-primary form-control">Delete</a>
+												<a onclick="deleteHiddenFormSubmit('${vo.customer_id}','${vo.review_id}')"  class="btn btn-primary form-control">Delete</a>
 											</div>					
 											<!-- 취소버튼 -->
 											<div class="text-end">
