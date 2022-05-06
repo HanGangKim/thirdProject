@@ -70,6 +70,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<i class="bx bx-dots-horizontal-rounded lh-1 display-5 fw-normal"></i>
 						</div>
 						<h4 class="display-4 mb-3">Sign Up Waiting ...</h4>
+						<p class="mb-0 lead mx-auto">가입이 완료되었습니다.</p>
 						<p class="mb-4 lead mx-auto">가입 승인까지는 2~3일정도 소요됩니다.</p>
 						<div class="mx-auto">
 							<a href="/NoneMemberMain.do" class="btn btn-primary mb-2 d-grid">Go To Main</a>
