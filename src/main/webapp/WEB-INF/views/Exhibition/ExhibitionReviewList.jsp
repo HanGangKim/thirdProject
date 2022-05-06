@@ -114,7 +114,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							
 						</div>
 						<div class="col-md-3 col-lg-2">
-							<button type="submit" class="btn btn-primary btn-lg w-100" onclick="characterCheck()">Search</button>
+							<button type="submit" class="btn btn-primary btn-lg w-100" onsubmit="characterCheck()">Search</button>
 						</div>
 						
 					</div>
@@ -122,7 +122,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 				<script type="text/javascript">
 				function characterCheck() {
 		            var RegExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g; //정규식 구문
-		            var obj = document.getElementById("searchInputBox")
+		            var obj = document.getElementsByName("searchKeyword")[0]
 		            if (RegExp.test(obj.value)) {
 		                alert("특수문자는 입력하실 수 없습니다.");
 		                obj.value = obj.value.substring(0, obj.value.length - 1);//특수문자를 지우는 구문
