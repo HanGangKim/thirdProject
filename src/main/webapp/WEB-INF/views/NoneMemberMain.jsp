@@ -72,9 +72,9 @@
 											<p class="lead mb-4 mb-lg-5">${top3.exhibition_location}</p>
 										</li>
 										<li data-carousel-layer="fade-start">
-											<a href="#" class="btn btn-white btn-lg btn-hover-text mb-2 me-2"> 
-												<span class="btn-hover-label label-default">More View</span> 
-												<span class="btn-hover-label label-hover">Search Date</span>
+											<a href="/exhibition/ExhibitionDetail.do?id=${top3.exhibition_id}" class="btn btn-white btn-lg btn-hover-text mb-2 me-2"> 
+												<span class="btn-hover-label label-default">Top Exhibition</span> 
+												<span class="btn-hover-label label-hover">View Exhibition</span>
 											</a>
 										</li>
 									</ul>
@@ -83,12 +83,13 @@
 						</div>
 					</div>
 					</c:forEach>
-					
-				<!--:Add Pagination -->
-				<div class="swiper-pagination swiperClassic-pagination z-index-1 text-white"></div>
-				<!--:Add arrows-->
-				<div class="swiper-button-prev swiperClassic-button-prev width-2x height-2x bg-transparent text-white"> </div>
-				<div class="swiper-button-next swiperClassic-button-next width-2x height-2x bg-transparent text-white"> </div>
+						
+					<!--:Add Pagination -->
+					<div class="swiper-pagination swiperClassic-pagination z-index-1 text-white"></div>
+					<!--:Add arrows-->
+					<div class="swiper-button-prev swiperClassic-button-prev width-2x height-2x bg-transparent text-white"> </div>
+					<div class="swiper-button-next swiperClassic-button-next width-2x height-2x bg-transparent text-white"> </div>
+				</div>
 			</div>
 		</section>
 		<!-- 슬라이더 끝 -->
