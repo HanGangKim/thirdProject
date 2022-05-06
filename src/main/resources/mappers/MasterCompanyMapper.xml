@@ -27,6 +27,14 @@
 		resultType="masterCompany">
 		SELECT *
 		FROM COMPANY_INFO
-		WHERE COMPANY_ID LIKE '%${title}%' AND COMPANY_FLAG = 'D'
+		WHERE COMPANY_NAME LIKE '%${title}%' AND COMPANY_FLAG = 'D'
 	</select>
+	
+	<select id="masterCompanySearchTitleR" parameterType="map"
+		resultType="masterCompany">
+		SELECT *
+		FROM COMPANY_INFO
+		WHERE COMPANY_NAME LIKE '%${title}%' AND COMPANY_FLAG = 'R'
+	</select>
+	
 </mapper>  

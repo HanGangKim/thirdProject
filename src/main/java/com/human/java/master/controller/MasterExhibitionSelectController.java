@@ -5,8 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.human.java.domain.MasterCompanyVO;
 import com.human.java.domain.MasterExhibitionVO;
 import com.human.java.service.MasterCompanyService;
 import com.human.java.service.MasterExhibitionService;
@@ -43,4 +45,29 @@ public class MasterExhibitionSelectController {
 		return mv;
 	}
 
+	@ResponseBody
+	@RequestMapping("masterExhibitionSearchTitleD.do")
+	public List<MasterExhibitionVO> masterExhibitionSearchTitleD (MasterExhibitionVO vo){
+		
+		System.out.println("masterExhibitionSearchTitleD 컨트롤러 호출");
+		String title = vo.getExhibition_title();  
+	
+		System.out.println(vo.getExhibition_title());
+		List<MasterExhibitionVO> masterList = masterExhibitionService.masterExhibitionSearchTitleD(vo,title);
+		
+		return masterList;
+	}
+	
+	@ResponseBody
+	@RequestMapping("masterExhibitionSearchTitleR.do")
+	public List<MasterExhibitionVO> masterExhibitionSearchTitleR (MasterExhibitionVO vo){
+		
+		System.out.println("masterExhibitionSearchTitleR 컨트롤러 호출");
+		String title = vo.getExhibition_title();  
+	
+		System.out.println(vo.getExhibition_title());
+		List<MasterExhibitionVO> masterList = masterExhibitionService.masterExhibitionSearchTitleR(vo,title);
+		
+		return masterList;
+	}
 }

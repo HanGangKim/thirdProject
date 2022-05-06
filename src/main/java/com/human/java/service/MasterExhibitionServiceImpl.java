@@ -38,6 +38,22 @@ public class MasterExhibitionServiceImpl implements MasterExhibitionService{
 		return masterExhibitionDAO.masterExhibitionDR();
 	}
 
+	@Override
+	public List<MasterExhibitionVO> masterExhibitionSearchTitleD(MasterExhibitionVO vo, String title) {
+		System.out.println("===============");
+		System.out.println("masterExhibitionSearchTitle D 서비스 호출");
+		System.out.println("===============");
+		return masterExhibitionDAO.masterExhibitionSearchTitleD(vo, title);
+	}
+
+	@Override
+	public List<MasterExhibitionVO> masterExhibitionSearchTitleR(MasterExhibitionVO vo, String title) {
+		System.out.println("===============");
+		System.out.println("masterExhibitionSearchTitle R 서비스 호출");
+		System.out.println("===============");
+		return masterExhibitionDAO.masterExhibitionSearchTitleR(vo, title);
+	}
+
 	
 }
 

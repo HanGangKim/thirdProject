@@ -39,10 +39,18 @@ public class MasterCompanyServiceImpl implements MasterCompanyService{
 	@Override
 	public List<MasterCompanyVO> masterCompanySearchTitle(MasterCompanyVO vo, String title) {
 		System.out.println("===============");
-		System.out.println("masterCompanySearchTitle 서비스 호출");
+		System.out.println("masterCompanySearchTitle D 서비스 호출");
 		System.out.println("===============");
 		
 		return masterCompanyDAO.masterCompanySearchTitle(vo, title);
+	}
+
+	@Override
+	public List<MasterCompanyVO> masterCompanySearchTitleR(MasterCompanyVO vo, String title) {
+		System.out.println("===============");
+		System.out.println("masterCompanySearchTitle R 서비스 호출");
+		System.out.println("===============");
+		return masterCompanyDAO.masterCompanySearchTitleR(vo, title);
 	}
 
 	

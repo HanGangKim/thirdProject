@@ -24,5 +24,19 @@
 		SET EXHIBITION_FLAG = #{exhibition_flag}
 		WHERE EXHIBITION_TITLE = #{exhibition_title}
 	</update>
+	
+	<select id="masterExhibitionSearchTitleD" parameterType="map"
+		resultType="masterExhibition">
+		SELECT *
+		FROM EXHIBITION_INFO
+		WHERE EXHIBITION_TITLE LIKE '%${title}%' AND EXHIBITION_FLAG = 'D'
+	</select>
+	
+	<select id="masterExhibitionSearchTitleR" parameterType="map"
+		resultType="masterExhibition">
+		SELECT *
+		FROM EXHIBITION_INFO
+		WHERE EXHIBITION_TITLE LIKE '%${title}%' AND EXHIBITION_FLAG = 'R'
+	</select>
 
 </mapper>  
