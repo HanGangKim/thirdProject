@@ -5,16 +5,16 @@
 
 <mapper namespace="ticketingMapper">
 	<insert id="ticketInsert" parameterType="ticket">
-		INSERT INTO
-		TICKETING
-		(TICKETING_ID, TICKETING_DATE , CONSUMER_NAME , CONSUMER_PH,
-		CUSTOMER_ID
-		,EXHIBITION_ID , TICKETING_FLAG , TICKETING_PEOPLE , TICKETING_MONEY)
-		VALUES
-		(seq_ticketing.nextval ,
-		#{ticketing_date} , #{consumer_name} , #{consumer_ph} ,
-		#{customer_id}
-		, #{exhibition_id} , 'N' , #{ticketing_people} , #{ticketing_money})
+	INSERT INTO
+      TICKETING
+      (TICKETING_ID, TICKETING_DATE , CONSUMER_NAME , CONSUMER_PH,
+      CUSTOMER_ID
+      ,EXHIBITION_ID , TICKETING_FLAG , TICKETING_PEOPLE , TICKETING_MONEY, MONTH)
+      VALUES
+      (seq_ticketing.nextval ,
+      #{ticketing_date} , #{consumer_name} , #{consumer_ph} ,
+      #{customer_id}
+      , #{exhibition_id} , 'N' , #{ticketing_people} , #{ticketing_money} , #{ticketing_month})	
 	</insert>
 
 	<select id="ticketSelecting" parameterType="Hashmap" resultType="ticketSelect">

@@ -230,7 +230,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<i class="bx bx-x fs-4 me-2"></i>
 						</button>
 					</div>
-					<form name="dateForm" class="mb-0" action="ExhibitionPayment.do" method="post" onsubmit="return nullCheck()">
+					<form name="dateForm"  class="mb-0" action="ExhibitionPayment.do" method="post" onsubmit="return nullCheck()">
 						<div class="align-items-center">
 							<h6 class="d-flex mt-4" style="justify-content: center;">Ticekting</h6>
 
@@ -302,6 +302,12 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								<label class="form-label" for="profile_name">Visit Date</label> 
 								<input type="date" name="ticketing_date" placeholder="날짜를 선택해주세요." id="now_date"
 									data-flatpickr class="form-control">
+								
+							<!-- Month -->	
+							<input type="hidden" name="ticketing_month" id="now_month"
+                           			class="form-control">
+									
+									
 							</div>
 							<!-- 구분선 -->
 							<div class="d-flex align-items-center py-3">
@@ -368,7 +374,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 														
 							
 							<div class="mb-3 text-end">
-								<button type="reset" aria-label="Close" data-bs-dismiss="modal" class="btn btn-outline-dark form-control">취소하기</button>
+								<button type="reset" onsubmit="onsubmit()" aria-label="Close" data-bs-dismiss="modal" class="btn btn-outline-dark form-control">취소하기</button>
 							</div>
 						</div>
 					</form>
@@ -512,16 +518,12 @@ var adress = document.querySelector("#adress").innerText
 	
 <!-- 오늘날짜 뽑는 스크립트 -->
 <script type="text/javascript">
-
 	window.onload = function(){
 		var date = new Date();
 		var date1 = date.toISOString().substring(0, 10)
 // 		var date2 = new Date(date.setDate(date.getDate()+14)).toISOString().substring(0, 10);
 											
 		document.getElementById('now_date').value = date1
-		
 	}
-	
 </script>
-
 </html>

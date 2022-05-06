@@ -33,6 +33,8 @@ String ticketing_date = (String) request.getParameter("ticketing_date");
 String stotalPrice = (String) request.getParameter("totalPrice");
 int totalPrice = Integer.parseInt(stotalPrice);
 int totalCustomer = Integer.parseInt(request.getParameter("totalCustomer"));
+String ticketing_month = (String) request.getParameter("ticketing_date").split("-")[1];
+
 
 System.out.println("customer_id: " + customer_id);
 System.out.println("consumer_name: " + consumer_name);
@@ -43,6 +45,8 @@ System.out.println("exhibition_id: " + exhibition_id);
 System.out.println("stotalPrice: " + stotalPrice);
 System.out.println("totalPrice: " + totalPrice);
 System.out.println("totalCustomer: " + totalCustomer);
+System.out.println("ticketing_month: " + ticketing_month);
+
 %>
 
 
@@ -73,6 +77,10 @@ System.out.println("totalCustomer: " + totalCustomer);
 		<input type="hidden" value="<%=ticketing_date%>"
 			name="ticketing_date"> <br>
 		<br><br>  
+	<!-- 예약 month  -->
+	   <input type="hidden" value="<%=ticketing_month%>"
+         name="ticketing_month"> <br>
+       <br><br>  
 <!-- 		예약자번호: -->
 		<input type="hidden" value="<%=consumer_ph%>"
 			name="consumer_ph"> <br>

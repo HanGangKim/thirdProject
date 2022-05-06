@@ -14,8 +14,14 @@ public class TicketingVO {
 	private String ticketing_flag;
 	private int ticketing_money;
 	private int ticketing_people;
+	private String ticketing_month;
 	
-	
+	public String getTicketing_month() {
+		return ticketing_month;
+	}
+	public void setTicketing_month(String ticketing_month) {
+		this.ticketing_month = ticketing_month;
+	}
 	public int getTicketing_money() {
 		return ticketing_money;
 	}
