@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.human.java.domain.MasterCompanyVO;
@@ -48,16 +49,26 @@ public class MasterCompanySelectController {
 	// 전시회 정보가 들어있는 테이블 있는데 그 테이블에 승인, 거절 과 같은 내용이 표시되어있는데 
 	// 그것을 우리는 승인으로 바꿔야합니다.
 	
+	// 
+	@ResponseBody
 	@RequestMapping("masterCompanySearchTitle.do")
-	public ModelAndView masterCompanySearchTitle (MasterCompanyVO vo){
+	public List<MasterCompanyVO> masterCompanySearchTitle (MasterCompanyVO vo){
 		String title = vo.getCompany_name();  
 	
+		List<MasterCompanyVO> masterList = masterCompanyService.masterCompanySearchTitle(vo,title);
 		
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/Master/CheckDnR");
-		mv.addObject("covo", masterCompanyService.masterCompanySearchTitle(vo,title));
-		return mv;
+		return masterList;
+	}
+	
+	
+	@ResponseBody
+	@RequestMapping("masterCompanySearchTitleR.do")
+	public List<MasterCompanyVO> masterCompanySearchTitleR (MasterCompanyVO vo){
+		String title = vo.getCompany_name();  
+	
+		List<MasterCompanyVO> masterList = masterCompanyService.masterCompanySearchTitleR(vo,title);
 		
+		return masterList;
 	}
 
 }

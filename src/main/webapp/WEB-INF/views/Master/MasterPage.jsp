@@ -73,6 +73,11 @@ body {
 .card {
 	border: 0px;
 }
+
+element.style {
+    width: 600px;
+    margin-right: 16px;
+}
 </style>
 
 
@@ -154,7 +159,7 @@ body {
 										class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card">
 
 										<img src="/resources/img/master/masterGraph.jpg" alt=""
-										class="img-fluid w-100 img-zoom" style="height: 555px">
+										class="img-fluid w-100 img-zoom" style="height: 550px">
 
 
 										<div
@@ -182,7 +187,7 @@ body {
 										class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card">
 
 										<img src="/resources/img/master/masterCompany4.jpg" alt=""
-										class="img-fluid w-100 img-zoom" style="height: 555px">
+										class="img-fluid w-100 img-zoom" style="height: 550px">
 
 
 										<div
@@ -209,7 +214,7 @@ body {
 									<a href="/master/ApproveExhibition.do"
 										class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card">
 										<img src="/resources/img/master/masterExhibition.jpg" alt=""
-										class="img-fluid img-zoom" style="height: 555px">
+										class="img-fluid img-zoom" style="height: 550px">
 
 										<div
 											class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
@@ -235,7 +240,7 @@ body {
 										class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card">
 
 										<img src="/resources/img/master/masterList2.jpg" alt=""
-										class="img-fluid w-100 img-zoom" style="height: 555px">
+										class="img-fluid w-100 img-zoom" style="height: 550px">
 
 
 										<div

@@ -57,7 +57,7 @@
 		class="z-index-fixed header-transparent header-absolute-top pt-lg-2">
 		<nav class="navbar navbar-expand-lg navbar-light navbar-link-white">
 			<div class="container position-relative">
-				<a class="navbar-brand" href="index.html"> <img
+				<a class="navbar-brand" href="/master/MasterPage.do"> <img
 					src="/resources/img/logo/white-logo.png" alt="" class="img-fluid">
 				</a>
 			</div>
@@ -151,63 +151,51 @@
 												class="bx d-flex bx-message-alt-check me-8"
 												style="align-items: center; display: flex;"> <strong><h5>&nbsp;Approval
 															List / 승인리스트</h5></strong></i>
-											<form name="searchCompanyId" onkeyup="enterkey()" action="/master/masterCompanySearchTitle.do" method="post" >
-											<div class="position-relative">
-													<i
-														class="bx bx-search-alt-2 small ms-3 opacity-50 position-absolute start-0 top-50 translate-middle-y"></i>
-													<input type="text" id="companyWordD" name="company_name"
-														onkeyup="search(this);" class="form-control ps-6"
-														placeholder="search company...">
-												</div>
-											</form>
-												
-												<div class="col-md-3 col-lg-2">
-													<button type="submit" class="btn btn-primary w-50">
-														<svg xmlns="http://www.w3.org/2000/svg" width="24"
-															height="24" fill="none" viewBox="0 0 24 24"
-															stroke="currentColor">
-                                                <path
-																stroke-linecap="round" stroke-linejoin="round"
-																stroke-width="2"
-																d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                            </svg>
-													</button>
-												</div>
+												<form name="searchCompanyIdD"
+													action="/master/masterCompanySearchTitle.do" method="post">
+													<div class="position-relative d-flex">
+														<i
+															class="bx bx-search-alt-2 small ms-3 opacity-50 position-absolute start-0 top-50 translate-middle-y"></i>
+														<input type="text" id="companyWordD" name="company_name"
+															class="form-control ps-6" placeholder="search company...">
+													</div>
+												</form>
+
+
 											</span>
 											<!-- <p><strong><h5>승인리스트 / Approval List</h5></strong></p> -->
 											<br>
-
-											<c:forEach items="${covo}" var="vo">
-												<c:if test="${vo.company_flag eq 'D'}">
-													<article class="d-flex card-hover mb-4 align-items-stretch"
-														id="companyListD">
-														<div class="me-3">
-															<a href="#!"
-																class="overflow-hidden rounded-3 shadow d-block"> <img
-																src="/resources/img/master/masterLogo.png" alt="Image"
-																class="width-9x img-zoom">
-															</a>
-														</div>
-														<div class="flex-gropw-1 justify-content-between">
-															<a href="#!" class="text-dark">
-																<h6 class="mb-2 text-reset">${vo.company_id}</h6>
-															</a> <a href="#!" class="text-dark">
-																<h6 class="mb-2 text-reset">${vo.company_ph}</h6>
-															</a> <a href="#!" class="text-dark">
-																<h6 class="mb-2 text-reset">${vo.company_email}</h6>
-															</a> <a href="#!" class="text-dark">
-																<h6 class="mb-2 text-reset">${vo.company_regnum}</h6>
-															</a>
-
-															<div class="d-flex justify-content-between">
-																<small class="mb-0"> <a href="#!">Fiennale</a>
-																</small>
+											<div id="searchCompanyD">
+												<c:forEach items="${covo}" var="vo">
+													<c:if test="${vo.company_flag eq 'D'}">
+														<article
+															class="d-flex card-hover mb-4 align-items-stretch"
+															id="companyListD">
+															<div class="me-3">
+																<a href="#!"
+																	class="overflow-hidden rounded-3 shadow d-block"> <img
+																	src="/resources/img/master/masterLogo.png" alt="Image"
+																	class="width-9x img-zoom">
+																</a>
 															</div>
-														</div>
-													</article>
-												</c:if>
-											</c:forEach>
+															<div class="flex-gropw-1 justify-content-between">
+																<a href="#!" class="text-dark">
+																	<h6 class="mb-2 text-reset">${vo.company_name}</h6>
+																</a> <a href="#!" class="text-dark">
+																	<h6 class="mb-2 text-reset">${vo.company_ph}</h6>
+																</a> <a href="#!" class="text-dark">
+																	<h6 class="mb-2 text-reset">${vo.company_email}</h6>
+																</a>
 
+																<div class="d-flex justify-content-between">
+																	<small class="mb-0"> <a href="#!">Fiennale</a>
+																	</small>
+																</div>
+															</div>
+														</article>
+													</c:if>
+												</c:forEach>
+											</div>
 
 										</div>
 									</div>
@@ -217,48 +205,51 @@
 												class="bx d-flex bx-message-alt-x me-8"
 												style="align-items: center; display: flex;"> <strong><h5>&nbsp;Rejection
 															List / 거절리스트</h5></strong></i>
-												<div class="position-relative">
-													<i
-														class="bx bx-search-alt-2 small ms-3 opacity-50 position-absolute start-0 top-50 translate-middle-y"></i>
-													<input type="text" id="p_location"
-														class="form-control ps-6" placeholder="search company...">
-												</div>
+												<form name="searchCompanyIdR"
+													action="/master/masterCompanySearchTitleR.do">
+													<div class="position-relative d-flex">
+														<i
+															class="bx bx-search-alt-2 small ms-3 opacity-50 position-absolute start-0 top-50 translate-middle-y"></i>
+														<input type="text" id="companyWordR" name="company_name"
+															class="form-control ps-6" placeholder="search company...">
+													</div>
+												</form>
 											</span>
 											<!-- <p><strong><h5>거절리스트 / Rejection List</h4></strong></p> -->
 											<br>
 
 
-
-											<c:forEach items="${covo}" var="vo">
-												<c:if test="${vo.company_flag eq 'R'}">
-													<article class="d-flex card-hover mb-4 align-items-stretch">
-														<div class="me-3">
-															<a href="#!"
-																class="overflow-hidden rounded-3 shadow d-block"> <img
-																src="/resources/img/master/masterLogo.png" alt="Image"
-																class="width-9x img-zoom">
-															</a>
-														</div>
-														<div class="flex-gropw-1 justify-content-between">
-															<a href="#!" class="text-dark">
-																<h6 class="mb-2 text-reset">${vo.company_id}</h6>
-															</a> <a href="#!" class="text-dark">
-																<h6 class="mb-2 text-reset">${vo.company_ph}</h6>
-															</a> <a href="#!" class="text-dark">
-																<h6 class="mb-2 text-reset">${vo.company_email}</h6>
-															</a> <a href="#!" class="text-dark">
-																<h6 class="mb-2 text-reset">${vo.company_regnum}</h6>
-															</a>
-
-															<div class="d-flex justify-content-between">
-																<small class="mb-0"> <a href="#!">Fiennale</a>
-																</small>
+											<div id="searchCompanyR">
+												<c:forEach items="${covo}" var="vo">
+													<c:if test="${vo.company_flag eq 'R'}">
+														<article
+															class="d-flex card-hover mb-4 align-items-stretch"
+															id="companyListR">
+															<div class="me-3">
+																<a href="#!"
+																	class="overflow-hidden rounded-3 shadow d-block"> <img
+																	src="/resources/img/master/masterLogo.png" alt="Image"
+																	class="width-9x img-zoom">
+																</a>
 															</div>
-														</div>
-													</article>
-												</c:if>
-											</c:forEach>
+															<div class="flex-gropw-1 justify-content-between">
+																<a href="#!" class="text-dark">
+																	<h6 class="mb-2 text-reset">${vo.company_name}</h6>
+																</a> <a href="#!" class="text-dark">
+																	<h6 class="mb-2 text-reset">${vo.company_ph}</h6>
+																</a> <a href="#!" class="text-dark">
+																	<h6 class="mb-2 text-reset">${vo.company_email}</h6>
+																</a>
 
+																<div class="d-flex justify-content-between">
+																	<small class="mb-0"> <a href="#!">Fiennale</a>
+																	</small>
+																</div>
+															</div>
+														</article>
+													</c:if>
+												</c:forEach>
+											</div>
 
 
 
@@ -301,49 +292,65 @@
 												class="bx d-flex bx-message-alt-check me-8"
 												style="align-items: center; display: flex;"> <strong><h5>&nbsp;Approval
 															List / 승인리스트</h5></strong></i>
-												<div class="position-relative">
-													<i
-														class="bx bx-search-alt-2 small ms-3 opacity-50 position-absolute start-0 top-50 translate-middle-y"></i>
-													<input type="text" id="p_location"
-														class="form-control ps-6"
-														placeholder="search exhibition...">
-												</div>
+												<form name="searchExhibitionTitleD"
+													action="/master/masterExhibitionSearchTitleD.do">
+													<div class="position-relative">
+														<i
+															class="bx bx-search-alt-2 small ms-3 opacity-50 position-absolute start-0 top-50 translate-middle-y"></i>
+														<input type="text" id="exhibitionWordD"
+															name="exhibition_name" class="form-control ps-6"
+															placeholder="search exhibition..."
+															onkeyup="characterCheck()" onkeydown="characterCheck()">
+													</div>
+												</form> 
+												<script type="text/javascript">
+													function characterCheck() {
+														var RegExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g; //정규식 구문
+														var obj = document
+																.getElementById("exhibitionWordD")
+														if (RegExp
+																.test(obj.value)) {
+															alert("특수문자는 입력하실 수 없습니다.");
+															obj.value = obj.value
+																	.substring(
+																			0,
+																			obj.value.length - 1);//특수문자를 지우는 구문
+														}
+													}
+												</script>
 											</span>
 											<!-- <p><strong><h5>승인리스트 / Approval List</h5></strong></p> -->
 											<br>
-
-											<c:forEach items="${exvo}" var="vo" varStatus="status">
-												<c:if test="${vo.exhibition_flag eq 'D'}">
-													<article class="d-flex card-hover mb-4 align-items-stretch">
-														<div class="me-3">
-															<a href="#!"
-																class="overflow-hidden rounded-3 shadow d-block"> <img
-																src="${vo.exhibition_image}" alt="Image"
-																class="width-9x img-zoom">
-															</a>
-														</div>
-														<div class="flex-gropw-1 justify-content-between">
-															<a href="#!" class="text-dark">
-																<h6 class="mb-2 text-reset">${vo.exhibition_title}</h6>
-															</a> <a href="#!" class="text-dark">
-																<h6 class="mb-2 text-reset">${vo.exhibition_location}</h6>
-															</a> <a href="#!" class="text-dark">
-																<h6 class="mb-2 text-reset">${vo.exhibition_total_date}</h6>
-															</a> <a href="#!" class="text-dark">
-																<h6 class="mb-2 text-reset">${vo.exhibition_memo}</h6>
-															</a> <a href="#!" class="text-dark">
-																<h6 class="mb-2 text-reset">${vo.exhibition_flag}</h6>
-															</a>
-
-															<div class="d-flex justify-content-between">
-																<small class="mb-0"> <a href="#!">Fiennale</a>
-																</small>
+											<div id="searchExhibitionD">
+												<c:forEach items="${exvo}" var="vo" varStatus="status">
+													<c:if test="${vo.exhibition_flag eq 'D'}">
+														<article
+															class="d-flex card-hover mb-4 align-items-stretch">
+															<div class="me-3">
+																<a href="#!"
+																	class="overflow-hidden rounded-3 shadow d-block"> <img
+																	src="${vo.exhibition_image}" alt="Image"
+																	class="width-9x img-zoom">
+																</a>
 															</div>
-														</div>
-													</article>
-												</c:if>
-											</c:forEach>
+															<div class="flex-gropw-1 justify-content-between">
+																<a href="#!" class="text-dark">
+																	<h6 class="mb-2 mt-2 text-reset">${vo.exhibition_title}</h6>
+																</a> <a href="#!" class="text-dark">
+																	<h6 class="mb-2 text-reset">${vo.exhibition_location}</h6>
+																</a> <a href="#!" class="text-dark">
+																	<h6 class="mb-2 text-reset">${vo.exhibition_total_date}</h6>
+																</a>
 
+																<div class="d-flex justify-content-between">
+																	<small class="mb-0"> <a href="#!">Fiennale</a>
+																	</small>
+																</div>
+															</div>
+														</article>
+													</c:if>
+												</c:forEach>
+											</div>
 										</div>
 									</div>
 									<div class="col-sm-6">
@@ -352,48 +359,63 @@
 												class="bx d-flex bx-message-alt-x me-8"
 												style="align-items: center; display: flex;"> <strong><h5>&nbsp;Rejection
 															List / 거절리스트</h5></strong></i>
-												<div class="position-relative">
-													<i
-														class="bx bx-search-alt-2 small ms-3 opacity-50 position-absolute start-0 top-50 translate-middle-y"></i>
-													<input type="text" id="p_location"
-														class="form-control ps-6"
-														placeholder="search exhibition...">
-												</div>
+												<form name="searchExhibitionTitleR"
+													action="/master/masterExhibitionSearchTitleR.do">
+													<div class="position-relative">
+														<i
+															class="bx bx-search-alt-2 small ms-3 opacity-50 position-absolute start-0 top-50 translate-middle-y"></i>
+														<input type="text" id="exhibitionWordR"
+															name="exhibition_name" class="form-control ps-6"
+															placeholder="search exhibition..."
+															onkeyup="characterCheckR()" onkeydown="characterCheckR()">
+													</div>
+												</form> <script type="text/javascript">
+													function characterCheckR() {
+														var RegExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g; //정규식 구문
+														var obj = document
+																.getElementById("exhibitionWordR")
+														if (RegExp.test(obj.value)) {
+															alert("특수문자는 입력하실 수 없습니다.");
+															obj.value = obj.value
+																	.substring(
+																			0,
+																			obj.value.length - 1);//특수문자를 지우는 구문
+														}
+													}
+												</script>
 											</span>
 											<!-- <p><strong><h5>거절리스트 / Rejection List</h4></strong></p> -->
 											<br>
-											<c:forEach items="${exvo}" var="vo" varStatus="status">
-												<c:if test="${vo.exhibition_flag eq 'R'}">
-													<article class="d-flex card-hover mb-4 align-items-stretch">
-														<div class="me-3">
-															<a href="#!"
-																class="overflow-hidden rounded-3 shadow d-block"> <img
-																src="${vo.exhibition_image}" alt="Image"
-																class="width-9x img-zoom">
-															</a>
-														</div>
-														<div class="flex-gropw-1 justify-content-between">
-															<a href="#!" class="text-dark">
-																<h6 class="mb-2 text-reset">${vo.exhibition_title}</h6>
-															</a> <a href="#!" class="text-dark">
-																<h6 class="mb-2 text-reset">${vo.exhibition_location}</h6>
-															</a> <a href="#!" class="text-dark">
-																<h6 class="mb-2 text-reset">${vo.exhibition_total_date}</h6>
-															</a> <a href="#!" class="text-dark">
-																<h6 class="mb-2 text-reset">${vo.exhibition_memo}</h6>
-															</a> <a href="#!" class="text-dark">
-																<h6 class="mb-2 text-reset">${vo.exhibition_flag}</h6>
-															</a>
-
-															<div class="d-flex justify-content-between">
-																<small class="mb-0"> <a href="#!">Fiennale</a>
-																</small>
+											<div id="searchExhibitionR">
+												<c:forEach items="${exvo}" var="vo" varStatus="status">
+													<c:if test="${vo.exhibition_flag eq 'R'}">
+														<article
+															class="d-flex card-hover mb-4 align-items-stretch">
+															<div class="me-3">
+																<a href="#!"
+																	class="overflow-hidden rounded-3 shadow d-block"> <img
+																	src="${vo.exhibition_image}" alt="Image"
+																	class="width-9x img-zoom">
+																</a>
 															</div>
-														</div>
-													</article>
-												</c:if>
-											</c:forEach>
+															<div class="flex-gropw-1 justify-content-between">
+																<a href="#!" class="text-dark">
+																	<h6 class="mb-2 mt-2 text-reset">${vo.exhibition_title}</h6>
+																</a> <a href="#!" class="text-dark">
+																	<h6 class="mb-2 text-reset">${vo.exhibition_location}</h6>
+																</a> <a href="#!" class="text-dark">
+																	<h6 class="mb-2 text-reset">${vo.exhibition_total_date}</h6>
+																</a>
 
+																<div class="d-flex justify-content-between">
+																	<small class="mb-0"> <a href="#!">Fiennale</a>
+																	</small>
+																</div>
+															</div>
+														</article>
+													</c:if>
+												</c:forEach>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -427,7 +449,7 @@
 			class="container pt-9 pt-lg-11 pb-5 pb-lg-7 position-relative z-index-1">
 			<div class="row mb-5 mb-lg-7">
 				<div class="col-md-4 mb-5 mb-md-0 text-md-center order-md-2">
-					<a href="index.html"><img
+					<a href="/master/MasterPage.do"><img
 						src="/resources/img/logo/white-logo.png"
 						class="width-10x d-block h-auto mx-md-auto" alt=""></a>
 				</div>
@@ -457,7 +479,7 @@
 					<span class="d-block my-2 lh-sm text-muted">&copy; Copyright
 						<script>
 							document.write(new Date().getFullYear())
-						</script>. Assan
+						</script>. Fiennale
 					</span>
 				</div>
 			</div>
@@ -465,44 +487,298 @@
 
 	</footer>
 
-	<!-- begin Back to Top button -->
-	<!-- <a href="#" class="toTop"> <i class="bx bxs-up-arrow"></i>
-	</a> -->
+
 	<!-- scripts -->
 	<script src="/resources/js/theme.bundle.js"></script>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<!-- <script type="text/javascript">
-	
-	
-	function searchCompanyListD(target){ 
-		
-		var word = target.value; 
-		var encodeWord = encodeURI(companyWordD); 
-		console.log(companyWordD); 
-		console.log(encodeWord);
-		
-		$.ajax({
-			type : 'GET', 
-			dataType : 'json',
-			url : './ExSearchAjax.do',
-		})
-	}
 
-
-	
-	</script> -->
-	
 	<!-- 검색모달 기능 JS  -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script type="text/javascript">
-function enterkey() {
-if (window.event.keyCode == 13) {
+	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
-	document.searchForm.submit();
- }
-}
-</script>
+
+	<!-- 비동기 검색기능 CompanyD -->
+	<script type="text/javascript">
+		$(function() {
+			$('#companyWordD').keyup(function() {
+
+				/* 검색어 변수 */
+				var word = document.getElementById('companyWordD').value;
+
+				/* ajax 시작 */
+				$.ajax({
+					type : 'POST',
+					url : '/master/masterCompanySearchTitle.do',
+					data : {
+						"company_name" : word
+					},
+					success : function(data) {
+						/* console.log(data) */
+
+						$('#searchCompanyD').empty();
+
+						companyNameD(data);
+
+					},
+
+					error : function(err) {
+						alert('에러다 이자식아')
+					}
+
+				})
+
+			})
+		})
+
+		function companyNameD(data) {
+
+			console.log(typeof data)
+			console.log(data)
+
+			$('#searchCompanyD').empty();
+
+			for (key in data) {
+				console.log(data[key].company_name)
+
+				var str = "";
+
+				str += '<article class="d-flex card-hover mb-4 align-items-stretch" id="companyListD">';
+				str += '<div class="me-3">';
+				str += '<a href="#!" class="overflow-hidden rounded-3 shadow d-block">';
+				str += '<img src="/resources/img/master/masterLogo.png" alt="Image" class="width-9x img-zoom"></a></div>';
+				str += '<div class="flex-gropw-1 justify-content-between">';
+				str += '<a href="#!" class="text-dark">';
+				str += '<h6 class="mb-2 text-reset">' + data[key].company_name
+						+ '</h6></a>';
+				str += '<a href="#!" class="text-dark">';
+				str += '<h6 class="mb-2 text-reset">' + data[key].company_ph
+						+ '</h6></a>';
+				str += '<a href="#!" class="text-dark">';
+				str += '<h6 class="mb-2 text-reset">' + data[key].company_email
+						+ ' </h6></a>';
+				str += '<div class="d-flex justify-content-between">';
+				str += '<small class="mb-0"> <a href="#!">Fiennale</a></small></div></div></article>';
+
+				$('#searchCompanyD').append(str);
+
+			}
+
+		}
+	</script>
+
+	<!-- 비동기 검색기능 CompanyR -->
+	<script type="text/javascript">
+		$(function() {
+			$('#companyWordR').keyup(function() {
+
+				/* 검색어 변수 */
+				var word = document.getElementById('companyWordR').value;
+
+				/* ajax 시작 */
+				$.ajax({
+					type : 'POST',
+					url : '/master/masterCompanySearchTitleR.do',
+					data : {
+						"company_name" : word
+					},
+					success : function(data) {
+						/* console.log(data) */
+
+						$('#searchCompanyR').empty();
+
+						companyNameR(data);
+
+					},
+
+					error : function(err) {
+						alert('에러다 이자식아')
+					}
+
+				})
+
+			})
+		})
+
+		function companyNameR(data) {
+
+			console.log(typeof data)
+			console.log(data)
+
+			$('#searchCompanyR').empty();
+
+			for (key in data) {
+				console.log(data[key].company_name)
+
+				var str = "";
+
+				str += '<article class="d-flex card-hover mb-4 align-items-stretch" id="companyListD">';
+				str += '<div class="me-3">';
+				str += '<a href="#!" class="overflow-hidden rounded-3 shadow d-block">';
+				str += '<img src="/resources/img/master/masterLogo.png" alt="Image" class="width-9x img-zoom"></a></div>';
+				str += '<div class="flex-gropw-1 justify-content-between">';
+				str += '<a href="#!" class="text-dark">';
+				str += '<h6 class="mb-2 text-reset">' + data[key].company_name
+						+ '</h6></a>';
+				str += '<a href="#!" class="text-dark">';
+				str += '<h6 class="mb-2 text-reset">' + data[key].company_ph
+						+ '</h6></a>';
+				str += '<a href="#!" class="text-dark">';
+				str += '<h6 class="mb-2 text-reset">' + data[key].company_email
+						+ ' </h6></a>';
+				str += '<div class="d-flex justify-content-between">';
+				str += '<small class="mb-0"> <a href="#!">Fiennale</a></small></div></div></article>';
+
+				$('#searchCompanyR').append(str);
+
+			}
+
+		}
+	</script>
+
+	<!-- 비동기 검색기능 ExhibitionD -->
+	<script type="text/javascript">
+		$(function() {
+			$('#exhibitionWordD').keyup(function() {
+
+				/* 검색어 변수 */
+				var word = document.getElementById('exhibitionWordD').value;
+
+				/* ajax 시작 */
+				$.ajax({
+					type : 'POST',
+					url : '/master/masterExhibitionSearchTitleD.do',
+					data : {
+						"exhibition_title" : word
+					},
+					success : function(data) {
+						console.log(data)
+
+						$('#searchExhibitionD').empty();
+
+						ExhibitionTitleD(data);
+
+					},
+
+					error : function(err) {
+						alert('에러다 이자식아')
+					}
+
+				})
+
+			})
+		})
+
+		function ExhibitionTitleD(data) {
+
+			console.log(typeof data)
+			console.log(data)
+
+			$('#searchExhibitionD').empty();
+
+			for (key in data) {
+				console.log(data[key].exhibition_title)
+
+				var str = "";
+
+				str += '<article class="d-flex card-hover mb-4 align-items-stretch">';
+				str += '<div class="me-3">';
+				str += '<a href="#!" class="overflow-hidden rounded-3 shadow d-block">';
+				str += '<img src=" '+ data[key].exhibition_image +' " alt="Image" class="width-9x img-zoom"></a></div>';
+				str += '<div class="flex-gropw-1 justify-content-between">';
+				str += '<a href="#!" class="text-dark">';
+				str += '<h6 class="mb-2 mt-2 text-reset">'
+						+ data[key].exhibition_title + ' </h6></a>';
+				str += '<a href="#!" class="text-dark">';
+				str += '<h6 class="mb-2 text-reset">'
+						+ data[key].exhibition_location + '</h6></a>';
+				str += '<a href="#!" class="text-dark">';
+				str += '<h6 class="mb-2 text-reset">'
+						+ data[key].exhibition_total_date + ' </h6></a>';
+				str += '<div class="d-flex justify-content-between">';
+				str += '<small class="mb-0"> <a href="#!">Fiennale</a></small></div></div></article>';
+
+				$('#searchExhibitionD').append(str);
+
+			}
+
+		}
+	</script>
+	
+	
+	<!-- 비동기 검색기능 ExhibitionR -->
+	<script type="text/javascript">
+		$(function() {
+			$('#exhibitionWordR').keyup(function() {
+
+				/* 검색어 변수 */
+				var word = document.getElementById('exhibitionWordR').value;
+				
+
+				/* ajax 시작 */
+				$.ajax({
+					type : 'POST',
+					url : '/master/masterExhibitionSearchTitleR.do',
+					data : {
+						"exhibition_title" : word
+					},
+					success : function(data) {
+						console.log(data)
+
+						$('#searchExhibitionR').empty();
+
+						ExhibitionTitleR(data);
+
+					},
+
+					error : function(err) {
+						alert('에러다 이자식아')
+					}
+
+				})
+
+			})
+		})
+
+		function ExhibitionTitleR(data) {
+
+			console.log(typeof data)
+			console.log(data)
+
+			$('#searchExhibitionR').empty();
+
+			for (key in data) {
+				console.log(data[key].exhibition_title)
+
+				var str = "";
+
+				str += '<article class="d-flex card-hover mb-4 align-items-stretch">';
+				str += '<div class="me-3">';
+				str += '<a href="#!" class="overflow-hidden rounded-3 shadow d-block">';
+				str += '<img src=" '+ data[key].exhibition_image +' " alt="Image" class="width-9x img-zoom"></a></div>';
+				str += '<div class="flex-gropw-1 justify-content-between">';
+				str += '<a href="#!" class="text-dark">';
+				str += '<h6 class="mb-2 mt-2 text-reset">'
+						+ data[key].exhibition_title + ' </h6></a>';
+				str += '<a href="#!" class="text-dark">';
+				str += '<h6 class="mb-2 text-reset">'
+						+ data[key].exhibition_location + '</h6></a>';
+				str += '<a href="#!" class="text-dark">';
+				str += '<h6 class="mb-2 text-reset">'
+						+ data[key].exhibition_total_date + ' </h6></a>';
+				str += '<div class="d-flex justify-content-between">';
+				str += '<small class="mb-0"> <a href="#!">Fiennale</a></small></div></div></article>';
+
+				$('#searchExhibitionR').append(str);
+
+			}
+
+		}
+	</script>
+
+	
+
+
 
 </body>
 

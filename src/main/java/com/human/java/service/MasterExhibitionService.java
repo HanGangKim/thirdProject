@@ -15,4 +15,9 @@ public interface MasterExhibitionService {
 
 	// exhibition selectD&R
 	public List<MasterExhibitionVO> masterExhibitionDR();
+
+
+	public List<MasterExhibitionVO> masterExhibitionSearchTitleD(MasterExhibitionVO vo, String title);
+
+	public List<MasterExhibitionVO> masterExhibitionSearchTitleR(MasterExhibitionVO vo, String title);
 }

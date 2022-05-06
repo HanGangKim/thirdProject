@@ -38,13 +38,25 @@ public class MasterCompanyDAOImpl implements MasterCompanyDAO {
 	public List<MasterCompanyVO> masterCompanySearchTitle(MasterCompanyVO vo, String title) {
 		
 		System.out.println("===============");
-		System.out.println("masterCompanySearchTitle 다오 호출");
+		System.out.println("masterCompanySearchTitle D 다오 호출");
 		System.out.println("===============");
 		
 		Map<String, Object> parms = new HashMap<String, Object>();
 		parms.put("title", title);
 		
 		return mybatis.selectList("masterCompanyMapper.masterCompanySearchTitle" , parms);
+	}
+	
+	@Override
+	public List<MasterCompanyVO> masterCompanySearchTitleR(MasterCompanyVO vo, String title) {
+		System.out.println("===============");
+		System.out.println("masterCompanySearchTitle R 다오 호출");
+		System.out.println("===============");
+		
+		Map<String, Object> parms = new HashMap<String, Object>();
+		parms.put("title", title);
+		
+		return mybatis.selectList("masterCompanyMapper.masterCompanySearchTitleR" , parms);
 	}
 
 }
