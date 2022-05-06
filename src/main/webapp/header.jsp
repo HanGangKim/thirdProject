@@ -86,10 +86,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						<div class="nav-item me-3">
 							<c:choose>
 								<c:when test="${sessionScope.userId == null}">
-									<a class="lh-1 position-relative text-dark">Hello :)</a>
+									<a href="/Information.do" class="lh-1 position-relative text-dark">Hello :)</a>
 								</c:when>
 								<c:when test="${sessionScope.userId != null}">
-									<a class="lh-1 position-relative text-dark">Welcome !</a>
+									<a href="/Information.do" class="lh-1 position-relative text-dark">Welcome !</a>
 								</c:when>
 							</c:choose>
 						</div>
