@@ -194,12 +194,22 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<div class="d-flex flex-grow-1 align-items-center">
 								<i class="bx bx-search fs-4"></i> 
 								<input type="text"   placeholder="Exhibition Search Here !" 
-								name = "exhibition_title"
-								class="form-control shadow-none border-0 flex-grow-1 form-control-lg">
+								name = "exhibition_title" id="searchInputBox"
+								class="form-control shadow-none border-0 flex-grow-1 form-control-lg" onkeydown="characterCheck()"  onkeyup="characterCheck()">
 							</div>
 						</div>
 					</form>
 					<!-- 전시회 검색 끝  -->
+					<script type="text/javascript">
+					function characterCheck() {
+			            var RegExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g; //정규식 구문
+			            var obj = document.getElementById("searchInputBox")
+			            if (RegExp.test(obj.value)) {
+			                alert("특수문자는 입력하실 수 없습니다.");
+			                obj.value = obj.value.substring(0, obj.value.length - 1);//특수문자를 지우는 구문
+			            }
+			        }
+					</script>
 				</div>
 			</div>
 		</div>

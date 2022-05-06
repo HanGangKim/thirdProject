@@ -108,17 +108,27 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 					<div class="row mx-0 g-2 align-items-center">
 						<div class="col-md-9 col-lg-10">
 							<div class="position-relative">
-								<input type="text" id="p_location"
-									class="form-control border-0 shadow-none form-control-lg ps-4"
-									placeholder="Search..." name="searchKeyword">
+								<input type="text" class="form-control border-0 shadow-none form-control-lg ps-4"
+									placeholder="Search..." name="searchKeyword" id="searchInputBox" onkeyup="characterCheck()" onkeydown="characterCheck()" >
 							</div>
+							
 						</div>
 						<div class="col-md-3 col-lg-2">
-							<button type="submit" class="btn btn-primary btn-lg w-100">
-								Search</button>
+							<button type="submit" class="btn btn-primary btn-lg w-100" onclick="characterCheck()">Search</button>
 						</div>
+						
 					</div>
 				</form>
+				<script type="text/javascript">
+				function characterCheck() {
+		            var RegExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g; //정규식 구문
+		            var obj = document.getElementById("searchInputBox")
+		            if (RegExp.test(obj.value)) {
+		                alert("특수문자는 입력하실 수 없습니다.");
+		                obj.value = obj.value.substring(0, obj.value.length - 1);//특수문자를 지우는 구문
+		            }
+		        }
+				</script>
 			</div>
 		</section>
 		<!-- /전시회 검색 섹션 -->
@@ -319,7 +329,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		str += '<div class="card rounded-4 mb-5 " data-aos="fade-up" >';
 		str += '<div class="mb-0" onclick="allReviewDetail()">';
 		str += '<a href="#!" class="d-block overflow-hidden rounded-top-4" data-bs-target="#modal-pay-bar-' + vo.review_id + '" data-bs-toggle="modal">';
-		str += '<img src="' + vo.exhibition_image + '" class="img-fluid" alt="' + vo.exhibition_title + '" style="width:100%;"></a></div>';
+		str += '<img src="' + vo.exhibition_image + '" class="img-fluid w-100" alt="' + vo.exhibition_title + '" style="max-height:550px;"></a></div>';
 		str += '<div class="card-body overflow-hidden p-4 px-lg-5 flex-grow-1">';
 		str += '<a href="#!" class="text-dark d-block mb-4" data-bs-target="#modal-pay-bar-' + vo.review_id + '" data-bs-toggle="modal"><h4 class="text-truncate">' + vo.exhibition_title + '</h4></a>';
 		str += '<div class="row mb-lg-3"><div class="col-3" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Bedrooms">';

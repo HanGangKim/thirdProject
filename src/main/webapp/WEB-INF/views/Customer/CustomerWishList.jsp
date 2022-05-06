@@ -118,35 +118,36 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									</tr>
 								</thead>
 								<tbody>
-								<c:forEach items="${vo}" var="vo">
-								<form action="../customer/CustomerWishDelete.do?id=<%=userId %>" method="post">
-										<tr>
-											<td><img src="${vo.exhibition_image}" class="width-7x rounded-3"></td>
-											<td style="width: 36%">
-												<a href="/exhibition/ExhibitionDetail.do?id=${vo.exhibition_id}" class="text-dark h6" name="ExId">${vo.exhibition_title}</a>
-												<input type="hidden" name="ExId" value="${vo.exhibition_id}">
-											</td>
-											<td>${vo.exhibition_total_date}</td>
-											<td>${vo.exhibition_location}</td>
-											<td class="text-truncate">${vo.exhibition_price} won</td>
-											<td>
-												<button class="btn-close text-center" type="submit">
-												
-<!-- 													<a href="/customer/CustomerWishDelete.do"> -->
-													<svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24" width="20" fill="currentColor">
-                          								<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
-                        							</svg>
-<!--                         							</a> -->
-												</button>
-											</td>
-										</tr>
-
-									</form>
+									<c:forEach items="${vo}" var="vo">
+										<form action="/customer/CustomerWishDelete.do" method="post">
+											<input name="id" value="<%=userId %>" type="hidden">
+											<tr>
+												<td><img src="${vo.exhibition_image}" class="width-7x rounded-3"></td>
+												<td style="width: 36%">
+													<a href="/exhibition/ExhibitionDetail.do?id=${vo.exhibition_id}" class="text-dark h6" name="ExId">${vo.exhibition_title}</a>
+													<input type="hidden" name="ExId" value="${vo.exhibition_id}">
+												</td>
+												<td>${vo.exhibition_total_date}</td>
+												<td>${vo.exhibition_location}</td>
+												<td class="text-truncate">${vo.exhibition_price} won</td>
+												<td>
+													<button class="btn-close text-center" type="submit">
+													
+	<!-- 													<a href="/customer/CustomerWishDelete.do"> -->
+														<svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 24 24" width="20" fill="currentColor">
+	                          								<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
+	                        							</svg>
+	<!--                         							</a> -->
+													</button>
+												</td>
+											</tr>
+	
+										</form>
 									</c:forEach>
 									
 									
-										<!-- 값이 null 일 경우 -->
-										<c:forEach items="${nullCheck}" var="nullCheck">
+									<!-- 값이 null 일 경우 -->
+									<c:forEach items="${nullCheck}" var="nullCheck">
 										<tr>
 											<td><img src="" class="width-7x rounded-3"></td>
 											<td style="width: 36%">
