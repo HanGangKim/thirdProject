@@ -25,7 +25,6 @@ public class ExhibitionCompanyExhibitionListController {
 	public String exhibitionExhibitionList(ExhibitionVO vo , Model model ) {
 
 		String companyId = vo.getCompany_id();
-		System.out.println("company_id:"+companyId);
 		
 		List<ExhibitionVO>li = exhibitionService.getExhibitionCompanyServiceList(vo , companyId);	
 		
