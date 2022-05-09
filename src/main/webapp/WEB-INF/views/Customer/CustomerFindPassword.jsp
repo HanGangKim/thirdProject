@@ -95,32 +95,20 @@ if (session.getAttribute("userId") == null) {
 
 </body>
 
+<!-- 비밀번호 숨기는 스크립트 -->
 <script>
 
-// var name = ${vo.customer_password};
+var name = document.getElementById('passwordmasking').innerHTML;
+let maskingStr;
 
 
+if(name.length < 3){
+	maskingStr = name.replace(/(?<=.{1})./gi, "*");
+}else {
+	maskingStr = name.replace(/(?<=.{2})./gi, "*"); 
+}
 
-// function(str){
-	var name = document.getElementById('passwordmasking').innerHTML;
-	let maskingStr;
-	
-// 	if(this.checkNull(name) == true){ 
-// 		return name;
-// 	}
-	
-	if(name.length < 3){
-		maskingStr = name.replace(/(?<=.{1})./gi, "*");
-	}else {
-		maskingStr = name.replace(/(?<=.{2})./gi, "*"); 
-	}
-
-// window.onload = function(){	
-	document.getElementById('passwordmasking').innerHTML = maskingStr+" 입니다.";
-	
-// }	
-
-
+document.getElementById('passwordmasking').innerHTML = maskingStr+" 입니다.";
 
 </script>
 </html>

@@ -96,7 +96,6 @@ if (session.getAttribute("userId") == null) {
 						<p class="lead text-muted">Please Select Member Or Company</p>
 					</div>
 				</div>
-<!-- 				/.row -->
 			</div>
 			<div class="container position-relative z-index-1">
 				<div class="row d-flex align-items-center justify-content-center text-center">

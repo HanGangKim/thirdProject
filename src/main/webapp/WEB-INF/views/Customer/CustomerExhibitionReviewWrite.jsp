@@ -73,24 +73,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	<main>
 		<!--Page header start-->
 		<section class="position-relative bg-dark text-white overflow-hidden">
-			<svg
-				class="position-absolute end-0 top-0 text-primary width-14x h-auto w-lg-20"
-				width="450" height="426" viewBox="0 0 450 426" fill="none"
-				xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clipPageHeader)">
-          <path fill-rule="evenodd" clip-rule="evenodd"
-					d="M298.999 -192.241C355.489 -184.29 381.574 -118.483 421.706 -77.9221C452.436 -46.8634 475.477 -12.1582 507.054 18.0386C563.019 71.558 665.455 91.3474 678.539 167.687C690.554 237.781 626.362 310.281 562.498 341.514C500.548 371.812 427.798 307.451 360.652 323.154C299.843 337.375 269.726 418.21 207.597 424.514C139.082 431.466 55.4816 414.802 16.3827 358.087C-23.1945 300.678 21.5018 222.882 20.5205 153.15C19.6978 94.6861 -14.5698 34.0886 11.0842 -18.4478C36.6541 -70.8118 102.021 -85.7884 151.898 -115.896C200.173 -145.036 243.168 -200.099 298.999 -192.241Z"
-					fill="currentColor" />
-        </g>
-        <defs>
-          <clipPath id="clipPageHeader">
-            <rect width="450" height="426" fill="white" />
-          </clipPath>
-        </defs>
-      </svg>
-			<img src="/resources/img/vectors/dec-brush1.svg"
-				class="position-absolute end-0 top-0 me-2 mt-2 me-lg-5 mt-lg-5 fill-warning width-8x h-auto"
-				data-inject-svg alt="">
 			<div class="container py-11 py-lg-15 position-relative">
 				<div class="row align-items-center">
 					<div class="col-lg-10 mx-auto text-center">

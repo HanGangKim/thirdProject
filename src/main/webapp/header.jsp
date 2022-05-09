@@ -75,14 +75,15 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 					<a class="navbar-brand" href="/NoneMemberMain.do"> 
 						<img src="/resources/img/logo/black-logo.png" alt="" class="img-fluid">	
 					</a>
-					<!-- 검색버튼 -->
+					<!-- 인포 -->
 					<div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
 						<!-- 햄버거 메뉴 -->
 						<button class="navbar-toggler order-last collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarTheme" aria-controls="mainNavbarTheme" aria-expanded="false" aria-label="Toggle navigation">
                                <span class="navbar-toggler-icon">
                                    <i></i>
                                </span>
-                           </button>
+                        </button>
+                        <!-- 인포메이션 -->
 						<div class="nav-item me-3">
 							<c:choose>
 								<c:when test="${sessionScope.userId == null}">
@@ -93,6 +94,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								</c:when>
 							</c:choose>
 						</div>
+						<!-- 검색버튼 -->
 						<div class="nav-item me-3 me-lg-0">
 							<a href="#" data-bs-target="#modal-search-bar-2" data-bs-toggle="modal" class="nav-link lh-1 active"> 
 								<i class="bx bx-search fs-4"></i>
@@ -118,11 +120,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									Review </a></li>
 							<c:choose>
 								<c:when test="${sessionScope.userId == null}">
-									<!-- 회원가입 -->
 									<li class="nav-item position-lg-static me-lg-3"><a
 										class="nav-link nav-over" href="/LandingSignUp.do" role="button"
 										aria-haspopup="true" aria-expanded="false">Sign Up </a></li>
-									<!-- 로그인 -->
 									<li class="nav-item position-lg-static me-lg-3"><a
 										class="nav-link nav-over" href="/LandingLogin.do" role="button"
 										aria-haspopup="true" aria-expanded="false"> Sign In </a></li>
@@ -137,8 +137,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 											<a href="#" class="dropdown-item" onclick="ticketingSelectHiddenFormSubmit()">My Ticket</a> 
 											<a href="#" class="dropdown-item" onclick="myReviewListHiddenFormSubmit()">My Review</a>
 											
-											
-											<!-- hidden form  -->
+											<!-- 주소값 숨기기 위한 히든 폼 -->
 											<form id="selectHiddenForm" name="selectHiddenForm" action="/customer/CustomerWishSelectList.do" method="post">
 											<input type="hidden" name="id" value="<%=userId%>">
 											</form>
@@ -171,22 +170,19 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 											}
 											</script>
 											
-											
-											
-											
 											<div class="dropdown-divider"></div>
 											<a class="dropdown-item" href="/customer/CustomerConfirmPass.do">Setting</a>
 										</div>
 									</li>
 									<!--로그아웃-->
-									<li class="nav-item"><a class="nav-link nav-over" href="/LogOut.do">
-											Sign Out </a></li>
+									<li class="nav-item">
+										<a class="nav-link nav-over" href="/LogOut.do">Sign Out </a>
+									</li>
 								</c:when>
 							</c:choose>
-
-
 						</ul>
 					</div>
+					<!-- ./메뉴 -->
 				</nav>
 			</div>
 		</div>
@@ -199,10 +195,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		<div class="modal-dialog modal-dialog-top modal-md">
 			<div class="modal-content position-relative border-0">
 				<div class="position-relative px-4">
-					<div
-						class="position-absolute end-0 width-7x top-0 d-flex me-4 align-items-center h-100 justify-content-center">
-						<button type="button" class="btn-close w-auto small"
-							data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+					<div class="position-absolute end-0 width-7x top-0 d-flex me-4 align-items-center h-100 justify-content-center">
+						<button type="button" class="btn-close w-auto small" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
 					</div>
 					
 					<!-- 전시회 검색 시작  -->
@@ -217,6 +211,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						</div>
 					</form>
 					<!-- 전시회 검색 끝  -->
+					
+					<!-- 검색창 특수문자 검색을 막기 위한 js -->
 					<script type="text/javascript">
 					function characterCheck() {
 			            var RegExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g; //정규식 구문
@@ -245,15 +241,14 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
 function enterkey() {
-if (window.event.keyCode == 13) {
-
-	document.searchForm.submit();
- }
+	if (window.event.keyCode == 13) {
+		document.searchForm.submit();
+	}
 }
 </script>
 
 
-
+<!-- 네비게이션 마우스 오버 css를 위한 js -->
 <script type="text/javascript">
 	function navClick() {
 		var navElement = document.getElementsByClassName("nav-over");

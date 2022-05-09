@@ -67,24 +67,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	<main>
 		<!--Page header start-->
 		<section class="position-relative bg-dark text-white overflow-hidden">
-			<img class="position-absolute end-0 top-0 text-primary width-14x h-auto w-lg-20" alt="" src="/resources/img/960x640/word-cloud-9.png">
-			<svg class="position-absolute end-0 top-0 text-primary width-14x h-auto w-lg-20"
-				width="450" height="426" viewBox="0 0 450 426" fill="none"
-				xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clipPageHeader)">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-					d="M298.999 -192.241C355.489 -184.29 381.574 -118.483 421.706 -77.9221C452.436 -46.8634 475.477 -12.1582 507.054 18.0386C563.019 71.558 665.455 91.3474 678.539 167.687C690.554 237.781 626.362 310.281 562.498 341.514C500.548 371.812 427.798 307.451 360.652 323.154C299.843 337.375 269.726 418.21 207.597 424.514C139.082 431.466 55.4816 414.802 16.3827 358.087C-23.1945 300.678 21.5018 222.882 20.5205 153.15C19.6978 94.6861 -14.5698 34.0886 11.0842 -18.4478C36.6541 -70.8118 102.021 -85.7884 151.898 -115.896C200.173 -145.036 243.168 -200.099 298.999 -192.241Z"
-					fill="currentColor" />
-                </g>
-                <defs>
-                    <clipPath id="clipPageHeader">
-                        <rect width="450" height="426" fill="white" />
-                    </clipPath>
-                </defs>
-            </svg>
-			<img src="/resources/img/vectors/dec-brush1.svg"
-				class="position-absolute end-0 top-0 me-2 mt-2 me-lg-5 mt-lg-5 fill-warning width-8x h-auto"
-				data-inject-svg alt="">
 			<div class="container py-11 py-lg-15 position-relative">
 				<div class="row align-items-center">
 					<div class="col-lg-10 mx-auto text-center">
@@ -97,7 +79,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						<h1 class="mb-0 display-3">Review</h1>
 					</div>
 				</div>
-				<!--/.row-->
 			</div>
 		</section>
 
@@ -119,6 +100,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						
 					</div>
 				</form>
+				<!-- 특수문자 검색 방지 스크립트 -->
 				<script type="text/javascript">
 				function characterCheck() {
 		            var RegExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g; //정규식 구문
@@ -172,7 +154,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										<div class="col-6">
 											<!--Agent-->
 											<div class="d-flex align-items-center justify-content-end flex-shrink-0">
-<!-- 												<img src="/resources/img/avatar/2.jpg" class="flex-shrink-0 flex-shrink-0 avatar sm rounded-circle me-2 img-fluid"> -->
 												<span class="small"> ${vo.customer_id} </span>
 											</div>
 										</div>
@@ -182,7 +163,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							</div>
 						</div>
 
-<!-- 						후기 상세 모달 시작 -->
+						<!-- 후기 상세 모달 시작 -->
 						<div id="modal-pay-bar-${vo.review_id}" class="modal fade" tabindex="-1" aria-labelledby="modal-pay-bar-${vo.review_id}" aria-hidden="true">
 							<div class="modal-dialog modal-dialog-top modal-md" style="max-width: 700px;">
 								<div class="modal-content position-relative border-0">
@@ -252,10 +233,11 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 								</div>
 							</div>
 						</div>
-<!-- 						후기 상세 모달 끝 -->
+						<!-- 후기 상세 모달 끝 -->
 					</c:forEach>
 				</div>
 
+				<!-- 더보기 버튼 -->
 				<div class="d-grid d-sm-flex col-11 justify-content-center justify-content-sm-center" onclick="loadMoreAjax()">
 					<a class="btn btn-outline-dark rounded-pill btn-lg btn-hover-text" >
 						<span class="btn-hover-label label-default">Load more</span> 
@@ -284,8 +266,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <script type="text/javascript">
 
 	function loadMoreAjax() {
-		
-// 		alert("클릭");
 
 		var endRow = $('#endRow').val();
 		var showCnt = 9;
@@ -301,12 +281,11 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			},
 			success : function(list) {
 
+				// 기존에 있던 리스트 지우기
 				$("#more_list").empty();
 
 				$.each(list, function(index, vo) {
-
-// 					alert(index + "  :  " +value.exhibition_title)
-
+					// 새로 리스트 추가하기
 					getLoadMore(vo);
 				})
 
@@ -319,9 +298,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		})
 	}
 
+	// 리스트 추가하기 함수
 	function getLoadMore(vo) {
 		
-	
 		var str = "";
 		
 		/* 리스트 */
@@ -362,7 +341,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		str += '<input type="text" placeholder="내용" value="' + vo.review_contents + '" readonly="readonly" class="form-control" style="height: 300px;"></div></div></div></div></div></div>';
 
 		$("#more_list").append(str);
-// 				alert(str);
 
 	}
 </script>

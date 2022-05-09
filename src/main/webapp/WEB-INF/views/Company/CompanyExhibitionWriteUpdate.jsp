@@ -179,7 +179,7 @@ input.form-control[readonly] {
 													</div>
 												</div>
 												<!-- 지역 끝 -->
-												<!-- 지역공백 예외처리  -->
+												<!-- 지역공백 예외처리 스크립트 -->
 												<script type="text/javascript">
 													function nullCheck() {
 													   if(!document.exhibitionForm.exhibition_location.value){

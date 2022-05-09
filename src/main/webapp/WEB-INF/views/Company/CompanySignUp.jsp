@@ -169,7 +169,8 @@ div.input-icon-group input::placeholder {
 
 </body>
 
-<!-- scripts -->
+
+<!-- 회원가입 널체크 스크립트 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 	

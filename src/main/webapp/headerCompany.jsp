@@ -62,10 +62,11 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		<div class="container col-11">
 			<nav class="navbar navbar-expand-lg navbar-light navbar-link-white">
 				<div class="container px-0 position-relative navbar-no-collapse-items">
+					<!-- 로고 -->
 					<a class="navbar-brand nav-item" href="/company/CompanyMain.do" style="margin: 0;"> 
 						<img src="/resources/img/logo/white-logo.png" class="img-fluid">
 					</a>
-					
+					<!-- 로그아웃 -->
 					<div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
                        <div class="nav-item me-0 me-lg-0">
                            <a href="/LogOut.do" class="btn btn-success btn-sm rounded-pill">Sign Out</a>
@@ -75,35 +76,13 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			</nav>
 		</div>
 	</header>
-
+	<!-- ./header -->
 
 </body>
 
 <!-- 검색버튼 모달 스크립트 -->
 <script src="/resources/js/theme.bundle.js"></script>
 <script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
-
-
-<script type="text/javascript">
-	function navClick() {
-		var navElement = document.getElementsByClassName("nav-link");
-		Array.from(navElement).forEach(v =>{
-			v.classList.remove('active');
-		})
-	}
-	
-	window.onload = function(){	
-		var ul = document.querySelector('#mainNavbarTheme > ul')
-		
-		ul.addEventListener("click",function(e){
-			navClick()
-			console.log(e.target)
-			e.target.classList.add('active')
-			
-		})
-	}
-</script>
-
 
 
 </html>
