@@ -21,14 +21,14 @@
 		FROM ( SELECT e.EXHIBITION_ID , e.EXHIBITION_TITLE ,e.EXHIBITION_START_DATE , e.EXHIBITION_END_DATE , e.EXHIBITION_IMAGE , e.EXHIBITION_LOCATION 
 			, r.REVIEW_TITLE , r.REVIEW_CONTENTS , r.REVIEW_DATE , r.REVIEW_STAR_SCORE , r.REVIEW_ID , r.CUSTOMER_ID
 			FROM HAN.EXHIBITION_INFO e , HAN.REVIEW r
-		WHERE e.EXHIBITION_ID = r.EXHIBITION_ID )
+		WHERE e.EXHIBITION_ID = r.EXHIBITION_ID 
+		ORDER BY r.REVIEW_ID DESC )
 		<where>
 			<![CDATA[ ROWNUM <= ]]> ${endRow}
 			<if test="searchKeyword != null">
   			 AND EXHIBITION_TITLE LIKE '%${searchKeyword}%'
   			</if>	
 		 </where>
-		ORDER BY REVIEW_ID DESC
 	</select>
 	
 	
@@ -40,7 +40,7 @@
 		<where>
 		e.EXHIBITION_ID = r.EXHIBITION_ID AND r.CUSTOMER_ID =  <![CDATA[']]>${id}<![CDATA[']]>
 		</where>
-		ORDER BY r.REVIEW_DATE DESC
+		ORDER BY r.REVIEW_ID DESC
 	</select>
 	
 	<!-- 나의 리뷰 상세조회  -->
