@@ -43,29 +43,18 @@ public class CompanyLoginController {
 	public ModelAndView companyLogin(CompanyVO vo, ExhibitionVO exvo, HttpSession session) {
 		
 		// 메소드 확인용 출력문 
-		System.out.println("companyLogin.do 호출");
 		CompanyVO result = companyService.companyLogin(vo);
 		ModelAndView mv = new ModelAndView();
 
 		// 로그인 실패
 		if (result == null) {
-			System.out.println("===============");
-			System.out.println("로그인 실패");
-			System.out.println("===============");
 			
 			mv.setViewName("/Company/CompanyLoginFail");
 			return mv;
 
 		// 로그인 성공
 		} else if(result.getCompany_flag().equals("D")){
-			System.out.println("[" + result.getCompany_id() + "]" + "로그인 성공");
 			
-			// CompanyVO 확인
-			System.out.println("===============");
-			System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
-			System.out.println("Company Flag:"+result.getCompany_flag());
-			System.out.println("===============");
-
 			session.setAttribute("companyId", result.getCompany_id());
 			session.setAttribute("companyPass", result.getCompany_password());
 			session.setAttribute("companyPh", result.getCompany_ph());
@@ -83,35 +72,17 @@ public class CompanyLoginController {
 		// 승인대기 	
 		} else if (result.getCompany_flag().equals("W")) {
 			
-			// CompanyVO 확인
-			System.out.println("===============");
-			System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
-			System.out.println("승인대기");
-			System.out.println("Company Flag:"+result.getCompany_flag());
-			System.out.println("===============");
 			mv.setViewName("/Company/CompanyLoginWaiting");
 			return mv;
 			
 		// 승인거절
 		}else if (result.getCompany_flag().equals("R")) {
 			
-			// CompanyVO 확인
-			System.out.println("===============");
-			System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
-			System.out.println("승인거절");
-			System.out.println("Company Flag:"+result.getCompany_flag());
-			System.out.println("===============");
 			mv.setViewName("/Company/CompanyLoginReject");
 			return mv;
 			
 		}else {
 			
-			// CompanyVO 확인
-			System.out.println("===============");
-			System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
-			System.out.println("에러발생");
-			System.out.println("Company Flag:"+result.getCompany_flag());
-			System.out.println("===============");
 			mv.setViewName("/Company/CompanyErrorPage");
 			return mv;
 				

@@ -33,21 +33,13 @@ public class CompanyConfirmPasswordController {
 	
 	@RequestMapping("companyConfirmPassword.do")
 	public ModelAndView companyconfirmpassword(CompanyVO vo, HttpSession session) {
-		System.out.println("CompanyConfirmPassword 메소드 호출");
-		System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
 		CompanyVO result = companyService.companyLogin(vo);
 		ModelAndView mv = new ModelAndView();
 		
 		if (result==null) {
-			System.out.println("패스워드 확인 실패");
 			mv.setViewName("/Company/CompanyConfirmPass");
 			return mv;
 		}else {
-			System.out.println("===============");
-			System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
-			System.out.println("===============");
-
-			System.out.println("[" + result.getCompany_id() + "]" + "패스워드 확인 성공");
 			
 			session.setAttribute("companyPass" , result.getCompany_password());
 			session.setAttribute("companyId", result.getCompany_id());
@@ -62,30 +54,18 @@ public class CompanyConfirmPasswordController {
 	
 	@RequestMapping("companyFindPassword.do")
 	public ModelAndView companyFindPass(CompanyVO vo, HttpSession session) {
-		System.out.println("companyFindPass 메소드 호출");
-		System.out.println("Company vo : "+ToStringBuilder.reflectionToString(vo));
 		CompanyVO result = companyService.companyFindPassword(vo);
 		ModelAndView mv = new ModelAndView();
 		
 		if(result ==null) {
-			System.out.println("확인실패");
 			mv.setViewName("/Company/CompanyLogin");
 			return mv;
 		}else {
 			try {
-				
-			
-			System.out.println("===============");
-			System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
-			System.out.println("===============");
-			
-			System.out.println("[" + result.getCompany_id() + "]" + "아이디 확인 성공");
-			
+
 			session.setAttribute("companyPass" , result.getCompany_password());
 			session.setAttribute("companyId", result.getCompany_id());
 			session.setAttribute("companyEmail", result.getCompany_email());
-			System.out.println(session);
-//			mv.addObject("vo",companyService.companyconfirmpassword(vo));
 
 			mv.addObject(result);
 			
@@ -121,7 +101,6 @@ public class CompanyConfirmPasswordController {
 				
 			// 예외발생 시 비밀번호를 보내지 않고 로그인 페이지로 리턴
 				e.printStackTrace();
-				System.out.println("에러발생");
 				mv.setViewName("Company/CompanyLogin");
 				return mv;
 				

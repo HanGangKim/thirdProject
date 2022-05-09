@@ -20,7 +20,6 @@ public class MasterCompanyUpdateController {
 	// 관리자페이지 업데이트 기능을 담당
 	@RequestMapping("masterCompanyUpdate.do")
 	public String masterCompanyUpdate(MasterCompanyVO vo) {
-		System.out.println("update com-controller 호출");
 		
 		masterCompanyService.masterCompanyUpdate(vo);
 		

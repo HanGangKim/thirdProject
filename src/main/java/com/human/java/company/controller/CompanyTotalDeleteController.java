@@ -22,20 +22,12 @@ public class CompanyTotalDeleteController {
 	@RequestMapping("CompanyTotalDelete.do")
 	public ModelAndView companyTotalDelete(CompanyVO vo, HttpSession session) {
 		String companyId = vo.getCompany_id();
-		System.out.println("=================");
-		
-		System.out.println(vo.getCompany_id());
-		System.out.println(vo.getCompany_password());
-		
-		System.out.println(session.getAttribute("companyId"));
-		System.out.println("=================");
 		
 		CompanyVO result = companyService.companyLogin(vo);
 		ModelAndView mv = new ModelAndView();
 		
 		//[1] 아이디, 패스워드 불일치
 		if(result ==null) {
-			System.out.println("탈퇴실패");
 			mv.setViewName("redirect:/company/CompanyConfirmPass.do");
 			
 			return mv;
@@ -43,7 +35,6 @@ public class CompanyTotalDeleteController {
 			companyService.companyTotalDelete(vo);
 			mv.setViewName("redirect:/company/CompanyGoodbye.do");
 			session.invalidate();
-			System.out.println("회원탈퇴 성공");
 			return mv;
 		}
 		

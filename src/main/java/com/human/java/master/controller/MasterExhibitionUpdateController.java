@@ -16,7 +16,6 @@ public class MasterExhibitionUpdateController {
 	
 	@RequestMapping("masterExhibitionUpdate.do")
 	public String masterExhibitionUpdate(MasterExhibitionVO vo) {
-		System.out.println("update ex-controller 호출");
 		
 		masterExhibitionService.masterExhibitionUpdate(vo);
 		return "redirect:ApproveExhibition.do";
