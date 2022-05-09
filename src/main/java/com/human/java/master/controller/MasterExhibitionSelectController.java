@@ -36,7 +36,6 @@ public class MasterExhibitionSelectController {
 
 	@RequestMapping("CheckDnR.do")
 	public ModelAndView CheckDnR() {
-		System.out.println("CheckDnR 컨트롤러 호출");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/Master/CheckDnR");
 		mv.addObject("exvo", masterExhibitionService.masterExhibitionDR());
@@ -48,11 +47,8 @@ public class MasterExhibitionSelectController {
 	@ResponseBody
 	@RequestMapping("masterExhibitionSearchTitleD.do")
 	public List<MasterExhibitionVO> masterExhibitionSearchTitleD (MasterExhibitionVO vo){
-		
-		System.out.println("masterExhibitionSearchTitleD 컨트롤러 호출");
 		String title = vo.getExhibition_title();  
-	
-		System.out.println(vo.getExhibition_title());
+
 		List<MasterExhibitionVO> masterList = masterExhibitionService.masterExhibitionSearchTitleD(vo,title);
 		
 		return masterList;
@@ -61,11 +57,8 @@ public class MasterExhibitionSelectController {
 	@ResponseBody
 	@RequestMapping("masterExhibitionSearchTitleR.do")
 	public List<MasterExhibitionVO> masterExhibitionSearchTitleR (MasterExhibitionVO vo){
-		
-		System.out.println("masterExhibitionSearchTitleR 컨트롤러 호출");
 		String title = vo.getExhibition_title();  
 	
-		System.out.println(vo.getExhibition_title());
 		List<MasterExhibitionVO> masterList = masterExhibitionService.masterExhibitionSearchTitleR(vo,title);
 		
 		return masterList;
