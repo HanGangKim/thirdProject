@@ -24,7 +24,6 @@ public class MasterCompanySelectController {
 		// master 폴더 내 모든 페이지 이동가능
 		@RequestMapping("/{step}.do") // 자스에서 쓴 주소
 		public String userJoin(@PathVariable String step) {
-			System.out.println(step);
 			return "/Master/" + step; // 불러들일 페이지 //.jsp 파일명 
 		}
 		
@@ -32,8 +31,6 @@ public class MasterCompanySelectController {
 	
 	@RequestMapping("ApproveCompany.do")
 	public ModelAndView ApproveCompany() {
-		
-		System.out.println("업체승인페이지호출");
 		// 데이터베이스에서 우리가 원하는 정보를 가지고와서 다음페이지에게 전달
 		// 가져갈 데이터가 없으면 괄호를 빈칸으로!!!
 		ModelAndView mv = new ModelAndView();
