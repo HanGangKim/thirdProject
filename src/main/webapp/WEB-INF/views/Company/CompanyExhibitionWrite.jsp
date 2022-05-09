@@ -55,9 +55,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	padding: 0px;
 }
 
-input.form-control[readonly] {
-	background-color: white;
-}
 </style>
 </head>
 
@@ -329,7 +326,7 @@ input.form-control[readonly] {
 </script>
 
 
-<!--Page scripts-->
+<!-- 달력 선택 스크립트 -->
 <script src="/resources/vendor/node_modules/js/flatpickr.min.js"></script>
 <script>
    let fpickr = document.querySelectorAll("[data-flatpickr]");
@@ -360,6 +357,7 @@ input.form-control[readonly] {
 	
 </script>
 
+<!-- input 셀렉트 css 입히는 스크립트 -->
 <!--Select scripts-->
 <script src="/resources/vendor/node_modules/js/choices.min.js?ver=2"></script>
 <script>

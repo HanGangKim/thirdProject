@@ -74,7 +74,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	
 	<jsp:include page="/headerCompany.jsp" />
 
-
 	<!--Main content start-->	
 	<main>
 		<!-- 페이지 헤더 -->
@@ -167,7 +166,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 									<button type="submit" data-bs-target="#modal-pay-bar-${vo.exhibition_id}" data-bs-toggle="modal" class="btn btn-dark ">삭제</button>
 								</div>
 							</div>
-							<!-- ./ 버튼 div -->
 						</div>
 					</div>
 					<!-- ./카드 -->
@@ -215,7 +213,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 					<!-- ./삭제 물어보는 모달 -->
 				</c:forEach>
 				
-				
+				<!-- 아무것도 없을때 -->
 				<c:forEach items="${nullCheck}" var="vo">
 				<!-- NullCheck forEach 추가 -->
 				<!-- 카드 -->
@@ -228,14 +226,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 					<div class="col-sm-7 p-sm-4 col-12 col-lg-7 ms-sm-7 p-5">
 						<!-- 업체 id -->
 						<div class="d-flex mb-2 align-items-center">
-<!-- 								<span class="text-muted me-3">Title</span> -->
-<%-- 								<h4 class="text-truncate">${vo.exhibition_title}</h4> --%>
-								
-							
-								
-						<%-- 	<h4 class="text-truncate"><%=companyName %></h4> --%>
 							<h4 class="text-truncate">${nullCheck}</h4>
-							
 						</div>
 						
 						<!-- 업체 id -->
@@ -278,26 +269,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<span class="text-muted me-3">Flag</span> 
 							<strong>Sample Flag</strong>
 						</div>
-						
-						<!-- 버튼 div -->
-						<%-- <div class="d-flex pb-4 pb-md-0 justify-content-end">
-							<!-- 수정버튼 -->
-							<div class="me-2">
-								<form action="/exhibition/CompanyExhibitionDetail.do" method="post">
-										<input name="company_id" value="${vo.company_id}"
-											hidden="hidden"> <input name="exhibition_id"
-											value="${vo.exhibition_id}" hidden="hidden">
-										<button type="submit" class="btn btn-outline-dark">수정</button>
-								</form>
-							</div>
-
-							<!-- 삭제버튼 -->
-							<div class="mb-0">
-								<button type="submit" data-bs-target="#modal-pay-bar-${vo.exhibition_id}" data-bs-toggle="modal" class="btn btn-dark ">삭제</button>
-							</div>
-						</div> --%>
-						<!-- ./ 버튼 div -->
-						
 					</div>
 				</div>
 				<!-- ./카드 -->

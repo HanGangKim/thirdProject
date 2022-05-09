@@ -71,29 +71,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 	<jsp:include page="/header.jsp" />
 
-
 	<!--Main content-->
 	<main>
 		<!--Page header start-->
 		<section class="position-relative bg-dark text-white overflow-hidden">
-			<svg
-				class="position-absolute end-0 top-0 text-primary width-14x h-auto w-lg-20"
-				width="450" height="426" viewBox="0 0 450 426" fill="none"
-				xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clipPageHeader)">
-          <path fill-rule="evenodd" clip-rule="evenodd"
-					d="M298.999 -192.241C355.489 -184.29 381.574 -118.483 421.706 -77.9221C452.436 -46.8634 475.477 -12.1582 507.054 18.0386C563.019 71.558 665.455 91.3474 678.539 167.687C690.554 237.781 626.362 310.281 562.498 341.514C500.548 371.812 427.798 307.451 360.652 323.154C299.843 337.375 269.726 418.21 207.597 424.514C139.082 431.466 55.4816 414.802 16.3827 358.087C-23.1945 300.678 21.5018 222.882 20.5205 153.15C19.6978 94.6861 -14.5698 34.0886 11.0842 -18.4478C36.6541 -70.8118 102.021 -85.7884 151.898 -115.896C200.173 -145.036 243.168 -200.099 298.999 -192.241Z"
-					fill="currentColor" />
-        </g>
-        <defs>
-          <clipPath id="clipPageHeader">
-            <rect width="450" height="426" fill="white" />
-          </clipPath>
-        </defs>
-      </svg>
-			<img src="/resources/img/vectors/dec-brush1.svg"
-				class="position-absolute end-0 top-0 me-2 mt-2 me-lg-5 mt-lg-5 fill-warning width-8x h-auto"
-				data-inject-svg alt="">
 			<div class="container py-11 py-lg-15 position-relative">
 				<div class="row align-items-center">
 					<div class="col-lg-10 mx-auto text-center">
@@ -107,14 +88,13 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						<h1 class="mb-0 display-3">Setting</h1>
 					</div>
 				</div>
-				<!--/.row-->
 			</div>
 		</section>
 
 		<section class="position-relative">
 			<div class="container position-relative">
 				<div class="overflow-hidden">
-					<!--Profile info header-->
+					<!-- 정보수정 -->
 					<div class="position-relative pt-5 pb-1">
 						<div class="row">
 							<div class="col-lg-9 mx-auto">
@@ -165,7 +145,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 														class="form-control" name="customer_age" data-flatpickr
 														value="<%=userAge%>">
 												</div>
-
 											</div>
 											<hr class="mt-3 mb-3">
 											<!--저장 버튼-->
@@ -173,7 +152,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 												<button type="submit" class="btn btn-primary">Save
 													Profile</button>
 											</div>
-
 										</form>
 
 									</div>
@@ -181,9 +159,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							</div>
 						</div>
 					</div>
-					<!-- ./Profile info header-->
+					<!-- ./정보 수정 -->
 
-					<!--Profile info header-->
+					<!-- 계정 삭제 -->
 					<div class="position-relative pt-1 pb-5">
 						<div class="row">
 							<div class="col-lg-9 mx-auto"> 
@@ -198,11 +176,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 											
 												
 													<div id="form__wrap">
-															<label class="text-primary mb-2"> Fiennale 계정을 삭제하실 건가요 ... ? </label>
-<!-- 															<label class="text-primary mb-2"> Fiennale 계정 탈퇴 전 꼭 확인해 주세요!</label> -->
+														<label class="text-primary mb-2"> Fiennale 계정을 삭제하실 건가요 ... ? </label>
 
-																	<!-- 체크박스 JS 히든 input -->
-																	<input type="text" class="checkAll" name="checkAll" id="checkAll" hidden="hidden" />	
+														<!--  모두 체크 JS 히든 input -->
+														<input type="text" class="checkAll" name="checkAll" id="checkAll" hidden="hidden" />	
 
 														<ul class="terms__list p-0">
 															<li class="terms__box">
@@ -250,7 +227,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 															</div>
 														</div>
 														<hr class="mt-3 mb-3">
-														<!--저장 버튼-->
+														<!-- 삭제 버튼 -->
 														<div class="text-end">
 															<button type="submit" id="btn-primary"
 																class="btn btn-primary" disabled="disabled">Delete Profile</button>
@@ -265,24 +242,13 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							</div>
 						</div>
 					</div>
-					<!-- ./Profile info header-->
-					
+					<!-- ./계정 삭제 -->
 				</div>
 			</div>
 		</section>
-
-
 	</main>
 
 	<jsp:include page="/footer.jsp" />
-
-	<!-- :Back to top -->
-	
-
-
-	<!--cursor-->
-	
-
 
 </body>
 

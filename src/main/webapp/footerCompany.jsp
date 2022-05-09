@@ -58,10 +58,10 @@ if (session.getAttribute("companyId") == null) {
 	            <div class="col-sm-7 mb-4 mb-sm-0">
 	                <!--Address-->
 	                <div class="col-md-2 mb-5 mb-md-0 text-md-center order-md-2">
-					<!-- 로고 -->
-					<a href="/company/CompanyMain.do"><img src="/resources/img/logo/white-logo.png"
-							class="width-10x d-block h-auto mx-md-auto" alt=""></a>
-				</div>
+						<!-- 로고 -->
+						<a href="/company/CompanyMain.do">
+							<img src="/resources/img/logo/white-logo.png" class="width-10x d-block h-auto mx-md-auto" alt=""></a>
+					</div>
 	            </div>
 	            <div class="col-sm-5 text-sm-end">
 	                <!--Phone-->
@@ -76,7 +76,7 @@ if (session.getAttribute("companyId") == null) {
 	                <!--Social List-->
 	                <ul class="list-inline">
 	                
-	                  <!-- Session != null일 경우  -->
+	                <!-- Session != null일 경우  -->
 	                <c:choose>
 					<c:when test="${sessionScope.companyId != null}">
 	                    <li class="list-inline-item">
@@ -120,7 +120,7 @@ if (session.getAttribute("companyId") == null) {
 	                    <script>
 	                      document.write(new Date().getFullYear())
 	                    </script>. Fiennale
-	                  </span>
+	               	</span>
 	            </div>
 	        </div>
 	    </div>

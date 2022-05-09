@@ -94,20 +94,16 @@ if (session.getAttribute("userId") == null) {
 						<p class="lead text-muted">Please Select Member Or Company</p>
 					</div>
 				</div>
-<!-- 				/.row -->
 			</div>
 			<div class="container position-relative z-index-1">
 				<div class="row d-flex align-items-center justify-content-center text-center">
 					<div class="col-xl-11 col-10">
-
 						<div class="container py-lg-9 position-relative z-index-1">
-
 							<div id="projects" data-isotope='{"layoutMode": "masonry"}' class="row">
-
-								<!-- 일반회원 로그인 -->
+								<!-- 일반회원 가입 -->
 								<div class="col-md-6 mb-4 development grid-item">
 									<a href="/customer/Agreement.do" class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card"  style="border: 0px;">
-										<img src="/resources/img/landing/loginMember4.jpeg" class="w-100 img-zoom" >
+										<img src="/resources/img/landing/loginMember4.jpeg" class="w-100 img-zoom">
 										<div class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
 											<div class="card-hover-2-header w-100">
 												<div class="card-hover-2-title">
@@ -125,7 +121,7 @@ if (session.getAttribute("userId") == null) {
 									</a>
 								</div>
 
-								<!-- 업체회원 로그인 -->
+								<!-- 업체회원 가입 -->
 								<div class="col-md-6 mb-4 motion grid-item">
 									<a href="/company/Agreement.do" class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card" style="border: 0px;">
 										<img src="/resources/img/master/masterCompany.jpeg" class="w-100 img-zoom" >

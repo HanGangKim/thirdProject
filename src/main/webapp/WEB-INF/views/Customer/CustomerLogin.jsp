@@ -92,12 +92,14 @@ response.sendRedirect("../LogOut.do");
 										<input type="password" name="customer_password" class="form-control" placeholder="Password" required>
 									</div>
 									<div class="mb-0 d-flex justify-content-between">
+										<!-- 아이디 기억 -->
 										<div class="form-check">
 											<input class="form-check-input" type="checkbox" 
 											name="remember"	id="flexCheckDefault"> <label
 												class="form-check-label" for="flexCheckDefault">
 												Remember me </label>
 										</div>
+										<!-- 비밀번호 찾기 -->
 										<div>
 											<label class="text-end d-block small mb-0">
 											<a href="page-account-forget-password.html" data-bs-target="#modal-password-bar-1" data-bs-toggle="modal"
@@ -108,13 +110,14 @@ response.sendRedirect("../LogOut.do");
 									<div class="d-flex align-items-center py-3">
 										<span class="flex-grow-1 border-bottom pt-1"></span>
 									</div>
-
+									
+									<!-- 로그인 버튼 -->
 									<div class="d-grid">
 										<button class="btn btn-primary" type="submit">Sign in</button>
 									</div>
 								</form>
 
-								<!---->
+								<!-- 회원가입 -->
 								<p class="pt-4 small text-muted">
 									Don’t have an account yet? 
 									<a href="/customer/Agreement.do" class="ms-2 text-dark fw-semibold link-underline">Sign Up</a>
@@ -128,7 +131,7 @@ response.sendRedirect("../LogOut.do");
 		</section>
 	</main>
 	
-
+	<!-- 비밀번호 찾는 모달 -->
 	<div id="modal-password-bar-1" class="modal fade" tabindex="-1" aria-labelledby="modal-password-bar-1" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-top modal-md">
 			<div class="modal-content position-relative border-0">

@@ -70,28 +70,23 @@ response.sendRedirect("../LogOut.do");
 		<section class="bg-white position-relative">
 			<div class="container pt-11 pt-lg-14 pb-9 pb-lg-11 position-relative z-index-1">
 				<div class="row align-items-center justify-content-center">
-
 					<div class="col-xl-4 col-11 col-lg-5 col-md-6 col-sm-8 z-index-2">
 
 						<h2 class="mb-1 display-6">Terms & Conditions</h2>
-						<p class="mb-4 text-muted">To get started member, Please signup with
-							details...</p>
+						<p class="mb-4 text-muted">To get started member, Please signup with details...</p>
 
 						<div class="position-relative">
 							<div class="contents">
 								<div id="form__wrap">
 									<div class="terms__check__all">
-										<input type="checkbox" name="checkAll" id="checkAll" /> <label
-											for="checkAll">Fiennale 이용약관, 개인정보 수집 및 이용, 프로모션 정보
-											수신에 모두 동의합니다.
-										</label>
+										<input type="checkbox" name="checkAll" id="checkAll" /> 
+										<label for="checkAll">Fiennale 이용약관, 개인정보 수집 및 이용, 프로모션 정보 수신에 모두 동의합니다.</label>
 									</div>
-									<ul class="terms__list" style="padding: 0;">
+									<ul class="terms__list p-0">
 										<li class="terms__box">
 											<div class="input__check">
-												<input type="checkbox" name="agreement" id="termsOfService"
-													value="termsOfService" required /> <label
-													for="termsOfService" class="required">Fiennale 이용약관 동의</label>
+												<input type="checkbox" name="agreement" id="termsOfService" value="termsOfService" required /> 
+												<label for="termsOfService" class="required">Fiennale 이용약관 동의</label>
 											</div>
 											<div class="terms__content">여러분을 환영합니다. Fiennale 서비스 및 제품(이하
 												‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 Fiennale 서비스의 이용과 관련하여 Fiennale 서비스를
@@ -102,10 +97,8 @@ response.sendRedirect("../LogOut.do");
 										</li>
 										<li class="terms__box">
 											<div class="input__check">
-												<input type="checkbox" name="agreement" id="privacyPolicy"
-													value="privacyPolicy" required /> <label
-													for="privacyPolicy" class="required">개인정보 수집 및 이용
-													동의</label>
+												<input type="checkbox" name="agreement" id="privacyPolicy" value="privacyPolicy" required /> 
+												<label for="privacyPolicy" class="required">개인정보 수집 및 이용 동의</label>
 											</div>
 											<div class="terms__content">개인정보보호법에 따라 Fiennale에 회원가입 신청하시는
 												분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및
@@ -116,9 +109,8 @@ response.sendRedirect("../LogOut.do");
 										</li>
 										<li class="terms__box">
 											<div class="input__check">
-												<input type="checkbox" name="agreement" id="allowPromotions"
-													value="allowPromotions" /> <label for="allowPromotions">프로모션
-													정보 수신 동의</label>
+												<input type="checkbox" name="agreement" id="allowPromotions" value="allowPromotions" /> 
+												<label for="allowPromotions">프로모션 정보 수신 동의</label>
 											</div>
 											<div class="terms__content">Fiennale에서 제공하는 이벤트/혜택 등 다양한 정보를
 												휴대전화(Fiennale앱 알림 또는 문자), 이메일로 받아보실 수 있습니다. 일부 서비스(별도 회원 체계로

@@ -80,37 +80,33 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		<section class="position-relative bg-white">
 			<div class="container py-9 position-relative">
 				<div class="row justify-content-between">
+					<!-- 이미지 -->
 					<div class="col-lg-6 col-11 col-sm-7 mx-auto mx-lg-0 mb-5 mb-lg-0">
-						<img src="${vo.exhibition_image}" alt="" style="width: 1500px"
-							class="img-fluid mb-3"> <img
-							src="/resources/img/exam/22.jpg" alt="" class="img-fluid mb-3">
-							<img src="${vo.exhibition_contents}" alt="" style="width: 1500px"
-							class="img-fluid mb-3">
+						<img src="${vo.exhibition_image}" alt="" style="width: 1500px" class="img-fluid mb-3"> 
+						<img src="/resources/img/exam/22.jpg" alt="" class="img-fluid mb-3">
+						<img src="${vo.exhibition_contents}" alt="" style="width: 1500px" class="img-fluid mb-3">
 					</div>
-					<!--/.col-->
-					<div class="col-md-8 col-11 mx-auto col-lg-5">
 
+					<div class="col-md-8 col-11 mx-auto col-lg-5">
 						<div class="sticky-top top-0">
-							<!--Breadcrumbs-->
+							<!-- 기간 -->
 							<nav class="d-md-flex" aria-label="breadcrumb">
 								<ol class="breadcrumb mb-3">
 									<p class="date">${vo.exhibition_total_date}</p>
 								</ol>
 							</nav>
-							<!-- Product Description -->
+							<!-- 전시 설명 -->
 							<div class="mb-4 pb-4 border-bottom">
 								<div class="mb-2">
 									<h3>${vo.exhibition_title}</h3>
 									<div class="d-flex justify-content-between align-items-center">
 										<div>
-											<p class="fs-5 mb-0">
-												${vo.exhibition_price} won
-											</p>
+											<p class="fs-5 mb-0">${vo.exhibition_price} won</p>
 										</div>
 									</div>
 								</div>
 							</div>
-
+							<!-- 전시 위치 -->
 							<div class="mb-4 pb-4 border-bottom">
 								<div class="mb-0">
 									<div
@@ -125,11 +121,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 										</a>
 									</div>
 								</div>
-								<!--/.size-->
 							</div>
-							<!--/.size-->
-
-
+							<!-- 전시 설명 -->
 							<div class="mb-4 pb-4 border-bottom">
 								<div
 									class="d-flex justify-content-between align-content-stretch">
@@ -146,8 +139,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 								</div>
 							</div>
-							
-							
 							
 							<%
 							// 세션 연결
@@ -176,23 +167,19 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							}
 							%>
 							
-							
+							<!-- 예매하기 -->
 							<div class="d-grid">
 								<a href="#" class="btn btn-primary hover-lift"
 									data-bs-target="#modal-pay-bar-2" data-bs-toggle="modal"> <i class="bx bx-credit-card fs-4 me-2"></i> 
 									Book a Ticket
 								</a>
 							</div>
-							<!--/.cart-action-->
-
 						</div>
 					</div>
-					<!--/.col-->
 				</div>
 			</div>
 		</section>
 	</main>
-	
 	
 	<!-- 장소 모달 시작 -->
 	<div id="modal-loc-bar-2" class="modal fade" tabindex="-1" aria-labelledby="modal-loc-bar-2" aria-hidden="true">
@@ -232,7 +219,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 					</div>
 					<form name="dateForm"  class="mb-0" action="ExhibitionPayment.do" method="post" onsubmit="return nullCheck()">
 						<div class="align-items-center">
-							<h6 class="d-flex mt-4" style="justify-content: center;">Ticekting</h6>
+							<h6 class="d-flex mt-4 justify-content-center">Ticekting</h6>
 
 							<!-- 구분선 -->
 							<div class="d-flex align-items-center py-3">
@@ -295,8 +282,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							}
 							%>
 
-
-
 							<!-- 방문 날짜 -->
 							<div class="mb-3">
 								<label class="form-label" for="profile_name">Visit Date</label> 
@@ -316,11 +301,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 							<!-- 결제하기 섹션 -->
 							<!-- 기본값 -->
-<!-- 							<div class="mb-3"> -->
-								<input type="hidden" id="d_money"
-									value="${vo.exhibition_price}" readonly="readonly"
-									class="form-control">
-<!-- 							</div> -->
+							<input type="hidden" id="d_money" value="${vo.exhibition_price}" readonly="readonly" class="form-control">
 
 							<!-- 인원 -->
 							<div class="mb-2">
@@ -372,7 +353,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							}
 							%>
 														
-							
+							<!-- 취소버튼 -->
 							<div class="mb-3 text-end">
 								<button type="reset" onsubmit="onsubmit()" aria-label="Close" data-bs-dismiss="modal" class="btn btn-outline-dark form-control">취소하기</button>
 							</div>
@@ -460,7 +441,6 @@ var adress = document.querySelector("#adress").innerText
 <!-- 결제모달 스크립트 시작 -->
 <script type="text/javascript">
 	function count(type) {
-// 		alert("함수호출")
 		var totalMoney = document.getElementById("money");
 		var totalResult = document.getElementById("result");
 		var deafultMoney = document.getElementById("d_money");
@@ -469,17 +449,12 @@ var adress = document.querySelector("#adress").innerText
 		var money = totalMoney.value;
 		var d_money = deafultMoney.value;
 		var result = totalResult.value;
-		
-// 		alert(money)
 
 		// 더하기/빼기
 		if (type === 'plus') {
-// 			alert("+")
 			result = parseInt(result) + 1;
 			money = parseInt(money) + parseInt(d_money);
-// 			alert(money)
 		} else if (type === 'minus') {
-// 			alert("-")
 			
 			if( result == 1){
 				alert("1매 이상 선택해주세요.");
@@ -513,7 +488,7 @@ var adress = document.querySelector("#adress").innerText
         );
         
 //         history.replaceState({}, null, location.pathname);
-	</script>
+</script>
 	
 	
 <!-- 오늘날짜 뽑는 스크립트 -->
@@ -521,7 +496,6 @@ var adress = document.querySelector("#adress").innerText
 	window.onload = function(){
 		var date = new Date();
 		var date1 = date.toISOString().substring(0, 10)
-// 		var date2 = new Date(date.setDate(date.getDate()+14)).toISOString().substring(0, 10);
 											
 		document.getElementById('now_date').value = date1
 	}

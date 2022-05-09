@@ -85,17 +85,18 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						<h4 class="display-4 mb-3">Insert Success !</h4>
 						<p class="mb-5 lead mx-auto">실제 등록/수정까지는 2~3일 정도 소요됩니다.</p>
 						<div class="mx-auto">
-							<a  onclick="companyExhibitionListSubmit()" class="btn btn-primary mb-2 d-grid">Go To List</a>
-											<form id="companyExhibitionList" name="companyExhibitionList" action="/exhibition/CompanyExhibitionList.do" method="post">
-											<input type="hidden" name="company_id" value="<%=companyId%>">
-											</form>
-											<!-- hidden form JS  -->       
-											<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>             
-											<script type="text/javascript">
-											function companyExhibitionListSubmit(){
-											$("#companyExhibitionList").submit(); 
-											}
-											</script>
+						<a  onclick="companyExhibitionListSubmit()" class="btn btn-primary mb-2 d-grid">Go To List</a>
+						<!-- 주소값 숨기기 위한 히든폼 -->
+						<form id="companyExhibitionList" name="companyExhibitionList" action="/exhibition/CompanyExhibitionList.do" method="post">
+						<input type="hidden" name="company_id" value="<%=companyId%>">
+						</form>
+						<!-- hidden form JS  -->       
+						<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>             
+						<script type="text/javascript">
+						function companyExhibitionListSubmit(){
+						$("#companyExhibitionList").submit(); 
+						}
+						</script>
 						</div>
 					</div>
 				</div>

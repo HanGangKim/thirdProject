@@ -94,6 +94,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 
 </body>
+
+<!-- 비밀번호 숨기는 스크립트 -->
 <script>
 
 var name = document.getElementById('passwordmasking').innerHTML;

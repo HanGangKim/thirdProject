@@ -54,7 +54,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <link href="/resources/css/theme.min.css" rel="stylesheet">
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
-<title>Welcome!</title>
+<title>Fiennale</title>
 
 </head>
 
@@ -102,6 +102,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
 </body>
 
+<!-- 새로고침 방지 스크립트 -->
 <script type="text/javascript">
 function noEvent() { // 새로 고침 방지
 	 

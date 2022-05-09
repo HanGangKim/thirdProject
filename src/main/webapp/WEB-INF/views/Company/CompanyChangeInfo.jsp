@@ -90,7 +90,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		<section class="position-relative">
 			<div class="container position-relative">
 				<div class="overflow-hidden">
-					<!--Profile info header-->
+					<!-- 정보 수정 -->
 					<div class="position-relative pt-5 pb-1">
 						<div class="row">
 							<div class="col-lg-9 mx-auto">
@@ -153,9 +153,9 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							</div>
 						</div>
 					</div>
-					<!-- ./Profile info header-->
+					<!-- ./정보 수정 -->
 					
-					<!--Profile info header-->
+					<!-- 계정 삭제 -->
 					<div class="position-relative pt-1 pb-5">
 						<div class="row">
 							<div class="col-lg-9 mx-auto"> 
@@ -167,11 +167,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 											<div class="contents">
 												<form action="/company/CompanyTotalDelete.do" autocomplete="false" method="post">
 													<div id="form__wrap">
-															<label class="text-primary mb-2"> Fiennale 계정을 삭제하실 건가요 ... ? </label>
-<!-- 															<label class="text-primary mb-2"> Fiennale 계정 탈퇴 전 꼭 확인해 주세요!</label> -->
+														<label class="text-primary mb-2"> Fiennale 계정을 삭제하실 건가요 ... ? </label>
 
-																	<!-- 체크박스 JS 히든 input -->
-																	<input type="text" class="checkAll" name="checkAll" id="checkAll" hidden="hidden" />	
+														<!--  모두 체크 JS 히든 input -->
+														<input type="text" class="checkAll" name="checkAll" id="checkAll" hidden="hidden" />	
 
 														<ul class="terms__list p-0">
 															<li class="terms__box">
@@ -219,7 +218,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 															</div>
 														</div>
 														<hr class="mt-3 mb-3">
-														<!--저장 버튼-->
+														<!-- 삭제 버튼 -->
 														<div class="text-end">
 															<button type="submit" id="btn-primary"
 																class="btn btn-primary" disabled="disabled">Delete Profile</button>
@@ -234,7 +233,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							</div>
 						</div>
 					</div>
-					<!-- ./Profile info header-->	
+					<!-- ./계정 삭제 -->	
 				</div>
 			</div>
 		</section>

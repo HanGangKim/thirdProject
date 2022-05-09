@@ -49,17 +49,8 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
 <!--Flatpickr-->
-<link rel="stylesheet"
-	href="/resources/vendor/node_modules/css/flatpickr.min.css">
+<link rel="stylesheet" href="/resources/vendor/node_modules/css/flatpickr.min.css">
 
-<!-- <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css'
-	rel='stylesheet' type='text/css'>
-
-<style>
-* {
-	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
-}
-</style> -->
 <title>Search Date</title>
 </head>
 
@@ -77,8 +68,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		<section class="bg-white position-relative d-flex justify-content-center h-100">
 			<div class="bg-dark d-none d-md-flex position-fixed end-0 top-0 w-md-50 w-lg-60 h-100">
 				<!--Divider shape-->
-				<svg
-					class="position-absolute start-0 top-0 h-100 text-white z-index-1"
+				<svg class="position-absolute start-0 top-0 h-100 text-white z-index-1"
 					width="80" height="1096" preserveAspectRatio="none"
 					viewBox="0 0 58 1096" fill="none"
 					xmlns="http://www.w3.org/2000/svg">
@@ -91,8 +81,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 						fill="white" />
                 </svg>
 
-				<!--Image-->
-<!-- 				<img src="/resources/img/backgrounds/4.jpeg" alt="" class="bg-image"> -->
+				<!-- 영상 -->
 				<video muted autoplay loop>
 					<source src="/resources/img/backgrounds/ARTE MUSEUM Overview.mp4" type="video/mp4" class="bg-image">
 				</video>
@@ -106,10 +95,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							<img src="/resources/img/logo/black-logo.png" class="width-8x d-block mb-4">
 						</a>
 						<!--제목-->
-						<h2 class="mb-1 display-6">
-							<!-- Welcome back! -->
-							Search Date
-						</h2>
+						<h2 class="mb-1 display-6">Search Date</h2>
 						<!--부제-->
 						<p class="mb-4 text-muted">원하는 전시회 기간을 선택해주세요.</p>
 						<div>
@@ -123,8 +109,6 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 											data-flatpickr='{"mode":"range"}' class="form-control" name="totalDate">
 									</div>
 								</div>
-							
-
 								<!--검색버튼-->
 								<div class="d-grid">
 									<button class="btn btn-primary" type="submit">Move To List</button>
@@ -154,16 +138,17 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 <script src="/resources/vendor/node_modules/js/gsap.min.js"></script>
 <script src="/resources/vendor/node_modules/js/cursor.js"></script>
 
+<!-- 달력 선택 스크립트 -->
 <script>
-        let pickr = document.querySelectorAll("[data-flatpickr]");
-        pickr.forEach(el => {
-            const t = {
-                ...el.dataset.flatpickr ? JSON.parse(el.dataset.flatpickr) : {},
-            }
-            new flatpickr(el, t)
-        }
-        );</script>
-
+	let pickr = document.querySelectorAll("[data-flatpickr]");
+	pickr.forEach(el => {
+	    const t = {
+	        ...el.dataset.flatpickr ? JSON.parse(el.dataset.flatpickr) : {},
+	    }
+	    new flatpickr(el, t)
+	}
+	);
+</script>
 
 <!-- 오늘날짜 뽑는 스크립트 -->
 <script type="text/javascript">
@@ -178,21 +163,5 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	}
 	
 </script>
-
-
-<!-- 뒤로가기 막기 -->
-<script type="text/javascript">
-
-// window.onload = function() {	
-// 	history.pushState(null, null, location.href);
-// 	window.onpopstate = function () {
-// 	    history.go(1);
-// 	};
-// }
-
-</script>
-
-
-
 
 </html>

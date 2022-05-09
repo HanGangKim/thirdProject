@@ -214,30 +214,33 @@ div.choices__list--single select option:disabled {
 
 </body>
 
-<!--Select scripts-->
-<!-- <script src="/resources/vendor/node_modules/js/choices.min.js?ver=2"></script> -->
-
+<!-- input 셀렉트 css 입히는 스크립트 -->
+<script src="/resources/vendor/node_modules/js/choices.min.js?ver=2"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-//     var cSelect = document.querySelectorAll("[data-choices]");
-//     cSelect.forEach(el => {
-//       const t = {
-//         ...el.dataset.choices ? JSON.parse(el.dataset.choices) : {}, ...{
-//           classNames: {
-//             containerInner: el.className,
-//             input: "form-control",
-//             inputCloned: "form-control-sm",
-//             listDropdown: "dropdown-menu",
-//             itemChoice: "dropdown-item",
-//             activeState: "show",
-//             selectedState: "active"
-//           }
-//         }
-//       }
-//       new Choices(el, t)
-//     }
-//     );
+    var cSelect = document.querySelectorAll("[data-choices]");
+    cSelect.forEach(el => {
+      const t = {
+        ...el.dataset.choices ? JSON.parse(el.dataset.choices) : {}, ...{
+          classNames: {
+            containerInner: el.className,
+            input: "form-control",
+            inputCloned: "form-control-sm",
+            listDropdown: "dropdown-menu",
+            itemChoice: "dropdown-item",
+            activeState: "show",
+            selectedState: "active"
+          }
+        }
+      }
+      new Choices(el, t)
+    }
+    );
+</script>
     
+    
+<!-- 회원가입 널체크 스크립트 -->
+<script>
  // 로그인 유효성 검사
     var form = document.getElementById('loginForm');
     var next = document.getElementById("next");
@@ -446,9 +449,6 @@ div.choices__list--single select option:disabled {
             return true;
         }
 
-    	
-        
-
-  </script>
+</script>
 
 </html>

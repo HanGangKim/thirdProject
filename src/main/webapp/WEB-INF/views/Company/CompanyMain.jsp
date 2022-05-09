@@ -100,7 +100,6 @@ span.card-hover-2-footer-link:after {
 		</section>
 		<!-- ./페이지 헤더 -->
 
-		<!-- 내용 -->
 		<section class="position-relative hr-linear-bottom bg-white">
 			<div class="container col-11 py-9 py-lg-11 position-relative z-index-1">
 				<div id="projects" data-isotope='{"layoutMode": "masonry"}' class="row">
@@ -108,33 +107,34 @@ span.card-hover-2-footer-link:after {
 					<!-- 전시회 등록 수정&조회 -->
 					<div class="col-md-6 mb-4 development grid-item">
 						<a onclick="hiddenFromSubmit()" class="text-black bg-light position-relative d-block overflow-hidden card-hover-2 card">
-	                     <!-- hidden form  -->
-	                     <form id="hiddenForm" name="hiddenForm" action="/exhibition/CompanyExhibitionList.do" method="post">
-	                     	<input type="hidden" name="company_id" value="<%=companyId%>">
-	                     </form>
-	                     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-	                     <script type="text/javascript">
-	                           function hiddenFromSubmit(){
-	                              $("#hiddenForm").submit(); 
-	                           }
-	                     </script>
+							<!-- hidden form  -->
+							<form id="hiddenForm" name="hiddenForm" action="/exhibition/CompanyExhibitionList.do" method="post">
+								<input type="hidden" name="company_id" value="<%=companyId%>">
+							</form> 
+							
+							<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script> 
+							<script type="text/javascript">
+								function hiddenFromSubmit() {
+									$("#hiddenForm").submit();
+								}
+							</script> 
 							<img src="/resources/img/graphics/illustration/09.svg" class="w-100 img-zoom">
 							<div class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
 								<div class="card-hover-2-header w-100">
 									<div class="card-hover-2-title">
 										<h4 class="fs-2 mb-2">Exhibition Update</h4>
 									</div>
-									<p class="mb-0">전시회 등록 & 수정</p>
+									<p class="mb-0">전시회 등록 &amp; 수정</p>
 								</div>
 								<div class="card-hover-2-footer w-100 mt-auto">
-									<span class="card-hover-2-footer-link"> 
-										<span>Next step</span>
+									<span class="card-hover-2-footer-link"> <span>Next
+											step</span>
 									</span>
 								</div>
 							</div>
 						</a>
 					</div>
-					
+
 					<!-- 정보수정 -->
 					<div class="col-md-6 mb-4 motion grid-item">
 						<a href="/company/CompanyConfirmPass.do" class="text-black bg-light position-relative d-block overflow-hidden card-hover-2 card">
@@ -158,7 +158,6 @@ span.card-hover-2-footer-link:after {
 				</div>
 			</div>
 		</section>
-		<!-- ./내용 -->
 	</main>
 
 	<jsp:include page="/footerCompany.jsp" />
