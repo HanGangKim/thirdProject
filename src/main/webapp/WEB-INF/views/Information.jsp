@@ -101,7 +101,7 @@ if (session.getAttribute("userId") == null) {
 
 
 		<!-- 소개 -->
-		<section class="position-relative overflow-hidden" id="next">
+		<section class="position-relative overflow-hidden panel" id="next">
 			<div class="container py-9 py-lg-11">
 
 				<!--김한수-->
@@ -324,5 +324,31 @@ if (session.getAttribute("userId") == null) {
 
 <!-- scripts -->
 <script src="/resources/js/theme.bundle.js"></script>
+
+<script type="text/javascript">
+
+function scrollifyPage() {
+    const $body = $("body");
+    const options = {
+        section: ".panel",
+        scrollSpeed: 2000,
+        scrollbars: false,
+        overflowScroll: false,
+        afterRender() {
+            $body.attr("data-pre-index", 0);
+        },
+        before(i, panels) {
+            $(panels[i]).addClass("active").siblings().removeClass("active");
+            let preIndex = parseInt($body.attr("data-pre-index"));
+            let direction = i > preIndex ? "down" : "up";
+            $body.attr("data-pre-index", i).removeClass("up down").addClass(direction);
+            $(document).trigger("onScrollify");
+        }
+    };
+    $.scrollify(options);
+}
+
+
+</script>
 
 </html>
