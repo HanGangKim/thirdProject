@@ -19,38 +19,34 @@ public class MasterExhibitionServiceImpl implements MasterExhibitionService{
 	@Override
 	public List<MasterExhibitionVO>  masterExhibition() {
 		
-		
 		return masterExhibitionDAO.masterExhibition();
 	}
 	
 	// update exhibition
 	@Override
 	public void masterExhibitionUpdate(MasterExhibitionVO vo) {
-		// TODO Auto-generated method stub
-		System.out.println("service 호출");
 		
 		masterExhibitionDAO.masterExhibitionUpdate(vo);
-		
 	}
 
+	// exhibition selectD&R 승인 거절 모두
 	@Override
 	public List<MasterExhibitionVO> masterExhibitionDR() {
+		
 		return masterExhibitionDAO.masterExhibitionDR();
 	}
 
+	// 업체가 등록한 전시회 중 승인된 전시회 리스트 조회
 	@Override
 	public List<MasterExhibitionVO> masterExhibitionSearchTitleD(MasterExhibitionVO vo, String title) {
-		System.out.println("===============");
-		System.out.println("masterExhibitionSearchTitle D 서비스 호출");
-		System.out.println("===============");
+		
 		return masterExhibitionDAO.masterExhibitionSearchTitleD(vo, title);
 	}
 
+	// 업체가 등록한 전시회 중 거절된 전시회 리스트 조회
 	@Override
 	public List<MasterExhibitionVO> masterExhibitionSearchTitleR(MasterExhibitionVO vo, String title) {
-		System.out.println("===============");
-		System.out.println("masterExhibitionSearchTitle R 서비스 호출");
-		System.out.println("===============");
+
 		return masterExhibitionDAO.masterExhibitionSearchTitleR(vo, title);
 	}
 

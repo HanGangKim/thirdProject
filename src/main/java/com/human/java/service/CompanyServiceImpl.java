@@ -13,29 +13,22 @@ public class CompanyServiceImpl implements CompanyService{
 
 	@Autowired 
 	private CompanyDAOImpl companyDAO;
-
+	
+	// 회원가입
 	@Override
 	public int companyInsert(CompanyVO vo) {
-		
-		System.out.println("===============");
-		System.out.println("companyInsert 서비스 호출");
-		System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
-		System.out.println("===============");
 		
 		return companyDAO.companyInsert(vo);
 	}
 
+	// 로그인
 	@Override
 	public CompanyVO companyLogin(CompanyVO vo) {
-		
-		System.out.println("===============");
-		System.out.println("companyLogin 서비스 호출");
-		System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
-		System.out.println("===============");
 	
 		return companyDAO.companyLogin(vo);
 	}
 
+	// 아이디 중복체크
 	@Override
 	public int idCheck(CompanyVO vo, String id) {
 		if(companyDAO.idCheck(id)==0) {
@@ -45,40 +38,28 @@ public class CompanyServiceImpl implements CompanyService{
 		}
 	}
 
+	//비밀번호 확인
 	@Override
 	public CompanyVO companyconfirmpassword(CompanyVO vo) {
-		System.out.println("===============");
-		System.out.println("companyconfirmpassword 서비스 호출");
-		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
-		System.out.println("===============");
 		return companyDAO.companyconfirmpassword(vo);
 	}
 	
+	//업체 정보수정
 	@Override
 	public void companyupdate(CompanyVO vo) {
-		
-		System.out.println("===============");
-		System.out.println("companyupdate 서비스 호출");
-		System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
-		System.out.println("===============");
 		
 		companyDAO.companyupdate(vo);
 	}
 		
+	// 업체 비밀번호 찾기
 	@Override
 	public CompanyVO companyFindPassword(CompanyVO vo) {
-		System.out.println("===============");
-		System.out.println("companyFindPassword 서비스 호출");
-		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
-		System.out.println("===============");
 		return companyDAO.companyFindPassword(vo);
 	}
+	
+	// 업체 정보 삭제
 	@Override
 	public int companyTotalDelete(CompanyVO vo) {
-		System.out.println("===============");
-		System.out.println("companyTotalDelete 서비스 호출");
-		System.out.println(vo.getCompany_id());
-		System.out.println("===============");
 		
 		return companyDAO.companyTotalDelete(vo);
 	}

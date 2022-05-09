@@ -7,8 +7,6 @@ import com.human.java.domain.ReviewVO;
 
 
 public interface ReviewService {
-	
-	// CRUD 기능 구현
 
 	// 글 등록
 	void insertReview(ReviewVO vo);
@@ -18,9 +16,6 @@ public interface ReviewService {
 
 	// 글 삭제
 	void deleteReview(HashMap map);
-	
-//	// 리뷰 전체 조회
-//	List<ReviewVO> getReviewList(HashMap map);
 	
 	// 리뷰 전체 조회
 	List<ReviewVO> getReviewList(HashMap map, int endRow);
