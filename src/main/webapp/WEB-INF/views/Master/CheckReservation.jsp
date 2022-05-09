@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reservation</title>
+<title>Fiennale - Master</title>
 
 <!-- Required meta tags -->
 <meta charset="utf-8">
@@ -54,6 +54,7 @@
 		<div class="spinner-border text-primary" role="status"></div>
 		<span class="small d-block ms-2">Loading...</span>
 	</div>
+	
 	<!--Header Start-->
 	<header
 		class="z-index-fixed header-transparent header-absolute-top pt-lg-2">
@@ -78,11 +79,8 @@
 
 					</div>
 				</div>
-				<!--/.row-->
 			</div>
-			<!--/.content-->
 		</section>
-		<!--/section-->
 	</main>
 
 	<!--App Start-->
