@@ -19,62 +19,45 @@ public class CustomerServiceImpl implements CustomerService{
 	@Autowired 
 	private CustomerDAOImpl customerDAO;
 	
+	// 회원가입
 	@Override
 	public int customerInsert(CustomerVO vo) {
-		
-		System.out.println("===============");
-		System.out.println("customerInsert 서비스 호출");
-		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
-		System.out.println("===============");
 		
 		return customerDAO.customerInsert(vo);
 	}
 
+	// 로그인
 	@Override
 	public CustomerVO customerLogin(CustomerVO vo) {
 		
-		System.out.println("===============");
-		System.out.println("customerLogin 서비스 호출");
-		System.out.println("CustomeVO : " + ToStringBuilder.reflectionToString(vo));
-		System.out.println("===============");
-		
 		return customerDAO.customerLogin(vo);
 	}
+	
+	//정보수정
 	@Override
 	public void customerUpdate(CustomerVO vo) {
-		
-		System.out.println("===============");
-		System.out.println("customerupdate 서비스 호출");
-		System.out.println("CustomeVO : " + ToStringBuilder.reflectionToString(vo));
-		System.out.println("===============");
 		
 		customerDAO.customerupdate(vo);
 		
 	}
 
+	//찜목록 추가
 	@Override
 	public List<WishListVO> WishListService(ExhibitionVO vo, String id, WishListVO wl, HttpServletRequest request) {
-		// TODO Auto-generated method stub
-		System.out.println("-_+_+_+_+_+_+_+_+_+_+_");
-		System.out.println("WishListService.do 호출");
-		System.out.println("_+_+_+_+_+_+_+_+_+_+_+");
 		
 		customerDAO.wishListInsert(vo, id, request);
 		
 		return customerDAO.wishListSearch(wl, id, request);
 	}
 	
+	//찜목록 조회
 	@Override
 	public List<WishListVO> WishListSelectService(ExhibitionVO vo, String id, WishListVO wl, HttpServletRequest request) {
-		// TODO Auto-generated method stub
-		System.out.println("-_+_+_+_+_+_+_+_+_+_+_");
-		System.out.println("WishListService.do 호출");
-		System.out.println("_+_+_+_+_+_+_+_+_+_+_+");
-		
 		
 		return customerDAO.wishListSearch(wl, id, request);
 	}
 
+	// 아이디 중복체크
 	@Override
 	public int idCheck(CustomerVO vo, String id) {
 		if(customerDAO.idCheck(id)==0) {
@@ -84,38 +67,28 @@ public class CustomerServiceImpl implements CustomerService{
 		}
 	}
 
+	//비밀번호 확인
 	@Override
 	public CustomerVO customerconfirmpassword(CustomerVO vo) {
-		System.out.println("===============");
-		System.out.println("customerconfirmpassword 서비스 호출");
-		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
-		System.out.println("===============");
 		return customerDAO.customerconfirmpassword(vo);
 	}
 	
+	//비밀번호 찾기
 	@Override
 	public CustomerVO customerFindPassword(CustomerVO vo) {
-		System.out.println("===============");
-		System.out.println("customerFindPassword 서비스 호출");
-		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
-		System.out.println("===============");
 		return customerDAO.customerFindPassword(vo);
 	}
 
+	// 회원내역 삭제 
 	@Override
 	public int customerTotalDelete(CustomerVO vo) {
-		System.out.println("===============");
-		System.out.println("customerTotalDelete 서비스 호출");
-		System.out.println(vo.getCustomer_id());
-		System.out.println("===============");
 		
 		return customerDAO.customerTotalDelete(vo);
 	}
 
+	// 찜목록 삭제
 	@Override
 	public int WishDelete(ExhibitionVO vo, String id, WishListVO wl, HttpServletRequest request) {
-		// TODO Auto-generated method stub
-		System.out.println("서비스");
 		return customerDAO.WishDelete(vo, id, wl, request);
 	}
 	

@@ -16,8 +16,9 @@ public interface MasterExhibitionService {
 	// exhibition selectD&R
 	public List<MasterExhibitionVO> masterExhibitionDR();
 
-
+	// 업체가 등록한 전시회 중 승인된 전시회 리스트 조회
 	public List<MasterExhibitionVO> masterExhibitionSearchTitleD(MasterExhibitionVO vo, String title);
 
+	// 업체가 등록한 전시회 중 거절된 전시회 리스트 조회
 	public List<MasterExhibitionVO> masterExhibitionSearchTitleR(MasterExhibitionVO vo, String title);
 }

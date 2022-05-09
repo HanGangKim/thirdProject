@@ -16,6 +16,7 @@ public class ReviewServiceImpl implements ReviewService{
 	@Autowired // 객체를 새로 생성하지말고 자동으로 할당
 	private ReviewDAOImpl reviewDAO;
 	
+	// 글 등록
 	@Override
 	public void insertReview(ReviewVO vo) {
 		
@@ -29,6 +30,7 @@ public class ReviewServiceImpl implements ReviewService{
 		
 	}
 
+	// 글 수정
 	@Override
 	public void updateReview(ReviewVO vo) {
 		
@@ -41,6 +43,7 @@ public class ReviewServiceImpl implements ReviewService{
 		
 	}
 
+	// 글 삭제
 	@Override
 	public void deleteReview(HashMap map) {
 		
@@ -52,17 +55,6 @@ public class ReviewServiceImpl implements ReviewService{
 		
 	}
 
-//	// 리뷰 전체 조회
-//	@Override
-//	public List<ReviewVO> getReviewList(HashMap map) {
-//		
-//		System.out.println("===============");
-//		System.out.println("getReviewList 서비스 호출");
-//		System.out.println("===============");
-//		
-//		return reviewDAO.getReviewList(map);
-//	}
-	
 	// 리뷰 전체 조회
 	@Override
 	public List<ReviewVO> getReviewList(HashMap map, int endRow) {
@@ -87,7 +79,7 @@ public class ReviewServiceImpl implements ReviewService{
 	}
 
 	
-	// 나의 상세 리뷰
+	// 나의 리뷰 상세 조회
 	@Override
 	public ReviewVO getMyReview(ReviewVO vo) {
 		

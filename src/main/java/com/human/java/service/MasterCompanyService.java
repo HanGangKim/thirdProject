@@ -18,7 +18,7 @@ public interface MasterCompanyService {
 	//company Title Search select
 	public List<MasterCompanyVO> masterCompanySearchTitle(MasterCompanyVO vo, String title);
 	
-	
+	// 거절된 업체 목록 조회
 	public List<MasterCompanyVO> masterCompanySearchTitleR(MasterCompanyVO vo, String title);
 
 }

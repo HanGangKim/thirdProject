@@ -20,13 +20,13 @@ public interface CustomerService {
 	//정보수정
 	public void customerUpdate(CustomerVO vo);
 	
-	//찜목록
+	//찜목록 추가
 	public List<WishListVO> WishListService(ExhibitionVO vo, String id, WishListVO wl,  HttpServletRequest request);
 
-	//찜목록
+	//찜목록 삭제
 	public int WishDelete(ExhibitionVO vo, String id, WishListVO wl,  HttpServletRequest request);
 	
-	//찜목록
+	//찜목록 조회
 	public List<WishListVO> WishListSelectService(ExhibitionVO vo, String id, WishListVO wl,  HttpServletRequest request);
 	
 	// 아이디 중복체크

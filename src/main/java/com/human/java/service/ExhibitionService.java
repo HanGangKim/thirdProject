@@ -19,8 +19,10 @@ public interface ExhibitionService {
 	// 전시회 조회
 	public ExhibitionVO exhibitionList(ExhibitionVO vo);
 	
+	// 전시회 전체 조회
 	public List<ExhibitionVO> exhibitionAll(ExhibitionVO vo);
 	
+	// 다가오는 전시회 조회
 	public List<ExhibitionVO> comingExhibition(ExhibitionVO vo);
 	
 	// 램덤 전시회 뽑기
@@ -32,13 +34,16 @@ public interface ExhibitionService {
 	// 상위 TOP 3 전시회 뽑기 
 	public List<ExhibitionVO> top3Exhibition(ExhibitionVO vo);
 	
+	// 기간 검색 전시회 조회
 	public List<ExhibitionVO> exhibitionSearch(ExhibitionVO vo, String totalDate, int endRow);
 	
+	// 전시회 이름 검색
 	public List<ExhibitionVO> exhibitionSearchTitle (ExhibitionVO vo);
 	
+	// 전시회 상세 조회
 	public ExhibitionVO exhibitionDetail(ExhibitionVO vo, String id);
 	
-	// 티켓팅 
+	// 티켓팅 삽입
 	public int ticketInsert(TicketingVO vo);
 	
 	// 티켓팅 내역 조회
@@ -47,7 +52,7 @@ public interface ExhibitionService {
 	// 업체 전시회 등록
 	public int companyInsertExhibition (ExhibitionVO vo);
 	
-	// 업체 전시회 수정 
+	// 업체가 등록한 전시회 수정 
 	public int companyUpdateExhibition (ExhibitionVO vo);
  	
 	// 업체 전시회 등록 리스트

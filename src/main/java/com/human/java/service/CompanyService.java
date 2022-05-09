@@ -19,13 +19,12 @@ public interface CompanyService {
 	public CompanyVO companyconfirmpassword(CompanyVO vo);
 	
 	//업체 정보수정
-	
 	public void companyupdate(CompanyVO vo);
 	
 	// 업체 비밀번호 찾기
-	
 	public CompanyVO companyFindPassword(CompanyVO vo);
 	
+	// 업체 정보 삭제
 	public int companyTotalDelete(CompanyVO vo);
 	
 }

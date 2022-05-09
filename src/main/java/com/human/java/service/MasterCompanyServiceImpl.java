@@ -24,32 +24,28 @@ public class MasterCompanyServiceImpl implements MasterCompanyService{
 	// update company
 	@Override
 	public void masterCompanyUpdate(MasterCompanyVO vo) {
-		// TODO Auto-generated method stub
-		System.out.println("service 호출");
 		
 		masterCompanyDAO.masterCompanyUpdate(vo);
 		
 	}
 
+	// company DnR select 
 	@Override
 	public List<MasterCompanyVO> masterCompanyDR() {
 		return masterCompanyDAO.masterCompanyDR();
 	}
 
+	//company Title Search select
 	@Override
 	public List<MasterCompanyVO> masterCompanySearchTitle(MasterCompanyVO vo, String title) {
-		System.out.println("===============");
-		System.out.println("masterCompanySearchTitle D 서비스 호출");
-		System.out.println("===============");
 		
 		return masterCompanyDAO.masterCompanySearchTitle(vo, title);
 	}
 
+	// 거절된 업체 목록 조회
 	@Override
 	public List<MasterCompanyVO> masterCompanySearchTitleR(MasterCompanyVO vo, String title) {
-		System.out.println("===============");
-		System.out.println("masterCompanySearchTitle R 서비스 호출");
-		System.out.println("===============");
+
 		return masterCompanyDAO.masterCompanySearchTitleR(vo, title);
 	}
 
