@@ -29,11 +29,6 @@ public class ExhibitionTicketingController {
 	@RequestMapping("ExhibitionTicketing.do")
 	public ModelAndView ticketInsert(TicketingVO vo) {
 
-		System.out.println("===============");
-		System.out.println("ticketing 컨트롤러 호출");
-		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
-		System.out.println("===============");
-
 		int result = exhibitionService.ticketInsert(vo);
 		ModelAndView mv = new ModelAndView();
 		

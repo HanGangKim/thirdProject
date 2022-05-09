@@ -24,11 +24,6 @@ public class ExhibitionReviewListController {
 	// 모든 사용자의 리뷰 조회
 	@RequestMapping("getReviewList.do")
 	public String getReviewList(Model model , String searchKeyword) {
-		
-		System.out.println("===============");
-		System.out.println("getReviewList.do 호출");
-		System.out.println("검색어 : "+searchKeyword);
-		System.out.println("===============");
 			
 		HashMap map = new HashMap();
 		map.put("searchKeyword", searchKeyword);
@@ -37,7 +32,6 @@ public class ExhibitionReviewListController {
 
 		// DB 접속해서 데이터 가져오기
 		List<ReviewVO> list = reviewService.getReviewList(map, 8);
-		System.out.println(list.size());
 		
 		model.addAttribute("reviewList", list);
 		
@@ -61,10 +55,6 @@ public class ExhibitionReviewListController {
 	@RequestMapping("getMyReviewList.do")
 	public String getMyReviewList(Model model , @RequestParam("id") String id) {
 		
-		System.out.println("===============");
-		System.out.println("getReview.do 호출");
-		System.out.println("===============");
-		
 		HashMap map = new HashMap();
 		map.put("id", id);
 		
@@ -85,12 +75,6 @@ public class ExhibitionReviewListController {
 	// 나의 리뷰 상세조회 
 	@RequestMapping("getMyReview.do")
 	public String getMyReview(Model model , ReviewVO vo) {
-		
-		System.out.println("===============");
-		System.out.println(vo.getExhibition_id());
-		System.out.println(vo.getReview_id());
-		System.out.println("getMyReview.do 호출");
-		System.out.println("===============");
 		
 		model.addAttribute("review", reviewService.getMyReview(vo));	
 		
