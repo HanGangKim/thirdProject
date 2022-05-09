@@ -17,7 +17,6 @@ public class StepController {
 	// 단순이동 컨트롤러
 	@RequestMapping("/{step}.do")
 	public String userJoin(@PathVariable String step) {
-		System.out.println(step);
 		return step;
 	}
 	

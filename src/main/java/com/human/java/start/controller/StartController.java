@@ -20,7 +20,6 @@ public class StartController {
 	// 메인 Top 8 조회 컨트롤러
 		@RequestMapping({"NoneMemberMain.do","CustomerMain.do"})
 		public ModelAndView comingExhibition(HttpServletRequest request, ExhibitionVO vo) {
-			System.out.println("comingExhibition 컨트롤");
 			ModelAndView mv = new ModelAndView();
 			if(request.getServletPath().equals("NoneMemberMain.do")) {
 				mv.setViewName("NoneMemberMain");
