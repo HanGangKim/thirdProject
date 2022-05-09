@@ -8,7 +8,6 @@ import com.human.java.domain.ReviewVO;
 
 public interface ReviewDAO {
 	
-	// 리뷰 게시판 CRUD
 	// 글 등록
 	int insertReview(ReviewVO vo);
 
@@ -18,8 +17,6 @@ public interface ReviewDAO {
 	// 글 삭제
 	void deleteReview(HashMap map);
 	
-//	// 글 목록 조회
-//	List<ReviewVO> getReviewList(HashMap map);
 
 	// 글 목록 조회
 	List<ReviewVO> getReviewList(HashMap map, int endRow);

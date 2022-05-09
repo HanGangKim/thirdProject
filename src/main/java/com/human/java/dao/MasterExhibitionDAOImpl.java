@@ -38,9 +38,6 @@ public class MasterExhibitionDAOImpl implements MasterExhibitionDAO {
 	
 	@Override
 	public List<MasterExhibitionVO> masterExhibitionSearchTitleD(MasterExhibitionVO vo, String title) {
-		System.out.println("===============");
-		System.out.println("masterExhibitionSearchTitle D 다오 호출");
-		System.out.println("===============");
 		
 		Map<String, Object> parms = new HashMap<String, Object>();
 		parms.put("title", title);
@@ -50,9 +47,6 @@ public class MasterExhibitionDAOImpl implements MasterExhibitionDAO {
 	
 	@Override
 	public List<MasterExhibitionVO> masterExhibitionSearchTitleR(MasterExhibitionVO vo, String title) {
-		System.out.println("===============");
-		System.out.println("masterExhibitionSearchTitle R 다오 호출");
-		System.out.println("===============");
 		
 		Map<String, Object> parms = new HashMap<String, Object>();
 		parms.put("title", title);
