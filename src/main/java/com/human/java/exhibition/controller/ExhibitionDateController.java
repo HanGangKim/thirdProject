@@ -23,18 +23,11 @@ public class ExhibitionDateController {
 	@RequestMapping("ExSearch.do")
 	public ModelAndView exhibitionSearch(ExhibitionVO vo, @RequestParam("totalDate") String totalDate) {
 
-		
-		System.out.println("===============");
-		System.out.println("ExSearchTest.do 호출");
-		System.out.println("===============");
 
 		ModelAndView mv = new ModelAndView();
-		System.out.println(totalDate);
 
 		mv.setViewName("/Exhibition/ExhibitionDateList");
-		System.out.println(ToStringBuilder.reflectionToString(vo) + "전달");
 		mv.addObject("vo", exhibitionService.exhibitionSearch(vo, totalDate, 8));
-		System.out.println(ToStringBuilder.reflectionToString(vo) + "전달");
 
 		return mv;
 	}
@@ -43,15 +36,9 @@ public class ExhibitionDateController {
 	@RequestMapping("ExSearchAjax.do")
 	public Object exSearchTestAjax(@RequestParam("endRow") String endRow, @RequestParam("totalDate") String totalDate) {
 		
-		
-		System.out.println(endRow);
-		System.out.println("ajax Test....");
 		ExhibitionVO vo = null;
 		
 	    List<ExhibitionVO> list = exhibitionService.exhibitionSearch(vo, totalDate, Integer.parseInt(endRow) );
-	    
-	    System.out.println(list.size());
-	    System.out.println("ajax Test....2");
 	    
 	    return list;
 		
@@ -63,8 +50,6 @@ public class ExhibitionDateController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/Exhibition/ExhibitionDateList");
 		mv.addObject("vo", exhibitionService.exhibitionSearchTitle(vo));
-		System.out.println(ToStringBuilder.reflectionToString(vo) + "전달");
-
 	
 		return mv;
 	}
@@ -72,16 +57,9 @@ public class ExhibitionDateController {
 	@RequestMapping("ExhibitionDetail.do")
 	public ModelAndView exhibitionDetail(ExhibitionVO vo, @RequestParam("id") String id) {
 
-		System.out.println("===============");
-		System.out.println("ExhibitionDetail.do 호출");
-		System.out.println("===============");
-
 		ModelAndView mv = new ModelAndView();
-		System.out.println(id);
 
 		mv.setViewName("/Exhibition/ExhibitionDetail");
-
-		System.out.println(ToStringBuilder.reflectionToString(vo) + "전달합니다");
 
 		mv.addObject("vo", exhibitionService.exhibitionDetail(vo, id));
 

@@ -25,7 +25,6 @@ public class ExhibitionCompanyExhibitionListController {
 	public String exhibitionExhibitionList(ExhibitionVO vo , Model model ) {
 
 		String companyId = vo.getCompany_id();
-		System.out.println("company_id:"+companyId);
 		
 		List<ExhibitionVO>li = exhibitionService.getExhibitionCompanyServiceList(vo , companyId);	
 		
@@ -43,12 +42,6 @@ public class ExhibitionCompanyExhibitionListController {
 	// 업체 전시회 상세조회
 	@RequestMapping("CompanyExhibitionDetail.do")
 	public String exhibitionExhibitionDetail(ExhibitionVO vo , Model model ) {
-		System.out.println("업체ID:"+vo.getCompany_id());
-		System.out.println("전시회ID:"+vo.getExhibition_id());
-		
-		System.out.println("===============");
-		System.out.println("exhibitionCompanyExhibitionDetail.do(상세조회)호출");
-		System.out.println("===============");
 		
 		model.addAttribute("CompanyExhibition", exhibitionService.getExhibitionCompanyServiceDetail(vo));
 		

@@ -28,12 +28,6 @@ public class ExhibitionCompanyExhibitionWriteController {
 	// 업체 전시회 등록
 	@RequestMapping("exhibitionCompanyExhibitionWrite.do")
 	public String exhibitionCompanyExhibitionWrite(ExhibitionVO vo, @RequestParam("file") MultipartFile file, @RequestParam("file_sub") MultipartFile file_sub) {
-	
-		System.out.println("===============");
-		System.out.println("exhibitionCompanyExhibitionWrite.do 호출");
-		System.out.println("ExhibitionVO : " + ToStringBuilder.reflectionToString(vo));
-		System.out.println("===============");
-		System.out.println(file);
 		
 		exhibitionService.companyInsertExhibition(vo);
 	
@@ -43,11 +37,6 @@ public class ExhibitionCompanyExhibitionWriteController {
 	// 업체 전시회 수정
 	@RequestMapping("exhibitionCompanyExhibitionUpdate.do")
 	public String exhibitionCompanyExhibitionUpdate(ExhibitionVO vo) {
-		
-		System.out.println("===============");
-		System.out.println("exhibitionCompanyExhibitionUpdate.do 호출");
-		System.out.println("ExhibitionVO : " + ToStringBuilder.reflectionToString(vo));
-		System.out.println("===============");
 		
 		exhibitionService.companyUpdateExhibition(vo);
 		
@@ -63,10 +52,8 @@ public class ExhibitionCompanyExhibitionWriteController {
 		
 		// 매개변수에 값이 제대로 들어왔는지 확인할것
 		// 셀렉트에서 사용돌 회사 아이디
-		System.out.println("company_id: "+companyId);
+
 		// 삭제에서 사용될 전시회 아이디 
-		System.out.println("exhibition_id: "+vo.getExhibition_id());
-		
 	
 		// [1] 딜리트 서비스를 호츨한다.
 		// -------------------------------------
@@ -79,10 +66,6 @@ public class ExhibitionCompanyExhibitionWriteController {
 		exhibitionService.exhibitionCompanyExhibitionDelete(vo);
 		
 		// -------------------------------------
-	
-		System.out.println("===============");
-		System.out.println("exhibitionCompanyExhibitionList 서비스 재호출");
-		System.out.println("===============");
 		
 		// [2] 딜리트가 끝나면 셀렉트 서비스를 호출한다.	
 		List<ExhibitionVO>li = exhibitionService.getExhibitionCompanyServiceList(vo , companyId);	

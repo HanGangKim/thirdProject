@@ -21,8 +21,6 @@ public class ExhibitionMainRankingController {
 	@RequestMapping({ "NoneMemberMain.do", "CustomerMain.do" })
 	public ModelAndView comingExhibition(HttpServletRequest request, ExhibitionVO vo) {
 
-		System.out.println("NoneMemberMain.do / CustomerMain.do 호출");
-
 		ModelAndView mv = new ModelAndView();
 		if (request.getServletPath().equals("NoneMemberMain.do")) {
 			mv.setViewName("NoneMemberMain");
@@ -30,22 +28,9 @@ public class ExhibitionMainRankingController {
 			mv.setViewName("/Customer/CustomerMain");
 		}
 
-		System.out.println(ToStringBuilder.reflectionToString(vo) + "전달");
-
 		mv.addObject("vo", exhibitionService.comingExhibition(vo));
-
-		System.out.println("===============");
-		System.out.println("ExhibitionVO : " + ToStringBuilder.reflectionToString(vo));
-		System.out.println("===============");
 
 		return mv;
 	}
-
-	/*
-	 * @RequestMapping("CustomerMain.do") public ModelAndView
-	 * comingExhibition(ExhibitionVO vo) {
-	 * 
-	 * }
-	 */
 
 }
