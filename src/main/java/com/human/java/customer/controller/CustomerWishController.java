@@ -25,10 +25,6 @@ public class CustomerWishController {
 	// 단순조회
 	@RequestMapping("CustomerWishSelectList.do")
 	public ModelAndView SearchWish(ExhibitionVO vo, @RequestParam("id") String id, WishListVO wl, HttpServletRequest request) {
-		System.out.println("-_+_+_+_+_+_+_+_+_+_+_");
-		System.out.println("CustomerWishList.do 호출");
-		System.out.println("_+_+_+_+_+_+_+_+_+_+_+");
-		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("Customer/CustomerWishList");
 		
@@ -47,18 +43,10 @@ public class CustomerWishController {
 	@RequestMapping("CustomerWishList.do")
 	public ModelAndView addSearchWish(ExhibitionVO vo, @RequestParam("id") String id, WishListVO wl, HttpServletRequest request) {
 		
-		System.out.println("-_+_+_+_+_+_+_+_+_+_+_");
-		System.out.println("CustomerWishList.do 호출");
-		System.out.println("_+_+_+_+_+_+_+_+_+_+_+");
-		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("Customer/CustomerWishList");
 
 		List<WishListVO> li = customerService.WishListService(vo, id, wl, request);
-		
-		System.out.println(li.size());
-		System.out.println(li.get(0));
-		
 		
 		mv.addObject("vo", li);
 		
@@ -67,9 +55,7 @@ public class CustomerWishController {
 	
 	@RequestMapping("CustomerWishDelete.do")
 	public ModelAndView deleteWish(ExhibitionVO vo, @RequestParam("id") String id, WishListVO wl, HttpServletRequest request) {
-		System.out.println("deletecont / "+vo+""+ id+""+ wl+""+ request.getParameter("ExId"));
 		customerService.WishDelete(vo, id, wl, request);
-		System.out.println(vo+""+ id+""+ wl+""+ request.getParameter("ExId"));
 		SearchWish(vo, id, wl, request);
 		return SearchWish(vo, id, wl, request);
 	}

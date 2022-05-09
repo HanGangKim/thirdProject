@@ -35,7 +35,6 @@ public class CustomerTotalDeleteController {
 		
 		// [1] 아이디와 패스워드가 맞지 않을 경우 
 		if(result == null ) {
-			System.out.println("회원탈퇴 실패");
 			mv.setViewName("redirect:/customer/CustomerConfirmPass.do");
 			
 		return mv;	
@@ -50,7 +49,6 @@ public class CustomerTotalDeleteController {
 			customerService.customerTotalDelete(vo);
 			mv.setViewName("redirect:/customer/CustomerGoodbye.do");
 			session.invalidate(); // 세션에 있는 값을 전부다 지우기
-			System.out.println("회원탈퇴 성공");
 			return mv;	
 		}
 			
