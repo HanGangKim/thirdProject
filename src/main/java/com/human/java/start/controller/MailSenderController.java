@@ -44,7 +44,6 @@ public class MailSenderController {
 		    mailSender.send(mimeMessage);
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("에러발생");
 		}
 		
 		return "redirect:/";
