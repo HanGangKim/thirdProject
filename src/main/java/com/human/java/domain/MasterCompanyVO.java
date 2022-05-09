@@ -2,12 +2,19 @@ package com.human.java.domain;
 
 public class MasterCompanyVO {
 	
+	// 업체 아이디
 	private String company_id;
+	//업체 비밀번호
 	private String company_password;
+	// 업체 이름
 	private String company_name;
+	// 업체 비밀번호
 	private String company_ph;
+	// 업체 이메일
 	private String company_email;
+	// 사업자 등록 번호
 	private String company_regnum;
+	// 업체 회원 속성
 	private String company_flag;
 	
 	

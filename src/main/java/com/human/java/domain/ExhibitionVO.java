@@ -17,7 +17,6 @@ import com.jcraft.jsch.ChannelSftp;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
 
-//import java.sql.Date;
 
 public class ExhibitionVO {
 	

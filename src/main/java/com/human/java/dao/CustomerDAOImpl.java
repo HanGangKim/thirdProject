@@ -22,30 +22,18 @@ public class CustomerDAOImpl implements  CustomerDAO{
 	
 	@Override
 	public int customerInsert(CustomerVO vo) {
-		System.out.println("===============");
-		System.out.println("customerInsert 다오 호출");
-		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
-		System.out.println("===============");
 		
 		return mybatis.insert("customerMapper.customerInsert",vo);	
 	}
 
 	@Override
 	public CustomerVO customerLogin(CustomerVO vo) {
-		System.out.println("===============");
-		System.out.println("customerLogin 다오 호출");
-		System.out.println("CustomerVO : " + ToStringBuilder.reflectionToString(vo));
-		System.out.println("===============");
 		
 		return mybatis.selectOne("customerMapper.customerLogin",vo);
 	}
 	
 	@Override
 	public void customerupdate(CustomerVO vo) {
-		System.out.println("===============");
-		System.out.println("customerupdate 다오 호출");
-		System.out.println("CustomerVO : " + ToStringBuilder.reflectionToString(vo));
-		System.out.println("===============");
 		
 		mybatis.update("customerMapper.customerUpdate",vo);
 	}
@@ -73,7 +61,6 @@ public class CustomerDAOImpl implements  CustomerDAO{
 		parms.put("id", id);
 		String userId = (String)request.getSession().getAttribute("userId");
 		parms.put("request", userId);
-		System.out.println(userId);
 		return mybatis.selectList("wishlistMapper.wishlistsearch", parms);
 	}
 	
@@ -85,13 +72,11 @@ public class CustomerDAOImpl implements  CustomerDAO{
 		parms.put("id", id);
 		String userId = (String)request.getSession().getAttribute("userId");
 		parms.put("request", userId);
-		System.out.println(userId);
 		return mybatis.selectList("wishlistMapper.wishlistsearch", parms);
 	}
 
 	@Override
 	public int idCheck( String id) {
-		// TODO Auto-generated method stub
 		Map<String, Object> parms = new HashMap<String, Object>();
 		parms.put("id",id);
 		return mybatis.selectOne("customerMapper.idCheck",id);
@@ -99,10 +84,6 @@ public class CustomerDAOImpl implements  CustomerDAO{
 
 	@Override
 	public CustomerVO customerconfirmpassword(CustomerVO vo) {
-		System.out.println("===============");
-		System.out.println("customerconfirmpassword 다오 호출");
-		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
-		System.out.println("===============");
 		
 		return mybatis.selectOne("customerMapper.customerconfirmpassword",vo);	
 		
@@ -110,22 +91,14 @@ public class CustomerDAOImpl implements  CustomerDAO{
 	
 	@Override
 	public CustomerVO customerFindPassword(CustomerVO vo) {
-		System.out.println("===============");
-		System.out.println("customerFindPassword 다오 호출");
-		System.out.println("VO : " + ToStringBuilder.reflectionToString(vo));
-		System.out.println("===============");
 		
 		return mybatis.selectOne("customerMapper.customerFindPassword",vo);
 	}
 	
 	@Override 
 	public int customerTotalDelete(CustomerVO vo) {
-		System.out.println("===============");
-		System.out.println("customerTotalDelete 서비스 호출");
-		System.out.println(vo.getCustomer_id());
-		System.out.println("===============");
 		
-		
+		// 외래키로 인해 삭제 이상이 생기기 때문에 참조되어있는 테이블의 튜플부터 삭제
 		mybatis.delete("customerMapper.customerReviewDelete",vo);
 		mybatis.delete("customerMapper.customerTicketingDelete",vo);
 		mybatis.delete("customerMapper.customerWishListDelete",vo);	
@@ -136,16 +109,12 @@ public class CustomerDAOImpl implements  CustomerDAO{
 
 	@Override
 	public int WishDelete(ExhibitionVO vo, String id, WishListVO wl, HttpServletRequest request) {
-		// TODO Auto-generated method stub
 		Map<String, Object> parms = new HashMap<String, Object>();
 		parms.put("wl", wl);
 		parms.put("id", id);
 		parms.put("ex", request.getParameter("ExId"));
-		System.out.println(id);
 		String userId = (String)request.getSession().getAttribute("userId");
 		parms.put("request", userId);
-		System.out.println(request.getParameter("ExId"));
-		System.out.println("다오");
 		return mybatis.delete("wishlistMapper.wishlistdelete", parms);
 	}
 	

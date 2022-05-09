@@ -2,13 +2,21 @@ package com.human.java.domain;
 
 public class CustomerVO {
 
+	// 일반고객 아이디
 	private String customer_id;
+	// 일반 고객 비밀번호
 	private String customer_password;
+	// 일반 고객 이름
 	private String customer_name;
+	// 일반 고객 전화번호
 	private String customer_ph;
+	// 일반 고객 나이
 	private int customer_age;
+	// 일반 고객 이메일
 	private String customer_email;
+	// 일반 고객 성별
 	private String customer_gender;
+	// 일반 고객 속성
 	private String customer_flag;
 	
 	
