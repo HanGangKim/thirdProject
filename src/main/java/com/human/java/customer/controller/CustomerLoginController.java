@@ -30,19 +30,14 @@ public class CustomerLoginController {
 	// 로그인 메소드
 	@RequestMapping("customerLogin.do")
 	public ModelAndView customerLogin(CustomerVO vo, ExhibitionVO exvo, HttpSession session) {
-
-		System.out.println("customerLogin 메소드 호출");
 		CustomerVO result = customerService.customerLogin(vo);
 		ModelAndView mv = new ModelAndView();
 
 		if (result == null) {
-			System.out.println("로그인 실패");
 			mv.setViewName("/Customer/CustomerLoginFail");
 			return mv;
 
 		}else if((result.getCustomer_id()).equals("admin")&(result.getCustomer_password()).equals("admin")&(result.getCustomer_flag().equals("M"))){	
-			
-			System.out.println("Master : [" + result.getCustomer_id() + "]" + "로그인 성공");
 			
 			// 운영자 세션 부여
 			session.setAttribute("masterName", result.getCustomer_name());
@@ -58,12 +53,6 @@ public class CustomerLoginController {
 			
 			return mv;
 		} else {
-			// CompanyVO 확인
-			System.out.println("===============");
-			System.out.println("CustomerVO : " + ToStringBuilder.reflectionToString(vo));
-			System.out.println("===============");
-
-			System.out.println("[" + result.getCustomer_id() + "]" + "로그인 성공");
 			
 			session.setAttribute("userName", result.getCustomer_name());
 			session.setAttribute("userId", result.getCustomer_id());

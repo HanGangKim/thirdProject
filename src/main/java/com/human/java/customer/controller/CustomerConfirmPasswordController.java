@@ -34,25 +34,16 @@ public class CustomerConfirmPasswordController {
 	//비밀번호 확인 메소드
 	@RequestMapping("customerConfirmPassword.do")
 	public ModelAndView customerconfirm(CustomerVO vo, HttpSession session) {
-		System.out.println("CustomerConfirmPasswod 메소드 호출");
-		System.out.println("CustomerVO : " + ToStringBuilder.reflectionToString(vo));
 		CustomerVO result = customerService.customerLogin(vo);
 		ModelAndView mv = new ModelAndView();
 		
 		if (result==null) {
-			System.out.println("패스워드 확인 실패");
 			mv.setViewName("/Customer/CustomerConfirmPass");
 			return mv;
 		}else {
-			System.out.println("===============");
-			System.out.println("CompanyVO : " + ToStringBuilder.reflectionToString(vo));
-			System.out.println("===============");
-
-			System.out.println("[" + result.getCustomer_id() + "]" + "패스워드 확인 성공");
 			
 			session.setAttribute("userPass" , result.getCustomer_password());
 			session.setAttribute("userId", result.getCustomer_id());
-		
 			
 			mv.addObject("vo", customerService.customerconfirmpassword(vo));
 			
@@ -63,15 +54,12 @@ public class CustomerConfirmPasswordController {
 	
 	@RequestMapping("customerFindPassword.do")
 	public ModelAndView customerFindPass(CustomerVO vo,HttpSession session) {
-		System.out.println("customerFindPass 메소드 호출");
-		System.out.println("CustomerVO : " + ToStringBuilder.reflectionToString(vo));
 		// vo : id email 
 		// >> 결과 : password  select 
 		CustomerVO result = customerService.customerFindPassword(vo);
 		ModelAndView mv = new ModelAndView();
 		
 		if(result == null) {
-			System.out.println("확인실패");
 			mv.setViewName("/Customer/CustomerLogin");
 			return mv;
 			
@@ -79,11 +67,6 @@ public class CustomerConfirmPasswordController {
 		}else {
 			
 			try {
-						
-			System.out.println("===============");
-			System.out.println("CustomerVO : " + ToStringBuilder.reflectionToString(vo));
-			System.out.println("===============");
-			System.out.println("[" + result.getCustomer_id() + "]" + "아이디 확인 성공");
 			
 			session.setAttribute("findPass" , result.getCustomer_password());
 			session.setAttribute("findId", result.getCustomer_id());
@@ -121,7 +104,6 @@ public class CustomerConfirmPasswordController {
 			} catch (Exception e) {
 				// 예외발생 시 비밀번호를 보내지 않고 로그인 페이지로 리턴
 				e.printStackTrace();
-				System.out.println("에러발생");
 				mv.setViewName("/Customer/CustomerLogin");
 				return mv;
 			}
